@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AEDB3D42-E95D-4BDA-8DFA-957FBE24E238}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Chapter02</RootNamespace>
+    <AssemblyName>Chapter02</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>AddisonWesley.Michaelis.EssentialCSharp.Shared.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Shared\Program.cs">
+      <Link>Program.cs</Link>
+    </Compile>
+    <Compile Include="Listing02.01-2.06.SpecifyingLiteralValues.cs" />
+    <Compile Include="Listing02.02.SpecifyingALiteralDouble.cs" />
+    <Compile Include="Listing02.03.SpecifyingALiteralDecimal.cs" />
+    <Compile Include="Listing02.04.ExponentialNotation.cs" />
+    <Compile Include="Listing02.05.HexadecimalLiteralValue.cs" />
+    <Compile Include="Listing02.06.Examples of a HexadecimalFormatSpecifier.cs" />
+    <Compile Include="Listing02.07.FormattingUsingTheRFormatSpecifier.cs" />
+    <Compile Include="Listing02.08-2.10.ComparingStringsEscapeSequencesAndUnicode.cs" />
+    <Compile Include="Listing02.09..cs" />
+    <Compile Include="Listing02.10..cs" />
+    <Compile Include="Listing02.11.UsingTheNewlineCharacterToInsertANewline.cs" />
+    <Compile Include="Listing02.12.DisplayingATriangleUsingAVerbatimStringLiteral.cs" />
+    <Compile Include="Listing02.13.UsingStringsLengthMember.cs" />
+    <Compile Include="Listing02.14..cs" />
+    <Compile Include="Listing02.15..cs" />
+    <Compile Include="Listing02.16.AssigningNullToAString.cs" />
+    <Compile Include="Listing02.17.WorkingWithStrings.cs" />
+    <Compile Include="Listing02.18.ImplicitLocalVariablesWithAnonymousTypes.cs" />
+    <Compile Include="Listing02.19.UsingTheNullableModifier.cs" />
+    <Compile Include="Listing02.20..cs" />
+    <Compile Include="Listing02.21.OverflowingAnIntegerValue.cs" />
+    <Compile Include="Listing02.22..cs" />
+    <Compile Include="Listing02.23..cs" />
+    <Compile Include="Listing02.24..cs" />
+    <Compile Include="Listing02.25..cs" />
+    <Compile Include="Listing02.26..cs" />
+    <Compile Include="Listing02.27..cs" />
+    <Compile Include="Listing02.28..cs" />
+    <Compile Include="Listing02.29..cs" />
+    <Compile Include="Listing02.30..cs" />
+    <Compile Include="Listing02.31..cs" />
+    <Compile Include="Listing02.32..cs" />
+    <Compile Include="Listing02.33..cs" />
+    <Compile Include="Listing02.34..cs" />
+    <Compile Include="Listing02.35..cs" />
+    <Compile Include="Listing02.36..cs" />
+    <Compile Include="Listing02.37..cs" />
+    <Compile Include="Listing02.38..cs" />
+    <Compile Include="Listing02.39..cs" />
+    <Compile Include="Listing02.40..cs" />
+    <Compile Include="Listing02.41..cs" />
+    <Compile Include="Listing02.42..cs" />
+    <Compile Include="Listing02.43..cs" />
+    <Compile Include="Listing02.44..cs" />
+    <Compile Include="Listing02.45..cs" />
+    <Compile Include="Listing02.46..cs" />
+    <Compile Include="Listing02.47..cs" />
+    <Compile Include="Listing02.48..cs" />
+    <Compile Include="Listing02.49..cs" />
+    <Compile Include="Listing02.50..cs" />
+    <Compile Include="Listing02.51..cs" />
+    <Compile Include="Listing02.52..cs" />
+    <Compile Include="Listing02.53..cs" />
+    <Compile Include="Listing02.54..cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

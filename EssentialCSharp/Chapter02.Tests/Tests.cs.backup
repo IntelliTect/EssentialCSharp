@@ -1,0 +1,242 @@
+﻿using System;
+using System.IO;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+namespace Chapter02.Tests
+{
+    [TestClass]
+    public class Chapter02
+    {
+        const string BR = "\r\n";
+
+        [TestMethod]
+        public void Listing02_01()
+        {
+            string output = "42" + BR + "1.618034" + BR + "1.61803398874989" + BR
+                + "1.618033988749895" + BR + "6.023E+23" + BR + "42" + BR + "ox2A" + BR;
+
+            using (TextWriter writer = new StringWriter())
+            {
+                Console.SetOut(writer);
+
+                AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_01.Program.Main();
+                Assert.AreEqual(output, writer.ToString());
+            }
+        }
+
+        [TestMethod]
+        public void Listing02_02()
+        {
+            string output = "1.61803398874989" + BR;
+
+            using (TextWriter writer = new StringWriter())
+            {
+                Console.SetOut(writer);
+
+                AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_02.Program.Main();
+                Assert.AreEqual(output, writer.ToString());
+            }
+        }
+
+        [TestMethod]
+        public void Listing02_03()
+        {
+            string output = "1.618033988749895" + BR;
+
+            using (TextWriter writer = new StringWriter())
+            {
+                Console.SetOut(writer);
+
+                AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_03.Program.Main();
+                Assert.AreEqual(output, writer.ToString());
+            }
+        }
+
+        [TestMethod]
+        public void Listing02_04()
+        {
+            string output = "6.023E+23" + BR;
+
+            using (TextWriter writer = new StringWriter())
+            {
+                Console.SetOut(writer);
+
+                AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_04.Program.Main();
+                Assert.AreEqual(output, writer.ToString());
+            }
+        }
+
+        [TestMethod]
+        public void Listing02_05()
+        {
+            string output = "42" + BR;
+
+            using (TextWriter writer = new StringWriter())
+            {
+                Console.SetOut(writer);
+
+                AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_05.Program.Main();
+                Assert.AreEqual(output, writer.ToString());
+            }
+        }
+
+        [TestMethod]
+        public void Listing02_06()
+        {
+            string output = "ox2A" + BR;
+
+            using (TextWriter writer = new StringWriter())
+            {
+                Console.SetOut(writer);
+
+                AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_06.Program.Main();
+                Assert.AreEqual(output, writer.ToString());
+            }
+        }
+
+        [TestMethod]
+        public void Listing02_07()
+        {
+            string output = "True: result != number" + BR + "True: result == number" + BR;
+
+            using (TextWriter writer = new StringWriter())
+            {
+                Console.SetOut(writer);
+
+                AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_07.Program.Main();
+                Assert.AreEqual(output, writer.ToString());
+            }
+        }
+
+        [TestMethod]
+        public void Listing02_08()
+        {
+            string output = "'" + BR + ":)" + BR;
+
+            using (TextWriter writer = new StringWriter())
+            {
+                Console.SetOut(writer);
+
+                AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_08.SingleQuote.Main();
+                Assert.AreEqual(output, writer.ToString());
+            }
+        }
+
+        [TestMethod]
+        public void Listing02_11()
+        {
+            string output = "\"Truly, you have a dizzyingintellect.\"\n\"Wait 'til I get going!\"\n";
+
+            using (TextWriter writer = new StringWriter())
+            {
+                Console.SetOut(writer);
+
+                AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_11.DuelOfWits.Main();
+                Assert.AreEqual(output, writer.ToString());
+            }
+        }
+
+        [TestMethod]
+        public void Listing02_12()
+        {
+            string output = @"begin
+                   /\
+                  /  \
+                 /    \
+                /      \
+               /________\
+            end";
+
+            using (TextWriter writer = new StringWriter())
+            {
+                Console.SetOut(writer);
+
+                AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_12.Triangle.Main();
+                Assert.AreEqual(output, writer.ToString());
+            }
+        }
+
+        [TestMethod]
+        public void Listing02_13()
+        {
+            string input = "racecar" + BR;
+            string output = "Enter a palindrome: The palindrome, \"racecar\" is 7 characters." + BR;
+
+            using (TextWriter writer = new StringWriter())
+            using (TextReader reader = new StringReader(input))
+            {
+                Console.SetOut(writer);
+                Console.SetIn(reader);
+
+                AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_13.PalindromeLength.Main();
+
+                Assert.AreEqual(output, writer.ToString());
+            }
+        }
+
+        [TestMethod]
+        public void Listing02_14()
+        {
+            // intended as an error
+            string input = "Lorem" + BR;
+            string output = "Enter text: Lorem" + BR;
+
+            using (TextWriter writer = new StringWriter())
+            using (TextReader reader = new StringReader(input))
+            {
+                Console.SetOut(writer);
+                Console.SetIn(reader);
+
+                AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_14.Uppercase.Main();
+
+                Assert.AreEqual(output, writer.ToString());
+            }
+        }
+
+        [TestMethod]
+        public void Listing02_17()
+        {
+            string input = "Lorem" + BR;
+            string output = "Enter text: LOREM" + BR;
+
+            using (TextWriter writer = new StringWriter())
+            using (TextReader reader = new StringReader(input))
+            {
+                Console.SetOut(writer);
+                Console.SetIn(reader);
+
+                AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_17.Uppercase.Main();
+
+                Assert.AreEqual(output, writer.ToString());
+            }
+        }
+
+        [TestMethod]
+        public void Listing02_18()
+        {
+            string output = "Bifocals (1784)" + BR + "Phonograph (1877)" + BR;
+
+            using (TextWriter writer = new StringWriter())
+            {
+                Console.SetOut(writer);
+
+                AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_18.Program.Main();
+                Assert.AreEqual(output, writer.ToString());
+            }
+        }
+
+        [TestMethod]
+        public void Listing02_21()
+        {
+            string output = "-2147483648" + BR;
+
+            using (TextWriter writer = new StringWriter())
+            {
+                Console.SetOut(writer);
+
+                AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_21.Program.Main();
+                Assert.AreEqual(output, writer.ToString());
+            }
+        }
+    }
+}

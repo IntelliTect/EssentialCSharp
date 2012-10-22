@@ -1,0 +1,37 @@
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_01
+{
+    class LineCount
+    {
+        static void Main()
+        {
+            int lineCount;
+            string files;
+            DisplayHelpText();
+            files = GetFiles();
+            lineCount = CountLines(files);
+            DisplayLineCount(lineCount);
+        }
+
+        private static void DisplayLineCount(int lineCount)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        private static int CountLines(string files)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        private static string GetFiles()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        private static void DisplayHelpText()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        // ...
+    }
+}

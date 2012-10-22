@@ -1,0 +1,41 @@
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_21
+{
+    class Program
+    {
+        static void Main()
+        {
+            Employee employee1 = new Employee();
+            employee1.Initialize(42);
+            // ERROR: The property or indexer 'Employee.Id' 
+            // cannot be used in this context because the set 
+            // accessor is inaccessible
+            //employee1.Id = "490";                     //will not compile if you uncomment this line
+        }
+    }
+    class Employee
+    {
+        public void Initialize(int id)
+        {
+            // Set Id property
+            Id = id.ToString();
+        }
+
+        // ...
+        // Id property declaration
+        public string Id
+        {
+            get
+            {
+                return _Id;
+            }
+            // Providing an access modifier is in C# 2.0
+            // and higher only
+            private set
+            {
+                _Id = value;
+            }
+        }
+        private string _Id;
+
+    }
+}

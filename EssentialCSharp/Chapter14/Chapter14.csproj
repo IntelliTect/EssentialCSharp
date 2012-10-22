@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B2B4625F-0AEE-4EFA-8B6D-10652D6E536E}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Chapter14</RootNamespace>
+    <AssemblyName>Chapter14</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>AddisonWesley.Michaelis.EssentialCSharp.Shared.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Shared\Program.cs">
+      <Link>Program.cs</Link>
+    </Compile>
+    <Compile Include="Listing14.27.MoreSystem.Linq.EnumerableMethodCalls.cs" />
+    <Compile Include="Listing14.26.CallingSelectMany.cs" />
+    <Compile Include="Listing14.25.ImplementingAnOuterJoinUsingGroupJoinWithSelectMany.cs" />
+    <Compile Include="Listing14.24.CreatingAChildCollectionWithSystem.Linq.Enumerable.GroupJoin.cs" />
+    <Compile Include="Listing14.23.GroupingItemsTogetherUsingSystem.Linq.Enumerable.GroupBy.cs" />
+    <Compile Include="Listing14.22.AnotherInnerJoinWithSystem.Linq.Enumerable.Join.cs" />
+    <Compile Include="Listing14.21.AnInnerJoinUsingSystem.Linq.Enumerable.Join.cs" />
+    <Compile Include="Listing14.20.SampleEmployeeAndDepartmentData.cs" />
+    <Compile Include="Listing14.19.OrderingWithSystem.Linq.Enumerable.OrderByAndThenBy.cs" />
+    <Compile Include="Listing14.18.FilteringWithSystem.Linq.Enumerable.Where.cs" />
+    <Compile Include="Listing14.17.CountingItemsWithCount.cs" />
+    <Compile Include="Listing14.16.ExecutingLinqQueriesInParallel.cs" />
+    <Compile Include="Listing14.15.ProjectionToAnAnonymousType.cs" />
+    <Compile Include="Listing14.14.ProjectionWithSystem.Linq.Enumerable.Select.cs" />
+    <Compile Include="Listing14.13.ProjectionWithSystem.Linq.Enumerable.Select.cs" />
+    <Compile Include="Listing14.12.FilteringWithSystem.Linq.Enumerable.Where.cs" />
+    <Compile Include="Listing14.11.SampleClassesForUseWithStandardQueryOperators.cs" />
+    <Compile Include="Listing14.10.ErrorHandlingAndResourceCleanupWithUsing.cs" />
+    <Compile Include="Listing14.09.CompiledResultOfForeachOnCollections.cs" />
+    <Compile Include="Listing14.08.ASeparateEnumeratorMaintainingStateDuringAnIteration.cs" />
+    <Compile Include="Listing14.07.IteratingOverACollectionUsingWhile.cs" />
+    <Compile Include="Listing14.06.CompiledImplementationOfForeachWithArrays.cs" />
+    <Compile Include="Listing14.05.ForeachWithArrays.cs" />
+    <Compile Include="Listing14.04.InitializingAnonymousTypeArrays.cs" />
+    <Compile Include="Listing14.03.FilteringWithSystem.Linq.Enumerable.Where.cs" />
+    <Compile Include="Listing14.02.TypeSafetyAndImmutabilityOfAnonymousTypes.cs" />
+    <Compile Include="Listing14.01.ImplicitLocalVariablesWithAnonymousTypes.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

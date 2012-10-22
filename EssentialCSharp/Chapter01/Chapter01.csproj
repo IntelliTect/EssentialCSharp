@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{20D1A0C4-74FC-44A7-966B-062CC1691C9F}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Chapter01</RootNamespace>
+    <AssemblyName>Chapter01</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>AddisonWesley.Michaelis.EssentialCSharp.Shared.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Shared\Program.cs">
+      <Link>Program.cs</Link>
+    </Compile>
+    <Compile Include="Listing01.01.HelloWorldInC#.cs" />
+    <Compile Include="Listing01.02.BasicClassDeclaration.cs" />
+    <Compile Include="Listing01.03.BreakingApartHelloWorld.cs" />
+    <Compile Include="Listing01.04.TheMainMethodWithParametersAndAReturn.cs" />
+    <Compile Include="Listing01.05.MultipleStatementsOneOneLine.cs" />
+    <Compile Include="Listing01.06.SplittingAStatementAcrossMultipleLines.cs" />
+    <Compile Include="Listing01.07.NoIndentationFormatting.cs" />
+    <Compile Include="Listing01.08.RemovingWhitespace.cs" />
+    <Compile Include="Listing01.09.DeclaringAndAssigningAVariable.cs" />
+    <Compile Include="Listing01.10.DeclaringTwoVariablesWithinOneStatement.cs" />
+    <Compile Include="Listing01.11.ChangingTheValueOfAVariable.cs" />
+    <Compile Include="Listing01.12.AssignmentReturningAValueThatCanBeassignedAgain.cs" />
+    <Compile Include="Listing01.13.UsingSystemConsoleReadLine.cs" />
+    <Compile Include="Listing01.14.UsingSystemConsoleRead.cs" />
+    <Compile Include="Listing01.15.FormattingUsingSystemConsoleWriteLine.cs" />
+    <Compile Include="Listing01.16.SwappingTheIndexedPlaceholdersAndCorrespondingVariables.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{ED75EBE9-F011-4A57-B6AA-6AAAF2FB4E5C}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Chapter17</RootNamespace>
+    <AssemblyName>Chapter17</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>AddisonWesley.Michaelis.EssentialCSharp.Shared.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Shared\Program.cs">
+      <Link>Program.cs</Link>
+    </Compile>
+    <Compile Include="Listing17.01.UsingTypeGetPropertiesToObtainAnObjectsPublicProperties.cs" />
+    <Compile Include="Listing17.02.UsingTypeofToCreateASystem.TypeInstance.cs" />
+    <Compile Include="Listing17.03.DynamicallyInvokingAMember.cs" />
+    <Compile Include="Listing17.04.DeclaringTheStackClass.cs" />
+    <Compile Include="Listing17.05.ReflectionWithGenerics.cs" />
+    <Compile Include="Listing17.06.UsingReflectionWithGenericTypes.cs" />
+    <Compile Include="Listing17.07.DecoratingAPropertyWithAnAttribute.cs" />
+    <Compile Include="Listing17.08.DecoratingAPropertyWithMultipleAttributes.cs" />
+    <Compile Include="Listing17.09.SpecifyingAReturnAttribute.cs" />
+    <Compile Include="Listing17.11.DefiningACustomAttribute.cs" />
+    <Compile Include="Listing17.12.RetrievingACustomAttribute.cs" />
+    <Compile Include="Listing17.13.ProvidingAnAttributeConstructor.cs" />
+    <Compile Include="Listing17.14.RetrievingASpecificAttributeAndCheckingItsInitialization.cs" />
+    <Compile Include="Listing17.15.RetrievingCustomAttributeInstances.cs" />
+    <Compile Include="Listing17.16.UpdatingCommandLineHandler.TryParseToHandleAliases.cs" />
+    <Compile Include="Listing17.17.RestrictingTheConstructsAnAttributeCanDecorate.cs" />
+    <Compile Include="Listing17.18.AttributeUsageAttributeRestrictingWhereToApplyAnAttribute.cs" />
+    <Compile Include="Listing17.19.LimitingAnAttributesUsageWithAttributeUsageAttribute.cs" />
+    <Compile Include="Listing17.20.UsingANamedParameter.cs" />
+    <Compile Include="Listing17.21.UsingFlagsAttribute.cs" />
+    <Compile Include="Listing17.22.UsingReflectionWithGenericTypes.cs" />
+    <Compile Include="Listing17.23.UsingObsoleteAttribute.cs" />
+    <Compile Include="Listing17.24.SavingADocumentUsingSystem.SerializableAttribute.cs" />
+    <Compile Include="Listing17.25.ImplementingSystem.Runtime.Serialization.ISerializable.cs" />
+    <Compile Include="Listing17.26.BackwardCompatibilityPriorToThe2.0Framework.cs" />
+    <Compile Include="Listing17.29.DynamicProgrammingUsingReflection.cs" />
+    <Compile Include="Listing17.30.TheCILForAttributesInGeneral.cs" />
+    <Compile Include="Listing17.31.TheCILForAttributesInGeneral.cs" />
+    <Compile Include="Listing17.32.ImplementingACustomDynamicObject.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\enumtest.txt">
+      <Link>enumtest.txt</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{21484FF2-F282-415C-A41D-F3714B2CA289}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Chapter05</RootNamespace>
+    <AssemblyName>Chapter05</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>AddisonWesley.Michaelis.EssentialCSharp.Shared.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\Shared\Program.cs">
+      <Link>Program.cs</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Listing05.02.DeclaringVariablesOfTheClassType.cs" />
+    <Compile Include="Listing05.03.InstantiatingAClass.cs" />
+    <Compile Include="Listing05.04.DeclaringFields.cs" />
+    <Compile Include="Listing05.05.SettingInitialValuesOfFieldsAtDeclarationTime.cs" />
+    <Compile Include="Listing05.07.AccessingFieldsFromWithinTheContainingClass.cs" />
+    <Compile Include="Listing05.09.UsingThisToIdentifyTheFieldsOwnerExplicitly.cs" />
+    <Compile Include="Listing05.10.UsingThisToAvoidAmbiguity.cs" />
+    <Compile Include="Listing05.12.PassingThisInAMethodCall.cs" />
+    <Compile Include="Listing05.13.DataPersistenceToAFile.cs" />
+    <Compile Include="Listing05.15.UsingThePrivateAccessModifier.cs" />
+    <Compile Include="Listing05.16.GettersAndSetters.cs" />
+    <Compile Include="Listing05.19.ProvidingPropertyValidation.cs" />
+    <Compile Include="Listing05.20.DefiningReadOnlyProperties.cs" />
+    <Compile Include="Listing05.21.PlacingAccessModifiersOnSetters.cs" />
+    <Compile Include="Listing05.26.CallingAConstructor.cs" />
+    <Compile Include="Listing05.27.DefaultConstructorNoLongerAvailable.cs" />
+    <Compile Include="Listing05.29.CallingAnObjectInitializer.cs" />
+    <Compile Include="Listing05.30.OverloadingAConstructor.cs" />
+    <Compile Include="Listing05.31.CallingOneConstructorFromAnother.cs" />
+    <Compile Include="Listing05.34.DeclaringAStaticField.cs" />
+    <Compile Include="Listing05.35.AssigningAStaticFieldAtDeclaration.cs" />
+    <Compile Include="Listing05.37.DefiningAStaticMethodOnDirectoryInfo.cs" />
+    <Compile Include="Listing05.38.DeclaringAStaticConstructor.cs" />
+    <Compile Include="Listing05.39.DeclaringAStaticProperty.cs" />
+    <Compile Include="Listing05.42.DeclaringAConstantField.cs" />
+    <Compile Include="Listing05.43.DeclaringAFieldAsReadonly.cs" />
+    <Compile Include="Listing05.45.DefiningAPartialClass.cs" />
+    <Compile Include="Listing05.46.DefiningANestedClassInASeperatePartialClass.cs" />
+    <Compile Include="Listing05.47.DefiningANestedClassInASeperatePartialClass.cs" />
+    <Compile Include="Listing05.44.DefiningANestedClass.cs" />
+    <Compile Include="Listing05.41.StaticCopyMethodForDirectoryInfo.cs" />
+    <Compile Include="Listing05.40.DeclaringAStaticClass.cs" />
+    <Compile Include="Listing05.01.DefiningAClass.cs" />
+    <Compile Include="Listing05.36.AccessingAStaticField.cs" />
+    <Compile Include="Listing05.33.ImplicitLocalVariablesWithAnonymousTypes.cs" />
+    <Compile Include="Listing05.32.ProvidingAnInitializationMethod.cs" />
+    <Compile Include="Listing05.28.CallingAnObjectInitializer.cs" />
+    <Compile Include="Listing05.25.DefiningAConstructor.cs" />
+    <Compile Include="Listing05.22.DefiningProperties.cs" />
+    <Compile Include="Listing05.18.AutomaticallyImplementedProperties.cs" />
+    <Compile Include="Listing05.17.DefiningProperties.cs" />
+    <Compile Include="Listing05.14.DataRetrievalFromAFile.cs" />
+    <Compile Include="Listing05.11.UsingThisWithAMethod.cs" />
+    <Compile Include="Listing05.08.AccessingFieldsFromOutsideTheContainingClass.cs" />
+    <Compile Include="Listing05.06.AccessingFields.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

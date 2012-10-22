@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectRename", "ProjectRename\ProjectRename.csproj", "{ABAAA478-1395-4B03-8C20-4D5C7452BC19}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectRename.Test", "ProjectRename.Test\ProjectRename.Test.csproj", "{416F6151-154D-46A9-BF3E-4F89653499E9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7238822A-4B89-47DD-81A5-15572ABC0CBA}"
+	ProjectSection(SolutionItems) = preProject
+		LocalTestRun.testrunconfig = LocalTestRun.testrunconfig
+		ProjectRename.vsmdi = ProjectRename.vsmdi
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://tfs.michaelis.net:8080/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ProjectRename.Test\\ProjectRename.Test.csproj
+		SccProjectName1 = ProjectRename.Test
+		SccLocalPath1 = ProjectRename.Test
+		SccProjectUniqueName2 = ProjectRename\\ProjectRename.csproj
+		SccProjectName2 = ProjectRename
+		SccLocalPath2 = ProjectRename
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = ProjectRename.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ABAAA478-1395-4B03-8C20-4D5C7452BC19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABAAA478-1395-4B03-8C20-4D5C7452BC19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABAAA478-1395-4B03-8C20-4D5C7452BC19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABAAA478-1395-4B03-8C20-4D5C7452BC19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{416F6151-154D-46A9-BF3E-4F89653499E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{416F6151-154D-46A9-BF3E-4F89653499E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{416F6151-154D-46A9-BF3E-4F89653499E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{416F6151-154D-46A9-BF3E-4F89653499E9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

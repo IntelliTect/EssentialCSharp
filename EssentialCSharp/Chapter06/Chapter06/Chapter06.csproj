@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DB4ADEF6-D7CE-473E-889E-7B7820D9F042}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Chapter06</RootNamespace>
+    <AssemblyName>Chapter06</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>AddisonWesley.Michaelis.EssentialCSharp.Shared.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\Shared\Program.cs">
+      <Link>Program.cs</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Listing06.23.DataConversionUsingTheAsOperator.cs" />
+    <Compile Include="Listing06.22.IsOperatorDeterminingTheUnderlyingType.cs" />
+    <Compile Include="Listing06.21.System.ObjectDerivationImpliedWhenNoDerivationIsSpecifiedExplicitly.cs" />
+    <Compile Include="Listing06.20.UsingPolymorphismToListThePdaItems.cs" />
+    <Compile Include="Listing06.19.DefiningAbstractMembers.cs" />
+    <Compile Include="Listing06.18.DefiningAnAbstractClass.cs" />
+    <Compile Include="Listing06.17.SpecifyingWhichBaseConstructorToInvoke.cs" />
+    <Compile Include="Listing06.16.AccessingABaseMember.cs" />
+    <Compile Include="Listing06.15.SealingMembers.cs" />
+    <Compile Include="Listing06.14.OverrideVersusNewModifier.cs" />
+    <Compile Include="Listing06.13.ForcingTheDesirableRunSemantics.cs" />
+    <Compile Include="Listing06.12.CarelesslyRelyingOnAVirtualMethodImplementation.cs" />
+    <Compile Include="Listing06.11.RuntimeCallingTheMostDerivedImplementationOfAVirtualMethod.cs" />
+    <Compile Include="Listing06.10.OverridingAProperty.cs" />
+    <Compile Include="Listing06.09.PreventingDerivationWithSealedClasses.cs" />
+    <Compile Include="Listing06.08.WorkingAroundSingleInheritanceUsingAggregation.cs" />
+    <Compile Include="Listing06.07.ProtectedMembersAreAccessibleOnlyFromDerivedClasses.cs" />
+    <Compile Include="Listing06.06.PrivateMembersAreNotInherited.cs" />
+    <Compile Include="Listing06.05.DefiningCastOperators.cs" />
+    <Compile Include="Listing06.04.ImplicitBaseTypeCasting.cs" />
+    <Compile Include="Listing06.03.ClassesDerivingFromEachOtherToFormAnInheritanceChain.cs" />
+    <Compile Include="Listing06.02.UsingInheritedMethods.cs" />
+    <Compile Include="Listing06.01.RefactoringIntoABaseClass.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

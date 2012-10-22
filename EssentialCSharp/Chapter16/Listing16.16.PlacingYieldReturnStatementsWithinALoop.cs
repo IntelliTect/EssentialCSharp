@@ -1,0 +1,59 @@
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_16
+{
+    using System.Collections.Generic;
+    using Listing16_14;
+
+    public class BinaryTree<T> :
+      IEnumerable<T>
+    {
+        public BinaryTree(T value)
+        {
+            Value = value;
+        }
+
+        #region IEnumerable<T>
+        public IEnumerator<T> GetEnumerator()
+        {
+            // Return the item at this node.
+            yield return Value;
+
+            // Iterate through each of the elements in the pair.
+            foreach (BinaryTree<T> tree in SubItems)
+            {
+                if (tree != null)
+                {
+                    // Since each element in the pair is a tree,
+                    // traverse the tree and yield each
+                    // element.
+                    foreach (T item in tree)
+                    {
+                        yield return item;
+                    }
+                }
+            }
+        }
+        #endregion IEnumerable<T>
+
+        #region IEnumerable Members
+        System.Collections.IEnumerator
+            System.Collections.IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+        #endregion
+
+        public T Value
+        {
+            get { return _value; }
+            set { _value = value; }
+        }
+        private T _value;
+
+        public Pair<BinaryTree<T>> SubItems
+        {
+            get { return _subItems; }
+            set { _subItems = value; }
+        }
+        private Pair<BinaryTree<T>> _subItems;
+    }
+}

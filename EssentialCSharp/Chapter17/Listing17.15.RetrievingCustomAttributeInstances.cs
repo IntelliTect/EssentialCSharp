@@ -1,0 +1,44 @@
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_15
+{
+    using System;
+    using System.Reflection;
+    using System.Collections.Generic;
+
+    public class CommandLineSwitchAliasAttribute : Attribute
+    {
+        public CommandLineSwitchAliasAttribute(string alias)
+        {
+            Alias = alias;
+        }
+
+        public string Alias
+        {
+            get { return _Alias; }
+            set { _Alias = value; }
+        }
+        private string _Alias;
+
+        public static Dictionary<string, PropertyInfo> GetSwitches(
+            object commandLine)
+        {
+            PropertyInfo[] properties = null;
+            Dictionary<string, PropertyInfo> options =
+                new Dictionary<string, PropertyInfo>();
+
+            properties = commandLine.GetType().GetProperties(
+                BindingFlags.Public | BindingFlags.NonPublic |
+                BindingFlags.Instance);
+            foreach (PropertyInfo property in properties)
+            {
+                options.Add(property.Name.ToLower(), property);
+                foreach (CommandLineSwitchAliasAttribute attribute in
+                    property.GetCustomAttributes(
+                    typeof(CommandLineSwitchAliasAttribute), false))
+                {
+                    options.Add(attribute.Alias.ToLower(), property);
+                }
+            }
+            return options;
+        }
+    }
+}

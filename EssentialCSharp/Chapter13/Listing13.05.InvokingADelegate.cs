@@ -1,0 +1,34 @@
+﻿using System;
+
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_05
+{
+    public class Thermostat
+    {
+        // Define the event publisher
+        public Action<float> OnTemperatureChange { get; set; }
+
+        public float CurrentTemperature
+        {
+            get { return _CurrentTemperature; }
+            set
+            {
+                if (value != CurrentTemperature)
+                {
+                    _CurrentTemperature = value;
+                    // If there are any subscribers
+                    // then notify them of changes in 
+                    // temperature
+                    Action<float> localOnChange =
+                        OnTemperatureChange;
+                    if (localOnChange != null)
+                    {
+                        // Call subscribers
+                        localOnChange(value);
+                    }
+                }
+            }
+        }
+
+        private float _CurrentTemperature;
+     }
+}
