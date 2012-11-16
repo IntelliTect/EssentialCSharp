@@ -1,7 +1,7 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_15
-{ 
-    public class Program
-    { 
+{
+    public class HeyYou
+    {
         public static void Main()
         {
             string firstName;
@@ -15,7 +15,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_15
             System.Console.Write("Enter your last name: ");
             lastName = System.Console.ReadLine();
 
-            System.Console.WriteLine("Your full name is {0} {1}.", firstName, lastName);
+            System.Console.WriteLine(
+                "Your full name is {0} {1}.", firstName, lastName);
         }
     }
 }

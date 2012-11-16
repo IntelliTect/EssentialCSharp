@@ -1,7 +1,7 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_03
-{ 
-    public class Program//Class definition
-    { 
+{
+    public class HelloWorld//Class definition
+    {
         public static void Main()//Method declaration
         {
             System.Console.WriteLine("Hello, My name is Inigo Montoya");//This is the statement

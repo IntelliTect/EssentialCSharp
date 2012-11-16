@@ -1,7 +1,7 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_14
-{ 
-    public class Program
-    { 
+{
+    public class HelloWorld
+    {
         public static void Main()
         {
             int readValue;
