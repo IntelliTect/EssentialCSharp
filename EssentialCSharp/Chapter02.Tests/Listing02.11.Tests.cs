@@ -8,7 +8,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_11.Tests
         [TestMethod]
         public void Main_WriteDizzyQuote()
         {
-            string view = "\"Truly, you have a dizzyingintellect.\"\n\"Wait 'til I get going!\"\n";
+            string view = "\"Truly, you have a dizzying intellect.\"\n\"Wait 'til I get going!\"\n";
 
             IntelliTect.ConsoleView.Tester.Test(view,
             () =>

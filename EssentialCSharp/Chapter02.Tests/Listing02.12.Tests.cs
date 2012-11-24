@@ -14,7 +14,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_12.Tests
                  /    \
                 /      \
                /________\
-            end";
+end";
 
             IntelliTect.ConsoleView.Tester.Test(view,
             () =>

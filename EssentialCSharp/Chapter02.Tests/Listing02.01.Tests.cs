@@ -15,7 +15,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_01.Tests
 1.618033988749895
 6.023E+23
 42
-ox2A";
+0x2A";
 
             IntelliTect.ConsoleView.Tester.Test(view,
             () =>

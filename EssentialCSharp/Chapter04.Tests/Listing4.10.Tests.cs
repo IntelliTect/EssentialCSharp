@@ -23,8 +23,8 @@ Usage: Downloader.exe <URL> <TargetFileName>";
         [TestMethod]
         public void Main_GoodArgs_DownloadFile()
         {
-            string[] args = { "http://google.com", "\\data\\destination.txt" };
-            
+            string[] args = { "http://google.com", System.Environment.CurrentDirectory + "\\destination.txt" };
+
             Assert.AreEqual(0, Program.Main(args));
         }
     }
