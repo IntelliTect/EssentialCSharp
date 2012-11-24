@@ -15,11 +15,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_39
 
             // Set initial mask to 100....
             ulong mask = 1UL << size - 1;
-            for (int count = 0; count < size; count++)
+            for(int count = 0; count < size; count++)
             {
                 bit = ((mask & value) != 0) ? '1' : '0';
                 System.Console.Write(bit);
                 // Shift mask one location over to the right
+                mask >>= 1;
             }
             System.Console.WriteLine();
         }
