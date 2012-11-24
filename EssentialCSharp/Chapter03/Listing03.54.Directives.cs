@@ -4,11 +4,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_54
     {
         public static void Main()
         {
-            #if LINUX
+#if LINUX
             // ...
-            #elif WINDOWS
+#elif WINDOWS
             // ...
-            #endif
+#endif
         }
     }
 }

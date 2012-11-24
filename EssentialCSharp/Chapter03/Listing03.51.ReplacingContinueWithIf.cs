@@ -6,21 +6,22 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_51
         {
             string email;
             bool insideDomain = false;
+
             System.Console.WriteLine("Enter an email address: ");
             email = System.Console.ReadLine();
 
             System.Console.Write("The email domain is: ");
 
             // Iterate through each letter in the email address.
-            foreach (char letter in email)
+            foreach(char letter in email)
             {
-                if (insideDomain)
+                if(insideDomain)
                 {
                     System.Console.Write(letter);
                 }
                 else
                 {
-                    if (letter == '@')
+                    if(letter == '@')
                     {
                         insideDomain = true;
                     }

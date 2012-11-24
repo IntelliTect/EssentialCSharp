@@ -13,7 +13,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_24
             // return to a double.
             radius = double.Parse(System.Console.ReadLine());
 
-            if (radius >= 0)
+            if(radius >= 0)
             {
                 // Calculate the area of the circle.
                 area = 3.14 * radius * radius;

@@ -19,18 +19,18 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_48
 
             // Determine if there is a winner
             int[] winningMasks = {
-            7, 56, 448, 73, 146, 292, 84, 273 };
+                7, 56, 448, 73, 146, 292, 84, 273 };
 
             // Iterate through each winning mask to determine
             // if there is a winner.
-            foreach (int mask in winningMasks)
+            foreach(int mask in winningMasks)
             {
-                if ((mask & playerPositions[0]) == mask)
+                if((mask & playerPositions[0]) == mask)
                 {
                     winner = 1;
                     break;
                 }
-                else if ((mask & playerPositions[1]) == mask)
+                else if((mask & playerPositions[1]) == mask)
                 {
                     winner = 2;
                     break;

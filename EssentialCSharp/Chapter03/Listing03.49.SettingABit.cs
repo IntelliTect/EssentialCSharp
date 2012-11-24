@@ -1,14 +1,14 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_49
-{ 
+{
     public class Program
-    { 
+    {
         public static void Main()
         {
             string input = "";
 
             int shifter;  // The number of places to shift 
-            // over in order to set a bit.
-            int position;  // The bit which is to be set.
+                          // over in order to set a bit.
+            int position; // The bit which is to be set.
 
             // int.Parse() converts "input" to an integer.
             // "int.Parse(input) – 1" because arrays 

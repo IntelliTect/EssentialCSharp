@@ -8,12 +8,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_47
         }
 
         static bool ValidateAndMove(
-        int[] playerPositions, int currentPlayer, string input)
+            int[] playerPositions, int currentPlayer, string input)
         {
             bool valid = false;
 
             // Check the current player's input.
-            switch (input)
+            switch(input)
             {
                 case "1":
                 case "2":

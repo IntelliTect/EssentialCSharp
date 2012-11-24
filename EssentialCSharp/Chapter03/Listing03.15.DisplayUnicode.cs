@@ -1,7 +1,7 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_15
-{ 
+{
     public class Program
-    { 
+    {
         public static void Main()
         {
             char current;
@@ -19,7 +19,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_15
                 // Proceed to the previous letter in the alphabet;
                 current--;
             }
-            while (current >= 'a');
+            while(current >= 'a');
         }
     }
 }

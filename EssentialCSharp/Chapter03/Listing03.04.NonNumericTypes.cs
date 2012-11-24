@@ -11,5 +11,4 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_04
                 + windSpeed + " mile/hour wind.");
         }
     }
-
 }

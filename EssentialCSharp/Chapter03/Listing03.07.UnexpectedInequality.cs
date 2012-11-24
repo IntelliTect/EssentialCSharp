@@ -1,8 +1,9 @@
 using System.Diagnostics;
+
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_07
-{ 
+{
     public class Program
-    { 
+    {
         public static void Main()
         {
             decimal decimalNumber = 4.2M;
@@ -11,12 +12,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_07
             float floatNumber = 0.1F * 42F;
 
             Trace.Assert(decimalNumber != (decimal)doubleNumber1);
-            // Displays: 4.2 != 4.20000006258488 
+            // Displays: 4.2 != 4.20000006258488
             System.Console.WriteLine(
                 "{0} != {1}", decimalNumber, (decimal)doubleNumber1);
 
             Trace.Assert((double)decimalNumber != doubleNumber1);
-            // Displays: 4.2 != 4.20000006258488 
+            // Displays: 4.2 != 4.20000006258488
             System.Console.WriteLine(
                 "{0} != {1}", (double)decimalNumber, doubleNumber1);
 
@@ -27,7 +28,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_07
                 (float)decimalNumber, floatNumber);
 
             Trace.Assert(doubleNumber1 != (double)floatNumber);
-            // Displays: 4.20000006258488 != 4.20000028610229 
+            // Displays: 4.20000006258488 != 4.20000028610229
             System.Console.WriteLine(
                 "{0} != {1}", doubleNumber1, (double)floatNumber);
 

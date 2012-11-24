@@ -15,17 +15,17 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_21
             // return to an int data type.
             input = int.Parse(System.Console.ReadLine());
 
-            if (input <= 0)
+            if(input <= 0)
                 // Input is less than or equal to 0.
                 System.Console.WriteLine("Exiting...");
             else
-                if (input < 9)
+                if(input < 9)
                     // Input is less than 9.
                     System.Console.WriteLine(
                         "Tic-tac-toe has more than {0}" +
                         " maximum turns.", input);
                 else
-                    if (input > 9)
+                    if(input > 9)
                         // Input is greater than 9.
                         System.Console.WriteLine(
                             "Tic-tac-toe has fewer than {0}" +

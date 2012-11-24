@@ -1,5 +1,5 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_52
-{ 
+{
     public class Program
     {
         public static void Main(string[] args)
@@ -8,9 +8,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_52
             bool isFiltered = false;
             bool isRecursive = false;
 
-            foreach (string option in args)
+            foreach(string option in args)
             {
-                switch (option)
+                switch(option)
                 {
                     case "/out":
                         isOutputSet = true;
@@ -21,13 +21,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_52
                         isRecursive = false;
                         goto default;
                     default:
-                        if (isRecursive)
+                        if(isRecursive)
                         {
                             // Recurse down the hierarchy
                             // ...
-
                         }
-                        else if (isFiltered)
+                        else if(isFiltered)
                         {
                             // Add option to list of filters.
                             // ...
@@ -38,6 +37,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_52
             }
 
             // ...
+
         }
     }
 }

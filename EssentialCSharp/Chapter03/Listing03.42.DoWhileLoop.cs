@@ -13,13 +13,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_42
 
                 // Request a move from the current player.
                 System.Console.Write(
-                  "\nPlayer {0}: Enter move:", currentPlayer);
+                    "\nPlayer {0}: Enter move:", currentPlayer);
                 string input = System.Console.ReadLine();
 
                 // Check the current player's input.
                 // ...
 
-            } while (!valid);
+            } while(!valid);
         }
 
         public static object[] currentPlayer { get; set; }

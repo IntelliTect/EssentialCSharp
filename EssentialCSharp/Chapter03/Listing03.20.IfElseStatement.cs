@@ -14,7 +14,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_20
             );
             input = System.Console.ReadLine();
 
-            if (input == "1")
+            if(input == "1")
                 // The user selected to play the computer.
                 System.Console.WriteLine(
                     "Play against computer selected.");
