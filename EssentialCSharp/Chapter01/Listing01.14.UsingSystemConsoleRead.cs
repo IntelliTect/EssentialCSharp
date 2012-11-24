@@ -1,6 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_14
 {
-    public class HelloWorld
+    public class Program
     {
         public static void Main()
         {

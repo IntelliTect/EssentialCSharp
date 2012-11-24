@@ -1,6 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_15
 {
-    public class HeyYou
+    public class Program
     {
         public static void Main()
         {

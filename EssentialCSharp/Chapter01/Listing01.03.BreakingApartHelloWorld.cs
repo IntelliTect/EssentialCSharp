@@ -1,6 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_03
 {
-    public class HelloWorld//Class definition
+    public class Program//Class definition
     {
         public static void Main()//Method declaration
         {
