@@ -1,7 +1,7 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_05
-{ 
+{
     public class Program
-    { 
+    {
         public static void Main()
         {
             //Display the value 42 using a hexadecimal literal.

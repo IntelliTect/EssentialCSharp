@@ -1,7 +1,7 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_19
-{ 
-    class Program
-    { 
+{
+    public class Program
+    {
         public static void Main()
         {
             int? count = null;
@@ -9,7 +9,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_19
             {
                 // ... 
             }
-            while (count == null);
+            while(count == null);
         }
     }
 }

@@ -1,7 +1,7 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_13
-{ 
+{
     public class PalindromeLength
-    { 
+    {
         public static void Main()
         {
             string palindrome;
@@ -10,7 +10,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_13
             palindrome = System.Console.ReadLine();
 
             System.Console.WriteLine(
-                "The palindrome, \"{0}\" is {1} characters.", 
+                "The palindrome, \"{0}\" is {1} characters.",
                 palindrome, palindrome.Length);
         }
     }
