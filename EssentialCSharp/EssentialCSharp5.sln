@@ -18,15 +18,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		enumtest2.txt = enumtest2.txt
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter20", "Chapter20\Chapter20\Chapter20.csproj", "{61D77238-EA7E-4C77-8795-158A57E4978C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter20", "Chapter20\Chapter20.csproj", "{61D77238-EA7E-4C77-8795-158A57E4978C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter05", "Chapter05\Chapter05\Chapter05.csproj", "{21484FF2-F282-415C-A41D-F3714B2CA289}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter05", "Chapter05\Chapter05.csproj", "{21484FF2-F282-415C-A41D-F3714B2CA289}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter06", "Chapter06\Chapter06\Chapter06.csproj", "{DB4ADEF6-D7CE-473E-889E-7B7820D9F042}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter06", "Chapter06\Chapter06.csproj", "{DB4ADEF6-D7CE-473E-889E-7B7820D9F042}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter07", "Chapter07\Chapter07\Chapter07.csproj", "{66EA6FC7-D2F7-4EE3-925C-FA8877646F1B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter07", "Chapter07\Chapter07.csproj", "{66EA6FC7-D2F7-4EE3-925C-FA8877646F1B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter08", "Chapter08\Chapter08\Chapter08.csproj", "{509426A0-967B-4666-9024-803829973CD2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter08", "Chapter08\Chapter08.csproj", "{509426A0-967B-4666-9024-803829973CD2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter09", "Chapter09\Chapter09.csproj", "{211120AC-CCBC-45AB-8EAB-B4446A46B5E6}"
 EndProject

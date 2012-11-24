@@ -121,7 +121,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Chapter07\Chapter07\Chapter07.csproj">
+    <ProjectReference Include="..\Chapter07\Chapter07.csproj">
       <Project>{66EA6FC7-D2F7-4EE3-925C-FA8877646F1B}</Project>
       <Name>Chapter07</Name>
     </ProjectReference>
