@@ -1,8 +1,8 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_41
 {
-    class FibonacciCalculator
+    public class FibonacciCalculator
     {
-        static void Main()
+        public static void Main()
         {
             decimal current;
             decimal previous;
@@ -20,7 +20,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_41
 
             // While the current Fibonacci number in the series is
             // less than the value input by the user.
-            while (current <= input)
+            while(current <= input)
             {
                 temp = current;
                 current = previous + current;

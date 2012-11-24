@@ -1,22 +1,23 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_50
 {
-    class EmailDomain
+    public class EmailDomain
     {
-        static void Main()
+        public static void Main()
         {
             string email;
             bool insideDomain = false;
+
             System.Console.WriteLine("Enter an email address: ");
             email = System.Console.ReadLine();
 
             System.Console.Write("The email domain is: ");
 
             // Iterate through each letter in the email address.
-            foreach (char letter in email)
+            foreach(char letter in email)
             {
-                if (!insideDomain)
+                if(!insideDomain)
                 {
-                    if (letter == '@')
+                    if(letter == '@')
                     {
                         insideDomain = true;
                     }
