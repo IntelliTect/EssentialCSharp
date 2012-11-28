@@ -1,6 +1,5 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_22
 {
-
     public class ExceptionHandling
     {
         public static int Main()
@@ -23,14 +22,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_22
                     "Hi {0}!  You are {1} months old.",
                     firstName, age * 12);
             }
-            catch (System.FormatException exception)
+            catch(System.FormatException exception)
             {
                 System.Console.WriteLine(
                     "The age entered ,{0}, is not valid.",
                     ageText);
                 result = 1;
             }
-            catch (System.Exception exception)
+            catch(System.Exception exception)
             {
                 System.Console.WriteLine(
                     "Unexpected error:  {0}", exception.Message);

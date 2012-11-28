@@ -2,9 +2,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_18
 {
     using System.IO;
 
-    class Program
+    public class Program
     {
-        static void Main()
+        public static void Main()
         {
             DisplayGreeting(
                 firstName: "Inigo", lastName: "Montoya");
@@ -13,9 +13,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_18
         public static void DisplayGreeting(
             string firstName,
             string middleName = default(string),
-                  string lastName = default(string))
+            string lastName = default(string))
         {
-           // ...
+            // ...
         }
     }
 }

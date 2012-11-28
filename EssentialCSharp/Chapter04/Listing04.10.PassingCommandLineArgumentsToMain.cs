@@ -11,7 +11,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_10
             int result;
             string targetFileName;
             string url;
-            switch (args.Length)
+
+            switch(args.Length)
             {
                 default:
                     // Exactly two arguments must be specified; give an error.
@@ -27,7 +28,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_10
                     break;
             }
 
-            if (targetFileName != null && url != null)
+            if(targetFileName != null && url != null)
             {
                 WebClient webClient = new WebClient();
                 webClient.DownloadFile(url, targetFileName);
@@ -39,6 +40,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_10
                     "Usage: Downloader.exe <URL> <TargetFileName>");
                 result = 1;
             }
+
             return result;
         }
     }

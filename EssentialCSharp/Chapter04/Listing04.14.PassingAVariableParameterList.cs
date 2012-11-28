@@ -30,8 +30,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_14
             // Call Combine() with an array
             fullName = Combine(
                 new string[] {
-              "C:\\", "Data",
-              "HomeDir", "index.html"});
+                    "C:\\", "Data",
+                    "HomeDir", "index.html" });
             Console.WriteLine(fullName);
             // ...
         }
@@ -39,7 +39,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_14
         static string Combine(params string[] paths)
         {
             string result = string.Empty;
-            foreach (string path in paths)
+            foreach(string path in paths)
             {
                 result = System.IO.Path.Combine(result, path);
             }

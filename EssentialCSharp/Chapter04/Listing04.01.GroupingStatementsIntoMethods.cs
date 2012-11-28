@@ -1,11 +1,12 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_01
 {
-    class LineCount
+    public class LineCount
     {
-        static void Main()
+        public static void Main()
         {
             int lineCount;
             string files;
+
             DisplayHelpText();
             files = GetFiles();
             lineCount = CountLines(files);

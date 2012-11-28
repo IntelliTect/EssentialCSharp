@@ -7,9 +7,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_09
     // avoid code ambiguity with System.Threading.Timer
     using Timer = System.Timers.Timer;
 
-    class HelloWorld
+    public class HelloWorld
     {
-        static void Main()
+        public static void Main()
         {
             Timer timer;
 

@@ -4,9 +4,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_08
     using System.Threading;
     using CountDownTimer = System.Timers.Timer;
 
-    class HelloWorld
+    public class HelloWorld
     {
-        static void Main()
+        public static void Main()
         {
             CountDownTimer timer;
 

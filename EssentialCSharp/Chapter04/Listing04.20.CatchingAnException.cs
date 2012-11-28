@@ -24,14 +24,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_20
                     "Hi {0}!  You are {1} months old.",
                     firstName, age * 12);
             }
-            catch (FormatException)
+            catch(FormatException)
             {
                 Console.WriteLine(
                     "The age entered, {0}, is not valid.",
                     ageText);
                 result = 1;
             }
-            catch (Exception exception)
+            catch(Exception exception)
             {
                 Console.WriteLine(
                     "Unexpected error:  {0}", exception.Message);

@@ -10,6 +10,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_21
             string ageText;
             int age;
             int result = 0;
+
             Console.Write("Enter your first name: ");
             firstName = Console.ReadLine();
 
