@@ -8,7 +8,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_13
         {
             char button;
 
-            if (args.Length == 0)
+            if(args.Length == 0)
             {
                 Console.WriteLine(
                     "ConvertToPhoneNumber.exe <phrase>");
@@ -16,11 +16,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_13
                     "'_' indicates no standard phone button");
                 return 1;
             }
-            foreach (string word in args)
+            foreach(string word in args)
             {
-                foreach (char character in word)
+                foreach(char character in word)
                 {
-                    if (TryGetPhoneButton(character, out button))
+                    if(TryGetPhoneButton(character, out button))
                     {
                         Console.Write(button);
                     }
@@ -37,7 +37,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_13
         static bool TryGetPhoneButton(char character, out char button)
         {
             bool success = true;
-            switch (char.ToLower(character))
+            switch(char.ToLower(character))
             {
                 case '1':
                     button = '1';
@@ -64,7 +64,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_13
                     button = '8';
                     break;
                 case '9':
-                    button = '0';
+                    button = '9';
                     break;
                 case '0':
                     button = '0';
@@ -98,7 +98,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_13
                 case 'p':
                 case 'q':
                 case 'r':
-                case 's':            
+                case 's':
                     button = '7';
                     break;
                 case 't':

@@ -8,12 +8,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_17
         {
             int totalLineCount;
 
-            if (args.Length > 1)
+            if(args.Length > 1)
             {
                 totalLineCount =
                     DirectoryCountLines(args[0], args[1]);
             }
-            if (args.Length > 0)
+            else if(args.Length > 0)
             {
                 totalLineCount = DirectoryCountLines(args[0]);
             }
@@ -41,13 +41,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_17
             string directory, string extension = "*.cs")
         {
             int lineCount = 0;
-            foreach (string file in
+            foreach(string file in
                 Directory.GetFiles(directory, extension))
             {
                 lineCount += CountLines(file);
             }
 
-            foreach (string subdirectory in
+            foreach(string subdirectory in
                 Directory.GetDirectories(directory))
             {
                 lineCount += DirectoryCountLines(subdirectory);

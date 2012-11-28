@@ -12,21 +12,26 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_24
                 Console.WriteLine("Throw exception");
                 throw new Exception("Arbitrary exception");
                 Console.WriteLine("End executing");
-
             }
-            catch (FormatException exception)
+            catch(FormatException exception)
             {
-
+                Console.WriteLine(
+                    "A FormateException was thrown");
             }
-            catch (Exception exception)
+            catch(Exception exception)
             {
                 Console.WriteLine(
                     "Rethrowing unexpected error:  {0}",
                     exception.Message);
                 throw;
             }
+            catch
+            {
+                Console.WriteLine("Unexpected error!");
+            }
 
-            Console.WriteLine("Shutting down...");
+            Console.WriteLine(
+                "Shutting down...");
         }
     }
 }

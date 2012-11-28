@@ -8,12 +8,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_16
         {
             int totalLineCount;
 
-            if (args.Length > 1)
+            if(args.Length > 1)
             {
                 totalLineCount =
                     DirectoryCountLines(args[0], args[1]);
             }
-            if (args.Length > 0)
+            else if(args.Length > 0)
             {
                 totalLineCount = DirectoryCountLines(args[0]);
             }
@@ -40,13 +40,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_16
             string directory, string extension)
         {
             int lineCount = 0;
-            foreach (string file in
+            foreach(string file in
                 Directory.GetFiles(directory, extension))
             {
                 lineCount += CountLines(file);
             }
 
-            foreach (string subdirectory in
+            foreach(string subdirectory in
                 Directory.GetDirectories(directory))
             {
                 lineCount += DirectoryCountLines(subdirectory);
@@ -63,9 +63,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_16
                 new FileStream(file, FileMode.Open);
             StreamReader reader = new StreamReader(stream);
             line = reader.ReadLine();
-            while (line != null)
+            while(line != null)
             {
-                if (line.Trim() != "")
+                if(line.Trim() != "")
                 {
                     lineCount++;
                 }

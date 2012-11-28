@@ -13,7 +13,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_19
             Console.WriteLine("Hey you!");
 
             Console.Write("Enter your first name: ");
-            firstName = System.Console.ReadLine();
+            firstName = Console.ReadLine();
 
             Console.Write("Enter your age: ");
             ageText = Console.ReadLine();
