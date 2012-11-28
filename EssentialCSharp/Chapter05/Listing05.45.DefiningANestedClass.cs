@@ -1,4 +1,4 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_44
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_45
 {
     using System;
 
@@ -9,11 +9,11 @@
         {
             public CommandLine(string[] arguments)
             {
-                for (int argumentCounter = 0;
+                for(int argumentCounter = 0;
                     argumentCounter < arguments.Length;
                     argumentCounter++)
                 {
-                    switch (argumentCounter)
+                    switch(argumentCounter)
                     {
                         case 0:
                             Action = arguments[0].ToLower();
@@ -40,7 +40,7 @@
         {
             CommandLine commandLine = new CommandLine(args);
 
-            switch (commandLine.Action)
+            switch(commandLine.Action)
             {
                 case "new":
                     // Create a new employee
@@ -56,8 +56,8 @@
                     break;
                 default:
                     Console.WriteLine(
-                        "Employee.exe " +
-                 "new|update|delete <id> [firstname] [lastname]");
+                        "Employee.exe new|update|delete " +
+                        "<id> [firstname] [lastname]");
                     break;
             }
         }

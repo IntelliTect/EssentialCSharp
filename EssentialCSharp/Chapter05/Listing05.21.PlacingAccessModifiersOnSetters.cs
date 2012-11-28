@@ -12,6 +12,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_21
             //employee1.Id = "490";                     //will not compile if you uncomment this line
         }
     }
+
     class Employee
     {
         public void Initialize(int id)
@@ -36,6 +37,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_21
             }
         }
         private string _Id;
-
     }
 }

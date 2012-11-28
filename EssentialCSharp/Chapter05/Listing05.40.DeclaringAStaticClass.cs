@@ -6,7 +6,7 @@
     {
         public static void Main()
         {
-            System.Console.WriteLine("No output in this example");            
+            System.Console.WriteLine("No output in this example");
         }
     }
 
@@ -16,7 +16,7 @@
         static int Max(params int[] numbers)
         {
             // Check that there is a least one item in numbers.
-            if (numbers.Length == 0)
+            if(numbers.Length == 0)
             {
                 throw new ArgumentException(
                     "numbers cannot be empty");
@@ -24,9 +24,9 @@
 
             int result;
             result = numbers[0];
-            foreach (int number in numbers)
+            foreach(int number in numbers)
             {
-                if (number > result)
+                if(number > result)
                 {
                     result = number;
                 }
@@ -38,7 +38,7 @@
         static int Min(params int[] numbers)
         {
             // Check that there is a least one item in numbers.
-            if (numbers.Length == 0)
+            if(numbers.Length == 0)
             {
                 throw new ArgumentException(
                     "numbers cannot be empty");
@@ -46,9 +46,9 @@
 
             int result;
             result = numbers[0];
-            foreach (int number in numbers)
+            foreach(int number in numbers)
             {
-                if (number < result)
+                if(number < result)
                 {
                     result = number;
                 }

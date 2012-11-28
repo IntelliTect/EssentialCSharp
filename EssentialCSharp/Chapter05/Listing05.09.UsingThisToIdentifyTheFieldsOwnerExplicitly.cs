@@ -11,7 +11,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_09
             return FirstName + " " + LastName;
         }
 
-        public void SetName(string newFirstName, string newLastName)
+        public void SetName(
+            string newFirstName, string newLastName)
         {
             this.FirstName = newFirstName;
             this.LastName = newLastName;

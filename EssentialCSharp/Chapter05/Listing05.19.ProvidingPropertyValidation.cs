@@ -24,23 +24,25 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_19
             set
             {
                 // Validate LastName assignment
-                if (value == null)
+                if(value == null)
                 {
                     // Report error
-                    throw new ArgumentNullException();
+                    throw new ArgumentNullException("value");
                 }
                 else
                 {
                     // Remove any whitespace around
                     // the new last name.
                     value = value.Trim();
-                    if (value == "")
+                    if(value == "")
                     {
                         throw new ArgumentException(
-                            "LastName cannot be blank.");
+                            "LastName cannot be blank.", "value");
                     }
                     else
+                    {
                         _LastName = value;
+                    }
                 }
             }
         }
@@ -56,23 +58,25 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_19
             set
             {
                 // Validate FirstName assignment
-                if (value == null)
+                if(value == null)
                 {
                     // Report error
-                    throw new ArgumentNullException();
+                    throw new ArgumentNullException("value");
                 }
                 else
                 {
                     // Remove any whitespace around
                     // the new last name.
                     value = value.Trim();
-                    if (value == "")
+                    if(value == "")
                     {
                         throw new ArgumentException(
-                            "FirstName cannot be blank.");
+                            "FirstName cannot be blank.", "value");
                     }
                     else
+                    {
                         _FirstName = value;
+                    }
                 }
             }
         }

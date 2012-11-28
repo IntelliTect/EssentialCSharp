@@ -17,7 +17,7 @@
         {
             int id;
             // Generate an employee ID...
-            id = 0;// id needs to be initialized for this example
+            id = 0; // id needs to be initialized for this example
             // ...
             Initialize(id, firstName, lastName);
         }
@@ -70,7 +70,7 @@
                 // first and last names.
                 string[] names;
                 names = value.Split(new char[] { ' ' });
-                if (names.Length == 2)
+                if(names.Length == 2)
                 {
                     FirstName = names[0];
                     LastName = names[1];

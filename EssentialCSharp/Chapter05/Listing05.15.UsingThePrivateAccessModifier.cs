@@ -29,7 +29,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_15
 
         public bool Logon(string password)
         {
-            if (Password == password)
+            if(Password == password)
             {
                 IsAuthenticated = true;
             }

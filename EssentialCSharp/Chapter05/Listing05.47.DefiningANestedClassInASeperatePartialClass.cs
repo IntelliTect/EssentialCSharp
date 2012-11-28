@@ -1,70 +1,38 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_47
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_47
 {
     using System;
-    // File: Person.Designer.cs
-    public partial class Person
+
+    // File: Program.cs
+    partial class Program
     {
-        #region Extensibility Method Definitions
-        partial void OnLastNameChanging(string value);
-        partial void OnFirstNameChanging(string value);
-        #endregion
-
-        // ...
-        public System.Guid PersonId{ get; set;}
-        private System.Guid _PersonId;
-
-        // ...
-        public string LastName
+        static void Main(string[] args)
         {
-            get
-            {
-                return _LastName;
-            }
-            set
-            {
-                if ((_LastName != value))
-                {
-                    OnLastNameChanging(value);
-                    _LastName = value;
-                }
-            }
-        }
-        private string _LastName;
+            CommandLine commandLine = new CommandLine(args);
 
-        // ...
-        public string FirstName
-        {
-            get
+            switch(commandLine.Action)
             {
-                return _FirstName;
-            }
-            set
-            {
-                if ((_FirstName != value))
-                {
-                    OnFirstNameChanging(value);
-                    _FirstName = value;
-                }
-            }
-        }
-        private string _FirstName;
-
-    }
-    // File: Person.cs
-    partial class Person
-    {
-        partial void OnLastNameChanging(string value)
-        {
-            if (value == null)
-            {
-                throw new ArgumentNullException("LastName");
-            }
-            if (value.Trim().Length == 0)
-            {
-                throw new ArgumentException(
-                    "LastName cannot be empty.");
+                // ...
             }
         }
     }
 
+    // File: Program+CommandLine.cs
+    partial class Program
+    {
+        // Define a nested class for processing the command line.
+        private class CommandLine
+        {
+            public CommandLine(string[] args)
+            {
+                //not implemented
+            }
+
+            // ...
+            public int Action
+            {
+                get { throw new NotImplementedException(); }
+                set { throw new NotImplementedException(); }
+            }
+        }
+    }
 }

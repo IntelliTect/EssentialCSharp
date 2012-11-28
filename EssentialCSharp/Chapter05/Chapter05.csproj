@@ -94,10 +94,11 @@
     <Compile Include="Listing05.39.DeclaringAStaticProperty.cs" />
     <Compile Include="Listing05.42.DeclaringAConstantField.cs" />
     <Compile Include="Listing05.43.DeclaringAFieldAsReadonly.cs" />
-    <Compile Include="Listing05.45.DefiningAPartialClass.cs" />
-    <Compile Include="Listing05.46.DefiningANestedClassInASeperatePartialClass.cs" />
+    <Compile Include="Listing05.44.DeclaringAReadonlyFieldOfATypeWithNoLiteralValues.cs" />
+    <Compile Include="Listing05.45.DefiningANestedClass.cs" />
+    <Compile Include="Listing05.46.DefiningAPartialClass.cs" />
     <Compile Include="Listing05.47.DefiningANestedClassInASeperatePartialClass.cs" />
-    <Compile Include="Listing05.44.DefiningANestedClass.cs" />
+    <Compile Include="Listing05.48.DefiningANestedClassInASeperatePartialClass.cs" />
     <Compile Include="Listing05.41.StaticCopyMethodForDirectoryInfo.cs" />
     <Compile Include="Listing05.40.DeclaringAStaticClass.cs" />
     <Compile Include="Listing05.01.DefiningAClass.cs" />

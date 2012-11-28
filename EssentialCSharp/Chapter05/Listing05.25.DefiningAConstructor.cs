@@ -47,7 +47,7 @@
                 // first and last names.
                 string[] names;
                 names = value.Split(new char[] { ' ' });
-                if (names.Length == 2)
+                if(names.Length == 2)
                 {
                     FirstName = names[0];
                     LastName = names[1];

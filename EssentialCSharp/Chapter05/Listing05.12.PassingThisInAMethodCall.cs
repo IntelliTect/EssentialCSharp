@@ -11,6 +11,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_12
             DataStorage.Store(this);
         }
     }
+
     class DataStorage
     {
         // Save an employee object to a file 

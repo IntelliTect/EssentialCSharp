@@ -8,8 +8,8 @@
         public static void Main()
         {
             DirectoryInfo directory = new DirectoryInfo(".\\Source");
-            directory.MoveTo(".\\somedirectory");
-            directory.CopyTo(".\\somedirectory2",SearchOption.TopDirectoryOnly,"pattern");//Extension method. Is Defined below but appears to be a member of the DirectoryInfo object, directory, defined aboves       
+            directory.CopyTo(".\\Target",
+                SearchOption.TopDirectoryOnly, "*");//Extension method. Is Defined below but appears to be a member of the DirectoryInfo object, directory, defined aboves       
         }
     }
     public static class DirectoryInfoExtension
@@ -18,18 +18,18 @@
             this DirectoryInfo sourceDirectory, string target,
             SearchOption option, string searchPattern)
         {
-            if (target[target.Length - 1] != Path.DirectorySeparatorChar)
+            if(target[target.Length - 1] != Path.DirectorySeparatorChar)
             {
                 target += Path.DirectorySeparatorChar;
             }
-            if (!Directory.Exists(target))
+            if(!Directory.Exists(target))
             {
                 Directory.CreateDirectory(target);
             }
 
-            for (int i = 0; i < searchPattern.Length; i++)
+            for(int i = 0; i < searchPattern.Length; i++)
             {
-                foreach (string file in
+                foreach(string file in
                     Directory.GetFiles(
                         sourceDirectory.FullName, searchPattern))
                 {
@@ -39,9 +39,9 @@
             }
 
             //Copy SubDirectories (recursively)
-            if (option == SearchOption.AllDirectories)
+            if(option == SearchOption.AllDirectories)
             {
-                foreach (string element in
+                foreach(string element in
                     Directory.GetDirectories(
                         sourceDirectory.FullName))
                 {
@@ -55,7 +55,7 @@
 
         private static void Copy(string element, string fileName, string searchPattern)
         {
-            Console.WriteLine("Copying "+fileName);
+            Console.WriteLine("Copying " + fileName);
         }
     }
 }

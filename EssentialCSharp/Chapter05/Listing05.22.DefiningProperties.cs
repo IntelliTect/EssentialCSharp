@@ -11,6 +11,8 @@
 
             employee1.Name = "Inigo Montoya";
             System.Console.WriteLine(employee1.Name);
+
+            // ...
         }
     }
 
@@ -58,7 +60,7 @@
                 // first and last names.
                 string[] names;
                 names = value.Split(new char[] { ' ' });
-                if (names.Length == 2)
+                if(names.Length == 2)
                 {
                     FirstName = names[0];
                     LastName = names[1];
@@ -80,6 +82,5 @@
 
         // Manager property
         public Employee Manager { get; set; }
-
     }
 }
