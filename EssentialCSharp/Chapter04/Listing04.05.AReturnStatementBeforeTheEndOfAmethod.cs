@@ -2,11 +2,15 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_05
 {
     public class Program
     {
-        static bool MyMethod()
+        public static void Main()
+        {
+            System.Console.WriteLine(MyMethod());
+        }
+
+        public static bool MyMethod()
         {
             string command = ObtainCommand();
-
-            switch (command)
+            switch(command)
             {
                 case "quit":
                     return false;
