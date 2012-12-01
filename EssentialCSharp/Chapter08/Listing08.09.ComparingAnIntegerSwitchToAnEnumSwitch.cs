@@ -3,7 +3,7 @@
     using Listing08_10;
 
     public class Program
-    {  
+    {
         public void SwitchInt()
         {
             int connectionState;
@@ -11,7 +11,7 @@
             // initialize connectionState for example
             connectionState = 2;
 
-            switch (connectionState)
+            switch(connectionState)
             {
                 case 0:
                     // ...
@@ -37,7 +37,7 @@
             // initialize connectionState for example
             connectionState = ConnectionState.Connecting;
 
-            switch (connectionState)
+            switch(connectionState)
             {
                 case ConnectionState.Connected:
                     // ...

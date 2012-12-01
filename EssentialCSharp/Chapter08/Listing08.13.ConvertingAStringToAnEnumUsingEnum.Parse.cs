@@ -10,7 +10,6 @@
             ThreadPriorityLevel priority = (ThreadPriorityLevel)Enum.Parse(
                 typeof(ThreadPriorityLevel), "Idle");
             Console.WriteLine(priority);
-
         }
     }
 }

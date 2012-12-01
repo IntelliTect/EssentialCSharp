@@ -1,6 +1,7 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_08
 {
     using System;
+
     class Program
     {
         static void Main()
@@ -14,7 +15,6 @@
             string text = ((IFormattable)thing).ToString(
                 "X", null);
             Console.WriteLine(text);
-
         }
     }
 }

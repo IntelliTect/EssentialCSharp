@@ -19,6 +19,7 @@
         Connected,
         Disconnecting
     }
+
     enum ConnectionState2
     {
         Disconnected,

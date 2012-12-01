@@ -21,13 +21,13 @@
                 FileAttributes.Hidden, FileAttributes.ReadOnly,
                 (int)file.Attributes);
 
-            if ((file.Attributes & FileAttributes.Hidden) !=
+            if((file.Attributes & FileAttributes.Hidden) !=
                 FileAttributes.Hidden)
             {
                 throw new Exception("File is not hidden.");
             }
 
-            if ((file.Attributes & FileAttributes.ReadOnly) !=
+            if((file.Attributes & FileAttributes.ReadOnly) !=
                 FileAttributes.ReadOnly)
             {
                 throw new Exception("File is not read-only.");

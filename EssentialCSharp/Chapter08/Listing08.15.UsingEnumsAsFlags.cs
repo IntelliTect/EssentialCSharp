@@ -5,7 +5,6 @@
     [Flags]
     public enum FileAttributes
     {
-
         None = 0,                       // 000000000000000
         ReadOnly = 1 << 0,              // 000000000000001
         Hidden = 1 << 1,                // 000000000000010

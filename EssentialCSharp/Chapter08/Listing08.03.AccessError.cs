@@ -14,10 +14,10 @@
 
         public Angle(int degrees, int minutes, int seconds)
         {
-             _Degrees = degrees;    // Shorthand for this.Hours = hours;
-             _Minutes = minutes; // Shorthand for this.Minutes = ...;
-             _Seconds = seconds; // Shorthand for this.Seconds = ...;
-         }
+            _Degrees = degrees;    // Shorthand for this.Hours = hours;
+            _Minutes = minutes;    // Shorthand for this.Minutes = ...;
+            _Seconds = seconds;    // Shorthand for this.Seconds = ...;
+        }
 
         public int Degrees
         {
