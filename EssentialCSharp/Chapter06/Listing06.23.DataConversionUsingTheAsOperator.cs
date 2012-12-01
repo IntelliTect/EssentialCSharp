@@ -18,7 +18,9 @@
         static void Main()
         {
             object data = new object();
+
             // ...
+
             Print(data as Document);
         }
     }

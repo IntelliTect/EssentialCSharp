@@ -22,7 +22,7 @@
 
             contact = new Contact("Anne Frank");
             contact.Address =
-                "263 Prinsengracht, Amsterdam, Netherlands";
+                "Apt 56B, Whitehaven Mansions, Sandhurst Sq, London";
             pda[2] = contact;
 
             List(pda);

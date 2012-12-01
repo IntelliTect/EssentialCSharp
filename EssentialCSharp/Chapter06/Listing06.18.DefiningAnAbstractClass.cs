@@ -9,6 +9,7 @@
 
         public virtual string Name { get; set; }
     }
+
     public class Program
     {
         public static void Main()

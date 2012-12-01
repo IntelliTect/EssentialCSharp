@@ -24,6 +24,7 @@
             set { _ObjectKey = value; }
         }
         private Guid _ObjectKey;
+
         // ...
     }
 
