@@ -16,16 +16,18 @@
             set;
         }
     }
+
     public class Person : IPerson
     {
         // ...
-        public string FirstName { get; set;}
+        public string FirstName { get; set; }
         public string LastName { get; set; }
     }
 
     public class Contact : PdaItem, IPerson
     {
-        public Contact(string name) : base(name)
+        public Contact(string name)
+            : base(name)
         {
         }
 

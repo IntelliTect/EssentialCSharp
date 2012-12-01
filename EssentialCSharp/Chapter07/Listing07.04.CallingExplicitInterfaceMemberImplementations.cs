@@ -19,14 +19,14 @@
             // First cast to IListable.
             values = ((IListable)contact2).ColumnValues;
             // ...
-
         }
     }
 
     public class Contact : PdaItem, IListable, IComparable
     {
         // ...
-        public Contact(string name) : base(name)
+        public Contact(string name)
+            : base(name)
         {
         }
 
@@ -45,23 +45,23 @@
             int result;
             Contact contact = obj as Contact;
 
-            if (obj == null)
+            if(obj == null)
             {
                 // This instance is greater than obj. 
                 result = 1;
             }
-            else if (obj != typeof(Contact))
+            else if(obj != typeof(Contact))
             {
                 throw new ArgumentException("obj is not a Contact");
             }
-            else if (Contact.ReferenceEquals(this, obj))
+            else if(Contact.ReferenceEquals(this, obj))
             {
                 result = 0;
             }
             else
             {
                 result = LastName.CompareTo(contact.LastName);
-                if (result == 0)
+                if(result == 0)
                 {
                     result = FirstName.CompareTo(contact.FirstName);
                 }

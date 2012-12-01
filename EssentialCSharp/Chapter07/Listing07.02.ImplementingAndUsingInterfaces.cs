@@ -39,14 +39,14 @@
             Console.WriteLine();
 
             Publication[] publications = new Publication[3] {
-          new Publication("Celebration of Discipline",
-              "Richard Foster", 1978),
-          new Publication("Orthodoxy", 
-              "G.K. Chesterton", 1908),
-          new Publication(
-              "The Hitchhiker's Guide to the Galaxy",
-              "Douglas Adams", 1979)
-          };
+                new Publication("Celebration of Discipline",
+                    "Richard Foster", 1978),
+                new Publication("Orthodoxy", 
+                    "G.K. Chesterton", 1908),
+                new Publication(
+                    "The Hitchhiker's Guide to the Galaxy",
+                    "Douglas Adams", 1979)
+                };
             ConsoleListControl.List(
                 Publication.Headers, publications);
         }
@@ -74,7 +74,8 @@
     class Contact : PdaItem, IListable
     {
         public Contact(string firstName, string lastName,
-            string address, string phone) : base(null)
+            string address, string phone)
+            : base(null)
         {
             FirstName = firstName;
             LastName = lastName;
@@ -106,9 +107,9 @@
             get
             {
                 return new string[] {
-              "First Name", "Last Name    ", 
-              "Phone       ",
-              "Address                       " };
+                    "First Name", "Last Name    ", 
+                    "Phone       ",
+                    "Address                       " };
             }
         }
 
@@ -133,11 +134,11 @@
             get
             {
                 return new string[]
-          {
-              Title,
-              Author,
-              Year.ToString()
-          };
+                {
+                    Title,
+                    Author,
+                    Year.ToString()
+                };
             }
         }
 
@@ -146,9 +147,9 @@
             get
             {
                 return new string[] {
-              "Title                                ", 
-              "Author             ", 
-              "Year" };
+                    "Title                                ", 
+                    "Author             ", 
+                    "Year" };
             }
         }
 
@@ -162,7 +163,7 @@
         {
             int[] columnWidths = DisplayHeaders(headers);
 
-            for (int count = 0; count < items.Length; count++)
+            for(int count = 0; count < items.Length; count++)
             {
                 string[] values = items[count].ColumnValues;
                 DisplayItemRow(columnWidths, values);
@@ -174,7 +175,7 @@
         private static int[] DisplayHeaders(string[] headers)
         {
             var columnWidths = new int[headers.Length];
-            for (int index = 0; index < headers.Length; index++)
+            for(int index = 0; index < headers.Length; index++)
             {
                 Console.Write(headers[index]);
                 columnWidths[index] = headers[index].Length;
@@ -186,12 +187,12 @@
         private static void DisplayItemRow(
             int[] columnWidths, string[] values)
         {
-            if (columnWidths.Length != values.Length)
+            if(columnWidths.Length != values.Length)
             {
                 throw new ArgumentOutOfRangeException("amount of column widths must match amount of values to print");
             }
 
-            for (int index = 0; index < values.Length; index++)
+            for(int index = 0; index < values.Length; index++)
             {
                 string itemToPrint = values[index].PadRight(columnWidths[index], ' ');
                 Console.Write(itemToPrint);

@@ -3,6 +3,7 @@
     interface IFileCompression
     {
         void Compress(string targetFileName, string[] fileList);
-        void Uncompress(string compressedFileName, string expandDirectoryName);
+        void Uncompress(
+            string compressedFileName, string expandDirectoryName);
     }
 }

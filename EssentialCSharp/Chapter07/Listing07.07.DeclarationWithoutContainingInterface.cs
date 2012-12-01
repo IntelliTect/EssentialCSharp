@@ -4,17 +4,20 @@
     {
         string GetSetting(string name, string defaultValue);
     }
+
     interface ISettingsProvider : IReadableSettingsProvider
     {
         // ERROR:  GetSetting() not available on ISettingsProvider
 
-        //string ISettingsProvider.GetSetting(string name, string defaultValue)
+        //string ISettingsProvider.GetSetting(
+        //    string name, string defaultValue)
         //{
         //    ...
         //}
 
         void SetSetting(string name, string value);
     }
+
     class FileSettingsProvider : ISettingsProvider
     {
         #region ISettingsProvider Members

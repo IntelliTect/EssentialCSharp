@@ -10,7 +10,8 @@
         void SetSetting(string name, string value);
     }
 
-    class FileSettingsProvider : ISettingsProvider, IReadableSettingsProvider
+    class FileSettingsProvider : ISettingsProvider,
+        IReadableSettingsProvider
     {
         #region ISettingsProvider Members
         public void SetSetting(string name, string value)

@@ -40,19 +40,20 @@
         {
             int[] columnWidths = DisplayHeaders(headers);
 
-            for (int itemCount = 0; itemCount < items.Length; itemCount++)
+            for(int itemCount = 0; itemCount < items.Length; itemCount++)
             {
                 string[] values = items[itemCount].ColumnValues;
 
                 DisplayItemRow(columnWidths, values);
             }
         }
+
         /// <summary>Displays the column headers</summary>
         /// <returns>Returns an array of column widths</returns>
         private static int[] DisplayHeaders(string[] headers)
         {
             var columnWidths = new int[headers.Length];
-            for (int index = 0; index < headers.Length; index++)
+            for(int index = 0; index < headers.Length; index++)
             {
                 Console.Write(headers[index]);
                 columnWidths[index] = headers[index].Length;
@@ -64,12 +65,12 @@
         private static void DisplayItemRow(
             int[] columnWidths, string[] values)
         {
-            if (columnWidths.Length != values.Length)
+            if(columnWidths.Length != values.Length)
             {
                 throw new ArgumentOutOfRangeException("amount of column widths must match amount of values to print");
             }
 
-            for (int index = 0; index < values.Length; index++)
+            for(int index = 0; index < values.Length; index++)
             {
                 string itemToPrint = values[index].PadRight(columnWidths[index], ' ');
                 Console.Write(itemToPrint);

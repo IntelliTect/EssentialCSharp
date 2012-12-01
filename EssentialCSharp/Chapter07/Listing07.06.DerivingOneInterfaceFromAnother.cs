@@ -4,10 +4,12 @@
     {
         string GetSetting(string name, string defaultValue);
     }
+
     interface ISettingsProvider : IReadableSettingsProvider
     {
         void SetSetting(string name, string value);
     }
+
     class FileSettingsProvider : ISettingsProvider
     {
         #region ISettingsProvider Members
