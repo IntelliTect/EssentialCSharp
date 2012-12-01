@@ -15,7 +15,8 @@
     }
     public class Contact : PdaItem
     {
-        public Contact(string name) : base(name)
+        public Contact(string name)
+            : base(name)
         {
         }
 

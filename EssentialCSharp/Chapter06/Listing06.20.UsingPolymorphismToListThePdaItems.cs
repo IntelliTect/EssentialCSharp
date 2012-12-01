@@ -33,7 +33,7 @@
             // Implemented using polymorphism. The derived
             // type knows the specifics of implementing 
             // GetSummary().
-            foreach (PdaItem item in items)
+            foreach(PdaItem item in items)
             {
                 Console.WriteLine("________");
                 Console.WriteLine(item.GetSummary());

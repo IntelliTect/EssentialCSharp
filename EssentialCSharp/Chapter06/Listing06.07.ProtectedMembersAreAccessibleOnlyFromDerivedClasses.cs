@@ -5,26 +5,28 @@
 
     public class Program
     {
-      public static void Main()
-      {
-          Contact contact = new Contact();
-          contact.Name = "Inigo Montoya";
+        public static void Main()
+        {
+            Contact contact = new Contact();
+            contact.Name = "Inigo Montoya";
 
-          // ERROR:  'PdaItem.ObjectKey' is inaccessible
-          // due to its protection level
-          //contact.ObjectKey = Guid.NewGuid(); //uncomment this line and it will not compile
-      }
+            // ERROR:  'PdaItem.ObjectKey' is inaccessible
+            // due to its protection level
+            //contact.ObjectKey = Guid.NewGuid(); //uncomment this line and it will not compile
+        }
     }
+
     public class PdaItem
     {
-      protected Guid ObjectKey
-      {
-          get { return _ObjectKey; }
-          set { _ObjectKey = value; }
-      }
-      private Guid _ObjectKey;
-      // ...
+        protected Guid ObjectKey
+        {
+            get { return _ObjectKey; }
+            set { _ObjectKey = value; }
+        }
+        private Guid _ObjectKey;
+        // ...
     }
+
     public class Contact : PdaItem
     {
         void Save()
@@ -33,7 +35,6 @@
             // for the filename.
             FileStream stream = System.IO.File.OpenWrite(
                 ObjectKey + ".dat");
-
         }
 
         void Load(PdaItem pdaItem)
@@ -43,7 +44,7 @@
             //pdaItem.ObjectKey =...;
 
             Contact contact = pdaItem as Contact;
-            if (contact != null)
+            if(contact != null)
             {
                 contact.ObjectKey = new Guid();//...; 
             }

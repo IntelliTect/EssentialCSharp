@@ -4,7 +4,7 @@
     {
         public static void Save(object data)
         {
-            if (data is string)
+            if(data is string)
             {
                 data = Encrypt((string)data);
             }

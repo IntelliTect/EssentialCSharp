@@ -5,12 +5,12 @@
         private string _Name;
         // ...
     }
-    
+
     public class Contact : PdaItem
     {
         // ...
     }
-    
+
     public class Program
     {
         public static void Main()

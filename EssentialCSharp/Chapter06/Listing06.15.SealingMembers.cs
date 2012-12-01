@@ -6,7 +6,7 @@
         {
         }
     }
- 
+
     class B : A
     {
         public override sealed void Method()

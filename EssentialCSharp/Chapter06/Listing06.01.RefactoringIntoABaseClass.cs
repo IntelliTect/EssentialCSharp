@@ -8,6 +8,7 @@
 
         public DateTime LastUpdated { get; set; }
     }
+
     // Define the Contact class as inheriting the PdaItem class
     public class Contact : PdaItem
     {

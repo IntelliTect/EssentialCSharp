@@ -4,7 +4,7 @@
     {
         static object Print(IDocument document)
         {
-            if (document!= null)
+            if(document != null)
             {
                 // Print document...
             }
