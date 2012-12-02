@@ -7,13 +7,13 @@
         public static int Parse(string textDigit)
         {
             string[] digitTexts = 
-          { "zero", "one", "two", "three", "four", 
-              "five", "six", "seven", "eight", "nine" };
+                { "zero", "one", "two", "three", "four", 
+                  "five", "six", "seven", "eight", "nine" };
 
             int result = Array.IndexOf(
                 digitTexts, textDigit.ToLower());
 
-            if (result < 0)
+            if(result < 0)
             {
                 throw new ArgumentException(
                     "The argument did not represent a digit",

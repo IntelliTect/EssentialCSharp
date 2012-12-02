@@ -18,21 +18,21 @@
         //    // ...
         //}
 
-        //public DatabaseException()
-        //{
-        //    // ...
-        //}
+        public DatabaseException()
+        {
+            // ...
+        }
 
-        //public DatabaseException(string message)
-        //{
-        //    // ...
-        //}
+        public DatabaseException(string message)
+        {
+            // ...
+        }
 
-        //public DatabaseException(
-        //    string message, Exception innerException)
-        //{
-        //    InnerException = innerException;
-        //    // ...
-        //}
+        public DatabaseException(
+            string message, Exception innerException)
+        {
+            //InnerException = innerException;
+            // ...
+        }
     }
 }

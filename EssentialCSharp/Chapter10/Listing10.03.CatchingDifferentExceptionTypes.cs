@@ -13,23 +13,23 @@
                     "Arbitrary exception");
                 // ...
             }
-            catch (NullReferenceException exception)
+            catch(NullReferenceException exception)
             {
                 // Handle NullReferenceException
             }
-            catch (ArgumentException exception)
+            catch(ArgumentException exception)
             {
                 // Handle ArgumentException
             }
-            catch (InvalidOperationException exception)
+            catch(InvalidOperationException exception)
             {
                 // Handle ApplicationException
             }
-            catch (SystemException exception)
+            catch(SystemException exception)
             {
                 // Handle SystemException
             }
-            catch (Exception exception)
+            catch(Exception exception)
             {
                 // Handle Exception
             }
