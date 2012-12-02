@@ -10,10 +10,10 @@
 
             Coordinate coordinate1 =
                 new Coordinate(new Longitude(48, 52),
-                                new Latitude(-2, -20));
+                               new Latitude(-2, -20));
 
             // Value types will never be reference equal.
-            if (Coordinate.ReferenceEquals(coordinate1,
+            if(Coordinate.ReferenceEquals(coordinate1,
                 coordinate1))
             {
                 throw new Exception(
@@ -40,7 +40,7 @@
 
             // Check if leftHandSide is null. 
             // (operator== would be recursive)
-            if (ReferenceEquals(leftHandSide, null))
+            if(ReferenceEquals(leftHandSide, null))
             {
                 // Return true if rightHandSide is also null
                 // but false otherwise.
@@ -60,17 +60,18 @@
         public override bool Equals(object obj)
         {
             // STEP 1: Check for null
-            if (obj == null)
+            if(obj == null)
             {
                 return false;
             }
             // STEP 3: equivalent data types
-            if (this.GetType() != obj.GetType())
+            if(this.GetType() != obj.GetType())
             {
                 return false;
             }
             return Equals((Coordinate)obj);
         }
+
         public bool Equals(Coordinate obj)
         {
             // STEP 1: Check for null if a reference type
@@ -106,6 +107,7 @@
             return ((Longitude.Equals(obj.Longitude)) &&
                 (Latitude.Equals(obj.Latitude)));
         }
+
         // STEP 7: Override GetHashCode.
         public override int GetHashCode()
         {
@@ -120,10 +122,12 @@
         public Latitude Latitude { get { return _Latitude; } }
         private readonly Latitude _Latitude;
     }
+
     public struct Longitude
     {
         public Longitude(int x, int y) { }
     }
+
     public struct Latitude
     {
         public Latitude(int x, int y) { }

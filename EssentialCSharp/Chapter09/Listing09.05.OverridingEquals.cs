@@ -13,7 +13,7 @@
                                 new Latitude(-2, -20));
 
             // Value types will never be reference equal.
-            if (Coordinate.ReferenceEquals(coordinate1,
+            if(Coordinate.ReferenceEquals(coordinate1,
                 coordinate1))
             {
                 throw new Exception(
@@ -24,7 +24,7 @@
                 "coordinate1 does NOT reference equal itself");
         }
     }
-    
+
     public struct Coordinate
     {
         public Coordinate(Longitude longitude, Latitude latitude)
@@ -42,12 +42,12 @@
         public override bool Equals(object obj)
         {
             // STEP 1: Check for null
-            if (obj == null)
+            if(obj == null)
             {
                 return false;
             }
             // STEP 3: equivalent data types
-            if (this.GetType() != obj.GetType())
+            if(this.GetType() != obj.GetType())
             {
                 return false;
             }
@@ -98,11 +98,13 @@
             return hashCode;
         }
 
-    } 
+    }
+
     public struct Longitude
     {
         public Longitude(int x, int y) { }
     }
+
     public struct Latitude
     {
         public Latitude(int x, int y) { }

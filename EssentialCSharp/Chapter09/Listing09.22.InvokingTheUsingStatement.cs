@@ -7,7 +7,7 @@
     {
         public static void Search()
         {
-            using (TemporaryFileStream fileStream1 =
+            using(TemporaryFileStream fileStream1 =
                 new TemporaryFileStream(),
                 fileStream2 = new TemporaryFileStream())
             {
@@ -44,13 +44,14 @@
             get { return _File; }
         }
         readonly private FileInfo _File;
+
         public void Close()
         {
-            if (Stream != null)
+            if(Stream != null)
             {
                 Stream.Close();
             }
-            if (File != null)
+            if(File != null)
             {
                 File.Delete();
             }

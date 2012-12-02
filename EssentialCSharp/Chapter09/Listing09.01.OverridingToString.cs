@@ -22,6 +22,6 @@
         // ...
     }
 
-    public struct Longitude{}
-    public struct Latitude{}
+    public struct Longitude { }
+    public struct Latitude { }
 }

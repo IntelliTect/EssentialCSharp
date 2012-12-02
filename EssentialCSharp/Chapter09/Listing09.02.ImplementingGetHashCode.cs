@@ -18,7 +18,7 @@
         {
             int hashCode = Longitude.GetHashCode();
             // As long as the hash codes are not equal
-            if (Longitude.GetHashCode() != Latitude.GetHashCode())
+            if(Longitude.GetHashCode() != Latitude.GetHashCode())
             {
                 hashCode ^= Latitude.GetHashCode();  // eXclusive OR
             }
@@ -32,6 +32,6 @@
 
     }
 
-    public struct Longitude{}
-    public struct Latitude{}
+    public struct Longitude { }
+    public struct Latitude { }
 }

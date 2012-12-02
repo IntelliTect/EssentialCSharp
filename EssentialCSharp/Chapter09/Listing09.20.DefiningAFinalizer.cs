@@ -33,11 +33,11 @@
 
         public void Close()
         {
-            if (Stream != null)
+            if(Stream != null)
             {
                 Stream.Close();
             }
-            if (File != null)
+            if(File != null)
             {
                 File.Delete();
             }

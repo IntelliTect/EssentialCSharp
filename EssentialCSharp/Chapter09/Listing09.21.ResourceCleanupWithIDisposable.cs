@@ -15,6 +15,7 @@
             // ...
 
             fileStream.Dispose();
+
             // ...
         }
     }
@@ -60,6 +61,7 @@
             System.GC.SuppressFinalize(this);
         }
         #endregion
+
         public void Dispose(bool disposing)
         {
             // Do not dispose of an owned managed object (one with a 
@@ -67,14 +69,14 @@
             // as the owned managed objects finalize method 
             // will be (or has been) called by finalization queue 
             // processing already
-            if (disposing)
+            if(disposing)
             {
-                if (Stream != null)
+                if(Stream != null)
                 {
                     Stream.Close();
                 }
             }
-            if (File != null)
+            if(File != null)
             {
                 File.Delete();
             }

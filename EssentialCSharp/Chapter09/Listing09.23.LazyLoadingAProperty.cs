@@ -11,7 +11,7 @@
         {
             get
             {
-                if (_FileStream == null)
+                if(_FileStream == null)
                 {
                     _FileStream = new TemporaryFileStream();
                 }

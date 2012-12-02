@@ -10,10 +10,10 @@
 
             Coordinate coordinate1 =
                 new Coordinate(new Longitude(48, 52),
-                                new Latitude(-2, -20));
+                               new Latitude(-2, -20));
 
             // Value types will never be reference equal.
-            if (Coordinate.ReferenceEquals(coordinate1,
+            if(Coordinate.ReferenceEquals(coordinate1,
                 coordinate1))
             {
                 throw new Exception(

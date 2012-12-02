@@ -47,6 +47,7 @@
                     source.Latitude + arc.LatitudeDifference));
             return result;
         }
+
         public static Coordinate operator -(
             Coordinate source, Arc arc)
         {
@@ -65,7 +66,7 @@
 
             // Check if leftHandSide is null. 
             // (operator== would be recursive)
-            if (ReferenceEquals(leftHandSide, null))
+            if(ReferenceEquals(leftHandSide, null))
             {
                 // Return true if rightHandSide is also null
                 // but false otherwise.
@@ -85,17 +86,18 @@
         public override bool Equals(object obj)
         {
             // STEP 1: Check for null
-            if (obj == null)
+            if(obj == null)
             {
                 return false;
             }
             // STEP 3: equivalent data types
-            if (this.GetType() != obj.GetType())
+            if(this.GetType() != obj.GetType())
             {
                 return false;
             }
             return Equals((Coordinate)obj);
         }
+
         public bool Equals(Coordinate obj)
         {
             // STEP 1: Check for null if a reference type
@@ -131,6 +133,7 @@
             return ((Longitude.Equals(obj.Longitude)) &&
                 (Latitude.Equals(obj.Latitude)));
         }
+
         // STEP 7: Override GetHashCode.
         public override int GetHashCode()
         {
@@ -149,7 +152,6 @@
         {
             return string.Format("{0}° {1}' 0 E {2}° {3}' 0 N", Longitude.Degrees, Longitude.Minutes, Latitude.Degrees, Latitude.Minutes);
         }
-
     }
 
     public struct Longitude
@@ -159,28 +161,33 @@
             _Degrees = degrees;
             _Minutes = minutes;
         }
+
         public Longitude(int degrees)
-            : this(degrees, 0){}
+            : this(degrees, 0) { }
+
         public Longitude(Longitude longitude)
-            : this(longitude.Degrees,longitude.Minutes){}
+            : this(longitude.Degrees, longitude.Minutes) { }
 
 
-        public int Degrees 
+        public int Degrees
         {
             get { return _Degrees; }
-            set { _Degrees = value;} 
+            set { _Degrees = value; }
         }
         private int _Degrees;
+
         public int Minutes
         {
             get { return _Minutes; }
             set { _Minutes = value; }
         }
         private int _Minutes;
+
         public static Longitude operator +(Longitude leftHandSide, Longitude rightHandSide)
         {
             return new Longitude(leftHandSide.Degrees + rightHandSide.Degrees, leftHandSide.Minutes + rightHandSide.Minutes);
         }
+
         public static Longitude operator -(Longitude leftHandSide, Longitude rightHandSide)
         {
             return new Longitude(leftHandSide.Degrees - rightHandSide.Degrees, leftHandSide.Minutes - rightHandSide.Minutes);
@@ -194,9 +201,11 @@
             _Degrees = degrees;
             _Minutes = minutes;
         }
+
         public Latitude(int degrees)
-            : this(degrees, 0){}
-        public Latitude(Latitude Latitude) 
+            : this(degrees, 0) { }
+
+        public Latitude(Latitude Latitude)
             : this(Latitude.Degrees, Latitude.Minutes) { }
 
         public int Degrees
@@ -205,16 +214,19 @@
             set { _Degrees = value; }
         }
         private int _Degrees;
+
         public int Minutes
         {
             get { return _Minutes; }
             set { _Minutes = value; }
         }
         private int _Minutes;
+
         public static Latitude operator +(Latitude leftHandSide, Latitude rightHandSide)
         {
             return new Latitude(leftHandSide.Degrees + rightHandSide.Degrees, leftHandSide.Minutes + rightHandSide.Minutes);
         }
+
         public static Latitude operator -(Latitude leftHandSide, Latitude rightHandSide)
         {
             return new Latitude(leftHandSide.Degrees - rightHandSide.Degrees, leftHandSide.Minutes - rightHandSide.Minutes);
