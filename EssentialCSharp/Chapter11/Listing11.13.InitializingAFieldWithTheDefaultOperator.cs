@@ -4,11 +4,11 @@
 
     public struct Pair<T> : IPair<T>
     {
-         public Pair(T first)
-         {  
-             _First = first;
-             _Second = default(T);
-         }
+        public Pair(T first)
+        {
+            _First = first;
+            _Second = default(T);
+        }
 
         public Pair(T first, T second)
         {

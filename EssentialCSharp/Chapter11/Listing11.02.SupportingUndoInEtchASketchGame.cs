@@ -3,9 +3,15 @@
     using System;
     using System.Collections;
 
-    class Program
+    public class Program
     {
-        // ...
+        public static void Main()
+        {
+            Program p;
+
+            p = new Program();
+            p.Sketch();
+        }
 
         public void Sketch()
         {
@@ -13,32 +19,71 @@
             Cell currentPosition;
             ConsoleKeyInfo key;  // Added in C# 2.0
 
+            Console.WriteLine("Use arrow keys to draw. X to exit.");
+            for(int i = 2; i < Console.WindowHeight; i++)
+            {
+                Console.WriteLine();
+            }
+
+            currentPosition = new Cell(Console.WindowWidth / 2, Console.WindowHeight / 2);
+            path.Push(currentPosition);
+            FillCell(currentPosition);
+
             do
             {
                 // Etch in the direction indicated by the
                 // arrow keys that the user enters.
                 key = Move();
 
-                switch (key.Key)
+                switch(key.Key)
                 {
                     case ConsoleKey.Z:
                         // Undo the previous Move.
-                        if (path.Count >= 1)
+                        if(path.Count >= 1)
                         {
                             currentPosition = (Cell)path.Pop();
                             Console.SetCursorPosition(
                                 currentPosition.X, currentPosition.Y);
+                            FillCell(currentPosition, ConsoleColor.Black);
                             Undo();
                         }
                         break;
                     case ConsoleKey.DownArrow:
+                        if(Console.CursorTop < Console.WindowHeight - 2)
+                        {
+                            currentPosition = new Cell(
+                                Console.CursorLeft, Console.CursorTop + 1);
+                        }
+                        path.Push(currentPosition);
+                        FillCell(currentPosition);
+                        break;
                     case ConsoleKey.UpArrow:
+                        if(Console.CursorTop > 1)
+                        {
+                            currentPosition = new Cell(
+                                Console.CursorLeft, Console.CursorTop - 1);
+                        }
+                        path.Push(currentPosition);
+                        FillCell(currentPosition);
+                        break;
                     case ConsoleKey.LeftArrow:
+                        if(Console.CursorLeft > 1)
+                        {
+                            currentPosition = new Cell(
+                                Console.CursorLeft - 1, Console.CursorTop);
+                        }
+                        path.Push(currentPosition);
+                        FillCell(currentPosition);
+                        break;
                     case ConsoleKey.RightArrow:
                         // SaveState()
-                        currentPosition = new Cell(
-                            Console.CursorLeft, Console.CursorTop);
+                        if(Console.CursorLeft < Console.WindowWidth - 2)
+                        {
+                            currentPosition = new Cell(
+                                Console.CursorLeft + 1, Console.CursorTop);
+                        }
                         path.Push(currentPosition);
+                        FillCell(currentPosition);
                         break;
 
                     default:
@@ -47,18 +92,31 @@
                 }
 
             }
-            while (key.Key != ConsoleKey.X);  // Use X to quit.
-
+            while(key.Key != ConsoleKey.X);  // Use X to quit.
         }
+
         private static ConsoleKeyInfo Move()
         {
-            // stub
-            return new ConsoleKeyInfo();
+            return Console.ReadKey(true);
         }
 
         private static void Undo()
         {
             // stub
+        }
+
+        private static void FillCell(Cell cell)
+        {
+            FillCell(cell, ConsoleColor.White);
+        }
+
+        private static void FillCell(Cell cell, ConsoleColor color)
+        {
+            Console.SetCursorPosition(cell.X, cell.Y);
+            Console.BackgroundColor = color;
+            Console.Write(' ');
+            Console.SetCursorPosition(cell.X, cell.Y);
+            Console.BackgroundColor = ConsoleColor.Black;
         }
     }
 
@@ -66,6 +124,7 @@
     {
         readonly public int X;
         readonly public int Y;
+
         public Cell(int x, int y)
         {
             X = x;

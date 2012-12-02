@@ -11,7 +11,6 @@
                 MathEx.Max(7, 490)); // No type arguments!
             Console.WriteLine(
                 MathEx.Min("R.O.U.S'", "Fireswamp"));
-
         }
     }
 }

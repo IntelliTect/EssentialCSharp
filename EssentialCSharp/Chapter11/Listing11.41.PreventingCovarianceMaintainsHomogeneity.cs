@@ -17,7 +17,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter11.Listing11_41
             // IPair<PdaItem> pdaPair = (IPair<PdaItem>) contacts;
             // This is perfectly legal, but not type safe.
             // pair.First = new Address("123 Sesame Street");
-
         }
     }
 }

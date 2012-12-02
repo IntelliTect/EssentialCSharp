@@ -4,9 +4,10 @@
     using Listing11_13;
 
     public class BinaryTree<T>
-        where T: System.IComparable<T>
+        where T : System.IComparable<T>
     {
-        //...
+        // ...
+
         public Pair<BinaryTree<T>> SubItems
         {
             get { return _SubItems; }
@@ -16,7 +17,7 @@
                 // Notice that the cast can now be eliminated.
                 first = value.First.Item;
 
-                if (first.CompareTo(value.Second.Item) < 0)
+                if(first.CompareTo(value.Second.Item) < 0)
                 {
                     // first is less than second.
                     //...
@@ -29,7 +30,6 @@
                 _SubItems = value;
             }
         }
-
         private Pair<BinaryTree<T>> _SubItems;
 
         public T Item

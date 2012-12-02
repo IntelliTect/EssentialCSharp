@@ -5,7 +5,8 @@
 
     public class BinaryTree<T>
     {
-        //...
+        // ...
+
         public Pair<BinaryTree<T>> SubItems
         {
             get { return _SubItems; }
@@ -15,7 +16,7 @@
                 // ERROR: Cannot implicitly convert type...
                 //first = value.First;  // Explicit cast required
 
-                //if (first.CompareTo(value.Second) < 0)
+                //if(first.CompareTo(value.Second) < 0)
                 //{
                 //    // first is less than second.
                 //    //...

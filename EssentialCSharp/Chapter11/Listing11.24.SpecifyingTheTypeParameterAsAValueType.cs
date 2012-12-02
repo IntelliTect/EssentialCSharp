@@ -4,9 +4,9 @@
     using System.Data.SqlTypes;
 
     public struct Nullable<T> :
-     IFormattable, IComparable,
-     IComparable<Nullable<T>>, INullable
-     where T : struct
+        IFormattable, IComparable,
+        IComparable<Nullable<T>>, INullable
+        where T : struct
     {
         // ...
         public string ToString(string format, IFormatProvider formatProvider)

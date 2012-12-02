@@ -8,11 +8,13 @@
         T First { get; }
         T Second { get; }
     }
+
     interface IPair<T>
     {
         T First { get; set; }
         T Second { get; set; }
     }
+
     public struct Pair<T> : IPair<T>, IReadOnlyPair<T>
     {
         public Pair(T first, T second)
@@ -36,7 +38,7 @@
             }
         }
         private T _First;
-        
+
         T IReadOnlyPair<T>.Second
         {
             get
@@ -45,7 +47,7 @@
             }
         }
         private T _ReadOnlySecond;
-        
+
         T IReadOnlyPair<T>.First
         {
             get
@@ -67,8 +69,8 @@
             }
         }
         private T _Second;
-        
     }
+
     class Program
     {
         static void Main()

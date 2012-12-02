@@ -3,6 +3,7 @@
     class Fruit { }
 
     class Apple : Fruit { }
+
     class Orange : Fruit { }
 
 

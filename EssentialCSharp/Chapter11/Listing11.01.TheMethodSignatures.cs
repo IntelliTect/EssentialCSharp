@@ -7,6 +7,7 @@
             // ...
             return new object();
         }
+
         public virtual void Push(object obj)
         {
             // ...

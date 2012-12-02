@@ -5,11 +5,13 @@
         T First { get; }
         T Second { get; }
     }
+
     interface IPair<T>
     {
         T First { get; set; }
         T Second { get; set; }
     }
+
     public struct Pair<T> : IPair<T>, IReadOnlyPair<T>
     {
         // ...
@@ -39,6 +41,7 @@
         }
         #endregion Generated Interface Stub
     }
+
     class Program
     {
         static void Main()

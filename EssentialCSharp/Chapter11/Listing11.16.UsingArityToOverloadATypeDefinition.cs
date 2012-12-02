@@ -8,7 +8,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter11.Listing11_16
         // ...
     }
     public class Tuple<T1> // : IStructuralEquatable, IStructuralComparable, IComparable
-
     {
         // ...
     }

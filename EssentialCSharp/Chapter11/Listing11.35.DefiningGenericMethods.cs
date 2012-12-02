@@ -8,9 +8,9 @@
             where T : IComparable<T>
         {
             T maximum = first;
-            foreach (T item in values)
+            foreach(T item in values)
             {
-                if (item.CompareTo(maximum) > 0)
+                if(item.CompareTo(maximum) > 0)
                 {
                     maximum = item;
                 }
@@ -23,9 +23,9 @@
         {
             T minimum = first;
 
-            foreach (T item in values)
+            foreach(T item in values)
             {
-                if (item.CompareTo(minimum) < 0)
+                if(item.CompareTo(minimum) < 0)
                 {
                     minimum = item;
                 }

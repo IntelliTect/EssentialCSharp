@@ -7,7 +7,7 @@
     //    public event T Event;
     //    public void Publish()
     //    {
-    //        if (Event != null)
+    //        if(Event != null)
     //        {
     //            Event(this, new EventArgs());
     //        }

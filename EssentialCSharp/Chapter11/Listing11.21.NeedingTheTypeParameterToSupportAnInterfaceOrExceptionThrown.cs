@@ -5,7 +5,8 @@
 
     public class BinaryTree<T>
     {
-        //...
+        // ...
+
         public Pair<BinaryTree<T>> SubItems
         {
             get { return _SubItems; }
@@ -14,7 +15,7 @@
                 IComparable<T> first;
                 first = (IComparable<T>)value.First.Item;
 
-                if (first.CompareTo(value.Second.Item) < 0)
+                if(first.CompareTo(value.Second.Item) < 0)
                 {
                     // first is less than second.
                     // ...

@@ -6,6 +6,6 @@
     // Stack'1<([mscorlib]System.IComparable)T>
     // extends [mscorlib]System.Object
     // {
-    //   ...
+    //     ...
     // }
 }
