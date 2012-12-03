@@ -2,37 +2,46 @@
 {
     using System;
 
-    class DatabaseException : System.Exception
+    public sealed class Program
     {
-        //public DatabaseException(
-        //    System.Data.SqlClient.SQLException exception)
-        //{
-        //    InnerException = exception;
-        //    // ...
-        //}
-
-        //public DatabaseException(
-        //    System.Data.OracleClient.OracleException exception)
-        //{
-        //    InnerException = exception;
-        //    // ...
-        //}
-
-        public DatabaseException()
+        public static void Main()
         {
-            // ...
-        }
-
-        public DatabaseException(string message)
-        {
-            // ...
-        }
-
-        public DatabaseException(
-            string message, Exception innerException)
-        {
-            //InnerException = innerException;
-            // ...
+            try
+            {
+                // ...
+                throw new InvalidOperationException(
+                    "Arbitrary exception");
+                // ...
+            }
+            catch (NullReferenceException )
+            {
+                // Handle NullReferenceException
+            }
+            catch (ArgumentException )
+            {
+                // Handle ArgumentException
+            }
+            catch (InvalidOperationException )
+            {
+                // Handle ApplicationException
+            }
+            catch (SystemException )
+            {
+                // Handle SystemException
+            }
+            catch (Exception )
+            {
+                // Handle Exception
+            }
+            catch
+            {
+                // Any unhandled exception
+            }
+            finally
+            {
+                // Handle any cleanup code here as it runs
+                // regardless of an exception or not.
+            }
         }
     }
 }
