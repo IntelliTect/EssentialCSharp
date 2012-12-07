@@ -16,21 +16,21 @@
             int temp;
 
 
-            if (comparisonMethod == null)
+            if(comparisonMethod == null)
             {
                 throw new ArgumentNullException("comparisonMethod");
             }
 
-            if (items == null)
+            if(items == null)
             {
                 return;
             }
 
-            for (i = items.Length - 1; i >= 0; i--)
+            for(i = items.Length - 1; i >= 0; i--)
             {
-                for (j = 1; j <= i; j++)
+                for(j = 1; j <= i; j++)
                 {
-                    if (comparisonMethod(items[j - 1], items[j]))
+                    if(comparisonMethod(items[j - 1], items[j]))
                     {
                         temp = items[j - 1];
                         items[j - 1] = items[j];

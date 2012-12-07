@@ -25,7 +25,7 @@
             Func<object, string> func1 =
                 (object data) => data.ToString();
 
-            Func<string, object> func2 = func1;     
+            Func<string, object> func2 = func1;
         }
     }
 }

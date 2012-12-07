@@ -14,7 +14,7 @@
                     {
                         input = Console.ReadLine();
                     }
-                    while (input.Trim().Length == 0);
+                    while(input.Trim().Length == 0);
                     return input;
                 };
         }

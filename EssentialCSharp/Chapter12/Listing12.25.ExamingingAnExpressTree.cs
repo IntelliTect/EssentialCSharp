@@ -24,7 +24,7 @@
         public static void PrintNode(Expression expression,
             int indent)
         {
-            if (expression is BinaryExpression)
+            if(expression is BinaryExpression)
                 PrintNode(expression as BinaryExpression, indent);
             else
                 PrintSingle(expression, indent);
@@ -44,7 +44,7 @@
         }
         private static string NodeToString(Expression expression)
         {
-            switch (expression.NodeType)
+            switch(expression.NodeType)
             {
                 case ExpressionType.Multiply:
                     return "*";

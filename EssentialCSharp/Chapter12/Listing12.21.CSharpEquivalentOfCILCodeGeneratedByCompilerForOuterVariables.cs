@@ -24,14 +24,14 @@
             locals.comparisonCount = 0;
             int[] items = new int[5];
 
-            for (i = 0; i < items.Length; i++)
+            for(i = 0; i < items.Length; i++)
             {
                 Console.Write("Enter an integer:");
                 items[i] = int.Parse(Console.ReadLine());
             }
 
             DelegateSample.BubbleSort(items, locals.__AnonymousMethod_00000000);
-            for (i = 0; i < items.Length; i++)
+            for(i = 0; i < items.Length; i++)
             {
                 Console.WriteLine(items[i]);
             }
