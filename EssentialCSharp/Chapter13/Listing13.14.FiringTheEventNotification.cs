@@ -27,13 +27,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_14
             get { return _CurrentTemperature; }
             set
             {
-                if (value != CurrentTemperature)
+                if(value != CurrentTemperature)
                 {
                     _CurrentTemperature = value;
                     // If there are any subscribers
                     // then notify them of changes in 
                     // temperature
-                    if (OnTemperatureChange != null)
+                    if(OnTemperatureChange != null)
                     {
                         // Call subscribers
                         OnTemperatureChange(

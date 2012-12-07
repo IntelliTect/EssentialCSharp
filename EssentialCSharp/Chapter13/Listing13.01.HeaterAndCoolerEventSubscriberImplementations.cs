@@ -16,7 +16,7 @@
 
         public void OnTemperatureChanged(float newTemperature)
         {
-            if (newTemperature > Temperature)
+            if(newTemperature > Temperature)
             {
                 System.Console.WriteLine("Cooler: On");
             }
@@ -43,7 +43,7 @@
 
         public void OnTemperatureChanged(float newTemperature)
         {
-            if (newTemperature < Temperature)
+            if(newTemperature < Temperature)
             {
                 System.Console.WriteLine("Heater: On");
             }

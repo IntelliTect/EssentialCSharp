@@ -12,7 +12,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_05
             get { return _CurrentTemperature; }
             set
             {
-                if (value != CurrentTemperature)
+                if(value != CurrentTemperature)
                 {
                     _CurrentTemperature = value;
                     // If there are any subscribers
@@ -20,7 +20,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_05
                     // temperature
                     Action<float> localOnChange =
                         OnTemperatureChange;
-                    if (localOnChange != null)
+                    if(localOnChange != null)
                     {
                         // Call subscribers
                         localOnChange(value);
@@ -30,5 +30,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_05
         }
 
         private float _CurrentTemperature;
-     }
+    }
 }

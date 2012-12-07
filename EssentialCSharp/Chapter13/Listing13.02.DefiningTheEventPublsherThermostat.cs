@@ -1,7 +1,7 @@
 ﻿
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_02
 {
-    using System;    
+    using System;
     public class Thermostat
     {
         // Using C# 3.0 or later syntax.
@@ -13,7 +13,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_02
             get { return _CurrentTemperature; }
             set
             {
-                if (value != CurrentTemperature)
+                if(value != CurrentTemperature)
                 {
                     _CurrentTemperature = value;
                 }

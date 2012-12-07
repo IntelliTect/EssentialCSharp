@@ -4,7 +4,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_10
 {
     using System;
     using Listing13_01;
-  
+
     public class Program
     {
         public static void Main()

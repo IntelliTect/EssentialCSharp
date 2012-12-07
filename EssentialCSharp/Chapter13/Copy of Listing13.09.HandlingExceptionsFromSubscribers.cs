@@ -16,14 +16,14 @@
             get { return _CurrentTemperature; }
             set
             {
-                if (value != CurrentTemperature)
+                if(value != CurrentTemperature)
                 {
                     _CurrentTemperature = value;
-                    if (OnTemperatureChange != null)
+                    if(OnTemperatureChange != null)
                     {
                         List<Exception> exceptionCollection =
                             new List<Exception>();
-                        foreach (
+                        foreach(
                             Action<float> handler in
                             OnTemperatureChange.GetInvocationList())
                         {
@@ -31,12 +31,12 @@
                             {
                                 handler(value);
                             }
-                            catch (Exception exception)
+                            catch(Exception exception)
                             {
                                 exceptionCollection.Add(exception);
                             }
                         }
-                        if (exceptionCollection.Count > 0)
+                        if(exceptionCollection.Count > 0)
                         {
                             throw new AggregateException(
                                 "There were exceptions thrown by OnTemperatureChange Event subscribers.",
