@@ -7,9 +7,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_08
     {
         public bool Equals(Contact x, Contact y)
         {
-            if (Object.ReferenceEquals(x, y))
+            if(Object.ReferenceEquals(x, y))
                 return true;
-            if (x == null || y == null)
+            if(x == null || y == null)
                 return false;
             return x.LastName == y.LastName &&
                 x.FirstName == y.FirstName;
@@ -17,7 +17,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_08
 
         public int GetHashCode(Contact x)
         {
-            if (Object.ReferenceEquals(x, null))
+            if(Object.ReferenceEquals(x, null))
                 return 0;
 
             int h1 = x.FirstName == null ? 0 : x.FirstName.GetHashCode();

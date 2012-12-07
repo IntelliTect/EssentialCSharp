@@ -10,7 +10,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_13
             CSharpBuiltInTypes keywords =
                 new CSharpBuiltInTypes();
 
-            foreach (string keyword in keywords)
+            foreach(string keyword in keywords)
             {
                 Console.WriteLine(keyword);
             }

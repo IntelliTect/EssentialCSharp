@@ -25,7 +25,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_02
 
             list.Sort(comparer);
 
-            foreach (Contact dwarf in list)
+            foreach(Contact dwarf in list)
             {
                 Console.WriteLine(dwarf.LastName + ", " + dwarf.FirstName);
             }
@@ -36,25 +36,25 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_02
     {
         public int Compare(Contact x, Contact y)
         {
-            if (Object.ReferenceEquals(x, y))
+            if(Object.ReferenceEquals(x, y))
                 return 0;
-            if (x == null)
+            if(x == null)
                 return 1;
-            if (y == null)
+            if(y == null)
                 return -1;
             int result = StringCompare(x.LastName, y.LastName);
-            if (result == 0)
+            if(result == 0)
                 result = StringCompare(x.FirstName, y.FirstName);
             return result;
         }
 
         private static int StringCompare(string x, string y)
         {
-            if (Object.ReferenceEquals(x, y))
+            if(Object.ReferenceEquals(x, y))
                 return 0;
-            if (x == null)
+            if(x == null)
                 return 1;
-            if (y == null)
+            if(y == null)
                 return -1;
             return x.CompareTo(y);
         }

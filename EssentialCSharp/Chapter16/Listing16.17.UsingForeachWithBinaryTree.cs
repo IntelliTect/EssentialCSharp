@@ -28,7 +28,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_17
                 new BinaryTree<string>("John Francis Fitzgerald"),
                 new BinaryTree<string>("Mary Josephine Hannon"));
 
-            foreach (string name in jfkFamilyTree)
+            foreach(string name in jfkFamilyTree)
             {
                 Console.WriteLine(name);
             }

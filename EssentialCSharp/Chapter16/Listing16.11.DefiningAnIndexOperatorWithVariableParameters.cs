@@ -20,11 +20,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_11
                     (branches == null) ? 0 : branches.Length;
                 int currentLevel = 0;
 
-                while (currentLevel < totalLevels)
+                while(currentLevel < totalLevels)
                 {
                     currentNode = currentNode.SubItems[
                         branches[currentLevel]];
-                    if (currentNode == null)
+                    if(currentNode == null)
                     {
                         // The binary tree at this location is null.
                         throw new IndexOutOfRangeException();
@@ -63,5 +63,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_11
         {
             return GetEnumerator();
         }
-    }   
+    }
 }

@@ -35,7 +35,7 @@ AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_19
         {
             get
             {
-                switch (index)
+                switch(index)
                 {
                     case PairItem.First:
                         return First;
@@ -50,7 +50,7 @@ AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_19
             }
             set
             {
-                switch (index)
+                switch(index)
                 {
                     case PairItem.First:
                         First = value;
@@ -99,7 +99,7 @@ AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_19
 
             public bool MoveNext()
             {
-                switch (_ItemCount)
+                switch(_ItemCount)
                 {
                     case 0:
                         _Current = _Pair.First;

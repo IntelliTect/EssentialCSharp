@@ -18,14 +18,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_16
             yield return Value;
 
             // Iterate through each of the elements in the pair.
-            foreach (BinaryTree<T> tree in SubItems)
+            foreach(BinaryTree<T> tree in SubItems)
             {
-                if (tree != null)
+                if(tree != null)
                 {
                     // Since each element in the pair is a tree,
                     // traverse the tree and yield each
                     // element.
-                    foreach (T item in tree)
+                    foreach(T item in tree)
                     {
                         yield return item;
                     }

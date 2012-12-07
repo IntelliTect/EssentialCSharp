@@ -20,7 +20,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_07
             Console.WriteLine("Key  Value   ");
             Console.WriteLine("---  ------- ");
 
-            foreach (KeyValuePair<string, string> i in dictionary)
+            foreach(KeyValuePair<string, string> i in dictionary)
             {
                 Console.WriteLine("{0}   {1}", i.Key, i.Value);
             }

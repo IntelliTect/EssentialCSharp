@@ -3,7 +3,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_18
     using System;
     using Listing16_10;
     using System.Collections.Generic;
-    
+
     public struct Pair<T> : IPair<T>, IEnumerable<T>
     {
         #region Members
@@ -29,7 +29,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_18
         {
             get
             {
-                switch (index)
+                switch(index)
                 {
                     case PairItem.First:
                         return First;
@@ -44,7 +44,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_18
             }
             set
             {
-                switch (index)
+                switch(index)
                 {
                     case PairItem.First:
                         First = value;
@@ -65,7 +65,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_18
         //Listing 16.18 Escaping Iteration via yield break
         public System.Collections.Generic.IEnumerable<T> GetNotNullEnumerator()
         {
-            if ((First == null) || (Second == null))
+            if((First == null) || (Second == null))
             {
                 yield break;
             }

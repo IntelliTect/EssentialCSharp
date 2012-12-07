@@ -8,7 +8,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_14
     public struct Pair<T> : IPair<T>,
     IEnumerable<T>
     {
-        public Pair(T first, T second) : this()
+        public Pair(T first, T second)
+            : this()
         {
             First = first;
             Second = second;
@@ -21,7 +22,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_14
         {
             get
             {
-                switch (index)
+                switch(index)
                 {
                     case PairItem.First:
                         return First;
@@ -36,7 +37,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_14
             }
             set
             {
-                switch (index)
+                switch(index)
                 {
                     case PairItem.First:
                         First = value;

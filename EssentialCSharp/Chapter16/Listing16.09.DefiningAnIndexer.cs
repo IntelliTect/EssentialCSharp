@@ -60,7 +60,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_09
         {
             get
             {
-                switch (index)
+                switch(index)
                 {
                     case PairItem.First:
                         return First;
@@ -75,7 +75,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_09
             }
             set
             {
-                switch (index)
+                switch(index)
                 {
                     case PairItem.First:
                         First = value;
