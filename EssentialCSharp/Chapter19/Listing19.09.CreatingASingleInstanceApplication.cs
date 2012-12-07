@@ -1,8 +1,8 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_09
 {
     using System;
-    using System.Threading;
     using System.Reflection;
+    using System.Threading;
 
     class Program
     {
@@ -17,11 +17,11 @@
             string mutexName =
                 Assembly.GetEntryAssembly().FullName;
 
-            using (Mutex mutex = new Mutex(false, mutexName,
+            using(Mutex mutex = new Mutex(false, mutexName,
                  out firstApplicationInstance))
             {
 
-                if (!firstApplicationInstance)
+                if(!firstApplicationInstance)
                 {
                     Console.WriteLine(
                         "This application is already running.");

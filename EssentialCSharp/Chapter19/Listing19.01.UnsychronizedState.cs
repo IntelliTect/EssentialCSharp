@@ -14,7 +14,7 @@
             Task task = Task.Run(() => Decrement());
 
             // Increment
-            for (int i = 0; i < _Total; i++)
+            for(int i = 0; i < _Total; i++)
             {
                 _Count++;
             }
@@ -26,7 +26,7 @@
         static void Decrement()
         {
             // Decrement
-            for (int i = 0; i < _Total; i++)
+            for(int i = 0; i < _Total; i++)
             {
                 _Count--;
             }

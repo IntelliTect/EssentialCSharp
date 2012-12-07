@@ -16,7 +16,7 @@
             Task task = Task.Run(() => Decrement());
 
             // Increment
-            for (int i = 0; i < _Total; i++)
+            for(int i = 0; i < _Total; i++)
             {
                 bool lockTaken = false;
                 try
@@ -26,7 +26,7 @@
                 }
                 finally
                 {
-                    if (lockTaken)
+                    if(lockTaken)
                     {
                         Monitor.Exit(_Sync);
                     }
@@ -39,7 +39,7 @@
 
         static void Decrement()
         {
-            for (int i = 0; i < _Total; i++)
+            for(int i = 0; i < _Total; i++)
             {
                 bool lockTaken = false;
                 try
@@ -49,7 +49,7 @@
                 }
                 finally
                 {
-                    if (lockTaken)
+                    if(lockTaken)
                     {
                         Monitor.Exit(_Sync);
                     }

@@ -1,8 +1,6 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_06
 {
-    using System;
     using System.Threading;
-    using System.Threading.Tasks;
 
     class SynchronizationUsingInterlocked
     {

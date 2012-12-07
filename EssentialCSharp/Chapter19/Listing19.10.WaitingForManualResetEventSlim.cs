@@ -19,9 +19,9 @@
 
         public static void Main()
         {
-            using (MainSignaledResetEvent =
+            using(MainSignaledResetEvent =
                 new ManualResetEventSlim())
-            using (DoWorkSignaledResetEvent =
+            using(DoWorkSignaledResetEvent =
                 new ManualResetEventSlim())
             {
                 Console.WriteLine(

@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.ComponentModel;
-using System.Threading.Tasks;
 using System.Threading;
+using System.Threading.Tasks;
 using AddisonWesley.Michaelis.EssentialCSharp.Shared;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19

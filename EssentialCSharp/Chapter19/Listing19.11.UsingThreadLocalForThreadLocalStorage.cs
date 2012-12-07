@@ -19,7 +19,7 @@
             thread.Start();
 
             // Increment
-            for (double i = 0; i < short.MaxValue; i++)
+            for(double i = 0; i < short.MaxValue; i++)
             {
                 Count++;
             }
@@ -31,7 +31,7 @@
         static void Decrement()
         {
             Count = -Count;
-            for (double i = 0; i < short.MaxValue; i++)
+            for(double i = 0; i < short.MaxValue; i++)
             {
                 Count--;
             }

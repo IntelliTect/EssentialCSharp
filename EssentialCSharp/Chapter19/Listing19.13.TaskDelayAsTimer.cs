@@ -10,16 +10,18 @@
         private static async Task TickAsync(
             System.Threading.CancellationToken token)
         {
-            for (int minute = 0; minute < 25; minute++)
+            for(int minute = 0; minute < 25; minute++)
             {
                 DisplayMinuteTicker(minute);
-                for (int second = 0; second < 60; second++)
+                for(int second = 0; second < 60; second++)
                 {
                     await Task.Delay(1000);
-                    if (token.IsCancellationRequested) break;
+                    if(token.IsCancellationRequested)
+                        break;
                     DisplaySecondTicker();
                 }
-                if (token.IsCancellationRequested) break;
+                if(token.IsCancellationRequested)
+                    break;
             }
         }
 
