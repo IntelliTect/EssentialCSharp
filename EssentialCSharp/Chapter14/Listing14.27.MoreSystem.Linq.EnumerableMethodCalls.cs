@@ -27,7 +27,7 @@
             Print("Intersection with even: {0}",
                 numbers.Intersect(even));
             Print("Distinct: {0}", numbers.Concat(odd).Distinct());
-            if (!numbers.SequenceEqual(
+            if(!numbers.SequenceEqual(
                 numbers.Concat(odd).Distinct()))
             {
                 throw new Exception("Unexpectedly unequal");
@@ -50,7 +50,7 @@
             string format, IEnumerable<T> items)
         {
             StringBuilder text = new StringBuilder();
-            foreach (T item in items.Take(items.Count() - 1))
+            foreach(T item in items.Take(items.Count() - 1))
             {
                 text.Append(item + ", ");
             }

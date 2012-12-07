@@ -23,7 +23,7 @@
                     Department = department
                 });
 
-            foreach (var item in items)
+            foreach(var item in items)
             {
                 Console.WriteLine("{0} ({1})",
                     item.Name, item.Title);
@@ -33,7 +33,7 @@
 
         private static void Print<T>(IEnumerable<T> items)
         {
-            foreach (T item in items)
+            foreach(T item in items)
             {
                 Console.WriteLine(item);
             }

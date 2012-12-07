@@ -13,11 +13,11 @@
             IEnumerable<IGrouping<int, Employee>> groupedEmployees =
               employees.GroupBy((employee) => employee.DepartmentId);
 
-            foreach (IGrouping<int, Employee> employeeGroup in
+            foreach(IGrouping<int, Employee> employeeGroup in
                 groupedEmployees)
             {
                 Console.WriteLine();
-                foreach (Employee employee in employeeGroup)
+                foreach(Employee employee in employeeGroup)
                 {
                     Console.WriteLine("\t" + employee);
                 }
@@ -29,7 +29,7 @@
 
         private static void Print<T>(IEnumerable<T> items)
         {
-            foreach (T item in items)
+            foreach(T item in items)
             {
                 Console.WriteLine(item);
             }

@@ -22,11 +22,11 @@
                     Employees = departmentEmployees
                 });
 
-            foreach (var item in items)
+            foreach(var item in items)
             {
                 Console.WriteLine("{0}",
                     item.Name);
-                foreach (Employee employee in item.Employees)
+                foreach(Employee employee in item.Employees)
                 {
                     Console.WriteLine("\t" + employee);
                 }
@@ -35,7 +35,7 @@
 
         private static void Print<T>(IEnumerable<T> items)
         {
-            foreach (T item in items)
+            foreach(T item in items)
             {
                 Console.WriteLine(item);
             }

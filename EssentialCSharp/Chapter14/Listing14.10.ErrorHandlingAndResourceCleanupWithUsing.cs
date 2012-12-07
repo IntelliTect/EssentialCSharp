@@ -10,11 +10,11 @@
                 new System.Collections.Generic.Stack<int>();
             int number;
 
-            using (
-              System.Collections.Generic.Stack<int>.Enumerator 
+            using(
+              System.Collections.Generic.Stack<int>.Enumerator
                   enumerator = stack.GetEnumerator())
             {
-                while (enumerator.MoveNext())
+                while(enumerator.MoveNext())
                 {
                     number = enumerator.Current;
                     Console.WriteLine(number);

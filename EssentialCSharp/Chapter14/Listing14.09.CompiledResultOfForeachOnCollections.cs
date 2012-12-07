@@ -15,7 +15,7 @@
             try
             {
                 int number;
-                while (enumerator.MoveNext())
+                while(enumerator.MoveNext())
                 {
                     number = enumerator.Current;
                     Console.WriteLine(number);

@@ -13,7 +13,7 @@
             patents = patents.Where(
                 patent =>
                 {
-                    if (result =
+                    if(result =
                         patent.YearOfPublication.StartsWith("18"))
                     {
                         // Side effects like this in a predicate
@@ -26,7 +26,7 @@
                 });
 
             Console.WriteLine("1. Patents prior to the 1900s are:");
-            foreach (Patent patent in patents)
+            foreach(Patent patent in patents)
             {
             }
 

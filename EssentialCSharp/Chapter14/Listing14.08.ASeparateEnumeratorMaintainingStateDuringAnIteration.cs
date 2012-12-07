@@ -18,7 +18,7 @@
             // then a cast is required.
             // ((IEnumerable<int>)stack).GetEnumerator();
             enumerator = stack.GetEnumerator();
-            while (enumerator.MoveNext())
+            while(enumerator.MoveNext())
             {
                 number = enumerator.Current;
                 Console.WriteLine(number);
