@@ -13,7 +13,7 @@
         public static void Main()
         {
             // Timer(callback, state, dueTime, period)
-            using (Timer timer = new Timer(Alarm, null, 0, 1000))
+            using(Timer timer = new Timer(Alarm, null, 0, 1000))
             {
                 // Wait for Alarm to fire for the 10th time.
                 _ResetEvent.WaitOne();
@@ -21,13 +21,13 @@
 
             // Verify that the thread executing the alarm
             // Is different from the thread executing Main
-            if (_AlarmThreadId ==
+            if(_AlarmThreadId ==
                 Thread.CurrentThread.ManagedThreadId)
             {
                 throw new ApplicationException(
                     "Thread Ids are the same.");
             }
-            if (_Count < 9)
+            if(_Count < 9)
             {
                 throw new ApplicationException(" _Count < 9");
             };
@@ -47,7 +47,7 @@
                 DateTime.Now.ToString("T"),
                 _Count);
 
-            if (_Count >= 9)
+            if(_Count >= 9)
             {
                 _AlarmThreadId =
                     Thread.CurrentThread.ManagedThreadId;

@@ -1,8 +1,8 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.AppendixD.ListingD_01
 {
     using System;
-    using System.Timers;
     using System.Threading;
+    using System.Timers;
     // Because Timer exists in both the System.Timers and
     // System.Threading namespaces, you disambiguate "Timer" 
     // using an alias directive.
@@ -17,7 +17,7 @@
 
         public static void Main()
         {
-            using (Timer timer = new Timer())
+            using(Timer timer = new Timer())
             {
                 // Initialize Timer
                 timer.AutoReset = true;
@@ -32,13 +32,13 @@
 
             // Verify that the thread executing the alarm
             // Is different from the thread executing Main
-            if (_AlarmThreadId ==
+            if(_AlarmThreadId ==
                 Thread.CurrentThread.ManagedThreadId)
             {
                 throw new ApplicationException(
                     "Thread Ids are the same.");
             }
-            if (_Count < 9)
+            if(_Count < 9)
             {
                 throw new ApplicationException(" _Count < 9");
             };
@@ -58,7 +58,7 @@
                 eventArgs.SignalTime.ToString("T"),
                 _Count);
 
-            if (_Count >= 9)
+            if(_Count >= 9)
             {
                 _AlarmThreadId =
                     Thread.CurrentThread.ManagedThreadId;
