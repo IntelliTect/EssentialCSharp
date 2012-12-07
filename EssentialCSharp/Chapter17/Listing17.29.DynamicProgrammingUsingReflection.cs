@@ -12,7 +12,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_29
             Console.WriteLine(data);
             data = (double)data.Length;
             data = data * 3.5 + 28.6;
-            if (data == 2.4 + 112 + 26.2)
+            if(data == 2.4 + 112 + 26.2)
             {
                 Console.WriteLine(
                     "{0} makes for a long triathlon.", data);

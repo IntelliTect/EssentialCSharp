@@ -25,9 +25,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_32
             result = null;
             XElement firstDescendant =
                 Element.Descendants(binder.Name).FirstOrDefault();
-            if (firstDescendant != null)
+            if(firstDescendant != null)
             {
-                if (firstDescendant.Descendants().Count() > 0)
+                if(firstDescendant.Descendants().Count() > 0)
                 {
                     result = new DynamicXml(firstDescendant);
                 }
@@ -46,9 +46,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_32
             bool success = false;
             XElement firstDescendant =
                 Element.Descendants(binder.Name).FirstOrDefault();
-            if (firstDescendant != null)
+            if(firstDescendant != null)
             {
-                if (value.GetType() == typeof(XElement))
+                if(value.GetType() == typeof(XElement))
                 {
                     firstDescendant.ReplaceWith(value);
                 }

@@ -19,17 +19,17 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_16
                 CommandLineSwitchAliasAttribute.GetSwitches(
                     commandLine);
 
-            foreach (string arg in args)
+            foreach(string arg in args)
             {
                 PropertyInfo property;
                 string option;
-                if (arg[0] == '/' || arg[0] == '-')
+                if(arg[0] == '/' || arg[0] == '-')
                 {
                     string[] optionParts = arg.Split(
                         new char[] { ':' }, 2);
                     option = optionParts[0].Remove(0, 1).ToLower();
 
-                    if (options.TryGetValue(option, out property))
+                    if(options.TryGetValue(option, out property))
                     {
                         success = SetOption(
                             commandLine, property,
@@ -53,7 +53,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_16
         {
             bool success;
 
-            if (property.PropertyType == typeof(bool))
+            if(property.PropertyType == typeof(bool))
             {
                 // Last parameters for handling indexers
                 property.SetValue(
@@ -63,7 +63,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_16
             else
             {
 
-                if ((optionParts.Length < 2)
+                if((optionParts.Length < 2)
                     || optionParts[1] == ""
                     || optionParts[1] == ":")
                 {
@@ -73,14 +73,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_16
                         "You must specify the value for the {0} option.",
                         property.Name);
                 }
-                else if (
+                else if(
                     property.PropertyType == typeof(string))
                 {
                     property.SetValue(
                         commandLine, optionParts[1], null);
                     success = true;
                 }
-                else if (property.PropertyType.IsEnum)
+                else if(property.PropertyType.IsEnum)
                 {
                     success = TryParseEnumSwitch(
                         commandLine, optionParts,

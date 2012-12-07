@@ -32,9 +32,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_26
         public VersionableDocument(
             SerializationInfo info, StreamingContext context)
         {
-            foreach (SerializationEntry entry in info)
+            foreach(SerializationEntry entry in info)
             {
-                switch ((Field)Enum.Parse(typeof(Field), entry.Name))
+                switch((Field)Enum.Parse(typeof(Field), entry.Name))
                 {
                     case Field.Title:
                         Title = info.GetString(

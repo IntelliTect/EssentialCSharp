@@ -9,7 +9,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_01
             DateTime dateTime = new DateTime();
 
             Type type = dateTime.GetType();
-            foreach (
+            foreach(
                 System.Reflection.PropertyInfo property in
                     type.GetProperties())
             {

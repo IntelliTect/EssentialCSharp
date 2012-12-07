@@ -14,7 +14,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_24
                 "A cacophony of ramblings from my potpourri of notes";
             Document documentAfter;
 
-            using (stream = File.Open(
+            using(stream = File.Open(
                 documentBefore.Title + ".bin", FileMode.Create))
             {
                 BinaryFormatter formatter =
@@ -22,7 +22,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_24
                 formatter.Serialize(stream, documentBefore);
             }
 
-            using (stream = File.Open(
+            using(stream = File.Open(
                 documentBefore.Title + ".bin", FileMode.Open))
             {
                 BinaryFormatter formatter =

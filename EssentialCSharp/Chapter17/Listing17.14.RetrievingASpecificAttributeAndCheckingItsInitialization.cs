@@ -14,7 +14,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_14
                 (CommandLineSwitchAliasAttribute)
                     property.GetCustomAttributes(
                     typeof(CommandLineSwitchAliasAttribute), false)[0];
-            if (attribute.Alias == "?")
+            if(attribute.Alias == "?")
             {
                 Console.WriteLine("Help(?)");
             };

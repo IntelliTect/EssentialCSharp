@@ -11,7 +11,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_06
 
             Type t = s.GetType();
 
-            foreach (Type type in t.GetGenericArguments())
+            foreach(Type type in t.GetGenericArguments())
             {
                 System.Console.WriteLine(
                     "Type parameter: " + type.FullName);

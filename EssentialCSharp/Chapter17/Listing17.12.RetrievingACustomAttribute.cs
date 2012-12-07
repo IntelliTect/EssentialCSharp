@@ -13,13 +13,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_12
             PropertyInfo[] properties =
                 commandLine.GetType().GetProperties();
 
-            foreach (PropertyInfo property in properties)
+            foreach(PropertyInfo property in properties)
             {
                 Attribute[] attributes =
                      (Attribute[])property.GetCustomAttributes(
                         typeof(CommandLineSwitchRequiredAttribute),
                         false);
-                if ((attributes.Length > 0) &&
+                if((attributes.Length > 0) &&
                     (property.GetValue(commandLine, null) == null))
                 {
                     missingOptions.Add(property.Name);

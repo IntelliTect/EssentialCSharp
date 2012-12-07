@@ -28,10 +28,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_15
             properties = commandLine.GetType().GetProperties(
                 BindingFlags.Public | BindingFlags.NonPublic |
                 BindingFlags.Instance);
-            foreach (PropertyInfo property in properties)
+            foreach(PropertyInfo property in properties)
             {
                 options.Add(property.Name.ToLower(), property);
-                foreach (CommandLineSwitchAliasAttribute attribute in
+                foreach(CommandLineSwitchAliasAttribute attribute in
                     property.GetCustomAttributes(
                     typeof(CommandLineSwitchAliasAttribute), false))
                 {

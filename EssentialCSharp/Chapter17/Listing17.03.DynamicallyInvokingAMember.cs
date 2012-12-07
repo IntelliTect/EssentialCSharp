@@ -10,20 +10,20 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_03
         {
             string errorMessage;
             CommandLineInfo commandLine = new CommandLineInfo();
-            if (!CommandLineHandler.TryParse(
+            if(!CommandLineHandler.TryParse(
                 args, commandLine, out errorMessage))
             {
                 Console.WriteLine(errorMessage);
                 DisplayHelp();
             }
 
-            if (commandLine.Help)
+            if(commandLine.Help)
             {
                 DisplayHelp();
             }
             else
             {
-                if (commandLine.Priority !=
+                if(commandLine.Priority !=
                     ProcessPriorityClass.Normal)
                 {
                     // Change thread priority
@@ -63,7 +63,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_03
         public static void Parse(string[] args, object commandLine)
         {
             string errorMessage;
-            if (!TryParse(args, commandLine, out errorMessage))
+            if(!TryParse(args, commandLine, out errorMessage))
             {
                 throw new ApplicationException(errorMessage);
             }
@@ -74,10 +74,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_03
         {
             bool success = false;
             errorMessage = null;
-            foreach (string arg in args)
+            foreach(string arg in args)
             {
                 string option;
-                if (arg[0] == '/' || arg[0] == '-')
+                if(arg[0] == '/' || arg[0] == '-')
                 {
                     string[] optionParts = arg.Split(
                         new char[] { ':' }, 2);
@@ -89,23 +89,23 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_03
                             BindingFlags.IgnoreCase |
                             BindingFlags.Instance |
                             BindingFlags.Public);
-                    if (property != null)
+                    if(property != null)
                     {
-                        if (property.PropertyType == typeof(bool))
+                        if(property.PropertyType == typeof(bool))
                         {
                             // Last parameters for handling indexers
                             property.SetValue(
                                 commandLine, true, null);
                             success = true;
                         }
-                        else if (
+                        else if(
                             property.PropertyType == typeof(string))
                         {
                             property.SetValue(
                                 commandLine, optionParts[1], null);
                             success = true;
                         }
-                        else if (property.PropertyType.IsEnum)
+                        else if(property.PropertyType.IsEnum)
                         {
                             try
                             {
@@ -116,7 +116,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_03
                                     null);
                                 success = true;
                             }
-                            catch (ArgumentException)
+                            catch(ArgumentException)
                             {
                                 success = false;
                                 errorMessage =
