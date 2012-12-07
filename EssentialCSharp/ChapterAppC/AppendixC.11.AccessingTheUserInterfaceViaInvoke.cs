@@ -3,8 +3,8 @@
     using System;
     using System.Drawing;
     using System.Threading;
-    using System.Windows.Forms;
     using System.Threading.Tasks;
+    using System.Windows.Forms;
 
     public class Program : Form
     {
@@ -27,7 +27,7 @@
 
         void UpdateProgressBar()
         {
-            if (_ProgressBar.InvokeRequired)
+            if(_ProgressBar.InvokeRequired)
             {
                 MethodInvoker updateProgressBar =
                     UpdateProgressBar;
@@ -41,13 +41,13 @@
 
         private void Increment()
         {
-            for (int i = 0; i < 100; i++)
+            for(int i = 0; i < 100; i++)
             {
                 UpdateProgressBar();
                 Thread.Sleep(100);
             }
 
-            if (InvokeRequired)
+            if(InvokeRequired)
             {
                 // Close cannot be called directly from 
                 // a non-UI thread.

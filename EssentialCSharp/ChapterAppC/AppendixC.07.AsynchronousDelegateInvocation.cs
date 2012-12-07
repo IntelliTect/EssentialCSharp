@@ -9,7 +9,7 @@
         {
             Console.WriteLine("Application started....");
 
-            Func<int,string> workerMethod = null;
+            Func<int, string> workerMethod = null;
             IAsyncResult asyncResult = null;
 
             workerMethod = PiCalculator.Calculate;
@@ -18,7 +18,7 @@
                 workerMethod.BeginInvoke(500, null, null);
 
             // Display periods as progress bar.
-            while (!asyncResult.AsyncWaitHandle.WaitOne(
+            while(!asyncResult.AsyncWaitHandle.WaitOne(
                 100, false))
             {
                 Console.Write('.');

@@ -24,7 +24,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.AppendixC.ListingC_08
                 };
             piCalculation.CalculateAsync(500, null);
 
-            while (!resetEvent.Wait(100))
+            while(!resetEvent.Wait(100))
             {
                 Console.Write(".");
             }

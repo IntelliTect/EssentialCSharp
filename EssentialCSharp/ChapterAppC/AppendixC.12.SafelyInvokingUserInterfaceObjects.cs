@@ -1,9 +1,9 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.AppendixC.ListingC_12
 {
     using System;
-    using System.Windows.Threading;
     using System.Windows;
-    
+    using System.Windows.Threading;
+
     public static class UIAction
     {
         public static void Invoke<T>(
@@ -15,7 +15,7 @@
         {
             DispatcherObject dispatcher =
                 Application.Current;
-            if (dispatcher == null
+            if(dispatcher == null
                 || dispatcher.CheckAccess()
                 || dispatcher.Dispatcher == null
                 )
@@ -39,13 +39,13 @@
                 {
                     action();
                 }
-                catch (Exception exception)
+                catch(Exception exception)
                 {
                     exceptionThrown = exception;
                 }
             };
             Application.Current.Dispatcher.Invoke(target);
-            if (exceptionThrown != null)
+            if(exceptionThrown != null)
             {
                 throw exceptionThrown;
             }

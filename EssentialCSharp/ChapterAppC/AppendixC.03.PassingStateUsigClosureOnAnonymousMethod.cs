@@ -2,8 +2,8 @@
 {
     using System;
     using System.IO;
-    using System.Net;
     using System.Linq;
+    using System.Net;
     using System.Threading;
 
     public class Program
@@ -11,7 +11,7 @@
         public static void Main(string[] args)
         {
             string url = "http://www.intelliTechture.com";
-            if (args.Length > 0)
+            if(args.Length > 0)
             {
                 url = args[0];
             }
@@ -37,7 +37,7 @@
                 null);
 
             // Indicate busy using dots
-            while (!asyncResult.AsyncWaitHandle.WaitOne(100))
+            while(!asyncResult.AsyncWaitHandle.WaitOne(100))
             {
                 Console.Write('.');
             }

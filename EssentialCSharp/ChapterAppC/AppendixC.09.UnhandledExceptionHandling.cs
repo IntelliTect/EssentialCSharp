@@ -1,9 +1,9 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.AppendixC.ListingC_09
 {
     using System;
-    using System.Threading;
     using System.ComponentModel;
     using System.Text;
+    using System.Threading;
 
     public class PiCalculator
     {
@@ -18,7 +18,7 @@
 
             Console.Write(
                 "Enter the number of digits to calculate:");
-            if (int.TryParse(Console.ReadLine(), out digitCount))
+            if(int.TryParse(Console.ReadLine(), out digitCount))
             {
                 Console.WriteLine("ENTER to cancel");
                 // C# 2.0 Syntax for registering delegates
@@ -59,9 +59,9 @@
             calculationWorker.ReportProgress(0, pi.ToString());
 
             // Calculate rest of pi, if required
-            if (digits > 0)
+            if(digits > 0)
             {
-                for (int i = 0; i < digits; i += 9)
+                for(int i = 0; i < digits; i += 9)
                 {
 
                     // Calculate next i decimal places
@@ -76,7 +76,7 @@
                         0, ds.Substring(0, digitCount));
 
                     // Check for cancellation
-                    if (calculationWorker.CancellationPending)
+                    if(calculationWorker.CancellationPending)
                     {
                         // Need to set Cancel if you need to 
                         // distinguish how a worker thread completed
@@ -103,11 +103,11 @@
             object sender, RunWorkerCompletedEventArgs eventArgs)
         {
             Console.WriteLine();
-            if (eventArgs.Cancelled)
+            if(eventArgs.Cancelled)
             {
                 Console.WriteLine("Cancelled");
             }
-            else if (eventArgs.Error != null)
+            else if(eventArgs.Error != null)
             {
                 //IMPORTANT: check error to retrieve any exceptions.
                 Console.WriteLine("ERROR: {0}", eventArgs.Error.Message);

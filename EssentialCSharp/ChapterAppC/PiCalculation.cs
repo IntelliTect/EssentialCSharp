@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.ComponentModel;
-using System.Threading.Tasks;
 using System.Threading;
+using System.Threading.Tasks;
 using AddisonWesley.Michaelis.EssentialCSharp.Shared;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.AppendixC
@@ -16,12 +13,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.AppendixC
         {
             CalculateAsync(digits, null);
         }
+
         public void CalculateAsync(
             int digits, object userState)
         {
             CalculateAsync(
                 digits, default(CancellationToken), userState);
         }
+
         public void CalculateAsync<TState>(
             int digits,
             CancellationToken cancelToken,
@@ -41,6 +40,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.AppendixC
                         return continueTask.Result;
                     });
         }
+
         public event
             EventHandler<CalculateCompletedEventArgs>
                 CalculateCompleted = delegate { };
@@ -58,6 +58,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.AppendixC
             {
                 Result = value;
             }
+
             public string Result { get; private set; }
         }
     }

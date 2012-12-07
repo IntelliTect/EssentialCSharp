@@ -1,8 +1,8 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.AppendixC.ListingC_10
 {
     using System;
-    using System.Threading;
     using System.ComponentModel;
+    using System.Threading;
 
     public class Program
     {
@@ -10,11 +10,11 @@
             object sender, RunWorkerCompletedEventArgs eventArgs)
         {
             Console.WriteLine();
-            if (eventArgs.Cancelled)
+            if(eventArgs.Cancelled)
             {
                 Console.WriteLine("Cancelled");
             }
-            else if (eventArgs.Error != null)
+            else if(eventArgs.Error != null)
             {
                 // IMPORTANT: check error to retrieve any 
                 // exceptions.

@@ -2,15 +2,15 @@
 {
     using System;
     using System.IO;
-    using System.Net;
     using System.Linq;
+    using System.Net;
 
     public class Program
     {
         public static void Main(string[] args)
         {
             string url = "http://www.intelliTect.com";
-            if (args.Length > 0)
+            if(args.Length > 0)
             {
                 url = args[0];
             }
@@ -23,7 +23,7 @@
 
             Console.Write(".....");
 
-            using (StreamReader reader =
+            using(StreamReader reader =
                 new StreamReader(response.GetResponseStream()))
             {
                 int length = reader.ReadToEnd().Length;

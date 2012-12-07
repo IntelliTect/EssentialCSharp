@@ -2,8 +2,8 @@
 {
     using System;
     using System.IO;
-    using System.Net;
     using System.Linq;
+    using System.Net;
     using System.Threading;
 
     public class Program
@@ -11,18 +11,18 @@
         public static void Main(string[] args)
         {
             string url = "http://www.intelliTechture.com";
-            if (args.Length > 0)
+            if(args.Length > 0)
             {
                 url = args[0];
             }
 
             Console.Write(url);
             WebRequest webRequest = WebRequest.Create(url);
-            WebRequestState state = 
+            WebRequestState state =
                 new WebRequestState(webRequest);
             IAsyncResult asyncResult = webRequest.BeginGetResponse(
                 GetResponseAsyncCompleted, state);
-            while (!asyncResult.AsyncWaitHandle.WaitOne(100))
+            while(!asyncResult.AsyncWaitHandle.WaitOne(100))
             {
                 Console.Write('.');
             }
