@@ -10,7 +10,7 @@
             Console.Write("{0} = ", text);
             unsafe // Requires /unsafe switch
             {
-                fixed (char* pText = text)
+                fixed(char* pText = text)
                 {
                     pText[1] = 'm';
                     pText[2] = 'i';

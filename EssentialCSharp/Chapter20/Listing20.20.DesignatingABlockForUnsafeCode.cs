@@ -1,11 +1,8 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_20
 {
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Windows.Forms;
     using System.Runtime.InteropServices;
+    using System.Windows.Forms;
 
     class Program
     {
@@ -19,14 +16,14 @@
 
             unsafe
             {
-                fixed (byte* matrix = new byte[6],
+                fixed(byte* matrix = new byte[6],
                     redpillPtr = redpill)
                 {
                     // Move the address of matrix immediately 
                     // following the SIDT instruction of memory.
                     *(uint*)&redpillPtr[3] = (uint)&matrix[0];
 
-                    using (VirtualMemoryPtr codeBytesPtr =
+                    using(VirtualMemoryPtr codeBytesPtr =
                         new VirtualMemoryPtr(redpill.Length))
                     {
                         Marshal.Copy(
@@ -39,7 +36,7 @@
 
                         method();
                     }
-                    if (matrix[5] > 0xd0)
+                    if(matrix[5] > 0xd0)
                     {
                         Console.WriteLine("Inside Matrix!\n");
                         return 1;
@@ -53,7 +50,7 @@
             } // unsafe
         }
     }
-    
+
     public class VirtualMemoryPtr : System.Runtime.InteropServices.SafeHandle
     {
         public VirtualMemoryPtr(int memorySize) :
@@ -91,7 +88,7 @@
         // SafeHandle abstract member
         protected override bool ReleaseHandle()
         {
-            if (!Disposed)
+            if(!Disposed)
             {
                 Disposed = true;
                 GC.SuppressFinalize(this);
@@ -108,7 +105,7 @@
         private static extern IntPtr VirtualAllocEx(
             IntPtr hProcess,
             IntPtr lpAddress,
-            IntPtr dwSize, 
+            IntPtr dwSize,
             AllocationType flAllocationType,
             uint flProtect);
 
@@ -125,7 +122,7 @@
         static extern bool VirtualFreeEx(
             IntPtr hProcess, IntPtr lpAddress,
             IntPtr dwSize, IntPtr dwFreeType);
-        
+
         public static bool VirtualFreeEx(
             IntPtr hProcess, IntPtr lpAddress,
             IntPtr dwSize)
@@ -133,13 +130,13 @@
             bool result = VirtualFreeEx(
                 hProcess, lpAddress, dwSize,
                 (IntPtr)MemoryFreeType.Decommit);
-            if (!result)
+            if(!result)
             {
                 throw new System.ComponentModel.Win32Exception();
             }
             return result;
         }
-        
+
         public static bool VirtualFreeEx(
             IntPtr lpAddress, IntPtr dwSize)
         {
@@ -248,13 +245,13 @@
                 AllocationType.Reserve | AllocationType.Commit,
                 (uint)ProtectionOptions.PageExecuteReadWrite);
 
-            if (codeBytesPtr == IntPtr.Zero)
+            if(codeBytesPtr == IntPtr.Zero)
             {
                 throw new System.ComponentModel.Win32Exception();
             }
 
             uint lpflOldProtect = 0;
-            if (!VirtualProtectEx(
+            if(!VirtualProtectEx(
                 hProcess, codeBytesPtr,
                 (IntPtr)size,
                 (uint)ProtectionOptions.PageExecuteReadWrite,

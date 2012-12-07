@@ -7,7 +7,7 @@
         public static void Main()
         {
             string text = "S5280ft";
-            Console.Write("{0} = ",text);
+            Console.Write("{0} = ", text);
             unsafe // Requires /unsafe switch
             {
                 fixed(char* pText = text)
