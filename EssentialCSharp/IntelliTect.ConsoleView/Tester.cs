@@ -20,11 +20,11 @@ namespace IntelliTect.ConsoleView
         {
 
             string[] data = Parse(view);
-            
+
             string input = data[0];
             string output = data[1];
 
-            if (input.Trim().Length == 0)
+            if(input.Trim().Length == 0)
                 Execute(output, action);
             else
                 Execute(input, output, action);
@@ -38,8 +38,8 @@ namespace IntelliTect.ConsoleView
         /// <param name="action">Action to be tested</param>
         private static void Execute(string givenInput, string expectedOutput, Action action)
         {
-            using (TextWriter writer = new StringWriter())
-            using (TextReader reader = new StringReader(givenInput))
+            using(TextWriter writer = new StringWriter())
+            using(TextReader reader = new StringReader(givenInput))
             {
                 System.Console.SetOut(writer);
                 System.Console.SetIn(reader);
@@ -57,7 +57,7 @@ namespace IntelliTect.ConsoleView
         /// <param name="action">Action to be tested</param>
         private static void Execute(string expectedOutput, Action action)
         {
-            using (TextWriter writer = new StringWriter())
+            using(TextWriter writer = new StringWriter())
             {
                 System.Console.SetOut(writer);
                 action();
@@ -84,26 +84,26 @@ namespace IntelliTect.ConsoleView
             string output = "";
 
             // using the char array, categorize each entry as belonging to "input" or "output"
-            for (int i = 0; i < viewTemp.Length; i++)
+            for(int i = 0; i < viewTemp.Length; i++)
             {
-                if (i != viewTemp.Length - 1)
+                if(i != viewTemp.Length - 1)
                 {
                     // find "<<" tokens which indicate beginning of input
-                    if (viewTemp[i] == '<' && viewTemp[i + 1] == '<')
+                    if(viewTemp[i] == '<' && viewTemp[i + 1] == '<')
                     {
                         i++;    // skip the other character in token
                         isInput = true;
                         continue;
                     }
                     // find ">>" tokens which indicate end of input
-                    else if (viewTemp[i] == '>' && viewTemp[i + 1] == '>')
+                    else if(viewTemp[i] == '>' && viewTemp[i + 1] == '>')
                     {
                         i++;    // skip the other character in token
                         isInput = false;
                         continue;
                     }
                 }
-                if (isInput)
+                if(isInput)
                     input += viewTemp[i].ToString();
                 else
                     output += viewTemp[i].ToString();
