@@ -12,7 +12,7 @@
             ThreadStart threadStart = DoWork;
             Thread thread = new Thread(threadStart);
             thread.Start();
-            for (int count = 0; count < Repetitions; count++)
+            for(int count = 0; count < Repetitions; count++)
             {
                 Console.Write('-');
             }
@@ -21,7 +21,7 @@
 
         public static void DoWork()
         {
-            for (int count = 0; count < Repetitions; count++)
+            for(int count = 0; count < Repetitions; count++)
             {
                 Console.Write('+');
             }

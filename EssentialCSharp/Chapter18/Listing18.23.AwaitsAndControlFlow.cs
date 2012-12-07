@@ -48,7 +48,7 @@
 
             StatusLabel.Text = "Pinging…";
 
-            foreach (string url in urls)
+            foreach(string url in urls)
             {
                 status = await func(url);
                 StatusLabel.Text =

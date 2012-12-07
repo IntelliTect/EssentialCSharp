@@ -18,7 +18,7 @@
             {
                 task.Wait();
             }
-            catch (AggregateException exception)
+            catch(AggregateException exception)
             {
                 exception.Handle(eachException =>
                 {
@@ -31,4 +31,3 @@
         }
     }
 }
-            

@@ -10,7 +10,7 @@
         {
             ThreadPool.QueueUserWorkItem(DoWork, '.');
 
-            for (int count = 0; count < Repetitions; count++)
+            for(int count = 0; count < Repetitions; count++)
             {
                 Console.Write('-');
             }
@@ -23,7 +23,7 @@
         }
         public static void DoWork(object state)
         {
-            for (int count = 0; count < Repetitions; count++)
+            for(int count = 0; count < Repetitions; count++)
             {
                 Console.Write(state);
             }

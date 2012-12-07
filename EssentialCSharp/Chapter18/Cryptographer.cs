@@ -48,14 +48,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
         }
         public byte[] Encrypt(ICryptoTransform encryptor, byte[] data)
         {
-            if (encryptor == null)
+            if(encryptor == null)
                 throw new ArgumentNullException("encryptor");
-            if (data == null)
+            if(data == null)
                 throw new ArgumentNullException("data");
 
             //Encrypt the data.
-            using (MemoryStream msEncrypt = new MemoryStream())
-            using (CryptoStream csEncrypt = new CryptoStream(msEncrypt,
+            using(MemoryStream msEncrypt = new MemoryStream())
+            using(CryptoStream csEncrypt = new CryptoStream(msEncrypt,
             encryptor, CryptoStreamMode.Write))
             {
                 //Write all data to the crypto stream and flush it.
@@ -83,20 +83,20 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
 
         public byte[] Decrypt(ICryptoTransform decryptor, byte[] encrypted)
         {
-            if (decryptor == null)
+            if(decryptor == null)
                 throw new ArgumentNullException("decryptor");
-            if (encrypted == null)
+            if(encrypted == null)
                 throw new ArgumentNullException("encrypted");
 
-            using (MemoryStream msDecrypt = new MemoryStream(encrypted))
-            using (CryptoStream csDecrypt = new CryptoStream(msDecrypt,
+            using(MemoryStream msDecrypt = new MemoryStream(encrypted))
+            using(CryptoStream csDecrypt = new CryptoStream(msDecrypt,
             decryptor, CryptoStreamMode.Read))
             {
                 byte[] fromEncrypt = new byte[encrypted.Length];
 
                 int read = csDecrypt.Read(fromEncrypt, 0,
                 fromEncrypt.Length);
-                if (read < fromEncrypt.Length)
+                if(read < fromEncrypt.Length)
                 {
                     byte[] clearBytes = new byte[read];
                     Buffer.BlockCopy(fromEncrypt, 0, clearBytes, 0, read);

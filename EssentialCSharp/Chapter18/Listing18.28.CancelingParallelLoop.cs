@@ -44,7 +44,7 @@
                                 Encrypt(fileName);
                             });
                     }
-                    catch (OperationCanceledException) { }
+                    catch(OperationCanceledException) { }
                 });
 
             // Wait for the user's input

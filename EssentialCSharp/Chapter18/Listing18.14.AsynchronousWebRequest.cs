@@ -12,7 +12,7 @@
         public static void Main(string[] args)
         {
             string url = "http://www.IntelliTect.com";
-            if (args.Length > 0)
+            if(args.Length > 0)
             {
                 url = args[0];
             }
@@ -23,12 +23,12 @@
 
             try
             {
-                while (!task.Wait(100))
+                while(!task.Wait(100))
                 {
                     Console.Write(".");
                 }
             }
-            catch (AggregateException exception)
+            catch(AggregateException exception)
             {
                 exception = exception.Flatten();
                 try
@@ -43,15 +43,15 @@
                         return true;
                     });
                 }
-                catch (WebException)
+                catch(WebException)
                 {
                     // ...
                 }
-                catch (IOException)
+                catch(IOException)
                 {
                     // ...
                 }
-                catch (NotSupportedException)
+                catch(NotSupportedException)
                 {
                     // ...
                 }
@@ -81,7 +81,8 @@
             .Unwrap()
             .ContinueWith(antecedent =>
             {
-                if (reader != null) reader.Dispose();
+                if(reader != null)
+                    reader.Dispose();
                 string text = antecedent.Result;
                 Console.WriteLine(
                     FormatBytes(text.Length));

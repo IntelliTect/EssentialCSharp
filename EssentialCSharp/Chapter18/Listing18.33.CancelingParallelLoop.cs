@@ -17,7 +17,7 @@
             return data.AsParallel().WithCancellation(
                 cancellationToken).Select(
                     (item) => Encrypt(item)).ToList();
-                }
+        }
 
         public static void Main()
         {
@@ -40,7 +40,7 @@
 
             cts.Cancel();
             try { task.Wait(); }
-            catch (AggregateException) { }
+            catch(AggregateException) { }
         }
 
         private static string Encrypt(string item)

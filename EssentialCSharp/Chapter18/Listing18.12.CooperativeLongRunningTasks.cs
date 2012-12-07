@@ -39,7 +39,7 @@
             string piSection = string.Empty;
             int i = 0;
 
-            while (!cancellationToken.IsCancellationRequested
+            while(!cancellationToken.IsCancellationRequested
                 || i == int.MaxValue)
             {
                 piSection = PiCalculator.Calculate(

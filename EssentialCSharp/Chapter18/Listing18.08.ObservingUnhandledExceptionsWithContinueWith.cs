@@ -1,8 +1,8 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_08
 {
     using System;
-using System.Diagnostics;
-using System.Threading.Tasks;
+    using System.Diagnostics;
+    using System.Threading.Tasks;
 
     public class Program
     {
@@ -22,7 +22,7 @@ using System.Threading.Tasks;
             task.Start();
             continuationTask.Wait();
             Trace.Assert(parentTaskFaulted);
-            if (!task.IsFaulted)
+            if(!task.IsFaulted)
             {
                 task.Wait();
             }
@@ -39,4 +39,3 @@ using System.Threading.Tasks;
         }
     }
 }
-            

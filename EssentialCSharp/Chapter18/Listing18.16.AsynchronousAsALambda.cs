@@ -12,7 +12,7 @@
         public static void Main(string[] args)
         {
             string url = "http://www.IntelliTect.com";
-            if (args.Length > 0)
+            if(args.Length > 0)
             {
                 url = args[0];
             }
@@ -29,7 +29,7 @@
 
                     WebResponse response =
                         await webRequest.GetResponseAsync();
-                    using (StreamReader reader =
+                    using(StreamReader reader =
                         new StreamReader(
                             response.GetResponseStream()))
                     {
@@ -42,7 +42,7 @@
 
             Task task = writeWebRequestSizeAsync(url);
 
-            while (!task.Wait(100))
+            while(!task.Wait(100))
             {
                 Console.Write(".");
             }

@@ -14,10 +14,10 @@
                 Task.Run<string>(
                     () => PiCalculator.Calculate(100));
 
-            foreach (
+            foreach(
                 char busySymbol in Utility.BusySymbols())
             {
-                if (task.IsCompleted)
+                if(task.IsCompleted)
                 {
                     Console.Write('\b');
                     break;

@@ -12,7 +12,7 @@
         {
             string pi = null;
             int iterations = TotalDigits / BatchSize;
-            for (int i = 0; i < iterations; i++)
+            for(int i = 0; i < iterations; i++)
             {
                 pi += PiCalculator.Calculate(
                     BatchSize, i * BatchSize);
