@@ -22,7 +22,7 @@
                 from fileName in fileNames
                 select new FileInfo(fileName);
 
-            foreach (FileInfo fileInfo in fileInfos)
+            foreach(FileInfo fileInfo in fileInfos)
             {
                 Console.WriteLine(".{0}({1})",
                     fileInfo.Name, fileInfo.LastWriteTime);

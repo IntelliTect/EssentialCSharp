@@ -23,7 +23,7 @@
                     LastWriteTime = File.GetLastWriteTime(fileName)
                 };
 
-            foreach (var fileResult in fileResults)
+            foreach(var fileResult in fileResults)
             {
                 Console.WriteLine("{0}({1})",
                     fileResult.Name, fileResult.LastWriteTime);

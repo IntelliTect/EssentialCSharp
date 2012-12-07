@@ -18,7 +18,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_14
                  from number in numbers
                  select new { word, number };
 
-            foreach (var value in product)
+            foreach(var value in product)
             {
                 Console.WriteLine(Environment.NewLine + "({0}, {1})",
                     value.word, value.number);

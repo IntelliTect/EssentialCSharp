@@ -21,7 +21,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_08
                 orderby new FileInfo(fileName).Length, fileName
                 select new FileInfo(fileName);
 
-            foreach (FileInfo file in files)
+            foreach(FileInfo file in files)
             {
                 //  As simplification, current directory is
                 //  assumed to be a subdirectory of

@@ -17,7 +17,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_13
                 from character in word
                 select character;
 
-            foreach (var wordCharacter in selection)
+            foreach(var wordCharacter in selection)
             {
                 Console.WriteLine(Environment.NewLine + "{0}",
                     wordCharacter);

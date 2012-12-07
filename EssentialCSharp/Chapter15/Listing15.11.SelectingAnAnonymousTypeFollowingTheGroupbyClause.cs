@@ -25,13 +25,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_11
                     Items = groups
                 };
 
-            foreach (var wordGroup in selection)
+            foreach(var wordGroup in selection)
             {
                 Console.WriteLine(Environment.NewLine + "{0}:",
                     wordGroup.IsContextualKeyword ?
                         "Contextual Keywords" : "Keywords");
 
-                foreach (var keyword in wordGroup.Items)
+                foreach(var keyword in wordGroup.Items)
                 {
                     Console.Write(" " + keyword.Replace("*", null));
                 }

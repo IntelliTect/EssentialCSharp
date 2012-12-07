@@ -22,7 +22,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_07
                     fileName
                 select fileName;
 
-            foreach (string fileName in fileNames)
+            foreach(string fileName in fileNames)
             {
                 Console.WriteLine("{0}", fileName);
             }

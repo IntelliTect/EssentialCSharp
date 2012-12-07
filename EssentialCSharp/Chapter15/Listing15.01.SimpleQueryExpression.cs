@@ -41,7 +41,7 @@
                 where !word.Contains('*')
                 select word;
 
-            foreach (string keyword in selection)
+            foreach(string keyword in selection)
             {
                 Console.Write(keyword + " ");
             }

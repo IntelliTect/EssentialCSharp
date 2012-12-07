@@ -19,7 +19,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_15
                     System.Reflection.BindingFlags.Static |
                     System.Reflection.BindingFlags.Public)
                 select method.Name).Distinct();
-            foreach (string method in enumerableMethodNames)
+            foreach(string method in enumerableMethodNames)
             {
                 Console.Write(" {0},", method);
             }

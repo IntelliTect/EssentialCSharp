@@ -14,13 +14,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_04
 
         private static void ShowContextualKeywords2()
         {
-            IEnumerable<string> selection = 
+            IEnumerable<string> selection =
                 from word in Keywords
                 where IsKeyword(word)
                 select word;
 
             Console.WriteLine("Query created.");
-            foreach (string keyword in selection)
+            foreach(string keyword in selection)
             {
                 // No space output here. 
                 Console.Write(keyword);
@@ -33,7 +33,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_04
         // production code. 
         private static bool IsKeyword(string word)
         {
-            if (word.Contains('*'))
+            if(word.Contains('*'))
             {
                 Console.Write(" ");
                 return true;

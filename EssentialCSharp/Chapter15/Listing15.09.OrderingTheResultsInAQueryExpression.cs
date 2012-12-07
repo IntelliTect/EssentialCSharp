@@ -23,7 +23,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_09
                 select file;
 
 
-            foreach (FileInfo file in files)
+            foreach(FileInfo file in files)
             {
                 //  As simplification, current directory is
                 //  assumed to be a subdirectory of
