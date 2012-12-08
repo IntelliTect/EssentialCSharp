@@ -21,6 +21,7 @@
             Console.WriteLine();
             Console.WriteLine();
         }
+
         public static void PrintNode(Expression expression,
             int indent)
         {
@@ -29,6 +30,7 @@
             else
                 PrintSingle(expression, indent);
         }
+
         private static void PrintNode(BinaryExpression expression,
           int indent)
         {
@@ -36,12 +38,14 @@
             PrintSingle(expression, indent);
             PrintNode(expression.Right, indent + 1);
         }
+
         private static void PrintSingle(
             Expression expression, int indent)
         {
             Console.WriteLine("{0," + indent * 5 + "}{1}",
               "", NodeToString(expression));
         }
+
         private static string NodeToString(Expression expression)
         {
             switch(expression.NodeType)

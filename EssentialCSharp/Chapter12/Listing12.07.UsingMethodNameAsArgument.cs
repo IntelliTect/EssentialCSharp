@@ -2,12 +2,13 @@
 {
     using System;
 
-    public delegate bool ComparisonHandler(int first, int second);
+    public delegate bool ComparisonHandler(
+        int first, int second);
 
     class DelegateSample
     {
         public static void BubbleSort(
-          int[] items, ComparisonHandler comparisonMethod)
+            int[] items, ComparisonHandler comparisonMethod)
         {
             int i;
             int j;
@@ -43,9 +44,10 @@
 
         static void Main()
         {
+            int i;
             int[] items = new int[5];
 
-            for(int i = 0; i < items.Length; i++)
+            for(i = 0; i < items.Length; i++)
             {
                 Console.Write("Enter an integer: ");
                 items[i] = int.Parse(Console.ReadLine());
@@ -53,7 +55,7 @@
 
             BubbleSort(items, GreaterThan);
 
-            for(int i = 0; i < items.Length; i++)
+            for(i = 0; i < items.Length; i++)
             {
                 Console.WriteLine(items[i]);
             }

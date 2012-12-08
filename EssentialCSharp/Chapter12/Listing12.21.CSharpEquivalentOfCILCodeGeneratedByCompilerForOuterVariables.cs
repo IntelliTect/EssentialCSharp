@@ -5,6 +5,7 @@
 
     public class Program
     {
+        // ...
         private sealed class __LocalsDisplayClass_00000001
         {
             public int comparisonCount;
@@ -31,13 +32,14 @@
             }
 
             DelegateSample.BubbleSort(items, locals.__AnonymousMethod_00000000);
+
             for(i = 0; i < items.Length; i++)
             {
                 Console.WriteLine(items[i]);
             }
 
             Console.WriteLine("Items were compared {0} times.",
-                              locals.comparisonCount);
+                locals.comparisonCount);
         }
     }
 }

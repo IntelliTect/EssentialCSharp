@@ -7,7 +7,6 @@
     {
         public static void Main()
         {
-
             int i;
             int[] items = new int[5];
             int comparisonCount = 0;

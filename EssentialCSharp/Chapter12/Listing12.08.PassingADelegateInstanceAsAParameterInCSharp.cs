@@ -42,17 +42,19 @@
 
         public static void Main()
         {
+            int i;
             int[] items = new int[100];
-
             Random random = new Random();
-            for(int i = 0; i < items.Length; i++)
+
+            for(i = 0; i < items.Length; i++)
             {
                 items[i] = random.Next(int.MinValue, int.MaxValue);
             }
 
-            BubbleSort(items, new ComparisonHandler(GreaterThan));
+            BubbleSort(items,
+                new ComparisonHandler(GreaterThan));
 
-            for(int i = 0; i < items.Length; i++)
+            for(i = 0; i < items.Length; i++)
             {
                 Console.WriteLine(items[i]);
             }

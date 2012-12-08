@@ -2,7 +2,6 @@
 {
     using System;
     using Listing12_07;
-    using Listing12_05;
 
     class DelegateSample
     {

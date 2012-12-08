@@ -4,7 +4,6 @@
 
     public class DelegateSample
     {
-
         public delegate bool ComparisonHandler(int first, int second);
 
         public static void BubbleSort(
@@ -46,7 +45,6 @@
 
         public static void Main()
         {
-
             int i;
             int[] items = new int[5];
 

@@ -81,7 +81,6 @@
     <Compile Include="Listing12.13.StatementLambdasWithASingleInputParameter.cs" />
     <Compile Include="Listing12.14.ParameterlessStatementLambdas.cs" />
     <Compile Include="Listing12.12.OmittingParameterTypesFromStatementLambdas.cs" />
-    <Compile Include="Listing12.15__.PassingADelegateWithAStatementLambda.cs" />
     <Compile Include="Listing12.18.UsingVarianceForDelegates.cs" />
     <Compile Include="Listing12.16.PassingAnAnonymousMethod.cs" />
     <Compile Include="Listing12.08.PassingADelegateInstanceAsAParameterInCSharp.cs" />

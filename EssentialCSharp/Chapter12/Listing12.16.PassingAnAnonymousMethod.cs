@@ -17,11 +17,11 @@
             }
 
             DelegateSample.BubbleSort(items,
-                    delegate(int first, int second)
-                    {
-                        return first < second;
-                    }
-                );
+                delegate(int first, int second)
+                {
+                    return first < second;
+                }
+            );
 
             for(i = 0; i < items.Length; i++)
             {

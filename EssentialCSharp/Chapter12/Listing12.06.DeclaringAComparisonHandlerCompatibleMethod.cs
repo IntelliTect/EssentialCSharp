@@ -2,12 +2,13 @@
 {
     using System;
 
-    public delegate bool ComparisonHandler(int first, int second);
+    public delegate bool ComparisonHandler(
+        int first, int second);
 
     class DelegateSample
     {
         public static void BubbleSort(
-          int[] items, ComparisonHandler comparisonMethod)
+            int[] items, ComparisonHandler comparisonMethod)
         {
             int i;
             int j;
