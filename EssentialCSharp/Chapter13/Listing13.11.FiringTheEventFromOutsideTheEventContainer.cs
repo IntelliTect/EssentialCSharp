@@ -11,7 +11,7 @@
             Heater heater = new Heater(60);
             Cooler cooler = new Cooler(80);
 
-            // Note: Use new Thermostat.TemperatureChangeHandler(
+            // Note: Use new Action(
             //       cooler.OnTemperatureChanged) if C# 1.0.
             thermostat.OnTemperatureChange +=
                 heater.OnTemperatureChanged;

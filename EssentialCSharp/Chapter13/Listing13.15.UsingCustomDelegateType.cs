@@ -1,7 +1,5 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_15
 {
-    using System;
-
     public class Thermostat
     {
         public class TemperatureArgs : System.EventArgs

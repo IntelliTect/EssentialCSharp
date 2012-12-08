@@ -1,9 +1,8 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_09
 {
-    using Listing13_01;
-
     using System;
     using System.Collections.Generic;
+    using Listing13_01;
 
     public class Thermostat
     {
@@ -39,7 +38,8 @@
                         if(exceptionCollection.Count > 0)
                         {
                             throw new AggregateException(
-                                "There were exceptions thrown by OnTemperatureChange Event subscribers.",
+                                "There were exceptions thrown by " +
+                                "OnTemperatureChange Event subscribers.",
                                 exceptionCollection);
                         }
                     }

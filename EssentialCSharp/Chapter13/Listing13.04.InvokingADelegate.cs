@@ -1,4 +1,4 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_05
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_04
 {
     using System;
 
@@ -15,20 +15,13 @@
                 if(value != CurrentTemperature)
                 {
                     _CurrentTemperature = value;
-                    // If there are any subscribers
-                    // then notify them of changes in 
-                    // temperature
-                    Action<float> localOnChange =
-                        OnTemperatureChange;
-                    if(localOnChange != null)
-                    {
-                        // Call subscribers
-                        localOnChange(value);
-                    }
+
+                    // INCOMPLETE:  Check for null needed
+                    // Call subscribers
+                    OnTemperatureChange(value);
                 }
             }
         }
-
         private float _CurrentTemperature;
     }
 }

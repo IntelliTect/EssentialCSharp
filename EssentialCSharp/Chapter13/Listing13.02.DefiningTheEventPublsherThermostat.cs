@@ -1,7 +1,7 @@
-﻿
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_02
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_02
 {
     using System;
+
     public class Thermostat
     {
         // Using C# 3.0 or later syntax.

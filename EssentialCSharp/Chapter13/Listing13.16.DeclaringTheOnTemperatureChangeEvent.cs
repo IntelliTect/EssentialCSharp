@@ -1,4 +1,4 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_12
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_16
 {
     using System;
 
@@ -19,15 +19,6 @@
             private float _newTemperature;
         }
 
-        // Define the event publisher
-        public event EventHandler<TemperatureArgs> OnTemperatureChange =
-            delegate { };
-
-        public float CurrentTemperature
-        {
-            get { return _CurrentTemperature; }
-            set { _CurrentTemperature = value; }
-        }
-        private float _CurrentTemperature;
+        public event EventHandler<TemperatureArgs> OnTemperatureChange;
     }
 }

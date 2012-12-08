@@ -20,9 +20,9 @@
             // if using C# 2.0
             thermostat.OnTemperatureChange +=
                 (newTemperature) =>
-                {
-                    throw new InvalidOperationException();
-                };
+                    {
+                        throw new InvalidOperationException();
+                    };
             thermostat.OnTemperatureChange +=
                 cooler.OnTemperatureChanged;
 

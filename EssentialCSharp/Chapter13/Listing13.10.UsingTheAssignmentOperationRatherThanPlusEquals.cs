@@ -14,13 +14,15 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_10
             Cooler cooler = new Cooler(80);
             string temperature;
 
-            // Note: Use new Thermostat.TemperatureChangeHandler(
+            // Note: Use new Action(
             //       cooler.OnTemperatureChanged) if C# 1.0 
-            thermostat.OnTemperatureChange = heater.OnTemperatureChanged;
+            thermostat.OnTemperatureChange =
+                heater.OnTemperatureChanged;
 
             // Bug:  assignment operator overrides 
             // previous assignment.
-            thermostat.OnTemperatureChange = cooler.OnTemperatureChanged;
+            thermostat.OnTemperatureChange = 
+                cooler.OnTemperatureChanged;
 
             Console.Write("Enter temperature: ");
             temperature = Console.ReadLine();

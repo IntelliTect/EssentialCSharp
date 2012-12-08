@@ -67,12 +67,14 @@
     <Compile Include="..\Shared\Program.cs">
       <Link>Program.cs</Link>
     </Compile>
-    <Compile Include="Copy of Listing13.09.HandlingExceptionsFromSubscribers.cs" />
+    <Compile Include="Listing13.04.InvokingADelegate.cs" />
+    <Compile Include="Listing13.13.DeclaringAGenericDelegateType.cs" />
+    <Compile Include="Listing13.16.DeclaringTheOnTemperatureChangeEvent.cs" />
     <Compile Include="Listing13.18.CustomAddAndRemoveHandlers.cs" />
     <Compile Include="Listing13.15.UsingCustomDelegateType.cs" />
     <Compile Include="Listing13.14.FiringTheEventNotification.cs" />
     <Compile Include="Listing13.12.UsingTheEventKeywordWithTheEventCodingPattern.cs" />
-    <Compile Include="Listing13.11.FireingTheEventFromOutsideTheEventContainer.cs" />
+    <Compile Include="Listing13.11.FiringTheEventFromOutsideTheEventContainer.cs" />
     <Compile Include="Listing13.10.UsingTheAssignmentOperationRatherThanPlusEquals.cs" />
     <Compile Include="Listing13.09.HandlingExceptionsFromSubscribers.cs" />
     <Compile Include="Listing13.08.OnTemperatureChangedThrowingAnException.cs" />
