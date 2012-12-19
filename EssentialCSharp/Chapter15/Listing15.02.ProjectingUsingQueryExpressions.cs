@@ -15,7 +15,6 @@
         static void List1(string rootDirectory, string searchPattern)
         {
             IEnumerable<string> fileNames = Directory.GetFiles(
-
                 rootDirectory, searchPattern);
 
             IEnumerable<FileInfo> fileInfos =

@@ -11,6 +11,7 @@
         {
             List2(Directory.GetCurrentDirectory(), "*");
         }
+
         static void List2(string rootDirectory, string searchPattern)
         {
             var fileNames = Directory.GetFiles(

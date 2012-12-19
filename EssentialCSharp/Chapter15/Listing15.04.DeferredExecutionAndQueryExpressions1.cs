@@ -11,14 +11,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_04
             ShowContextualKeywords2();
         }
 
-
         private static void ShowContextualKeywords2()
         {
-            IEnumerable<string> selection =
-                from word in Keywords
-                where IsKeyword(word)
-                select word;
-
+            IEnumerable<string> selection = from word in Keywords
+                                            where IsKeyword(word)
+                                            select word;
             Console.WriteLine("Query created.");
             foreach(string keyword in selection)
             {
