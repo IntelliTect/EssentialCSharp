@@ -8,28 +8,28 @@
         public static void Main()
         {
             var worldCup2006Finalists = new[]
-                                            {
-                                                new
-                                                    {
-                                                        TeamName = "France",
-                                                        Players = new string[]
-                                                                      {
-                                                                          "Fabien Barthez", "Gregory Coupet",
-                                                                          "Mickael Landreau", "Eric Abidal",
-                                                                          // ...
-                                                                      }
-                                                    },
-                                                new
-                                                    {
-                                                        TeamName = "Italy",
-                                                        Players = new string[]
-                                                                      {
-                                                                          "Gianluigi Buffon", "Angelo Peruzzi",
-                                                                          "Marco Amelia", "Cristian Zaccardo",
-                                                                          // ...
-                                                                      }
-                                                    }
-                                            };
+            {
+                new
+                {
+                    TeamName = "France",
+                    Players = new string[]
+                    {
+                        "Fabien Barthez", "Gregory Coupet",
+                        "Mickael Landreau", "Eric Abidal",
+                        // ...
+                    }
+                },
+                new
+                {
+                    TeamName = "Italy",
+                    Players = new string[]
+                    {
+                        "Gianluigi Buffon", "Angelo Peruzzi",
+                        "Marco Amelia", "Cristian Zaccardo",
+                        // ...
+                    }
+                }
+            };
 
             Print(worldCup2006Finalists);
         }

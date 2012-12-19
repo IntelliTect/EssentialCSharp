@@ -11,8 +11,8 @@
             int number;
 
             using(
-              System.Collections.Generic.Stack<int>.Enumerator
-                  enumerator = stack.GetEnumerator())
+                System.Collections.Generic.Stack<int>.Enumerator
+                    enumerator = stack.GetEnumerator())
             {
                 while(enumerator.MoveNext())
                 {

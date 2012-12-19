@@ -2,8 +2,8 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.Linq;
     using System.IO;
+    using System.Linq;
 
     public class Program
     {
@@ -13,7 +13,7 @@
             string searchPattern = "*";
 
             IEnumerable<string> fileList = Directory.GetFiles(
-                      rootDirectory, searchPattern);
+                rootDirectory, searchPattern);
             var items = fileList.Select(
                 file =>
                 {

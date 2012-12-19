@@ -10,9 +10,10 @@
         public static void Main()
         {
             IEnumerable<object> stuff =
-              new object[] { new object(), 1, 3, 5, 7, 9,
-            "\"thing\"", Guid.NewGuid() };
+                new object[] { new object(), 1, 3, 5, 7, 9,
+                    "\"thing\"", Guid.NewGuid() };
             Print("Stuff: {0}", stuff);
+
             IEnumerable<int> even = new int[] { 0, 2, 4, 6, 8 };
             Print("Even integers: {0}", even);
 
@@ -27,6 +28,7 @@
             Print("Intersection with even: {0}",
                 numbers.Intersect(even));
             Print("Distinct: {0}", numbers.Concat(odd).Distinct());
+
             if(!numbers.SequenceEqual(
                 numbers.Concat(odd).Distinct()))
             {

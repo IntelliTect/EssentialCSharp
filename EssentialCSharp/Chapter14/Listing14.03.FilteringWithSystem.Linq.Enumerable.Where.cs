@@ -9,19 +9,18 @@
         {
             List<string> sevenWorldBlunders;
             sevenWorldBlunders = new List<string>()
-                                     {
-                                         // Quotes from Ghandi
-                                         "Wealth without work",
-                                         "Pleasure without conscience",
-                                         "Knowledge without character",
-                                         "Commerce without morality",
-                                         "Science without humanity",
-                                         "Worship without sacrifice",
-                                         "Politics without principle"
-                                     };
+            {
+                // Quotes from Ghandi
+                "Wealth without work",
+                "Pleasure without conscience",
+                "Knowledge without character",
+                "Commerce without morality",
+                "Science without humanity",
+                "Worship without sacrifice",
+                "Politics without principle"
+            };
 
             Print(sevenWorldBlunders);
-
         }
 
         private static void Print<T>(IEnumerable<T> items)
