@@ -70,6 +70,7 @@
     <Compile Include="Listing13.04.InvokingADelegate.cs" />
     <Compile Include="Listing13.13.DeclaringAGenericDelegateType.cs" />
     <Compile Include="Listing13.16.DeclaringTheOnTemperatureChangeEvent.cs" />
+    <Compile Include="Listing13.17.CSharpConceptualEquivalentOfEventCILCode.cs" />
     <Compile Include="Listing13.18.CustomAddAndRemoveHandlers.cs" />
     <Compile Include="Listing13.15.UsingCustomDelegateType.cs" />
     <Compile Include="Listing13.14.FiringTheEventNotification.cs" />
