@@ -10,10 +10,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_12
             Swap(ref first, ref second);
 
             System.Console.WriteLine(
-                @"first = ""{0}"", second = ""{1}""",
-                first, second);
-            // ...
-        }
+			    $@"first = ""{ first }"", second = ""{ second }""");
+			// ...
+		}
 
         static void Swap(ref string x, ref string y)
         {

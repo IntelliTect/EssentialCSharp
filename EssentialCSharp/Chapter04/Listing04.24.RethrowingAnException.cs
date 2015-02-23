@@ -2,7 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_24
 {
     using System;
 
-    public class ThrowingExceptions
+    public class ThrowingExceptionsTests
     {
         public static void Main()
         {
@@ -21,9 +21,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_24
             catch(Exception exception)
             {
                 Console.WriteLine(
-                    "Rethrowing unexpected error:  {0}",
-                    exception.Message);
-                throw;
+					"Rethrowing unexpected error:  "
+			        + $"{ exception.Message }");
+
+				throw;
             }
             catch
             {

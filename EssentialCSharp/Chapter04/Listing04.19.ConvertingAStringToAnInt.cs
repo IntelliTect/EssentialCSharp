@@ -20,8 +20,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_19
             age = int.Parse(ageText);
 
             Console.WriteLine(
-                "Hi {0}!  You are {1} months old.",
-                firstName, age * 12);
-        }
+				$"Hi { firstName }!  You are { age * 12 } months old.");
+		}
     }
 }
