@@ -6,8 +6,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_34
         {
             bool valid = false;
             bool result = !valid;
-            // Displays "result = True".
-            System.Console.WriteLine("result = {0}", result);
-        }
+			// Displays "result = True".
+			System.Console.WriteLine($"result = {result}");
+		}
     }
 }

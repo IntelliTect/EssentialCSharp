@@ -10,9 +10,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_28
             {
                 // Input is less than 9.
                 System.Console.WriteLine(
-                    "Tic-tac-toe has more than {0}" +
-                     " maximum turns.", input);
-            }
-        }
+					$"Tic-tac-toe has more than {input}" +
+					 " maximum turns.");
+			}
+		}
     }
 }

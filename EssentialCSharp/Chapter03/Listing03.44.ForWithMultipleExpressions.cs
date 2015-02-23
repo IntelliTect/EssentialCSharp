@@ -6,9 +6,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_44
         {
             for(int x = 0, y = 5; ((x <= 5) && (y >= 0)); y--, x++)
             {
-                System.Console.Write("{0}{1}{2}\t",
-                    x, (x > y ? '>' : '<'), y);
-            }
+                System.Console.Write(
+				    $"{x}{(x > y ? '>' : '<')}{y}\t");
+			}
         }
     }
 }

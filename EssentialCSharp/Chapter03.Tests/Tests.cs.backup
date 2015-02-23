@@ -1,0 +1,208 @@
+﻿using System;
+using System.IO;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+namespace Chapter01.Tests
+{
+    [TestClass]
+    public class Chapter01
+    {
+        const string BR = "\r\n";
+    
+        [TestMethod]
+        public void Listing01_01()
+        {
+            string output = "Hello. My name is Inigo Montoya." + BR;
+
+            using (TextWriter writer = new StringWriter())
+            {
+                Console.SetOut(writer);
+
+                AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_01.HelloWorld.Main();
+                Assert.AreEqual(output, writer.ToString());
+            }
+        }
+
+        [TestMethod]
+        public void Listing01_03()
+        {
+            string output = "Hello, My name is Inigo Montoya" + BR;
+
+            using (TextWriter writer = new StringWriter())
+            {
+                Console.SetOut(writer);
+
+                AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_03.Program.Main();
+                Assert.AreEqual(output, writer.ToString());
+            }
+        }
+
+        [TestMethod]
+        public void Listing01_04()
+        {
+            int expected = 0;
+
+            int value = AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_04.Program.Main(new string[0]);
+            Assert.AreEqual(expected, value);
+        }
+
+        [TestMethod]
+        public void Listing01_05()
+        {
+            string output = "Up" + BR + "Down" + BR;
+
+            using (TextWriter writer = new StringWriter())
+            {
+                Console.SetOut(writer);
+
+                AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_05.HelloWorld.Main();
+
+                Assert.AreEqual(output, writer.ToString());
+            }
+        }
+
+        [TestMethod]
+        public void Listing01_06()
+        {
+            string output = "Hello. My name is Inigo Montoya." + BR;
+
+            using (TextWriter writer = new StringWriter())
+            {
+                Console.SetOut(writer);
+
+                AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_06.HelloWorld.Main();
+                Assert.AreEqual(output, writer.ToString());
+            }
+        }
+
+        [TestMethod]
+        public void Listing01_07()
+        {
+            string output = "Hello Inigo Montoya" + BR;
+
+            using (TextWriter writer = new StringWriter())
+            {
+                Console.SetOut(writer);
+
+                AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_07.HelloWorld.Main();
+                Assert.AreEqual(output, writer.ToString());
+            }
+        }
+
+        [TestMethod]
+        public void Listing01_08()
+        {
+            string output = "Hello Inigo Montoya" + BR;
+
+            using (TextWriter writer = new StringWriter())
+            {
+                Console.SetOut(writer);
+
+                AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_08.Program.Main();
+                Assert.AreEqual(output, writer.ToString());
+            }
+        }
+
+        [TestMethod]
+        public void Listing01_09()
+        {
+            string output = "Have fun storming the castle!" + BR;
+
+            using (TextWriter writer = new StringWriter())
+            {
+                Console.SetOut(writer);
+
+                AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_09.MiracleMax.Main();
+                Assert.AreEqual(output, writer.ToString());
+            }
+        }
+
+        [TestMethod]
+        public void Listing01_11()
+        {
+            string output = "Have fun storming the castle!" + BR + "Think it will work?"
+                + BR + "It would take a miracle." + BR;
+
+            using (TextWriter writer = new StringWriter())
+            {
+                Console.SetOut(writer);
+
+                AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_11.MiracleMax.Main();
+                Assert.AreEqual(output, writer.ToString());
+            }
+        }
+
+        [TestMethod]
+        public void Listing01_13()
+        {
+            string input = "Inigo" + BR + "Montoya" + BR;
+            string output = "Hey you!" + BR + "Enter your first name: Enter your last name: ";
+
+            using (TextWriter writer = new StringWriter())
+            using (TextReader reader = new StringReader(input))
+            {
+                Console.SetOut(writer);
+                Console.SetIn(reader);
+
+                AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_13.HeyYou.Main();
+
+                Assert.AreEqual(output, writer.ToString());
+            }
+        }
+
+        [TestMethod]
+        public void Listing01_14()
+        {
+            string input = "1";
+            string output = "1";
+
+            using (TextWriter writer = new StringWriter())
+            using (TextReader reader = new StringReader(input))
+            {
+                Console.SetOut(writer);
+                Console.SetIn(reader);
+
+                AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_14.Program.Main();
+
+                Assert.AreEqual(output, writer.ToString());
+            }
+        }
+
+        [TestMethod]
+        public void Listing01_15()
+        {
+            string input = "Inigo" + BR + "Montoya" + BR;
+            string output = "Hey you!" + BR + "Enter your first name: Enter your last name: Your full name is Inigo Montoya." + BR;
+
+            using (TextWriter writer = new StringWriter())
+            using (TextReader reader = new StringReader(input))
+            {
+                Console.SetOut(writer);
+                Console.SetIn(reader);
+
+                AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_15.Program.Main();
+
+                Assert.AreEqual(output, writer.ToString());
+            }
+        }
+
+        [TestMethod]
+        public void Listing01_16()
+        {
+            string input = "Inigo" + BR + "Montoya" + BR;
+            string output = "Hey you!" + BR + "Enter your first name: Enter your last name: Your full name is Montoya, Inigo." + BR;
+
+            using (TextWriter writer = new StringWriter())
+            using (TextReader reader = new StringReader(input))
+            {
+                Console.SetOut(writer);
+                Console.SetIn(reader);
+
+                AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_16.Program.Main();
+
+                Assert.AreEqual(output, writer.ToString());
+            }
+        }
+
+    }
+}

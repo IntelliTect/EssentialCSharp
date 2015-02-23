@@ -6,8 +6,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_31
         {
             if(input == "" || input == "quit")
             {
-                System.Console.WriteLine("Player {0} quit!!", currentPlayer);
-            }
+				System.Console.WriteLine($"Player {currentPlayer} quit!!");
+			}
         }
 
         public static string input { get; set; }

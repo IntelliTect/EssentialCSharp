@@ -24,7 +24,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_45
             {
                 if(cell != 'O' && cell != 'X')
                 {
-                    System.Console.Write("{0} ", cell);
+                    System.Console.Write($"{cell} ");
                 }
             }
         }
