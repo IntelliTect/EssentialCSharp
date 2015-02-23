@@ -11,10 +11,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_18
                 new { Title = "Phonograph",
                     YearOfPublication = "1877" };
 
-            System.Console.WriteLine("{0} ({1})",
-                patent1.Title, patent1.YearOfPublication);
-            System.Console.WriteLine("{0} ({1})",
-                patent2.Title, patent2.YearOfPublication);
+            System.Console.WriteLine(
+			    $"{patent1.Title} ({patent1.YearOfPublication})");
+			System.Console.WriteLine(
+				$"{patent2.Title} ({patent1.YearOfPublication})");
         }
     }
 }

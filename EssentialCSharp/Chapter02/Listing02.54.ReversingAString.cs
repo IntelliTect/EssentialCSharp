@@ -24,14 +24,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_54
             // check if reverse string is the same.
             if(reverse == new string(temp))
             {
-                System.Console.WriteLine("\"{0}\" is a palindrome.",
-                    palindrome);
-            }
+                System.Console.WriteLine(
+					$"\"{palindrome}\" is a palindrome.");
+			}
             else
             {
                 System.Console.WriteLine(
-                    "\"{0}\" is NOT a palindrome.",
-                    palindrome);
+					$"\"{palindrome}\" is NOT a palindrome.");
             }
         }
     }

@@ -8,15 +8,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_07
             double result;
             string text;
 
-            text = string.Format("{0}", number);
+            text = string.Format($"{number}");
             result = double.Parse(text);
-            System.Console.WriteLine("{0}: result != number",
-                result != number);
+            System.Console.WriteLine($"{result != number}: result != number");
 
             text = string.Format("{0:R}", number);
             result = double.Parse(text);
-            System.Console.WriteLine("{0}: result == number",
-                result == number);
+            System.Console.WriteLine($"{result == number}: result == number");
         }
     }
 }

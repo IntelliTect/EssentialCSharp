@@ -59,6 +59,7 @@
     <Compile Include="Listing02.14.Tests.cs" />
     <Compile Include="Listing02.17.Tests.cs" />
     <Compile Include="Listing02.18.Tests.cs" />
+    <Compile Include="Listing02.50.AdditionalArrayMethods.Tests.cs" />
     <Compile Include="Listing02.21.Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

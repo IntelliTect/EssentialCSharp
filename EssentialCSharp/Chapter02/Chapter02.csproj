@@ -78,6 +78,7 @@
     <Compile Include="Listing02.09.DisplayingASingleQuoteUsingAnEscapeSequence.cs" />
     <Compile Include="Listing02.10.UsingUnicodeEncodingToDisplayASmileyFace.cs" />
     <Compile Include="Listing02.11.UsingTheNewlineCharacterToInsertANewline.cs" />
+    <Compile Include="Listing02.12A.UsingStaticDirectives.cs" />
     <Compile Include="Listing02.12.DisplayingATriangleUsingAVerbatimStringLiteral.cs" />
     <Compile Include="Listing02.13.UsingStringsLengthMember.cs" />
     <Compile Include="Listing02.14.Error-StringIsImmutable.cs" />

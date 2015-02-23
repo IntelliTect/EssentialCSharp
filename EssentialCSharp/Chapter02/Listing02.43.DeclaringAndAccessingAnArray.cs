@@ -8,7 +8,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_43
                 "C#", "COBOL", "Java",
                 "C++", "Visual Basic", "Pascal",
                 "Fortran", "Lisp", "J#"};
-            // Retrieve 3rd item in languages array (Java)
+            // Retrieve 5th item in languages array (Visual Basic)
             string language = languages[4];
         }
     }

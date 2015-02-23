@@ -15,29 +15,28 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_50
             int index = System.Array.BinarySearch(
                 languages, searchString);
             System.Console.WriteLine(
-                "The wave of the future, {0}, is at index {1}.",
-                searchString, index);
+		        "The wave of the future, "
+		        + $"{searchString}, is at index {index}.");
 
-            System.Console.WriteLine();
-            System.Console.WriteLine("{0,-20}\t{1,-20}",
-                "First Element", "Last Element");
-            System.Console.WriteLine("{0,-20}\t{1,-20}",
-                "-------------", "------------");
-            System.Console.WriteLine("{0,-20}\t{1,-20}",
-                languages[0], languages[languages.Length - 1]);
 
-            System.Array.Reverse(languages);
-            System.Console.WriteLine("{0,-20}\t{1,-20}",
-                languages[0], languages[languages.Length - 1]);
+			System.Console.WriteLine();
+			System.Console.WriteLine(
+				$"{"First Element", -20}\t{"Last Element", -20}");
+			System.Console.WriteLine(
+				$"{"-------------", -20}\t{"------------", -20}");
+			System.Console.WriteLine(
+					$"{languages[0], -20}\t{languages[languages.Length - 1], -20}");
+			System.Array.Reverse(languages);
+			System.Console.WriteLine(
+					$"{languages[0], -20}\t{languages[languages.Length - 1], -20}");
+			// Note this does not remove all items from the array.
+			// Rather it sets each item to the type’s default value.
+			System.Array.Clear(languages, 0, languages.Length);
+			System.Console.WriteLine(
+					$"{languages[0], -20}\t{languages[languages.Length - 1], -20}");
 
-            // Note this does not remove all items from the array.
-            // Rather it sets each item to the type’s default value.
-            System.Array.Clear(languages, 0, languages.Length);
-            System.Console.WriteLine("{0,-20}\t{1,-20}",
-                languages[0], languages[languages.Length - 1]);
-            System.Console.WriteLine(
-                "After clearing, the array size is: {0}",
-                languages.Length);
-        }
+			System.Console.WriteLine(
+				$"After clearing, the array size is: {languages.Length}");
+		}
     }
 }
