@@ -33,7 +33,7 @@
         public string Name { get; set; }
         public override string ToString()
         {
-            return string.Format("{0}", Name);
+            return Name;
         }
     }
 
@@ -45,8 +45,8 @@
         public int DepartmentId { get; set; }
         public override string ToString()
         {
-            return string.Format("{0} ({1})", Name, Title);
-        }
+			return $"{ Name } ({ Title })";
+		}
     }
 
     public static class CorporateData

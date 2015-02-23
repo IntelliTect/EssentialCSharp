@@ -9,12 +9,15 @@
         public static void Main()
         {
             IEnumerable<Patent> patents = PatentData.Patents;
-            Console.WriteLine("Patent Count: {0}", patents.Count());
-            Console.WriteLine("Patent Count in 1800s: {0}",
-                patents.Count(patent =>
-                    patent.YearOfPublication.StartsWith("18")));
+			Console.WriteLine($"Patent Count: { patents.Count() }");
+			Console.WriteLine($@"Patent Count in 1800s: { 
+	            patents.Count(patent =>
+					patent.YearOfPublication.StartsWith("18"))
+			}");
+
+
         }
-    }
+}
 
     public class Patent
     {

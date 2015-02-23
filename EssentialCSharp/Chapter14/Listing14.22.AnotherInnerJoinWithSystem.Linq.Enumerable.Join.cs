@@ -24,8 +24,7 @@
 
             foreach(var item in items)
             {
-                Console.WriteLine("{0}",
-                    item.Name);
+                Console.WriteLine(item.Name);
                 Console.WriteLine("\t" + item.Employee);
             }
 

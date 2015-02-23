@@ -25,9 +25,9 @@
 
             foreach(var item in items)
             {
-                Console.WriteLine("{0} ({1})",
-                    item.Name, item.Title);
-                Console.WriteLine("\t" + item.Department);
+				Console.WriteLine(
+					$"{ item.Name } ({ item.Title })");
+				Console.WriteLine("\t" + item.Department);
             }
         }
 
