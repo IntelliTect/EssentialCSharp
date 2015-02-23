@@ -3,19 +3,19 @@
     using System;
     using System.Linq.Expressions;
 
-    class Program
+    public class Program
     {
-        static void Main()
+        public static void Main()
         {
             Expression<Func<int, int, bool>> expression;
             expression = (x, y) => x > y;
-            Console.WriteLine("-------------{0}-------------",
+            Console.WriteLine("------------- {0} -------------",
                 expression);
             PrintNode(expression.Body, 0);
             Console.WriteLine();
             Console.WriteLine();
             expression = (x, y) => x * y > x + y;
-            Console.WriteLine("-------------{0}-------------",
+            Console.WriteLine("------------- {0} -------------",
                 expression);
             PrintNode(expression.Body, 0);
             Console.WriteLine();
