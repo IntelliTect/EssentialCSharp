@@ -7,12 +7,7 @@
             Temperature = temperature;
         }
 
-        public float Temperature
-        {
-            get { return _Temperature; }
-            set { _Temperature = value; }
-        }
-        private float _Temperature;
+        public float Temperature { get; set; }
 
         public void OnTemperatureChanged(float newTemperature)
         {
@@ -34,12 +29,7 @@
             Temperature = temperature;
         }
 
-        public float Temperature
-        {
-            get { return _Temperature; }
-            set { _Temperature = value; }
-        }
-        private float _Temperature;
+        public float Temperature { get; set; }
 
         public void OnTemperatureChanged(float newTemperature)
         {

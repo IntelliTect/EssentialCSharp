@@ -1,4 +1,4 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_14
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_15
 {
     using System;
 
@@ -31,15 +31,11 @@
                 if(value != CurrentTemperature)
                 {
                     _CurrentTemperature = value;
-                    // If there are any subscribers
-                    // then notify them of changes in 
-                    // temperature
-                    if(OnTemperatureChange != null)
-                    {
-                        // Call subscribers
-                        OnTemperatureChange(
-                          this, new TemperatureArgs(value));
-                    }
+					// If there are any subscribers
+					// then notify them of changes in 
+					// temperature by invoking said subcribers
+					OnTemperatureChange?.Invoke( // C# 6.0
+						  this, new TemperatureArgs(value));
                 }
             }
         }

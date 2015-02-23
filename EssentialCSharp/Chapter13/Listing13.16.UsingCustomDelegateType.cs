@@ -1,4 +1,4 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_15
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_16
 {
     public class Thermostat
     {
