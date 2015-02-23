@@ -89,10 +89,9 @@
     <Compile Include="Listing04.19.ConvertingAStringToAnInt.cs" />
     <Compile Include="Listing04.20.CatchingAnException.cs" />
     <Compile Include="Listing04.21.FinallyWithoutCatch.cs" />
-    <Compile Include="Listing04.22.GeneralCatchBlocks - Copy.cs" />
+    <Compile Include="Listing04.22.GeneralCatchBlocks.cs" />
     <Compile Include="Listing04.25.TryCatch.cs" />
     <Compile Include="Listing04.23.ThrowingAnException.cs" />
-    <Compile Include="Listing04.24.RethrowingAnException - Copy.cs" />
     <Compile Include="Listing04.24.RethrowingAnException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
