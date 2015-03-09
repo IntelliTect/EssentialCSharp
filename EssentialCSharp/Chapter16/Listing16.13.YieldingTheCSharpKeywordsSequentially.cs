@@ -3,20 +3,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_13
     using System;
     using System.Collections.Generic;
 
-    public class Program
-    {
-        public static void Main()
-        {
-            CSharpBuiltInTypes keywords =
-                new CSharpBuiltInTypes();
-
-            foreach(string keyword in keywords)
-            {
-                Console.WriteLine(keyword);
-            }
-        }
-    }
-
     public class CSharpBuiltInTypes : IEnumerable<string>
     {
         public IEnumerator<string> GetEnumerator()
@@ -46,6 +32,17 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_13
         {
             // Invoke IEnumerator<string> GetEnumerator() above
             return GetEnumerator();
+        }
+    }
+    public class Program
+    {
+        public static void Main()
+        {
+            var keywords = new CSharpBuiltInTypes();
+            foreach (string keyword in keywords)
+            {
+                Console.WriteLine(keyword);
+            }
         }
     }
 }

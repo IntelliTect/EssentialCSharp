@@ -9,7 +9,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_17
         public static void Main()
         {
             // JFK
-            BinaryTree<string> jfkFamilyTree = new BinaryTree<string>(
+            var jfkFamilyTree = new BinaryTree<string>(
                 "John Fitzgerald Kennedy");
 
             jfkFamilyTree.SubItems = new Pair<BinaryTree<string>>(

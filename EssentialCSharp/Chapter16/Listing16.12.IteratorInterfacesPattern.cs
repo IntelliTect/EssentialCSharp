@@ -24,21 +24,19 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_12
         }
         #endregion IEnumerable<T>
 
-        public T Value
-        { get; private set; }
-        public Pair<BinaryTree<T>> SubItems
-        { get; private set; }
+        public T Value { get; private set; }
+        public Pair<BinaryTree<T>> SubItems { get; private set; }
     }
 
     public struct Pair<T>
     {
-        public Pair(T first, T second)
-            : this()
+        public Pair(T first, T second) : this()
         {
             First = first;
             Second = second;
         }
-        public T First { get; private set; }
-        public T Second { get; private set; }
+        public T First { get; }  // C# 6.0 Getter-only Autoproperty
+        public T Second { get; } // C# 6.0 Getter-only Autoproperty
+
     }
 }

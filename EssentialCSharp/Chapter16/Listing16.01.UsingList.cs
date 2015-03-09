@@ -22,9 +22,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_01
             list.Sort();
 
             Console.WriteLine(
-                "In alphabetical order {0} is the "
-                + "first dwarf while {1} is the last.",
-                list[0], list[6]);
+                $"In alphabetical order { list[0] } is the "
+                + $"first dwarf while { list[6] } is the last.");
+
 
             list.Remove("Grumpy");
         }

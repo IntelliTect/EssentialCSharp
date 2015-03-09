@@ -9,21 +9,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_18
         #region Members
         public Pair(T first, T second)
         {
-            _first = first;
-            _second = second;
+            First = first;
+            Second = second;
         }
-        public T First
-        {
-            get { return _first; }
-            private set { _first = value; }
-        }
-        private T _first;
-        public T Second
-        {
-            get { return _second; }
-            private set { _second = value; }
-        }
-        private T _second;
+        public T First { get; }
+        public T Second { get; }
 
         public T this[PairItem index]
         {
@@ -35,23 +25,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_18
                         return First;
                     case PairItem.Second:
                         return Second;
-                    default:
-                        throw new NotImplementedException(
-                            string.Format(
-                            "The enum {0} has not been implemented",
-                            index.ToString()));
-                }
-            }
-            set
-            {
-                switch(index)
-                {
-                    case PairItem.First:
-                        First = value;
-                        break;
-                    case PairItem.Second:
-                        Second = value;
-                        break;
                     default:
                         throw new NotImplementedException(
                             string.Format(

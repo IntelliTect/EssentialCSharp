@@ -42,18 +42,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_16
         }
         #endregion
 
-        public T Value
-        {
-            get { return _value; }
-            set { _value = value; }
-        }
-        private T _value;
+        public T Value { get; set; }
 
-        public Pair<BinaryTree<T>> SubItems
-        {
-            get { return _subItems; }
-            set { _subItems = value; }
-        }
-        private Pair<BinaryTree<T>> _subItems;
+        public Pair<BinaryTree<T>> SubItems { get; set; }
     }
 }

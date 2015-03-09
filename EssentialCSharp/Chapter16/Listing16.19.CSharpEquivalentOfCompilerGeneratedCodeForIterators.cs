@@ -48,23 +48,6 @@ AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_19
                             index.ToString()));
                 }
             }
-            set
-            {
-                switch(index)
-                {
-                    case PairItem.First:
-                        First = value;
-                        break;
-                    case PairItem.Second:
-                        Second = value;
-                        break;
-                    default:
-                        throw new NotImplementedException(
-                            string.Format(
-                            "The enum {0} has not been implemented",
-                            index.ToString()));
-                }
-            }
         }
         #endregion Indexer
 

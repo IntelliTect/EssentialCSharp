@@ -6,20 +6,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_10
 
     interface IPair<T>
     {
-        T First
-        {
-            get;
-        }
+        T First { get; }
 
-        T Second
-        {
-            get;
-        }
+        T Second { get; }
 
-        T this[PairItem index]
-        {
-            get;
-        }
+        T this[PairItem index] { get; }
     }
 
     // ----
@@ -36,25 +27,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_10
     {
         public Pair(T first, T second)
         {
-            _first = first;
-            _second = second;
+            First = first;
+            Second = second;
         }
 
-        public T First
-        {
-            get { return _first; }
-            private set { _first = value; }
-        }
+        public T First { get; } // C# 6.0 Getter-Only Autoproperty
 
-        private T _first;
-
-        public T Second
-        {
-            get { return _second; }
-            private set { _second = value; }
-        }
-
-        private T _second;
+        public T Second { get; } // C# 6.0 Getter-Only Autoproperty
 
         [System.Runtime.CompilerServices.IndexerName("Entry")]
         public T this[PairItem index]
@@ -67,23 +46,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_10
                         return First;
                     case PairItem.Second:
                         return Second;
-                    default:
-                        throw new NotImplementedException(
-                            string.Format(
-                            "The enum {0} has not been implemented",
-                            index.ToString()));
-                }
-            }
-            set
-            {
-                switch(index)
-                {
-                    case PairItem.First:
-                        First = value;
-                        break;
-                    case PairItem.Second:
-                        Second = value;
-                        break;
                     default:
                         throw new NotImplementedException(
                             string.Format(

@@ -7,23 +7,37 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_07
     {
         public static void Main()
         {
-            var dictionary = new Dictionary<string, string>();
+#if !PRECSHARP5
+            Dictionary<string, ConsoleColor> colorMap =
+                new Dictionary<string, ConsoleColor>
+                {
+                    ["Error"] = ConsoleColor.Red,
+                    ["Warning"] = ConsoleColor.Yellow,
+                    ["Information"] = ConsoleColor.Green,
+                    ["Verbose"] = ConsoleColor.White
+                };
+#else
+            Dictionary<string, ConsoleColor> colorMap =
+                new Dictionary<string, ConsoleColor>
+                {
+                    {"Error", ConsoleColor.Red },
+                    {"Warning", ConsoleColor.Yellow },
+                    {"Information", ConsoleColor.Green },
+                    {"Verbose", ConsoleColor.White}
+                };
+#endif
 
-            dictionary.Add("do", "a deer");
-            dictionary.Add("re", "a drop");
-            dictionary.Add("mi", "a name");
-            dictionary.Add("fa", "a long way");
-            dictionary.Add("so", "a needle");
-            dictionary.Add("la", "a note");
-            dictionary.Add("ti", "a drink");
+            Print(colorMap);
+      }
 
-            Console.WriteLine("Key  Value   ");
-            Console.WriteLine("---  ------- ");
-
-            foreach(KeyValuePair<string, string> i in dictionary)
-            {
-                Console.WriteLine("{0}   {1}", i.Key, i.Value);
-            }
+      private static void Print(
+          IEnumerable<KeyValuePair<string, ConsoleColor>> items)
+      {
+          foreach (KeyValuePair<string, ConsoleColor> item in items)
+          {
+              Console.ForegroundColor = item.Value;
+              Console.WriteLine(item.Key);
+          }
         }
     }
 }
