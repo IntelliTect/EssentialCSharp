@@ -18,10 +18,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_15
                 from method in typeof(Enumerable).GetMembers(
                     System.Reflection.BindingFlags.Static |
                     System.Reflection.BindingFlags.Public)
-                select method.Name).Distinct();
+                    orderby method.Name
+                    select method.Name).Distinct();
             foreach(string method in enumerableMethodNames)
             {
-                Console.Write($"{ method },");
+                Console.Write($"{ method }, ");
             }
         }
     }

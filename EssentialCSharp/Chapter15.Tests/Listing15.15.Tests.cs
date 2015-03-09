@@ -2,6 +2,7 @@
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_15.Tests
 {
+    using System;
 
     [TestClass]
     public class ProgramTests
@@ -9,13 +10,21 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_15.Tests
         [TestMethod]
         public void SelectingAnonymousTypeFollowingGroupClause()
         {
-            string expected = @"Where,Select,SelectMany,Take,TakeWhile,Skip,SkipWhile,Join,GroupJoin,OrderBy,OrderByDescending,ThenBy,ThenByDescending,GroupBy,Concat,Zip,Distinct,Union,Intersect,Except,Reverse,SequenceEqual,AsEnumerable,ToArray,ToList,ToDictionary,ToLookup,DefaultIfEmpty,OfType,Cast,First,FirstOrDefault,Last,LastOrDefault,Single,SingleOrDefault,ElementAt,ElementAtOrDefault,Range,Repeat,Empty,Any,All,Count,LongCount,Contains,Aggregate,Sum,Min,Max,Average,";
+            // New lines added for output formatting in the chapter.
+            string expected =
+@"Aggregate, All, Any, AsEnumerable, Average, Cast, Concat, Contains, 
+Count, DefaultIfEmpty, Distinct, ElementAt, ElementAtOrDefault, 
+Empty, Except, First, FirstOrDefault, GroupBy, GroupJoin, 
+Intersect, Join, Last, LastOrDefault, LongCount, Max, Min, OfType, 
+OrderBy, OrderByDescending, Range, Repeat, Reverse, Select, 
+SelectMany, SequenceEqual, Single, SingleOrDefault, Skip, 
+SkipWhile, Sum, Take, TakeWhile, ThenBy, ThenByDescending, ToArray, 
+ToDictionary, ToList, ToLookup, Union, Where, Zip, ";
 
-            IntelliTect.ConsoleView.Tester.Test(expected,
-            () =>
-            {
-                Program.Main();
-            });
+            expected = expected.Replace(Environment.NewLine, "");
+
+            IntelliTect.ConsoleView.Tester.Test(
+                expected, Program.Main);
         }
     }
 }
