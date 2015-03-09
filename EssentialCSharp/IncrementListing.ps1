@@ -43,8 +43,18 @@ param(
 
 
 PROCESS {
+    Set-StrictMode -Version latest
+
+    # TODO: Learning/verify:
+    # $PSScriptRoot is not populated when you hover over it is ISE.
+    # StrictMode has to be set after parameters if you are using CmdletBinding (perhaps regardless).
+
+    $LowestListing = $LowestListing.PadLeft(2, '0')
+
     if($Files -eq $null) {
-        $Files = (dir "$PSScriptRoot\Chapter$Chapter" "Listing*" | ?{ $_.Name -ge "Listing$Chapter.$LowestListing"}| sort -Descending)
+        $Files = (dir "$PSScriptRoot\Chapter$Chapter" "Listing*" | ?{ 
+            $_.Name -ge "Listing$Chapter.$LowestListing" } | 
+                sort -Descending)
     }
     foreach( $file in $Files) {
         $file -match "Listing(?<chapter>\d\d)\.(?<listing>\d\d)(?<suffix>.*)" | ?{ 
