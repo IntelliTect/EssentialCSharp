@@ -30,7 +30,7 @@ Goodbye Inigo";
             string view =
 @"Enter your first name: <<Inigo
 >>Enter your age: <<50
->>Hi Inigo!  You are 600 months old.
+>>Hi Inigo! You are 600 months old.
 Goodbye Inigo";
 
             IntelliTect.ConsoleView.Tester.Test(view,

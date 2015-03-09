@@ -2,7 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_24
 {
     using System;
 
-    public class ThrowingExceptionsTests
+    public class ThrowingExceptions
     {
         public static void Main()
         {
