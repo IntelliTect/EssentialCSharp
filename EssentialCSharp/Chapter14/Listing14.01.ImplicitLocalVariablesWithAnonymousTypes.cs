@@ -26,13 +26,13 @@
                     Year = patent1.YearOfPublication
                 };
 
-			Console.WriteLine(
-				$"{ patent1.Title } ({ patent1.YearOfPublication })");
-			Console.WriteLine(
-				$"{ patent2.Title } ({ patent2.YearOfPublication })");
+            Console.WriteLine(
+                $"{ patent1.Title } ({ patent1.YearOfPublication })");
+            Console.WriteLine(
+                $"{ patent2.Title } ({ patent2.YearOfPublication })");
 
 
-			Console.WriteLine();
+            Console.WriteLine();
             Console.WriteLine(patent1);
             Console.WriteLine(patent2);
 

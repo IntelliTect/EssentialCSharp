@@ -22,18 +22,18 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_21
                 if(input < 9)
                     // Input is less than 9.
                     System.Console.WriteLine(
-				        $"Tic-tac-toe has more than {input}" +
-				        " maximum turns.");
-			else
-					if (input > 9)
+                        $"Tic-tac-toe has more than {input}" +
+                        " maximum turns.");
+            else
+                    if (input > 9)
                         // Input is greater than 9.
                         System.Console.WriteLine(
                             $"Tic-tac-toe has fewer than {input}" +
-					        " maximum turns.");
+                            " maximum turns.");
 
-			else
-				// Input equals 9.
-				System.Console.WriteLine(
+            else
+                // Input equals 9.
+                System.Console.WriteLine(
                             "Correct, tic-tac-toe " +
                             "has a max. of 9 turns.");
        } 

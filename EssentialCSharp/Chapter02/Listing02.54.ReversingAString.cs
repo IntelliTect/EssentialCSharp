@@ -25,12 +25,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_54
             if(reverse == new string(temp))
             {
                 System.Console.WriteLine(
-					$"\"{palindrome}\" is a palindrome.");
-			}
+                    $"\"{palindrome}\" is a palindrome.");
+            }
             else
             {
                 System.Console.WriteLine(
-					$"\"{palindrome}\" is NOT a palindrome.");
+                    $"\"{palindrome}\" is NOT a palindrome.");
             }
         }
     }

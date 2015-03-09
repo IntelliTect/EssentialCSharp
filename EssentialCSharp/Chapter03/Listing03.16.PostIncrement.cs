@@ -8,7 +8,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_16
             int result;
             result = count++;
             System.Console.WriteLine(
-				  $"result = {result} and count = {count}");
-		}
+                  $"result = {result} and count = {count}");
+        }
     }
 }

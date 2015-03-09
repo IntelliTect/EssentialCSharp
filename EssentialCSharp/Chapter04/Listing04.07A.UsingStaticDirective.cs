@@ -1,24 +1,24 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_07A
 {
-	using static System.Console;
+    using static System.Console;
 
-	class HeyYou
-	{
-		static void Main()
-		{
-			string firstName;
-			string lastName;
+    class HeyYou
+    {
+        static void Main()
+        {
+            string firstName;
+            string lastName;
 
-			WriteLine("Hey you!");
+            WriteLine("Hey you!");
 
-			Write("Enter your first name: ");
+            Write("Enter your first name: ");
 
-			firstName = ReadLine();
-			Write("Enter your last name: ");
-			lastName = ReadLine();
-			WriteLine(
-				$"Your full name is { firstName } { lastName }.");
-		}
-	}
+            firstName = ReadLine();
+            Write("Enter your last name: ");
+            lastName = ReadLine();
+            WriteLine(
+                $"Your full name is { firstName } { lastName }.");
+        }
+    }
 
 }

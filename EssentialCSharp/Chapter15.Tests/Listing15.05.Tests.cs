@@ -18,10 +18,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_05.Tests
 7. selectionCache count=27
 8. delegateInvocations=81";
 
-			IntelliTect.ConsoleView.Tester.Test(expected,
+            IntelliTect.ConsoleView.Tester.Test(expected,
             () =>
             {
-				Program.Main();
+                Program.Main();
             });
         }
     }

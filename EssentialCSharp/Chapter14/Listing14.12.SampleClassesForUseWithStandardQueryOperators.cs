@@ -40,7 +40,7 @@
 
         public override string ToString()
         {
-			return $"{ Title }({ YearOfPublication })"; ;
+            return $"{ Title }({ YearOfPublication })"; ;
         }
     }
 
@@ -54,8 +54,8 @@
 
         public override string ToString()
         {
-			return $"{ Name }({ City }, { State })";
-		}
+            return $"{ Name }({ City }, { State })";
+        }
     }
 
     public static class PatentData

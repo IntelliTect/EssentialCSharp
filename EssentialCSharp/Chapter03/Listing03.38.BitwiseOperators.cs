@@ -9,7 +9,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_38
             or = 12 | 7;    // or = 15
             xor = 12 ^ 7;   // xor = 11
             System.Console.WriteLine(
-				$"and = {and} \nor = {or}\nxor = {xor}");
-		}
+                $"and = {and} \nor = {or}\nxor = {xor}");
+        }
     }
 }

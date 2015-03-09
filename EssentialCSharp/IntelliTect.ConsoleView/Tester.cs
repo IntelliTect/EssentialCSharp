@@ -47,30 +47,30 @@ namespace IntelliTect.ConsoleView
                 System.Console.SetIn(reader);
 
                 action();
-				
-				string output = writer.ToString().Trim();
-				string testMessage = string.Format("{0}" + Environment.NewLine + "{1}",
-					expectedOutput, output);
+                
+                string output = writer.ToString().Trim();
+                string testMessage = string.Format("{0}" + Environment.NewLine + "{1}",
+                    expectedOutput, output);
 
-				bool failTest = expectedOutput != output;
-				if (failTest)
-				{
-					testMessage = string.Join(Environment.NewLine, expectedOutput, output);
+                bool failTest = expectedOutput != output;
+                if (failTest)
+                {
+                    testMessage = string.Join(Environment.NewLine, expectedOutput, output);
 
-					// Write the output that shows the difference.
-					for (int counter = 0; counter < Math.Min(expectedOutput.Length, output.Length); counter++)
-					{
-						if (expectedOutput[counter] != output[counter])
-						{
-							testMessage += string.Format(
-								Environment.NewLine + "Character {0} did not match: '{1}({2})' != '{3}({4})'",
-								counter, 
-								expectedOutput[counter], (int)expectedOutput[counter],
-								output[counter], (int)output[counter]);
-							break;
-						}
-					}
-				}
+                    // Write the output that shows the difference.
+                    for (int counter = 0; counter < Math.Min(expectedOutput.Length, output.Length); counter++)
+                    {
+                        if (expectedOutput[counter] != output[counter])
+                        {
+                            testMessage += string.Format(
+                                Environment.NewLine + "Character {0} did not match: '{1}({2})' != '{3}({4})'",
+                                counter, 
+                                expectedOutput[counter], (int)expectedOutput[counter],
+                                output[counter], (int)output[counter]);
+                            break;
+                        }
+                    }
+                }
                 Assert.AreEqual(expectedOutput.Trim(), writer.ToString().Trim(), testMessage);
             }
         }
@@ -82,7 +82,7 @@ namespace IntelliTect.ConsoleView
         /// <param name="action">Action to be tested</param>
         private static void Execute(string expectedOutput, Action action)
         {
-			Execute(null, expectedOutput, action);
+            Execute(null, expectedOutput, action);
         }
 
         /// <summary>

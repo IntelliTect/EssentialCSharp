@@ -10,7 +10,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_03.Tests
         {
             string view = @"Hello, My name is Inigo Montoya";
 
-			IntelliTect.ConsoleView.Tester.Test(view,
+            IntelliTect.ConsoleView.Tester.Test(view,
             () =>
             {
                 Program.Main();

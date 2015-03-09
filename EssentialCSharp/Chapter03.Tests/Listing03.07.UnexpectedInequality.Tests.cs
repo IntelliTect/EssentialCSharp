@@ -9,7 +9,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_07.Tests
         public void MainTest()
         {
             string view = 
-				@"4.2 != 4.20000006258488
+                @"4.2 != 4.20000006258488
 4.2 != 4.20000006258488
 (float)4.2M != 4.2F
 4.20000006258488 != 4.20000028610229
@@ -21,7 +21,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_07.Tests
             IntelliTect.ConsoleView.Tester.Test(view,
             () =>
             {
-				Program.Main();
+                Program.Main();
             });
         }
     }

@@ -19,8 +19,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_22
             {
                 age = int.Parse(ageText);
                 System.Console.WriteLine(
-					$"Hi { firstName }!  You are { age * 12 } months old.");
-			}
+                    $"Hi { firstName }!  You are { age * 12 } months old.");
+            }
             catch(System.FormatException exception)
             {
                 System.Console.WriteLine(
@@ -31,8 +31,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_22
             catch(System.Exception exception)
             {
                 System.Console.WriteLine(
-					$"Unexpected error:  { exception.Message }");
-				result = 1;
+                    $"Unexpected error:  { exception.Message }");
+                result = 1;
             }
             catch
             {
@@ -41,8 +41,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_22
             }
             finally
             {
-				System.Console.WriteLine($"Goodbye { firstName }");
-			}
+                System.Console.WriteLine($"Goodbye { firstName }");
+            }
 
             return result;
         }

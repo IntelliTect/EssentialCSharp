@@ -18,13 +18,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_24
                 // Calculate the area of the circle.
                 area = 3.14 * radius * radius;
                 System.Console.WriteLine(
-					$"The area of the circle is: {area}");
-			}
+                    $"The area of the circle is: {area}");
+            }
             else
             {
                 System.Console.WriteLine(
-					$"{radius} is not a valid radius.");
-			}
+                    $"{radius} is not a valid radius.");
+            }
         }
     }
 }

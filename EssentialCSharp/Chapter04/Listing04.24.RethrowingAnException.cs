@@ -21,10 +21,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_24
             catch(Exception exception)
             {
                 Console.WriteLine(
-					"Rethrowing unexpected error:  "
-			        + $"{ exception.Message }");
+                    "Rethrowing unexpected error:  "
+                    + $"{ exception.Message }");
 
-				throw;
+                throw;
             }
             catch
             {

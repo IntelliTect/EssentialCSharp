@@ -18,8 +18,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_03
             quotient = numerator / denominator;
             remainder = numerator % denominator;
 
-			System.Console.WriteLine(
-				$"{numerator} / {denominator} = {quotient} with remainder {remainder}");
-		}
+            System.Console.WriteLine(
+                $"{numerator} / {denominator} = {quotient} with remainder {remainder}");
+        }
     }
 }

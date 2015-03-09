@@ -28,9 +28,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_08
                 //  rootDirectory
                 string relativePath = file.FullName.Substring(
                     Environment.CurrentDirectory.Length);
-				Console.WriteLine(
-					$".{ relativePath }({ file.Length })");
-			}
-		}
+                Console.WriteLine(
+                    $".{ relativePath }({ file.Length })");
+            }
+        }
     }
 }

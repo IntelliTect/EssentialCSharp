@@ -21,18 +21,18 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_20
             {
                 age = int.Parse(ageText);
                 Console.WriteLine(
-					$"Hi { firstName }! You are { age * 12 } months old.");
-			}
+                    $"Hi { firstName }! You are { age * 12 } months old.");
+            }
             catch(FormatException)
             {
                 Console.WriteLine(
-					$"The age entered, { ageText }, is not valid."); 
+                    $"The age entered, { ageText }, is not valid."); 
                 result = 1;
             }
             catch(Exception exception)
             {
                 Console.WriteLine(
-					$"Unexpected error:  { exception.Message }");
+                    $"Unexpected error:  { exception.Message }");
                 result = 1;
             }
             finally

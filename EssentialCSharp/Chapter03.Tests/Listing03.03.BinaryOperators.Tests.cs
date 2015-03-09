@@ -15,7 +15,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_03.Tests
             IntelliTect.ConsoleView.Tester.Test(view,
             () =>
             {
-				Division.Main();
+                Division.Main();
             });
         }
     }

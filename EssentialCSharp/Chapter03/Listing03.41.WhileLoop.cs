@@ -29,7 +29,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_41
             }
 
             System.Console.WriteLine(
-					  $"The Fibonacci number following this is {current}");
-		}
+                      $"The Fibonacci number following this is {current}");
+        }
     }
 }

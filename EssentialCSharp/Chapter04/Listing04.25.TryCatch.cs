@@ -16,17 +16,17 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_22
             ageText = System.Console.ReadLine();
 
             if(int.TryParse(ageText, out age))
-			{
+            {
                 System.Console.WriteLine(
-					$"Hi { firstName }!  You are { age * 12 } months old.");
-			}
+                    $"Hi { firstName }!  You are { age * 12 } months old.");
+            }
             else
             {
-				System.Console.WriteLine(
-					$"The age entered ,{ ageText }, is not valid.");
-			}
+                System.Console.WriteLine(
+                    $"The age entered ,{ ageText }, is not valid.");
+            }
 
-			return result;
+            return result;
         }
     }
 }

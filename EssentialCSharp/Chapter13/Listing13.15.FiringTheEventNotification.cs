@@ -31,11 +31,11 @@
                 if(value != CurrentTemperature)
                 {
                     _CurrentTemperature = value;
-					// If there are any subscribers
-					// then notify them of changes in 
-					// temperature by invoking said subcribers
-					OnTemperatureChange?.Invoke( // C# 6.0
-						  this, new TemperatureArgs(value));
+                    // If there are any subscribers
+                    // then notify them of changes in 
+                    // temperature by invoking said subcribers
+                    OnTemperatureChange?.Invoke( // C# 6.0
+                          this, new TemperatureArgs(value));
                 }
             }
         }

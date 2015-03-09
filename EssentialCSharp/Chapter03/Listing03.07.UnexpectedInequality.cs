@@ -29,7 +29,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_07
             Trace.Assert(doubleNumber1 != (double)floatNumber);
             // 4. Displays: 4.20000006258488 != 4.20000028610229
             System.Console.WriteLine(
-				$"{doubleNumber1} != {(double)floatNumber}");
+                $"{doubleNumber1} != {(double)floatNumber}");
 
             Trace.Assert(doubleNumber1 != doubleNumber2);
             // 5. Displays: 4.20000006258488 != 4.2
@@ -42,9 +42,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_07
                 $"{floatNumber}F != {doubleNumber2}D");
 
             Trace.Assert((double)4.2F != 4.2D);
-			// 7. Display: 4.19999980926514 != 4.2
-			System.Console.WriteLine(
-				$"{(double)4.2F} != {4.2D}");
+            // 7. Display: 4.19999980926514 != 4.2
+            System.Console.WriteLine(
+                $"{(double)4.2F} != {4.2D}");
 
             Trace.Assert(4.2F != 4.2D);
             // 8. Display: 4.2F != 4.2D

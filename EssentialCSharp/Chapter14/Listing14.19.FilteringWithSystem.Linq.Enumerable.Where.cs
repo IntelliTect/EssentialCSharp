@@ -34,19 +34,19 @@
             Console.WriteLine(
                 "2. A second listing of patents prior to the 1900s:");
             Console.WriteLine(
-			    $@"   There are { patents.Count()
-				    } patents prior to 1900.");
+                $@"   There are { patents.Count()
+                    } patents prior to 1900.");
 
 
-			Console.WriteLine();
+            Console.WriteLine();
             Console.WriteLine(
                 "3. A third listing of patents prior to the 1900s:");
             patents = patents.ToArray();
             Console.Write("   There are ");
-			Console.WriteLine(
-				$"{ patents.Count() } patents prior to 1900.");
-		}
-	}
+            Console.WriteLine(
+                $"{ patents.Count() } patents prior to 1900.");
+        }
+    }
 
     public class Patent
     {

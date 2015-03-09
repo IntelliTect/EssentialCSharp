@@ -16,7 +16,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_02
             lastName = System.Console.ReadLine();
 
             System.Console.WriteLine(
-			    $"Your full name is {firstName} {lastName}.");
-		}
+                $"Your full name is {firstName} {lastName}.");
+        }
     }
 }

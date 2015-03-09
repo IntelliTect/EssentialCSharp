@@ -9,7 +9,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_25.Tests
         public void Main_ExamingingAnExpressTree()
         {
             string view =
-			@"------------- (x, y) => (x > y) -------------
+            @"------------- (x, y) => (x > y) -------------
      x (Parameter)
 >
      y (Parameter)
@@ -27,7 +27,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_25.Tests
             IntelliTect.ConsoleView.Tester.Test(view,
             () =>
             {
-				Program.Main();
+                Program.Main();
             });
         }
     }

@@ -596,10 +596,10 @@ l
 d
 *";
 
-			IntelliTect.ConsoleView.Tester.Test(expected,
+            IntelliTect.ConsoleView.Tester.Test(expected,
             () =>
             {
-				Program.Main();
+                Program.Main();
             });
         }
     }

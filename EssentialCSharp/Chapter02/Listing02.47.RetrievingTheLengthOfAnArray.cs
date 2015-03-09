@@ -7,7 +7,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_47
             string[] languages = new string[9];
             // ...
             System.Console.WriteLine(
-				$"There are {languages.Length} languages in the array.");
-		}
+                $"There are {languages.Length} languages in the array.");
+        }
     }
 }

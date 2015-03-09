@@ -21,8 +21,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_15
                 select method.Name).Distinct();
             foreach(string method in enumerableMethodNames)
             {
-				Console.Write($"{ method },");
-			}
+                Console.Write($"{ method },");
+            }
         }
     }
 }

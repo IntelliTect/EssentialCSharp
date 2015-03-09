@@ -18,10 +18,10 @@
                 if(value != CurrentTemperature)
                 {
                     _CurrentTemperature = value;
-					Action<float> onTemperatureChange = OnTemperatureChange;
-					if (onTemperatureChange != null)
-					{
-						List<Exception> exceptionCollection =
+                    Action<float> onTemperatureChange = OnTemperatureChange;
+                    if (onTemperatureChange != null)
+                    {
+                        List<Exception> exceptionCollection =
                             new List<Exception>();
                         foreach(
                             Action<float> handler in

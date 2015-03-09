@@ -13,8 +13,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_42
 
                 // Request a move from the current player.
                 System.Console.Write(
-					$"\nPlayer {currentPlayer}: Enter move:");
-				string input = System.Console.ReadLine();
+                    $"\nPlayer {currentPlayer}: Enter move:");
+                string input = System.Console.ReadLine();
 
                 // Check the current player's input.
                 // ...
