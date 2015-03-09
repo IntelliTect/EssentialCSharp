@@ -31,7 +31,7 @@
                 // This instance is greater than obj. 
                 result = 1;
             }
-            else if(obj != typeof(Contact))
+            else if(obj.GetType() != typeof(Contact))
             {
                 throw new ArgumentException("obj is not a Contact");
             }
