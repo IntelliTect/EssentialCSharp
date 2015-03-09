@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Text;
 
 namespace IntelliTect.ConsoleView
 {
@@ -39,14 +40,38 @@ namespace IntelliTect.ConsoleView
         private static void Execute(string givenInput, string expectedOutput, Action action)
         {
             using(TextWriter writer = new StringWriter())
-            using(TextReader reader = new StringReader(givenInput))
+            using(TextReader reader = new StringReader(givenInput??""))
             {
                 System.Console.SetOut(writer);
+
                 System.Console.SetIn(reader);
 
                 action();
+				
+				string output = writer.ToString().Trim();
+				string testMessage = string.Format("{0}" + Environment.NewLine + "{1}",
+					expectedOutput, output);
 
-                Assert.AreEqual(expectedOutput.Trim(), writer.ToString().Trim());
+				bool failTest = expectedOutput != output;
+				if (failTest)
+				{
+					testMessage = string.Join(Environment.NewLine, expectedOutput, output);
+
+					// Write the output that shows the difference.
+					for (int counter = 0; counter < Math.Min(expectedOutput.Length, output.Length); counter++)
+					{
+						if (expectedOutput[counter] != output[counter])
+						{
+							testMessage += string.Format(
+								Environment.NewLine + "Character {0} did not match: '{1}({2})' != '{3}({4})'",
+								counter, 
+								expectedOutput[counter], (int)expectedOutput[counter],
+								output[counter], (int)output[counter]);
+							break;
+						}
+					}
+				}
+                Assert.AreEqual(expectedOutput.Trim(), writer.ToString().Trim(), testMessage);
             }
         }
 
@@ -57,13 +82,7 @@ namespace IntelliTect.ConsoleView
         /// <param name="action">Action to be tested</param>
         private static void Execute(string expectedOutput, Action action)
         {
-            using(TextWriter writer = new StringWriter())
-            {
-                System.Console.SetOut(writer);
-                action();
-
-                Assert.AreEqual(expectedOutput.Trim(), writer.ToString().Trim());
-            }
+			Execute(null, expectedOutput, action);
         }
 
         /// <summary>
