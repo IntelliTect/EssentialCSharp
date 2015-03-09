@@ -13,12 +13,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_11
         }
 
         /// <summary>
-        /// Returns or sets the value (not the entire branch)
+        /// Returns the BinaryTree<typeparamref name="T"/> at a particular location.
         /// </summary>
         /// <param name="branches">An array of PairItems 
         /// pointing to a particular branch.</param>
-        /// <returns>The value (string) located at the 
-        /// specified branch</returns>
         /// <example>
         /// familyTree.SubItems.Second.SubItems[PairItem.First].Value
         /// </example>
