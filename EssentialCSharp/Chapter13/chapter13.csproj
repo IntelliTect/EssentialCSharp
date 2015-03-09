@@ -67,6 +67,7 @@
     <Compile Include="..\Shared\Program.cs">
       <Link>Program.cs</Link>
     </Compile>
+    <Compile Include="Listing13.04.ConnectingThePublisherAndSubscribers.cs" />
     <Compile Include="Listing13.04.InvokingADelegate.cs" />
     <Compile Include="Listing13.06.InvokingADelegatePre6.cs" />
     <Compile Include="Listing13.05.InvokingADelegate.cs" />
