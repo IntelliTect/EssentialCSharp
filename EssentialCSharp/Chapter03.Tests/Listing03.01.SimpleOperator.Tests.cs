@@ -8,13 +8,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_01.Tests
         [TestMethod]
         public void MainTest()
         {
-            string view = @"2";
+            const string expected = @"2";
 
-            IntelliTect.ConsoleView.Tester.Test(view,
-            () =>
-            {
-                Program.Main();
-            });
+            IntelliTect.ConsoleView.Tester.Test(
+                expected, Program.Main);
         }
     }
 }

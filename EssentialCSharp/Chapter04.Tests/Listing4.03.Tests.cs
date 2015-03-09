@@ -8,15 +8,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_03.Tests
         [TestMethod]
         public void Main_InputInigo_WriteHelloInigo()
         {
-            string view =
+            const string expected =
             @"Enter your first name: <<Inigo
 >>Hello Inigo!";
 
-            IntelliTect.ConsoleView.Tester.Test(view,
-            () =>
-            {
-                Program.Main();
-            });
+            IntelliTect.ConsoleView.Tester.Test(
+                expected, Program.Main);
         }
     }
 }

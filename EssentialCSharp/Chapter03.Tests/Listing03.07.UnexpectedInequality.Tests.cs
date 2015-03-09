@@ -8,7 +8,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_07.Tests
         [TestMethod]
         public void MainTest()
         {
-            string view = 
+            const string expected = 
                 @"4.2 != 4.20000006258488
 4.2 != 4.20000006258488
 (float)4.2M != 4.2F
@@ -18,11 +18,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_07.Tests
 4.19999980926514 != 4.2
 4.2F != 4.2D";
 
-            IntelliTect.ConsoleView.Tester.Test(view,
-            () =>
-            {
-                Program.Main();
-            });
+            IntelliTect.ConsoleView.Tester.Test(
+                expected, Program.Main);
         }
     }
 }

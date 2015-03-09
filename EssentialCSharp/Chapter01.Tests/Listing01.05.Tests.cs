@@ -8,15 +8,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_05.Tests
         [TestMethod]
         public void Main_UpDown()
         {
-            string view =
-            @"Up
+            const string expected =
+@"Up
 Down";
 
-            IntelliTect.ConsoleView.Tester.Test(view,
-            () =>
-            {
-                HelloWorld.Main();
-            });
+            IntelliTect.ConsoleView.Tester.Test(
+                expected, HelloWorld.Main);
         }
     }
 }

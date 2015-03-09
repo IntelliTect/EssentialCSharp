@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_01.Tests
 {
@@ -8,14 +9,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_01.Tests
         [TestMethod]
         public void UsingListOfT()
         {
-            string expected =
+            const string expected =
                 "In alphabetical order Bashful is the first dwarf while Sneezy is the last.";
 
-            IntelliTect.ConsoleView.Tester.Test(expected,
-            () =>
-            {
-                Program.Main();
-            });
+            IntelliTect.ConsoleView.Tester.Test(
+                expected, Program.Main);
         }
     }
 }

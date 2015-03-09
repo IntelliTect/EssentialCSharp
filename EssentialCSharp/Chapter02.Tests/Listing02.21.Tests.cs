@@ -8,13 +8,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_21.Tests
         [TestMethod]
         public void Main_WriteOverflowExample()
         {
-            string view = "-2147483648";
+            const string expected = "-2147483648";
 
-            IntelliTect.ConsoleView.Tester.Test(view,
-            () =>
-            {
-                Program.Main();
-            });
+            IntelliTect.ConsoleView.Tester.Test(
+                expected, Program.Main);
         }
     }
 }

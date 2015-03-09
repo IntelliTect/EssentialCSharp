@@ -8,13 +8,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_09.Tests
         [TestMethod]
         public void Main_StormCastleShort()
         {
-            string view = @"Have fun storming the castle!";
+            const string expected = @"Have fun storming the castle!";
 
-            IntelliTect.ConsoleView.Tester.Test(view,
-            () =>
-            {
-                MiracleMax.Main();
-            });
+            IntelliTect.ConsoleView.Tester.Test(
+                expected, MiracleMax.Main);
         }
     }
 }

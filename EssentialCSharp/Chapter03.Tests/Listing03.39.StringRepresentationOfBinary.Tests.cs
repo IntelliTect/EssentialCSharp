@@ -9,14 +9,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_39.Tests
         public void MainTest()
         {
             int integer = new System.Random().Next();
-            string view =
+            string expected =
                 $@"Enter an integer: <<{integer}>>{System.Convert.ToString(integer, 2).PadLeft(64,'0')}";
 
-            IntelliTect.ConsoleView.Tester.Test(view,
-            () =>
-            {
-                BinaryConverter.Main();
-            });
+            IntelliTect.ConsoleView.Tester.Test(
+                expected, BinaryConverter.Main);
         }
     }
 }
