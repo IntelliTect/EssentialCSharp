@@ -5,28 +5,16 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_07
     class CommandLineInfo
     {
         [CommandLineSwitchAlias("?")]
-        public bool Help
-        {
-            get { return _Help; }
-            set { _Help = value; }
-        }
-        private bool _Help;
+        public bool Help { get; set; }
 
         [CommandLineSwitchRequired]
-        public string Out
-        {
-            get { return _Out; }
-            set { _Out = value; }
-        }
-        private string _Out;
+        public string Out { get; set; }
 
         public System.Diagnostics.ProcessPriorityClass Priority
-        {
-            get { return _Priority; }
-            set { _Priority = value; }
-        }
-        private System.Diagnostics.ProcessPriorityClass _Priority =
+        { get; set; } = 
             System.Diagnostics.ProcessPriorityClass.Normal;
+
+
     }
 
     internal class CommandLineSwitchRequiredAttribute : Attribute
