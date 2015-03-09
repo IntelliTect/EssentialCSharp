@@ -24,8 +24,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_07
 
             foreach(string fileName in fileNames)
             {
-                Console.WriteLine("{0}", fileName);
-            }
+				Console.WriteLine(fileName);
+			}
         }
     }
 }
