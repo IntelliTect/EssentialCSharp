@@ -14,7 +14,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_18
             System.Console.WriteLine(
                 $"{patent1.Title} ({patent1.YearOfPublication})");
             System.Console.WriteLine(
-                $"{patent2.Title} ({patent1.YearOfPublication})");
+                $"{patent2.Title} ({patent2.YearOfPublication})");
         }
     }
 }
