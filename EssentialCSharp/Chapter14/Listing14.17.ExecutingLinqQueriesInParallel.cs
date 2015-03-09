@@ -1,4 +1,4 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_15
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_17
 {
     using System;
     using System.Collections.Generic;
@@ -14,7 +14,7 @@
 
             IEnumerable<string> fileList = Directory.GetFiles(
                 rootDirectory, searchPattern);
-            var items = fileList.Select(
+            var items = fileList.AsParallel().Select(
                 file =>
                 {
                     FileInfo fileInfo = new FileInfo(file);

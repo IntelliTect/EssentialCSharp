@@ -1,4 +1,4 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_22
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_24
 {
     using System;
     using System.Collections.Generic;
@@ -8,24 +8,21 @@
     {
         public static void Main()
         {
-            Department[] departments = CorporateData.Departments;
-            Employee[] employees = CorporateData.Employees;
+            IEnumerable<Employee> employees = CorporateData.Employees;
 
-            var items = departments.Join(
-                employees,
-                department => department.Id,
-                employee => employee.DepartmentId,
-                (department, employee) => new
-                {
-                    department.Id,
-                    department.Name,
-                    Employee = employee
-                });
+            IEnumerable<IGrouping<int, Employee>> groupedEmployees =
+                employees.GroupBy((employee) => employee.DepartmentId);
 
-            foreach(var item in items)
+            foreach(IGrouping<int, Employee> employeeGroup in
+                groupedEmployees)
             {
-                Console.WriteLine(item.Name);
-                Console.WriteLine("\t" + item.Employee);
+                Console.WriteLine();
+                foreach(Employee employee in employeeGroup)
+                {
+                    Console.WriteLine("\t" + employee);
+                }
+                Console.WriteLine(
+                  "\tCount: " + employeeGroup.Count());
             }
 
         }
@@ -48,6 +45,7 @@
             return string.Format("{0}", Name);
         }
     }
+
     public class Employee
     {
         public int Id { get; set; }
@@ -59,6 +57,7 @@
             return string.Format("{0} ({1})", Name, Title);
         }
     }
+
     public static class CorporateData
     {
         public static readonly Department[] Departments =

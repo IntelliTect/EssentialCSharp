@@ -14,7 +14,7 @@
 
             IEnumerable<string> fileList = Directory.GetFiles(
                 rootDirectory, searchPattern);
-            var items = fileList.AsParallel().Select(
+            var items = fileList.Select(
                 file =>
                 {
                     FileInfo fileInfo = new FileInfo(file);

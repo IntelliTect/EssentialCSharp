@@ -6,15 +6,10 @@
     {
         public static void Main()
         {
-            int number;
-            int[] tempArray;
             int[] array = new int[] { 1, 2, 3, 4, 5, 6 };
 
-            tempArray = array;
-            for(int counter = 0; (counter < tempArray.Length); counter++)
+            foreach(int item in array)
             {
-                int item = tempArray[counter];
-
                 Console.WriteLine(item);
             }
         }

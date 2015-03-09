@@ -8,21 +8,24 @@
     {
         public static void Main()
         {
-            IEnumerable<Employee> employees = CorporateData.Employees;
+            Department[] departments = CorporateData.Departments;
+            Employee[] employees = CorporateData.Employees;
 
-            IEnumerable<IGrouping<int, Employee>> groupedEmployees =
-                employees.GroupBy((employee) => employee.DepartmentId);
-
-            foreach(IGrouping<int, Employee> employeeGroup in
-                groupedEmployees)
-            {
-                Console.WriteLine();
-                foreach(Employee employee in employeeGroup)
+            var items = departments.Join(
+                employees,
+                department => department.Id,
+                employee => employee.DepartmentId,
+                (department, employee) => new
                 {
-                    Console.WriteLine("\t" + employee);
-                }
-                Console.WriteLine(
-                  "\tCount: " + employeeGroup.Count());
+                    department.Id,
+                    department.Name,
+                    Employee = employee
+                });
+
+            foreach(var item in items)
+            {
+                Console.WriteLine(item.Name);
+                Console.WriteLine("\t" + item.Employee);
             }
 
         }
@@ -45,7 +48,6 @@
             return string.Format("{0}", Name);
         }
     }
-
     public class Employee
     {
         public int Id { get; set; }
@@ -57,7 +59,6 @@
             return string.Format("{0} ({1})", Name, Title);
         }
     }
-
     public static class CorporateData
     {
         public static readonly Department[] Departments =

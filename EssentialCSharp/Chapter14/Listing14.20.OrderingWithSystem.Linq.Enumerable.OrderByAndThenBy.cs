@@ -1,4 +1,4 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_17
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_20
 {
     using System;
     using System.Collections.Generic;
@@ -8,16 +8,30 @@
     {
         public static void Main()
         {
-            IEnumerable<Patent> patents = PatentData.Patents;
-			Console.WriteLine($"Patent Count: { patents.Count() }");
-			Console.WriteLine($@"Patent Count in 1800s: { 
-	            patents.Count(patent =>
-					patent.YearOfPublication.StartsWith("18"))
-			}");
+            IEnumerable<Patent> items;
+            Patent[] patents = PatentData.Patents;
+            items = patents.OrderBy(
+                    patent => patent.YearOfPublication)
+                .ThenBy(
+                    patent => patent.Title);
+            Print(items);
+            Console.WriteLine();
 
-
+            items = patents.OrderByDescending(
+                    patent => patent.YearOfPublication)
+                .ThenByDescending(
+                    patent => patent.Title);
+            Print(items);
         }
-}
+
+        private static void Print<T>(IEnumerable<T> items)
+        {
+            foreach(T item in items)
+            {
+                Console.WriteLine(item);
+            }
+        }
+    }
 
     public class Patent
     {

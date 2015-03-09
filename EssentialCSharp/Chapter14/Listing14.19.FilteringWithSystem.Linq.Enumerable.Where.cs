@@ -8,30 +8,45 @@
     {
         public static void Main()
         {
-            IEnumerable<Patent> items;
-            Patent[] patents = PatentData.Patents;
-            items = patents.OrderBy(
-                    patent => patent.YearOfPublication)
-                .ThenBy(
-                    patent => patent.Title);
-            Print(items);
-            Console.WriteLine();
+            IEnumerable<Patent> patents = PatentData.Patents;
+            bool result;
+            patents = patents.Where(
+                patent =>
+                {
+                    if(result =
+                        patent.YearOfPublication.StartsWith("18"))
+                    {
+                        // Side effects like this in a predicate
+                        // are used here to demonstrate a 
+                        // principle and should generally be
+                        // avoided.
+                        Console.WriteLine("\t" + patent);
+                    }
+                    return result;
+                });
 
-            items = patents.OrderByDescending(
-                    patent => patent.YearOfPublication)
-                .ThenByDescending(
-                    patent => patent.Title);
-            Print(items);
-        }
-
-        private static void Print<T>(IEnumerable<T> items)
-        {
-            foreach(T item in items)
+            Console.WriteLine("1. Patents prior to the 1900s are:");
+            foreach(Patent patent in patents)
             {
-                Console.WriteLine(item);
             }
-        }
-    }
+
+            Console.WriteLine();
+            Console.WriteLine(
+                "2. A second listing of patents prior to the 1900s:");
+            Console.WriteLine(
+			    $@"   There are { patents.Count()
+				    } patents prior to 1900.");
+
+
+			Console.WriteLine();
+            Console.WriteLine(
+                "3. A third listing of patents prior to the 1900s:");
+            patents = patents.ToArray();
+            Console.Write("   There are ");
+			Console.WriteLine(
+				$"{ patents.Count() } patents prior to 1900.");
+		}
+	}
 
     public class Patent
     {

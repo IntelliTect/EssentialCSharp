@@ -1,4 +1,4 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_25
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_22
 {
     using System;
     using System.Collections.Generic;
@@ -11,33 +11,23 @@
             Department[] departments = CorporateData.Departments;
             Employee[] employees = CorporateData.Employees;
 
-            var items = departments.GroupJoin(
-                employees,
-                department => department.Id,
+            var items = employees.Join(
+                departments,
                 employee => employee.DepartmentId,
-                (department, departmentEmployees) => new
+                department => department.Id,
+                (employee, department) => new
                 {
-                    department.Id,
-                    department.Name,
-                    Employees = departmentEmployees
-                }).SelectMany(
-                    departmentRecord =>
-                        departmentRecord.Employees.DefaultIfEmpty(),
-                    (departmentRecord, employee) => new
-                    {
-                        departmentRecord.Id,
-                        departmentRecord.Name,
-                        Employees =
-                            departmentRecord.Employees
-                    }).Distinct();
+                    employee.Id,
+                    employee.Name,
+                    employee.Title,
+                    Department = department
+                });
 
             foreach(var item in items)
             {
-				Console.WriteLine(item.Name);
-				foreach (Employee employee in item.Employees)
-                {
-                    Console.WriteLine("\t" + employee);
-                }
+				Console.WriteLine(
+					$"{ item.Name } ({ item.Title })");
+				Console.WriteLine("\t" + item.Department);
             }
         }
 
