@@ -31,6 +31,25 @@ namespace IntelliTect.ConsoleView
                 Execute(input, output, action);
         }
 
+
+        public static void Test<T>(string view, Func<string[], T> func, T expectedReturn = default(T), params string[] args)
+        {
+            T @return = default(T);
+            Test(view, () => { @return = func(args); });
+
+            Assert.AreEqual<T>(expectedReturn, @return, 
+                $"The value returned from {nameof(func)} ({@return}) was not the { nameof(expectedReturn) }({expectedReturn}) value.");
+        }
+
+
+        public static void Test<T>(string view, Func<T> func, T expectedReturn)
+        {
+            Test(view, (args) => func(), expectedReturn);
+        }
+
+        public static void Test(string view, Action<string[]> func, params string[] args) =>
+            Test(view, () => func(args));
+
         /// <summary>
         /// Executes the unit test while providing console input.
         /// </summary>
