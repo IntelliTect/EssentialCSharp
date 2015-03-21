@@ -69,6 +69,7 @@
     </Compile>
     <Compile Include="Listing17.01.UsingTypeGetPropertiesToObtainAnObjectsPublicProperties.cs" />
     <Compile Include="Listing17.02.UsingTypeofToCreateASystem.TypeInstance.cs" />
+    <Compile Include="Listing17.03A.LeveragingNameofWithINotifyPropertyChanged.cs" />
     <Compile Include="Listing17.03.DynamicallyInvokingAMember.cs" />
     <Compile Include="Listing17.04.DeclaringTheStackClass.cs" />
     <Compile Include="Listing17.05.ReflectionWithGenerics.cs" />
