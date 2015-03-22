@@ -8,7 +8,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_25.Tests
         [TestMethod]
         public void Main_ExamingingAnExpressTree()
         {
-            string view =
+            string expected =
             @"------------- (x, y) => (x > y) -------------
      x (Parameter)
 >
@@ -24,7 +24,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_25.Tests
      +
           y (Parameter)";
 
-            IntelliTect.ConsoleView.Tester.Test(view,
+            IntelliTect.ConsoleView.Tester.Test(expected,
             () =>
             {
                 Program.Main();
