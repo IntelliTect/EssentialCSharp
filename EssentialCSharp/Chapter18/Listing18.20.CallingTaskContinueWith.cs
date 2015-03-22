@@ -24,10 +24,11 @@
 
         private static void DisplayStatus(string message)
         {
-            string text =
-                string.Format("{0}: {1}",
-                    Thread.CurrentThread.ManagedThreadId,
-                    message);
+            string text = string.Format(
+                    $@"{ Thread.CurrentThread.ManagedThreadId 
+                        }: { message }");
+
+
             Console.WriteLine(text);
         }
     }

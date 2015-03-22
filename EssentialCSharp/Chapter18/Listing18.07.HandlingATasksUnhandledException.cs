@@ -23,8 +23,7 @@
                 exception.Handle(eachException =>
                 {
                     Console.WriteLine(
-                        "ERROR: {0}",
-                        eachException.Message);
+                        $"ERROR: { eachException.Message }");
                     return true;
                 });
             }
