@@ -31,7 +31,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_04
 
         static void DisplayGreeting(string name)
         {
-            System.Console.WriteLine("Your full name is {0}.", name);
+            System.Console.WriteLine($"Your full name is { name }.");
             return;
         }
     }

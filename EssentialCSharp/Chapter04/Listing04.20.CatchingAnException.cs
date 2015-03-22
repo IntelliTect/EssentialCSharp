@@ -4,7 +4,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_20
 
     public class ExceptionHandling
     {
-        public static int Main()
+        public static int Main(string[] args)
         {
             string firstName;
             string ageText;
