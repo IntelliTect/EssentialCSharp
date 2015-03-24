@@ -24,9 +24,9 @@
 
         private static void DisplayStatus(string message)
         {
-            string text = string.Format(
+            string text = 
                     $@"{ Thread.CurrentThread.ManagedThreadId 
-                        }: { message }");
+                        }: { message }";
 
 
             Console.WriteLine(text);
