@@ -52,8 +52,10 @@
             }
             else if(obj.GetType() != typeof(Contact))
             {
+                // Use C# 6.0 nameof operator in message to
+                // ensure consistency in the Type name.
                 throw new ArgumentException(
-                    $"obj is not a of type { nameof(Contact) }",
+                    $"The parameter is not a of type { nameof(Contact) }",
                     nameof(obj));
             }
             else if(Contact.ReferenceEquals(this, obj))
