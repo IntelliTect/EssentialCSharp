@@ -9,7 +9,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_20
 
             // ERROR:  Property or indexer 'Employee.Id' 
             // cannot be assigned to -- it is read-only
-            //employee1.Id = "490";                     //will not compile if you uncomment this line
+            // employee1.Id = "490";
         }
     }
 
@@ -32,6 +32,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_20
             }
             // No setter provided.
         }
-        private string _Id;
+        private string _Id = default(string);
+
+        public string ID => Id;
+
     }
 }

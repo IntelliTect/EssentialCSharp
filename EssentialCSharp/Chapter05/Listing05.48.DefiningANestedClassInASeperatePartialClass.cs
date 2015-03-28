@@ -59,12 +59,15 @@
         {
             if(value == null)
             {
-                throw new ArgumentNullException("LastName");
+                // In C# 6.0 replace "value" with nameof(value)
+                throw new ArgumentNullException("value");
             }
             if(value.Trim().Length == 0)
             {
+                // In C# 6.0 replace "value" with nameof(value)
                 throw new ArgumentException(
-                    "LastName cannot be empty.");
+                "LastName cannot be empty.",
+                    "value");
             }
         }
 
@@ -72,12 +75,16 @@
         {
             if(value == null)
             {
-                throw new ArgumentNullException("FirstName");
+                // In C# 6.0 replace "value" with nameof(value)
+                throw new ArgumentNullException("value");
             }
-            if(value.Trim().Length == 0)
+            if (value.Trim().Length == 0)
             {
+                // In C# 6.0 replace "value" with nameof(value)
                 throw new ArgumentException(
-                    "FirstName cannot be empty.");
+                    "FirstName cannot be empty.",
+                    "value");
+
             }
         }
     }

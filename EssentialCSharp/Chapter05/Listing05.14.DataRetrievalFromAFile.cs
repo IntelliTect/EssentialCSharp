@@ -20,9 +20,7 @@
             employee1 = DataStorage.Load("Inigo", "Montoya");
 
             Console.WriteLine(
-                "{0}: {1}",
-                employee1.GetName(),
-                employee1.Salary);
+                $"{ employee1.GetName() }: { employee1.Salary }");
         }
 
         static void IncreaseSalary(Employee employee)
@@ -46,8 +44,8 @@
         {
             this.FirstName = newFirstName;
             this.LastName = newLastName;
-            Console.WriteLine("Name changed to '{0}'",
-                this.GetName());
+            Console.WriteLine(
+                $"Name changed to '{ this.GetName() }'");
         }
 
         public void Save()

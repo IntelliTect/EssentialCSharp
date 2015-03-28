@@ -27,7 +27,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_19
                 if(value == null)
                 {
                     // Report error
-                    throw new ArgumentNullException("value");
+                    throw new ArgumentNullException(nameof(value));
                 }
                 else
                 {
@@ -37,7 +37,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_19
                     if(value == "")
                     {
                         throw new ArgumentException(
-                            "LastName cannot be blank.", "value");
+                            "LastName cannot be blank.", nameof(value));
                     }
                     else
                     {

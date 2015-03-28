@@ -8,7 +8,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_10
 
         public string GetName()
         {
-            return FirstName + " " + LastName;
+            return $"{ FirstName }  { LastName }";
         }
 
         // Caution:  Parameter names use Pascal case

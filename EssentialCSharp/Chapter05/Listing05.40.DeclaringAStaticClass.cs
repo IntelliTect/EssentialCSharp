@@ -1,25 +1,19 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_40
 {
     using System;
-
-    public class Program
-    {
-        public static void Main()
-        {
-            System.Console.WriteLine("No output in this example");
-        }
-    }
+    using static SimpleMath;
 
     public static class SimpleMath
     {
         // params allows the number of parameters to vary.
-        static int Max(params int[] numbers)
+        public static int Max(params int[] numbers)
         {
             // Check that there is a least one item in numbers.
             if(numbers.Length == 0)
             {
+                // In C# 6.0 replace "numbers" with nameof(numbers)
                 throw new ArgumentException(
-                    "numbers cannot be empty");
+                    "numbers cannot be empty", "numbers");
             }
 
             int result;
@@ -35,13 +29,14 @@
         }
 
         // params allows the number of parameters to vary.
-        static int Min(params int[] numbers)
+        public static int Min(params int[] numbers)
         {
             // Check that there is a least one item in numbers.
             if(numbers.Length == 0)
             {
+                // In C# 6.0 replace "numbers" with nameof(numbers)
                 throw new ArgumentException(
-                    "numbers cannot be empty");
+                    "numbers cannot be empty", "numbers");
             }
 
             int result;
@@ -56,4 +51,24 @@
             return result;
         }
     }
+
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            int[] numbers = new int[args.Length];
+            for (int count = 0; count < args.Length; count++)
+            {
+                numbers[count] = args[count].Length;
+            }
+
+            Console.WriteLine(
+                $@"Longest argument length = { Max(numbers) }");
+
+            Console.WriteLine(
+                $@"Shortest argument length = {
+                    SimpleMath.Min(numbers) }");
+        }
+    }
+
 }

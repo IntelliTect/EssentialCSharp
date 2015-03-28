@@ -4,17 +4,22 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_43
     {
         public Employee(int id)
         {
-            Id = id;
+          _Id = id;
         }
 
         // ...
-        public readonly int Id;
-        public void SetId(int newId)
+
+        private readonly int _Id;
+        public int Id
         {
-            // ERROR:  read-only fields cannot be set
-            //         outside the constructor.
-            // Id = newId;
+          get { return _Id; }
         }
+
+        // Error: A readonly field cannot be assigned to (except
+        // in a constructor or a variable initializer)
+
+        // public void SetId(int id) =>
+        //          _Id = id;
 
         // ...
     }

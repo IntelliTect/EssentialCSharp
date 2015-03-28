@@ -52,7 +52,7 @@
         {
             get
             {
-                return FirstName + " " + LastName;
+                return $"{ FirstName } { LastName }";
             }
             set
             {
@@ -70,12 +70,13 @@
                     // Throw an exception if the full 
                     // name was not assigned.
                     throw new System.ArgumentException(
-                        string.Format(
-                        "Assigned value '{0}' is invalid", value));
+                        $"Assigned value '{ value }' is invalid",
+                        "value");
                 }
             }
         }
 
+        public string Initials => $"{ FirstName[0] } { LastName[0] }";
 
         // Title property
         public string Title { get; set; }

@@ -26,9 +26,9 @@
                 };
 
             System.Console.WriteLine("{0} ({1})",
-                                     patent1.Title, patent1.YearOfPublication);
+                 patent1.Title, patent1.YearOfPublication);
             System.Console.WriteLine("{0} ({1})",
-                                     patent2.Title, patent1.YearOfPublication);
+                 patent2.Title, patent1.YearOfPublication);
 
             Console.WriteLine();
             Console.WriteLine(patent1);

@@ -50,10 +50,11 @@
         }
         // ...
 
-        private int Id { get; set; }
+
+        public int Id { get; private set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string Salary { get; set; }
+        public string Salary { get; set; } = "Not Enough";
         public string Title { get; set; }
         public Employee Manager { get; set; }
 

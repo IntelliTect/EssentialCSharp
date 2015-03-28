@@ -39,9 +39,10 @@
         }
 
         public static int NextId = 42;
-        public int Id { get; set; }
+
+        public int Id { get; private set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string Salary { get; set; }
+        public string Salary { get; set; } = "Not Enough";
     }
 }
