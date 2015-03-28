@@ -18,12 +18,7 @@
 
     public class PdaItem
     {
-        protected Guid ObjectKey
-        {
-            get { return _ObjectKey; }
-            set { _ObjectKey = value; }
-        }
-        private Guid _ObjectKey;
+        protected Guid ObjectKey { get; set; }
 
         // ...
     }

@@ -18,8 +18,9 @@
 
             // Display that FirstName & LastName
             // properties were set.
-            Console.WriteLine("{0} {1}",
-                contact.FirstName, contact.LastName);
+            Console.WriteLine(
+                $"{ contact.FirstName } { contact.LastName}");
+
         }
     }
 }
