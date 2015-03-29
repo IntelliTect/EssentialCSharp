@@ -14,31 +14,19 @@
 
         public Angle(int degrees, int minutes, int seconds)
         {
-            _Degrees = degrees;    // Shorthand for this.Hours = hours;
-            _Minutes = minutes;    // Shorthand for this.Minutes = ...;
-            _Seconds = seconds;    // Shorthand for this.Seconds = ...;
+            _Degrees = degrees; // Shorthand for this.Degrees = ...;
+            _Minutes = minutes; // Shorthand for this.Minutes = ...;
+            _Seconds = seconds; // Shorthand for this.Seconds = ...;
         }
 
-        public int Degrees
-        {
-            get { return _Degrees; }
-        }
+        public int Degrees { get { return _Degrees; } }
+        readonly private int _Degrees;
 
-        // ERROR:  Fields cannot be initialized at declaration time
-        // private int _Degrees = 42;
-        private int _Degrees;
+        public int Minutes { get { return _Minutes; } }
+        readonly private int _Minutes;
 
-        public int Minutes
-        {
-            get { return _Minutes; }
-        }
-        private int _Minutes;
-
-        public int Seconds
-        {
-            get { return _Seconds; }
-        }
-        private int _Seconds;
+        public int Seconds { get { return _Seconds; } }
+        readonly private int _Seconds;
 
         public Angle Move(int degrees, int minutes, int seconds)
         {
