@@ -4,10 +4,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_50
     {
         public static void Main()
         {
-            string[] languages = new string[] {
+            string[] languages = new string[]{
                 "C#", "COBOL", "Java",
                 "C++", "Visual Basic", "Pascal",
-                "Fortran", "Lisp", "J#" };
+                "Fortran", "Lisp", "J#"};
 
             System.Array.Sort(languages);
 
@@ -16,27 +16,26 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_50
                 languages, searchString);
             System.Console.WriteLine(
                 "The wave of the future, "
-                + $"{searchString}, is at index {index}.");
-
+                + $"{ searchString }, is at index { index }.");
 
             System.Console.WriteLine();
             System.Console.WriteLine(
-                $"{"First Element", -20}\t{"Last Element", -20}");
+                $"{ "First Element",-20 }\t{ "Last Element",-20 }");
             System.Console.WriteLine(
-                $"{"-------------", -20}\t{"------------", -20}");
+                $"{ "-------------",-20 }\t{ "------------",-20 }");
             System.Console.WriteLine(
-                    $"{languages[0], -20}\t{languages[languages.Length - 1], -20}");
+                    $"{ languages[0],-20 }\t{ languages[languages.Length - 1],-20 }");
             System.Array.Reverse(languages);
             System.Console.WriteLine(
-                    $"{languages[0], -20}\t{languages[languages.Length - 1], -20}");
+                    $"{ languages[0],-20 }\t{ languages[languages.Length - 1],-20 }");
             // Note this does not remove all items from the array.
             // Rather it sets each item to the type’s default value.
             System.Array.Clear(languages, 0, languages.Length);
             System.Console.WriteLine(
-                    $"{languages[0], -20}\t{languages[languages.Length - 1], -20}");
-
+                    $"{ languages[0],-20 }\t{ languages[languages.Length - 1],-20 }");
             System.Console.WriteLine(
-                $"After clearing, the array size is: {languages.Length}");
+                $"After clearing, the array size is: { languages.Length }");
         }
     }
 }
+
