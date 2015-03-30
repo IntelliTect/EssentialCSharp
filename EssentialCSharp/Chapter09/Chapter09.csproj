@@ -69,6 +69,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Employee.cs" />
+    <Compile Include="Listing09.06.ImplementingTheEqualsAndNotEqualsOperators.cs" />
     <Compile Include="Listing09.17.CommentingWithXML.cs" />
     <Compile Include="Listing09.16.UsingTheExternAliasDirective.cs" />
     <Compile Include="Listing09.15.NestingNamespacesWithPeriod.cs" />
@@ -87,13 +88,11 @@
     <Compile Include="Listing09.11.ProvidingAnImplicitConversionBetweenLatitudeAndDouble.cs" />
     <Compile Include="Listing09.08.CallingTheMinusAndPlusBinaryOperators.cs" />
     <Compile Include="Listing09.07.AddingAnOperator.cs" />
-    <Compile Include="Listing09.06.ImplementingTheEqualsAndNotEqualsOperators.cs" />
     <Compile Include="Listing09.05.OverridingEquals.cs" />
     <Compile Include="Listing09.04.ValueTypesNeverReferenceEqualThemselves.cs" />
     <Compile Include="Listing09.03.OverridingEqualityOperator.cs" />
     <Compile Include="Listing09.02.ImplementingGetHashCode.cs" />
     <Compile Include="Listing09.01.OverridingToString.cs" />
-    <Compile Include="ProductSerialNumber.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

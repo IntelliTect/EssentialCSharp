@@ -29,25 +29,22 @@
     {
         public Coordinate(Longitude longitude, Latitude latitude)
         {
-            _Longitude = longitude;
-            _Latitude = latitude;
+            Longitude = longitude;
+            Latitude = latitude;
         }
 
-        public Longitude Longitude { get { return _Longitude; } }
-        private readonly Longitude _Longitude;
-
-        public Latitude Latitude { get { return _Latitude; } }
-        private readonly Latitude _Latitude;
+        public Longitude Longitude { get; }
+        public Latitude Latitude { get; }
 
         public override bool Equals(object obj)
         {
             // STEP 1: Check for null
-            if(obj == null)
+            if (obj == null)
             {
                 return false;
             }
             // STEP 3: equivalent data types
-            if(this.GetType() != obj.GetType())
+            if (this.GetType() != obj.GetType())
             {
                 return false;
             }
@@ -97,7 +94,19 @@
             hashCode ^= Latitude.GetHashCode(); // Xor (eXclusive OR)
             return hashCode;
         }
+        public static bool operator ==(
+            Coordinate leftHandSide,
+            Coordinate rightHandSide)
+        {
+            return (leftHandSide.Equals(rightHandSide));
+        }
 
+        public static bool operator !=(
+            Coordinate leftHandSide,
+            Coordinate rightHandSide)
+        {
+            return !(leftHandSide.Equals(rightHandSide));
+        }
     }
 
     public struct Longitude

@@ -1,8 +1,9 @@
 ﻿using System;
-using Chapter09;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_03
 {
+    using AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_06;
+
     public class Program
     {
         public static void Main()
