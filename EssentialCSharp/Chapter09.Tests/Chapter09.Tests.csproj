@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4B7AD32B-AA31-404C-B855-D902BD39292E}</ProjectGuid>
+    <ProjectGuid>{1EE50277-04EC-43C3-8365-B2ED5355DAE4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Chapter04.Tests</RootNamespace>
@@ -50,13 +50,12 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Listing05.40.Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Chapter05\Chapter05.csproj">
-      <Project>{21484ff2-f282-415c-a41d-f3714b2ca289}</Project>
-      <Name>Chapter05</Name>
+    <ProjectReference Include="..\Chapter09\Chapter09.csproj">
+      <Project>{211120ac-ccbc-45ab-8eab-b4446a46b5e6}</Project>
+      <Name>Chapter09</Name>
     </ProjectReference>
     <ProjectReference Include="..\IntelliTect.ConsoleView\IntelliTect.ConsoleView.csproj">
       <Project>{57d8817d-3fc0-4202-9bc2-d5b24c2e5397}</Project>

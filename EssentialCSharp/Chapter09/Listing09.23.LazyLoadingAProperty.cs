@@ -5,10 +5,10 @@
     class DataCache
     {
         // ...
-        string name = null;
+
         public TemporaryFileStream FileStream =>
             InternalFileStream??(InternalFileStream = 
-                new TemporaryFileStream(name));
+                new TemporaryFileStream());
 
         private TemporaryFileStream InternalFileStream
             { get; set; } = null;
