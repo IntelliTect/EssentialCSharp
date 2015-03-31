@@ -35,7 +35,7 @@
         // ---+---+---    ---+---+---
         //    |   |          |   |   
         // Player 1 - X   Player 2 - O
-        public bool[,,] Cells { get; } 
+        public bool[,,] Cells { get; } = new bool[2, 3, 3];
 
         // Error: A readonly field cannot be assigned to(except 
         // in a constructor or a variable initializer)

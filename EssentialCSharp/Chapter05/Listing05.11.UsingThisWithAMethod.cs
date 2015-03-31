@@ -10,11 +10,6 @@
 
             employee.SetName("Inigo", "Montoya");
         }
-
-        static void IncreaseSalary(Employee employee)
-        {
-            employee.Salary = "Enough to survive on";
-        }
     }
 
     class Employee

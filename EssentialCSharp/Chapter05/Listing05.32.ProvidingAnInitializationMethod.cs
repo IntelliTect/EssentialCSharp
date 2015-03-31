@@ -81,8 +81,7 @@
                     // Throw an exception if the full 
                     // name was not assigned.
                     throw new System.ArgumentException(
-                        string.Format(
-                        "Assigned value '{0}' is invalid", value));
+                        $"Assigned value '{value}' is invalid");
                 }
             }
         }
