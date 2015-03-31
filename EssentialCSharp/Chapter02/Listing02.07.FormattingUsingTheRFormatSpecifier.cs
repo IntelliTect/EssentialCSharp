@@ -8,11 +8,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_07
             double result;
             string text;
 
-            text = string.Format($"{number}");
+            text = $"{number}";
             result = double.Parse(text);
             System.Console.WriteLine($"{result != number}: result != number");
 
-            text = string.Format("{0:R}", number);
+            text = $"{number:R}";
             result = double.Parse(text);
             System.Console.WriteLine($"{result == number}: result == number");
         }

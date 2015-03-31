@@ -28,7 +28,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_01
 
             //begin listing 2.6
             //Displays "0x2A"
-            System.Console.WriteLine("0x{0:X}", 42);
+            System.Console.WriteLine($"0x{42:X}");
             //end listing 2.6
         }
     }
