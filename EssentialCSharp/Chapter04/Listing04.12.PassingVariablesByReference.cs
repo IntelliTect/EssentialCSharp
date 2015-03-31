@@ -5,8 +5,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_12
         public static void Main()
         {
             // ...
-            string first = "first";
-            string second = "second";
+            string first = "hello";
+            string second = "goodbye";
             Swap(ref first, ref second);
 
             System.Console.WriteLine(
