@@ -59,7 +59,7 @@
                     throw new System.ArgumentException(
                         string.Format(
                         $"Assigned value '{ value }' is invalid", 
-                        "value"));
+                        nameof(value)));
                 }
             }
         }

@@ -63,8 +63,7 @@
 
         public override string ToString()
         {
-            return string.Format("{0}({1})",
-                Title, YearOfPublication);
+            return $"{ Title }({ YearOfPublication })";
         }
     }
 
@@ -78,8 +77,7 @@
 
         public override string ToString()
         {
-            return string.Format("{0}({1}, {2})",
-                Name, City, State);
+            return $"{ Name }({ City }, { State })";
         }
     }
 

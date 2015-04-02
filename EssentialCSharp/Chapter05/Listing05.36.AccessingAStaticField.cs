@@ -24,7 +24,8 @@
                 employee2.LastName,
                 employee2.Id);
 
-            Console.WriteLine("NextId = {0}", Employee.NextId);
+            Console.WriteLine(
+                $"NextId = {Employee.NextId}");
         }
     }
 

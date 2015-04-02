@@ -21,7 +21,7 @@ public class ThrowingExceptions
       catch(Exception exception)
       {
           Console.WriteLine(
-              "Unexpected error: {0}", exception.Message);
+              $"Unexpected error: { exception.Message }");
       }
       catch
       {

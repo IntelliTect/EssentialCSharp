@@ -24,8 +24,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_22
             catch(System.FormatException exception)
             {
                 System.Console.WriteLine(
-                    "The age entered ,{0}, is not valid.",
-                    ageText);
+                    $"The age entered ,{ageText}, is not valid.");
                 result = 1;
             }
             catch(System.Exception exception)

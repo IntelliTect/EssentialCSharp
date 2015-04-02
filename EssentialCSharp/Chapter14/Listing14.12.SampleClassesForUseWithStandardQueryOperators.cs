@@ -40,7 +40,7 @@
 
         public override string ToString()
         {
-            return $"{ Title }({ YearOfPublication })"; ;
+            return $"{ Title }({ YearOfPublication })";
         }
     }
 

@@ -1,7 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_10
 {
     using System;
-    using System.IO;
     using System.Net;
 
     public class Program
