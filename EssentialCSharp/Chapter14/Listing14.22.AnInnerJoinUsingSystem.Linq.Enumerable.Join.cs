@@ -46,7 +46,7 @@
         public string Name { get; set; }
         public override string ToString()
         {
-            return string.Format("{0}", Name);
+            return Name;
         }
     }
 
@@ -58,7 +58,7 @@
         public int DepartmentId { get; set; }
         public override string ToString()
         {
-            return string.Format("{0} ({1})", Name, Title);
+            return $"{ Name } ({ Title })";
         }
     }
 
@@ -89,7 +89,7 @@
             },
             new Department()
             {
-                Name = "Research",
+                Name = "Philanthropy",
                 Id = 4
             },
             new Department()
@@ -121,14 +121,14 @@
             },
             new Employee()
             {
-                Name = "Jewel Floch",
-                Title = "Bookkeeper Extraordinaire",
+                Name = "Shane Kercheval",
+                Title = "Chief Financial Officer",
                 DepartmentId = 1
             },
             new Employee()
             {
-                Name = "Robert Stokesbary",
-                Title = "Expert Mainframe Engineer",
+                Name = "Pat Dever",
+                Title = "Enterprise Architect",
                 DepartmentId = 3
             },
             new Employee()
@@ -145,8 +145,8 @@
             },
             new Employee()
             {
-                Name = "John Michaelis",
-                Title = "Inventor",
+                Name = "Eric Edmonds",
+                Title = "Philanthropy Coordinator",
                 DepartmentId = 4
             }
         };
