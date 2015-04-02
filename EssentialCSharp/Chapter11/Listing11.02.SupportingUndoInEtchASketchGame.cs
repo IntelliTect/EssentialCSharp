@@ -122,8 +122,9 @@
 
     public struct Cell
     {
-        readonly public int X;
-        readonly public int Y;
+        // Use read-only field prior to C# 6.0
+        public int X { get; }
+        public int Y { get; }
 
         public Cell(int x, int y)
         {

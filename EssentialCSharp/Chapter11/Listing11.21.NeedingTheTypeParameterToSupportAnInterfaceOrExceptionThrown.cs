@@ -5,8 +5,7 @@
 
     public class BinaryTree<T>
     {
-        // ...
-
+        public T Item { get; set; }
         public Pair<BinaryTree<T>> SubItems
         {
             get { return _SubItems; }
@@ -29,12 +28,5 @@
             }
         }
         private Pair<BinaryTree<T>> _SubItems;
-
-        public T Item
-        {
-            get { return _Item; }
-            set { _Item = value; }
-        }
-        private T _Item;
     }
 }

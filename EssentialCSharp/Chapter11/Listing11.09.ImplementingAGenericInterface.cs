@@ -4,31 +4,8 @@
 
     public struct Pair<T> : IPair<T>
     {
-        public T First
-        {
-            get
-            {
-                return _First;
-            }
-            set
-            {
-                _First = value;
-            }
-        }
-        private T _First;
-
-        public T Second
-        {
-            get
-            {
-                return _Second;
-            }
-            set
-            {
-                _Second = value;
-            }
-        }
-        private T _Second;
+        public T First { get; set; }
+        public T Second { get; set; }
     }
 
 }
