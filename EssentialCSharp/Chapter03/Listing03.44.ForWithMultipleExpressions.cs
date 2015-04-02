@@ -7,7 +7,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_44
             for(int x = 0, y = 5; ((x <= 5) && (y >= 0)); y--, x++)
             {
                 System.Console.Write(
-                    $"{x}{x > y ? '>' : '<'}{y}\t");
+                    $"{x}{(x > y ? '>' : '<')}{y}\t");
             }
         }
     }
