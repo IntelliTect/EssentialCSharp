@@ -9,12 +9,7 @@
         {
             Key = key;
         }
-        public TKey Key
-        {
-            get { return _key; }
-            set { _key = value; }
-        }
-        private TKey _key;
+        public TKey Key { get; set; }
     }
 
     public interface IEntityFactory<TKey, TValue>

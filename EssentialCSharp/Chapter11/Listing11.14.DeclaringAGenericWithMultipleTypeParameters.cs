@@ -10,22 +10,12 @@
     {
         public Pair(TFirst first, TSecond second)
         {
-            _First = first;
-            _Second = second;
+            First = first;
+            Second = second;
         }
 
-        public TFirst First
-        {
-            get { return _First; }
-            set { _First = value; }
-        }
-        private TFirst _First;
+        public TFirst First { get; set; }
+        public TSecond Second { get; set; }
 
-        public TSecond Second
-        {
-            get { return _Second; }
-            set { _Second = value; }
-        }
-        private TSecond _Second;
     }
 }

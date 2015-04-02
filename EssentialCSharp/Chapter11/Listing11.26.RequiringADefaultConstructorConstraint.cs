@@ -5,12 +5,7 @@
 
     public class EntityBase<TKey>
     {
-        public TKey Key
-        {
-            get { return _Key; }
-            set { _Key = value; }
-        }
-        private TKey _Key;
+        public TKey Key { get; set; }
     }
 
     public class EntityDictionary<TKey, TValue> :
