@@ -15,9 +15,14 @@
 
             if(result < 0)
             {
+#if !PRECSHARP6
+                throw new ArgumentException(
+                    "The argument did not represent a digit", nameof(textDigit));
+#else
                 throw new ArgumentException(
                     "The argument did not represent a digit",
                     "textDigit");
+#endif
             }
 
             return result;
