@@ -42,7 +42,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_16
         }
         #endregion
 
-        public T Value { get; set; }
+        public T Value { get; }  // C# 6.0 Getter-only Autoproperty
 
         public Pair<BinaryTree<T>> SubItems { get; set; }
     }
