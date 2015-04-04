@@ -20,8 +20,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_14
 
             foreach(var value in product)
             {
-                Console.WriteLine(Environment.NewLine + "({0}, {1})",
-                    value.word, value.number);
+                Console.WriteLine(Environment.NewLine + 
+                    $"({value.word}, {value.number})");
             }
         }
 
