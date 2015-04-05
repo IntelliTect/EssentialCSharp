@@ -76,7 +76,8 @@
     <Compile Include="Listing17.06.UsingReflectionWithGenericTypes.cs" />
     <Compile Include="Listing17.07.DecoratingAPropertyWithAnAttribute.cs" />
     <Compile Include="Listing17.08.DecoratingAPropertyWithMultipleAttributes.cs" />
-    <Compile Include="Listing17.09.SpecifyingAReturnAttribute.cs" />
+    <Compile Include="Listing17.09.AssemblyAttributesWithinAssemblyInfo.cs" />
+    <Compile Include="Listing17.10.SpecifyingAReturnAttribute.cs" />
     <Compile Include="Listing17.11.DefiningACustomAttribute.cs" />
     <Compile Include="Listing17.12.RetrievingACustomAttribute.cs" />
     <Compile Include="Listing17.13.ProvidingAnAttributeConstructor.cs" />

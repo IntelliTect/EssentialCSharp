@@ -11,12 +11,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_15
             Alias = alias;
         }
 
-        public string Alias
-        {
-            get { return _Alias; }
-            set { _Alias = value; }
-        }
-        private string _Alias;
+        public string Alias { get; set; }
 
         public static Dictionary<string, PropertyInfo> GetSwitches(
             object commandLine)

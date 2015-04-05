@@ -8,22 +8,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_13
         {
             Alias = alias;
         }
-        public string Alias
-        {
-            get { return _Alias; }
-            private set { _Alias = value; }
-        }
-        private string _Alias;
+        public string Alias { get; private set; }
     }
     class CommandLineInfo
     {
         [CommandLineSwitchAlias("?")]
-        public bool Help
-        {
-            get { return _Help; }
-            set { _Help = value; }
-        }
-        private bool _Help;
+        public bool Help { get; set; }
 
         // ...
     }

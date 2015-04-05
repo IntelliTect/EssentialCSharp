@@ -38,9 +38,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_16
                     else
                     {
                         success = false;
-                        errorMessage = string.Format(
-                            "Option '{0}' is not supported.",
-                            option);
+                        errorMessage = 
+                            $"Option '{option}' is not supported.";
                     }
                 }
             }

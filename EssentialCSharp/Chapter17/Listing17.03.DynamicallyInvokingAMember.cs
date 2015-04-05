@@ -48,12 +48,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_03
             public string Out { get; set; }
 
             public ProcessPriorityClass Priority
-            {
-                get { return _Priority; }
-                set { _Priority = value; }
-            }
-            private ProcessPriorityClass _Priority =
-                ProcessPriorityClass.Normal;
+            { get; set; } = ProcessPriorityClass.Normal;
         }
 
     }

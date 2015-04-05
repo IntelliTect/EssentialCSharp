@@ -15,7 +15,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_29
             if(data == 2.4 + 112 + 26.2)
             {
                 Console.WriteLine(
-                    "{0} makes for a long triathlon.", data);
+                    $"{data} makes for a long triathlon.");
             }
             else
             {
