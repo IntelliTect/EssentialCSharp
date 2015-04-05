@@ -19,7 +19,7 @@
                 });
             for(int count = 0; count < repetitions; count++)
             {
-                Console.Write('.');
+                Console.Write('+');
             }
 
             // Wait until the Task completes

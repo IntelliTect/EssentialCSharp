@@ -8,7 +8,7 @@
         public const int Repetitions = 1000;
         public static void Main()
         {
-            ThreadPool.QueueUserWorkItem(DoWork, '.');
+            ThreadPool.QueueUserWorkItem(DoWork, '+');
 
             for(int count = 0; count < Repetitions; count++)
             {

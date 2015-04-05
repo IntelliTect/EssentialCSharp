@@ -20,9 +20,9 @@
                 StartInfo = new ProcessStartInfo(fileName)
                 {
                     UseShellExecute = false,
-                    Arguments = arguments,
+                    Arguments = arguments
                 },
-                EnableRaisingEvents = true,
+                EnableRaisingEvents = true
             };
 
             process.Exited += (sender, localEventArgs) =>
