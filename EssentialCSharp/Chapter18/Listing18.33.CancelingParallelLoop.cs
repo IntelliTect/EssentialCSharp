@@ -39,6 +39,7 @@
             Console.Read();
 
             cts.Cancel();
+            Console.Write("*******");
             try { task.Wait(); }
             catch(AggregateException) { }
         }
