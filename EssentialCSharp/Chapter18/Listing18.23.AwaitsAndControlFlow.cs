@@ -52,9 +52,8 @@
             {
                 status = await func(url);
                 StatusLabel.Text =
-                    string.Format("{0}: {1} ({2})",
-                    url, status.ToString(),
-                    Thread.CurrentThread.ManagedThreadId);
+                    $@"{ url }: { status.ToString() } ({
+                    Thread.CurrentThread.ManagedThreadId })";
             }
         }
 

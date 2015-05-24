@@ -67,6 +67,7 @@
     <Compile Include="..\Shared\Program.cs">
       <Link>Program.cs</Link>
     </Compile>
+    <Compile Include="Listing14.03.CollectionInitialization.cs" />
     <Compile Include="Listing14.04.DictionaryInitializers.cs" />
     <Compile Include="Listing14.05.InitializingAnonymousTypeArrays.cs" />
     <Compile Include="Listing14.06.ForeachWithArrays.cs" />
@@ -91,7 +92,6 @@
     <Compile Include="Listing14.26.ImplementingAnOuterJoinUsingGroupJoinWithSelectMany.cs" />
     <Compile Include="Listing14.27.CallingSelectMany.cs" />
     <Compile Include="Listing14.14.ProjectionWithSystem.Linq.Enumerable.Select.cs" />
-    <Compile Include="Listing14.03.FilteringWithSystem.Linq.Enumerable.Where.cs" />
     <Compile Include="Listing14.02.TypeSafetyAndImmutabilityOfAnonymousTypes.cs" />
     <Compile Include="Listing14.01.ImplicitLocalVariablesWithAnonymousTypes.cs" />
     <Compile Include="Listing14.28.MoreSystem.Linq.EnumerableMethodCalls.cs" />

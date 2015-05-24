@@ -50,6 +50,12 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Listing03.44.ForWithMultipleExpressions.Tests.cs" />
+    <Compile Include="Listing03.26.IdenticalInFunctionality.Tests.cs" />
+    <Compile Include="Listing03.25.RelyingOnIndentation.Tests.cs" />
+    <Compile Include="Listing03.24.WithCodeBlock..Tests.cs" />
+    <Compile Include="Listing03.21.NestedIfStatements.cs" />
+    <Compile Include="Listing03.18.ComparingPrePostIncrementOperators.cs" />
     <Compile Include="Listing03.03.BinaryOperators.Tests.cs" />
     <Compile Include="Listing03.02.Negative.Tests.cs" />
     <Compile Include="Listing03.39.StringRepresentationOfBinary.Tests.cs" />

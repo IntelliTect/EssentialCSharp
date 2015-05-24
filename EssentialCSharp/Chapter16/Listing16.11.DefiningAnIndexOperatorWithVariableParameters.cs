@@ -33,7 +33,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_11
 
                 while (currentLevel < totalLevels)
                 {
-                    System.Diagnostics.Debug.Assert(branches != null, "branches != null");
+                    System.Diagnostics.Debug.Assert(branches != null,
+                        $"{ nameof(branches) } != null");
+
                     currentNode = currentNode.SubItems[
                         branches[currentLevel]];
                     if (currentNode == null)

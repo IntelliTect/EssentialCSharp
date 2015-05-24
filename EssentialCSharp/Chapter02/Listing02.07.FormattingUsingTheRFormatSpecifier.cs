@@ -10,7 +10,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_07
 
             text = $"{number}";
             result = double.Parse(text);
-            System.Console.WriteLine($"{result != number}: result != number");
+            System.Console.WriteLine($"{result == number}: result == number");
 
             text = $"{number:R}";
             result = double.Parse(text);

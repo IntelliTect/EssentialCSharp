@@ -12,7 +12,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_04.Tests
 @"Hey you!
 Enter your first name: <<Inigo
 >>Enter your last name: <<Montoya
->>Your full name is Inigo Montoya.";
+>>Hello Inigo Montoya! Your initials are I. M.";
 
             IntelliTect.ConsoleView.Tester.Test(view,
             () =>

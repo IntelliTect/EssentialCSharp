@@ -18,8 +18,6 @@
             Console.WriteLine("------------- {0} -------------",
                 expression);
             PrintNode(expression.Body, 0);
-            Console.WriteLine();
-            Console.WriteLine();
         }
 
         public static void PrintNode(Expression expression,

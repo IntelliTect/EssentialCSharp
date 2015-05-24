@@ -10,8 +10,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_13
             palindrome = System.Console.ReadLine();
 
             System.Console.WriteLine(
-                $"The palindrome, \"{palindrome}\" is"
+                $"The palindrome \"{palindrome}\" is"
                 + $" {palindrome.Length} characters.");
-        }    
+        }
     }
 }

@@ -12,7 +12,7 @@
             string rootDirectory = Directory.GetCurrentDirectory();
             string searchPattern = "*";
 
-            IEnumerable<string> fileList = Directory.GetFiles(
+            IEnumerable<string> fileList = Directory.EnumerateFiles(
                 rootDirectory, searchPattern);
             var items = fileList.Select(
                 file =>

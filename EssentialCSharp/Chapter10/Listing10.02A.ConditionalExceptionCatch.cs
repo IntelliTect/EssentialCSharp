@@ -24,20 +24,6 @@
                 {
                     Console.WriteLine("Inside Win32Exception catch block");
                 }
-                catch (InvalidOperationException exception)
-                {
-                    Console.WriteLine(exception);
-                }
-                catch (SystemException exception)
-                {
-                    // Handle SystemException
-                    Console.WriteLine(exception);
-                }
-                catch (Exception exception)
-                {
-                    // Handle Exception
-                    Console.WriteLine(exception);
-                }
             }
             catch (NullReferenceException exception)
             {

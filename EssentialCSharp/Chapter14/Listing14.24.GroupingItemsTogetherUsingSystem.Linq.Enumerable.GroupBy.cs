@@ -129,7 +129,7 @@
             },
             new Employee()
             {
-                Name = "Paul R. Bramsman",
+                Name = "Kevin Bost",
                 Title = "Programmer Extraordinaire",
                 DepartmentId = 2
             },

@@ -13,10 +13,10 @@
 
             public float NewTemperature
             {
-                get { return _newTemperature; }
-                set { _newTemperature = value; }
+                get { return _NewTemperature; }
+                set { _NewTemperature = value; }
             }
-            private float _newTemperature;
+            private float _NewTemperature;
         }
 
         public event EventHandler<TemperatureArgs> OnTemperatureChange;

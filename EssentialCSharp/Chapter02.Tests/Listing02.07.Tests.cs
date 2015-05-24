@@ -9,7 +9,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_07.Tests
         public void Main_WriteBooleanStatements()
         {
             const string expected =
-@"True: result != number
+@"False: result == number
 True: result == number";
 
             IntelliTect.ConsoleView.Tester.Test(

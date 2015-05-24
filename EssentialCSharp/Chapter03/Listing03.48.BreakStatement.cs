@@ -38,7 +38,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_48
             }
 
             System.Console.WriteLine(
-                $"Player {winner} was the winner");
+                $"Player { winner } was the winner");
         }
     }
 }

@@ -50,6 +50,9 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Listing15.08.ProjectingAFileInfoCollectionAndSortingByFileSize.Tests.cs" />
+    <Compile Include="Listing15.07.SortingUsingAQueryExpressionWithAnOrderbyClause.Tests.cs" />
+    <Compile Include="Listing15.03.AnonymousTypesWithinQueryExpressions.Tests.cs" />
     <Compile Include="Listing15.15.Tests.cs" />
     <Compile Include="Listing15.13.Tests.cs" />
     <Compile Include="Listing15.11.Tests.cs" />

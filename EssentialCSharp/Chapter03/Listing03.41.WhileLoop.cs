@@ -20,7 +20,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_41
 
             // While the current Fibonacci number in the series is
             // less than the value input by the user.
-            while(current <= input)
+            while (current <= input)
             {
                 temp = current;
                 current = previous + current;
@@ -29,7 +29,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_41
             }
 
             System.Console.WriteLine(
-                      $"The Fibonacci number following this is {current}");
+                      $"The Fibonacci number following this is { current }");
         }
     }
 }

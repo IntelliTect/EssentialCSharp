@@ -50,6 +50,10 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Listing14.17.ExecutingLinqQueriesInParallel.Tests.cs" />
+    <Compile Include="Listing14.15.ProjectionWithSystem.Linq.Enumerable.Select.Tests.cs" />
+    <Compile Include="Listing14.16.ProjectionToAnAnonymousType.Tests.cs" />
+    <Compile Include="Listing14.28.MoreSystem.Linq.EnumerableMethodCalls.Tests.cs" />
     <Compile Include="Listing14.04.Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
