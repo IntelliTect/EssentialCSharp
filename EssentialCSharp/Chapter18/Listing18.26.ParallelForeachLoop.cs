@@ -11,7 +11,7 @@
         static void EncryptFiles(
             string directoryPath, string searchPattern)
         {
-            IEnumerable<string> files = Directory.GetFiles(
+            IEnumerable<string> files = Directory.EnumerateFiles(
                 directoryPath, searchPattern,
                 SearchOption.AllDirectories);
 

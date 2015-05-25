@@ -14,9 +14,18 @@
             List<string> data,
             CancellationToken cancellationToken)
         {
+            int govener = 0;
             return data.AsParallel().WithCancellation(
                 cancellationToken).Select(
-                    (item) => Encrypt(item)).ToList();
+                    (item) =>
+                    {
+                        if (Interlocked.CompareExchange(ref govener, 0, 100)%100 == 0)
+                        {
+                            Console.Write('.');
+                        }
+                        Interlocked.Increment(ref govener);
+                        return Encrypt(item);
+                    }).ToList();
         }
 
         public static void Main()
@@ -36,17 +45,26 @@
             }, cts.Token);
 
             // Wait for the user's input
-            Console.Read();
+            char character = (char)Console.Read();
 
-            cts.Cancel();
+            if (char.ToLower(character) == '\r')
+            {
+                cts.Cancel();
+                Console.WriteLine("Cancelled");
+            }
             try { task.Wait(); }
-            catch(AggregateException) { }
+            catch(AggregateException exception)
+            {
+                string message = string.Join(Environment.NewLine, exception.Flatten().InnerExceptions.Select(
+                    eachException => $"\t{ eachException.Message }").Distinct());
+                Console.WriteLine($"ERROR(s): { Environment.NewLine }{ message }");
+            }
         }
 
         private static string Encrypt(string item)
         {
-            // ...
-            throw new NotImplementedException();
+            Cryptographer cryptographer = new Cryptographer();
+            return cryptographer.Encrypt(item);
         }
 
         // ...

@@ -12,7 +12,7 @@
         public static void Main()
         {
             string pi = null;
-            int iterations = TotalDigits / BatchSize;
+            const int iterations = TotalDigits / BatchSize;
             string[] sections = new string[iterations];
             Parallel.For(0, iterations, (i) =>
             {
