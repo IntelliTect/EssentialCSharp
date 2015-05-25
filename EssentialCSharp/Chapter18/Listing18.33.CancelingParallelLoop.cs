@@ -47,11 +47,16 @@
             // Wait for the user's input
             char character = (char)Console.Read();
 
+<<<<<<< HEAD
             if (char.ToLower(character) == '\r')
             {
                 cts.Cancel();
                 Console.WriteLine("Cancelled");
             }
+=======
+            cts.Cancel();
+            Console.Write("*******");
+>>>>>>> 80db2dbb6ea17badaf5df3440d0b7548f96714da
             try { task.Wait(); }
             catch(AggregateException exception)
             {
