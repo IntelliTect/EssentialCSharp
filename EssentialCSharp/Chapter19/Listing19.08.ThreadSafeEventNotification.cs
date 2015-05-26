@@ -8,6 +8,11 @@
 
         public void Main()
         {
+
+#if(!PreCSharp6)
+            OnTemperatureChanged?.Invoke(
+                this, new TemperatureEventArgs(value));
+#else
             TemperatureChangedHandler localOnChange =
                 OnTemperatureChanged;
             if(localOnChange != null)
@@ -16,7 +21,7 @@
                 localOnChange(
                   this, new TemperatureEventArgs(value));
             }
-
+#endif
         }
 
         public object value { get; set; }

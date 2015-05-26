@@ -10,8 +10,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_11.Tests
         {
             const string expected =
                 @"John Francis Fitzgerald
-Mary Josephine Hannon
-";
+Mary Josephine Hannon";
 
             IntelliTect.ConsoleView.Tester.Test(expected,
                 Program.Main);

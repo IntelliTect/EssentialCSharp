@@ -43,6 +43,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.AppendixC.Listing18_23
             Func<string, Task<IPStatus>> func =
                     async (localUrl) =>
                     {
+                        Random random = new Random();
                         Ping ping = new Ping();
                         PingReply pingReply =
                             await ping.SendPingAsync(localUrl);
@@ -54,9 +55,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.AppendixC.Listing18_23
             foreach(string url in urls)
             {
                 status = await func(url);
-                StatusLabel.Text =
-                    $@"{ url }: { status.ToString() } ({
-                    Thread.CurrentThread.ManagedThreadId })";
+                StatusLabel.Text +=
+                    $@"{ Environment.NewLine 
+                    }{ url }: { status.ToString() } ({
+                    Thread.CurrentThread.ManagedThreadId 
+                    })";
             }
         }
 
@@ -73,7 +76,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.AppendixC.Listing18_23
             };
             StatusLabel = new System.Windows.Controls.TextBlock
             {
-                Text = "Status Label",
+                Text = "Ready",
                 Margin = new Thickness(0, 0, 0, 10)
             };
 

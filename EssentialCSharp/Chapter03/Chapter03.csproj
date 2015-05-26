@@ -102,6 +102,8 @@
     <Compile Include="Listing03.33.AndOperator.cs" />
     <Compile Include="Listing03.34.LogicalNegationOperator.cs" />
     <Compile Include="Listing03.35.ConditionalOperator.cs" />
+    <Compile Include="Listing03.36B.NullConditionalOperatorWithIndexOperator.cs" />
+    <Compile Include="Listing03.36A.NullConditionalOperator.cs" />
     <Compile Include="Listing03.36.NullCoalescingOperator.cs" />
     <Compile Include="Listing03.37.RightShiftOperator.cs" />
     <Compile Include="Listing03.38.BitwiseOperators.cs" />

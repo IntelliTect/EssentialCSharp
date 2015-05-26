@@ -26,10 +26,9 @@
         async private void PingButton_Click(object sender, EventArgs e)
         {
             StatusLabel.Text = "Pinging…";
-            this.UpdateLayout();
             Ping ping = new Ping();
             PingReply pingReply =
-                await ping.SendPingAsync("www.IntelliTect.com");
+                await ping.SendPingAsync("yahoo.com");
             StatusLabel.Text = pingReply.Status.ToString();
         }
 
@@ -46,7 +45,7 @@
             };
             StatusLabel = new System.Windows.Controls.TextBlock
             {
-                Text = "Status Label",
+                Text = "Ready",
                 Margin = new Thickness(0, 0, 0, 10)
             };
 

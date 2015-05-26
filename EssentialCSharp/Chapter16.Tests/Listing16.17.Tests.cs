@@ -15,8 +15,7 @@ Patrick Joseph Kennedy
 Mary Augusta Hickey
 Rose Elizabeth Fitzgerald
 John Francis Fitzgerald
-Mary Josephine Hannon
-";
+Mary Josephine Hannon";
 
             IntelliTect.ConsoleView.Tester.Test(expected,
                 () => Program.Main());

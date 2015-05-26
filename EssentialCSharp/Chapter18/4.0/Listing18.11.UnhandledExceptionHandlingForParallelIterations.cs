@@ -39,7 +39,8 @@ rogrPm
 
         private static void Encrypt(string fileName)
         {
-            throw new UnauthorizedAccessException(string.Format("Attempted to perform an unauthorized operation: {0}",fileName));
+            throw new UnauthorizedAccessException(
+                $"Attempted to perform an unauthorized operation: { fileName }");
         }
 
         public static void Main()

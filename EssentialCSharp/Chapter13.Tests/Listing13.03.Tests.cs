@@ -9,7 +9,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_03.Tests
         [TestMethod]
         public void ConnectingPublisherAndSubscribers()
         {
-            string expected = @"Enter temperature:<<1";
+            string expected = @"Enter temperature: <<1";
 
             IntelliTect.ConsoleView.Tester.Test(expected,
             () =>

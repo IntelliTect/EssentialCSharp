@@ -36,6 +36,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_03
         private static void DisplayHelp()
         {
             // Display the command-line help.
+            Console.WriteLine(
+                "Compress.exe / Out:< file name > / Help \n"
+                + "/ Priority:RealTime | High | "
+                + "AboveNormal | Normal | BelowNormal | Idle");
+
         }
     }
 
@@ -47,8 +52,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_03
 
             public string Out { get; set; }
 
-            public ProcessPriorityClass Priority
-            { get; set; } = ProcessPriorityClass.Normal;
+            public ProcessPriorityClass Priority { get; set; }
+                = ProcessPriorityClass.Normal;
         }
 
     }
@@ -115,28 +120,28 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_03
                             {
                                 success = false;
                                 errorMessage =
-                                    string.Format(
-                                        "The option '{0}' is " +
-                                        "invalid for '{1}'",
-                                    optionParts[1], option);
+                                    $@"The option '{
+                                        optionParts[1]
+                                        }' is invalid for '{ 
+                                        option }'";
                             }
                         }
                         else
                         {
                             success = false;
-                            errorMessage = string.Format(
-                                "Data type '{0}' on {1} is not"
-                                + " supported.",
-                                property.PropertyType.ToString(),
-                                commandLine.GetType().ToString());
+                            errorMessage = 
+                                $@"Data type '{
+                                    property.PropertyType.ToString()
+                                    }' on {
+                                    commandLine.GetType().ToString()
+                                    } is not supported.";
                         }
                     }
                     else
                     {
                         success = false;
-                        errorMessage = string.Format(
-                            "Option '{0}' is not supported.",
-                            option);
+                        errorMessage = 
+                           $"Option '{ option }' is not supported.";
                     }
                 }
             }

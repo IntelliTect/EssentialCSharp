@@ -23,11 +23,13 @@
 
         private static void Encrypt(string fileName)
         {
-            int oneSecond = 1000;
-
-            Console.WriteLine(string.Format("-----Pretending to encrypt '{0}'.", fileName));
-            Thread.Sleep(oneSecond);
-            Console.WriteLine(string.Format("|||||Finished 'encrypting' '{0}'.", fileName));
+            if (Path.GetExtension(fileName) == ".encrypt") return;
+            Console.WriteLine($">>>>>Encrypting '{ fileName }'.");
+            Shared.Cryptographer cryptographer = new Shared.Cryptographer();
+            File.Delete($"{fileName}.encrypt");
+            byte[] encryptedText = cryptographer.Encrypt(File.ReadAllBytes(fileName));
+            File.WriteAllBytes($"{fileName}.encrypt", encryptedText);
+            Console.WriteLine($"<<<<<Finished encrypting '{ fileName}'.");
         }
 
         public static void Main()

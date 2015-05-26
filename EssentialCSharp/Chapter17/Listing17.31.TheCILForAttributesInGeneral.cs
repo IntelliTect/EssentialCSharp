@@ -12,8 +12,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_31
                 <LastName>Montoya</LastName>
                </Person>");
 
-            Console.WriteLine("{0} {1}",
-                person.FirstName, person.LastName);
+            Console.WriteLine(
+                $"{ person.FirstName } { person.LastName }");
         }
     }
 }

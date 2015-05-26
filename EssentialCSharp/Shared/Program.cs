@@ -22,19 +22,24 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                 listing = args[0];
                 arguments = args.Skip(1);
             }
-            Console.WriteLine();
-            Console.WriteLine("____________________________");
-            Console.WriteLine();
+
             LaunchMain(listing, arguments);
         }
 
         private static void LaunchMain(string listing, IEnumerable<string> stringArguments)
         {
+            Console.WriteLine();
+            Console.WriteLine("____________________________");
+            Console.WriteLine();
+            ConsoleColor originalColor = Console.ForegroundColor;
+
             try
             {
+
                 listing = ParseListingName(listing);
 
-                Type target = Assembly.GetExecutingAssembly().GetTypes().First(type => type.FullName.Contains(listing + "."));
+                Type target = Assembly.GetExecutingAssembly().GetTypes().First(
+                    type => type.FullName.Contains(listing + "."));
                 var method = (MethodInfo)target.GetMember("Main").First();
 
                 object[] arguments;
@@ -53,7 +58,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                         arguments = new object[] { stringArguments.ToArray() };
                     }
                 }
-                if (method.GetCustomAttributes(typeof(STAThreadAttribute)).Any())
+                if (method.GetCustomAttributes(typeof(STAThreadAttribute), false).Any())
                 {
                     Thread thread = new Thread(() => method.Invoke(null, arguments));
                     thread.SetApartmentState(ApartmentState.STA);
@@ -73,11 +78,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
             }
             catch (InvalidOperationException)
             {
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("----Exception----");
                 Console.WriteLine(string.Format("Error, could not run the Listing '{0}', please make sure it is a valid listing and in the correct format", listing));
             }
             catch (Exception exception)
             {
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("----Exception----");
                 if (exception.InnerException != null)
                 {
@@ -98,15 +105,20 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                 }
                 else
                 {
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine(string.Format("Listing {0} threw an exception of type {1}.", listing, exception.GetType()));
                 }
             }
+            finally
+            {
+                Console.ForegroundColor = originalColor;
 
-            Console.WriteLine();
-            Console.WriteLine("____________________________");
-            Console.WriteLine("End of Listing " + listing);
-            Console.Write("Press any key to exit.");
-            Console.ReadKey();
+                Console.WriteLine();
+                Console.WriteLine("____________________________");
+                Console.WriteLine("End of Listing " + listing);
+                Console.Write("Press any key to exit.");
+                Console.ReadKey();
+            }
         }
 
         private static string[] GetArguments()

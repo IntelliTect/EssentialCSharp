@@ -9,7 +9,6 @@
 
     public class Program
     {
-
         public static List<string> ParallelEncrypt(
             List<string> data,
             CancellationToken cancellationToken)
@@ -19,7 +18,7 @@
                 cancellationToken).Select(
                     (item) =>
                     {
-                        if (Interlocked.CompareExchange(ref govener, 0, 100)%100 == 0)
+                        if (Interlocked.CompareExchange(ref govener, 0, 100) % 100 == 0)
                         {
                             Console.Write('.');
                         }
@@ -30,12 +29,13 @@
 
         public static void Main()
         {
-            List<string> data = Utility.GetData(1000000).ToList();
+            ConsoleColor originalColor = Console.ForegroundColor;
+            List<string> data = Utility.GetData(100000).ToList();
 
             CancellationTokenSource cts =
                 new CancellationTokenSource();
 
-            Console.WriteLine("Push ENTER to exit.");
+            Console.WriteLine("Push ENTER to Exit.");
 
             // Use Task.Factory.StartNew<string>() for
             // TPL prior to .NET 4.5
@@ -45,31 +45,48 @@
             }, cts.Token);
 
             // Wait for the user's input
-            char character = (char)Console.Read();
+            Console.Read();
 
-<<<<<<< HEAD
-            if (char.ToLower(character) == '\r')
+            if (!task.IsCompleted)
             {
                 cts.Cancel();
-                Console.WriteLine("Cancelled");
+                try { task.Wait(); }
+                catch (AggregateException exception)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    TaskCanceledException taskCanceledException =
+                        (TaskCanceledException)exception.Flatten()
+                        .InnerExceptions.FirstOrDefault(
+                        innerException =>
+                            innerException.GetType() ==
+                            typeof(TaskCanceledException));
+                    if(taskCanceledException != null){
+                        Console.WriteLine($@"Cancelled: { 
+                            taskCanceledException.Message }");
+                    }
+                    else
+                    {
+                        string message =
+                            string.Join(
+                                Environment.NewLine, exception.Flatten().InnerExceptions.Select(
+                            eachException => $"\t{ eachException.Message }").Distinct());
+                        Console.WriteLine($"ERROR(s): { Environment.NewLine }{ message }");
+                    }
+                }
             }
-=======
-            cts.Cancel();
-            Console.Write("*******");
->>>>>>> 80db2dbb6ea17badaf5df3440d0b7548f96714da
-            try { task.Wait(); }
-            catch(AggregateException exception)
+            else
             {
-                string message = string.Join(Environment.NewLine, exception.Flatten().InnerExceptions.Select(
-                    eachException => $"\t{ eachException.Message }").Distinct());
-                Console.WriteLine($"ERROR(s): { Environment.NewLine }{ message }");
+                task.Wait();
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.Write("Completed successfully");
             }
+            Console.ForegroundColor = originalColor;
         }
 
         private static string Encrypt(string item)
         {
             Cryptographer cryptographer = new Cryptographer();
-            return cryptographer.Encrypt(item);
+            return  cryptographer.Encrypt(item);
         }
 
         // ...
