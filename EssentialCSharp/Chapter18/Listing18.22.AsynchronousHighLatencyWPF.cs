@@ -26,7 +26,6 @@
         async private void PingButton_Click(object sender, EventArgs e)
         {
             StatusLabel.Text = "Pinging…";
-            this.UpdateLayout();
             Ping ping = new Ping();
             PingReply pingReply =
                 await ping.SendPingAsync("www.IntelliTect.com");
