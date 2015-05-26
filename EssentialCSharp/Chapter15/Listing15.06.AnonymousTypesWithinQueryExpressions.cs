@@ -16,7 +16,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_06
             string rootDirectory, string searchPattern)
         {
             IEnumerable<FileInfo> files =
-                from fileName in Directory.GetFiles(
+                from fileName in Directory.EnumerateFiles(
                     rootDirectory, searchPattern)
                 where File.GetLastWriteTime(fileName) <
                     DateTime.Now.AddMonths(-1)

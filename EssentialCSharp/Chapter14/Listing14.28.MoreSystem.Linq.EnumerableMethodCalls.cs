@@ -29,7 +29,7 @@
                 numbers.Intersect(even));
             Print("Distinct: {0}", numbers.Concat(odd).Distinct());
 
-            if(!numbers.SequenceEqual(
+            if (!numbers.SequenceEqual(
                 numbers.Concat(odd).Distinct()))
             {
                 throw new Exception("Unexpectedly unequal");
@@ -38,28 +38,20 @@
             {
                 Console.WriteLine(
                     @"Collection ""SequenceEquals""" +
-                    " collection.Concat(odd).Distinct())");
-                Print("Reverse: {0}", numbers.Reverse());
-
-                Print("Average: {0}", numbers.Average());
-                Print("Sum: {0}", numbers.Sum());
-                Print("Max: {0}", numbers.Max());
-                Print("Min: {0}", numbers.Min());
+                    $" {nameof(numbers)}.Concat(odd).Distinct())");
             }
+            Print("Reverse: {0}", numbers.Reverse());
+            Print("Average: {0}", numbers.Average());
+            Print("Sum: {0}", numbers.Sum());
+            Print("Max: {0}", numbers.Max());
+            Print("Min: {0}", numbers.Min());
+
         }
 
         private static void Print<T>(
-            string format, IEnumerable<T> items)
-        {
-            StringBuilder text = new StringBuilder();
-            foreach(T item in items.Take(items.Count() - 1))
-            {
-                text.Append(item + ", ");
-            }
-            text.Append(items.Last());
-
-            Console.WriteLine(format, text);
-        }
+                string format, IEnumerable<T> items) =>
+            Console.WriteLine(format, string.Join(
+                ", ", items.Select(x => x.ToString())));
 
         private static void Print<T>(string format, T item)
         {

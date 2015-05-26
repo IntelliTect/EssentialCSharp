@@ -7,7 +7,7 @@
     {
         public static void Main()
         {
-#if !PRECSHARP5
+#if !PRECSHARP6
             Dictionary<string, ConsoleColor> colorMap =
                 new Dictionary<string, ConsoleColor>
                 {

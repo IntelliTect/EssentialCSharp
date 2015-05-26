@@ -8,7 +8,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_12.Tests
         [TestMethod]
         public void Main_WriteSwappedVariables()
         {
-            string view = @"first = ""second"", second = ""first""";
+            string view = @"first = ""goodbye"", second = ""hello""";
 
             IntelliTect.ConsoleView.Tester.Test(view,
             () =>

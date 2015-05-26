@@ -1,11 +1,11 @@
 ﻿using System;
 using System.IO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Text;
+using System.Linq;
 
 namespace IntelliTect.ConsoleView
 {
-    public static class Tester
+    static public class Tester
     {
 
         /// <summary>
@@ -14,41 +14,71 @@ namespace IntelliTect.ConsoleView
         /// where their input (including line-breaks) is surrounded by double
         /// less-than/greater-than signs, like so: "Input please: &lt;&lt;Input&gt;&gt;"
         /// </summary>
-        /// <param name="view">Expected "view" to be seen on the console,
+        /// <param name="expected">Expected "view" to be seen on the console,
         /// including both input and output</param>
         /// <param name="action">Method to be run</param>
-        public static void Test(string view, Action action)
+        static public void Test(string expected, Action action)
         {
-
-            string[] data = Parse(view);
-
-            string input = data[0];
-            string output = data[1];
-
-            if(input.Trim().Length == 0)
-                Execute(output, action);
-            else
-                Execute(input, output, action);
+            Test(expected, action, (left, right) => left == right);
         }
 
 
-        public static void Test<T>(string view, Func<string[], T> func, T expectedReturn = default(T), params string[] args)
+        static public void Test<T>(string expected, Func<string[], T> func, T expectedReturn = default(T), params string[] args)
         {
             T @return = default(T);
-            Test(view, () => { @return = func(args); });
+            Test(expected, () => { @return = func(args); });
 
             Assert.AreEqual<T>(expectedReturn, @return, 
                 $"The value returned from {nameof(func)} ({@return}) was not the { nameof(expectedReturn) }({expectedReturn}) value.");
         }
 
 
-        public static void Test<T>(string view, Func<T> func, T expectedReturn)
+        static public void Test<T>(string expected, Func<T> func, T expectedReturn)
         {
-            Test(view, (args) => func(), expectedReturn);
+            Test(expected, (args) => func(), expectedReturn);
         }
 
-        public static void Test(string view, Action<string[]> func, params string[] args) =>
-            Test(view, () => func(args));
+        static public void Test(string expected, Action<string[]> func, params string[] args) =>
+            Test(expected, () => func(args));
+
+        /// <summary>
+        /// Performs a unit test on a console-based method. A "view" of
+        /// what a user would see in their console is provided as a string,
+        /// where their input (including line-breaks) is surrounded by double
+        /// less-than/greater-than signs, like so: "Input please: &lt;&lt;Input&gt;&gt;"
+        /// </summary>
+        /// <param name="expected">Expected "view" to be seen on the console,
+        /// including both input and output</param>
+        /// <param name="action">Method to be run</param>
+        static private void Test(string expected, Action action, Func<string, string, bool> comparisonOperator)
+        {
+
+            string[] data = Parse(expected);
+
+            string input = data[0];
+            string output = data[1];
+
+            Execute(input, output, action, comparisonOperator);
+        }
+
+        static private Func<string, string, bool> LikeOperator =
+            (expected, output) => Microsoft.VisualBasic.CompilerServices.LikeOperator.LikeString(
+                output, expected, Microsoft.VisualBasic.CompareMethod.Text);
+
+        /// <summary>
+        /// Performs a unit test on a console-based method. A "view" of
+        /// what a user would see in their console is provided as a string,
+        /// where their input (including line-breaks) is surrounded by double
+        /// less-than/greater-than signs, like so: "Input please: &lt;&lt;Input&gt;&gt;"
+        /// </summary>
+        /// <param name="expected">Expected "view" to be seen on the console,
+        /// including both input and output</param>
+        /// <param name="action">Method to be run</param>
+        static public void AreLike(string expected, Action action)
+        {
+            Test(expected, action, LikeOperator);
+        }
+
 
         /// <summary>
         /// Executes the unit test while providing console input.
@@ -56,53 +86,113 @@ namespace IntelliTect.ConsoleView
         /// <param name="givenInput">Input which will be given</param>
         /// <param name="expectedOutput">The expected output</param>
         /// <param name="action">Action to be tested</param>
-        private static void Execute(string givenInput, string expectedOutput, Action action)
+        /// <param name="areEquivalentOperator">delegate for comparing the expected from actual output.</param>
+        static private void Execute(string givenInput, string expectedOutput, Action action,
+            Func<string, string, bool> areEquivalentOperator)
         {
-            using(TextWriter writer = new StringWriter())
-            using(TextReader reader = new StringReader(givenInput??""))
+            string output = Execute(givenInput, action);
+
+            bool failTest = !areEquivalentOperator(expectedOutput, output);
+            if (failTest)
+            {
+                Assert.IsFalse(failTest, GetMessageText(expectedOutput, output));
+            }
+
+        }
+
+        public static string Execute(string givenInput, Action action)
+        {
+            string output;
+            using (TextWriter writer = new StringWriter())
+            using (TextReader reader = new StringReader(string.IsNullOrWhiteSpace(givenInput) ? "" : givenInput))
             {
                 System.Console.SetOut(writer);
 
                 System.Console.SetIn(reader);
-
                 action();
-                
-                string output = writer.ToString().Trim();
-                string testMessage = string.Format("{0}" + Environment.NewLine + "{1}",
-                    expectedOutput, output);
 
-                bool failTest = expectedOutput != output;
-                if (failTest)
-                {
-                    testMessage = string.Join(Environment.NewLine, expectedOutput, output);
+                // TODO: This trim should be removed but there are too
+                //       many tests still depending on it so....
+                output = writer.ToString().Trim('\n').Trim('\r');
 
-                    // Write the output that shows the difference.
-                    for (int counter = 0; counter < Math.Min(expectedOutput.Length, output.Length); counter++)
-                    {
-                        if (expectedOutput[counter] != output[counter])
-                        {
-                            testMessage += string.Format(
-                                Environment.NewLine + "Character {0} did not match: '{1}({2})' != '{3}({4})'",
-                                counter, 
-                                expectedOutput[counter], (int)expectedOutput[counter],
-                                output[counter], (int)output[counter]);
-                            break;
-                        }
-                    }
-                }
-                Assert.AreEqual(expectedOutput.Trim(), writer.ToString().Trim(), testMessage);
             }
+
+            return output;
         }
+
+        private static string GetMessageText(string expectedOutput, string output)
+        {
+            string result;
+            if (expectedOutput.Contains(Environment.NewLine))
+            {
+                result = string.Join(Environment.NewLine, "AreEqual failed:", "",
+                    "Expected:", "-----------------------------------", expectedOutput, "-----------------------------------",
+                    "Actual: ", "-----------------------------------", output, "-----------------------------------");
+            }
+            else
+            {
+                result = string.Join(Environment.NewLine, "AreEqual failed:",
+                    "Expected: ", expectedOutput,
+                    "Actual:   ", output);
+            }
+
+            // Write the output that shows the difference.
+            for (int counter = 0; counter < Math.Min(expectedOutput.Length, output.Length); counter++)
+            {
+                if (expectedOutput[counter] != output[counter]) // TODO: The message is invalid when using wild cards.
+                {
+                    result += Environment.NewLine
+                        + $"Character {counter} did not match: "
+                        + $"'{CSharpStringEncode(expectedOutput[counter])}' != '{CSharpStringEncode(output[counter])})'"; 
+                        ;
+                    break;
+                }
+            }
+
+            int expectedOutputLength = expectedOutput.Length;
+            int outputLength = output.Length;
+            if (expectedOutputLength != outputLength)
+            {
+                result += $"{Environment.NewLine}The expected length of {expectedOutputLength} does not match the output length of {outputLength}. ";
+                string[] items = (new string[] { expectedOutput, output }).OrderBy(item => item.Length).ToArray();
+                if (items[1].StartsWith(items[0]))
+                {
+                    result += $"{Environment.NewLine}The additional characters are '"
+                        + $"{CSharpStringEncode(items[1].Substring(items[0].Length))}'.";
+                }
+            }
+
+            return result;
+        }
+
+
 
         /// <summary>
-        /// Executes the unit test without providing any console input.
+        /// Convets text into a C# escaped string.
         /// </summary>
-        /// <param name="expectedOutput">The expected output</param>
-        /// <param name="action">Action to be tested</param>
-        private static void Execute(string expectedOutput, Action action)
+        /// <param name="text">The text to encode with C# escape characters.</param>
+        /// <returns>The C# encoded value of <paramref name="text"/></returns>
+        /// <example>
+        /// <code>Console.WriteLine(CSharpStringEncode("    "));</code>
+        /// Will display "\t". 
+        /// </example>
+        private static string CSharpStringEncode(string text)
         {
-            Execute(null, expectedOutput, action);
+            string result = "";
+            using (var stringWriter = new StringWriter())
+            {
+                using (var provider = System.CodeDom.Compiler.CodeDomProvider.CreateProvider("CSharp"))
+                {
+                    provider.GenerateCodeFromExpression(
+                        new System.CodeDom.CodePrimitiveExpression(text), stringWriter, null);
+                    result = stringWriter.ToString();
+                }
+            }
+            return result;
         }
+        private static string CSharpStringEncode(char character) =>
+            CSharpStringEncode(character.ToString());
+
 
         /// <summary>
         /// This parses a "view" string into two separate strings, one
@@ -112,7 +202,7 @@ namespace IntelliTect.ConsoleView
         /// What a user would see in the console, but with input/output tokens.
         /// </param>
         /// <returns>[0] Input, and [1] Output</returns>
-        private static string[] Parse(string view)
+        static private string[] Parse(string view)
         {
             // Note: This could definitely be optimized, wanted to try it for experience. RegEx perhaps?
             bool isInput = false;

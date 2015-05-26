@@ -21,7 +21,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_60
             foreach(char cell in cells)
             {
                 // Write out a cell value and the border that comes after it.
-                System.Console.Write($" {cell} {borders[border]}");
+                System.Console.Write($" { cell } { borders[border] }");
 
                 // Increment to the next border;
                 border++;

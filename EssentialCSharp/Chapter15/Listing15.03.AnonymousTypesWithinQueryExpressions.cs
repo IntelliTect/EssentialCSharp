@@ -14,7 +14,7 @@
 
         static void List2(string rootDirectory, string searchPattern)
         {
-            var fileNames = Directory.GetFiles(
+            var fileNames = Directory.EnumerateFiles(
                 rootDirectory, searchPattern);
             var fileResults =
                 from fileName in fileNames

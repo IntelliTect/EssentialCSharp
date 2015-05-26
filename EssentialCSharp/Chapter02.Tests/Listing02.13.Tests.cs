@@ -10,7 +10,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_13.Tests
         {
             const string expected =
 @"Enter a palindrome: <<racecar
->>The palindrome, ""racecar"" is 7 characters.";
+>>The palindrome ""racecar"" is 7 characters.";
 
             IntelliTect.ConsoleView.Tester.Test(
                 expected, PalindromeLength.Main);
