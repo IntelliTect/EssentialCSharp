@@ -33,7 +33,9 @@ Increment all files starting with Listing13.06:
 Get-Item .\Chapter13\Listing13* | IncrementListing.ps1 13 06
 #>
 
-[CmdletBinding(SupportsShouldProcess=$True)]
+
+
+[CmdletBinding(SupportsShouldProcess=$True)] 
 param(
     [Parameter(Mandatory,ValueFromPipeline,ParameterSetName="Files")][string[]] $Files,
     [Parameter(Mandatory,ParameterSetName="ChapterNumber")][int] $ChapterNumber,
@@ -41,9 +43,36 @@ param(
     [Parameter(Mandatory)][ValidateSet('Decrement','Increment')][string] $Direction
 )
 
-
 PROCESS {
 
+    Function Script:Rename-CompileFile {
+        [CmdletBinding(SupportsShouldProcess=$true)] param(
+                [ValidateScript({Test-Path $_ -PathType Leaf})][Parameter(Mandatory)][string] $projFile, 
+                [ValidateScript({Test-Path $_ -PathType Leaf})][Parameter(Mandatory)][string] $oldFileName,
+                [Parameter(Mandatory)][string] $newFileName
+        )
+
+        #TODO: Verify that git is the SCC tool.
+        #TODO: Add support for TFS.
+
+        $command = "git.exe mv $oldFileName $newFileName $(if($PSBoundParameters['Verbose']) {`"-v`"})" # The following is not needed as it is handled by "$PSCmdlet.ShouldProcess": -What $(if($PSBoundParameters['WhatIf']) {`"--dry-run`"})"
+        if ($PSCmdlet.ShouldProcess("`tExecuting: $command", "`tExecute git.exe Rename: $command", "Executing Git.exe mv")) {
+            Invoke-Expression "$command" -ErrorAction Stop  #Change error handling to use throw instead.
+        }
+        $projFile = Resolve-Path $projFile
+        $proj = [XML](Get-Content $projFile)
+        #TODO Add support for subdirectories in the VS path.
+        $proj.Project.ItemGroup.SelectNodes('//*[local-name()="Compile"]') | 
+            ?{ $_.Include -eq [IO.Path]::GetFileName($oldFileName) }  | #TODO: Change to use XPath to find element as this makes no check that the element exists.
+                %{ $_.Include = [IO.Path]::GetFileName($newFileName) }
+        if ($PSCmdlet.ShouldProcess(
+            "`tUpdating $projFile - Renaming compiled file '$([IO.Path]::GetFileName($oldFileName))' to '$([IO.Path]::GetFileName($newFileName))'",
+            "`tUpdating $projFile - Renaming compiled file '$([IO.Path]::GetFileName($oldFileName))' to '$([IO.Path]::GetFileName($newFileName))'",
+            "Updating $($projFile):"
+            )) {
+            $proj.Save($projFile) # Saving as each file is renamed rather than all at the end in case we error out in the middle.
+        }
+    }
     $listingNameRegEx = "Listing(?<Chapter>\d\d)\.(?<Listing>\d\d)(?<Suffix>.*)";
     Set-StrictMode -Version latest
 
@@ -85,13 +114,15 @@ PROCESS {
         } 
     }
 
-    $proj = [XML](Get-Content "$PSScriptRoot\Chapter$Chapter\Chapter$Chapter.csproj")
+    #$proj = [XML](Get-Content "$PSScriptRoot\Chapter$Chapter\Chapter$Chapter.csproj")
 
     foreach( $file in $Files) {
         $file -match $listingNameRegEx | %{  
-            $oldFileName = $file.FullName
+            $oldFileName = $file.FullName  #Same as $PSScriptRoot\Chapter$Chapter\$($matches[0])
             $newFileName = "$PSScriptRoot\Chapter$Chapter\Listing$($matches.chapter).$(([int]::Parse($matches.listing) + $difference).ToString().PadLeft(2, '0'))$($matches.suffix)"
-            $command = "git.exe mv `"$PSScriptRoot\Chapter$Chapter\$($matches[0])`" $newFileName $(if($PSBoundParameters['Verbose']) {`"-v`"})" # The following is not needed as it is handled by "$PSCmdlet.ShouldProcess": -What $(if($PSBoundParameters['WhatIf']) {`"--dry-run`"})"
+            Rename-CompileFile -projFile "$PSScriptRoot\Chapter$Chapter\Chapter$Chapter.csproj" -oldFileName $oldFileName -newFileName $newFileName
+            <#
+            $command = "git.exe mv `"$oldFileName`" $newFileName $(if($PSBoundParameters['Verbose']) {`"-v`"})" # The following is not needed as it is handled by "$PSCmdlet.ShouldProcess": -What $(if($PSBoundParameters['WhatIf']) {`"--dry-run`"})"
             if ($PSCmdlet.ShouldProcess("`tExecuting: $command", "`tExecute git.exe Rename: $command", "Executing Git.exe mv")) {
                 Invoke-Expression "$command"; 
             }
@@ -106,6 +137,19 @@ PROCESS {
                         %{ $_.Include = [IO.Path]::GetFileName($newFileName) }
                 $proj.Save("$PSScriptRoot\Chapter$Chapter\Chapter$Chapter.csproj") # Saving as each file is renamed rather than all at the end in case we error out in the middle.
             }
+            #>
+
+            #Check for corresponding test file.
+            $testFileFilter = "$PSScriptRoot\Chapter$Chapter.Tests\Listing$($matches.chapter).$(([int]::Parse($matches.listing) + $difference).ToString().PadLeft(2, '0'))*.Tests.cs"
+            if(Test-Path $testFileFilter) {
+                $oldTestFileName = Get-Item $testFileFilter
+                $newTestFileName = 
+                    Join-Path "$PSScriptRoot\Chapter$Chapter.Tests" 
+                        ([io.path]::ChangeExtension( [io.path]::GetFileName( $newFileName ), "Tests.cs"))
+                $testProjectFile = [IO.Path]::ChangeExtension("$PSScriptRoot\Chapter$Chapter\Chapter$Chapter.csproj", "Tests.csproj")
+                Rename-CompileFile -projFile $testProjectFile -oldFileName $oldTestFileName -newFileName $newTestFileName
+            }
         }
     }
 }
+

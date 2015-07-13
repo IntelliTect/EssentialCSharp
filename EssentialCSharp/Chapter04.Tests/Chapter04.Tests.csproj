@@ -50,23 +50,23 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Listing4.03.Tests.cs" />
-    <Compile Include="Listing4.04.Tests.cs" />
-    <Compile Include="Listing4.06.Tests.cs" />
-    <Compile Include="Listing4.10.Tests.cs" />
-    <Compile Include="Listing4.11.Tests.cs" />
-    <Compile Include="Listing4.12.Tests.cs" />
-    <Compile Include="Listing4.13.Tests.cs" />
-    <Compile Include="Listing4.14.Tests.cs" />
-    <Compile Include="Listing4.15.Tests.cs" />
-    <Compile Include="Listing4.16.Tests.cs" />
-    <Compile Include="Listing4.17.Tests.cs" />
-    <Compile Include="Listing4.19.Tests.cs" />
-    <Compile Include="Listing4.20.Tests.cs" />
-    <Compile Include="Listing4.21.Tests.cs" />
-    <Compile Include="Listing4.22.Tests.cs" />
-    <Compile Include="Listing4.23.Tests.cs" />
-    <Compile Include="Listing4.24.Tests.cs" />
+    <Compile Include="Listing04.03.Tests.cs" />
+    <Compile Include="Listing04.04.Tests.cs" />
+    <Compile Include="Listing04.06.Tests.cs" />
+    <Compile Include="Listing04.10.Tests.cs" />
+    <Compile Include="Listing04.11.Tests.cs" />
+    <Compile Include="Listing04.12.Tests.cs" />
+    <Compile Include="Listing04.13.Tests.cs" />
+    <Compile Include="Listing04.14.Tests.cs" />
+    <Compile Include="Listing04.15.Tests.cs" />
+    <Compile Include="Listing04.16.Tests.cs" />
+    <Compile Include="Listing04.17.Tests.cs" />
+    <Compile Include="Listing04.19.Tests.cs" />
+    <Compile Include="Listing04.20.Tests.cs" />
+    <Compile Include="Listing04.21.Tests.cs" />
+    <Compile Include="Listing04.22.Tests.cs" />
+    <Compile Include="Listing04.23.Tests.cs" />
+    <Compile Include="Listing04.24.Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
