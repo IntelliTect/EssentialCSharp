@@ -11,7 +11,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_10
             return $"{ FirstName }  { LastName }";
         }
 
-        // Caution:  Parameter names use Pascal case
+        // Caution:  Parameter names use PascalCase
         public void SetName(string FirstName, string LastName)
         {
             this.FirstName = FirstName;

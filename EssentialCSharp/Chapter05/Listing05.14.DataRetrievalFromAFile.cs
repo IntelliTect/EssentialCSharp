@@ -70,7 +70,7 @@
                 FileMode.Create);
 
             // Create a StreamWriter object for writing text
-            // into the FileStream
+            // into the FileStream.
             StreamWriter writer = new StreamWriter(stream);
 
             // Write all the data associated with the employee.
@@ -78,7 +78,7 @@
             writer.WriteLine(employee.LastName);
             writer.WriteLine(employee.Salary);
 
-            // Close the StreamWriter and its Stream.
+            // Close the StreamWriter and its stream.
             writer.Close();  // Automatically closes the stream
         }
 

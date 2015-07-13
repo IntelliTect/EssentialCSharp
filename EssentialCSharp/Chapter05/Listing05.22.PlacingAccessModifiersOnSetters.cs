@@ -29,7 +29,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_21
             {
                 return _Id;
             }
-            // Providing an access modifier is in C# 2.0
+            // Providing an access modifier is possible in C# 2.0
             // and higher only
             private set
             {

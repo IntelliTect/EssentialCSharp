@@ -43,7 +43,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_37
                     }
                 }
 
-                //Copy SubDirectories (recursively)
+                //Copy subdirectories (recursively)
                 if(option == SearchOption.AllDirectories)
                 {
                     foreach(string element in
