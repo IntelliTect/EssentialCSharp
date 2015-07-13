@@ -50,7 +50,6 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Listing03.44.ForWithMultipleExpressions.Tests.cs" />
     <Compile Include="Listing03.26.IdenticalInFunctionality.Tests.cs" />
     <Compile Include="Listing03.25.RelyingOnIndentation.Tests.cs" />
     <Compile Include="Listing03.24.WithCodeBlock..Tests.cs" />
@@ -58,9 +57,10 @@
     <Compile Include="Listing03.18.ComparingPrePostIncrementOperators.cs" />
     <Compile Include="Listing03.03.BinaryOperators.Tests.cs" />
     <Compile Include="Listing03.02.Negative.Tests.cs" />
-    <Compile Include="Listing03.39.StringRepresentationOfBinary.Tests.cs" />
     <Compile Include="Listing03.07.UnexpectedInequality.Tests.cs" />
     <Compile Include="Listing03.01.SimpleOperator.Tests.cs" />
+    <Compile Include="Listing03.41.StringRepresentationOfBinary.Tests.cs" />
+    <Compile Include="Listing03.46.ForWithMultipleExpressions.Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
