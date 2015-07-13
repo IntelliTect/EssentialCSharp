@@ -42,9 +42,10 @@ param(
     [Parameter()][string] $StartWithListing,
     [Parameter(Mandatory)][ValidateSet('Decrement','Increment')][string] $Direction
 )
-Set-StrictMode -Version latest
 
 PROCESS {
+
+    Set-StrictMode -Version latest
 
     if(!(Test-Path Function:Rename-CompileFile)) {
         #Define if it doesn't exists
