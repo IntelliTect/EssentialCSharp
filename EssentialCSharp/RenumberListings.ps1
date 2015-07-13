@@ -37,7 +37,7 @@ Get-Item .\Chapter13\Listing13* | IncrementListing.ps1 13 06
 param(
     [Parameter(Mandatory,ValueFromPipeline,ParameterSetName="Files")][string[]] $Files,
     [Parameter(Mandatory,ParameterSetName="ChapterNumber")][int] $ChapterNumber,
-    [Parameter()][int] $StartWithListing,
+    [Parameter()][string] $StartWithListing,
     [Parameter(Mandatory)][ValidateSet('Decrement','Increment')][string] $Direction
 )
 
@@ -50,6 +50,10 @@ PROCESS {
     # TODO: Learning/verify:
     # $PSScriptRoot is not populated when you hover over it is ISE.
     # StrictMode has to be set after parameters if you are using CmdletBinding (perhaps regardless).
+ 
+    if( ($StartWithListing -like "*.*")) { # Remove Chapter prefix if it exists.
+        $startWithListing = $StartWithListing.Split(".")[1]
+    }
 
     $StartWithListing = $StartWithListing.ToString().PadLeft(2, '0')
     [string]$Chapter = $ChapterNumber.ToString().PadLeft(2, '0')
@@ -85,7 +89,6 @@ PROCESS {
 
     foreach( $file in $Files) {
         $file -match $listingNameRegEx | %{  
-            if($file.FullName -ne "$PSScriptRoot\Chapter$Chapter\$($matches[0])") { throw '$file unexpectedly doesn''t match $PSScriptRoot\Chapter$Chapter\$($matches[0])' }
             $oldFileName = $file.FullName
             $newFileName = "$PSScriptRoot\Chapter$Chapter\Listing$($matches.chapter).$(([int]::Parse($matches.listing) + $difference).ToString().PadLeft(2, '0'))$($matches.suffix)"
             $command = "git.exe mv `"$PSScriptRoot\Chapter$Chapter\$($matches[0])`" $newFileName $(if($PSBoundParameters['Verbose']) {`"-v`"})" # The following is not needed as it is handled by "$PSCmdlet.ShouldProcess": -What $(if($PSBoundParameters['WhatIf']) {`"--dry-run`"})"
@@ -97,6 +100,7 @@ PROCESS {
                 "`tUpdating Chapter$Chapter\Chapter$Chapter.csproj - Changing to compile '$([IO.Path]::GetFileName($newFileName))' rather than '$($file.Name)'",
                 "Updating Chapter$Chapter\Chapter$Chapter.csproj:"
                 )) {
+                if(!$proj) { $proj = [XML](Get-Content "$PSScriptRoot\Chapter$Chapter\Chapter$Chapter.csproj")}
                 $proj.Project.ItemGroup.SelectNodes('//*[local-name()="Compile"]') | 
                     ?{ $_.Include -eq $file.Name }  | #Change to use XPath to find element as this makes no check that the element exists.
                         %{ $_.Include = [IO.Path]::GetFileName($newFileName) }
