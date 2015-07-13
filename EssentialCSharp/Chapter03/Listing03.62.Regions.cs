@@ -23,7 +23,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_60
                 // Write out a cell value and the border that comes after it.
                 System.Console.Write($" { cell } { borders[border] }");
 
-                // Increment to the next border;
+                // Increment to the next border.
                 border++;
 
                 // Reset border to 0 if it is 3.

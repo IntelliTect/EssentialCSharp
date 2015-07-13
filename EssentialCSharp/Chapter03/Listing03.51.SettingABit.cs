@@ -23,7 +23,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_49
             // new position as well.
             // Since currentPlayer is either 1 or 2,
             // subtract 1 to use currentPlayer as an
-            // index in a zero-based array.
+            // index in a zero based array.
             playerPositions[currentPlayer - 1] |= position;
         }
 
