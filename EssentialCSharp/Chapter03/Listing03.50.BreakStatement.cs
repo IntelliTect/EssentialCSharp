@@ -8,7 +8,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_48
             // Stores locations each player has moved.
             int[] playerPositions = { 0, 0 };
 
-            // Hardcoded board position
+            // Hardcoded board position.
             //  X | 2 | O 
             // ---+---+---
             //  O | O | 6 
@@ -17,7 +17,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_48
             playerPositions[0] = 449;
             playerPositions[1] = 28;
 
-            // Determine if there is a winner
+            // Determine if there is a winner.
             int[] winningMasks = {
                 7, 56, 448, 73, 146, 292, 84, 273 };
 

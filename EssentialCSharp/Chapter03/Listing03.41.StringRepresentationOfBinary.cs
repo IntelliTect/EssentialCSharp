@@ -9,7 +9,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_39
             char bit;
 
             System.Console.Write("Enter an integer: ");
-            // Use long.Parse() so as to support negative numbers
+            // Use long.Parse() to support negative numbers
             // Assumes unchecked assignment to ulong.
             value = (ulong)long.Parse(System.Console.ReadLine());
 
