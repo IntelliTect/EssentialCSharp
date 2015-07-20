@@ -21,7 +21,7 @@
 
             Func<object> broadFunction = narrowFunction;
 
-            // Contravariance & Covariance Combined
+            // Contravariance and covariance combined
             Func<object, string> func1 =
                 (object data) => data.ToString();
 

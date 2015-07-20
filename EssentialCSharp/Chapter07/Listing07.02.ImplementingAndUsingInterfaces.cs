@@ -33,7 +33,7 @@
                 "333-345-6789");
 
             // Classes are cast implicitly to
-            // their supported interfaces
+            // their supported interfaces.
             ConsoleListControl.List(Contact.Headers, contacts);
 
             Console.WriteLine();

@@ -46,7 +46,7 @@
             finally
             {
                 // Handle any cleanup code here as it runs
-                // regardless of an exception or not.
+                // regardless of whether there is an exception
             }
         }
     }

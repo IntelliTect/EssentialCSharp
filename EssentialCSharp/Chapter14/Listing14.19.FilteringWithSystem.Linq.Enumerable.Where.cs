@@ -63,7 +63,7 @@
 
         public override string ToString()
         {
-            return $"{ Title }({ YearOfPublication })";
+            return $"{ Title } ({ YearOfPublication })";
         }
     }
 
@@ -77,7 +77,7 @@
 
         public override string ToString()
         {
-            return $"{ Name }({ City }, { State })";
+            return $"{ Name } ({ City }, { State })";
         }
     }
 
@@ -171,7 +171,7 @@
             },
             new Patent()
             {
-                Title = "Flying machine",
+                Title = "Flying Machine",
                 YearOfPublication = "1903",
                 InventorIds = new long[] { 2, 3 }
             },
@@ -183,7 +183,7 @@
             },
             new Patent()
             {
-                Title = "Droplet deposition apparatus",
+                Title = "Droplet Deposition Apparatus",
                 YearOfPublication = "1989",
                 InventorIds = new long[] { 6 }
             },

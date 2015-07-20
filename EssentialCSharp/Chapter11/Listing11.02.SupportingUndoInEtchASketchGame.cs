@@ -32,13 +32,13 @@
             do
             {
                 // Etch in the direction indicated by the
-                // arrow keys that the user enters.
+                // arrow keys that the user enters
                 key = Move();
 
                 switch(key.Key)
                 {
                     case ConsoleKey.Z:
-                        // Undo the previous Move.
+                        // Undo the previous Move
                         if(path.Count >= 1)
                         {
                             currentPosition = (Cell)path.Pop();

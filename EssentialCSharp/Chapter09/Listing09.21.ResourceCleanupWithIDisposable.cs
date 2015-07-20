@@ -60,7 +60,7 @@
         public void Dispose(bool disposing)
         {
             // Do not dispose of an owned managed object (one with a 
-            // finalizer) if called by member finalize
+            // finalizer) if called by member finalize,
             // as the owned managed objects finalize method 
             // will be (or has been) called by finalization queue 
             // processing already

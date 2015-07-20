@@ -27,7 +27,7 @@
             foreach(var fileResult in fileResults)
             {
                 Console.WriteLine(
-                    $@"{ fileResult.Name }({ 
+                    $@"{ fileResult.Name } ({ 
                         fileResult.LastWriteTime })");
             }
         }

@@ -50,7 +50,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Listing17.3A.Tests.cs" />
+    <Compile Include="Listing17.04.LeveragingNameofWithINotifyPropertyChanged.Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

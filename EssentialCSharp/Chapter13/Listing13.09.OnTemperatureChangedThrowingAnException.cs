@@ -17,7 +17,7 @@
             thermostat.OnTemperatureChange +=
                 heater.OnTemperatureChanged;
             // Using C# 3.0.  Change to anonymous method
-            // if using C# 2.0
+            // if using C# 2.0.
             thermostat.OnTemperatureChange +=
                 (newTemperature) =>
                     {

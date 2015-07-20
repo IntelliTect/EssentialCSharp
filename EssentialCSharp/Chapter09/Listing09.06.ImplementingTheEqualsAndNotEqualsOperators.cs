@@ -74,7 +74,7 @@
             if(ReferenceEquals(leftHandSide, null))
             {
                 // Return true if rightHandSide is also null
-                // but false otherwise.
+                // and false otherwise.
                 return ReferenceEquals(rightHandSide, null);
             }
 

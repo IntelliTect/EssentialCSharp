@@ -8,7 +8,7 @@
         // params allows the number of parameters to vary.
         public static int Max(params int[] numbers)
         {
-            // Check that there is a least one item in numbers.
+            // Check that there is at least one item in numbers.
             if(numbers.Length == 0)
             {
                 // In C# 6.0 replace "numbers" with nameof(numbers)
@@ -31,7 +31,7 @@
         // params allows the number of parameters to vary.
         public static int Min(params int[] numbers)
         {
-            // Check that there is a least one item in numbers.
+            // Check that there is at least one item in numbers.
             if(numbers.Length == 0)
             {
                 // In C# 6.0 replace "numbers" with nameof(numbers)

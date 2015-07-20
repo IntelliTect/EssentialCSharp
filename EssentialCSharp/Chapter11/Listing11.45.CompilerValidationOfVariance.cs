@@ -5,7 +5,7 @@ using AddisonWesley.Michaelis.EssentialCSharp.Chapter11.Listing11_46;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter11.Listing11_46
 {
-    // // ERROR:  Invalid variance, the type parameter 'T' is not
+    // // ERROR:  Invalid variance: the type parameter 'T' is not
     // //         invariantly valid
     // interface IPairInitializer<in T>
     // {
@@ -20,7 +20,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter11.Listing11_46
     // class FruitPairInitializer : IPairInitializer<Fruit>
     // {
     //     // Let’s initiaize our pair of fruit with an 
-    //     // apple and an orange.
+    //     // apple and an orange:
 
     //     public void Initialize(IPair<Fruit> pair)
     //     {

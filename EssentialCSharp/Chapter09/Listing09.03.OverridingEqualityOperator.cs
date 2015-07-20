@@ -22,7 +22,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_03
                     "serialNumber1 does NOT " +
                     "reference equal serialNumber2");
             }
-            // and, therefore, they are equal
+            // And, therefore, they are equal.
             else if(!serialNumber1.Equals(serialNumber2))
             {
                 throw new Exception(
@@ -45,7 +45,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_03
                     "serialNumber1 DOES reference " +
                     "equal serialNumber3");
             }
-            // but they are equal (assuming Equals is overloaded).
+            // But they are equal (assuming Equals is overloaded).
             else if(!serialNumber1.Equals(serialNumber3) ||
                 serialNumber1 != serialNumber3)
             {

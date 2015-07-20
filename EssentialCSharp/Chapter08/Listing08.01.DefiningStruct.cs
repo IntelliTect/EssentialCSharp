@@ -10,6 +10,7 @@
             Seconds = seconds;
         }
 
+        // Using C# 6.0 read-only, automatically implememted properties.
         public int Degrees { get; }
         public int Minutes { get; }
         public int Seconds { get; }
@@ -23,7 +24,7 @@
         }
     }
 
-    // Declaring a class - a reference type
+    // Declaring a class--a reference type
     // (declaring it as a struct would create a value type
     // larger than 16 bytes.)
     class Coordinate

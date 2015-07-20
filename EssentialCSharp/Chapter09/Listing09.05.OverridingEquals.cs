@@ -38,12 +38,12 @@
 
         public override bool Equals(object obj)
         {
-            // STEP 1: Check for null
+            // STEP 1: Check for null.
             if (obj == null)
             {
                 return false;
             }
-            // STEP 3: equivalent data types
+            // STEP 3: Equivalent data types.
             if (this.GetType() != obj.GetType())
             {
                 return false;
@@ -54,26 +54,26 @@
         public bool Equals(Coordinate obj)
         {
             // STEP 1: Check for null if a reference type
-            // (e.g., a reference type)
+            // (e.g., a reference type).
             // if (obj == null)
             // {
             //     return false;
             // }
 
             // STEP 2: Check for ReferenceEquals if this 
-            // is a reference type
+            // is a reference type.
             // if ( ReferenceEquals(this, obj))
             // {
             //   return true;
             // }
 
-            // STEP 4: Possibly check for equivalent hash codes
+            // STEP 4: Possibly check for equivalent hash codes.
             // if (this.GetHashCode() != obj.GetHashCode())
             // {
             //    return false;
             // } 
 
-            // STEP 5: Check base.Equals if base overrides Equals()
+            // STEP 5: Check base.Equals if base overrides Equals().
             // System.Diagnostics.Debug.Assert(
             //     base.GetType() != typeof(object) );
             // if ( !base.Equals(obj) )
@@ -82,7 +82,7 @@
             // } 
 
             // STEP 6: Compare identifying fields for equality
-            //         using an overload of Equals on Longitude.
+            // using an overload of Equals on Longitude.
             return ((Longitude.Equals(obj.Longitude)) &&
                 (Latitude.Equals(obj.Latitude)));
         }

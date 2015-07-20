@@ -15,7 +15,7 @@
                 Console.Write('-');
             }
 
-            // Pause until the thread completes
+            // Pause until the thread completes.
             // This is for illustrative purposes; do not
             // use Thread.Sleep for synchronization in 
             // production code.
