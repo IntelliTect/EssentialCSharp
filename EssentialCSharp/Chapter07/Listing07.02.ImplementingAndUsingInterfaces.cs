@@ -33,7 +33,7 @@
                 "333-345-6789");
 
             // Classes are cast implicitly to
-            // their supported interfaces
+            // their supported interfaces.
             ConsoleListControl.List(Contact.Headers, contacts);
 
             Console.WriteLine();
@@ -189,7 +189,9 @@
         {
             if(columnWidths.Length != values.Length)
             {
-                throw new ArgumentOutOfRangeException("amount of column widths must match amount of values to print");
+                throw new ArgumentOutOfRangeException(
+                    $"{ nameof(columnWidths) },{ nameof(values) }",
+                    "The number of column widths must match the number of values to print");
             }
 
             for(int index = 0; index < values.Length; index++)

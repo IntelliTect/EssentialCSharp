@@ -5,6 +5,9 @@
 
     class Program
     {
+        const int _Total = int.MaxValue;
+        static long _Count = 0;
+
         public static void Main()
         {
             CountAsync();
@@ -24,7 +27,7 @@
             }
 
             await task;
-            Console.WriteLine("Count = {0}", _Count);
+            Console.WriteLine($"Count = {_Count}");
         }
 
         private static Task Decrement()
@@ -32,8 +35,5 @@
             throw new NotImplementedException();
         }
 
-        public static int _Count { get; set; }
-
-        public static int _Total { get; set; }
     }
 }

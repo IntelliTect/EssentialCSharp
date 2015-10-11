@@ -2,7 +2,8 @@
 {
     public class Stack<T>
     {
-        private T[] _Items;
+        // Use read-only field prior to C# 6.0
+        private T[] InternalItems { get; }
 
         public void Push(T data)
         {
@@ -12,7 +13,7 @@
         public T Pop()
         {
             //...
-            return _Items[0];//just for the example. 
+            return InternalItems[0];//just for the example. 
         }
     }
 }

@@ -23,7 +23,7 @@
         #region IReadableSettingsProvider Members
         public string GetSetting(string name, string defaultValue)
         {
-            return name + defaultValue;//just returning this for the example
+            return name + defaultValue; //just returning this for the example
         }
         #endregion
     }

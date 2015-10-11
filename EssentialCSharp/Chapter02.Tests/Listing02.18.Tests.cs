@@ -8,15 +8,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_18.Tests
         [TestMethod]
         public void Main_WriteInventions()
         {
-            string view =
+            const string expected =
 @"Bifocals (1784)
 Phonograph (1877)";
 
-            IntelliTect.ConsoleView.Tester.Test(view,
-            () =>
-            {
-                Program.Main();
-            });
+            IntelliTect.ConsoleView.Tester.Test(
+                expected, Program.Main);
         }
     }
 }

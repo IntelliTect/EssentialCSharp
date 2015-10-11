@@ -6,35 +6,21 @@
             Longitude longitudeDifference,
             Latitude latitudeDifference)
         {
-            _LongitudeDifference = longitudeDifference;
-            _LatitudeDifference = latitudeDifference;
+            LongitudeDifference = longitudeDifference;
+            LatitudeDifference = latitudeDifference;
         }
 
-        public Longitude LongitudeDifference
-        {
-            get
-            {
-                return _LongitudeDifference;
-            }
-        }
-        private readonly Longitude _LongitudeDifference;
+        public Longitude LongitudeDifference { get; }
+        public Latitude LatitudeDifference { get; }
 
-        public Latitude LatitudeDifference
-        {
-            get
-            {
-                return _LatitudeDifference;
-            }
-        }
-        private readonly Latitude _LatitudeDifference;
     }
 
     public struct Coordinate
     {
         public Coordinate(Longitude longitude, Latitude latitude)
         {
-            _Longitude = longitude;
-            _Latitude = latitude;
+            Longitude = longitude;
+            Latitude = latitude;
         }
 
         public static Coordinate operator +(
@@ -66,7 +52,7 @@
 
             // Check if leftHandSide is null. 
             // (operator== would be recursive)
-            if(ReferenceEquals(leftHandSide, null))
+            if (ReferenceEquals(leftHandSide, null))
             {
                 // Return true if rightHandSide is also null
                 // but false otherwise.
@@ -86,12 +72,12 @@
         public override bool Equals(object obj)
         {
             // STEP 1: Check for null
-            if(obj == null)
+            if (obj == null)
             {
                 return false;
             }
             // STEP 3: equivalent data types
-            if(this.GetType() != obj.GetType())
+            if (this.GetType() != obj.GetType())
             {
                 return false;
             }
@@ -142,11 +128,11 @@
             return hashCode;
         }
 
-        public Longitude Longitude { get { return _Longitude; } }
-        private readonly Longitude _Longitude;
 
-        public Latitude Latitude { get { return _Latitude; } }
-        private readonly Latitude _Latitude;
+
+        public Longitude Longitude { get; }
+        public Latitude Latitude { get; }
+
 
         public override string ToString()
         {
@@ -158,8 +144,8 @@
     {
         public Longitude(int degrees, int minutes)
         {
-            _Degrees = degrees;
-            _Minutes = minutes;
+            Degrees = degrees;
+            Minutes = minutes;
         }
 
         public Longitude(int degrees)
@@ -169,19 +155,8 @@
             : this(longitude.Degrees, longitude.Minutes) { }
 
 
-        public int Degrees
-        {
-            get { return _Degrees; }
-            set { _Degrees = value; }
-        }
-        private int _Degrees;
-
-        public int Minutes
-        {
-            get { return _Minutes; }
-            set { _Minutes = value; }
-        }
-        private int _Minutes;
+        public int Degrees { get; }
+        public int Minutes { get; }
 
         public static Longitude operator +(Longitude leftHandSide, Longitude rightHandSide)
         {
@@ -198,8 +173,8 @@
     {
         public Latitude(int degrees, int minutes)
         {
-            _Degrees = degrees;
-            _Minutes = minutes;
+            Degrees = degrees;
+            Minutes = minutes;
         }
 
         public Latitude(int degrees)
@@ -208,19 +183,9 @@
         public Latitude(Latitude Latitude)
             : this(Latitude.Degrees, Latitude.Minutes) { }
 
-        public int Degrees
-        {
-            get { return _Degrees; }
-            set { _Degrees = value; }
-        }
-        private int _Degrees;
+        public int Degrees { get; }
+        public int Minutes { get; }
 
-        public int Minutes
-        {
-            get { return _Minutes; }
-            set { _Minutes = value; }
-        }
-        private int _Minutes;
 
         public static Latitude operator +(Latitude leftHandSide, Latitude rightHandSide)
         {

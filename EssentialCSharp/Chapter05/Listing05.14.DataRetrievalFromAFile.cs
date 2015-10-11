@@ -20,9 +20,7 @@
             employee1 = DataStorage.Load("Inigo", "Montoya");
 
             Console.WriteLine(
-                "{0}: {1}",
-                employee1.GetName(),
-                employee1.Salary);
+                $"{ employee1.GetName() }: { employee1.Salary }");
         }
 
         static void IncreaseSalary(Employee employee)
@@ -39,15 +37,15 @@
 
         public string GetName()
         {
-            return FirstName + " " + LastName;
+            return $"{ FirstName }  { LastName }";
         }
 
         public void SetName(string newFirstName, string newLastName)
         {
             this.FirstName = newFirstName;
             this.LastName = newLastName;
-            Console.WriteLine("Name changed to '{0}'",
-                this.GetName());
+            Console.WriteLine(
+                $"Name changed to '{ this.GetName() }'");
         }
 
         public void Save()
@@ -72,7 +70,7 @@
                 FileMode.Create);
 
             // Create a StreamWriter object for writing text
-            // into the FileStream
+            // into the FileStream.
             StreamWriter writer = new StreamWriter(stream);
 
             // Write all the data associated with the employee.
@@ -80,7 +78,7 @@
             writer.WriteLine(employee.LastName);
             writer.WriteLine(employee.Salary);
 
-            // Close the StreamWriter and its Stream.
+            // Close the StreamWriter and its stream.
             writer.Close();  // Automatically closes the stream
         }
 

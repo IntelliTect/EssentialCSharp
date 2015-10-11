@@ -19,8 +19,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_03
             remainder = numerator % denominator;
 
             System.Console.WriteLine(
-                "{0} / {1} = {2} with remainder {3}",
-                numerator, denominator, quotient, remainder);
+                $"{numerator} / {denominator} = {quotient} with remainder {remainder}");
         }
     }
 }

@@ -8,15 +8,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_14.Tests
         [TestMethod]
         public void Main_InputLorem_OutputNotCapitalized()
         {
-            string view =
+            const string expected =
 @"Enter text: <<Lorem
 >>Lorem";
 
-            IntelliTect.ConsoleView.Tester.Test(view,
-            () =>
-            {
-                Uppercase.Main();
-            });
+            IntelliTect.ConsoleView.Tester.Test(
+                expected, Uppercase.Main);
         }
     }
 }

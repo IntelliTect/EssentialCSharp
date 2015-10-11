@@ -5,7 +5,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_06
         public static void Main()
         {
             //Displays "0x2A"
-            System.Console.WriteLine("0x{0:X}", 42);
+            System.Console.WriteLine($"0x{42:X}");
         }
     }
 }

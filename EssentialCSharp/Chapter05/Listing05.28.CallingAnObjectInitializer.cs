@@ -30,7 +30,7 @@
 
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string Salary { get; set; }
+        public string Salary { get; set; } = "Not Enough";
         public string Title { get; set; }
         public Employee Manager { get; set; }
 
@@ -57,8 +57,7 @@
                     // Throw an exception if the full 
                     // name was not assigned.
                     throw new System.ArgumentException(
-                        string.Format(
-                        "Assigned value '{0}' is invalid", value));
+                        $"Assigned value '{value}' is invalid");
                 }
             }
         }

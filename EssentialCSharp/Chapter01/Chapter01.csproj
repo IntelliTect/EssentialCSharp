@@ -85,8 +85,9 @@
     <Compile Include="Listing01.12.AssignmentReturningAValueThatCanBeassignedAgain.cs" />
     <Compile Include="Listing01.13.UsingSystemConsoleReadLine.cs" />
     <Compile Include="Listing01.14.UsingSystemConsoleRead.cs" />
-    <Compile Include="Listing01.15.FormattingUsingSystemConsoleWriteLine.cs" />
-    <Compile Include="Listing01.16.SwappingTheIndexedPlaceholdersAndCorrespondingVariables.cs" />
+    <Compile Include="Listing01.16.FormattingUsingCompositeFormatting.cs" />
+    <Compile Include="Listing01.15.FormattingUsingStringInterpolation.cs" />
+    <Compile Include="Listing01.17.SwappingTheIndexedPlaceholdersAndCorrespondingVariables.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

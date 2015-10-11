@@ -51,7 +51,7 @@
                     Console.WriteLine("'Updating' a new Employee.");
                     break;
                 case "delete":
-                    // Remove an existing employee's file.
+                    // Remove an existing employee's file
                     Console.WriteLine("'Removing' a new Employee.");
                     break;
                 default:

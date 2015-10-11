@@ -10,7 +10,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_29
             List<Employee> employees = new List<Employee>()
                 {
                     new Employee("Inigo", "Montoya"),
-                    new Employee("Chuck", "McAtee")
+                    new Employee("Kevin", "Bost")
                 };
             // ...
         }

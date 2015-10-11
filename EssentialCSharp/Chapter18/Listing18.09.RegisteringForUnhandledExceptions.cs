@@ -38,7 +38,7 @@
 
         static void Delay(int i)
         {
-            Message(string.Format("Sleeping for {0} ms", i));
+            Message($"Sleeping for {i} ms");
             Thread.Sleep(i);
             Message("Awake");
         }

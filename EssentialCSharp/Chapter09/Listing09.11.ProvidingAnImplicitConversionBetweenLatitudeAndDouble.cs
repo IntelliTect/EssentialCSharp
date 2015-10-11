@@ -4,14 +4,10 @@
     {
         public Latitude(double decimalDegrees)
         {
-            _DecimalDegrees = Normalize(decimalDegrees);
+            DecimalDegrees = Normalize(decimalDegrees);
         }
 
-        public double DecimalDegrees
-        {
-            get { return _DecimalDegrees; }
-        }
-        private readonly double _DecimalDegrees;
+        public double DecimalDegrees { get; }
 
         // ...
 

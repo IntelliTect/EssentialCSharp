@@ -8,7 +8,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_01.Tests
         [TestMethod]
         public void Main_WriteNumbers()
         {
-            string view =
+            const string expected =
 @"42
 1.618034
 1.61803398874989
@@ -17,11 +17,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_01.Tests
 42
 0x2A";
 
-            IntelliTect.ConsoleView.Tester.Test(view,
-            () =>
-            {
-                Program.Main();
-            });
+            IntelliTect.ConsoleView.Tester.Test(
+                expected, Program.Main);
         }
     }
 }

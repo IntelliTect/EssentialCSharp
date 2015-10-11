@@ -14,7 +14,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_15
             {
                 // Retrieve the Unicode value of current.
                 unicodeValue = current;
-                System.Console.Write("{0}={1}\t", current, unicodeValue);
+                System.Console.Write($"{current}={unicodeValue}\t");
 
                 // Proceed to the previous letter in the alphabet;
                 current--;

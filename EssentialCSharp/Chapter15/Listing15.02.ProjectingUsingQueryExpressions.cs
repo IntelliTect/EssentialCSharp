@@ -23,8 +23,9 @@
 
             foreach(FileInfo fileInfo in fileInfos)
             {
-                Console.WriteLine(".{0}({1})",
-                    fileInfo.Name, fileInfo.LastWriteTime);
+                Console.WriteLine(
+                    $@".{ fileInfo.Name } ({
+                        fileInfo.LastWriteTime })");
             }
         }
     }

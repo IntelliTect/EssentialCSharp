@@ -15,9 +15,7 @@
             employee1.Salary = "Too Little";
             IncreaseSalary(employee1);
             Console.WriteLine(
-              "{0}: {1}",
-              employee1.GetName(),
-              employee1.Salary);
+                $"{ employee1.GetName() }: { employee1.Salary }");
 
         }
 

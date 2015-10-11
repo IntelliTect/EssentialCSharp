@@ -4,13 +4,17 @@
 
     class TemporaryFileStream
     {
-        public TemporaryFileStream()
+        public TemporaryFileStream(string fileName)
         {
-            _File = new FileInfo(Path.GetTempFileName());
-            _Stream = new FileStream(
+            File = new FileInfo(fileName);
+            Stream = new FileStream(
                 File.FullName, FileMode.OpenOrCreate,
                 FileAccess.ReadWrite);
         }
+
+        public TemporaryFileStream()
+            : this(Path.GetTempFileName())
+        { }
 
         // Finalizer
         ~TemporaryFileStream()
@@ -18,29 +22,13 @@
             Close();
         }
 
-        public FileStream Stream
-        {
-            get { return _Stream; }
-        }
-        readonly private FileStream _Stream;
-
-        public FileInfo File
-        {
-            get { return _File; }
-        }
-        readonly private FileInfo _File =
-            new FileInfo(Path.GetTempFileName());
+        public FileStream Stream { get; }
+        public FileInfo File { get; }
 
         public void Close()
         {
-            if(Stream != null)
-            {
-                Stream.Close();
-            }
-            if(File != null)
-            {
-                File.Delete();
-            }
+            Stream?.Close();
+            File?.Delete();
         }
     }
 }

@@ -67,7 +67,8 @@
     <Compile Include="..\Shared\Program.cs">
       <Link>Program.cs</Link>
     </Compile>
-    <Compile Include="Listing04.18.SpecifyingParametersByName.cs" />
+    <Compile Include="Listing04.08.UsingStaticDirective.cs" />
+    <Compile Include="Listing04.19.SpecifyingParametersByName.cs" />
     <Compile Include="Listing04.02.SimpleMethodCall.cs" />
     <Compile Include="Listing04.01.GroupingStatementsIntoMethods.cs" />
     <Compile Include="Listing04.03.PassingAMethodReturnAsAParameterToAnotherMehtodCall.cs" />
@@ -75,22 +76,23 @@
     <Compile Include="Listing04.05.AReturnStatementBeforeTheEndOfAmethod.cs" />
     <Compile Include="Listing04.06.UsingDirectiveExample.cs" />
     <Compile Include="Listing04.07.SpecifyingTheUsingDirectiveInsideANamespaceDeclaration.cs" />
-    <Compile Include="Listing04.08.DeclaringATypeAlias.cs" />
-    <Compile Include="Listing04.09.DeclaringATypeAliasWithTheSameName.cs" />
-    <Compile Include="Listing04.10.PassingCommandLineArgumentsToMain.cs" />
-    <Compile Include="Listing04.11.PassingVariablesByValue.cs" />
-    <Compile Include="Listing04.12.PassingVariablesByReference.cs" />
-    <Compile Include="Listing04.13.PassingVariablesOutOnly.cs" />
-    <Compile Include="Listing04.14.PassingAVariableParameterList.cs" />
-    <Compile Include="Listing04.15.CountingLinesGivenADirectory.cs" />
-    <Compile Include="Listing04.16.CountingLinesUsingOverloading.cs" />
-    <Compile Include="Listing04.17.MethodsWithOptionalParameters.cs" />
-    <Compile Include="Listing04.19.ConvertingAStringToAnInt.cs" />
-    <Compile Include="Listing04.20.CatchingAnException.cs" />
-    <Compile Include="Listing04.21.FinallyWithoutCatch.cs" />
-    <Compile Include="Listing04.22.GeneralCatchBlocks.cs" />
-    <Compile Include="Listing04.23.ThrowingAnException.cs" />
-    <Compile Include="Listing04.24.RethrowingAnException.cs" />
+    <Compile Include="Listing04.09.DeclaringATypeAlias.cs" />
+    <Compile Include="Listing04.10.DeclaringATypeAliasWithTheSameName.cs" />
+    <Compile Include="Listing04.11.PassingCommandLineArgumentsToMain.cs" />
+    <Compile Include="Listing04.12.PassingVariablesByValue.cs" />
+    <Compile Include="Listing04.13.PassingVariablesByReference.cs" />
+    <Compile Include="Listing04.14.PassingVariablesOutOnly.cs" />
+    <Compile Include="Listing04.15.PassingAVariableParameterList.cs" />
+    <Compile Include="Listing04.16.CountingLinesGivenADirectory.cs" />
+    <Compile Include="Listing04.17.CountingLinesUsingOverloading.cs" />
+    <Compile Include="Listing04.18.MethodsWithOptionalParameters.cs" />
+    <Compile Include="Listing04.20.ConvertingAStringToAnInt.cs" />
+    <Compile Include="Listing04.21.CatchingAnException.cs" />
+    <Compile Include="Listing04.22.FinallyWithoutCatch.cs" />
+    <Compile Include="Listing04.23.GeneralCatchBlocks.cs" />
+    <Compile Include="Listing04.26.TryCatch.cs" />
+    <Compile Include="Listing04.24.ThrowingAnException.cs" />
+    <Compile Include="Listing04.25.RethrowingAnException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

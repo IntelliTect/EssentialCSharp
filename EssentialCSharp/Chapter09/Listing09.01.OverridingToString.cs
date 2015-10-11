@@ -4,19 +4,17 @@
     {
         public Coordinate(Longitude longitude, Latitude latitude)
         {
-            _Longitude = longitude;
-            _Latitude = latitude;
+            Longitude = longitude;
+            Latitude = latitude;
         }
 
-        public Longitude Longitude { get { return _Longitude; } }
-        private readonly Longitude _Longitude;
+        public Longitude Longitude { get; }
+        public Latitude Latitude { get; }
 
-        public Latitude Latitude { get { return _Latitude; } }
-        private readonly Latitude _Latitude;
 
         public override string ToString()
         {
-            return string.Format("{0} {1}", Longitude, Latitude);
+            return $"{ Longitude } { Latitude }";
         }
 
         // ...

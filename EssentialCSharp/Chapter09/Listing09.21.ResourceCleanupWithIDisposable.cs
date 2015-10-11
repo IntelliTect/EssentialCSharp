@@ -22,30 +22,26 @@
 
     class TemporaryFileStream : IDisposable
     {
-        public TemporaryFileStream()
+        public TemporaryFileStream(string fileName)
         {
-            _File = new FileInfo(Path.GetTempFileName());
-            _Stream = new FileStream(
+            File = new FileInfo(fileName);
+            Stream = new FileStream(
                 File.FullName, FileMode.OpenOrCreate,
                 FileAccess.ReadWrite);
         }
+
+        public TemporaryFileStream()
+            : this(Path.GetTempFileName()) { }
+
+
 
         ~TemporaryFileStream()
         {
             Dispose(false);
         }
 
-        public FileStream Stream
-        {
-            get { return _Stream; }
-        }
-        readonly private FileStream _Stream;
-
-        public FileInfo File
-        {
-            get { return _File; }
-        }
-        readonly private FileInfo _File;
+        public FileStream Stream { get; }
+        public FileInfo File { get; }
 
         public void Close()
         {
@@ -61,25 +57,19 @@
             System.GC.SuppressFinalize(this);
         }
         #endregion
-
         public void Dispose(bool disposing)
         {
             // Do not dispose of an owned managed object (one with a 
-            // finalizer) if called by member finalize
+            // finalizer) if called by member finalize,
             // as the owned managed objects finalize method 
             // will be (or has been) called by finalization queue 
             // processing already
-            if(disposing)
+            if (disposing)
             {
-                if(Stream != null)
-                {
-                    Stream.Close();
-                }
+                Stream?.Close();
             }
-            if(File != null)
-            {
-                File.Delete();
-            }
+            File?.Delete();
         }
+
     }
 }

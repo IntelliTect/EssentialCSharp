@@ -61,7 +61,7 @@
                 magnitudes.FirstOrDefault(
                     magnitude =>
                         bytes > (max /= 1024)) ?? "0 Bytes",
-                    (decimal)bytes / (decimal)max).Trim();
+                    (decimal)bytes / (decimal)max);
         }
     }
 }

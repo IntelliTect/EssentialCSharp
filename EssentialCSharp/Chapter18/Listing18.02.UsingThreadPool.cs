@@ -8,14 +8,14 @@
         public const int Repetitions = 1000;
         public static void Main()
         {
-            ThreadPool.QueueUserWorkItem(DoWork, '.');
+            ThreadPool.QueueUserWorkItem(DoWork, '+');
 
             for(int count = 0; count < Repetitions; count++)
             {
                 Console.Write('-');
             }
 
-            // Pause until the thread completes
+            // Pause until the thread completes.
             // This is for illustrative purposes; do not
             // use Thread.Sleep for synchronization in 
             // production code.

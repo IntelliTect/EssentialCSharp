@@ -6,13 +6,17 @@
     using System.Threading;
     using System.Threading.Tasks;
 
-    class Program
+    public class Program
     {
+        public static void Main()
+        {
+            EncryptFiles(Directory.GetCurrentDirectory(), "*.*");
+        }
         // ...
         static void EncryptFiles(
             string directoryPath, string searchPattern)
         {
-            IEnumerable<string> files = Directory.GetFiles(
+            IEnumerable<string> files = Directory.EnumerateFiles(
                 directoryPath, searchPattern,
                 SearchOption.AllDirectories);
             try
@@ -42,7 +46,7 @@
         {
             // ...
 
-            throw new NotImplementedException();
+            throw new UnauthorizedAccessException();
         }
 
     }

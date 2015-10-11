@@ -1,19 +1,22 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_31
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_30
 {
     using System;
-    using Listing17_32;
+    using System.Linq;
+    using System.Xml.Linq;
+
     public class Program
     {
         public static void Main()
         {
-            dynamic person = DynamicXml.Parse(
-             @"<Person>
-                <FirstName>Inigo</FirstName>
-                <LastName>Montoya</LastName>
-               </Person>");
+            XElement person = XElement.Parse(
+                @"<Person>
+                    <FirstName>Inigo</FirstName>
+                    <LastName>Montoya</LastName>
+                  </Person>");
 
             Console.WriteLine("{0} {1}",
-                person.FirstName, person.LastName);
+              person.Descendants("FirstName").FirstOrDefault().Value,
+              person.Descendants("LastName").FirstOrDefault().Value);
         }
     }
 }

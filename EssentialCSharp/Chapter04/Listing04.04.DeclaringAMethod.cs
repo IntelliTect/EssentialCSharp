@@ -7,6 +7,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_04
             string firstName;
             string lastName;
             string fullName;
+            string initials;
 
             System.Console.WriteLine("Hey you!");
 
@@ -14,8 +15,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_04
             lastName = GetUserInput("Enter your last name: ");
 
             fullName = GetFullName(firstName, lastName);
-
-            DisplayGreeting(fullName);
+            initials = GetInitials(firstName, lastName);
+            DisplayGreeting(fullName, initials);
         }
 
         static string GetUserInput(string prompt)
@@ -24,15 +25,22 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_04
             return System.Console.ReadLine();
         }
 
-        static string GetFullName(string firstName, string lastName)
-        {
-            return firstName + " " + lastName;
-        }
+        static string GetFullName(  // C# 6.0 expression-bodied method
+              string firstName, string lastName) =>
+                  $"{ firstName } { lastName }";
 
-        static void DisplayGreeting(string name)
+
+        static void DisplayGreeting(string fullName, string initials)
         {
-            System.Console.WriteLine("Your full name is {0}.", name);
+            System.Console.WriteLine(
+                $"Hello { fullName }! Your initials are { initials }");
             return;
         }
+
+        static string GetInitials(string firstName, string lastName)
+        {
+            return $"{ firstName[0] }. { lastName[0] }.";
+        }
+
     }
 }
