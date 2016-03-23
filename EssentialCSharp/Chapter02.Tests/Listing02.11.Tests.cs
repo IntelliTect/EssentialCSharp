@@ -8,13 +8,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_11.Tests
         [TestMethod]
         public void Main_WriteDizzyQuote()
         {
-            string view = "\"Truly, you have a dizzying intellect.\"\n\"Wait 'til I get going!\"\n";
+            const string expected = "\"Truly, you have a dizzying intellect.\"\n\"Wait 'til I get going!\"";
 
-            IntelliTect.ConsoleView.Tester.Test(view,
-            () =>
-            {
-                DuelOfWits.Main();
-            });
+            IntelliTect.ConsoleView.Tester.Test(
+                expected, DuelOfWits.Main);
         }
     }
 }

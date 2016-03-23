@@ -1,6 +1,7 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_19
 {
     using System;
+    using static System.Environment;
 
     // Define an abstract class
     public abstract class PdaItem
@@ -24,7 +25,7 @@
         {
             get
             {
-                return FirstName + " " + LastName;
+                return $"{ FirstName } { LastName }";
             }
 
             set
@@ -42,10 +43,9 @@
 
         public override string GetSummary()
         {
-            return string.Format(
-                "FirstName: {0}\n"
-                + "LastName: {1}\n"
-                + "Address: {2}", FirstName, LastName, Address);
+            return $"FirstName: { FirstName + NewLine }"
+            + $"LastName: { LastName + NewLine }"
+            + $"Address: { Address + NewLine }";
         }
 
         // ...
@@ -66,12 +66,10 @@
         // ...
         public override string GetSummary()
         {
-            return string.Format(
-                "Subject: {0}" + Environment.NewLine
-                + "Start: {1}" + Environment.NewLine
-                + "End: {2}" + Environment.NewLine
-                + "Location: {3}",
-                Name, StartDateTime, EndDateTime, Location);
+            return $"Subject: { Name + NewLine }"
+                + $"Start: { StartDateTime + NewLine }"
+                + $"End: { EndDateTime + NewLine }"
+                + $"Location: { Location }";
         }
     }
 }

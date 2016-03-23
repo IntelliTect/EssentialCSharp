@@ -81,7 +81,7 @@
     <Compile Include="Listing05.16.GettersAndSetters.cs" />
     <Compile Include="Listing05.19.ProvidingPropertyValidation.cs" />
     <Compile Include="Listing05.20.DefiningReadOnlyProperties.cs" />
-    <Compile Include="Listing05.21.PlacingAccessModifiersOnSetters.cs" />
+    <Compile Include="Listing05.22.PlacingAccessModifiersOnSetters.cs" />
     <Compile Include="Listing05.26.CallingAConstructor.cs" />
     <Compile Include="Listing05.27.DefaultConstructorNoLongerAvailable.cs" />
     <Compile Include="Listing05.29.CallingAnObjectInitializer.cs" />
@@ -107,7 +107,7 @@
     <Compile Include="Listing05.32.ProvidingAnInitializationMethod.cs" />
     <Compile Include="Listing05.28.CallingAnObjectInitializer.cs" />
     <Compile Include="Listing05.25.DefiningAConstructor.cs" />
-    <Compile Include="Listing05.22.DefiningProperties.cs" />
+    <Compile Include="Listing05.21.DefiningProperties.cs" />
     <Compile Include="Listing05.18.AutomaticallyImplementedProperties.cs" />
     <Compile Include="Listing05.17.DefiningProperties.cs" />
     <Compile Include="Listing05.14.DataRetrievalFromAFile.cs" />

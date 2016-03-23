@@ -1,6 +1,7 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_16
 {
     using System;
+    using static System.Environment;
 
     public class Address
     {
@@ -11,9 +12,8 @@
 
         public override string ToString()
         {
-            return string.Format("{0}" + Environment.NewLine +
-                "{1}, {2}  {3}",
-                StreetAddress, City, State, Zip);
+            return $"{ StreetAddress + NewLine }"
+                + $"{ City }, { State }  { Zip }";
         }
     }
 
@@ -23,8 +23,8 @@
 
         public override string ToString()
         {
-            return base.ToString() + Environment.NewLine +
-                Country;
+            return base.ToString() +
+                NewLine + Country;
         }
     }
 }

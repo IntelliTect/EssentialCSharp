@@ -6,20 +6,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_09
 
     interface IPair<T>
     {
-        T First
-        {
-            get;
-        }
+        T First { get; }
+        T Second { get; }
+        T this[PairItem index] { get; }
 
-        T Second
-        {
-            get;
-        }
-
-        T this[PairItem index]
-        {
-            get;
-        }
     }
 
     // ----
@@ -36,25 +26,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_09
     {
         public Pair(T first, T second)
         {
-            _first = first;
-            _second = second;
+            First = first;
+            Second = second;
         }
 
-        public T First
-        {
-            get { return _first; }
-            private set { _first = value; }
-        }
+        public T First { get; }  // C# 6.0 Getter-Only Autoproperty
 
-        private T _first;
-
-        public T Second
-        {
-            get { return _second; }
-            private set { _second = value; }
-        }
-
-        private T _second;
+        public T Second { get; } // C# 6.0 Getter-Only Autoproperty
 
         public T this[PairItem index]
         {
@@ -73,6 +51,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_09
                             index.ToString()));
                 }
             }
+
+            /*  
+            // In keeping with the principal that structs should
+            // be read-only, the setter is commented out
+
             set
             {
                 switch(index)
@@ -90,6 +73,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_09
                             index.ToString()));
                 }
             }
+            */
         }
     }
 }

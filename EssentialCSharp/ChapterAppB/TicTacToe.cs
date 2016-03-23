@@ -9,14 +9,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.AppendixB.ListingB_01
 
     // The TicTacToe class enables two players to 
     // play tic-tac-toe.
-    public class TicTacToeGame      // Declares the TicTacToeGame class
+    public class TicTacToeGame      // Declares the TicTacToeGame class.
     {
-        public static void Main()  // Declares the entry point to the program
+        public static void Main()  // Declares the entry point to the program.
         {
             // Stores locations each player has moved.
             int[] playerPositions = { 0, 0 };
 
-            // Initially set the currentPlayer to Player 1;
+            // Initially set the currentPlayer to Player 1.
             int currentPlayer = 1;
 
             // Winning player
@@ -43,7 +43,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.AppendixB.ListingB_01
 
                 winner = DetermineWinner(playerPositions);
 
-                // Switch players
+                // Switch players.
                 currentPlayer = (currentPlayer == 2) ? 1 : 2;
             }
         }
@@ -59,8 +59,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.AppendixB.ListingB_01
             do
             {
                 // Request a move from the current player.
-                System.Console.Write("\nPlayer {0} - Enter move:",
-                           currentPlayer);
+                System.Console.Write($"\nPlayer {currentPlayer} - Enter move:");
                 input = System.Console.ReadLine();
                 validMove = ValidateAndMove(playerPositions,
                               currentPlayer, input);
@@ -74,14 +73,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.AppendixB.ListingB_01
             bool endGame = false;
             if(winner > 0)
             {
-                System.Console.WriteLine("\nPlayer {0} has won!!!!",
-                             winner);
+                System.Console.WriteLine($"\nPlayer {winner} has won!!!!");
                 endGame = true;
             }
             else if(turn == 10)
             {
                 // After completing the 10th display of the
-                // board, exit out rather than prompting the
+                // board, exit rather than prompting the
                 // user again.
                 System.Console.WriteLine("\nThe game was a tie!");
                 endGame = true;
@@ -100,7 +98,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.AppendixB.ListingB_01
         {
             int winner = 0;
 
-            // Determine if there is a winner
+            // Determine if there is a winner.
             int[] winningMasks = {
           7, 56, 448, 73, 146, 292, 84, 273};
 
@@ -139,7 +137,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.AppendixB.ListingB_01
                 case "9":
 #warning  "Same move allowed multiple times."
                     int shifter;  // The number of places to shift 
-                    // over in order to set a bit.
+                    // over to set a bit.
                     int position;  // The bit which is to be set.
 
                     // int.Parse() converts "input" to an integer.
@@ -154,8 +152,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.AppendixB.ListingB_01
                     // Take the current player cells and OR them 
                     // to set the new position as well.
                     // Since currentPlayer is either 1 or 2 you 
-                    // subtract one to use currentPlayer as an
-                    // index in a 0-based array.
+                    // subtract 1 to use currentPlayer as an
+                    // index in a zero-based array.
                     playerPositions[currentPlayer - 1] |= position;
 
                     valid = true;
@@ -188,7 +186,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.AppendixB.ListingB_01
   };
 
             // Display the current board;
-            int border = 0;  // set the first border (border[0] = "|")
+            int border = 0;  // set the first border (border[0] = "|").
 
 #if CSHARP2
             System.Console.Clear();
@@ -203,8 +201,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.AppendixB.ListingB_01
 
                 // Write out a cell value and the border that 
                 // comes after it.
-                System.Console.Write(" {0} {1}",
-                    token, borders[border]);
+                System.Console.Write($" {token} {borders[border]}");
             }
         }
 
@@ -219,12 +216,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.AppendixB.ListingB_01
             // then set the token to that player.
             if((position & playerPositions[0]) == position)
             {
-                // Player 1 has that position marked
+                // Player 1 has that position marked.
                 token = players[0];
             }
             else if((position & playerPositions[1]) == position)
             {
-                // Player 2 has that position marked
+                // Player 2 has that position marked.
                 token = players[1];
             }
             else
@@ -236,7 +233,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.AppendixB.ListingB_01
         }
 
 #line 113 "TicTacToe.cs"
-        // Generated code goes here
+        // Generated code goes here.
 #line default
     }
 }

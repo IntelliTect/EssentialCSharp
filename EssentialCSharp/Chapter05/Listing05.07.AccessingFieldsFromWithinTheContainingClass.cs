@@ -8,7 +8,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_07
 
         public string GetName()
         {
-            return FirstName + " " + LastName;
+            return $"{ FirstName }  { LastName }";
         }
     }
 }

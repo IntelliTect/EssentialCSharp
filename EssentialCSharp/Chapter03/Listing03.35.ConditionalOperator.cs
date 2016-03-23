@@ -4,7 +4,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_35
     {
         public static void Main()
         {
-            // Initially set the currentPlayer to Player 1;
+            // Initially set the currentPlayer to Player 1
             int currentPlayer = 1;
 
             // ...

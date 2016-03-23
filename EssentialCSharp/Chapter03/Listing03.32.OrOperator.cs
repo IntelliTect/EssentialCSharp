@@ -4,7 +4,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_32
     {
         public static void Main()
         {
-            if((hourOfTheDay > 23) || (hourOfTheDay < 0))
+            if ((hourOfTheDay > 23) || (hourOfTheDay < 0))
                 System.Console.WriteLine("The time you entered is invalid.");
         }
 

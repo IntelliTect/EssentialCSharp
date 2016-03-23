@@ -67,13 +67,7 @@
     <Compile Include="..\Shared\Program.cs">
       <Link>Program.cs</Link>
     </Compile>
-    <Compile Include="Listing11.51.DeclaringVariablesOfTypeStack.cs" />
-    <Compile Include="Listing11.50.StackDefinition.cs" />
-    <Compile Include="Listing11.49.CILWithExclamationPointNotation.cs" />
-    <Compile Include="Listing11.48.CILCodeForStack.cs" />
-    <Compile Include="Listing11.47.StackDeclaration.cs" />
-    <Compile Include="Listing11.46.CompilerValidationOfVariance.cs" />
-    <Compile Include="Listing11.45.CombiningCovarianceAndContravarianceInSingleGenericType.cs" />
+    <Compile Include="Listing11.44+.CombiningCovarianceAndContravarianceInSingleGenericType.cs" />
     <Compile Include="Listing11.44.ContravarianceUsingTheInTypeParameterModifier.cs" />
     <Compile Include="Listing11.42.PotentiallyPossibleCovariance.cs" />
     <Compile Include="Listing11.41.PreventingCovarianceMaintainsHomogeneity.cs" />
@@ -118,6 +112,12 @@
     <Compile Include="Listing11.03.DefiningASpecializedStackClass.cs" />
     <Compile Include="Listing11.02.SupportingUndoInEtchASketchGame.cs" />
     <Compile Include="Listing11.01.TheMethodSignatures.cs" />
+    <Compile Include="Listing11.45.CompilerValidationOfVariance.cs" />
+    <Compile Include="Listing11.46.StackDeclaration.cs" />
+    <Compile Include="Listing11.47.CILCodeForStack.cs" />
+    <Compile Include="Listing11.48.CILWithExclamationPointNotation.cs" />
+    <Compile Include="Listing11.49.StackDefinition.cs" />
+    <Compile Include="Listing11.50.DeclaringVariablesOfTypeStack.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

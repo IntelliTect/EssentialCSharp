@@ -5,7 +5,7 @@
 
     public class BinaryTree<T>
     {
-        // ...
+        public T Item { get; set; }
 
         public Pair<BinaryTree<T>> SubItems
         {

@@ -10,6 +10,7 @@
         public FileStream GetData()
         {
             FileStream data = (FileStream)Data.Target;
+
             if(data != null)
             {
                 return data;

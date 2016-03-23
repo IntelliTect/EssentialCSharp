@@ -8,15 +8,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_07.Tests
         [TestMethod]
         public void Main_WriteBooleanStatements()
         {
-            string view =
-@"True: result != number
+            const string expected =
+@"False: result == number
 True: result == number";
 
-            IntelliTect.ConsoleView.Tester.Test(view,
-            () =>
-            {
-                Program.Main();
-            });
+            IntelliTect.ConsoleView.Tester.Test(
+                expected, Program.Main);
         }
     }
 }

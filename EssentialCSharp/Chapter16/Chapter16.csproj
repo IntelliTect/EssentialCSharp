@@ -67,6 +67,7 @@
     <Compile Include="..\Shared\Program.cs">
       <Link>Program.cs</Link>
     </Compile>
+    <Compile Include="Listing16.07a.IteratingOverSortedDictionaryWithForeach.cs" />
     <Compile Include="Listing16.08.ImplementingIEqualityComparer.cs" />
     <Compile Include="Listing16.02.ImplementingIComparer.cs" />
     <Compile Include="Listing16.01.UsingList.cs" />

@@ -24,7 +24,7 @@
             }
 
             task.Wait();
-            Console.WriteLine("Count = {0}", _Count);
+            Console.WriteLine($"Count = {_Count}");
         }
 
         static void Decrement()

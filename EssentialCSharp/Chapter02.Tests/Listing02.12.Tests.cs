@@ -8,7 +8,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_12.Tests
         [TestMethod]
         public void Main_WriteTriangle()
         {
-            string view = @"begin
+            const string expected = @"begin
                    /\
                   /  \
                  /    \
@@ -16,11 +16,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_12.Tests
                /________\
 end";
 
-            IntelliTect.ConsoleView.Tester.Test(view,
-            () =>
-            {
-                Triangle.Main();
-            });
+            IntelliTect.ConsoleView.Tester.Test(
+                expected, Triangle.Main);
         }
     }
 }

@@ -14,7 +14,7 @@
 
         static void List2(string rootDirectory, string searchPattern)
         {
-            var fileNames = Directory.GetFiles(
+            var fileNames = Directory.EnumerateFiles(
                 rootDirectory, searchPattern);
             var fileResults =
                 from fileName in fileNames
@@ -26,8 +26,9 @@
 
             foreach(var fileResult in fileResults)
             {
-                Console.WriteLine("{0}({1})",
-                    fileResult.Name, fileResult.LastWriteTime);
+                Console.WriteLine(
+                    $@"{ fileResult.Name } ({ 
+                        fileResult.LastWriteTime })");
             }
         }
     }

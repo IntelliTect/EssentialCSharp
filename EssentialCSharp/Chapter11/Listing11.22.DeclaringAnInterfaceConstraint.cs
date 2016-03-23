@@ -6,7 +6,7 @@
     public class BinaryTree<T>
         where T : System.IComparable<T>
     {
-        // ...
+        public T Item { get; set; }
 
         public Pair<BinaryTree<T>> SubItems
         {
@@ -32,11 +32,5 @@
         }
         private Pair<BinaryTree<T>> _SubItems;
 
-        public T Item
-        {
-            get { return _Item; }
-            set { _Item = value; }
-        }
-        private T _Item;
     }
 }

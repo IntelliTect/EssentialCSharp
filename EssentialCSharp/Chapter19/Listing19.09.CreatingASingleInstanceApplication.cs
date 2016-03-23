@@ -9,7 +9,7 @@
         public static void Main()
         {
             // Indicates whether this is the first
-            // application instance
+            // application instance.
             bool firstApplicationInstance;
 
             // Obtain the mutex name from the full 
@@ -28,7 +28,7 @@
                 }
                 else
                 {
-                    Console.WriteLine("ENTER to shutdown");
+                    Console.WriteLine("ENTER to shut down");
                     Console.ReadLine();
                 }
             }

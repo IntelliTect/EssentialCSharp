@@ -61,8 +61,9 @@
     <Compile Include="Listing01.11.Tests.cs" />
     <Compile Include="Listing01.13.Tests.cs" />
     <Compile Include="Listing01.14.Tests.cs" />
-    <Compile Include="Listing01.15.Tests.cs" />
     <Compile Include="Listing01.16.Tests.cs" />
+    <Compile Include="Listing01.15.Tests.cs" />
+    <Compile Include="Listing01.17.Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

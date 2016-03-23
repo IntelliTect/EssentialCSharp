@@ -17,25 +17,18 @@
                 (antecedentTask) =>
                 {
                     parentTaskFaulted =
-      antecedentTask.IsFaulted;
+                        antecedentTask.IsFaulted;
                 }, TaskContinuationOptions.OnlyOnFaulted);
             task.Start();
             continuationTask.Wait();
             Trace.Assert(parentTaskFaulted);
-            if(!task.IsFaulted)
+            Trace.Assert(task.IsFaulted);
+            task.Exception.Handle(eachException =>
             {
-                task.Wait();
-            }
-            else
-            {
-                task.Exception.Handle(eachException =>
-                {
-                    Console.WriteLine(
-                        "ERROR: {0}",
-                        eachException.Message);
-                    return true;
-                });
-            }
+                Console.WriteLine(
+                    $"ERROR: { eachException.Message }");
+                return true;
+            });
         }
     }
 }

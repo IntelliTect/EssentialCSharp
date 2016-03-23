@@ -8,15 +8,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_08.Tests
         [TestMethod]
         public void Main_WriteSmiley()
         {
-            string view =
+            const string expected =
 @"'
 :)";
 
-            IntelliTect.ConsoleView.Tester.Test(view,
-            () =>
-            {
-                SingleQuote.Main();
-            });
+            IntelliTect.ConsoleView.Tester.Test(
+                expected, SingleQuote.Main);
         }
     }
 }

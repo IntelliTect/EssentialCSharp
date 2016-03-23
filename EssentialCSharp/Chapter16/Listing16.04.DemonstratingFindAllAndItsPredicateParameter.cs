@@ -21,10 +21,15 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_04
             }
         }
 
+#if !PRECSHARP6
+        public static bool Even(int value) =>
+            (value % 2) == 0;
+#else
         public static bool Even(int value)
         {
             return (value % 2) == 0;
         }
+#endif
     }
 
 }

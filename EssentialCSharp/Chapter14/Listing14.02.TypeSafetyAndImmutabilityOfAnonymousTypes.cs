@@ -33,7 +33,7 @@
             //patent1 = patent3; //won't compile if uncommented
 
             // ERROR: Property or indexer 'AnonymousType#1.Title' 
-            //        cannot be assigned to -- it is read only'
+            //        cannot be assigned to -- it is read-only'
             //patent1.Title = "Swiss Cheese"; //won't compile if uncommented
         }
     }

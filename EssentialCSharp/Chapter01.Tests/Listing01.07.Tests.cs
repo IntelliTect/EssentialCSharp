@@ -8,13 +8,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_07.Tests
         [TestMethod]
         public void Main_HelloToInigo()
         {
-            string view = @"Hello Inigo Montoya";
+            const string expected = @"Hello Inigo Montoya";
 
-            IntelliTect.ConsoleView.Tester.Test(view,
-            () =>
-            {
-                HelloWorld.Main();
-            });
+            IntelliTect.ConsoleView.Tester.Test(
+                expected, HelloWorld.Main);
         }
     }
 }

@@ -9,18 +9,7 @@
             Item = item;
         }
 
-        public T Item
-        {
-            get { return _Item; }
-            set { _Item = value; }
-        }
-        private T _Item;
-
-        public Pair<BinaryTree<T>> SubItems
-        {
-            get { return _SubItems; }
-            set { _SubItems = value; }
-        }
-        private Pair<BinaryTree<T>> _SubItems;
+        public T Item { get; set; }
+        public Pair<BinaryTree<T>> SubItems { get; set; }
     }
 }

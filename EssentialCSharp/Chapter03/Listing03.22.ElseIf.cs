@@ -8,12 +8,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_22
                 System.Console.WriteLine("Exiting...");
             else if(input < 9)
                 System.Console.WriteLine(
-                    "Tic-tac-toe has more than {0}" +
-                    " maximum turns.", input);
-            else if(input > 9)
+                    $"Tic-tac-toe has more than {input}" +
+                    " maximum turns.");
+            else if (input > 9)
                 System.Console.WriteLine(
-                    "Tic-tac-toe has less than {0}" +
-                    " maximum turns.", input);
+                    $"Tic-tac-toe has less than {input}" +
+                    " maximum turns.");
+
             else
                 System.Console.WriteLine(
                     "Correct, tic-tac-toe has a maximum " +

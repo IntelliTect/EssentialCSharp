@@ -8,15 +8,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_13.Tests
         [TestMethod]
         public void Main_InputRacecar_OutputPalindromeSevenChars()
         {
-            string view =
+            const string expected =
 @"Enter a palindrome: <<racecar
->>The palindrome, ""racecar"" is 7 characters.";
+>>The palindrome ""racecar"" is 7 characters.";
 
-            IntelliTect.ConsoleView.Tester.Test(view,
-            () =>
-            {
-                PalindromeLength.Main();
-            });
+            IntelliTect.ConsoleView.Tester.Test(
+                expected, PalindromeLength.Main);
         }
     }
 }

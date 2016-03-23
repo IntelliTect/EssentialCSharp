@@ -1,9 +1,11 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_30
 {
+    using AddisonWesley.Michaelis.EssentialCSharp.Shared;
+    using System;
     using System.Collections.Generic;
     using System.Linq;
 
-    class Cryptographer
+    class Program
     {
         // ...
         public List<string>
@@ -17,8 +19,11 @@
 
         private string Encrypt(string item)
         {
-            // ...
-            throw new System.NotImplementedException();
+            Console.WriteLine($">>>>>Encrypting '{ item }'.");
+            Cryptographer cryptographer = new Cryptographer();
+            string itemEncrypted = cryptographer.Encrypt(item);
+            Console.WriteLine($"<<<<<Finished encrypting '{ itemEncrypted }'.");
+            return itemEncrypted;
         }
 
     }

@@ -64,5 +64,7 @@
         // Manager property
         public Employee Manager { get; set; }
 
+        public string Salary { get; set; } = "Not Enough";
+
     }
 }

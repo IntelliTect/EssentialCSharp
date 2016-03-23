@@ -5,31 +5,18 @@
     {
         public Angle(int degrees, int minutes, int seconds)
         {
-            _Degrees = degrees;
-            _Minutes = minutes;
-            _Seconds = seconds;
-        }
-
-        public int Degrees
-        {
-            get { return _Degrees; }
+            Degrees = degrees;
+            Minutes = minutes;
+            Seconds = seconds;
         }
 
         // ERROR:  Fields cannot be initialized at declaration time
         // private int _Degrees = 42;
-        private int _Degrees;
 
-        public int Minutes
-        {
-            get { return _Minutes; }
-        }
-        private int _Minutes;
+        public int Degrees { get; }
 
-        public int Seconds
-        {
-            get { return _Seconds; }
-        }
-        private int _Seconds;
+        public int Minutes { get; }
+        public int Seconds { get; }
 
         public Angle Move(int degrees, int minutes, int seconds)
         {

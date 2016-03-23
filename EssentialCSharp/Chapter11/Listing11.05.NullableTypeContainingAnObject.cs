@@ -9,7 +9,7 @@
 
         /// <summary>
         /// Indicates whether there is a value or whether
-        /// the value is "null"
+        /// the value is "null".
         /// </summary>
         public bool HasValue { get; private set; }
 

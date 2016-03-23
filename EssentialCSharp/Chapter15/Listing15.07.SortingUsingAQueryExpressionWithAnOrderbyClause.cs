@@ -16,7 +16,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_07
             string rootDirectory, string searchPattern)
         {
             IEnumerable<string> fileNames =
-                from fileName in Directory.GetFiles(
+                from fileName in Directory.EnumerateFiles(
                     rootDirectory, searchPattern)
                 orderby (new FileInfo(fileName)).Length descending,
                     fileName
@@ -24,7 +24,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_07
 
             foreach(string fileName in fileNames)
             {
-                Console.WriteLine("{0}", fileName);
+                Console.WriteLine(fileName);
             }
         }
     }

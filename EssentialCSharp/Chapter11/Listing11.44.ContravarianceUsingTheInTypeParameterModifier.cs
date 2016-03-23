@@ -42,10 +42,10 @@
 
             bool b2 = fc.FirstIsBetter(apple1, apple2);
             // This is legal because the interface is 
-            // contravariant:
+            // contravariant.
             ICompareThings<Apple> ac = fc;
             // This is really a fruit comparer, so it can 
-            // compare two apples still. 
+            // still compare two apples 
 
             bool b3 = ac.FirstIsBetter(apple1, apple2);
         }

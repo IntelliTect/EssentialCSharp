@@ -7,12 +7,28 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_06
     {
         public static void Main()
         {
-            Dictionary<Guid, string> dictionary =
-                new Dictionary<Guid, string>();
-            Guid key = Guid.NewGuid();
+            // C# 6.0 (use {"Error", ConsoleColor.Red} pre-C# 6.0)
+            Dictionary<string, ConsoleColor> colorMap =
+                new Dictionary<string, ConsoleColor>
+                {
+                    ["Error"] = ConsoleColor.Red,
+                    ["Warning"] = ConsoleColor.Yellow,
+                    ["Information"] = ConsoleColor.Green
+                };
 
-            dictionary[key] = "hello";
-            dictionary[key] = "goodbye";
+            colorMap["Verbose"] = ConsoleColor.White;
+            colorMap["Error"] = ConsoleColor.Cyan;
+
+            Print(colorMap);
+        }
+
+        private static void Print(IEnumerable<KeyValuePair<string, ConsoleColor>> items)
+        {
+            foreach (KeyValuePair<string, ConsoleColor> item in items)
+            {
+                Console.ForegroundColor = item.Value;
+                Console.WriteLine(item.Key);
+            }
         }
     }
 }

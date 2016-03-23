@@ -23,7 +23,6 @@
             {
                 Count++;
             }
-
             thread.Join();
             Console.WriteLine("Main Count = {0}", Count);
         }

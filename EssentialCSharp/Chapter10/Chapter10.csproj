@@ -65,12 +65,13 @@
     <Compile Include="..\Shared\Program.cs">
       <Link>Program.cs</Link>
     </Compile>
+    <Compile Include="Listing10.02A.ConditionalExceptionCatch.cs" />
+    <Compile Include="Listing10.03.UsingExceptionDispatchInfoToRethrowException.cs" />
     <Compile Include="Listing10.08.AnUnCheckedBlockExample.cs" />
     <Compile Include="Listing10.07.ACheckedBlockExample.cs" />
     <Compile Include="Listing10.06.OverflowingAnIntegerValue.cs" />
     <Compile Include="Listing10.05.DefiningASerializableException.cs" />
     <Compile Include="Listing10.04.CreatingACustomException.cs" />
-    <Compile Include="Listing10.03.CatchingDifferentExceptionTypes.cs" />
     <Compile Include="Listing10.02.CatchingDifferentExceptionTypes.cs" />
     <Compile Include="Listing10.01.ThrowingAnException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

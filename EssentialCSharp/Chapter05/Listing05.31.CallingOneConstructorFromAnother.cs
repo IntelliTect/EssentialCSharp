@@ -22,15 +22,15 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_31
             // Look up employee name...
             // ...
 
-            // NOTE:  Member constructors cannot be 
+            // NOTE: Member constructors cannot be 
             // called explicitly inline
             // this(id, firstName, lastName);
         }
 
-        public int Id { get; set; }
+        public int Id { get; private set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string Salary { get; set; }
+        public string Salary { get; set; } = "Not Enough";
 
         // ...
     }

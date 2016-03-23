@@ -24,8 +24,10 @@
                 {
                     UseShellExecute = false,
                     Arguments = arguments,
+                    RedirectStandardOutput =
+                       progress != null
                 },
-                EnableRaisingEvents = true,
+                EnableRaisingEvents = true
             };
 
             process.Exited += (sender, localEventArgs) =>

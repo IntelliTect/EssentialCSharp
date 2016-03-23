@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace IntelliTect.ConsoleView.Tests
 {
@@ -46,6 +47,17 @@ namespace IntelliTect.ConsoleView.Tests
             {
                 System.Console.WriteLine("Hello World");
             });
+        }
+
+
+        [TestMethod]
+        public void ExecuteProcess_PingLocalhost_Success()
+        {
+            ConsoleView.Tester.ExecuteProcess(
+$@"
+Pinging { Environment.MachineName } * with 32 bytes of data:
+Reply from *: time*", 
+                "ping.exe", "localhost");
         }
     }
 }
