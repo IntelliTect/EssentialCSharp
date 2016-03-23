@@ -2,6 +2,7 @@
 using System.IO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Linq;
+using System.Diagnostics;
 
 namespace IntelliTect.ConsoleView
 {
@@ -92,12 +93,21 @@ namespace IntelliTect.ConsoleView
         {
             string output = Execute(givenInput, action);
 
+            AssertExpectation(expectedOutput, output, areEquivalentOperator);
+
+        }
+        private static void AssertExpectation(string expectedOutput, string output)
+        {
+            AssertExpectation(expectedOutput, output, (left, right) => left == right);
+        }
+
+        private static void AssertExpectation(string expectedOutput, string output, Func<string, string, bool> areEquivalentOperator)
+        {
             bool failTest = !areEquivalentOperator(expectedOutput, output);
             if (failTest)
             {
                 Assert.IsFalse(failTest, GetMessageText(expectedOutput, output));
             }
-
         }
 
         public static string Execute(string givenInput, Action action)
@@ -122,31 +132,23 @@ namespace IntelliTect.ConsoleView
 
         private static string GetMessageText(string expectedOutput, string output)
         {
-            string result;
+            string result="";
+            char[] wildCardChars = new char[]{ '[', ']', '?', '*', '#'};
+            if (wildCardChars.Any(c=>expectedOutput.Contains(c)))
+            {
+                result += "NOTE: The expected string contains wildcard charaters: [,],?,*,#" + Environment.NewLine;
+            }
             if (expectedOutput.Contains(Environment.NewLine))
             {
-                result = string.Join(Environment.NewLine, "AreEqual failed:", "",
+                result += string.Join(Environment.NewLine, "AreEqual failed:", "",
                     "Expected:", "-----------------------------------", expectedOutput, "-----------------------------------",
                     "Actual: ", "-----------------------------------", output, "-----------------------------------");
             }
             else
             {
-                result = string.Join(Environment.NewLine, "AreEqual failed:",
+                result += string.Join(Environment.NewLine, "AreEqual failed:",
                     "Expected: ", expectedOutput,
                     "Actual:   ", output);
-            }
-
-            // Write the output that shows the difference.
-            for (int counter = 0; counter < Math.Min(expectedOutput.Length, output.Length); counter++)
-            {
-                if (expectedOutput[counter] != output[counter]) // TODO: The message is invalid when using wild cards.
-                {
-                    result += Environment.NewLine
-                        + $"Character {counter} did not match: "
-                        + $"'{CSharpStringEncode(expectedOutput[counter])}' != '{CSharpStringEncode(output[counter])})'"; 
-                        ;
-                    break;
-                }
             }
 
             int expectedOutputLength = expectedOutput.Length;
@@ -159,6 +161,21 @@ namespace IntelliTect.ConsoleView
                 {
                     result += $"{Environment.NewLine}The additional characters are '"
                         + $"{CSharpStringEncode(items[1].Substring(items[0].Length))}'.";
+                }
+            }
+            else
+            {
+                // Write the output that shows the difference.
+                for (int counter = 0; counter < Math.Min(expectedOutput.Length, output.Length); counter++)
+                {
+                    if (expectedOutput[counter] != output[counter]) // TODO: The message is invalid when using wild cards.
+                    {
+                        result += Environment.NewLine
+                            + $"Character {counter} did not match: "
+                            + $"'{CSharpStringEncode(expectedOutput[counter])}' != '{CSharpStringEncode(output[counter])})'";
+                        ;
+                        break;
+                    }
                 }
             }
 
@@ -238,6 +255,21 @@ namespace IntelliTect.ConsoleView
             }
 
             return new string[] { input, output };
+        }
+
+        public static Process ExecuteProcess(string expected, string fileName, string args, string directory = null)
+        {
+            System.Diagnostics.ProcessStartInfo processStartInfo =
+                    new System.Diagnostics.ProcessStartInfo(fileName, args);
+            processStartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+            processStartInfo.CreateNoWindow = true;
+            processStartInfo.WorkingDirectory = directory ?? Environment.CurrentDirectory;
+            processStartInfo.RedirectStandardOutput = true;
+            processStartInfo.UseShellExecute = false;
+            System.Diagnostics.Process process = System.Diagnostics.Process.Start(processStartInfo);
+            process.WaitForExit();
+            AssertExpectation(expected, process.StandardOutput.ReadToEnd(), (left, right) => LikeOperator(left, right));
+            return process;
         }
     }
 }
