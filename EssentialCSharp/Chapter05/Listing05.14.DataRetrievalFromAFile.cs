@@ -92,7 +92,7 @@
             FileStream stream = new FileStream(
                 firstName + lastName + ".dat", FileMode.Open);
 
-            // Create a SteamReader for reading text from the file.
+            // Create a StreamReader for reading text from the file.
             StreamReader reader = new StreamReader(stream);
 
             // Read each line from the file and place it into
