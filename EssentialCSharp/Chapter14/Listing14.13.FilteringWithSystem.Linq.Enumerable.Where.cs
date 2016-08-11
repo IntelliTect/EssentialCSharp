@@ -6,7 +6,7 @@
 
     public class Program
     {
-        public static void Main()
+        public static void ChapterMain()
         {
             IEnumerable<Patent> patents = PatentData.Patents;
             patents = patents.Where(

@@ -1,11 +1,13 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_10
 {
     using System;
+    using System.IO;
     using System.Net;
+    using System.Net.Http;
 
     public class Program
     {
-        public static int Main(string[] args)
+        public static int ChapterMain(string[] args)
         {
             int result;
             string targetFileName;
@@ -29,8 +31,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_10
 
             if(targetFileName != null && url != null)
             {
-                WebClient webClient = new WebClient();
-                webClient.DownloadFile(url, targetFileName);
+                using (HttpClient httpClient = new HttpClient())
+                using (HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, url))
+                using (HttpResponseMessage message = httpClient.SendAsync(request).Result)
+                using (Stream contentStream = message.Content.ReadAsStreamAsync().Result)
+                using (FileStream fileStream = new FileStream(targetFileName, FileMode.Create, FileAccess.Write, FileShare.None))
+                {
+                    contentStream.CopyToAsync(fileStream);
+                }
                 result = 0;
             }
             else

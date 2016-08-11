@@ -17,7 +17,7 @@
             }
         }
 
-        public static void Main()
+        public static void ChapterMain()
         {
             int i;
             __LocalsDisplayClass_00000001 locals =

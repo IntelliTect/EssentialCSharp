@@ -5,7 +5,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_15
 
     public class Program
     {
-        public static void Main()
+        public static void ChapterMain()
         {
             var fullname = new Pair<string>("Inigo", "Montoya");
             foreach(string name in fullname)

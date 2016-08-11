@@ -36,7 +36,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_13
     }
     public class Program
     {
-        public static void Main()
+        public static void ChapterMain()
         {
             var keywords = new CSharpBuiltInTypes();
             foreach (string keyword in keywords)

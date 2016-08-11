@@ -2,7 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_22
 {
     public class LeveragingTryParse
     {
-        public static int Main()
+        public static int ChapterMain()
         {
             string firstName;
             string ageText;

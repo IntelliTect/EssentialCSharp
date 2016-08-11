@@ -14,7 +14,7 @@ Think it will work?
 It would take a miracle.";
 
             IntelliTect.ConsoleView.Tester.Test(
-                expected, MiracleMax.Main);
+                expected, MiracleMax.ChapterMain);
         }
     }
 }

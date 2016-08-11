@@ -27,7 +27,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_05
             "unsafe", "ushort", "using", "value*", "var*", "virtual",
             "unchecked", "void", "volatile", "where*", "while", "yield*" };
         
-        public static void Main()
+        public static void ChapterMain()
         {
             CountContextualKeywords();
         }

@@ -36,7 +36,7 @@
             public string LastName;
         }
 
-        public static void Main(string[] args)
+        public static void ChapterMain(string[] args)
         {
             CommandLine commandLine = new CommandLine(args);
 

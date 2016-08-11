@@ -2,7 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_18
 {
     public class Program
     {
-        public static void Main()
+        public static void ChapterMain()
         {
             var patent1 =
                 new { Title = "Bifocals",

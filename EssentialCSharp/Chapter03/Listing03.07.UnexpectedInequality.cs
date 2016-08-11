@@ -4,7 +4,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_07
 {
     public class Program
     {
-        public static void Main()
+        public static void ChapterMain()
         {
             decimal decimalNumber = 4.2M;
             double doubleNumber1 = 0.1F * 42F;

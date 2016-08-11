@@ -27,7 +27,7 @@
             return data;
         }
 
-        public static void Main()
+        public static void ChapterMain()
         {
             Console.WriteLine("No output in this example.");
         }

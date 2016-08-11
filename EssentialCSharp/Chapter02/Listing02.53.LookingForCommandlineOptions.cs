@@ -2,7 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_52
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static void ChapterMain(string[] args)
         {
             // ...
             if(args[0][0] == '-')

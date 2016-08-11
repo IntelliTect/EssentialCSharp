@@ -15,7 +15,7 @@ Enter your first name: <<Inigo
 >>";
 
             IntelliTect.ConsoleView.Tester.Test(
-                expected, HeyYou.Main);
+                expected, HeyYou.ChapterMain);
         }
     }
 }

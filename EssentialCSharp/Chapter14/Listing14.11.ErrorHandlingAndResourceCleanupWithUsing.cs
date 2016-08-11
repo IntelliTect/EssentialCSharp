@@ -4,7 +4,7 @@
 
     public class Program
     {
-        public static void Main()
+        public static void ChapterMain()
         {
             System.Collections.Generic.Stack<int> stack =
                 new System.Collections.Generic.Stack<int>();

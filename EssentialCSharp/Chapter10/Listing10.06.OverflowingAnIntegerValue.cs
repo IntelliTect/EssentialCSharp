@@ -2,7 +2,7 @@
 {
     public class Program
     {
-        public static void Main()
+        public static void ChapterMain()
         {
             // int.MaxValue equals 2147483647
             int n = int.MaxValue;

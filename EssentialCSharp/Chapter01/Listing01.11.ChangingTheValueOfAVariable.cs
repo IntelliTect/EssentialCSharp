@@ -2,7 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_11
 {
     public class MiracleMax
     {
-        public static void Main()
+        public static void ChapterMain()
         {
             string valerie;
             string miracleMax = "Have fun storming the castle!";

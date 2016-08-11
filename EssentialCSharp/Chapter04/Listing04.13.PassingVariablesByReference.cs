@@ -2,7 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_12
 {
     public class Program
     {
-        public static void Main()
+        public static void ChapterMain()
         {
             // ...
             string first = "hello";

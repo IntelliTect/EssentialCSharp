@@ -4,7 +4,7 @@
 
     public class Program
     {
-        public static void Main()
+        public static void ChapterMain()
         {
             // Derived types can be implicitly converted to
             // base types

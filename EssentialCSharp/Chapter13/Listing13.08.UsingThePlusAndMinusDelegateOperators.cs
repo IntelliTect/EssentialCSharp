@@ -6,7 +6,7 @@
 
     public class Program
     {
-        public static void Main()
+        public static void ChapterMain()
         {
             Thermostat thermostat = new Thermostat();
             Heater heater = new Heater(60);

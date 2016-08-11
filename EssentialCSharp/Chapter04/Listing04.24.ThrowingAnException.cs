@@ -4,7 +4,7 @@ using System;
 
 public class ThrowingExceptions
 {
-  public static void Main()
+  public static void ChapterMain()
   {
       try
       {

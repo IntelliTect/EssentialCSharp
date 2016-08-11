@@ -6,7 +6,7 @@
 
     class Program
     {
-        public static void Main()
+        public static void ChapterMain()
         {
             // Indicates whether this is the first
             // application instance.

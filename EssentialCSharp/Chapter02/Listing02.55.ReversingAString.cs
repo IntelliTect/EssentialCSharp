@@ -2,7 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_54
 {
     public class Palindrome
     {
-        public static void Main()
+        public static void ChapterMain()
         {
             string reverse, palindrome;
             char[] temp;

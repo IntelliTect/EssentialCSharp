@@ -5,7 +5,7 @@
 
     public class Program
     {
-        public static void Main()
+        public static void ChapterMain()
         {
             Console.WriteLine(
                 MathEx.Max(7, 490)); // No type arguments!

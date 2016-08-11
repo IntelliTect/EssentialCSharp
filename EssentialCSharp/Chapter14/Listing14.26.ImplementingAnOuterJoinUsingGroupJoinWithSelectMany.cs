@@ -6,7 +6,7 @@
 
     public class Program
     {
-        public static void Main()
+        public static void ChapterMain()
         {
             Department[] departments = CorporateData.Departments;
             Employee[] employees = CorporateData.Employees;

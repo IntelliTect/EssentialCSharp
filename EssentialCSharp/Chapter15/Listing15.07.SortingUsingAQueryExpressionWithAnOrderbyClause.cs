@@ -7,7 +7,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_07
 
     public class Program
     {
-        public static void Main()
+        public static void ChapterMain()
         {
             ListByFileSize1(Directory.GetCurrentDirectory(), "*");
         }

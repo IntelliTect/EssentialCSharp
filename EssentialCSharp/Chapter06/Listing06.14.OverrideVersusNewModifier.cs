@@ -38,7 +38,7 @@
             }
         }
 
-        public static void Main()
+        public static void ChapterMain()
         {
             SuperSubDerivedClass superSubDerivedClass
                 = new SuperSubDerivedClass();

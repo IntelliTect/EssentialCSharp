@@ -5,7 +5,7 @@
 
     public class Program
     {
-        public static void Main()
+        public static void ChapterMain()
         {
             Contact contact = new Contact();
             contact.Name = "Inigo Montoya";

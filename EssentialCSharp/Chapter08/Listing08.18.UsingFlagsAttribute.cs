@@ -6,11 +6,11 @@
 
     class Program
     {
-        public static void Main()
+        public static void ChapterMain()
         {
             string fileName = @"enumtest.txt";
             FileInfo file = new FileInfo(fileName);
-            file.Open(FileMode.Create).Close();
+            file.Open(FileMode.Create).Dispose();
 
             FileAttributes startingAttributes =
                 file.Attributes;

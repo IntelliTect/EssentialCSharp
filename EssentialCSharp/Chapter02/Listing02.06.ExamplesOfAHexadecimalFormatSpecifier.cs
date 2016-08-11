@@ -2,7 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_06
 {
     public class Program
     {
-        public static void Main()
+        public static void ChapterMain()
         {
             //Displays "0x2A"
             System.Console.WriteLine($"0x{42:X}");

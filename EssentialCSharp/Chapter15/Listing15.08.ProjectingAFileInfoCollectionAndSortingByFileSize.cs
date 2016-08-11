@@ -7,7 +7,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_08
 
     public class Program
     {
-        public static void Main()
+        public static void ChapterMain()
         {
             ListByFileSize2(Directory.GetCurrentDirectory(), "*");
         }
@@ -27,7 +27,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_08
                 //  is assumed to be a subdirectory of
                 //  rootDirectory
                 string relativePath = file.FullName.Substring(
-                    Environment.CurrentDirectory.Length);
+                    Directory.GetCurrentDirectory().Length);
                 Console.WriteLine(
                     $".{ relativePath }({ file.Length })");
             }

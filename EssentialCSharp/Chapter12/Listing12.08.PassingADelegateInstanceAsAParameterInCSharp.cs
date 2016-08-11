@@ -40,7 +40,7 @@
             return first > second;
         }
 
-        public static void Main()
+        public static void ChapterMain()
         {
             int i;
             int[] items = new int[100];

@@ -9,7 +9,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.AppendixC.ListingC_08
 
     public class Program
     {
-        public static void Main()
+        public static void ChapterMain()
         {
             ManualResetEventSlim resetEvent =
                 new ManualResetEventSlim();

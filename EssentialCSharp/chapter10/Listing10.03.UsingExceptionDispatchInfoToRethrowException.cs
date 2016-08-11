@@ -4,7 +4,7 @@
 
     public sealed class Program
     {
-        public static void Main()
+        public static void ChapterMain()
         {
             try
             {
@@ -24,10 +24,6 @@
             catch(InvalidOperationException exception)
             {
                 // Handle ApplicationException
-            }
-            catch(SystemException exception)
-            {
-                // Handle SystemException
             }
             catch(Exception exception)
             {

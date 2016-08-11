@@ -15,7 +15,7 @@
             return null;
         }
 
-        static void Main()
+        static void ChapterMain()
         {
             object data = new object();
 

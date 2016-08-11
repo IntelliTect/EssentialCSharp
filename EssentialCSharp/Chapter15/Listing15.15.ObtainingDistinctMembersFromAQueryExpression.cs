@@ -4,10 +4,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_15
 {
     using System;
     using System.Linq;
+    using System.Reflection;
 
     public class Program
     {
-        public static void Main()
+        public static void ChapterMain()
         {
             ListMemberNames();
         }

@@ -5,7 +5,7 @@
 
     public class Program
     {
-        public static void Main()
+        public static void ChapterMain()
         {
             Console.WriteLine("Application started....");
 
@@ -18,8 +18,7 @@
                 workerMethod.BeginInvoke(500, null, null);
 
             // Display periods as progress bar.
-            while(!asyncResult.AsyncWaitHandle.WaitOne(
-                100, false))
+            while(!asyncResult.AsyncWaitHandle.WaitOne(100))
             {
                 Console.Write('.');
             }

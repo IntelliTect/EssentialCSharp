@@ -44,7 +44,7 @@
             return comparison > 0;
         }
 
-        public static void Main()
+        public static void ChapterMain()
         {
             int i;
             int[] items = new int[5];

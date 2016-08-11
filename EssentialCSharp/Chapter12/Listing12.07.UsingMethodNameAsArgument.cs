@@ -42,7 +42,7 @@
             return first > second;
         }
 
-        static void Main()
+        static void ChapterMain()
         {
             int i;
             int[] items = new int[5];

@@ -4,7 +4,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_02
 
     class Program
     {
-        static void Main()
+        static void ChapterMain()
         {
             Employee employee1, employee2;
             // ...

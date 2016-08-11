@@ -5,7 +5,7 @@
 
     public class Program
     {
-        public static void Main()
+        public static void ChapterMain()
         {
             Employee employee1;
 
@@ -78,8 +78,8 @@
             writer.WriteLine(employee.LastName);
             writer.WriteLine(employee.Salary);
 
-            // Close the StreamWriter and its stream.
-            writer.Close();  // Automatically closes the stream
+            // Dispose the StreamWriter and its stream.
+            writer.Dispose();  // Automatically closes the stream
         }
 
         public static Employee Load(string firstName, string lastName)
@@ -101,8 +101,8 @@
             employee.LastName = reader.ReadLine();
             employee.Salary = reader.ReadLine();
 
-            // Close the StreamReader and its Stream.
-            reader.Close();  // Automatically closes the stream
+            // Dispose the StreamReader and its Stream.
+            reader.Dispose();  // Automatically closes the stream
 
             return employee;
         }

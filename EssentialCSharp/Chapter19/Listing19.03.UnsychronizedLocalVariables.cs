@@ -8,7 +8,7 @@
         const int _Total = int.MaxValue;
         static long _Count = 0;
 
-        public static void Main()
+        public static void ChapterMain()
         {
             CountAsync();
         }

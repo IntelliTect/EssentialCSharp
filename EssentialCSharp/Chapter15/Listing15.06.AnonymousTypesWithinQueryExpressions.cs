@@ -7,7 +7,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_06
 
     public class Program
     {
-        public static void Main()
+        public static void ChapterMain()
         {
             FindMonthOldFiles(Directory.GetCurrentDirectory(), "*");
         }
@@ -28,7 +28,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_06
                 //  assumed to be a subdirectory of
                 //  rootDirectory
                 string relativePath = file.FullName.Substring(
-                        Environment.CurrentDirectory.Length);
+                    Directory.GetCurrentDirectory().Length);
                 Console.WriteLine(
                     $".{ relativePath } ({ file.LastWriteTime })");
             }

@@ -4,7 +4,7 @@
 
     public class DisplayFibonacci
     {
-        static void Main()
+        static void ChapterMain()
         {
             int totalCount;
             System.Collections.ArrayList list =

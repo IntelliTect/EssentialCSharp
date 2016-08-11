@@ -2,7 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_27
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static void ChapterMain(string[] args)
         {
             int playerCount;
             System.Console.Write(

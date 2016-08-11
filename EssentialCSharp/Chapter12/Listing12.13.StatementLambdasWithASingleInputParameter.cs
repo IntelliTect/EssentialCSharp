@@ -6,7 +6,7 @@
 
     public class Program
     {
-        public static void Main()
+        public static void ChapterMain()
         {
             IEnumerable<Process> processes = Process.GetProcesses().Where(
                 process => { return process.WorkingSet64 > 1000000000; });

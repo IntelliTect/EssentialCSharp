@@ -5,7 +5,7 @@
 
     class Program
     {
-        public static void Main()
+        public static void ChapterMain()
         {
             Contact[] contacts = new Contact[6];
             contacts[0] = new Contact(
@@ -42,9 +42,12 @@
 
             for(int itemCount = 0; itemCount < items.Length; itemCount++)
             {
-                string[] values = items[itemCount].ColumnValues;
+                if (items[itemCount] != null)
+                {
+                    string[] values = items[itemCount].ColumnValues;
 
-                DisplayItemRow(columnWidths, values);
+                    DisplayItemRow(columnWidths, values);
+                }
             }
         }
 

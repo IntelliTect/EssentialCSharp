@@ -2,7 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_01
 {
     public class LineCount
     {
-        public static void Main()
+        public static void ChapterMain()
         {
             int lineCount;
             string files;

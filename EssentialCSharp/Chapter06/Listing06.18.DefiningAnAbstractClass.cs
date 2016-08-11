@@ -12,7 +12,7 @@
 
     public class Program
     {
-        public static void Main()
+        public static void ChapterMain()
         {
             PdaItem item;
             // ERROR:  Cannot create an instance of the abstract class

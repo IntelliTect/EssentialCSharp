@@ -7,7 +7,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_11
 
     public class Program
     {
-        public static void Main()
+        public static void ChapterMain()
         {
             Thermostat thermostat = new Thermostat();
             Heater heater = new Heater(60);

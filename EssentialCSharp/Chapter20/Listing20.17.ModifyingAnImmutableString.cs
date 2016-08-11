@@ -4,7 +4,7 @@
 
     public class Program
     {
-        public static void Main()
+        public static void ChapterMain()
         {
             string text = "S5280ft";
             Console.Write("{0} = ", text);

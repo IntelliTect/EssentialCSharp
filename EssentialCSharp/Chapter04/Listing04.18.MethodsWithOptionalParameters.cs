@@ -4,7 +4,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_17
 
     public static class LineCounter
     {
-        public static void Main(string[] args)
+        public static void ChapterMain(string[] args)
         {
             int totalLineCount;
 

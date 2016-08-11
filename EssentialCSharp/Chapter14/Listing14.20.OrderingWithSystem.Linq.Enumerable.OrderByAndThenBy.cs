@@ -6,7 +6,7 @@
 
     public class Program
     {
-        public static void Main()
+        public static void ChapterMain()
         {
             IEnumerable<Patent> items;
             Patent[] patents = PatentData.Patents;

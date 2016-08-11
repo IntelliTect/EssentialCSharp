@@ -2,7 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_51
 {
     public class Program
     {
-        public static void Main()
+        public static void ChapterMain()
         {
             bool[, ,] cells;
             cells = new bool[2, 3, 3];

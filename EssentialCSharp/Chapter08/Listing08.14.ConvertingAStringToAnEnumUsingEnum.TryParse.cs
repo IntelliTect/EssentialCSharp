@@ -5,7 +5,7 @@
 
     public class Program
     {
-        public static void Main()
+        public static void ChapterMain()
         {
             System.Diagnostics.ThreadPriorityLevel priority;
             if(Enum.TryParse("Idle", out priority))

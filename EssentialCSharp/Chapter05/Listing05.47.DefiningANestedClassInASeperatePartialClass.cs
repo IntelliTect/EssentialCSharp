@@ -5,7 +5,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_47
     // File: Program.cs
     partial class Program
     {
-        static void Main(string[] args)
+        static void ChapterMain(string[] args)
         {
             CommandLine commandLine = new CommandLine(args);
 

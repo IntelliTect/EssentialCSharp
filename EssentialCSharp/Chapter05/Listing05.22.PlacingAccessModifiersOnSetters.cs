@@ -2,7 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_21
 {
     class Program
     {
-        static void Main()
+        static void ChapterMain()
         {
             Employee employee1 = new Employee();
             employee1.Initialize(42);

@@ -5,7 +5,7 @@
 
     public class Program
     {
-        public static void Main()
+        public static void ChapterMain()
         {
 #if !PRECSHARP6
             Dictionary<string, ConsoleColor> colorMap =

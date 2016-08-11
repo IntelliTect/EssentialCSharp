@@ -7,7 +7,7 @@
 
     public class Program
     {
-        public static void Main()
+        public static void ChapterMain()
         {
             string rootDirectory = Directory.GetCurrentDirectory();
             string searchPattern = "*";

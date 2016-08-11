@@ -4,7 +4,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_11
 
     public class Program
     {
-        public static void Main()
+        public static void ChapterMain()
         {
             // ...
             string fullName;

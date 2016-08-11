@@ -6,7 +6,7 @@
     {
         private static TemperatureChangedHandler OnTemperatureChanged;
 
-        public void Main()
+        public void ChapterMain()
         {
 
 #if(!PreCSharp6)

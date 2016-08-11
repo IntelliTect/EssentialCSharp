@@ -44,7 +44,7 @@
 
     class Program
     {
-        static void Main()
+        static void ChapterMain()
         {
             // Error: Only theoretically possible without 
             // the out type parameter modifier

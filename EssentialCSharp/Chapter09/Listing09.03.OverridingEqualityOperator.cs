@@ -6,7 +6,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_03
 
     public class Program
     {
-        public static void Main()
+        public static void ChapterMain()
         {
             ProductSerialNumber serialNumber1 =
                 new ProductSerialNumber("PV", 1000, 09187234);

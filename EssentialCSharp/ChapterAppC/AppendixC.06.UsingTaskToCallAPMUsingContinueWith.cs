@@ -10,7 +10,7 @@
     {
         static private object ConsoleSyncObject = new object();
 
-        public static void Main(string[] args)
+        public static void ChapterMain(string[] args)
         {
             Console.Clear();
             string[] urls = args;

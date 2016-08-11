@@ -11,7 +11,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_08.Tests
             const string expected = @"Hello Inigo Montoya";
 
             IntelliTect.ConsoleView.Tester.Test(
-                expected, Program.Main);
+                expected, Program.ChapterMain);
         }
     }
 }

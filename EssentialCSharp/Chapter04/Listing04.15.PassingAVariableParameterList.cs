@@ -5,7 +5,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_14
 
     public class Program
     {
-        public static void Main()
+        public static void ChapterMain()
         {
             string fullName;
 
@@ -21,7 +21,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_14
 
             // Call Combine() with only three parameters
             fullName = Combine(
-                Environment.SystemDirectory,
+                Directory.GetParent(Directory.GetCurrentDirectory()).FullName,
                 "Temp", "index.html");
             Console.WriteLine(fullName);
 

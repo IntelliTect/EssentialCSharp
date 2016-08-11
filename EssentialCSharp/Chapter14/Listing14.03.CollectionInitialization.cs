@@ -5,7 +5,7 @@
 
     public class Program
     {
-        public static void Main()
+        public static void ChapterMain()
         {
             List<string> sevenWorldBlunders;
             sevenWorldBlunders = new List<string>()

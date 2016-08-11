@@ -6,7 +6,7 @@
 
     public sealed class Program
     {
-        public static void Main(string[] args)
+        public static void ChapterMain(string[] args)
         {
             try
             {
@@ -18,7 +18,7 @@
                 // ...
             }
             catch(Win32Exception exception) 
-                when(args.Length == exception.ErrorCode)
+                when(args.Length == exception.NativeErrorCode)
             {
 
             }
@@ -33,11 +33,6 @@
             catch(InvalidOperationException exception)
             {
                 // Handle ApplicationException
-            }
-            catch (SystemException excpetion)
-            {
-                // Handle SystemException
-                Console.WriteLine(excpetion);
             }
             catch(Exception exception)
             {

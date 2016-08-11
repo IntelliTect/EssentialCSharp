@@ -2,7 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_29
 {
     public class Program
     {
-        public static void Main()
+        public static void ChapterMain()
         {
             double number;
             string input;

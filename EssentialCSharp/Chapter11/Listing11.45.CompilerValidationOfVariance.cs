@@ -33,7 +33,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter11.Listing11_46
 
     // public class Program
     // {
-    //     public static void Main()
+    //     public static void ChapterMain()
     //     {
     //         var f = new FruitPairInitializer();
 

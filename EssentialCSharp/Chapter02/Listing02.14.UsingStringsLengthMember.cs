@@ -2,7 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_13
 {
     public class PalindromeLength
     {
-        public static void Main()
+        public static void ChapterMain()
         {
             string palindrome;
 

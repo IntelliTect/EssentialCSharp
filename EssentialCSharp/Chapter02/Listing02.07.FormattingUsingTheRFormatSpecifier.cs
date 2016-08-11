@@ -2,7 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_07
 {
     public class Program
     {
-        public static void Main()
+        public static void ChapterMain()
         {
             const double number = 1.618033988749895;
             double result;

@@ -2,7 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_39
 {
     public class BinaryConverter
     {
-        public static void Main()
+        public static void ChapterMain()
         {
             const int size = 64;
             ulong value;

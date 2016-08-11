@@ -2,7 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_40
 {
     public class Program
     {
-        public static void Main()
+        public static void ChapterMain()
         {
             // ERROR: Each dimension must be consistently sized.
             /*

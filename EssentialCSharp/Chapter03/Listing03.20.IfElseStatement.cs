@@ -2,7 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_20
 {
     public class TicTacToe // Declares the TicTacToe class.
     {
-        public static void Main() // Declares the entry point of the program.
+        public static void ChapterMain() // Declares the entry point of the program.
         {
             string input;
 

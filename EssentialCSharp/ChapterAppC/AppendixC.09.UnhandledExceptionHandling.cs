@@ -12,7 +12,7 @@
         public static AutoResetEvent resetEvent =
             new AutoResetEvent(false);
 
-        public static void Main()
+        public static void ChapterMain()
         {
             int digitCount;
 

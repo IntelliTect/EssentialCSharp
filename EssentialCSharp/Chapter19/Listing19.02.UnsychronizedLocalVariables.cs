@@ -5,7 +5,7 @@
 
     class Program
     {
-        public static void Main()
+        public static void ChapterMain()
         {
             int x = 0;
             Parallel.For(0, int.MaxValue, i =>

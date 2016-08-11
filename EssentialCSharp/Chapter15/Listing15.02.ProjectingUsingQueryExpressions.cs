@@ -7,7 +7,7 @@
 
     public class Program
     {
-        public static void Main()
+        public static void ChapterMain()
         {
             List1(Directory.GetCurrentDirectory(), "*");
         }

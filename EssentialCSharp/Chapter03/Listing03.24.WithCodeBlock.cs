@@ -4,7 +4,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_24
 {
     public class CircleAreaCalculator
     {
-        public static void Main()
+        public static void ChapterMain()
         {
             double radius;  // Declare a variable to store the radius.
             double area;    // Declare a variable to store the area.

@@ -6,7 +6,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_15
     {
         // Use the first argument as the directory
         // to search, or default to the current directory.
-        public static void Main(string[] args)
+        public static void ChapterMain(string[] args)
         {
             int totalLineCount = 0;
             string directory;
@@ -58,7 +58,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_15
                 line = reader.ReadLine();
             }
 
-            reader.Close();  // Automatically closes the stream
+            reader.Dispose();  // Automatically closes the stream
             return lineCount;
         }
     }

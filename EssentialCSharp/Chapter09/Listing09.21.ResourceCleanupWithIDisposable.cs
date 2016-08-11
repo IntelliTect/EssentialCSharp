@@ -66,7 +66,7 @@
             // processing already
             if (disposing)
             {
-                Stream?.Close();
+                Stream?.Dispose();
             }
             File?.Delete();
         }

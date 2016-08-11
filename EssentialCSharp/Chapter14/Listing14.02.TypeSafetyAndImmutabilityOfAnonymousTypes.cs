@@ -2,7 +2,7 @@
 {
     class Program
     {
-        static void Main()
+        static void ChapterMain()
         {
             var patent1 =
                 new

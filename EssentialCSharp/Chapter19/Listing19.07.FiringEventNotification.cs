@@ -6,7 +6,7 @@
     {
         private static TemperatureChangedHandler OnTemperatureChanged;
 
-        public void Main()
+        public void ChapterMain()
         {
             // Not thread-safe
             if(OnTemperatureChanged != null)

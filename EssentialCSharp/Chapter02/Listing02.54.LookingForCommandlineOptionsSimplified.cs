@@ -2,7 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_53
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static void ChapterMain(string[] args)
         {
             // ...
             string arg = args[0];

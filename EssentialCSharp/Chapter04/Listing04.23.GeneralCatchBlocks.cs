@@ -2,7 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_22
 {
     public class ExceptionHandling
     {
-        public static int Main()
+        public static int ChapterMain()
         {
             string firstName;
             string ageText;

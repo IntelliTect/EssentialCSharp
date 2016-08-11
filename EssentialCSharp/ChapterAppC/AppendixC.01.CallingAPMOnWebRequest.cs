@@ -7,7 +7,7 @@
 
     public class Program
     {
-        public static void Main(string[] args)
+        public static void ChapterMain(string[] args)
         {
             string url = "http://www.intelliTect.com";
             if(args.Length > 0)
@@ -19,7 +19,7 @@
             WebRequest webRequest = WebRequest.Create(url);
 
             WebResponse response =
-                webRequest.GetResponse();
+                webRequest.GetResponseAsync().Result;
 
             Console.Write(".....");
 

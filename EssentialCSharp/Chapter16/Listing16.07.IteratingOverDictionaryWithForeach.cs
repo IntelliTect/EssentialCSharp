@@ -5,7 +5,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_07
 
     public class Program
     {
-        public static void Main()
+        public static void ChapterMain()
         {
 #if !PRECSHARP5
             Dictionary<string, ConsoleColor> colorMap =

@@ -2,7 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_46
 {
     public class Program
     {
-        public static void Main()
+        public static void ChapterMain()
         {
             int[][] cells = {
                 new int[] {1, 0, 2},

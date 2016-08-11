@@ -4,7 +4,7 @@
 
     public class Program
     {
-        public static void Main()
+        public static void ChapterMain()
         {
             Contact[] contacts = new Contact[6];
             contacts[0] = new Contact(

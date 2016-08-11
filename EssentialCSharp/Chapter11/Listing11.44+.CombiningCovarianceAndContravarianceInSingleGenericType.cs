@@ -28,7 +28,7 @@
 
     class Program
     {
-        static void Main()
+        static void ChapterMain()
         {
             var programmer = new Programmer();
             ComputerProgram cp = programmer.Transform(new Salad());

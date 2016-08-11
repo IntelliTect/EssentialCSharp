@@ -2,7 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_11
 {
     public class DuelOfWits
     {
-        public static void Main()
+        public static void ChapterMain()
         {
             System.Console.Write(
                 "\"Truly, you have a dizzying intellect.\"");

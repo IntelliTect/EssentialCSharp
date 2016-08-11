@@ -5,7 +5,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_07a
 
     public class Program
     {
-        public static void Main()
+        public static void ChapterMain()
         {
 #if !PRECSHARP5
             var colorMap = new SortedDictionary<string, ConsoleColor>

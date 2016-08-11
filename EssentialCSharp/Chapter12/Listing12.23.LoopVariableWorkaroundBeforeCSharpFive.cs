@@ -5,7 +5,7 @@
 
     class DoNotCaptureLoop
     {
-        static void Main()
+        static void ChapterMain()
         {
             var items = new string[] { "Moe", "Larry", "Curly" };
             var actions = new List<Action>();

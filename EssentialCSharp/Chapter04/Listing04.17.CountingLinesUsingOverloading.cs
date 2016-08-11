@@ -4,7 +4,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_16
 
     public static class LineCounter
     {
-        public static void Main(string[] args)
+        public static void ChapterMain(string[] args)
         {
             int totalLineCount;
 
@@ -72,7 +72,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_16
                 line = reader.ReadLine();
             }
 
-            reader.Close();  // Automatically closes the stream
+            reader.Dispose();  // Automatically closes the stream
             return lineCount;
         }
     }

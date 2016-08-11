@@ -5,7 +5,7 @@
 
     public sealed class Program
     {
-        public static void Main(string[] args)
+        public static void ChapterMain(string[] args)
         {
             Func<bool> ThrowInvalidOperationException = () => { throw new InvalidOperationException(); };
 
@@ -20,7 +20,7 @@
                     throw new System.ComponentModel.Win32Exception(42, "Custom error");
                 }
                 catch (System.ComponentModel.Win32Exception exception)
-                    when (exception.ErrorCode == args.Length)
+                    when (exception.NativeErrorCode == args.Length)
                 {
                     Console.WriteLine("Inside Win32Exception catch block");
                 }

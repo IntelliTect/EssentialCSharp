@@ -2,7 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_01
 {
     public class Program
     {
-        public static void Main()
+        public static void ChapterMain()
         {
             //begin listing 2.1
             System.Console.WriteLine(42);

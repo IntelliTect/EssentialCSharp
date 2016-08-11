@@ -27,7 +27,7 @@
 
         public void Close()
         {
-            Stream?.Close();
+            Stream?.Dispose();
             File?.Delete();
         }
     }

@@ -7,7 +7,7 @@
 
     public class Program
     {
-        public static void Main()
+        public static void ChapterMain()
         {
             IEnumerable<object> stuff =
                 new object[] { new object(), 1, 3, 5, 7, 9,

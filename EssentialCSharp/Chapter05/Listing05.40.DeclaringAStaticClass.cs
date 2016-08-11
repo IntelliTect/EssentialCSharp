@@ -54,7 +54,7 @@
 
     public class Program
     {
-        public static void Main(string[] args)
+        public static void ChapterMain(string[] args)
         {
             int[] numbers = new int[args.Length];
             for (int count = 0; count < args.Length; count++)

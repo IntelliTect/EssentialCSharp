@@ -2,7 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_16
 {
     public class Program
     {
-        public static void Main()
+        public static void ChapterMain()
         {
             string firstName;
             string lastName;
