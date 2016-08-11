@@ -6,7 +6,7 @@
 
     public class Program
     {
-        public static void Main()
+        public static void ChapterMain()
         {
             bool parentTaskFaulted = false;
             Task task = new Task(() =>

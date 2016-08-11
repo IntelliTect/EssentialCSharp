@@ -5,7 +5,7 @@
 
     public class Program
     {
-        public static void Main()
+        public static void ChapterMain()
         {
             Task<string> task = Task.Factory.StartNew<string>(
                 () => PiCalculator.Calculate(100));

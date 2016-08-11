@@ -32,7 +32,7 @@
             Console.WriteLine($"<<<<<Finished encrypting '{ fileName}'.");
         }
 
-        public static void Main()
+        public static void ChapterMain()
         {
             int numberOfFiles = Directory.GetFiles(Directory.GetCurrentDirectory()).Length;
             DateTime timeBefore = DateTime.Now;

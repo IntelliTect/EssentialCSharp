@@ -7,7 +7,7 @@
         const int TotalDigits = 100;
         const int BatchSize = 10;
 
-        public static void Main()
+        public static void ChapterMain()
         {
           string pi = null;
           int iterations = TotalDigits / BatchSize;

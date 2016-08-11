@@ -15,7 +15,7 @@
 
   "frameworks": {
     "netcoreapp1.0": {
-      "imports": [ "dotnet5.4" ]
+      "imports": [ "dotnet5.0" ]
     }
   }
 }

@@ -5,7 +5,7 @@
 
     public class Program
     {
-        public static void Main()
+        public static void ChapterMain()
         {
             try
             {
@@ -51,7 +51,7 @@
 
         public static void ThrowException()
         {
-            throw new ApplicationException(
+            throw new Exception(
                 "Arbitrary exception");
         }
     }

@@ -61,7 +61,7 @@
             Console.WriteLine(string.Format("<<<<<Finished 'encrypting' '{0}'.", fileName));
         }
 
-        public static void Main()
+        public static void ChapterMain()
         {
             EncryptFiles(Directory.GetCurrentDirectory(), "*");
             Console.WriteLine();

@@ -79,7 +79,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_16
                         commandLine, optionParts[1], null);
                     success = true;
                 }
-                else if(property.PropertyType.IsEnum)
+                else if(property.PropertyType.GetTypeInfo().IsEnum)
                 {
                     success = TryParseEnumSwitch(
                         commandLine, optionParts,

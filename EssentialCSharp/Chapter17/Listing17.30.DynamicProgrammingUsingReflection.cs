@@ -4,7 +4,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_29
 
     public class Program
     {
-        public static void Main()
+        public static void ChapterMain()
         {
             // ...
             dynamic data =

@@ -43,7 +43,7 @@ rogrPm
                 $"Attempted to perform an unauthorized operation: { fileName }");
         }
 
-        public static void Main()
+        public static void ChapterMain()
         {
             EncryptFiles(Directory.GetCurrentDirectory(), "*");
             Console.WriteLine();

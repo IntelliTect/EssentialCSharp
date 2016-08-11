@@ -5,7 +5,7 @@
 
     public class Program
     {
-        public static void Main()
+        public static void ChapterMain()
         {
             const int repetitions = 10000;
             // Use Task.Factory.StartNew<string>() for

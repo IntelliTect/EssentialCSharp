@@ -5,7 +5,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_21
 
     class Program
     {
-        public static void Main()
+        public static void ChapterMain()
         {
             // ...
             string fileName = @"enumtest.txt";

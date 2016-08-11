@@ -42,7 +42,7 @@
             }
         }
 
-        public static void Main(string[] args)
+        public static void ChapterMain(string[] args)
         {
             string url = "http://www.IntelliTect.com";
             if(args.Length > 0)

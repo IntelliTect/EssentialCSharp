@@ -10,7 +10,7 @@
             new AutoResetEvent(false);
         private static int _AlarmThreadId;
 
-        public static void Main()
+        public static void ChapterMain()
         {
             // Timer(callback, state, dueTime, period)
             using(Timer timer = new Timer(Alarm, null, 0, 1000))

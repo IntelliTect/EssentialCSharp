@@ -11,12 +11,12 @@
       "type": "platform"
     },
     "SharedCode": "1.0.0",
-    "System.Diagnostics.Process": "4.1.0",
+    "System.Diagnostics.Process": "4.1.0"
   },
 
   "frameworks": {
     "netcoreapp1.0": {
-      "imports": [ "dotnet5.4" ]
+      "imports": [ "dotnet5.0" ]
     }
   }
 }

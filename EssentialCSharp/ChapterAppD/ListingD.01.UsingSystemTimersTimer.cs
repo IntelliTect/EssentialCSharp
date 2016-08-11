@@ -15,7 +15,7 @@
            new ManualResetEvent(false);
         private static int _AlarmThreadId;
 
-        public static void Main()
+        public static void ChapterMain()
         {
             using (Timer timer = new Timer())
             {

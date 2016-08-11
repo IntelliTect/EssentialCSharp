@@ -6,7 +6,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_03
 
     public partial class Program
     {
-        public static void Main(string[] args)
+        public static void ChapterMain(string[] args)
         {
             string errorMessage;
             CommandLineInfo commandLine = new CommandLineInfo();
@@ -65,7 +65,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_03
             string errorMessage;
             if(!TryParse(args, commandLine, out errorMessage))
             {
-                throw new ApplicationException(errorMessage);
+                throw new Exception(errorMessage);
             }
         }
 
@@ -105,7 +105,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_03
                                 commandLine, optionParts[1], null);
                             success = true;
                         }
-                        else if(property.PropertyType.IsEnum)
+                        else if(property.PropertyType.GetTypeInfo().IsEnum)
                         {
                             try
                             {

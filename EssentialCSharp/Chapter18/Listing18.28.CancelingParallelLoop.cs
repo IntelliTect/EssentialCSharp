@@ -9,7 +9,7 @@
 
     public class Program
     {
-        public static void Main()
+        public static void ChapterMain()
         {
             EncryptFiles($@"{Directory.GetCurrentDirectory()}\..\..\", "*.*");
         }

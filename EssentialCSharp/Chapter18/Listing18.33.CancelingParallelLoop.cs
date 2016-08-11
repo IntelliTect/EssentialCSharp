@@ -27,7 +27,7 @@
                     }).ToList();
         }
 
-        public static void Main()
+        public static void ChapterMain()
         {
             ConsoleColor originalColor = Console.ForegroundColor;
             List<string> data = Utility.GetData(100000).ToList();

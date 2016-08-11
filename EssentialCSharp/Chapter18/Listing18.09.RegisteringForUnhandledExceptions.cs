@@ -7,7 +7,7 @@
     public class Program
     {
         public static Stopwatch clock = new Stopwatch();
-        public static void Main()
+        public static void ChapterMain()
         {
             try
             {

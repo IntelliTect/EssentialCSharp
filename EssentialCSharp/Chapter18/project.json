@@ -1,0 +1,17 @@
+{
+  "version": "1.0.0-*",
+
+  "buildOptions": {
+    "emitEntryPoint": true
+  },
+
+  "dependencies": {
+    "SharedCode": "1.0.0"
+  },
+
+  "frameworks": {
+    "net46": {
+      "imports": [ "dotnet5.0" ]
+    }
+  }
+}

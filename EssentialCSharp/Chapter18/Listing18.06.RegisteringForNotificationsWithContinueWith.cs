@@ -7,7 +7,7 @@
 
     public class Program
     {
-        public static void Main()
+        public static void ChapterMain()
         {
             // Use Task.Factory.StartNew<string>() for
             // TPL prior to .NET 4.5

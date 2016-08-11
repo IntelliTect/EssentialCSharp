@@ -2,16 +2,17 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_06
 {
     using System;
     using System.Collections.Generic;
+    using System.Reflection;
 
     public class Program
     {
-        public static void Main()
+        public static void ChapterMain()
         {
             Stack<int> s = new Stack<int>();
 
             Type t = s.GetType();
 
-            foreach(Type type in t.GetGenericArguments())
+            foreach(Type type in t.GetTypeInfo().GetGenericArguments())
             {
                 System.Console.WriteLine(
                     "Type parameter: " + type.FullName);

@@ -7,7 +7,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_22
 
     public class Program
     {
-        public static void Main()
+        public static void ChapterMain()
         {
             Console.WriteLine("Begin...");
             MethodA();

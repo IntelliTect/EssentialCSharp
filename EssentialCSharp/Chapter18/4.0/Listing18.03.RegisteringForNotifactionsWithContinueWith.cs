@@ -9,7 +9,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared.Listing18_03
 
     public class Program
     {
-        public static void Main()
+        public static void ChapterMain()
         {
             Task<string> task = Task.Factory.StartNew<string>(
                 () => PiCalculator.Calculate(10));

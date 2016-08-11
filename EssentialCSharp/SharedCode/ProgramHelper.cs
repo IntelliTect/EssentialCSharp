@@ -146,6 +146,8 @@ namespace SharedCode
 
         private static string ParseListingName(string listing, out string chapterName)
         {
+            var appendices = new List<string> { "A", "B", "C", "D" };
+
             chapterName = "";
 
             string[] chapterListing = listing.Split('.');
@@ -157,6 +159,7 @@ namespace SharedCode
             {
                 startPosition = 1;
                 listing += chapterListing[0].ToUpper() + ".";
+                chapterName = "Chapter" + (appendices.Contains(chapterListing[0].ToUpper()) ? "App" : "") + chapterListing[0];
             }
             else
             {
@@ -165,13 +168,12 @@ namespace SharedCode
 
             for (int index = startPosition; index < chapterListing.Length; index++)
             {
-                if (index == startPosition) chapterName = "Chapter" + chapterListing[index].PadLeft(2, '0');
+                if (index == startPosition && string.IsNullOrEmpty(chapterName)) chapterName = "Chapter" + chapterListing[index].PadLeft(2, '0');
                 listing += chapterListing[index].PadLeft(2, '0') + ".";
             }
 
             listing = listing.Substring(0, listing.Length - 1);
             return listing.Replace('.', '_');
         }
-
     }
 }
