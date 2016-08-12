@@ -12,8 +12,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_11.Tests
                 @"John Francis Fitzgerald
 Mary Josephine Hannon";
 
-            IntelliTect.ConsoleView.Tester.Test(expected,
-                Program.Main);
+            Intellitect.ConsoleView.Tester.Test(expected,
+                Program.ChapterMain);
         }
     }
 }

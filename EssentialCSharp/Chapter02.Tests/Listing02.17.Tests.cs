@@ -12,8 +12,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_17.Tests
 @"Enter text: <<Lorem
 >>LOREM";
 
-            IntelliTect.ConsoleView.Tester.Test(
-                expected, Uppercase.Main);
+            Intellitect.ConsoleView.Tester.Test(
+                expected, Uppercase.ChapterMain);
         }
     }
 }

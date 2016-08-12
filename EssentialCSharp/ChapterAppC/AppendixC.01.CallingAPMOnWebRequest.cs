@@ -9,7 +9,7 @@
     {
         public static void ChapterMain(string[] args)
         {
-            string url = "http://www.intelliTect.com";
+            string url = "http://www.Intellitect.com";
             if(args.Length > 0)
             {
                 url = args[0];

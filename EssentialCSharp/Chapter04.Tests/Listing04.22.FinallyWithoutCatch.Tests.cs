@@ -18,10 +18,10 @@ xyz
 
             try
             {
-                IntelliTect.ConsoleView.Tester.Test(view,
+                Intellitect.ConsoleView.Tester.Test(view,
                 () =>
                 {
-                    ExceptionHandling.Main();
+                    ExceptionHandling.ChapterMain();
                 });
             }
             catch (FormatException)

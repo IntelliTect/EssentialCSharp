@@ -1,14 +1,15 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_40.Tests
 {
     [TestClass]
     public class ProgramTests
     {
-        [TestMethod][ExpectedException(typeof(System.ArgumentException))]
+        [TestMethod]
         public void MainTest_ArgsHasZeroElements_ThrowException()
         {
-            Program.Main(new string[] { });
+            Intellitect.ConsoleView.Tester.TestException(() => Program.ChapterMain(new string[] { }), typeof(ArgumentException));
         }
 
         [TestMethod]
@@ -16,9 +17,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_40.Tests
         {
             const string expected = @"Longest argument length = 10
 Shortest argument length = 2";
-            IntelliTect.ConsoleView.Tester.Test(expected, () =>
+            Intellitect.ConsoleView.Tester.Test(expected, () =>
                 {
-                    Program.Main(
+                    Program.ChapterMain(
                         new string[] {
                             "C#", "C++", "Java", "JavaScript", "COBOL" });
                 });

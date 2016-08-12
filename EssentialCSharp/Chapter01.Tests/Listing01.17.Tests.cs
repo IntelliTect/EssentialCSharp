@@ -14,7 +14,7 @@ Enter your first name: <<Inigo
 >>Enter your last name: <<Montoya
 >>Your full name is Montoya, Inigo.";
 
-            IntelliTect.ConsoleView.Tester.Test(
+            Intellitect.ConsoleView.Tester.Test(
                 expected, Program.ChapterMain);
         }
     }

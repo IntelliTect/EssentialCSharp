@@ -10,10 +10,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_11.Tests
         {
             string view = "C:\\Data\\index.html";
 
-            IntelliTect.ConsoleView.Tester.Test(view,
+            Intellitect.ConsoleView.Tester.Test(view,
             () =>
             {
-                Program.Main();
+                Program.ChapterMain();
             });
         }
     }

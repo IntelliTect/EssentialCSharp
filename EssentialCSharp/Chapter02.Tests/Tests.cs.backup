@@ -19,7 +19,7 @@ namespace Chapter02.Tests
             {
                 Console.SetOut(writer);
 
-                AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_01.Program.Main();
+                AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_01.Program.ChapterMain();
                 Assert.AreEqual(output, writer.ToString());
             }
         }
@@ -33,7 +33,7 @@ namespace Chapter02.Tests
             {
                 Console.SetOut(writer);
 
-                AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_02.Program.Main();
+                AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_02.Program.ChapterMain();
                 Assert.AreEqual(output, writer.ToString());
             }
         }
@@ -47,7 +47,7 @@ namespace Chapter02.Tests
             {
                 Console.SetOut(writer);
 
-                AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_03.Program.Main();
+                AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_03.Program.ChapterMain();
                 Assert.AreEqual(output, writer.ToString());
             }
         }
@@ -61,7 +61,7 @@ namespace Chapter02.Tests
             {
                 Console.SetOut(writer);
 
-                AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_04.Program.Main();
+                AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_04.Program.ChapterMain();
                 Assert.AreEqual(output, writer.ToString());
             }
         }
@@ -75,7 +75,7 @@ namespace Chapter02.Tests
             {
                 Console.SetOut(writer);
 
-                AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_05.Program.Main();
+                AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_05.Program.ChapterMain();
                 Assert.AreEqual(output, writer.ToString());
             }
         }
@@ -89,7 +89,7 @@ namespace Chapter02.Tests
             {
                 Console.SetOut(writer);
 
-                AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_06.Program.Main();
+                AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_06.Program.ChapterMain();
                 Assert.AreEqual(output, writer.ToString());
             }
         }
@@ -103,7 +103,7 @@ namespace Chapter02.Tests
             {
                 Console.SetOut(writer);
 
-                AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_07.Program.Main();
+                AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_07.Program.ChapterMain();
                 Assert.AreEqual(output, writer.ToString());
             }
         }
@@ -117,7 +117,7 @@ namespace Chapter02.Tests
             {
                 Console.SetOut(writer);
 
-                AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_08.SingleQuote.Main();
+                AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_08.SingleQuote.ChapterMain();
                 Assert.AreEqual(output, writer.ToString());
             }
         }
@@ -131,7 +131,7 @@ namespace Chapter02.Tests
             {
                 Console.SetOut(writer);
 
-                AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_11.DuelOfWits.Main();
+                AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_11.DuelOfWits.ChapterMain();
                 Assert.AreEqual(output, writer.ToString());
             }
         }
@@ -151,7 +151,7 @@ namespace Chapter02.Tests
             {
                 Console.SetOut(writer);
 
-                AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_12.Triangle.Main();
+                AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_12.Triangle.ChapterMain();
                 Assert.AreEqual(output, writer.ToString());
             }
         }
@@ -168,7 +168,7 @@ namespace Chapter02.Tests
                 Console.SetOut(writer);
                 Console.SetIn(reader);
 
-                AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_13.PalindromeLength.Main();
+                AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_13.PalindromeLength.ChapterMain();
 
                 Assert.AreEqual(output, writer.ToString());
             }
@@ -187,7 +187,7 @@ namespace Chapter02.Tests
                 Console.SetOut(writer);
                 Console.SetIn(reader);
 
-                AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_14.Uppercase.Main();
+                AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_14.Uppercase.ChapterMain();
 
                 Assert.AreEqual(output, writer.ToString());
             }
@@ -205,7 +205,7 @@ namespace Chapter02.Tests
                 Console.SetOut(writer);
                 Console.SetIn(reader);
 
-                AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_17.Uppercase.Main();
+                AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_17.Uppercase.ChapterMain();
 
                 Assert.AreEqual(output, writer.ToString());
             }
@@ -220,7 +220,7 @@ namespace Chapter02.Tests
             {
                 Console.SetOut(writer);
 
-                AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_18.Program.Main();
+                AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_18.Program.ChapterMain();
                 Assert.AreEqual(output, writer.ToString());
             }
         }
@@ -234,7 +234,7 @@ namespace Chapter02.Tests
             {
                 Console.SetOut(writer);
 
-                AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_21.Program.Main();
+                AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_21.Program.ChapterMain();
                 Assert.AreEqual(output, writer.ToString());
             }
         }

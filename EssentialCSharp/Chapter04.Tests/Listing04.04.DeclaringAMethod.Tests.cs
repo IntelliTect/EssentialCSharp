@@ -14,10 +14,10 @@ Enter your first name: <<Inigo
 >>Enter your last name: <<Montoya
 >>Hello Inigo Montoya! Your initials are I. M.";
 
-            IntelliTect.ConsoleView.Tester.Test(view,
+            Intellitect.ConsoleView.Tester.Test(view,
             () =>
             {
-                Program.Main();
+                Program.ChapterMain();
             });
         }
     }

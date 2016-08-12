@@ -10,17 +10,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_08.Tests
         public void ProjectionWithLinqsSelect()
         {
             string expected =
-$@".\IntelliTect.Console.dll(*)
-.\Chapter15.Tests.dll(*)
-.\IntelliTect.Console.pdb(*)
-.\Chapter15.Tests.pdb(*)
-.\Chapter15.exe(*)
-.\Chapter15.pdb(*)";
+$@"(\.\\[0-9A-Za-z\.]+\(\d+\)(\r\n)?)+";
 
-            IntelliTect.ConsoleView.Tester.AreLike(expected,
+            Intellitect.ConsoleView.Tester.AreLike(expected,
             () =>
             {
-                Program.Main();
+                Program.ChapterMain();
             });
         }
     }

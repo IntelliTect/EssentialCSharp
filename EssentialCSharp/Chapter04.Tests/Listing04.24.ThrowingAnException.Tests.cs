@@ -16,10 +16,10 @@ Throw exception
 Unexpected error: Arbitrary exception
 Shutting down...";
 
-            IntelliTect.ConsoleView.Tester.Test(view,
+            Intellitect.ConsoleView.Tester.Test(view,
             () =>
             {
-                ThrowingExceptions.Main();
+                ThrowingExceptions.ChapterMain();
             });
         }
     }

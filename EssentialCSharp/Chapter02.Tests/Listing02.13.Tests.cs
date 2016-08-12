@@ -12,8 +12,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_13.Tests
 @"Enter a palindrome: <<racecar
 >>The palindrome ""racecar"" is 7 characters.";
 
-            IntelliTect.ConsoleView.Tester.Test(
-                expected, PalindromeLength.Main);
+            Intellitect.ConsoleView.Tester.Test(
+                expected, PalindromeLength.ChapterMain);
         }
     }
 }

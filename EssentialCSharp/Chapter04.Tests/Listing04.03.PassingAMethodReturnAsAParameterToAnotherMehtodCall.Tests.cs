@@ -12,8 +12,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_03.Tests
             @"Enter your first name: <<Inigo
 >>Hello Inigo!";
 
-            IntelliTect.ConsoleView.Tester.Test(
-                expected, Program.Main);
+            Intellitect.ConsoleView.Tester.Test(
+                expected, Program.ChapterMain);
         }
     }
 }

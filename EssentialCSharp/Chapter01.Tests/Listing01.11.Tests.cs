@@ -13,7 +13,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_11.Tests
 Think it will work?
 It would take a miracle.";
 
-            IntelliTect.ConsoleView.Tester.Test(
+            Intellitect.ConsoleView.Tester.Test(
                 expected, MiracleMax.ChapterMain);
         }
     }

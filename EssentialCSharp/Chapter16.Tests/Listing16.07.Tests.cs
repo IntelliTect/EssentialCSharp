@@ -12,10 +12,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_07.Tests
                 System.Environment.NewLine,
                 "Error","Warning", "Information", "Verbose");
 
-            IntelliTect.ConsoleView.Tester.Test(expected,
+            Intellitect.ConsoleView.Tester.Test(expected,
             () =>
             {
-                Program.Main();
+                Program.ChapterMain();
             });
         }
     }

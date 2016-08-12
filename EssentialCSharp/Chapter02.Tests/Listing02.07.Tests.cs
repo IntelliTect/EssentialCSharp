@@ -12,8 +12,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_07.Tests
 @"False: result == number
 True: result == number";
 
-            IntelliTect.ConsoleView.Tester.Test(
-                expected, Program.Main);
+            Intellitect.ConsoleView.Tester.Test(
+                expected, Program.ChapterMain);
         }
     }
 }

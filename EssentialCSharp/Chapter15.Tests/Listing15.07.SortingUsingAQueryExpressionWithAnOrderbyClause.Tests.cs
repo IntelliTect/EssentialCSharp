@@ -10,18 +10,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_07.Tests
         public void ProjectionWithLinqsSelect()
         {
             string expected =
-$@"{
-  Directory.GetCurrentDirectory() }\Chapter15.pdb
-{ Directory.GetCurrentDirectory() }\Chapter15.exe
-{ Directory.GetCurrentDirectory() }\Chapter15.Tests.pdb
-{ Directory.GetCurrentDirectory() }\IntelliTect.Console.pdb
-{ Directory.GetCurrentDirectory() }\Chapter15.Tests.dll
-{ Directory.GetCurrentDirectory() }\IntelliTect.Console.dll";
+$@"({ Directory.GetCurrentDirectory().Replace("\\", "\\\\") }\\[0-9A-Za-z\.]+(\r\n)?)+";
 
-            IntelliTect.ConsoleView.Tester.Test(expected,
+            Intellitect.ConsoleView.Tester.AreLike(expected,
             () =>
             {
-                Program.Main();
+                Program.ChapterMain();
             });
         }
     }

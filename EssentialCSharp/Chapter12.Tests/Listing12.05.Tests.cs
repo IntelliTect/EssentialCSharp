@@ -24,10 +24,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_25.Tests
      +
           y (Parameter)";
 
-            IntelliTect.ConsoleView.Tester.Test(expected,
+            Intellitect.ConsoleView.Tester.Test(expected,
             () =>
             {
-                Program.Main();
+                Program.ChapterMain();
             });
         }
     }

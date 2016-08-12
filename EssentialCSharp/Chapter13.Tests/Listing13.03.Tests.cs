@@ -11,10 +11,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_03.Tests
         {
             string expected = @"Enter temperature: <<1";
 
-            IntelliTect.ConsoleView.Tester.Test(expected,
+            Intellitect.ConsoleView.Tester.Test(expected,
             () =>
             {
-                Program.Main();
+                Program.ChapterMain();
             });
         }
     }

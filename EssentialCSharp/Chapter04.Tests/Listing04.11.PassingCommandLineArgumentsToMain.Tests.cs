@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.IO;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_10.Tests
 {
@@ -13,19 +14,19 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_10.Tests
 @"ERROR:  You must specify the URL and the file name
 Usage: Downloader.exe <URL> <TargetFileName>";
 
-            IntelliTect.ConsoleView.Tester.Test(view,
+            Intellitect.ConsoleView.Tester.Test(view,
             () =>
             {
-                Program.Main(args);
+                Program.ChapterMain(args);
             });
         }
 
         [TestMethod]
         public void Main_GoodArgs_DownloadFile()
         {
-            string[] args = { "http://google.com", System.Environment.CurrentDirectory + "\\destination.txt" };
+            string[] args = { "http://google.com", Directory.GetCurrentDirectory() + "\\destination.txt" };
 
-            Assert.AreEqual(0, Program.Main(args));
+            Assert.AreEqual(0, Program.ChapterMain(args));
         }
     }
 }

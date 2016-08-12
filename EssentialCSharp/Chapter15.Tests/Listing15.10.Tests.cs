@@ -16,10 +16,10 @@ Keywords:
 Contextual Keywords:
  add alias ascending async await by descending dynamic equals from get global group into join let nameof on orderby partial remove select set value var where yield";
 
-            IntelliTect.ConsoleView.Tester.Test(expected,
+            Intellitect.ConsoleView.Tester.Test(expected,
             () =>
             {
-                Program.Main();
+                Program.ChapterMain();
             });
         }
     }

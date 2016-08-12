@@ -12,12 +12,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_07
             float floatNumber = 0.1F * 42F;
 
             Trace.Assert(decimalNumber != (decimal)doubleNumber1);
-            // 1. Displays: 4.2 != 4.20000006258488
+            // 1. Displays: 4.2 != 4.4.2000002861023
             System.Console.WriteLine(
                 $"{decimalNumber} != {(decimal)doubleNumber1}");
 
             Trace.Assert((double)decimalNumber != doubleNumber1);
-            // 2. Displays: 4.2 != 4.20000006258488
+            // 2. Displays: 4.2 != 4.20000028610229
             System.Console.WriteLine(
                 $"{(double)decimalNumber} != {doubleNumber1}");
 
@@ -26,13 +26,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_07
             System.Console.WriteLine(
                 $"(float){(float)decimalNumber}M != {floatNumber}F");
 
-            Trace.Assert(doubleNumber1 != (double)floatNumber);
-            // 4. Displays: 4.20000006258488 != 4.20000028610229
+            Trace.Assert(doubleNumber1 == (double)floatNumber);
+            // 4. Displays: 4.20000028610229 != 4.20000028610229
             System.Console.WriteLine(
                 $"{doubleNumber1} != {(double)floatNumber}");
 
             Trace.Assert(doubleNumber1 != doubleNumber2);
-            // 5. Displays: 4.20000006258488 != 4.2
+            // 5. Displays: 4.20000028610229 != 4.2
             System.Console.WriteLine(
                 $"{doubleNumber1} != {doubleNumber2}");
 

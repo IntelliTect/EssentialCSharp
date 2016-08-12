@@ -10,10 +10,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_06.Tests
         {
             string view = "Hello, my name is Inigo Montoya";
 
-            IntelliTect.ConsoleView.Tester.Test(view,
+            Intellitect.ConsoleView.Tester.Test(view,
             () =>
             {
-                HelloWorld.Main();
+                HelloWorld.ChapterMain();
             });
         }
     }

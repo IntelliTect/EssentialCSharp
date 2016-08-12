@@ -12,13 +12,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_14.Tests
         {
             string view =
 Directory.GetCurrentDirectory() + @"\bin\config\index.html
-" + Environment.SystemDirectory + @"\Temp\index.html
+" + Directory.GetParent(Directory.GetCurrentDirectory()).FullName + @"\Temp\index.html
 C:\Data\HomeDir\index.html";
 
-            IntelliTect.ConsoleView.Tester.Test(view,
+            Intellitect.ConsoleView.Tester.Test(view,
             () =>
             {
-                Program.Main();
+                Program.ChapterMain();
             });
         }
     }

@@ -16,8 +16,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_20.Tests
 >>The age entered, xyz, is not valid.
 Goodbye Inigo";
 
-            IntelliTect.ConsoleView.Tester.Test(
-                expected, ExceptionHandling.Main, 1);
+            Intellitect.ConsoleView.Tester.Test(
+                expected, ExceptionHandling.ChapterMain, 1);
         }
 
 
@@ -30,8 +30,8 @@ Goodbye Inigo";
 >>Hi Inigo! You are 600 months old.
 Goodbye Inigo";
 
-            IntelliTect.ConsoleView.Tester.Test(
-                expected, ExceptionHandling.Main);
+            Intellitect.ConsoleView.Tester.Test(
+                expected, ExceptionHandling.ChapterMain);
         }
     }
 }

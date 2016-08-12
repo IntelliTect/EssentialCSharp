@@ -9,7 +9,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_21
             System.Console.Write(
                 "What is the maximum number " +
                 "of turns in tic-tac-toe?" +
-                "(Enter 0 to exit.): ");
+                " (Enter 0 to exit.): ");
 
             // int.Parse() converts the ReadLine()
             // return to an int data type.

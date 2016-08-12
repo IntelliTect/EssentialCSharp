@@ -165,10 +165,10 @@
       "Microsoft.DiaSymReader/1.0.6": {
         "type": "package",
         "compile": {
-          "lib/net20/Microsoft.DiaSymReader.dll": {}
+          "lib/portable-net45+win8/Microsoft.DiaSymReader.dll": {}
         },
         "runtime": {
-          "lib/net20/Microsoft.DiaSymReader.dll": {}
+          "lib/portable-net45+win8/Microsoft.DiaSymReader.dll": {}
         }
       },
       "Microsoft.DiaSymReader.Native/1.3.3": {
@@ -409,9 +409,6 @@
         },
         "compile": {
           "ref/netstandard1.3/Microsoft.Win32.Primitives.dll": {}
-        },
-        "runtime": {
-          "lib/net46/Microsoft.Win32.Primitives.dll": {}
         }
       },
       "Microsoft.Win32.Registry/4.0.0": {
@@ -429,9 +426,6 @@
         "compile": {
           "ref/netstandard1.3/_._": {}
         },
-        "runtime": {
-          "lib/net46/Microsoft.Win32.Registry.dll": {}
-        },
         "runtimeTargets": {
           "runtimes/unix/lib/netstandard1.3/Microsoft.Win32.Registry.dll": {
             "assetType": "runtime",
@@ -446,36 +440,34 @@
       "MSTest.ObjectModel/1.0.0-preview": {
         "type": "package",
         "compile": {
-          "lib/net20/Microsoft.VisualStudio.TestPlatform.ObjectModel.dll": {}
+          "lib/dotnet/Microsoft.VisualStudio.TestPlatform.ObjectModel.dll": {}
         },
         "runtime": {
-          "lib/net20/Microsoft.VisualStudio.TestPlatform.ObjectModel.dll": {}
+          "lib/dotnet/Microsoft.VisualStudio.TestPlatform.ObjectModel.dll": {}
         }
       },
       "MSTest.TestAdapter.Dotnet/1.0.0-preview": {
         "type": "package",
         "compile": {
-          "lib/net451/Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll": {},
-          "lib/net451/Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll": {},
-          "lib/net451/Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll": {},
-          "lib/net451/msdia140typelib_clr0200.dll": {}
+          "lib/dotnet/Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll": {},
+          "lib/dotnet/Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll": {},
+          "lib/dotnet/Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll": {}
         },
         "runtime": {
-          "lib/net451/Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll": {},
-          "lib/net451/Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll": {},
-          "lib/net451/Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll": {},
-          "lib/net451/msdia140typelib_clr0200.dll": {}
+          "lib/dotnet/Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll": {},
+          "lib/dotnet/Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll": {},
+          "lib/dotnet/Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll": {}
         }
       },
       "MSTest.TestFramework/1.0.1-preview": {
         "type": "package",
         "compile": {
-          "lib/net451/Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll": {},
-          "lib/net451/Microsoft.VisualStudio.TestPlatform.TestFramework.dll": {}
+          "lib/dotnet/Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll": {},
+          "lib/dotnet/Microsoft.VisualStudio.TestPlatform.TestFramework.dll": {}
         },
         "runtime": {
-          "lib/net451/Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll": {},
-          "lib/net451/Microsoft.VisualStudio.TestPlatform.TestFramework.dll": {}
+          "lib/dotnet/Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll": {},
+          "lib/dotnet/Microsoft.VisualStudio.TestPlatform.TestFramework.dll": {}
         }
       },
       "NETStandard.Library/1.6.0": {
@@ -530,10 +522,10 @@
       "Newtonsoft.Json/7.0.1": {
         "type": "package",
         "compile": {
-          "lib/net45/Newtonsoft.Json.dll": {}
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.dll": {}
         },
         "runtime": {
-          "lib/net45/Newtonsoft.Json.dll": {}
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.dll": {}
         }
       },
       "NuGet.Common/3.5.0-beta-final": {
@@ -739,7 +731,7 @@
           "ref/netstandard1.3/System.Collections.dll": {}
         },
         "runtime": {
-          "lib/net45/_._": {}
+          "lib/portable-net45+win8+wp8+wpa81/_._": {}
         }
       },
       "System.Collections.Concurrent/4.0.12": {
@@ -816,6 +808,35 @@
           "lib/netstandard1.4/System.ComponentModel.Annotations.dll": {}
         }
       },
+      "System.ComponentModel.EventBasedAsync/4.0.10": {
+        "type": "package",
+        "dependencies": {
+          "System.Resources.ResourceManager": "4.0.0",
+          "System.Runtime": "4.0.20",
+          "System.Threading": "4.0.10",
+          "System.Threading.Tasks": "4.0.10"
+        },
+        "compile": {
+          "ref/dotnet/System.ComponentModel.EventBasedAsync.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/System.ComponentModel.EventBasedAsync.dll": {}
+        }
+      },
+      "System.ComponentModel.Primitives/4.1.0": {
+        "type": "package",
+        "dependencies": {
+          "System.ComponentModel": "4.0.1",
+          "System.Resources.ResourceManager": "4.0.1",
+          "System.Runtime": "4.1.0"
+        },
+        "compile": {
+          "ref/netstandard1.0/System.ComponentModel.Primitives.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/System.ComponentModel.Primitives.dll": {}
+        }
+      },
       "System.Console/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -827,9 +848,6 @@
         },
         "compile": {
           "ref/netstandard1.3/System.Console.dll": {}
-        },
-        "runtime": {
-          "lib/net46/System.Console.dll": {}
         }
       },
       "System.Diagnostics.Debug/4.0.11": {
@@ -843,7 +861,7 @@
           "ref/netstandard1.3/System.Diagnostics.Debug.dll": {}
         },
         "runtime": {
-          "lib/net45/_._": {}
+          "lib/portable-net45+win8+wp8+wpa81/_._": {}
         }
       },
       "System.Diagnostics.DiagnosticSource/4.0.0": {
@@ -877,9 +895,6 @@
         },
         "compile": {
           "ref/netstandard1.3/_._": {}
-        },
-        "runtime": {
-          "lib/net46/System.Diagnostics.FileVersionInfo.dll": {}
         },
         "runtimeTargets": {
           "runtimes/unix/lib/netstandard1.3/System.Diagnostics.FileVersionInfo.dll": {
@@ -919,9 +934,6 @@
         },
         "compile": {
           "ref/netstandard1.4/System.Diagnostics.Process.dll": {}
-        },
-        "runtime": {
-          "lib/net46/System.Diagnostics.Process.dll": {}
         },
         "runtimeTargets": {
           "runtimes/linux/lib/netstandard1.4/System.Diagnostics.Process.dll": {
@@ -966,7 +978,7 @@
           "ref/netstandard1.0/System.Diagnostics.Tools.dll": {}
         },
         "runtime": {
-          "lib/net45/_._": {}
+          "lib/portable-net45+win8+wp8+wpa81/_._": {}
         }
       },
       "System.Diagnostics.Tracing/4.1.0": {
@@ -980,7 +992,7 @@
           "ref/netstandard1.5/System.Diagnostics.Tracing.dll": {}
         },
         "runtime": {
-          "lib/net45/_._": {}
+          "lib/portable-net45+win8+wpa81/_._": {}
         }
       },
       "System.Dynamic.Runtime/4.0.11": {
@@ -1020,7 +1032,7 @@
           "ref/netstandard1.3/System.Globalization.dll": {}
         },
         "runtime": {
-          "lib/net45/_._": {}
+          "lib/portable-net45+win8+wp8+wpa81/_._": {}
         }
       },
       "System.Globalization.Calendars/4.0.1": {
@@ -1033,9 +1045,6 @@
         },
         "compile": {
           "ref/netstandard1.3/System.Globalization.Calendars.dll": {}
-        },
-        "runtime": {
-          "lib/net46/System.Globalization.Calendars.dll": {}
         }
       },
       "System.Globalization.Extensions/4.0.1": {
@@ -1050,9 +1059,6 @@
         },
         "compile": {
           "ref/netstandard1.3/System.Globalization.Extensions.dll": {}
-        },
-        "runtime": {
-          "lib/net46/System.Globalization.Extensions.dll": {}
         },
         "runtimeTargets": {
           "runtimes/unix/lib/netstandard1.3/System.Globalization.Extensions.dll": {
@@ -1078,7 +1084,7 @@
           "ref/netstandard1.5/System.IO.dll": {}
         },
         "runtime": {
-          "lib/net45/_._": {}
+          "lib/portable-net45+win8+wp8+wpa81/_._": {}
         }
       },
       "System.IO.Compression/4.1.0": {
@@ -1103,7 +1109,7 @@
           "ref/netstandard1.3/System.IO.Compression.dll": {}
         },
         "runtime": {
-          "lib/net46/System.IO.Compression.dll": {}
+          "lib/portable-net45+win8+wpa81/_._": {}
         },
         "runtimeTargets": {
           "runtimes/unix/lib/netstandard1.3/System.IO.Compression.dll": {
@@ -1150,9 +1156,6 @@
         },
         "compile": {
           "ref/netstandard1.3/System.IO.FileSystem.dll": {}
-        },
-        "runtime": {
-          "lib/net46/System.IO.FileSystem.dll": {}
         }
       },
       "System.IO.FileSystem.Primitives/4.0.1": {
@@ -1190,9 +1193,6 @@
         "compile": {
           "ref/netstandard1.3/System.IO.FileSystem.Watcher.dll": {}
         },
-        "runtime": {
-          "lib/net46/System.IO.FileSystem.Watcher.dll": {}
-        },
         "runtimeTargets": {
           "runtimes/linux/lib/netstandard1.3/System.IO.FileSystem.Watcher.dll": {
             "assetType": "runtime",
@@ -1227,9 +1227,6 @@
         },
         "compile": {
           "ref/netstandard1.3/System.IO.MemoryMappedFiles.dll": {}
-        },
-        "runtime": {
-          "lib/net46/System.IO.MemoryMappedFiles.dll": {}
         },
         "runtimeTargets": {
           "runtimes/unix/lib/netstandard1.3/System.IO.MemoryMappedFiles.dll": {
@@ -1378,7 +1375,7 @@
           "ref/netstandard1.3/System.Net.Http.dll": {}
         },
         "runtime": {
-          "lib/net46/System.Net.Http.dll": {}
+          "lib/portable-net45+win8+wpa81/_._": {}
         },
         "runtimeTargets": {
           "runtimes/unix/lib/netstandard1.6/System.Net.Http.dll": {
@@ -1412,9 +1409,6 @@
         "compile": {
           "ref/netstandard1.3/System.Net.NameResolution.dll": {}
         },
-        "runtime": {
-          "lib/net46/System.Net.NameResolution.dll": {}
-        },
         "runtimeTargets": {
           "runtimes/unix/lib/netstandard1.3/System.Net.NameResolution.dll": {
             "assetType": "runtime",
@@ -1438,7 +1432,7 @@
           "ref/netstandard1.3/System.Net.Primitives.dll": {}
         },
         "runtime": {
-          "lib/net45/_._": {}
+          "lib/portable-net45+win8+wp8+wpa81/_._": {}
         }
       },
       "System.Net.Requests/4.0.11": {
@@ -1462,7 +1456,7 @@
           "ref/netstandard1.3/System.Net.Requests.dll": {}
         },
         "runtime": {
-          "lib/net45/_._": {}
+          "lib/portable-net45+win8+wp8+wpa81/_._": {}
         },
         "runtimeTargets": {
           "runtimes/unix/lib/netstandard1.3/System.Net.Requests.dll": {
@@ -1510,9 +1504,6 @@
         "compile": {
           "ref/netstandard1.3/System.Net.Security.dll": {}
         },
-        "runtime": {
-          "lib/net46/System.Net.Security.dll": {}
-        },
         "runtimeTargets": {
           "runtimes/unix/lib/netstandard1.6/System.Net.Security.dll": {
             "assetType": "runtime",
@@ -1536,9 +1527,6 @@
         },
         "compile": {
           "ref/netstandard1.3/System.Net.Sockets.dll": {}
-        },
-        "runtime": {
-          "lib/net46/System.Net.Sockets.dll": {}
         }
       },
       "System.Net.WebHeaderCollection/4.0.1": {
@@ -1600,7 +1588,7 @@
           "ref/netstandard1.5/System.Reflection.dll": {}
         },
         "runtime": {
-          "lib/net45/_._": {}
+          "lib/portable-net45+win8+wp8+wpa81/_._": {}
         }
       },
       "System.Reflection.DispatchProxy/4.0.1": {
@@ -1681,7 +1669,7 @@
           "ref/netstandard1.0/System.Reflection.Extensions.dll": {}
         },
         "runtime": {
-          "lib/net45/_._": {}
+          "lib/portable-net45+win8+wp8+wpa81/_._": {}
         }
       },
       "System.Reflection.Metadata/1.3.0": {
@@ -1721,7 +1709,7 @@
           "ref/netstandard1.0/System.Reflection.Primitives.dll": {}
         },
         "runtime": {
-          "lib/net45/_._": {}
+          "lib/portable-net45+win8+wp8+wpa81/_._": {}
         }
       },
       "System.Reflection.TypeExtensions/4.1.0": {
@@ -1766,7 +1754,7 @@
           "ref/netstandard1.0/System.Resources.ResourceManager.dll": {}
         },
         "runtime": {
-          "lib/net45/_._": {}
+          "lib/portable-net45+win8+wp8+wpa81/_._": {}
         }
       },
       "System.Runtime/4.1.0": {
@@ -1779,7 +1767,7 @@
           "ref/netstandard1.5/System.Runtime.dll": {}
         },
         "runtime": {
-          "lib/net45/_._": {}
+          "lib/portable-net45+win8+wp80+wpa81/_._": {}
         }
       },
       "System.Runtime.Extensions/4.1.0": {
@@ -1793,7 +1781,7 @@
           "ref/netstandard1.5/System.Runtime.Extensions.dll": {}
         },
         "runtime": {
-          "lib/net45/_._": {}
+          "lib/portable-net45+win8+wp8+wpa81/_._": {}
         }
       },
       "System.Runtime.Handles/4.0.1": {
@@ -1805,9 +1793,6 @@
         },
         "compile": {
           "ref/netstandard1.3/System.Runtime.Handles.dll": {}
-        },
-        "runtime": {
-          "lib/net46/_._": {}
         }
       },
       "System.Runtime.InteropServices/4.1.0": {
@@ -1824,7 +1809,7 @@
           "ref/netstandard1.5/System.Runtime.InteropServices.dll": {}
         },
         "runtime": {
-          "lib/net45/_._": {}
+          "lib/portable-net45+win8+wpa81/_._": {}
         }
       },
       "System.Runtime.InteropServices.RuntimeInformation/4.0.0": {
@@ -1840,9 +1825,6 @@
         },
         "compile": {
           "ref/netstandard1.1/System.Runtime.InteropServices.RuntimeInformation.dll": {}
-        },
-        "runtime": {
-          "lib/net45/System.Runtime.InteropServices.RuntimeInformation.dll": {}
         },
         "runtimeTargets": {
           "runtimes/unix/lib/netstandard1.1/System.Runtime.InteropServices.RuntimeInformation.dll": {
@@ -1935,9 +1917,6 @@
         "compile": {
           "ref/netstandard1.6/System.Security.Cryptography.Algorithms.dll": {}
         },
-        "runtime": {
-          "lib/net46/System.Security.Cryptography.Algorithms.dll": {}
-        },
         "runtimeTargets": {
           "runtimes/unix/lib/netstandard1.6/System.Security.Cryptography.Algorithms.dll": {
             "assetType": "runtime",
@@ -1966,9 +1945,6 @@
         },
         "compile": {
           "ref/netstandard1.6/_._": {}
-        },
-        "runtime": {
-          "lib/net46/System.Security.Cryptography.Cng.dll": {}
         },
         "runtimeTargets": {
           "runtimes/unix/lib/netstandard1.6/System.Security.Cryptography.Cng.dll": {
@@ -2001,9 +1977,6 @@
         "compile": {
           "ref/netstandard1.3/_._": {}
         },
-        "runtime": {
-          "lib/net46/System.Security.Cryptography.Csp.dll": {}
-        },
         "runtimeTargets": {
           "runtimes/unix/lib/netstandard1.3/System.Security.Cryptography.Csp.dll": {
             "assetType": "runtime",
@@ -2033,9 +2006,6 @@
         },
         "compile": {
           "ref/netstandard1.3/System.Security.Cryptography.Encoding.dll": {}
-        },
-        "runtime": {
-          "lib/net46/System.Security.Cryptography.Encoding.dll": {}
         },
         "runtimeTargets": {
           "runtimes/unix/lib/netstandard1.3/System.Security.Cryptography.Encoding.dll": {
@@ -2128,9 +2098,6 @@
         "compile": {
           "ref/netstandard1.4/System.Security.Cryptography.X509Certificates.dll": {}
         },
-        "runtime": {
-          "lib/net46/System.Security.Cryptography.X509Certificates.dll": {}
-        },
         "runtimeTargets": {
           "runtimes/unix/lib/netstandard1.6/System.Security.Cryptography.X509Certificates.dll": {
             "assetType": "runtime",
@@ -2175,9 +2142,6 @@
         "compile": {
           "ref/netstandard1.3/_._": {}
         },
-        "runtime": {
-          "lib/net46/System.Security.Principal.Windows.dll": {}
-        },
         "runtimeTargets": {
           "runtimes/unix/lib/netstandard1.3/System.Security.Principal.Windows.dll": {
             "assetType": "runtime",
@@ -2200,7 +2164,7 @@
           "ref/netstandard1.3/System.Text.Encoding.dll": {}
         },
         "runtime": {
-          "lib/net45/_._": {}
+          "lib/portable-net45+win8+wp8+wpa81/_._": {}
         }
       },
       "System.Text.Encoding.CodePages/4.0.1": {
@@ -2221,9 +2185,6 @@
         },
         "compile": {
           "ref/netstandard1.3/_._": {}
-        },
-        "runtime": {
-          "lib/net46/System.Text.Encoding.CodePages.dll": {}
         },
         "runtimeTargets": {
           "runtimes/unix/lib/netstandard1.3/System.Text.Encoding.CodePages.dll": {
@@ -2248,7 +2209,7 @@
           "ref/netstandard1.3/System.Text.Encoding.Extensions.dll": {}
         },
         "runtime": {
-          "lib/net45/_._": {}
+          "lib/portable-net45+win8+wp8+wpa81/_._": {}
         }
       },
       "System.Text.RegularExpressions/4.1.0": {
@@ -2292,9 +2253,6 @@
         "compile": {
           "ref/netstandard1.3/_._": {}
         },
-        "runtime": {
-          "lib/net46/System.Threading.Overlapped.dll": {}
-        },
         "runtimeTargets": {
           "runtimes/unix/lib/netstandard1.3/System.Threading.Overlapped.dll": {
             "assetType": "runtime",
@@ -2317,7 +2275,7 @@
           "ref/netstandard1.3/System.Threading.Tasks.dll": {}
         },
         "runtime": {
-          "lib/net45/_._": {}
+          "lib/portable-net45+win8+wp8+wpa81/_._": {}
         }
       },
       "System.Threading.Tasks.Dataflow/4.6.0": {
@@ -2409,9 +2367,6 @@
         },
         "compile": {
           "ref/netstandard1.2/System.Threading.Timer.dll": {}
-        },
-        "runtime": {
-          "lib/net451/_._": {}
         }
       },
       "System.Xml.ReaderWriter/4.0.11": {
@@ -2522,6 +2477,54 @@
         },
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
+        }
+      },
+      "Chapter17/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v1.0",
+        "dependencies": {
+          "Microsoft.NETCore.App": "1.0.0",
+          "SharedCode": "1.0.0",
+          "System.ComponentModel.Primitives": "4.1.0",
+          "System.Reflection": "4.1.0"
+        },
+        "compile": {
+          "netcoreapp1.0/Chapter17.dll": {}
+        },
+        "runtime": {
+          "netcoreapp1.0/Chapter17.dll": {}
+        }
+      },
+      "Intellitect.ConsoleView/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v1.0",
+        "dependencies": {
+          "MSTest.TestFramework": "1.0.1-preview",
+          "Microsoft.NETCore.App": "1.0.0",
+          "dotnet-test-mstest": "1.0.1-preview"
+        },
+        "compile": {
+          "netcoreapp1.0/Intellitect.ConsoleView.dll": {}
+        },
+        "runtime": {
+          "netcoreapp1.0/Intellitect.ConsoleView.dll": {}
+        }
+      },
+      "SharedCode/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v1.3",
+        "dependencies": {
+          "Microsoft.CSharp": "4.0.1",
+          "NETStandard.Library": "1.6.0",
+          "System.ComponentModel.EventBasedAsync": "4.0.10",
+          "System.Reflection.TypeExtensions": "4.1.0",
+          "System.Threading.Thread": "4.0.0"
+        },
+        "compile": {
+          "netstandard1.3/SharedCode.dll": {}
+        },
+        "runtime": {
+          "netstandard1.3/SharedCode.dll": {}
         }
       }
     }
@@ -3535,6 +3538,74 @@
         "ref/netstandard1.4/zh-hant/System.ComponentModel.Annotations.xml",
         "ref/portable-net45+win8/_._",
         "ref/win8/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._"
+      ]
+    },
+    "System.ComponentModel.EventBasedAsync/4.0.10": {
+      "sha512": "d6kXcHUgP0jSPXEQ6hXJYCO6CzfoCi7t9vR3BfjSQLrj4HzpuATpx1gkN7itmTW1O+wjuw6rai4378Nj6N70yw==",
+      "type": "package",
+      "path": "System.ComponentModel.EventBasedAsync/4.0.10",
+      "files": [
+        "System.ComponentModel.EventBasedAsync.4.0.10.nupkg.sha512",
+        "System.ComponentModel.EventBasedAsync.nuspec",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/dotnet/System.ComponentModel.EventBasedAsync.dll",
+        "lib/net46/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/dotnet/System.ComponentModel.EventBasedAsync.dll",
+        "ref/dotnet/System.ComponentModel.EventBasedAsync.xml",
+        "ref/dotnet/de/System.ComponentModel.EventBasedAsync.xml",
+        "ref/dotnet/es/System.ComponentModel.EventBasedAsync.xml",
+        "ref/dotnet/fr/System.ComponentModel.EventBasedAsync.xml",
+        "ref/dotnet/it/System.ComponentModel.EventBasedAsync.xml",
+        "ref/dotnet/ja/System.ComponentModel.EventBasedAsync.xml",
+        "ref/dotnet/ko/System.ComponentModel.EventBasedAsync.xml",
+        "ref/dotnet/ru/System.ComponentModel.EventBasedAsync.xml",
+        "ref/dotnet/zh-hans/System.ComponentModel.EventBasedAsync.xml",
+        "ref/dotnet/zh-hant/System.ComponentModel.EventBasedAsync.xml",
+        "ref/net46/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._"
+      ]
+    },
+    "System.ComponentModel.Primitives/4.1.0": {
+      "sha512": "sc/7eVCdxPrp3ljpgTKVaQGUXiW05phNWvtv/m2kocXqrUQvTVWKou1Edas2aDjTThLPZOxPYIGNb/HN0QjURg==",
+      "type": "package",
+      "path": "System.ComponentModel.Primitives/4.1.0",
+      "files": [
+        "System.ComponentModel.Primitives.4.1.0.nupkg.sha512",
+        "System.ComponentModel.Primitives.nuspec",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net45/System.ComponentModel.Primitives.dll",
+        "lib/netstandard1.0/System.ComponentModel.Primitives.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net45/System.ComponentModel.Primitives.dll",
+        "ref/netstandard1.0/System.ComponentModel.Primitives.dll",
+        "ref/netstandard1.0/System.ComponentModel.Primitives.xml",
+        "ref/netstandard1.0/de/System.ComponentModel.Primitives.xml",
+        "ref/netstandard1.0/es/System.ComponentModel.Primitives.xml",
+        "ref/netstandard1.0/fr/System.ComponentModel.Primitives.xml",
+        "ref/netstandard1.0/it/System.ComponentModel.Primitives.xml",
+        "ref/netstandard1.0/ja/System.ComponentModel.Primitives.xml",
+        "ref/netstandard1.0/ko/System.ComponentModel.Primitives.xml",
+        "ref/netstandard1.0/ru/System.ComponentModel.Primitives.xml",
+        "ref/netstandard1.0/zh-hans/System.ComponentModel.Primitives.xml",
+        "ref/netstandard1.0/zh-hant/System.ComponentModel.Primitives.xml",
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
@@ -7428,13 +7499,29 @@
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._"
       ]
+    },
+    "Chapter17/1.0.0": {
+      "type": "project",
+      "path": "../Chapter17/project.json",
+      "msbuildProject": "../Chapter17/Chapter17.xproj"
+    },
+    "Intellitect.ConsoleView/1.0.0": {
+      "type": "project",
+      "path": "../../submodules/ConsoleView/Intellitect.ConsoleView/project.json",
+      "msbuildProject": "../../submodules/ConsoleView/Intellitect.ConsoleView/Intellitect.ConsoleView.xproj"
+    },
+    "SharedCode/1.0.0": {
+      "type": "project",
+      "path": "../SharedCode/project.json",
+      "msbuildProject": "../SharedCode/SharedCode.xproj"
     }
   },
   "projectFileDependencyGroups": {
     "": [
+      "Chapter17 >= 1.0.0",
+      "Intellitect.ConsoleView >= 1.0.0",
       "MSTest.TestFramework >= 1.0.1-preview",
       "Microsoft.NETCore.App >= 1.0.0",
-      "Microsoft.VisualBasic >= 10.0.1",
       "dotnet-test-mstest >= 1.0.1-preview"
     ],
     ".NETCoreApp,Version=v1.0": []

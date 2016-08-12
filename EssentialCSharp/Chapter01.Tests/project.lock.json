@@ -2480,25 +2480,24 @@
           "netcoreapp1.0/Chapter01.dll": {}
         }
       },
-      "IntelliTect.ConsoleView/1.0.0": {
+      "Intellitect.ConsoleView/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v1.0",
         "dependencies": {
           "MSTest.TestFramework": "1.0.1-preview",
           "Microsoft.NETCore.App": "1.0.0",
-          "Microsoft.VisualBasic": "10.0.1",
           "dotnet-test-mstest": "1.0.1-preview"
         },
         "compile": {
-          "netcoreapp1.0/IntelliTect.ConsoleView.dll": {}
+          "netcoreapp1.0/Intellitect.ConsoleView.dll": {}
         },
         "runtime": {
-          "netcoreapp1.0/IntelliTect.ConsoleView.dll": {}
+          "netcoreapp1.0/Intellitect.ConsoleView.dll": {}
         }
       },
       "SharedCode/1.0.0": {
         "type": "project",
-        "framework": ".NETStandard,Version=v1.5",
+        "framework": ".NETStandard,Version=v1.3",
         "dependencies": {
           "Microsoft.CSharp": "4.0.1",
           "NETStandard.Library": "1.6.0",
@@ -2507,10 +2506,10 @@
           "System.Threading.Thread": "4.0.0"
         },
         "compile": {
-          "netstandard1.5/SharedCode.dll": {}
+          "netstandard1.3/SharedCode.dll": {}
         },
         "runtime": {
-          "netstandard1.5/SharedCode.dll": {}
+          "netstandard1.3/SharedCode.dll": {}
         }
       }
     }
@@ -7454,10 +7453,10 @@
       "path": "../Chapter01/project.json",
       "msbuildProject": "../Chapter01/Chapter01.xproj"
     },
-    "IntelliTect.ConsoleView/1.0.0": {
+    "Intellitect.ConsoleView/1.0.0": {
       "type": "project",
-      "path": "../IntelliTect.ConsoleView/project.json",
-      "msbuildProject": "../IntelliTect.ConsoleView/IntelliTect.ConsoleView.xproj"
+      "path": "../../submodules/ConsoleView/Intellitect.ConsoleView/project.json",
+      "msbuildProject": "../../submodules/ConsoleView/Intellitect.ConsoleView/Intellitect.ConsoleView.xproj"
     },
     "SharedCode/1.0.0": {
       "type": "project",
@@ -7468,7 +7467,7 @@
   "projectFileDependencyGroups": {
     "": [
       "Chapter01 >= 1.0.0",
-      "IntelliTect.ConsoleView >= 1.0.0",
+      "Intellitect.ConsoleView >= 1.0.0",
       "MSTest.TestFramework >= 1.0.1-preview",
       "Microsoft.NETCore.App >= 1.0.0",
       "dotnet-test-mstest >= 1.0.1-preview"

@@ -11,11 +11,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_06.Tests
         {
             string expected = "Task State: Completed";
 
-            IntelliTect.ConsoleView.Tester.Test(expected,
-            () =>
-            {
-                Program.Main();
-            });
+            //Intellitect.ConsoleView.Tester.Test(expected,
+            //() =>
+            //{
+            //    Program.ChapterMain();
+            //});
         }
     }
 }

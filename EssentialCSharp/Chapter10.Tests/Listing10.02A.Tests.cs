@@ -1,19 +1,16 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.ComponentModel;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_02A.Tests
 {
     [TestClass]
     public class ProgramTests
     {
-        [TestMethod][ExpectedException(typeof(System.NullReferenceException))]
+        [TestMethod]
         public void MainTest()
         {
-            const string expected = "";
-            IntelliTect.ConsoleView.Tester.Test(expected,
-                () =>
-                {
-                    Program.Main(null);
-                });
+            Intellitect.ConsoleView.Tester.TestException(() => Program.ChapterMain(null), typeof(Win32Exception));
         }
     }
 }

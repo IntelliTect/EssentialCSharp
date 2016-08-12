@@ -12,8 +12,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_01.Tests
             const string expected =
                 "In alphabetical order Bashful is the first dwarf while Sneezy is the last.";
 
-            IntelliTect.ConsoleView.Tester.Test(
-                expected, Program.Main);
+            Intellitect.ConsoleView.Tester.Test(
+                expected, Program.ChapterMain);
         }
     }
 }

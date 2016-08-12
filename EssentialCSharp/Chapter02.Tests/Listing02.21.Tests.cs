@@ -10,8 +10,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_21.Tests
         {
             const string expected = "-2147483648";
 
-            IntelliTect.ConsoleView.Tester.Test(
-                expected, Program.Main);
+            Intellitect.ConsoleView.Tester.Test(
+                expected, Program.ChapterMain);
         }
     }
 }

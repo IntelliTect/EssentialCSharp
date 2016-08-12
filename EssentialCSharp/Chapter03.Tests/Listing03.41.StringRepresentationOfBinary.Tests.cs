@@ -12,8 +12,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_39.Tests
             string expected =
                 $@"Enter an integer: <<{integer}>>{System.Convert.ToString(integer, 2).PadLeft(64,'0')}";
 
-            IntelliTect.ConsoleView.Tester.Test(
-                expected, BinaryConverter.Main);
+            Intellitect.ConsoleView.Tester.Test(
+                expected, BinaryConverter.ChapterMain);
         }
     }
 }

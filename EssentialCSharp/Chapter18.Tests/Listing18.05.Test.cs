@@ -16,11 +16,11 @@ Continuing B...
 Continuing C...
 Finished!";
 
-            IntelliTect.ConsoleView.Tester.Test(expected,
-            () =>
-            {
-                Program.Main();
-            });
+            //Intellitect.ConsoleView.Tester.Test(expected,
+            //() =>
+            //{
+            //    Program.ChapterMain();
+            //});
         }
     }
 }

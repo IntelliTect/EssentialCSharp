@@ -12,7 +12,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_05.Tests
 @"Up
 Down";
 
-            IntelliTect.ConsoleView.Tester.Test(
+            Intellitect.ConsoleView.Tester.Test(
                 expected, HelloWorld.ChapterMain);
         }
     }

@@ -20,9 +20,16 @@
                     throw new System.ComponentModel.Win32Exception(42, "Custom error");
                 }
                 catch (System.ComponentModel.Win32Exception exception)
-                    when (exception.NativeErrorCode == args.Length)
+                    when (exception.NativeErrorCode == 42)
                 {
+                    bool exceptionHandled = false;
+
                     Console.WriteLine("Inside Win32Exception catch block");
+
+                    if (!exceptionHandled)
+                    {
+                        throw;
+                    }
                 }
             }
             catch (NullReferenceException exception)

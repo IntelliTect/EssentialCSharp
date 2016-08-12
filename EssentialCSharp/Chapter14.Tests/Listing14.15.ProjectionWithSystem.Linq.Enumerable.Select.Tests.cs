@@ -10,19 +10,21 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_15.Tests
         public void Listing14_15_Test()
         {
             string expected =
-$@"{ Directory.GetCurrentDirectory() }\Chapter14.exe
-{ Directory.GetCurrentDirectory() }\Chapter14.pdb
-{ Directory.GetCurrentDirectory() }\Chapter15.exe
-{ Directory.GetCurrentDirectory() }\Chapter15.pdb
-{ Directory.GetCurrentDirectory() }\Chapter15.Tests.dll
-{ Directory.GetCurrentDirectory() }\Chapter15.Tests.pdb
-{ Directory.GetCurrentDirectory() }\IntelliTect.Console.dll
-{ Directory.GetCurrentDirectory() }\IntelliTect.Console.pdb";
+$@"{ Directory.GetCurrentDirectory() }\Chapter14.Tests.csproj
+{ Directory.GetCurrentDirectory() }\Chapter14.Tests.xproj
+{ Directory.GetCurrentDirectory() }\Chapter14.Tests.xproj.user
+{ Directory.GetCurrentDirectory() }\Listing14.04.Tests.cs
+{ Directory.GetCurrentDirectory() }\Listing14.15.ProjectionWithSystem.Linq.Enumerable.Select.Tests.cs
+{ Directory.GetCurrentDirectory() }\Listing14.16.ProjectionToAnAnonymousType.Tests.cs
+{ Directory.GetCurrentDirectory() }\Listing14.17.ExecutingLinqQueriesInParallel.Tests.cs
+{ Directory.GetCurrentDirectory() }\Listing14.28.MoreSystem.Linq.EnumerableMethodCalls.Tests.cs
+{ Directory.GetCurrentDirectory() }\project.json
+{ Directory.GetCurrentDirectory() }\project.lock.json";
 
-            IntelliTect.ConsoleView.Tester.AreLike(expected,
+            Intellitect.ConsoleView.Tester.Test(expected,
             () =>
             {
-                Program.Main();
+                Program.ChapterMain();
             });
         }
     }

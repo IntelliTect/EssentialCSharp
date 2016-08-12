@@ -11,7 +11,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_06.Tests
             const string expected = 
                 @"Hello. My name is Inigo Montoya.";
 
-            IntelliTect.ConsoleView.Tester.Test(
+            Intellitect.ConsoleView.Tester.Test(
                 expected, HelloWorld.ChapterMain);
         }
     }

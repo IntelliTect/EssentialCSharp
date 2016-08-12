@@ -12,8 +12,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_08.Tests
 @"'
 :)";
 
-            IntelliTect.ConsoleView.Tester.Test(
-                expected, SingleQuote.Main);
+            Intellitect.ConsoleView.Tester.Test(
+                expected, SingleQuote.ChapterMain);
         }
     }
 }

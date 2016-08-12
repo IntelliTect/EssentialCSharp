@@ -10,8 +10,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_01.Tests
         {
             const string expected = @"2";
 
-            IntelliTect.ConsoleView.Tester.Test(
-                expected, Program.Main);
+            Intellitect.ConsoleView.Tester.Test(
+                expected, Program.ChapterMain);
         }
     }
 }

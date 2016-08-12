@@ -12,8 +12,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_03.Tests
 >>Enter the denominator: <<5
 >>42 / 5 = 8 with remainder 2";
 
-            IntelliTect.ConsoleView.Tester.Test(
-                expected, Division.Main);
+            Intellitect.ConsoleView.Tester.Test(
+                expected, Division.ChapterMain);
         }
     }
 }

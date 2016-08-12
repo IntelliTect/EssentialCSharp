@@ -16,10 +16,10 @@ Enter your first name: <<Inigo
 >>Enter your age: <<10
 >>Hi Inigo!  You are 120 months old.";
 
-            IntelliTect.ConsoleView.Tester.Test(view,
+            Intellitect.ConsoleView.Tester.Test(view,
             () =>
             {
-                ExceptionHandling.Main();
+                ExceptionHandling.ChapterMain();
             });
         }
     }

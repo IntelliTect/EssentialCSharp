@@ -9,7 +9,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_28.Tests
         public void DictionaryInitialization()
         {
             string expected =
-@"Stuff: System.Object, 1, 3, 5, 7, 9, ""thing"", ????????-????-????-????-????????????
+@"Stuff: System.Object, 1, 3, 5, 7, 9, ""thing"", [0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12}
 Even integers: 0, 2, 4, 6, 8
 Odd integers: 1, 3, 5, 7, 9
 Union of odd and even: 0, 2, 4, 6, 8, 1, 3, 5, 7, 9
@@ -17,17 +17,17 @@ Union with even: 0, 2, 4, 6, 8, 1, 3, 5, 7, 9
 Concat with odd: 0, 2, 4, 6, 8, 1, 3, 5, 7, 9, 1, 3, 5, 7, 9
 Intersection with even: 0, 2, 4, 6, 8
 Distinct: 0, 2, 4, 6, 8, 1, 3, 5, 7, 9
-Collection ""SequenceEquals"" numbers.Concat(odd).Distinct())
+Collection ""SequenceEquals"" numbers.Concat\(odd\).Distinct\(\)\)
 Reverse: 9, 7, 5, 3, 1, 8, 6, 4, 2, 0
 Average: 4.5
 Sum: 45
 Max: 9
 Min: 0";
 
-            IntelliTect.ConsoleView.Tester.AreLike(expected,
+            Intellitect.ConsoleView.Tester.AreLike(expected,
             () =>
             {
-                Program.Main();
+                Program.ChapterMain();
             });
         }
     }
