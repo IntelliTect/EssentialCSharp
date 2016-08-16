@@ -14,7 +14,7 @@ Chapter     | Page         | Correction
 ----------- | ------------ | ---------- 
 1           | 16           | Listing 1.11: The second assignment of `miracleMax` was incorrectly made instead to an undeclared variable named `max`. The correct line of code is `miracleMax = "It would take a miracle.";` 
 1           | 22           | Listing 1.18 is a modification of Listing 1.16, not 1.15.
-2           | 52           | Table 2.5: The latest string.Compare statement contains two errors (a round bracket after strB parameter instead of a comma and ignoreCase should be bool instead of string). The correct statement is "static int string.Compare(string strA, string strB, bool ignoreCase)  
+2           | 52           | Table 2.5: The last string.Compare statement contains two errors (a round bracket after strB parameter instead of a comma and ignoreCase should be bool instead of string). The correct statement is "static int string.Compare(string strA, string strB, bool ignoreCase)" 
 3           | 116          | System.Math.E was referred to as Euler's constant, but this is in fact Euler's number.
 6           | 294          | The sentence that reads “The C# compiler allows the cast operator even when the type hierarchy allows an implicit cast” should instead read “… allows an implicit **conversion**.” <br><br> The second example on the page should read “or even when no **conversion** is necessary.” 
 8           | 357, 360-361 | Chapter 8 mentions that with C# 6, parameterless struct constructors are valid, but they actually aren't - this featured was dropped – see https://github.com/dotnet/roslyn/issues/1029 
