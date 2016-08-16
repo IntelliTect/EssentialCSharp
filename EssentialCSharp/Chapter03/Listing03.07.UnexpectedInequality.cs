@@ -26,10 +26,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_07
             System.Console.WriteLine(
                 $"(float){(float)decimalNumber}M != {floatNumber}F");
 
-            Trace.Assert(doubleNumber1 == (double)floatNumber);
-            // 4. Displays: 4.20000028610229 != 4.20000028610229
-            System.Console.WriteLine(
-                $"{doubleNumber1} != {(double)floatNumber}");
+            // Removing - float converted to double now matches the double
+            //Trace.Assert(doubleNumber1 != (double)floatNumber);
+            //// 4. Displays: 4.20000028610229 != 4.20000028610229
+            //System.Console.WriteLine(
+            //    $"{doubleNumber1} != {(double)floatNumber}");
 
             Trace.Assert(doubleNumber1 != doubleNumber2);
             // 5. Displays: 4.20000028610229 != 4.2
