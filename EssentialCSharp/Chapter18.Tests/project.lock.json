@@ -1470,15 +1470,16 @@
       },
       "Chapter18/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.6",
+        "framework": ".NETCoreApp,Version=v1.0",
         "dependencies": {
+          "Microsoft.NETCore.App": "1.0.0",
           "SharedCode": "1.0.0"
         },
         "compile": {
-          "net46/Chapter18.dll": {}
+          "netcoreapp1.0/Chapter18.dll": {}
         },
         "runtime": {
-          "net46/Chapter18.dll": {}
+          "netcoreapp1.0/Chapter18.dll": {}
         }
       },
       "Intellitect.ConsoleView/1.0.0": {
