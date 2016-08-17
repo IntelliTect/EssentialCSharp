@@ -1,5 +1,8 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Intellitect.ConsoleView;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_15.Tests
 {
@@ -9,23 +12,20 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_15.Tests
         [TestMethod]
         public void Listing14_15_Test()
         {
-            string expected =
-$@"{ Directory.GetCurrentDirectory() }\Chapter14.Tests.csproj
-{ Directory.GetCurrentDirectory() }\Chapter14.Tests.xproj
-{ Directory.GetCurrentDirectory() }\Chapter14.Tests.xproj.user
-{ Directory.GetCurrentDirectory() }\Listing14.04.Tests.cs
-{ Directory.GetCurrentDirectory() }\Listing14.15.ProjectionWithSystem.Linq.Enumerable.Select.Tests.cs
-{ Directory.GetCurrentDirectory() }\Listing14.16.ProjectionToAnAnonymousType.Tests.cs
-{ Directory.GetCurrentDirectory() }\Listing14.17.ExecutingLinqQueriesInParallel.Tests.cs
-{ Directory.GetCurrentDirectory() }\Listing14.28.MoreSystem.Linq.EnumerableMethodCalls.Tests.cs
-{ Directory.GetCurrentDirectory() }\project.json
-{ Directory.GetCurrentDirectory() }\project.lock.json";
+            string expectedPattern = $@"{ Directory.GetCurrentDirectory() }\*";
 
-            Intellitect.ConsoleView.Tester.Test(expected,
-            () =>
+            string output = Intellitect.ConsoleView.Tester.Execute(null, () =>
             {
                 Program.ChapterMain();
             });
+
+            IEnumerable<string> outputItems = output.Split('\n');
+
+            Assert.AreEqual(10, outputItems.Count());
+            foreach (string item in outputItems)
+            {
+                Assert.IsTrue(item.IsLike(expectedPattern));
+            }
         }
     }
 }

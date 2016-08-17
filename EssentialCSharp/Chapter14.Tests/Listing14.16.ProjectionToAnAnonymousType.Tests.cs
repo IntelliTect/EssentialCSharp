@@ -1,4 +1,7 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Intellitect.ConsoleView;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_16.Tests
 {
@@ -8,23 +11,20 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_16.Tests
         [TestMethod]
         public void ProjectionToAnAnonymousType()
         {
-            string expected =
-@"{ FileName = Chapter14.Tests.csproj, Size = \d+ }
-{ FileName = Chapter14.Tests.xproj, Size = \d+ }
-{ FileName = Chapter14.Tests.xproj.user, Size = \d+ }
-{ FileName = Listing14.04.Tests.cs, Size = \d+ }
-{ FileName = Listing14.15.ProjectionWithSystem.Linq.Enumerable.Select.Tests.cs, Size = \d+ }
-{ FileName = Listing14.16.ProjectionToAnAnonymousType.Tests.cs, Size = \d+ }
-{ FileName = Listing14.17.ExecutingLinqQueriesInParallel.Tests.cs, Size = \d+ }
-{ FileName = Listing14.28.MoreSystem.Linq.EnumerableMethodCalls.Tests.cs, Size = \d+ }
-{ FileName = project.json, Size = \d+ }
-{ FileName = project.lock.json, Size = \d+ }";
+            string expectedPattern = "{ FileName = *, Size = ";
 
-            Intellitect.ConsoleView.Tester.AreLike(expected,
-            () =>
+            string output = Intellitect.ConsoleView.Tester.Execute(null, () =>
             {
                 Program.ChapterMain();
             });
+
+            IEnumerable<string> outputItems = output.Split('\n');
+
+            Assert.AreEqual(10, outputItems.Count());
+            foreach (string item in outputItems)
+            {
+                Assert.IsTrue(item.IsLike(expectedPattern));
+            }
         }
     }
 }

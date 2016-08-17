@@ -10,7 +10,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_02A.Tests
         [TestMethod]
         public void MainTest()
         {
-            Intellitect.ConsoleView.Tester.TestException(() => Program.ChapterMain(null), typeof(Win32Exception));
+            Assert.ThrowsException<Win32Exception>(() => Program.ChapterMain(null));
         }
     }
 }

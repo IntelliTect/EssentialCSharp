@@ -2483,9 +2483,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v1.0",
         "dependencies": {
-          "MSTest.TestFramework": "1.0.1-preview",
-          "Microsoft.NETCore.App": "1.0.0",
-          "dotnet-test-mstest": "1.0.1-preview"
+          "Microsoft.NETCore.App": "1.0.0"
         },
         "compile": {
           "netcoreapp1.0/Intellitect.ConsoleView.dll": {}

@@ -12,6 +12,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_17.Tests
         [TestMethod]
         public void ProjectionWithLinqsSelect()
         {
+            string expectedPattern = "{ FileName = *, Size = ";
+
             string output = Tester.Execute(null, () =>
             {
                 Program.ChapterMain();
@@ -22,7 +24,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_17.Tests
             Assert.AreEqual(10, outputItems.Count());
             foreach (string item in outputItems)
             {
-                Assert.IsTrue(item.IsLike(@"{ FileName = [0-9A-Za-z\.]+, Size = \d+ }"));
+                Assert.IsTrue(item.IsLike(expectedPattern));
             }
         }
     }

@@ -1,5 +1,7 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.IO;
+﻿using Intellitect.ConsoleView;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_08.Tests
 {
@@ -9,14 +11,20 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_08.Tests
         [TestMethod]
         public void ProjectionWithLinqsSelect()
         {
-            string expected =
-$@"(\.\\[0-9A-Za-z\.]+\(\d+\)(\r\n)?)+";
+            string expectedPattern = $@".\*(*)";
 
-            Intellitect.ConsoleView.Tester.AreLike(expected,
-            () =>
+            string output = Intellitect.ConsoleView.Tester.Execute(null, () =>
             {
                 Program.ChapterMain();
             });
+
+            IEnumerable<string> outputItems = output.Split('\n');
+
+            Assert.AreEqual(15, outputItems.Count());
+            foreach (string item in outputItems)
+            {
+                Assert.IsTrue(item.IsLike(expectedPattern));
+            }
         }
     }
 }

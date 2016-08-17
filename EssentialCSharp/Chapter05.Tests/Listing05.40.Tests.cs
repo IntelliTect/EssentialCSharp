@@ -9,7 +9,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_40.Tests
         [TestMethod]
         public void MainTest_ArgsHasZeroElements_ThrowException()
         {
-            Intellitect.ConsoleView.Tester.TestException(() => Program.ChapterMain(new string[] { }), typeof(ArgumentException));
+            Assert.ThrowsException<ArgumentException>(
+                () => Program.ChapterMain(new string[] { }));
         }
 
         [TestMethod]
