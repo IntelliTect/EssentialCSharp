@@ -1,0 +1,3 @@
+[submodule "submodules/ConsoleView"]
+	path = submodules/ConsoleView
+	url = https://github.com/IntelliTect/ConsoleView.git
