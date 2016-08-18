@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D206F972-8400-4D59-9F4F-C8133075A3F8}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Chapter13</RootNamespace>
+    <AssemblyName>Chapter13</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>AddisonWesley.Michaelis.EssentialCSharp.Shared.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Shared\Program.cs">
+      <Link>Program.cs</Link>
+    </Compile>
+    <Compile Include="Listing13.04.ConnectingThePublisherAndSubscribers.cs" />
+    <Compile Include="Listing13.04.InvokingADelegate.cs" />
+    <Compile Include="Listing13.06.InvokingADelegatePre6.cs" />
+    <Compile Include="Listing13.05.InvokingADelegate.cs" />
+    <Compile Include="Listing13.03.ConnectingThePublisherAndSubscribers.cs" />
+    <Compile Include="Listing13.02.DefiningTheEventPublsherThermostat.cs" />
+    <Compile Include="Listing13.01.HeaterAndCoolerEventSubscriberImplementations.cs" />
+    <Compile Include="Listing13.07.UsingthePlusEqualsAndMinusEqualsDelegateOperators.cs" />
+    <Compile Include="Listing13.08.UsingThePlusAndMinusDelegateOperators.cs" />
+    <Compile Include="Listing13.09.OnTemperatureChangedThrowingAnException.cs" />
+    <Compile Include="Listing13.10.HandlingExceptionsFromSubscribers.cs" />
+    <Compile Include="Listing13.11.UsingTheAssignmentOperationRatherThanPlusEquals.cs" />
+    <Compile Include="Listing13.12.FiringTheEventFromOutsideTheEventContainer.cs" />
+    <Compile Include="Listing13.13.UsingTheEventKeywordWithTheEventCodingPattern.cs" />
+    <Compile Include="Listing13.14.DeclaringAGenericDelegateType.cs" />
+    <Compile Include="Listing13.15.FiringTheEventNotification.cs" />
+    <Compile Include="Listing13.16.UsingCustomDelegateType.cs" />
+    <Compile Include="Listing13.17.DeclaringTheOnTemperatureChangeEvent.cs" />
+    <Compile Include="Listing13.18.CSharpConceptualEquivalentOfEventCILCode.cs" />
+    <Compile Include="Listing13.19.CustomAddAndRemoveHandlers.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="13.7.sequencediagram" />
+    <None Include="Program_Main.sequencediagram" />
+    <None Include="Program_Main_1.sequencediagram" />
+    <None Include="Program_Main_2.sequencediagram" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="13.7.sequencediagram.layout">
+      <DependentUpon>13.7.sequencediagram</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Program_Main.sequencediagram.layout">
+      <DependentUpon>Program_Main.sequencediagram</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Program_Main_1.sequencediagram.layout">
+      <DependentUpon>Program_Main_1.sequencediagram</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Program_Main_2.sequencediagram.layout">
+      <DependentUpon>Program_Main_2.sequencediagram</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

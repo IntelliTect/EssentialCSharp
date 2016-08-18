@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{306BACB1-703A-4668-84E1-29446FD40EA2}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Chapter04</RootNamespace>
+    <AssemblyName>Chapter04</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>AddisonWesley.Michaelis.EssentialCSharp.Shared.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Shared\Program.cs">
+      <Link>Program.cs</Link>
+    </Compile>
+    <Compile Include="Listing04.08.UsingStaticDirective.cs" />
+    <Compile Include="Listing04.19.SpecifyingParametersByName.cs" />
+    <Compile Include="Listing04.02.SimpleMethodCall.cs" />
+    <Compile Include="Listing04.01.GroupingStatementsIntoMethods.cs" />
+    <Compile Include="Listing04.03.PassingAMethodReturnAsAParameterToAnotherMehtodCall.cs" />
+    <Compile Include="Listing04.04.DeclaringAMethod.cs" />
+    <Compile Include="Listing04.05.AReturnStatementBeforeTheEndOfAmethod.cs" />
+    <Compile Include="Listing04.06.UsingDirectiveExample.cs" />
+    <Compile Include="Listing04.07.SpecifyingTheUsingDirectiveInsideANamespaceDeclaration.cs" />
+    <Compile Include="Listing04.09.DeclaringATypeAlias.cs" />
+    <Compile Include="Listing04.10.DeclaringATypeAliasWithTheSameName.cs" />
+    <Compile Include="Listing04.11.PassingCommandLineArgumentsToMain.cs" />
+    <Compile Include="Listing04.12.PassingVariablesByValue.cs" />
+    <Compile Include="Listing04.13.PassingVariablesByReference.cs" />
+    <Compile Include="Listing04.14.PassingVariablesOutOnly.cs" />
+    <Compile Include="Listing04.15.PassingAVariableParameterList.cs" />
+    <Compile Include="Listing04.16.CountingLinesGivenADirectory.cs" />
+    <Compile Include="Listing04.17.CountingLinesUsingOverloading.cs" />
+    <Compile Include="Listing04.18.MethodsWithOptionalParameters.cs" />
+    <Compile Include="Listing04.20.ConvertingAStringToAnInt.cs" />
+    <Compile Include="Listing04.21.CatchingAnException.cs" />
+    <Compile Include="Listing04.22.FinallyWithoutCatch.cs" />
+    <Compile Include="Listing04.23.GeneralCatchBlocks.cs" />
+    <Compile Include="Listing04.26.TryCatch.cs" />
+    <Compile Include="Listing04.24.ThrowingAnException.cs" />
+    <Compile Include="Listing04.25.RethrowingAnException.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

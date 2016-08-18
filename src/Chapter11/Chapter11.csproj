@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C38895DF-777D-4433-9338-AA6B40A451E0}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Chapter11</RootNamespace>
+    <AssemblyName>Chapter11</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>AddisonWesley.Michaelis.EssentialCSharp.Shared.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Shared\Program.cs">
+      <Link>Program.cs</Link>
+    </Compile>
+    <Compile Include="Listing11.44+.CombiningCovarianceAndContravarianceInSingleGenericType.cs" />
+    <Compile Include="Listing11.44.ContravarianceUsingTheInTypeParameterModifier.cs" />
+    <Compile Include="Listing11.42.PotentiallyPossibleCovariance.cs" />
+    <Compile Include="Listing11.41.PreventingCovarianceMaintainsHomogeneity.cs" />
+    <Compile Include="Listing11.40.ConversionBetweenGenericsWithDifferentTypeParameters.cs" />
+    <Compile Include="Listing11.31.InheritanceConstraintsCannotBeDelegates.cs" />
+    <Compile Include="Listing11.30.CombiningConstraintsUsingOrRelationshipNotAllowed.cs" />
+    <Compile Include="Listing11.32.ConstraintsCanOnlyBeSpecifiedForDefaultConstructors.cs" />
+    <Compile Include="Listing11.29.ConstraintExpressionsCannotRequireOperators.cs" />
+    <Compile Include="Listing11.16.UsingArityToOverloadATypeDefinition.cs" />
+    <Compile Include="Listing11.05.NullableTypeContainingAnObject.cs" />
+    <Compile Include="Listing11.04.DefiningNullableVersionsOfValueTypes.cs" />
+    <Compile Include="Listing11.22.DeclaringAnInterfaceConstraint.cs" />
+    <Compile Include="Listing11.21.NeedingTheTypeParameterToSupportAnInterfaceOrExceptionThrown.cs" />
+    <Compile Include="Listing11.43.CovarianceUsingTheOutTypeParameterModifier.cs" />
+    <Compile Include="Listing11.39.BinaryTreeRequiringIComparableTypeParameters.cs" />
+    <Compile Include="Listing11.38.SpecifyingConstraintsOnGenericMethods.cs" />
+    <Compile Include="Listing11.37.InferringTheTypeParameter.cs" />
+    <Compile Include="Listing11.36.SpecifyingTheTypeParameterExplicitly.cs" />
+    <Compile Include="Listing11.35.DefiningGenericMethods.cs" />
+    <Compile Include="Listing11.33.UsingAFactoryInterfaceInPlaceOfAConstructorConstraint.cs" />
+    <Compile Include="Listing11.34.DeclaringAnEntityToBeUsedInEntityDictionary.cs" />
+    <Compile Include="Listing11.28.InheritedConstraintsSpecifiedExplicitly.cs" />
+    <Compile Include="Listing11.27.InheritedConstraintsSpecifiedExplicitly.cs" />
+    <Compile Include="Listing11.26.RequiringADefaultConstructorConstraint.cs" />
+    <Compile Include="Listing11.25.SpecifyingMultipleConstraints.cs" />
+    <Compile Include="Listing11.24.SpecifyingTheTypeParameterAsAValueType.cs" />
+    <Compile Include="Listing11.23.DeclaringABaseClassConstraint.cs" />
+    <Compile Include="Listing11.20.NeedingTheTypeParameterToSupportAnInterface.cs" />
+    <Compile Include="Listing11.19.DeclaringABinaryTreeClassWithNoConstraints.cs" />
+    <Compile Include="Listing11.18.NestedGenericTypes.cs" />
+    <Compile Include="Listing11.17.UsingATupleCreateFactoryMethods.cs" />
+    <Compile Include="Listing11.15.UsingATypewithMultipleTypeParameters.cs" />
+    <Compile Include="Listing11.14.DeclaringAGenericWithMultipleTypeParameters.cs" />
+    <Compile Include="Listing11.13.InitializingAFieldWithTheDefaultOperator.cs" />
+    <Compile Include="Listing11.12.NotInitializingAllFieldsCasuingACompileError.cs" />
+    <Compile Include="Listing11.11.DeclaringAGenericTypeConstructor.cs" />
+    <Compile Include="Listing11.10.DuplicatingAnInterfaceImplementationOnASingleClass.cs" />
+    <Compile Include="Listing11.09.ImplementingAGenericInterface.cs" />
+    <Compile Include="Listing11.08.DeclaringAGenericInterface.cs" />
+    <Compile Include="Listing11.07.DeclaringAGenericClassStack.cs" />
+    <Compile Include="Listing11.06.ImplementingUndoWithAGenericStackClass.cs" />
+    <Compile Include="Listing11.03.DefiningASpecializedStackClass.cs" />
+    <Compile Include="Listing11.02.SupportingUndoInEtchASketchGame.cs" />
+    <Compile Include="Listing11.01.TheMethodSignatures.cs" />
+    <Compile Include="Listing11.45.CompilerValidationOfVariance.cs" />
+    <Compile Include="Listing11.46.StackDeclaration.cs" />
+    <Compile Include="Listing11.47.CILCodeForStack.cs" />
+    <Compile Include="Listing11.48.CILWithExclamationPointNotation.cs" />
+    <Compile Include="Listing11.49.StackDefinition.cs" />
+    <Compile Include="Listing11.50.DeclaringVariablesOfTypeStack.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Chapter07\Chapter07.csproj">
+      <Project>{66EA6FC7-D2F7-4EE3-925C-FA8877646F1B}</Project>
+      <Name>Chapter07</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

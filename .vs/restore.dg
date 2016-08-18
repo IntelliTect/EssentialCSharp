@@ -1,0 +1,6 @@
+#:C:\git\EssentialCSharp\src\Chapter18\Chapter18.xproj
+C:\git\EssentialCSharp\src\Chapter18\Chapter18.xproj|C:\git\EssentialCSharp\src\SharedCode\SharedCode.xproj
+#:C:\git\EssentialCSharp\src\Chapter18.Tests\Chapter18.Tests.xproj
+C:\git\EssentialCSharp\src\Chapter18.Tests\Chapter18.Tests.xproj|C:\git\EssentialCSharp\src\Chapter18\Chapter18.xproj
+C:\git\EssentialCSharp\src\Chapter18.Tests\Chapter18.Tests.xproj|C:\git\EssentialCSharp\submodules\TestTools\IntelliTect.TestTools.Console\IntelliTect.TestTools.Console.xproj
+C:\git\EssentialCSharp\src\Chapter18\Chapter18.xproj|C:\git\EssentialCSharp\src\SharedCode\SharedCode.xproj

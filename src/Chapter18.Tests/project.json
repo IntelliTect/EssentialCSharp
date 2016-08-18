@@ -1,0 +1,23 @@
+﻿{
+  "dependencies": {
+    "Microsoft.NETCore.App": {
+      "type": "platform",
+      "version": "1.0.0"
+    },
+    "dotnet-test-mstest": "1.0.1-preview",
+    "IntelliTect.TestTools.Console": "1.0.0",
+    "Chapter18": "1.0.0",
+    "MSTest.TestFramework": "1.0.1-preview"
+  },
+  "frameworks": {
+    "net46": {
+      "imports": [
+        "dotnet5.0",
+        "netcoreapp1.0"
+        //"portable-net451+win8"
+      ]
+    }
+  },
+  "testRunner": "mstest",
+  "version": "1.0.0-*"
+}

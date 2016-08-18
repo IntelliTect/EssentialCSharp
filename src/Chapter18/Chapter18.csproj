@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{714EB5AB-A5D4-4D8B-8DA0-B69DDAFD52F6}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AddisonWesley.Michaelis.EssentialCSharp.Shared</RootNamespace>
+    <AssemblyName>AddisonWesley.Michaelis.EssentialCSharp.Chapter18</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PlatformTarget>x86</PlatformTarget>
+    <StartupObject>AddisonWesley.Michaelis.EssentialCSharp.Shared.Program</StartupObject>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Shared\Program.cs">
+      <Link>Program.cs</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <None Include="4.0\Listing18.02.ReturningAResultFromTask.cs" />
+    <None Include="4.0\Listing18.06.CancelingATaskUsingCancellationToken.cs" />
+    <None Include="4.0\Listing18.18.StartingMethodUsingThread.cs" />
+    <None Include="4.0\Listing18.19.AynchronousCallsUsingThreadPool.cs" />
+    <None Include="4.0\Listing18.16.ParallelLinqWithQueryExpressions.cs" />
+    <None Include="4.0\Listing18.14.ParallelLinqSelect.cs" />
+    <None Include="4.0\Listing18.01.StartingMethodInSeparateThread.cs" />
+    <None Include="4.0\Listing18.15.ParallelLinqWithStandardQueryOperators.cs" />
+    <None Include="4.0\Listing18.03.RegisteringForNotifactionsWithContinueWith.cs" />
+    <Compile Include="Listing18.33.CancelingParallelLoop.cs" />
+    <Compile Include="Listing18.32.ParallelLinqQueryExpressions.cs" />
+    <Compile Include="Listing18.31.ParallelLinqStandardQueryOperators.cs" />
+    <Compile Include="Listing18.30.ParallelLinqSelect.cs" />
+    <Compile Include="Listing18.29.LinqSelect.cs" />
+    <Compile Include="Listing18.28.CancelingParallelLoop.cs" />
+    <Compile Include="Listing18.27.UnhandledExceptionsParallelIterations.cs" />
+    <Compile Include="Listing18.26.ParallelForeachLoop.cs" />
+    <Compile Include="Listing18.25.ParallelPiCalculation.cs" />
+    <Compile Include="Listing18.24.SynchronousPiSections.cs" />
+    <Compile Include="Listing18.23.AwaitsAndControlFlow.cs" />
+    <Compile Include="Listing18.22.AsynchronousHighLatencyWPF.cs" />
+    <Compile Include="Listing18.19.AwaitStatement.cs" />
+    <Compile Include="Listing18.18.CustomMethodWithProgressSupport.cs" />
+    <Compile Include="Listing18.12.CooperativeLongRunningTasks.cs" />
+    <Compile Include="Listing18.11.UsingTaskRun.cs" />
+    <Compile Include="Listing18.05.CallingTaskContinueWith.cs" />
+    <Compile Include="Listing18.02.UsingThreadPool.cs" />
+    <Compile Include="Listing18.01.StartingAMethodThread.cs" />
+    <Compile Include="Listing18.10.CancellingTUsingCacellationToken.cs" />
+    <Compile Include="Listing18.08.ObservingUnhandledExceptionsWithContinueWith.cs" />
+    <Compile Include="Listing18.06.RegisteringForNotificationsWithContinueWith.cs" />
+    <Compile Include="Listing18.04.PollingATask.cs" />
+    <Compile Include="Listing18.03.InvokingAnAsynchronousTask.cs" />
+    <Compile Include="Listing18.20.CallingTaskContinueWith.cs" />
+    <Compile Include="Listing18.17.ImplementingCustomAsynchronousMethod.cs" />
+    <Compile Include="Listing18.16.AsynchronousAsALambda.cs" />
+    <Compile Include="Listing18.07.HandlingATasksUnhandledException.cs" />
+    <None Include="4.0\Listing18.11.UnhandledExceptionHandlingForParallelIterations.cs" />
+    <None Include="4.0\Listing18.13.LinqSelect.cs" />
+    <None Include="4.0\Listing18.12.CancelingAParallelLoop.cs" />
+    <None Include="4.0\Listing18.10.ParallelExecutionOfAForeachLoop.cs" />
+    <Compile Include="Listing18.15.AsynchronousWebRequestUsingTaskAsynchronyPattern.cs" />
+    <Compile Include="Listing18.14.AsynchronousWebRequest.cs" />
+    <Compile Include="Cryptographer.cs" />
+    <None Include="4.0\Listing18.05.UnhandledExceptionsUsingContinueWith.cs" />
+    <None Include="4.0\Listing18.08.LoopSynchronouslyCalculatingPiInSections.cs" />
+    <None Include="4.0\Listing18.09.StartingMethodInSeparateThread.cs" />
+    <Compile Include="..\Shared\PiCalculator+InternalPiDigitCalculator.cs">
+      <Link>PiCalculator+InternalPiDigitCalculator.cs</Link>
+    </Compile>
+    <Compile Include="..\Shared\PiCalculator.cs">
+      <Link>PiCalculator.cs</Link>
+    </Compile>
+    <None Include="4.0\Listing18.20.RegisteringForUnhandledExceptions.cs" />
+    <Compile Include="Listing18.13.SynchronousWebRequest.cs" />
+    <Compile Include="Listing18.09.RegisteringForUnhandledExceptions.cs" />
+    <Compile Include="Listing18.21.SynchronousHighLatencyWPF.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility.cs" />
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
