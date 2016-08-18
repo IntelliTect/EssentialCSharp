@@ -42,7 +42,7 @@
 
             cancellationToken.Register(() =>
             {
-                process.CloseMainWindow();
+                Process.GetProcessById(process.Id).Kill();
             });
 
             return taskCS.Task;

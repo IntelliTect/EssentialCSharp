@@ -23,7 +23,6 @@
             Console.WriteLine();
             // Blocks until task completes.
             Console.WriteLine(task.Result);
-            System.Diagnostics.Trace.Assert(task.IsCompleted);
         }
     }
 }

@@ -11,7 +11,7 @@
             bool parentTaskFaulted = false;
             Task task = new Task(() =>
             {
-                throw new ApplicationException();
+                throw new Exception();
             });
             Task faultedTask = task.ContinueWith(
                 (parentTask) =>
@@ -20,7 +20,6 @@
                 }, TaskContinuationOptions.OnlyOnFaulted);
             task.Start();
             faultedTask.Wait();
-            Trace.Assert(parentTaskFaulted);
             if (!task.IsFaulted)
             {
                 task.Wait();

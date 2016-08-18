@@ -25,15 +25,15 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
         }
 
         public Cryptographer()
-            : this(new RijndaelManaged())
+            : this(Aes.Create())
         {
         }
         #endregion CONSTRUCTORS
 
         public string Encrypt(string text)
         {
-            byte[] bytes = Encrypt(CryptoAlgorithm.CreateEncryptor(), Encoding.Default.GetBytes(text));
-            return Encoding.Default.GetString(bytes);
+            byte[] bytes = Encrypt(CryptoAlgorithm.CreateEncryptor(), Encoding.GetEncoding(0).GetBytes(text));
+            return Encoding.GetEncoding(0).GetString(bytes);
         }
 
         public byte[] Encrypt(byte[] data)
@@ -43,8 +43,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
 
         public string Encrypt(ICryptoTransform encryptor, string text)
         {
-            byte[] bytes = Encrypt(encryptor, Encoding.Default.GetBytes(text));
-            return Encoding.Default.GetString(bytes);
+            byte[] bytes = Encrypt(encryptor, Encoding.GetEncoding(0).GetBytes(text));
+            return Encoding.GetEncoding(0).GetString(bytes);
         }
         public byte[] Encrypt(ICryptoTransform encryptor, byte[] data)
         {
@@ -70,15 +70,15 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
 
         public string Decrypt(string encryptedText)
         {
-            byte[] decrypt = Decrypt(CryptoAlgorithm.CreateDecryptor(), Encoding.Default.GetBytes(encryptedText));
-            return Encoding.Default.GetString(decrypt);
+            byte[] decrypt = Decrypt(CryptoAlgorithm.CreateDecryptor(), Encoding.GetEncoding(0).GetBytes(encryptedText));
+            return Encoding.GetEncoding(0).GetString(decrypt);
         }
 
 
         public string Decrypt(ICryptoTransform decryptor, string encryptedText)
         {
-            byte[] decrypt = Decrypt(decryptor, Encoding.Default.GetBytes(encryptedText));
-            return Encoding.Default.GetString(decrypt);
+            byte[] decrypt = Decrypt(decryptor, Encoding.GetEncoding(0).GetBytes(encryptedText));
+            return Encoding.GetEncoding(0).GetString(decrypt);
         }
 
         public byte[] Decrypt(ICryptoTransform decryptor, byte[] encrypted)

@@ -1,4 +1,6 @@
 ﻿{
+  "version": "1.0.0-*",
+
   "dependencies": {
     "Microsoft.NETCore.App": {
       "type": "platform",
@@ -9,15 +11,15 @@
     "Chapter18": "1.0.0",
     "MSTest.TestFramework": "1.0.1-preview"
   },
+
+  "testRunner": "mstest",
+
   "frameworks": {
-    "net46": {
+    "netcoreapp1.0": {
       "imports": [
-        "dotnet5.0",
-        "netcoreapp1.0"
-        //"portable-net451+win8"
+        "dotnet5.4",
+        "portable-net451+win8"
       ]
     }
-  },
-  "testRunner": "mstest",
-  "version": "1.0.0-*"
+  }
 }

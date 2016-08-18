@@ -43,9 +43,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared.Listing18_15
             List<string> numbersForParallel = GetRandomNumbers();
             List<string> numbersForSynchronous = new List<string>(numbersForParallel);
 
-            System.Diagnostics.Trace.Assert(numbersForParallel.SequenceEqual(numbersForSynchronous));
-            System.Diagnostics.Trace.Assert(numbersForParallel != numbersForSynchronous);
-
             DateTime synchronousTimeBefore = DateTime.Now;
             ShowSynchronousLinq(numbersForSynchronous);
             DateTime synchronousTimeAfter = DateTime.Now;

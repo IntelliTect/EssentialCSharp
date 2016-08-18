@@ -10,12 +10,13 @@
       "type": "platform",
       "version": "1.0.0"
     },
-    "SharedCode": "1.0.0"
+    "SharedCode": "1.0.0",
+    "System.Runtime": "4.1.0"
   },
 
   "frameworks": {
-    "net46": {
-      "imports": [ "dotnet5.0", "netcoreapp1.0" ]
+    "netcoreapp1.0": {
+      "imports": [ "dotnet5.0" ]
     }
   }
 }

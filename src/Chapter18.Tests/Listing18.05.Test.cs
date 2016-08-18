@@ -16,11 +16,11 @@ Continuing B...
 Continuing C...
 Finished!";
 
-            //IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected,
-            //() =>
-            //{
-            //    Program.ChapterMain();
-            //});
+            IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected,
+            () =>
+            {
+                Program.ChapterMain();
+            });
         }
     }
 }

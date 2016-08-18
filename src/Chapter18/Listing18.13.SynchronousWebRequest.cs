@@ -4,6 +4,7 @@
     using System.IO;
     using System.Net;
     using System.Linq;
+    using System.Net.Http;
 
     public class Program
     {
@@ -18,23 +19,15 @@
             try
             {
                 Console.Write(url);
-                WebRequest webRequest =
-                    WebRequest.Create(url);
 
-                WebResponse response =
-                    webRequest.GetResponse();
+                HttpClient client = new HttpClient();
+                HttpResponseMessage response = client.GetAsync(url).Result;
 
                 Console.Write(".....");
 
-                using(StreamReader reader =
-                    new StreamReader(
-                        response.GetResponseStream()))
-                {
-                    string text =
-                        reader.ReadToEnd();
-                    Console.WriteLine(
-                        FormatBytes(text.Length));
-                }
+                string text = response.Content.ReadAsStringAsync().Result;
+                Console.WriteLine(
+                    FormatBytes(text.Length));
             }
             catch(WebException)
             {
