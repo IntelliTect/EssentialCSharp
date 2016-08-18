@@ -1,4 +1,4 @@
-﻿{
+{
   "version": "1.0.0-*",
 
   "buildOptions": {
@@ -10,13 +10,11 @@
       "version": "1.0.0",
       "type": "platform"
     },
-    "SharedCode": "1.0.0",
-    "System.Runtime": "4.1.0"
+    "SharedCode": "1.0.0"
   },
 
   "frameworks": {
     "netcoreapp1.0": {
-      "imports": [ "dotnet5.0" ]
     }
   }
 }

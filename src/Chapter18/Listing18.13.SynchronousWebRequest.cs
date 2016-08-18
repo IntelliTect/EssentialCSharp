@@ -8,7 +8,7 @@
 
     public class Program
     {
-        public static void ChapterMain(string[] args)
+        public static async void ChapterMain(string[] args)
         {
             string url = "http://www.Intellitect.com";
             if(args.Length > 0)
@@ -20,14 +20,23 @@
             {
                 Console.Write(url);
 
-                HttpClient client = new HttpClient();
-                HttpResponseMessage response = client.GetAsync(url).Result;
+                WebRequest webRequest =
+                    WebRequest.Create(url);
+
+                WebResponse response =
+                    await webRequest.GetResponseAsync();
 
                 Console.Write(".....");
 
-                string text = response.Content.ReadAsStringAsync().Result;
-                Console.WriteLine(
-                    FormatBytes(text.Length));
+                using (StreamReader reader =
+                    new StreamReader(
+                        response.GetResponseStream()))
+                {
+                    string text =
+                        reader.ReadToEnd();
+                    Console.WriteLine(
+                        FormatBytes(text.Length));
+                }
             }
             catch(WebException)
             {

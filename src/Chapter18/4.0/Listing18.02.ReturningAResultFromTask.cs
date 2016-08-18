@@ -1,6 +1,7 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Shared.Listing18_02
 {
     using System;
+    using System.Diagnostics;
     using System.Threading.Tasks;
 
     public class Program
@@ -23,6 +24,7 @@
             Console.WriteLine();
             // Blocks until task completes.
             Console.WriteLine(task.Result);
+            Trace.Assert(task.IsCompleted);
         }
     }
 }

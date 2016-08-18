@@ -5,13 +5,11 @@
     "NETStandard.Library": "1.6.0",
     "Microsoft.CSharp": "4.0.1",
     "System.Reflection.TypeExtensions": "4.1.0",
-    "System.ComponentModel.EventBasedAsync": "4.0.10",
     "System.Threading.Thread": "4.0.0"
   },
 
   "frameworks": {
     "netstandard1.3": {
-      "imports": [ "dotnet5.0" ]
     }
   }
 }

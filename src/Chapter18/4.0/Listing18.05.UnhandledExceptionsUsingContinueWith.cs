@@ -20,6 +20,7 @@
                 }, TaskContinuationOptions.OnlyOnFaulted);
             task.Start();
             faultedTask.Wait();
+            Trace.Assert(parentTaskFaulted);
             if (!task.IsFaulted)
             {
                 task.Wait();

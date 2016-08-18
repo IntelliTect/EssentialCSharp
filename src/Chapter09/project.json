@@ -1,4 +1,4 @@
-﻿{
+{
   "version": "1.0.0-*",
 
   "buildOptions": {
@@ -15,7 +15,6 @@
 
   "frameworks": {
     "netcoreapp1.0": {
-      "imports": [ "dotnet5.0" ]
     }
   }
 }

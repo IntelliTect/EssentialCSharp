@@ -10,13 +10,11 @@
       "version": "1.0.0",
       "type": "platform"
     },
-    "SharedCode": "1.0.0",
-    "System.Linq.Parallel": "4.0.1"
+    "SharedCode": "1.0.0"
   },
 
   "frameworks": {
     "netcoreapp1.0": {
-      "imports": [ "dotnet5.0" ]
     }
   }
 }

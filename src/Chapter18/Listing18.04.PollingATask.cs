@@ -28,6 +28,8 @@
             Console.WriteLine();
 
             Console.WriteLine(task.Result);
+            System.Diagnostics.Trace.Assert(
+                task.IsCompleted);
         }
     }
 }

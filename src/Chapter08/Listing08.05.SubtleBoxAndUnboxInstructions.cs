@@ -1,14 +1,14 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_05
 {
     using System;
+    using System.Collections.Generic;
 
     public class DisplayFibonacci
     {
         static void ChapterMain()
         {
             int totalCount;
-            System.Collections.ArrayList list =
-                new System.Collections.ArrayList();
+            List<double> list = new List<double>();
 
             Console.Write("Enter a number between 2 and 1000:");
             totalCount = int.Parse(Console.ReadLine());
