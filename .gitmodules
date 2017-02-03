@@ -1,0 +1,3 @@
+[submodule "submodules/TestTools"]
+	path = submodules/TestTools
+	url = https://github.com/IntelliTect/TestTools.git

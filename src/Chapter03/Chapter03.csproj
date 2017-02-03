@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{861B747A-E2D6-4C48-AD0E-AB1D765BFC98}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Chapter03</RootNamespace>
+    <AssemblyName>Chapter03</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>AddisonWesley.Michaelis.EssentialCSharp.Shared.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Shared\Program.cs">
+      <Link>Program.cs</Link>
+    </Compile>
+    <Compile Include="Listing03.01.SimpleOperator.cs" />
+    <Compile Include="Listing03.02.Negative.cs" />
+    <Compile Include="Listing03.03.BinaryOperators.cs" />
+    <Compile Include="Listing03.04.NonNumericTypes.cs" />
+    <Compile Include="Listing03.05.CharConcatenation.cs" />
+    <Compile Include="Listing03.06.CharDifference.cs" />
+    <Compile Include="Listing03.07.UnexpectedInequality.cs" />
+    <Compile Include="Listing03.08.DivisionByZero.cs" />
+    <Compile Include="Listing03.09.BoundOverflow.cs" />
+    <Compile Include="Listing03.10.Increment.cs" />
+    <Compile Include="Listing03.11.IncrementOperator.cs" />
+    <Compile Include="Listing03.12.OtherOperators.cs" />
+    <Compile Include="Listing03.13.UnaryIncrement.cs" />
+    <Compile Include="Listing03.14.UnaryDecrement.cs" />
+    <Compile Include="Listing03.15.DisplayUnicode.cs" />
+    <Compile Include="Listing03.16.PostIncrement.cs" />
+    <Compile Include="Listing03.17.PreIncrement.cs" />
+    <Compile Include="Listing03.18.ComparingPrefixAndPostfix.cs" />
+    <Compile Include="Listing03.19.DeclaringConstants.cs" />
+    <Compile Include="Listing03.20.IfElseStatement.cs" />
+    <Compile Include="Listing03.21.NestedIf.cs" />
+    <Compile Include="Listing03.22.ElseIf.cs" />
+    <Compile Include="Listing03.23.NoCodeBlock.cs" />
+    <Compile Include="Listing03.24.WithCodeBlock.cs" />
+    <Compile Include="Listing03.25.RelyingOnIndentation.cs" />
+    <Compile Include="Listing03.26.IdenticalInFunctionality.cs" />
+    <Compile Include="Listing03.27.OutOfScope.cs" />
+    <Compile Include="Listing03.28.BooleanExpression.cs" />
+    <Compile Include="Listing03.29.AssignmentAsCondition.cs" />
+    <Compile Include="Listing03.30.AssignAsBool.cs" />
+    <Compile Include="Listing03.31.EqualityOperator.cs" />
+    <Compile Include="Listing03.32.OrOperator.cs" />
+    <Compile Include="Listing03.33.AndOperator.cs" />
+    <Compile Include="Listing03.34.LogicalNegationOperator.cs" />
+    <Compile Include="Listing03.35.ConditionalOperator.cs" />
+    <Compile Include="Listing03.36.NullCoalescingOperator.cs" />
+    <Compile Include="Listing03.37.NullConditionalOperator.cs" />
+    <Compile Include="Listing03.38.NullConditionalOperatorWithIndexOperator.cs" />
+    <Compile Include="Listing03.39.RightShiftOperator.cs" />
+    <Compile Include="Listing03.40.BitwiseOperators.cs" />
+    <Compile Include="Listing03.41.StringRepresentationOfBinary.cs" />
+    <Compile Include="Listing03.42.LogicalAssignmentOperators.cs" />
+    <Compile Include="Listing03.43.WhileLoop.cs" />
+    <Compile Include="Listing03.44.DoWhileLoop.cs" />
+    <Compile Include="Listing03.45.ForLoop.cs" />
+    <Compile Include="Listing03.46.ForWithMultipleExpressions.cs" />
+    <Compile Include="Listing03.47.DeterminingRemainingMoves.cs" />
+    <Compile Include="Listing03.48.InputValidation.cs" />
+    <Compile Include="Listing03.49.SwitchStatement.cs" />
+    <Compile Include="Listing03.50.BreakStatement.cs" />
+    <Compile Include="Listing03.51.SettingABit.cs" />
+    <Compile Include="Listing03.52.DeterminingEmailDomain.cs" />
+    <Compile Include="Listing03.53.ReplacingContinueWithIf.cs" />
+    <Compile Include="Listing03.54.GotoStatements.cs" />
+    <Compile Include="Listing03.55.ExcludingCode.cs" />
+    <Compile Include="Listing03.56.Directives.cs" />
+    <Compile Include="Listing03.57.DefineDirective.cs" />
+    <Compile Include="Listing03.58.WarningDirective.cs" />
+    <Compile Include="Listing03.59.PragmaDirective.cs" />
+    <Compile Include="Listing03.60.PragmaRestore.cs" />
+    <Compile Include="Listing03.61.LineWarning.cs" />
+    <Compile Include="Listing03.62.Regions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

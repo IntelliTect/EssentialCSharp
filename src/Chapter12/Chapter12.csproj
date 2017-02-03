@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E31FD9BD-9953-4930-BF9D-81CE148097FF}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Chapter12</RootNamespace>
+    <AssemblyName>Chapter12</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>AddisonWesley.Michaelis.EssentialCSharp.Shared.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Shared\Program.cs">
+      <Link>Program.cs</Link>
+    </Compile>
+    <Compile Include="Listing12.24.ConvertingExpressionTreeToSqlWhereClause.cs" />
+    <Compile Include="Listing12.23.LoopVariableWorkaroundBeforeCSharpFive.cs" />
+    <Compile Include="Listing12.22.CapturingLoopVariablesCSharpFive.cs" />
+    <Compile Include="Listing12.17.FuncAndActionDelegateDeclarations.cs" />
+    <Compile Include="Listing12.07.UsingMethodNameAsArgument.cs" />
+    <Compile Include="Listing12.04.DeclaringADelegateType.cs" />
+    <Compile Include="Listing12.25.ExamingingAnExpressTree.cs" />
+    <Compile Include="Listing12.21.CSharpEquivalentOfCILCodeGeneratedByCompilerForOuterVariables.cs" />
+    <Compile Include="Listing12.20.UsingAnOuterVariableInALambdaExpression.cs" />
+    <Compile Include="Listing12.19.CSharpEquivalentOfCILGeneratedByTheCompilerForLambdaExpressions.cs" />
+    <Compile Include="Listing12.15.PassingADelegateWithAnExpressionLambda.cs" />
+    <Compile Include="Listing12.13.StatementLambdasWithASingleInputParameter.cs" />
+    <Compile Include="Listing12.14.ParameterlessStatementLambdas.cs" />
+    <Compile Include="Listing12.12.OmittingParameterTypesFromStatementLambdas.cs" />
+    <Compile Include="Listing12.18.UsingVarianceForDelegates.cs" />
+    <Compile Include="Listing12.16.PassingAnAnonymousMethod.cs" />
+    <Compile Include="Listing12.08.PassingADelegateInstanceAsAParameterInCSharp.cs" />
+    <Compile Include="Listing12.11.CreatingDelegateWithStatementLambda.cs" />
+    <Compile Include="Listing12.10.UsingADifferentComparisonHandlerCompatibleMethod.cs" />
+    <Compile Include="Listing12.09.SystemDelegateCannotBeBaseClass.cs" />
+    <Compile Include="Listing12.06.DeclaringAComparisonHandlerCompatibleMethod.cs" />
+    <Compile Include="Listing12.05.DeclaringANestedDelegateType.cs" />
+    <Compile Include="Listing12.03.BubbleSortMethodWithDelegateParameter.cs" />
+    <Compile Include="Listing12.02.BubbleSortMethodAscendingOrDescending.cs" />
+    <Compile Include="Listing12.01.BubbleSortMethod.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
