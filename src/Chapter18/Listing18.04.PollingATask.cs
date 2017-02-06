@@ -28,8 +28,10 @@
             Console.WriteLine();
 
             Console.WriteLine(task.Result);
-            System.Diagnostics.Trace.Assert(
-                task.IsCompleted);
+            if(!task.IsCompleted)
+            {
+                throw new Exception("Task Should Be Completed");
+            }
         }
     }
 }

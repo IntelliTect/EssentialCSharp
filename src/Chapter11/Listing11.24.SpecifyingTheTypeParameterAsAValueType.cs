@@ -1,7 +1,6 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter11.Listing11_24
 {
     using System;
-    using System.Data.SqlTypes;
 
     public struct Nullable<T> :
         IFormattable, IComparable,

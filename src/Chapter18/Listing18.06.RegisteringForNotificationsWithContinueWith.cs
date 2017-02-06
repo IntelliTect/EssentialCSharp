@@ -17,7 +17,10 @@
             Task faultedTask = task.ContinueWith(
                 (antecedentTask) =>
                 {
-                    Trace.Assert(antecedentTask.IsFaulted);
+                    if(!antecedentTask.IsFaulted)
+                    {
+                        throw new Exception("Antecedent Task Should Be Faulted");
+                    }
                     Console.WriteLine(
                         "Task State: Faulted");
                 },
@@ -26,7 +29,10 @@
             Task canceledTask = task.ContinueWith(
                 (antecedentTask) =>
                 {
-                    Trace.Assert(antecedentTask.IsCanceled);
+                    if (!antecedentTask.IsCanceled)
+                    {
+                        throw new Exception("Antecedent Task Should Be Canceled");
+                    }
                     Console.WriteLine(
                         "Task State: Canceled");
                 },
@@ -35,7 +41,10 @@
             Task completedTask = task.ContinueWith(
                 (antecedentTask) =>
                 {
-                    Trace.Assert(antecedentTask.IsCompleted);
+                    if (!antecedentTask.IsCompleted)
+                    {
+                        throw new Exception("Antecedent Task Should Be Completed");
+                    }
                     Console.WriteLine(
                         "Task State: Completed");
                 }, TaskContinuationOptions.

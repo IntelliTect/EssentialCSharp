@@ -21,8 +21,15 @@
                 }, TaskContinuationOptions.OnlyOnFaulted);
             task.Start();
             continuationTask.Wait();
-            Trace.Assert(parentTaskFaulted);
-            Trace.Assert(task.IsFaulted);
+            if (!parentTaskFaulted)
+            {
+                throw new Exception("Parent task should be faulted");
+            }
+            if (!task.IsFaulted)
+            {
+                throw new Exception("Task should be faulted");
+            }
+
             task.Exception.Handle(eachException =>
             {
                 Console.WriteLine(
