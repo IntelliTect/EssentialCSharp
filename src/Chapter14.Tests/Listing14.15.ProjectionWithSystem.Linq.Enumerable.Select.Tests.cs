@@ -12,7 +12,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_15.Tests
         [TestMethod]
         public void Listing14_15_Test()
         {
-            string expectedPattern = $@"{ Directory.GetCurrentDirectory() }\*";
+            string expectedPattern = $@"{ Directory.GetCurrentDirectory() }{Path.DirectorySeparatorChar}*";
 
             string output = IntelliTect.TestTools.Console.ConsoleAssert.Execute(null, () =>
             {
@@ -21,7 +21,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_15.Tests
 
             IEnumerable<string> outputItems = output.Split('\n');
 
-            Assert.AreEqual(10, outputItems.Count());
+            Assert.AreEqual(6, outputItems.Count());
             foreach (string item in outputItems)
             {
                 Assert.IsTrue(item.IsLike(expectedPattern));
