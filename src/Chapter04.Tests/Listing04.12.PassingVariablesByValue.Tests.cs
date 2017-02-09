@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.IO;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_11.Tests
 {
@@ -8,7 +9,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_11.Tests
         [TestMethod]
         public void Main_WritePath()
         {
-            string view = "C:\\Data\\index.html";
+            string view = $"C:{Path.DirectorySeparatorChar}{Path.Combine("Data", "index.html")}";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(view,
             () =>

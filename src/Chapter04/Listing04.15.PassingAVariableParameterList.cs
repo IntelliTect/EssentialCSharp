@@ -30,7 +30,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_14
             // Call Combine() with an array
             fullName = Combine(
                 new string[] {
-                    "C:\\", "Data",
+                    $"C:{Path.DirectorySeparatorChar}", "Data",
                     "HomeDir", "index.html" });
             Console.WriteLine(fullName);
             // ...

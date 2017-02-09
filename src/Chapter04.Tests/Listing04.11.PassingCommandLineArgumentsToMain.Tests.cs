@@ -24,7 +24,7 @@ Usage: Downloader.exe <URL> <TargetFileName>";
         [TestMethod]
         public void Main_GoodArgs_DownloadFile()
         {
-            string[] args = { "http://google.com", Directory.GetCurrentDirectory() + "\\destination.txt" };
+            string[] args = { "http://google.com", Path.Combine(Directory.GetCurrentDirectory(), "destination.txt") };
 
             Assert.AreEqual(0, Program.ChapterMain(args));
         }

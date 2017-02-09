@@ -20,7 +20,7 @@ Prepend, Range, Repeat, Reverse, Select, SelectMany, SequenceEqual,
 Single, SingleOrDefault, Skip, SkipWhile, Sum, Take, TakeWhile, ThenBy, 
 ThenByDescending, ToArray, ToDictionary, ToList, ToLookup, Union, Where, Zip, ";
 
-            expected = expected.Replace(Environment.NewLine, "");
+            expected = expected.Replace("\r\n", "");
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected, Program.ChapterMain);
         }

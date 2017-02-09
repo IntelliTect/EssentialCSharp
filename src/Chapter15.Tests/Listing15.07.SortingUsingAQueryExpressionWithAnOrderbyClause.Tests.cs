@@ -12,7 +12,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_07.Tests
         [TestMethod]
         public void ProjectionWithLinqsSelect()
         {
-            string expectedPattern = $@"{ Directory.GetCurrentDirectory() }\*";
+            string expectedPattern = $@"{ Directory.GetCurrentDirectory() }{Path.DirectorySeparatorChar}*";
 
             string output = IntelliTect.TestTools.Console.ConsoleAssert.Execute(null, () =>
             {
@@ -21,7 +21,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_07.Tests
 
             IEnumerable<string> outputItems = output.Split('\n');
 
-            Assert.AreEqual(15, outputItems.Count());
+            Assert.AreEqual(14, outputItems.Count());
             foreach (string item in outputItems)
             {
                 Assert.IsTrue(item.IsLike(expectedPattern));
