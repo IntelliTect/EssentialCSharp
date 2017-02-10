@@ -11,7 +11,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_11.Tests
             const string expected = "\"Truly, you have a dizzying intellect.\"\n\"Wait 'til I get going!\"\n";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, DuelOfWits.ChapterMain, false);
+                expected, DuelOfWits.ChapterMain, replaceCRLF:false);
         }
     }
 }
