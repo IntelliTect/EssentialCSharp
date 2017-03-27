@@ -1,7 +1,7 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter11.Listing11_02
 {
     using System;
-    using System.Collections;
+    using System.Collections.Generic;
 
     public class Program
     {
@@ -15,7 +15,8 @@
 
         public void Sketch()
         {
-            Stack path = new Stack();
+
+            Stack<Cell> path = new Stack<Cell>();
             Cell currentPosition;
             ConsoleKeyInfo key;  // Added in C# 2.0
 

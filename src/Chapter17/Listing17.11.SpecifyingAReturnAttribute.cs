@@ -1,7 +1,5 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_09
 {
-    using System.ComponentModel;
-
     public class Program
     {
         [return: Description(

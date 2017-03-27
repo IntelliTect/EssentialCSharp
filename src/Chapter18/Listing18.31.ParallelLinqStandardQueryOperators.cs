@@ -17,9 +17,11 @@
 
             // Show the total count of items still
             // matches the original count
-            System.Diagnostics.Trace.Assert(
-                data.Count() == parallelGroups.Sum(
-                    item => item.Count()));
+            if (data.Count() != parallelGroups.Sum(
+                    item => item.Count()))
+            {
+                throw new Exception("data.Count() != parallelGroups.Sum(item => item.Count()");
+            }
             // ...
 
             return data.AsParallel().Select(
