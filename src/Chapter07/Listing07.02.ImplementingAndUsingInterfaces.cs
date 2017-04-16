@@ -39,8 +39,9 @@
             Console.WriteLine();
 
             Publication[] publications = new Publication[3] {
-                new Publication("Celebration of Discipline",
-                    "Richard Foster", 1978),
+                new Publication(
+                    "The End of Poverty: Economic Possibilities for Our Time",
+                    "Jeffrey Sachs", 2006),
                 new Publication("Orthodoxy", 
                     "G.K. Chesterton", 1908),
                 new Publication(
