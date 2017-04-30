@@ -29,6 +29,9 @@
             {
                 // Handle Exception
             }
+            // Disabled warning as this code is demonstrating the general catch block
+            // following a catch(Exception ) block.
+            #pragma warning disable 1058
             catch
             {
                 // Any unhandled exception
