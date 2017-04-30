@@ -10,10 +10,22 @@
                 { "zero", "one", "two", "three", "four", 
                   "five", "six", "seven", "eight", "nine" };
 
+#if !PRECSHARP7
             int result = Array.IndexOf(
-                digitTexts, textDigit.ToLower());
+                digitTexts,
+                // Leveraging C# 2.0’s null coelesce operator.
+                (textDigit ??
+                  // Leveraging C# 7.0’s throw expression.
+                  throw new ArgumentNullException(nameof(textDigit))
+                ).ToLower());
 
-            if(result < 0)
+#else
+            if(textDigit == null) throw new ArgumentNullException(nameof(textDigit))
+            int result = Array.IndexOf(
+                digitTexts, textDigit?.ToLower());
+#endif
+
+            if (result < 0)
             {
 #if !PRECSHARP6
                 throw new ArgumentException(
