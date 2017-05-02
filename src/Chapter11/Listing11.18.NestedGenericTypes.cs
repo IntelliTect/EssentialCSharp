@@ -1,5 +1,7 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter11.Listing11_18
 {
+    #pragma warning disable 0693 // Disabled warning due to nested type parameter
+                                 // with overlapping name
     class Container<T, U>
     {
         // Nested classes inherit type parameters.
