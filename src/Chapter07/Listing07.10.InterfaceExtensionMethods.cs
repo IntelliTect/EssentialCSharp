@@ -7,16 +7,18 @@
     {
         public static void ChapterMain()
         {
-            Contact[] contacts = new Contact[6];
-            contacts[0] = new Contact(
-                "Dick", "Traci",
-                "123 Main St., Spokane, WA  99037",
-                "123-123-1234");
-            // ...
+            Contact[] contacts = new Contact[] {
+                new Contact(
+                    "Dick", "Traci",
+                    "123 Main St., Spokane, WA  99037",
+                    "123-123-1234")
+                // ...
+            };
 
-            // Classes are implicitly converted to
-            // their supported interfaces.
-            contacts.List(Contact.Headers);
+
+        // Classes are implicitly converted to
+        // their supported interfaces.
+        contacts.List(Contact.Headers);
 
             Console.WriteLine();
 

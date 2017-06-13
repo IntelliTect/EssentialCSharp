@@ -8,18 +8,19 @@
             // ...
 
             Angle angle = new Angle(25, 58, 23);
+            // Example 1: Simple box operation
             object objectAngle = angle;  // Box
             Console.Write(((Angle)objectAngle).Degrees);
 
-            // Unbox, modify unboxed value, and discard value
+            // Example 2: Unbox, modify unboxed value, and discard value
             ((Angle)objectAngle).MoveTo(26, 58, 23);
             Console.Write(", " + ((Angle)objectAngle).Degrees);
 
-            // Box, modify boxed value, and discard reference to box
+            // Example 3: Box, modify boxed value, and discard reference to box
             ((IAngle)angle).MoveTo(26, 58, 23);
             Console.Write(", " + ((Angle)angle).Degrees);
 
-            // Modify boxed value directly
+            // Example 4: Modify boxed value directly
             ((IAngle)objectAngle).MoveTo(26, 58, 23);
             Console.WriteLine(", " + ((Angle)objectAngle).Degrees);
 
