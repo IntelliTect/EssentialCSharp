@@ -34,7 +34,7 @@
                         codeBytes, 0,
                         codeBytesPtr, codeBytes.Length);
 
-                    var method = Marshal.GetDelegateForFunctionPointer<MethodInvoker>(codeBytesPtr);
+                    MethodInvoker method = Marshal.GetDelegateForFunctionPointer<MethodInvoker>(codeBytesPtr);
                     fixed (byte* newBuffer = &buffer[0])
                     {
                         method(newBuffer);
