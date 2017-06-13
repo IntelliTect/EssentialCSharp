@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.0
+VisualStudioVersion = 15.0.26430.4
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F97BC459-B5B9-4326-9E0D-D085FD4DEF96}"
 	ProjectSection(SolutionItems) = preProject
@@ -94,6 +94,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter01", "src\Chapter01\Chapter01.csproj", "{70458AA7-C130-4E97-BBD9-C54BDCDF1A67}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IntelliTect.TestTools.Console.Tests", "submodules\TestTools\IntelliTect.TestTools.Console.Tests\IntelliTect.TestTools.Console.Tests.csproj", "{9E1A36E4-F75F-4125-9856-DA631D901E52}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter20.Tests", "src\Chapter20.Tests\Chapter20.Tests.csproj", "{499FD8E6-D7DC-4295-AD35-517814CAE3AF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -573,6 +575,18 @@ Global
 		{9E1A36E4-F75F-4125-9856-DA631D901E52}.Release|x64.Build.0 = Release|Any CPU
 		{9E1A36E4-F75F-4125-9856-DA631D901E52}.Release|x86.ActiveCfg = Release|Any CPU
 		{9E1A36E4-F75F-4125-9856-DA631D901E52}.Release|x86.Build.0 = Release|Any CPU
+		{499FD8E6-D7DC-4295-AD35-517814CAE3AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{499FD8E6-D7DC-4295-AD35-517814CAE3AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{499FD8E6-D7DC-4295-AD35-517814CAE3AF}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{499FD8E6-D7DC-4295-AD35-517814CAE3AF}.Debug|x64.Build.0 = Debug|Any CPU
+		{499FD8E6-D7DC-4295-AD35-517814CAE3AF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{499FD8E6-D7DC-4295-AD35-517814CAE3AF}.Debug|x86.Build.0 = Debug|Any CPU
+		{499FD8E6-D7DC-4295-AD35-517814CAE3AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{499FD8E6-D7DC-4295-AD35-517814CAE3AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{499FD8E6-D7DC-4295-AD35-517814CAE3AF}.Release|x64.ActiveCfg = Release|Any CPU
+		{499FD8E6-D7DC-4295-AD35-517814CAE3AF}.Release|x64.Build.0 = Release|Any CPU
+		{499FD8E6-D7DC-4295-AD35-517814CAE3AF}.Release|x86.ActiveCfg = Release|Any CPU
+		{499FD8E6-D7DC-4295-AD35-517814CAE3AF}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -4,7 +4,7 @@
     using System.Runtime.InteropServices;
     using System.Text;
 
-    class Program
+    public class Program
     {
         public unsafe delegate void MethodInvoker(byte* buffer);
 
