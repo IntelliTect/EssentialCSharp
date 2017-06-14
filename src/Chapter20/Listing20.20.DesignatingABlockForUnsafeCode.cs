@@ -10,7 +10,7 @@
 
         public unsafe static int ChapterMain()
         {
-            if (System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
             {
                 unsafe
                 {
