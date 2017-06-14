@@ -10,9 +10,11 @@
 
         public unsafe static int ChapterMain()
         {
-            unsafe
+            if (System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
             {
-                byte[] codeBytes = new byte[] {
+                unsafe
+                {
+                    byte[] codeBytes = new byte[] {
                     0x49, 0x89, 0xd8,       // mov    %rbx,%r8
                     0x49, 0x89, 0xc9,       // mov    %rcx,%r9
                     0x48, 0x31, 0xc0,       // xor    %rax,%rax
@@ -25,27 +27,29 @@
                     0xc3                    // retq
             };
 
-                byte[] buffer = new byte[12];
+                    byte[] buffer = new byte[12];
 
-                using (VirtualMemoryPtr codeBytesPtr =
-                    new VirtualMemoryPtr(codeBytes.Length))
-                {
-                    Marshal.Copy(
-                        codeBytes, 0,
-                        codeBytesPtr, codeBytes.Length);
-
-                    MethodInvoker method = Marshal.GetDelegateForFunctionPointer<MethodInvoker>(codeBytesPtr);
-                    fixed (byte* newBuffer = &buffer[0])
+                    using (VirtualMemoryPtr codeBytesPtr =
+                        new VirtualMemoryPtr(codeBytes.Length))
                     {
-                        method(newBuffer);
-                    }
-                }
-                Console.Write("Processor Id: ");
-                Console.WriteLine(ASCIIEncoding.ASCII.GetChars(buffer));
-                Console.WriteLine("Press any key to continue");
-                Console.ReadLine();
-            } // unsafe
+                        Marshal.Copy(
+                            codeBytes, 0,
+                            codeBytesPtr, codeBytes.Length);
 
+                        MethodInvoker method = Marshal.GetDelegateForFunctionPointer<MethodInvoker>(codeBytesPtr);
+                        fixed (byte* newBuffer = &buffer[0])
+                        {
+                            method(newBuffer);
+                        }
+                    }
+                    Console.Write("Processor Id: ");
+                    Console.WriteLine(ASCIIEncoding.ASCII.GetChars(buffer));
+                } // unsafe
+            }
+            else
+            {
+                Console.WriteLine("This sample is only valid for Windows");
+            }
             return 0;
         }
     }
