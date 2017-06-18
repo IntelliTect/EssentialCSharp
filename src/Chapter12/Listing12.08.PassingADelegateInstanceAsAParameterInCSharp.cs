@@ -18,7 +18,7 @@
             }
             if(comparisonMethod == null)
             {
-                throw new ArgumentNullException("comparisonMethod");
+                throw new ArgumentNullException(nameof(comparisonMethod));
             }
 
             for(i = items.Length - 1; i >= 0; i--)
