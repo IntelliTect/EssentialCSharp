@@ -17,7 +17,7 @@
 
             if(comparisonMethod == null)
             {
-                throw new ArgumentNullException("comparisonMethod");
+                throw new ArgumentNullException(nameof(comparisonMethod));
             }
 
             if(items == null)
