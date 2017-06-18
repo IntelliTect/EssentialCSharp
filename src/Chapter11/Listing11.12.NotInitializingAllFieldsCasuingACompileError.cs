@@ -4,7 +4,7 @@
 
     public struct Pair<T> : IPair<T>
     {
-        // ERROR:  Field 'Pair<T>._second' must be fully assigned
+        // ERROR:  Field 'Pair<T>.Second' must be fully assigned
         //         before control leaves the constructor
         // public Pair(T first)
         // {  
