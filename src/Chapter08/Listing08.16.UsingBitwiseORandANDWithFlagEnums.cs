@@ -20,6 +20,7 @@
             {
                 System.IO.FileInfo file =
                     new System.IO.FileInfo(fileName);
+
                 file.Attributes = FileAttributes.Hidden |
                     FileAttributes.ReadOnly;
 
@@ -33,8 +34,9 @@
                     throw new Exception("File is not hidden.");
                 }
 
+                // Use bit operators prior to C# 4.0/.NET 4.0
                 if ((file.Attributes & FileAttributes.ReadOnly) !=
-                    FileAttributes.ReadOnly)
+                FileAttributes.ReadOnly)
                 {
                     throw new Exception("File is not read-only.");
                 }
