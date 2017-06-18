@@ -8,31 +8,45 @@
         public static void ChapterMain()
         {
             // ...
-
             string fileName = @"enumtest.txt";
-
-            System.IO.FileInfo file =
+            System.IO.FileInfo enumFile =
                 new System.IO.FileInfo(fileName);
-
-            file.Attributes = FileAttributes.Hidden |
-                FileAttributes.ReadOnly;
-
-            Console.WriteLine("{0} | {1} = {2}",
-                FileAttributes.Hidden, FileAttributes.ReadOnly,
-                (int)file.Attributes);
-
-            if((file.Attributes & FileAttributes.Hidden) !=
-                FileAttributes.Hidden)
+            if (!enumFile.Exists)
             {
-                throw new Exception("File is not hidden.");
+                enumFile.Create().Dispose();
             }
 
-            if((file.Attributes & FileAttributes.ReadOnly) !=
-                FileAttributes.ReadOnly)
+            try
             {
-                throw new Exception("File is not read-only.");
-            }
+                System.IO.FileInfo file =
+                    new System.IO.FileInfo(fileName);
+                file.Attributes = FileAttributes.Hidden |
+                    FileAttributes.ReadOnly;
 
+                Console.WriteLine("{0} | {1} = {2}",
+                    FileAttributes.Hidden, FileAttributes.ReadOnly,
+                    (int)file.Attributes);
+
+                // Added in C# 4.0/.NET 4.0
+                if (!file.Attributes.HasFlag(FileAttributes.Hidden))
+                {
+                    throw new Exception("File is not hidden.");
+                }
+
+                if ((file.Attributes & FileAttributes.ReadOnly) !=
+                    FileAttributes.ReadOnly)
+                {
+                    throw new Exception("File is not read-only.");
+                }
+            }
+            finally
+            {
+                if (enumFile.Exists)
+                {
+                    enumFile.Attributes = FileAttributes.Normal;
+                    enumFile.Delete();
+                }
+            }
             // ...
         }
     }
