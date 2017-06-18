@@ -39,9 +39,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_30B
                 System.Console.WriteLine($"{address.Item2}, {address.Item3}  {address.Item4}");
                 System.Console.WriteLine(address.Item5);
             }
-            (string Name, string _, double Gdp) countryInfo =
+            (string Name, string Capital, double Gdp) countryInfo =
     ("Malawi", "Lilongwe", 226.50);
-            (string Name,  string blah, double Gdp) = countryInfo;
+            (string Name,  _, double Gdp) = countryInfo;
+            (Name, _, Gdp) = ("Malawi", "Lilongwe", 226.50);
+
 
         }
     }
