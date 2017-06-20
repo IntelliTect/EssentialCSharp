@@ -8,16 +8,16 @@
         // ...
 
         public static void BubbleSort(
-            int[] items, ComparisonHandler comparisonMethod)
+            int[] items, Func<int, int, bool> compare)
         {
             int i;
             int j;
             int temp;
 
 
-            if(comparisonMethod == null)
+            if(compare == null)
             {
-                throw new ArgumentNullException(nameof(comparisonMethod));
+                throw new ArgumentNullException(nameof(compare));
             }
 
             if(items == null)
@@ -29,7 +29,7 @@
             {
                 for(j = 1; j <= i; j++)
                 {
-                    if(comparisonMethod(items[j - 1], items[j]))
+                    if(compare(items[j - 1], items[j]))
                     {
                         temp = items[j - 1];
                         items[j - 1] = items[j];

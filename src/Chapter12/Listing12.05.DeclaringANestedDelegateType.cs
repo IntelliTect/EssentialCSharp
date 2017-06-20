@@ -2,7 +2,7 @@
 {
     class DelegateSample
     {
-        public delegate bool ComparisonHandler(
+        public delegate bool Comparer(
             int first, int second);
     }
 }

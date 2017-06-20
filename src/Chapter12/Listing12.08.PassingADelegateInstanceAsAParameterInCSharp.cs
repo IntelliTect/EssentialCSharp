@@ -6,7 +6,7 @@
     public class DelegateSample
     {
         public static void BubbleSort(
-            int[] items, ComparisonHandler comparisonMethod)
+            int[] items, Comparer compare)
         {
             int i;
             int j;
@@ -16,16 +16,16 @@
             {
                 return;
             }
-            if(comparisonMethod == null)
+            if(compare == null)
             {
-                throw new ArgumentNullException(nameof(comparisonMethod));
+                throw new ArgumentNullException(nameof(compare));
             }
 
             for(i = items.Length - 1; i >= 0; i--)
             {
                 for(j = 1; j <= i; j++)
                 {
-                    if(comparisonMethod(items[j - 1], items[j]))
+                    if(compare(items[j - 1], items[j]))
                     {
                         temp = items[j - 1];
                         items[j - 1] = items[j];
@@ -52,7 +52,7 @@
             }
 
             BubbleSort(items,
-                new ComparisonHandler(GreaterThan));
+                new Comparer(GreaterThan));
 
             for(i = 0; i < items.Length; i++)
             {
