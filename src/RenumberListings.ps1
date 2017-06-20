@@ -40,6 +40,7 @@ param(
     [Parameter(Mandatory,ValueFromPipeline,ParameterSetName="Files")][string[]] $Files,
     [Parameter(Mandatory,ParameterSetName="ChapterNumber")][int] $ChapterNumber,
     [Parameter()][string] $StartWithListing,
+    [Parameter()][string] $EndWithListing,
     [Parameter(Mandatory)][ValidateSet('Decrement','Increment')][string] $Direction
 )
 
@@ -86,10 +87,14 @@ PROCESS {
     # StrictMode has to be set after parameters if you are using CmdletBinding (perhaps regardless).
  
     if( ($StartWithListing -like "*.*")) { # Remove Chapter prefix if it exists.
-        $startWithListing = $StartWithListing.Split(".")[1]
+        $StartWithListing = $StartWithListing.Split(".")[1]
+    }
+    if( ($EndWithListing -like "*.*")) { # Remove Chapter prefix if it exists.
+        $EndWithListing = $EndWithListing.Split(".")[1]
     }
 
     $StartWithListing = $StartWithListing.ToString().PadLeft(2, '0')
+    $EndWithListing = $EndWithListing.ToString().PadLeft(2, '0')
     [string]$Chapter = $ChapterNumber.ToString().PadLeft(2, '0')
     
     switch($PsCmdlet.ParameterSetName)
@@ -104,6 +109,7 @@ PROCESS {
     }
 
     $Files = $Files | ?{ $_.Name -ge "Listing$Chapter.$StartWithListing" }
+    $Files = $Files | ?{ $_.Name -le "Listing$Chapter.$EndWithListing" }
 
     $difference = 0;
     $files = switch ($Direction) { 
