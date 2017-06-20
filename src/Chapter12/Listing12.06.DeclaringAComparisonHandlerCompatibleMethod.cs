@@ -2,13 +2,10 @@
 {
     using System;
 
-    public delegate bool ComparisonHandler(
-        int first, int second);
-
-    class DelegateSample
+     class DelegateSample
     {
         public static void BubbleSort(
-            int[] items, ComparisonHandler comparisonMethod)
+            int[] items, Func<int, int, bool> compare)
         {
             int i;
             int j;
@@ -18,16 +15,16 @@
             {
                 return;
             }
-            if(comparisonMethod == null)
+            if(compare == null)
             {
-                throw new ArgumentNullException("comparisonMethod");
+                throw new ArgumentNullException(nameof(compare));
             }
 
             for(i = items.Length - 1; i >= 0; i--)
             {
                 for(j = 1; j <= i; j++)
                 {
-                    if(comparisonMethod(items[j - 1], items[j]))
+                    if(compare(items[j - 1], items[j]))
                     {
                         temp = items[j - 1];
                         items[j - 1] = items[j];
