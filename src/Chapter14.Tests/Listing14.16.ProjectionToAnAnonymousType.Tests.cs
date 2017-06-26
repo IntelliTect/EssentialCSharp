@@ -12,11 +12,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_16.Tests
         [TestMethod]
         public void ProjectionToAnAnonymousType()
         {
-            string expectedPattern = "{ FileName = *, Size = ";
+            string expectedPattern = "FileName = *, Size = ";
             int expectedItemCount = Directory.EnumerateFiles(
                 Directory.GetCurrentDirectory(), "*").Count();
 
-            string output = IntelliTect.TestTools.Console.ConsoleAssert.Execute(null, () =>
+            string output = ConsoleAssert.Execute(null, () =>
             {
                 Program.ChapterMain();
             });

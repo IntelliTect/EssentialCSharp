@@ -14,25 +14,26 @@
 
             IEnumerable<string> fileList = Directory.EnumerateFiles(
                 rootDirectory, searchPattern);
-            var items = fileList.Select(
+            IEnumerable<(string FileName, long Size)> items = fileList.Select(
                 file =>
                 {
                     FileInfo fileInfo = new FileInfo(file);
-                    return new
-                    {
-                        FileName = fileInfo.Name,
-                        Size = fileInfo.Length
-                    };
+                    return (
+                        FileName: fileInfo.Name,
+                        Size: fileInfo.Length
+                    );
                 });
+
+
 
             Print(items);
         }
 
-        private static void Print<T>(IEnumerable<T> items)
+        private static void Print(IEnumerable<(string FileName, long Size)> items)
         {
-            foreach(T item in items)
+            foreach((string FileName, long Size) item in items)
             {
-                Console.WriteLine(item);
+                Console.WriteLine($"FileName = { item.FileName }, Size = { item.Size }");
             }
         }
     }
