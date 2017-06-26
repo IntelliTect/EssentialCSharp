@@ -13,15 +13,17 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_15.Tests
         public void Listing14_15_Test()
         {
             string expectedPattern = $@"{ Directory.GetCurrentDirectory() }{Path.DirectorySeparatorChar}*";
-
-            string output = IntelliTect.TestTools.Console.ConsoleAssert.Execute(null, () =>
+            int expectedItemCount = Directory.EnumerateFiles(
+                    Directory.GetCurrentDirectory(), "*").Count();
+            string output = ConsoleAssert.Execute(null, () =>
             {
                 Program.ChapterMain();
             });
 
             IEnumerable<string> outputItems = output.Split('\n');
 
-            Assert.AreEqual(14, outputItems.Count());
+            Assert.AreEqual<int>(
+                expectedItemCount, outputItems.Count());
             foreach (string item in outputItems)
             {
                 Assert.IsTrue(item.IsLike(expectedPattern));

@@ -11,31 +11,24 @@
             Department[] departments = CorporateData.Departments;
             Employee[] employees = CorporateData.Employees;
 
-            var items = employees.Join(
-                departments,
-                employee => employee.DepartmentId,
-                department => department.Id,
-                (employee, department) => new
-                {
-                    employee.Id,
-                    employee.Name,
-                    employee.Title,
-                    Department = department
-                });
+            IEnumerable<(int Id, string Name, string Title, Department Department)> items =
+                employees.Join(
+                    departments,
+                    employee => employee.DepartmentId,
+                    department => department.Id,
+                    (employee, department) => (
+                        employee.Id,
+                        employee.Name,
+                        employee.Title,
+                        department
+                    ));
 
-            foreach(var item in items)
+
+            foreach (var item in items)
             {
                 Console.WriteLine(
                     $"{ item.Name } ({ item.Title })");
                 Console.WriteLine("\t" + item.Department);
-            }
-        }
-
-        private static void Print<T>(IEnumerable<T> items)
-        {
-            foreach(T item in items)
-            {
-                Console.WriteLine(item);
             }
         }
     }
@@ -74,7 +67,7 @@
             },
             new Department()
             {
-                Name = "Finance",
+                Name = "Human Resources",
                 Id = 1
             },
             new Department()
@@ -121,8 +114,8 @@
             },
             new Employee()
             {
-                Name = "Shane Kercheval",
-                Title = "Chief Financial Officer",
+                Name = "Anne Beard",
+                Title = "HR Director",
                 DepartmentId = 1
             },
             new Employee()

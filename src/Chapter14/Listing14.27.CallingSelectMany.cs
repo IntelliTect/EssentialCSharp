@@ -8,12 +8,11 @@
     {
         public static void ChapterMain()
         {
-            var worldCup2006Finalists = new[]
+            (string Team, string[] Players)[] worldCup2006Finalists = new[]
             {
-                new
-                {
-                    TeamName = "France",
-                    Players = new string[]
+                (
+                    TeamName: "France",
+                    Players: new string[]
                     {
                         "Fabien Barthez", "Gregory Coupet",
                         "Mickael Landreau", "Eric Abidal",
@@ -28,11 +27,10 @@
                         "Louis Saha", "David Trezeguet",
                         "Sylvain Wiltord",
                     }
-                },
-                new
-                {
-                    TeamName = "Italy",
-                    Players = new string[]
+                ),
+                (
+                    TeamName: "Italy",
+                    Players: new string[]
                     {
                         "Gianluigi Buffon", "Angelo Peruzzi",
                         "Marco Amelia", "Cristian Zaccardo",
@@ -47,7 +45,7 @@
                         "Alberto Gilardino", "Filippo Inzaghi",
                         "Vincenzo Iaquinta",
                     }
-                }
+                )
             };
 
             IEnumerable<string> players =
