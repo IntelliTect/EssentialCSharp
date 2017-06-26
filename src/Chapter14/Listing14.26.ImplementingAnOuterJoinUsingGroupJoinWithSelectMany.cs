@@ -84,7 +84,7 @@
             },
             new Department()
             {
-                Name = "Finance",
+                Name = "Human Resources",
                 Id = 1
             },
             new Department()
@@ -131,8 +131,8 @@
             },
             new Employee()
             {
-                Name = "Shane Kercheval",
-                Title = "Chief Financial Officer",
+                Name = "Anne Beard",
+                Title = "HR Director",
                 DepartmentId = 1
             },
             new Employee()

@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.IO;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_17.Tests
 {
@@ -13,7 +14,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_17.Tests
         public void ProjectionWithLinqsSelect()
         {
             string expectedPattern = "{ FileName = *, Size = ";
-
+            int expectedItemCount = Directory.EnumerateFiles(
+                    Directory.GetCurrentDirectory(), "*").Count();
             string output = ConsoleAssert.Execute(null, () =>
             {
                 Program.ChapterMain();
@@ -21,7 +23,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_17.Tests
 
             IEnumerable<string> outputItems = output.Split('\n');
 
-            Assert.AreEqual(14, outputItems.Count());
+            Assert.AreEqual(expectedItemCount, outputItems.Count());
             foreach (string item in outputItems)
             {
                 Assert.IsTrue(item.IsLike(expectedPattern));

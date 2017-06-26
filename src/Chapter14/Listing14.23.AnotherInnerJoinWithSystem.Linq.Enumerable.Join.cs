@@ -11,18 +11,19 @@
             Department[] departments = CorporateData.Departments;
             Employee[] employees = CorporateData.Employees;
 
-            var items = departments.Join(
-                employees,
-                department => department.Id,
-                employee => employee.DepartmentId,
-                (department, employee) => new
-                {
-                    department.Id,
-                    department.Name,
-                    Employee = employee
-                });
+            IEnumerable<(long Id, string Name, Employee Employee)> items =
+                departments.Join(
+                    employees,
+                    department => department.Id,
+                    employee => employee.DepartmentId,
+                    (department, employee) => (
+                        Id: department.Id,
+                        Name: department.Name,
+                        Employee: employee
+                ));
 
-            foreach(var item in items)
+
+            foreach (var item in items)
             {
                 Console.WriteLine(item.Name);
                 Console.WriteLine("\t" + item.Employee);
@@ -73,7 +74,7 @@
             },
             new Department()
             {
-                Name = "Finance",
+                Name = "Human Resources",
                 Id = 1
             },
             new Department()
@@ -120,8 +121,8 @@
             },
             new Employee()
             {
-                Name = "Shane Kercheval",
-                Title = "Chief Financial Officer",
+                Name = "Anne Beard",
+                Title = "HR Director",
                 DepartmentId = 1
             },
             new Employee()

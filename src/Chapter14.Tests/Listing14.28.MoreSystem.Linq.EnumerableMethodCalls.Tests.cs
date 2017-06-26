@@ -6,7 +6,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_28.Tests
     public class ProgramTests
     {
         [TestMethod]
-        public void DictionaryInitialization()
+        public void MoreEnumerableMethodCalls()
         {
             string expected =
 @"Stuff: System.Object, 1, 3, 5, 7, 9, ""thing"", ????????-????-????-????-????????????
