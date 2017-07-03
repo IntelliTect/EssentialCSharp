@@ -1,7 +1,16 @@
 #!/bin/bash
+> Test.Results.txt
+if [ ${BASH_VERSION:0:1} -lt 4 ]
+then
+shopt -s
+projPath=./src/**/*.Test*.csproj
+else
 shopt -s globstar
-for csproj in **/*.Test*.csproj
+projPath=**/*.Test*.csproj
+fi
+for csproj in $projPath
 do
 echo $xls
-dotnet test "$csproj"
+dotnet test "$csproj" | tee -a Test.Results.txt
 done
+
