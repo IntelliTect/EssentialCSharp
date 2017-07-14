@@ -1,3 +1,61 @@
+Set-StrictMode -Version Latest
+
+$script:listingNameRegEx = "Listing(?<Chapter>\d\d)\.(?<Listing>\d\d)(?<Suffix>.*)";
+
+Function script:Move-GitFile {
+    [CmdletBinding(SupportsShouldProcess=$True)] 
+    param(
+        [ValidateScript({Test-Path $_ -PathType Leaf})][Parameter(Mandatory)][string]$oldFileName,
+        [ValidateScript({!(Test-Path $_ -PathType Leaf)})][Parameter(Mandatory)][string]$newFileName
+    )
+
+    #TODO: Verify that git is the SCC tool.
+
+    $command = "git mv $oldFileName $newFileName $(if($PSBoundParameters['Verbose']) {`"-v`"})" # The following is not needed as it is handled by "$PSCmdlet.ShouldProcess": -What $(if($PSBoundParameters['WhatIf']) {`"--dry-run`"})"
+    if ($PSCmdlet.ShouldProcess("`tExecuting: $command", "`tExecute git.exe Rename: $command", "Executing Git.exe mv")) {
+        Invoke-Expression "$command" -ErrorAction Stop  #Change error handling to use throw instead.
+    }
+    
+}
+
+Function Rename-Listing {
+[CmdletBinding(SupportsShouldProcess=$True)] 
+    param(
+        [string]$ChapterNumber,
+        [string]$NewChapterNumber = $ChapterNumber,
+        [string]$ListingNumber,
+        [string]$NewListingNumber
+    )
+
+    $oldFilePath = (Join-Path (Join-Path $PSScriptRoot "Chapter$ChapterNumber") "Listing$ChapterNumber.$ListingNumber*.cs")
+    $file = Get-Item $oldFilePath
+
+    if(!$file) {
+        throw "The file, '$oldFilePAth', does not exist"
+    }
+    else {
+        $oldFilePath = $file.FullName
+        $newFilePath = $oldFilePath -replace "Listing$ChapterNumber.$ListingNumber","Listing$NewChapterNumber.$NewListingNumber"
+        $oldFilePath = $oldFilePath.Replace("$pwd",".")  #Shorten to use the relative path
+        script:Move-GitFile $oldFilePath $newFilePath
+    }
+
+    # Repeat for the test file except allow for the file not to exist.
+    $oldFilePath = (Join-Path (Join-Path $PSScriptRoot "Chapter$ChapterNumber.Tests") "Listing$ChapterNumber.$ListingNumber*.cs")
+    $file = Get-Item $oldFilePath
+    if($file) {
+        $oldFilePath = $file.FullName
+        $newFilePath = $oldFilePath -replace "Listing$ChapterNumber.$ListingNumber","Listing$NewChapterNumber.$NewListingNumber"
+        $oldFilePath = $oldFilePath.Replace("$pwd",".")  #Shorten to use the relative path
+        script:Move-GitFile $oldFilePath $newFilePath
+    }
+}
+
+
+
+
+return
+
 <#
 
 .SYNOPSIS
@@ -34,7 +92,7 @@ Get-Item .\Chapter13\Listing13* | IncrementListing.ps1 13 06
 #>
 
 
-
+<#
 [CmdletBinding(SupportsShouldProcess=$True)] 
 param(
     [Parameter(Mandatory,ValueFromPipeline,ParameterSetName="Files")][string[]] $Files,
@@ -147,3 +205,4 @@ PROCESS {
     }
 }
 
+#>
