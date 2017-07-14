@@ -15,39 +15,101 @@ Function script:Move-GitFile {
     if ($PSCmdlet.ShouldProcess("`tExecuting: $command", "`tExecute git.exe Rename: $command", "Executing Git.exe mv")) {
         Invoke-Expression "$command" -ErrorAction Stop  #Change error handling to use throw instead.
     }
-    
 }
 
-Function Rename-Listing {
+Function script:Set-ContentForListingNumber {
 [CmdletBinding(SupportsShouldProcess=$True)] 
     param(
-        [string]$ChapterNumber,
+        [ValidateScript({Test-Path $_ -PathType Leaf})][Parameter(Mandatory)][string]$path,
+        [Parameter(Mandatory)][string]$ChapterNumber,
         [string]$NewChapterNumber = $ChapterNumber,
-        [string]$ListingNumber,
-        [string]$NewListingNumber
+        [Parameter(Mandatory)][string]$ListingNumber,
+        [Parameter(Mandatory)][string]$NewListingNumber
     )
 
-    $oldFilePath = (Join-Path (Join-Path $PSScriptRoot "Chapter$ChapterNumber") "Listing$ChapterNumber.$ListingNumber*.cs")
-    $file = Get-Item $oldFilePath
+    if(!$NewChapterNumber) { $NewChapterNumber = $ChapterNumber}
 
-    if(!$file) {
+    $process = $PSCmdlet.ShouldProcess("`tSearch/Replace Listing Number in $path", "`tSearch/Replace Listing Number in $path", "Search/Replace Listing")
+
+    $changes = @();
+    $newContent = Get-Content $path | ForEach-Object{
+        $after = $_.Replace("Chapter$ChapterNumber.","Chapter$NewChapterNumber.")
+        $after = $after.Replace("Listing$($ChapterNumber)_$ListingNumber","Listing$($NewChapterNumber)_$NewListingNumber")
+        if($_ -ne $after) {
+            $changes += ([pscustomobject]@{Before = $_; After = $after})
+        }
+    }
+    [int] $maxBeforeWidth = 0
+    [int] $maxAfterWidth = 0
+    [string] $messageLine = $null
+    $changes | ForEach-Object {
+        $maxBeforeWidth = [Math]::Max($maxBeforeWidth, $_.Before.Length)
+        $maxAfterWidth = [Math]::Max($maxAfterWidth, $_.After.Length)
+    }
+    $changes | ForEach-Object {
+        $messageLine += "`t`t{0,-$maxBeforeWidth}`t{1,-$maxAfterWidth}" -f $_.Before,$_.After
+    }
+    $process = $PSCmdlet.ShouldProcess("$messageLine", "$messageLine", "Search/Replace Listing")
+
+    if ($process) {
+        $newContent | Set-Content $path
+    }
+}
+
+Function Update-ListingNumber {
+[CmdletBinding(SupportsShouldProcess=$True)] 
+    param(
+        [Parameter(Mandatory)][string]$ChapterNumber,
+        [string]$NewChapterNumber,
+        [Parameter(Mandatory)][string]$ListingNumber,
+        [Parameter(Mandatory)][string]$NewListingNumber
+    )
+
+    if(!$NewChapterNumber) { $NewChapterNumber = $ChapterNumber}
+
+    $oldFilePathPattern = (Join-Path (Join-Path $PSScriptRoot "Chapter$ChapterNumber") "Listing$ChapterNumber.$ListingNumber*.cs")
+    $files = @(Get-Item $oldFilePathPattern)
+
+    if(!$files) {
         throw "The file, '$oldFilePAth', does not exist"
     }
     else {
-        $oldFilePath = $file.FullName
-        $newFilePath = $oldFilePath -replace "Listing$ChapterNumber.$ListingNumber","Listing$NewChapterNumber.$NewListingNumber"
-        $oldFilePath = $oldFilePath.Replace("$pwd",".")  #Shorten to use the relative path
-        script:Move-GitFile $oldFilePath $newFilePath
+        $files | ForEach-Object{
+            $oldFilePath = $_.FullName
+            $newFilePath = $oldFilePath -replace "Listing$ChapterNumber.$ListingNumber","Listing$NewChapterNumber.$NewListingNumber"
+            $oldFilePath = $oldFilePath.Replace("$pwd",".")  #Shorten to use the relative path
+            script:Move-GitFile $oldFilePath $newFilePath
+            [string]$tempFile = $null
+            try {
+                if(!(Test-Path $newFilePath)) {
+                    # The file may not exist if whatif is set so create a temporary file
+                    $tempFilePath = [IO.Path]::GetTempFileName();
+                    Copy-Item $oldFilePath $tempFilePath -WhatIf:$false
+                    
+                    $newFilePath = $tempFilePath
+                }
+                script:Set-ContentForListingNumber -path $newFilePath -ChapterNumber $ChapterNumber -NewChapterNumber $NewChapterNumber `
+                    -ListingNumber $ListingNumber -NewListingNumber $NewListingNumber
+            }
+            finally {
+                if($tempFile) { Remove-Item $tempFile -WhatIf:$false}
+            }
+        }
     }
 
+    return
     # Repeat for the test file except allow for the file not to exist.
-    $oldFilePath = (Join-Path (Join-Path $PSScriptRoot "Chapter$ChapterNumber.Tests") "Listing$ChapterNumber.$ListingNumber*.cs")
-    $file = Get-Item $oldFilePath
-    if($file) {
-        $oldFilePath = $file.FullName
-        $newFilePath = $oldFilePath -replace "Listing$ChapterNumber.$ListingNumber","Listing$NewChapterNumber.$NewListingNumber"
-        $oldFilePath = $oldFilePath.Replace("$pwd",".")  #Shorten to use the relative path
-        script:Move-GitFile $oldFilePath $newFilePath
+    $oldFilePathPattern = (Join-Path (Join-Path $PSScriptRoot "Chapter$ChapterNumber.Tests") "Listing$ChapterNumber.$ListingNumber*.cs")
+    $files = Get-Item $oldFilePathPattern
+    if($files) {
+        $files | ForEach-Object{
+            $oldFilePath = $_.FullName
+            $newFilePath = $oldFilePath -replace "Listing$ChapterNumber.$ListingNumber","Listing$NewChapterNumber.$NewListingNumber"
+            $oldFilePath = $oldFilePath.Replace("$pwd",".")  #Shorten to use the relative path
+            script:Move-GitFile $oldFilePath $newFilePath
+            script:Set-ContentForListingNumber -path $newFilePath -ChapterNumber $ChapterNumber -NewChapterNumber $NewChapterNumber `
+                -ListingNumber $ListingNumber -NewListingNumber $NewListingNumber
+        }
     }
 }
 
