@@ -17,7 +17,7 @@ Function script:Move-GitFile {
     }
 }
 
-Function script:Set-ContentForListingNumber {
+Function script:Update-ListingNumberInContent {
 [CmdletBinding(SupportsShouldProcess=$True)] 
     param(
         [ValidateScript({Test-Path $_ -PathType Leaf})][Parameter(Mandatory)][string]$path,
@@ -70,46 +70,45 @@ Function Update-ListingNumber {
     $oldFilePathPattern = (Join-Path (Join-Path $PSScriptRoot "Chapter$ChapterNumber") "Listing$ChapterNumber.$ListingNumber*.cs")
     $files = @(Get-Item $oldFilePathPattern)
 
-    if(!$files) {
-        throw "The file, '$oldFilePAth', does not exist"
-    }
-    else {
+    Function script:Update-ListingNumber {
+        [CmdletBinding(SupportsShouldProcess=$true)]
+        param(
+            $files
+        )
         $files | ForEach-Object{
             $oldFilePath = $_.FullName
             $newFilePath = $oldFilePath -replace "Listing$ChapterNumber.$ListingNumber","Listing$NewChapterNumber.$NewListingNumber"
             $oldFilePath = $oldFilePath.Replace("$pwd",".")  #Shorten to use the relative path
             script:Move-GitFile $oldFilePath $newFilePath
-            [string]$tempFile = $null
+            [string]$isNewFileTemporary = $false
             try {
                 if(!(Test-Path $newFilePath)) {
-                    # The file may not exist if whatif is set so create a temporary file
-                    $tempFilePath = [IO.Path]::GetTempFileName();
-                    Copy-Item $oldFilePath $tempFilePath -WhatIf:$false
-                    
-                    $newFilePath = $tempFilePath
+                    $isNewFileTemporary = $true
+                    Write-Verbose "Copying the $oldFilePath to the $newFilePath temporarily for content replacement during -whatif"
+                    Copy-Item $oldFilePath $newFilePath -WhatIf:$false
                 }
                 script:Set-ContentForListingNumber -path $newFilePath -ChapterNumber $ChapterNumber -NewChapterNumber $NewChapterNumber `
                     -ListingNumber $ListingNumber -NewListingNumber $NewListingNumber
             }
             finally {
-                if($tempFile) { Remove-Item $tempFile -WhatIf:$false}
+                Write-Verbose "Deleteing new file due to -whatif."
+                if($isNewFileTemporary) { Remove-Item $newFilePath -WhatIf:$false}
             }
-        }
+        }        
     }
 
-    return
+    if(!$files) {
+        throw "The file, '$oldFilePAth', does not exist"
+    }
+    else {
+        script:Update-ListingNumber $files
+    }
+
     # Repeat for the test file except allow for the file not to exist.
     $oldFilePathPattern = (Join-Path (Join-Path $PSScriptRoot "Chapter$ChapterNumber.Tests") "Listing$ChapterNumber.$ListingNumber*.cs")
     $files = Get-Item $oldFilePathPattern
     if($files) {
-        $files | ForEach-Object{
-            $oldFilePath = $_.FullName
-            $newFilePath = $oldFilePath -replace "Listing$ChapterNumber.$ListingNumber","Listing$NewChapterNumber.$NewListingNumber"
-            $oldFilePath = $oldFilePath.Replace("$pwd",".")  #Shorten to use the relative path
-            script:Move-GitFile $oldFilePath $newFilePath
-            script:Set-ContentForListingNumber -path $newFilePath -ChapterNumber $ChapterNumber -NewChapterNumber $NewChapterNumber `
-                -ListingNumber $ListingNumber -NewListingNumber $NewListingNumber
-        }
+        script:Update-ListingNumber $files
     }
 }
 
