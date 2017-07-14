@@ -24,7 +24,7 @@ Philanthropy
 	Eric Edmonds (Philanthropy Coordinator)
 Marketing";
 
-            IntelliTect.TestTools.Console.ConsoleAssert.ExpectLike(expected,
+            IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected,
             () =>
             {
                 Program.ChapterMain();
