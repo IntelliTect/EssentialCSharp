@@ -1,4 +1,4 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_15
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_16B
 {
     using System;
     using Listing12_10;
@@ -16,7 +16,12 @@
                 items[i] = int.Parse(Console.ReadLine());
             }
 
-            DelegateSample.BubbleSort(items, (first, second) => first < second);
+            DelegateSample.BubbleSort(items,
+                (int first, int second) =>
+                {
+                    return first < second;
+                }
+            );
 
             for(i = 0; i < items.Length; i++)
             {
