@@ -26,7 +26,7 @@ Information Technology
 Philanthropy
 	Eric Edmonds (Philanthropy Coordinator)";
 
-            IntelliTect.TestTools.Console.ConsoleAssert.ExpectLike(expected,
+            IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected,
             () =>
             {
                 Program.ChapterMain();

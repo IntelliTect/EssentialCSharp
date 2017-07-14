@@ -26,7 +26,7 @@ Thomas Heavey (Software Architect)
 Eric Edmonds (Philanthropy Coordinator)
 	Philanthropy";
 
-            IntelliTect.TestTools.Console.ConsoleAssert.ExpectLike(expected,
+            IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected,
             () =>
             {
                 Program.ChapterMain();
