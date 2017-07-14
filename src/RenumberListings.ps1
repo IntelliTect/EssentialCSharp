@@ -20,7 +20,7 @@ Function script:Move-GitFile {
 Function script:Update-ListingNumberInContent {
 [CmdletBinding(SupportsShouldProcess=$True)] 
     param(
-        [ValidateScript({Test-Path $_ -PathType Leaf})][Parameter(Mandatory)][string]$path,
+        [ValidateScript({Test-Path $_ -PathType Leaf})][Parameter(Mandatory)][string]$Path,
         [Parameter(Mandatory)][string]$ChapterNumber,
         [string]$NewChapterNumber = $ChapterNumber,
         [Parameter(Mandatory)][string]$ListingNumber,
@@ -29,10 +29,12 @@ Function script:Update-ListingNumberInContent {
 
     if(!$NewChapterNumber) { $NewChapterNumber = $ChapterNumber}
 
-    $process = $PSCmdlet.ShouldProcess("`tSearch/Replace Listing Number in $path", "`tSearch/Replace Listing Number in $path", "Search/Replace Listing")
+
+    $process = $PSCmdlet.ShouldProcess("`tSearch/Replace Listing $ChapterNumber.$ListingNumber to $NewChapterNumber.$NewListingNumber", 
+        "`tSearch/Replace Listing $ChapterNumber.$ListingNumber to $NewChapterNumber.$NewListingNumber", "Search/Replace Listing")
 
     $changes = @();
-    $newContent = Get-Content $path | ForEach-Object{
+    $newContent = (Get-Content $Path) | ForEach-Object{
         $after = $_.Replace("Chapter$ChapterNumber.","Chapter$NewChapterNumber.")
         $after = $after.Replace("Listing$($ChapterNumber)_$ListingNumber","Listing$($NewChapterNumber)_$NewListingNumber")
         if($_ -ne $after) {
@@ -49,9 +51,8 @@ Function script:Update-ListingNumberInContent {
     $changes | ForEach-Object {
         $messageLine += "`t`t{0,-$maxBeforeWidth}`t{1,-$maxAfterWidth}" -f $_.Before,$_.After
     }
-    $process = $PSCmdlet.ShouldProcess("$messageLine", "$messageLine", "Search/Replace Listing")
-
-    if ($process) {
+    
+    if($PSCmdlet.ShouldProcess("$messageLine", "$messageLine", "Search/Replace Listing")) {
         $newContent | Set-Content $path
     }
 }
@@ -79,21 +80,10 @@ Function Update-ListingNumber {
             $oldFilePath = $_.FullName
             $newFilePath = $oldFilePath -replace "Listing$ChapterNumber.$ListingNumber","Listing$NewChapterNumber.$NewListingNumber"
             $oldFilePath = $oldFilePath.Replace("$pwd",".")  #Shorten to use the relative path
+            script:Update-ListingNumberInContent -Path $oldFilePath `
+                -ChapterNumber $ChapterNumber -NewChapterNumber $NewChapterNumber `
+                -ListingNumber $ListingNumber -NewListingNumber $NewListingNumber
             script:Move-GitFile $oldFilePath $newFilePath
-            [string]$isNewFileTemporary = $false
-            try {
-                if(!(Test-Path $newFilePath)) {
-                    $isNewFileTemporary = $true
-                    Write-Verbose "Copying the $oldFilePath to the $newFilePath temporarily for content replacement during -whatif"
-                    Copy-Item $oldFilePath $newFilePath -WhatIf:$false
-                }
-                script:Set-ContentForListingNumber -path $newFilePath -ChapterNumber $ChapterNumber -NewChapterNumber $NewChapterNumber `
-                    -ListingNumber $ListingNumber -NewListingNumber $NewListingNumber
-            }
-            finally {
-                Write-Verbose "Deleteing new file due to -whatif."
-                if($isNewFileTemporary) { Remove-Item $newFilePath -WhatIf:$false}
-            }
         }        
     }
 
