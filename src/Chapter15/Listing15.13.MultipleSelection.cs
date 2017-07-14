@@ -23,7 +23,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_13
             }
         }
 
-        private static string[] Keywords = {
+        public static string[] Keywords = {
             "abstract", "add*", "alias*", "as", "ascending*",
             "async*", "await*", "base","bool", "break",
             "by*", "byte", "case", "catch", "char", "checked",
