@@ -40,6 +40,7 @@ Function script:Update-ListingNumberInContent {
         if($_ -ne $after) {
             $changes += ([pscustomobject]@{Before = $_; After = $after})
         }
+        Write-Output $after
     }
     [int] $maxBeforeWidth = 0
     [int] $maxAfterWidth = 0
