@@ -13,7 +13,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_17.Tests
         [TestMethod]
         public void ProjectionWithLinqsSelect()
         {
-            string expectedPattern = "{ FileName = *, Size = ";
+            string expectedPattern = "{ FileName = *, Size = * }";
             int expectedItemCount = Directory.EnumerateFiles(
                     Directory.GetCurrentDirectory(), "*").Count();
             string output = ConsoleAssert.Execute(null, () =>
@@ -21,12 +21,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_17.Tests
                 Program.ChapterMain();
             });
 
-            IEnumerable<string> outputItems = output.Split('\n');
+            IEnumerable<string> outputItems = output.Split(
+                new string[] { Environment.NewLine }, StringSplitOptions.None);
 
             Assert.AreEqual(expectedItemCount, outputItems.Count());
             foreach (string item in outputItems)
             {
-                Assert.IsTrue(item.IsLike(expectedPattern));
+                Assert.IsTrue(item.IsLike(expectedPattern),
+                    $"{item} is not like {expectedPattern}");
             }
         }
     }

@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using System.Linq;
 using System.IO;
+using System;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_16.Tests
 {
@@ -12,7 +13,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_16.Tests
         [TestMethod]
         public void ProjectionToAnAnonymousType()
         {
-            string expectedPattern = "FileName = *, Size = ";
+            string expectedPattern = "FileName = *, Size = *";
             int expectedItemCount = Directory.EnumerateFiles(
                 Directory.GetCurrentDirectory(), "*").Count();
 
@@ -21,12 +22,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_16.Tests
                 Program.ChapterMain();
             });
 
-            IEnumerable<string> outputItems = output.Split('\n');
+            IEnumerable<string> outputItems = output.Split(
+                new string[] { Environment.NewLine }, StringSplitOptions.None);
 
             Assert.AreEqual(expectedItemCount, outputItems.Count());
             foreach (string item in outputItems)
             {
-                Assert.IsTrue(item.IsLike(expectedPattern));
+                Assert.IsTrue(item.IsLike(expectedPattern),
+                    $"{item} is not like {expectedPattern}");
             }
         }
     }
