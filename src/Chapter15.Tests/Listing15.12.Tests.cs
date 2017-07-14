@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_11.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_12.Tests
 {
 
     [TestClass]
