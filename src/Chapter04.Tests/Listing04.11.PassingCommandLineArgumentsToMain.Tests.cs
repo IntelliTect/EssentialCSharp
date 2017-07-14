@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.IO;
+using System;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_10.Tests
 {
@@ -26,7 +27,14 @@ Usage: Downloader.exe <URL> <TargetFileName>";
         {
             string[] args = { "http://google.com", Path.Combine(Directory.GetCurrentDirectory(), "destination.txt") };
 
-            Assert.AreEqual(0, Program.ChapterMain(args));
+            try
+            {
+                Assert.AreEqual(0, Program.ChapterMain(args));
+            }
+            catch (AggregateException exception) when(exception.InnerException.GetType() == typeof(System.Net.Http.HttpRequestException))
+            {
+                Assert.Inconclusive("Unable to download the file.  Check your Internet connection.");
+            }
         }
     }
 }
