@@ -18,13 +18,13 @@
                 rootDirectory, searchPattern);
             var fileResults =
                 from fileName in fileNames
-                select new
-                {
-                    Name = fileName,
-                    LastWriteTime = File.GetLastWriteTime(fileName)
-                };
+                select
+                (
+                    Name: fileName,
+                    LastWriteTime: File.GetLastWriteTime(fileName)
+                );
 
-            foreach(var fileResult in fileResults)
+            foreach (var fileResult in fileResults)
             {
                 Console.WriteLine(
                     $@"{ fileResult.Name } ({ 

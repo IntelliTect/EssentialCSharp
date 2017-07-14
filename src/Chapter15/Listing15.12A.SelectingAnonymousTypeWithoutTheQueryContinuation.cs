@@ -1,7 +1,6 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_11
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_12
 {
     using System;
-    using System.Collections.Generic;
     using System.Linq;
 
     public class Program
@@ -13,27 +12,25 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_11
 
         private static void GroupKeywords1()
         {
-            IEnumerable<IGrouping<bool, string>> keywordGroups =
-                from word in Keywords
-                group word by word.Contains('*');
-
             var selection =
-                from groups in keywordGroups
-                select new
-                {
-                    IsContextualKeyword = groups.Key,
-                    Items = groups
-                };
+                from word in Keywords
+                group word by word.Contains('*')
+                    into groups
+                    select new
+                    {
+                        IsContextualKeyword = groups.Key,
+                        Items = groups
+                    };
 
             foreach(var wordGroup in selection)
             {
                 Console.WriteLine(Environment.NewLine + "{0}:",
                     wordGroup.IsContextualKeyword ?
                         "Contextual Keywords" : "Keywords");
-
                 foreach(var keyword in wordGroup.Items)
                 {
-                    Console.Write(" " + keyword.Replace("*", null));
+                    Console.Write(" " +
+                        keyword.Replace("*", null));
                 }
             }
         }

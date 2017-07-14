@@ -1,6 +1,7 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_14
 {
     using System;
+    using System.Collections.Generic;
     using System.Linq;
 
     public class Program
@@ -13,15 +14,15 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_14
         private static void KeywordProducts()
         {
             var numbers = new[] { 1, 2, 3 };
-            var product =
+            IEnumerable<(string Word, int Number)> product =
                  from word in Keywords
                  from number in numbers
-                 select new { word, number };
+                 select (word, number);
 
-            foreach(var value in product)
+            foreach ((string Word, int Number) value in product)
             {
-                Console.WriteLine(Environment.NewLine + 
-                    $"({value.word}, {value.number})");
+                Console.WriteLine(
+                    $"({value.Word}, {value.Number})");
             }
         }
 
