@@ -7,8 +7,20 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_12.Tests
     [TestClass]
     public class ProgramTests
     {
+
         [TestMethod]
-        public void SelectingAnonymousTypeFollowingGroupClause()
+        public void SelectingFollowingGroupClause_UsingTuple()
+        {
+            SelectingFollowingGroupClause(Listing15_12.Program.ChapterMain);
+        }
+
+        [TestMethod]
+        public void SelectingFollowingGroupClause_UsingAnonymousType()
+        {
+            SelectingFollowingGroupClause(Listing15_12A.Program.ChapterMain);
+        }
+
+        public void SelectingFollowingGroupClause(Action main)
         {
             string expected = $@"
 Keywords:
