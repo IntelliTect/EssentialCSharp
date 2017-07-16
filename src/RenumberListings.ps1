@@ -59,48 +59,77 @@ Function script:Update-ListingNumberInContent {
 }
 
 Function Update-ListingNumber {
-[CmdletBinding(SupportsShouldProcess=$True)] 
+    [CmdletBinding(SupportsShouldProcess=$True)] 
     param(
         [Parameter(Mandatory)][string]$ChapterNumber,
         [string]$NewChapterNumber,
-        [Parameter(Mandatory)][string]$ListingNumber,
-        [Parameter(Mandatory)][string]$NewListingNumber
+        [Parameter(Mandatory)][int[]]$ListingNumber,
+        [Parameter(Mandatory)][int[]]$NewListingNumber
     )
+
+    $ListingNumbers = @($ListingNumber)
+    $NewListingNumbers = @($NewListingNumber)
+    if($ListingNumbers.Length -ne $NewListingNumbers.Length) {
+        throw "The number of items in ListingNumber is different from the number of items in NewListingNumber"
+    }
 
     if(!$NewChapterNumber) { $NewChapterNumber = $ChapterNumber}
 
-    $oldFilePathPattern = (Join-Path (Join-Path $PSScriptRoot "Chapter$ChapterNumber") "Listing$ChapterNumber.$ListingNumber*.cs")
-    $files = @(Get-Item $oldFilePathPattern)
-
-    Function script:Update-ListingNumber {
+    Function script:Update-InternalListingNumber {
         [CmdletBinding(SupportsShouldProcess=$true)]
         param(
-            $files
+            $files,
+            [switch]$IsIntermediateFile
         )
+
         $files | ForEach-Object{
             $oldFilePath = $_.FullName
-            $newFilePath = $oldFilePath -replace "Listing$ChapterNumber.$ListingNumber","Listing$NewChapterNumber.$NewListingNumber"
+            $newFilePath = $oldFilePath -replace "Listing$ChapterNumber.$(if(!$IsIntermediateName) {"TEMP."})$eachListingNumber","Listing$NewChapterNumber.$(if($IsIntermediateName) {"TEMP."})$eachNewListingNumber"
             $oldFilePath = $oldFilePath.Replace("$pwd",".")  #Shorten to use the relative path
             script:Update-ListingNumberInContent -Path $oldFilePath `
                 -ChapterNumber $ChapterNumber -NewChapterNumber $NewChapterNumber `
-                -ListingNumber $ListingNumber -NewListingNumber $NewListingNumber
+                -ListingNumber $eachListingNumber -NewListingNumber $eachNewListingNumber
             script:Move-GitFile $oldFilePath $newFilePath
         }        
     }
 
-    if(!$files) {
-        throw "The file, '$oldFilePAth', does not exist"
-    }
-    else {
-        script:Update-ListingNumber $files
-    }
+    # First replace with a prefix of temp and then with no prefix.
+    Function Update-InternalListSequence {
+        [CmdletBinding(SupportsShouldProcess=$true)]
+        param(
+            [switch]$IsIntermediateName
+        )
 
-    # Repeat for the test file except allow for the file not to exist.
-    $oldFilePathPattern = (Join-Path (Join-Path $PSScriptRoot "Chapter$ChapterNumber.Tests") "Listing$ChapterNumber.$ListingNumber*.cs")
-    $files = Get-Item $oldFilePathPattern
-    if($files) {
-        script:Update-ListingNumber $files
+        for($count=0; $count -lt $ListingNumbers.Count; $count++) {
+            $eachListingNumber = "{0:D2}" -f $ListingNumbers[$count]
+            $eachNewListingNumber = "{0:D2}" -f $NewListingNumbers[$count]
+
+            $oldFilePathPattern = (Join-Path (Join-Path $PSScriptRoot "Chapter$ChapterNumber") "Listing$ChapterNumber.$(if(!$IsIntermediateName) {"TEMP"})$eachListingNumber*.cs")
+            $files = @(Get-Item $oldFilePathPattern)
+
+            if(!$files) {
+                throw "The file, '$oldFilePathPattern', does not exist"
+            }
+            else {
+                # We rename to a temorary file (in case the file already exists that we are naming to)
+                # This could be avoided in the special case of renaming only one file.
+                script:Update-InternalListingNumber $files -IsIntermediateFile
+                script:Update-InternalListingNumber $files
+            }
+
+            # Repeat for the test file except allow for the file not to exist.
+            $oldFilePathPattern = (Join-Path (Join-Path $PSScriptRoot "Chapter$ChapterNumber.Tests") "Listing$ChapterNumber.$ListingNumber*.cs")
+            $files = Get-Item $oldFilePathPattern
+            if($files) {
+                # We rename to a temorary file (in case the file already exists that we are naming to)
+                # This could be avoided in the special case of renaming only one file.
+                script:Update-InternalListingNumber $files -IsIntermediateFile
+                script:Update-InternalListingNumber $files
+            }
+        }
     }
+    Update-InternalListSequence -IsIntermediateName
+    Update-InternalListSequence 
 }
 
 
