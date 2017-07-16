@@ -57,7 +57,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter12", "src\Chapter12\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter12.Tests", "src\Chapter12.Tests\Chapter12.Tests.csproj", "{C2AEC825-1A33-441A-A119-C76A7953B379}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "chapter13", "src\Chapter13\chapter13.csproj", "{D206F972-8400-4D59-9F4F-C8133075A3F8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter13", "src\Chapter13\Chapter13.csproj", "{D206F972-8400-4D59-9F4F-C8133075A3F8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter13.Tests", "src\Chapter13.Tests\Chapter13.Tests.csproj", "{23F03D80-0B97-4045-AA23-371E4EF7D89D}"
 EndProject
