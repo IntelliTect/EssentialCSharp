@@ -6,7 +6,7 @@ using System.IO;
 using System.Reflection;
 using System;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_16.XX.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_30.Tests
 {
     [TestClass]
     public class ProgramTests
