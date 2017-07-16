@@ -13,4 +13,3 @@ do
 echo $xls
 dotnet test "$csproj" | tee -a Test.Results.txt
 done
-
