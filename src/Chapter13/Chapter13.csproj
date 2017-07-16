@@ -2,7 +2,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp1.0</TargetFramework>
-    <ProductName>Chapter06</ProductName>
+    <ProductName>chapter13</ProductName>
   </PropertyGroup>
   <Import Project="..\Versioning.targets" />
   <ItemGroup>
