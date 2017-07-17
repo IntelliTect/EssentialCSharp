@@ -2,28 +2,6 @@
 
 This project contains the source code for the book **Essential C#** by Mark Michaelis (Addison-Wesley).
 
-## About
-
-This book has three main functions:
-
-* It provides comprehensive coverage of the C# language, going beyond a tutorial and offering a foundation to begin effective software development projects.
-
-* It offers insight into complex programming paradigms and provides in-depth coverage of the features introduced in the latest version of the language.
-
-* It serves as a timeless reference.
-
-## Organization
-
-|Chapter  |Title     |Chapter  |Title    |Chapter  |Title     |
-|:-------:|----------|:-------:|---------|:-------:|----------|
-|1|Introducing C#|8|Value Types|15|LINQ with Query Expressions|
-|2|Data Types|9|Well-Formed Types|16|Building Custom Collections|
-|3|Operators and Control Flow|10|Exception Handling|17|Reflection, Attributes, and Dynamic Programming|
-|4|Methods and Parameters|11|Generics|18|Multithreading|
-|5|Classes|12|Delegates and Lambda Expressions|19|Thread Synchronization|
-|6|Inheritance|13|Events|20|Platform Interoperability and Unsafe Code|
-|7|Interfaces|14|Collection Interfaces with Standard Query Operators|21|The Common Language Infrastructure
-
 ## Sample Code Guide
 
 Ensure one of the following frameworks is installed at the latest version.
