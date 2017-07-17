@@ -39,17 +39,17 @@ Ensure one of the following frameworks is installed at the latest version.
 
 #### Local Copy
 
-Open a console and change the working directory to the desired project location.
+Open a console and change the working directory to the desired project location. Once the repo has been cloned, checkout the v7.0 branch.
 ```
 $ git clone https://github.com/IntelliTect/EssentialCSharp.git
+$ cd ./EssentialCSharp/
+$ git checkout v7.0
 ```
 
 #### Initialize _TestTools_
 
 _TestTools_ is IntelliTect's code testing framework for .NET console applications.  From the same console:
-
 ```
-$ cd ./EssentialCSharp/
 $ git submodule update --init --remote
 ```
 
@@ -85,20 +85,6 @@ Documentation for .NET CLI tools can be found here:
 
 https://docs.microsoft.com/en-us/dotnet/core/tools/
 
-### Issues
-
-For future reference, using tuples in to the sample code could cause compile errors.
-**.NET 4.6.2, .NET Core 1.X and earlier versions** do not include the C# 7.0 ValueTuple package. Manually install the package, if required.
-##### .NET 4.6.2
-
-See this [guide](https://github.com/dotnet/roslyn/blob/master/docs/features/tuples.md) for adding this package reference to a project.
-
-##### .NET Core 1.X
-Navigate to the project's directory and execute the following:
-```
-$ dotnet add package "System.ValueTuple"
-$ dotnet restore
-```
 
 ## Batch Testing
 
