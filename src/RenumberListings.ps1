@@ -97,7 +97,7 @@ Function Update-ListingNumber {
                 script:Update-ListingNumberInContent -Path $oldFilePath `
                     -ChapterNumber $ChapterNumber -NewChapterNumber $NewChapterNumber `
                     -ListingNumber $eachListingNumber -NewListingNumber $eachNewListingNumber
-                $newFilePath = $oldFilePath -replace "Listing$ChapterNumber.$PaddedListingNumber","Listing$NewChapterNumber.TEMP.$PaddedNewListingNumber"
+                $newFilePath = $oldFilePath -replace "Listing$ChapterNumber.$PaddedListingNumber","Listing$NewChapterNumber.TEMP.$PaddedListingNumber"
             } 
             else {
                 $newFilePath = $oldFilePath -replace "Listing$NewChapterNumber.TEMP.$PaddedListingNumber","Listing$NewChapterNumber.$PaddedNewListingNumber"
@@ -122,24 +122,24 @@ Function Update-ListingNumber {
             $eachListingNumber = "{0:D2}" -f $ListingNumbers[$count]
             $eachNewListingNumber = "{0:D2}" -f $NewListingNumbers[$count]
 
-            if($IsIntermediateName.IsPresent) {
+            #if($IsIntermediateName.IsPresent) {
                 # We update the content during the Intermediate stage so that it runs during -Whatif scenario.
-                $oldFilePathPattern = (Join-Path (Join-Path $PSScriptRoot "Chapter$ChapterNumber") "Listing$ChapterNumber.$eachListingNumber*.cs")
-            } 
-            else {
-                $oldFilePathPattern = (Join-Path (Join-Path $PSScriptRoot "Chapter$ChapterNumber") "Listing$ChapterNumber.TEMP.$eachListingNumber*.cs")
-            }
+            #    $oldFilePathPattern = (Join-Path (Join-Path $PSScriptRoot "Chapter$ChapterNumber") "Listing$ChapterNumber.$eachListingNumber*.cs")
+            #} 
+            #else {
+                $oldFilePathPattern = (Join-Path (Join-Path $PSScriptRoot "Chapter$ChapterNumber") "Listing$ChapterNumber$(if(!$IsIntermediateName.IsPresent){".TEMP"}).$eachListingNumber*.cs")
+            #}
             
             $files = @(Get-Item $oldFilePathPattern)
 
             if(!$files -and !$IsIntermediateName -and !$WhatIfPreference) {
                     throw "There are no files found for the pattern: '$oldFilePathPattern'"
             }
- 
+  
             @{ Files=$files; PaddedListingNumber=$eachListingNumber; PaddedNewListingNumber=$eachNewListingNumber } | Write-Output
 
             # Repeat for the test files except allow for the file not to exist.
-            $oldFilePathPattern = (Join-Path (Join-Path $PSScriptRoot "Chapter$ChapterNumber.Tests") "Listing$ChapterNumber.$eachListingNumber*.cs")
+            $oldFilePathPattern = (Join-Path (Join-Path $PSScriptRoot "Chapter$ChapterNumber.Tests") "Listing$ChapterNumber$(if(!$IsIntermediateName.IsPresent){".TEMP"}).$eachListingNumber*.cs")
             $files = Get-Item $oldFilePathPattern
 
             if($files) {
