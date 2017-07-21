@@ -7,7 +7,7 @@
 
     public class Program
     {
-        public static void ChapterMain(string[] args)
+        public static void Main(string[] args)
         {
             string url = "http://www.Intellitect.com";
             if(args.Length > 0)

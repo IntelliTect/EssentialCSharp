@@ -16,7 +16,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_13.Tests
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(view,
             () =>
             {
-                ConvertToPhoneNumber.ChapterMain(args);
+                ConvertToPhoneNumber.Main(args);
             });
         }
 
@@ -29,7 +29,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_13.Tests
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(view,
             () =>
             {
-                AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_13.ConvertToPhoneNumber.ChapterMain(args);
+                AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_13.ConvertToPhoneNumber.Main(args);
             });
         }
 
@@ -42,7 +42,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_13.Tests
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(view,
             () =>
             {
-                AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_13.ConvertToPhoneNumber.ChapterMain(args);
+                AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_13.ConvertToPhoneNumber.Main(args);
             });
         }
     }

@@ -3,7 +3,7 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp1.0</TargetFramework>
     <ProductName>Chapter18</ProductName>
-    <StartupObject>AddisonWesley.Michaelis.EssentialCSharp.Shared</StartupObject>
+    <StartupObject>AddisonWesley.Michaelis.EssentialCSharp.Shared.Program</StartupObject>
   </PropertyGroup>
   <Import Project="..\Versioning.targets" />
   <ItemGroup>
@@ -12,6 +12,15 @@
     <None Remove="4.0\**" />
     <Compile Include="..\Shared\Program.cs">
       <Link>Program.cs</Link>
+    </Compile>
+    <Compile Include="..\Shared\PiCalculator+InternalPiDigitCalculator.cs">
+      <Link>PiCalculator+InternalPiDigitCalculator.cs</Link>
+    </Compile>
+    <Compile Include="..\Shared\PiCalculator.cs">
+      <Link>PiCalculator.cs</Link>
+    </Compile>
+    <Compile Include="..\Shared\DoWorkEventArgs.cs">
+      <Link>DoWorkEventArgs.cs</Link>
     </Compile>
   </ItemGroup>
 </Project>

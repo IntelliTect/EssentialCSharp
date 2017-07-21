@@ -18,7 +18,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_01.Tests
 0x2A";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, Program.ChapterMain);
+                expected, Program.Main);
         }
     }
 }

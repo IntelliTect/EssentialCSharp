@@ -11,7 +11,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_02.Tests
             const string expected = @"-18125876697430.99";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, Program.ChapterMain);
+                expected, Program.Main);
         }
     }
 }

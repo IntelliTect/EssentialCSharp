@@ -18,7 +18,7 @@ Usage: Downloader.exe <URL> <TargetFileName>";
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(view,
             () =>
             {
-                Program.ChapterMain(args);
+                Program.Main(args);
             });
         }
 
@@ -29,7 +29,7 @@ Usage: Downloader.exe <URL> <TargetFileName>";
 
             try
             {
-                Assert.AreEqual(0, Program.ChapterMain(args));
+                Assert.AreEqual(0, Program.Main(args));
             }
             catch (AggregateException exception) when(exception.InnerException.GetType() == typeof(System.Net.Http.HttpRequestException))
             {

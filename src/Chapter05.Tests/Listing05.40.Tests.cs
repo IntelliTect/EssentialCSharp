@@ -10,7 +10,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_40.Tests
         public void MainTest_ArgsHasZeroElements_ThrowException()
         {
             Assert.ThrowsException<ArgumentException>(
-                () => Program.ChapterMain(new string[] { }));
+                () => Program.Main(new string[] { }));
         }
 
         [TestMethod]
@@ -20,7 +20,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_40.Tests
 Shortest argument length = 2";
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected, () =>
                 {
-                    Program.ChapterMain(
+                    Program.Main(
                         new string[] {
                             "C#", "C++", "Java", "JavaScript", "COBOL" });
                 });

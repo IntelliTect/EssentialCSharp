@@ -13,7 +13,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_07.Tests
 True: result == number";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, Program.ChapterMain);
+                expected, Program.Main);
         }
     }
 }

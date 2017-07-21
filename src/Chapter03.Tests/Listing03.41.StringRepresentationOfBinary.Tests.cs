@@ -13,7 +13,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_39.Tests
                 $@"Enter an integer: <<{integer}>>{System.Convert.ToString(integer, 2).PadLeft(64,'0')}";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, BinaryConverter.ChapterMain);
+                expected, BinaryConverter.Main);
         }
     }
 }

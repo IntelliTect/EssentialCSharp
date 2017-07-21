@@ -10,7 +10,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_02A.Tests
         [TestMethod]
         public void MainTest()
         {
-            Assert.ThrowsException<Win32Exception>(() => Program.ChapterMain(null));
+            Assert.ThrowsException<Win32Exception>(() => Program.Main(null));
         }
     }
 }

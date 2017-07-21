@@ -13,7 +13,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_14.Tests
 >>Lorem";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, Uppercase.ChapterMain);
+                expected, Uppercase.Main);
         }
     }
 }

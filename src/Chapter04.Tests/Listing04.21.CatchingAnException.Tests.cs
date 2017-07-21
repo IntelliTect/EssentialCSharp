@@ -17,7 +17,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_20.Tests
 Goodbye Inigo";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, ExceptionHandling.ChapterMain, 1);
+                expected, ExceptionHandling.Main, 1);
         }
 
 
@@ -31,7 +31,7 @@ Goodbye Inigo";
 Goodbye Inigo";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, ExceptionHandling.ChapterMain);
+                expected, ExceptionHandling.Main);
         }
     }
 }

@@ -11,13 +11,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_12.Tests
         [TestMethod]
         public void SelectingFollowingGroupClause_UsingTuple()
         {
-            SelectingFollowingGroupClause(Listing15_12.Program.ChapterMain);
+            SelectingFollowingGroupClause(Listing15_12.Program.Main);
         }
 
         [TestMethod]
         public void SelectingFollowingGroupClause_UsingAnonymousType()
         {
-            SelectingFollowingGroupClause(Listing15_12A.Program.ChapterMain);
+            SelectingFollowingGroupClause(Listing15_12A.Program.Main);
         }
 
         public void SelectingFollowingGroupClause(Action main)
