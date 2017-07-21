@@ -2,7 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_34
 { 
     public class Program
     { 
-        public static void ChapterMain()
+        public static void Main()
         {
             string[] languages = new string[] {
                 "C#", "COBOL", "Java",

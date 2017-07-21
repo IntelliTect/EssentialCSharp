@@ -4,7 +4,7 @@
 
     public class Program
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             System.Console.WriteLine("No output in this example");
         }

@@ -5,7 +5,7 @@
 
     class Program
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             Contact[] contacts = new Contact[] {
                 new Contact(

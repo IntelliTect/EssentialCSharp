@@ -19,7 +19,7 @@ Enter your first name: <<Inigo
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(view,
             () =>
             {
-                ExceptionHandling.ChapterMain();
+                ExceptionHandling.Main();
             });
         }
     }

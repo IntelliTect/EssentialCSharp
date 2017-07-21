@@ -7,7 +7,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_14
 
     public class Program
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             PropertyInfo property =
             typeof(CommandLineInfo).GetProperty("Help");

@@ -7,7 +7,7 @@
 
     public class Program
     {
-        public static void ChapterMain()
+        public static void Main()
         {
 #if !PRECSHARP7
             (string, Contact) keyValuePair;

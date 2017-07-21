@@ -4,7 +4,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_27
 
     class Program
     {
-        static void ChapterMain()
+        static void Main()
         {
             Employee employee;
             // ERROR: No overload because method 'Employee' 

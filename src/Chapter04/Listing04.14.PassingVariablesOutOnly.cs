@@ -4,7 +4,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_13
 
     public class ConvertToPhoneNumber
     {
-        public static int ChapterMain(string[] args)
+        public static int Main(string[] args)
         {
             char button;
 

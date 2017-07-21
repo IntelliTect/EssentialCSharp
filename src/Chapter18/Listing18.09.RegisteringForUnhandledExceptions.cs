@@ -9,7 +9,7 @@
 //    public class Program
 //    {
 //        public static Stopwatch clock = new Stopwatch();
-//        public static void ChapterMain()
+//        public static void Main()
 //        {
 //            try
 //            {

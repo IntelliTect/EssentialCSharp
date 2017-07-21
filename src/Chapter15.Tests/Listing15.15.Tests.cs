@@ -22,7 +22,7 @@ ThenByDescending, ToArray, ToDictionary, ToList, ToLookup, Union, Where, Zip, ";
 
             expected = expected.Replace("\r\n", string.Empty);
             expected = expected.Replace("\n", string.Empty);
-            IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected, Program.ChapterMain);
+            IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected, Program.Main);
         }
     }
 }

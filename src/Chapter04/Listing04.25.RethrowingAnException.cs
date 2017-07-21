@@ -4,7 +4,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_24
 
     public class ThrowingExceptions
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             try
             {

@@ -11,7 +11,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_09.Tests
             const string expected = @"Have fun storming the castle!";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, MiracleMax.ChapterMain);
+                expected, MiracleMax.Main);
         }
     }
 }

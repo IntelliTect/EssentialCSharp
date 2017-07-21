@@ -4,7 +4,7 @@
 
     class Program
     {
-        static void ChapterMain()
+        static void Main()
         {
             int number;
             object thing;

@@ -13,7 +13,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_18.Tests
 126, 127, 127";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, IncrementExample.ChapterMain);
+                expected, IncrementExample.Main);
         }
     }
 }

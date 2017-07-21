@@ -13,7 +13,7 @@
             set { Program._Count = value; }
         }
 
-        public static void ChapterMain()
+        public static void Main()
         {
             Thread thread = new Thread(Decrement);
             thread.Start();

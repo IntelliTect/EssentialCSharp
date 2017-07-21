@@ -2,7 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_35
 {
     public class TicTacToe
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             // Initially set the currentPlayer to Player 1
             int currentPlayer = 1;

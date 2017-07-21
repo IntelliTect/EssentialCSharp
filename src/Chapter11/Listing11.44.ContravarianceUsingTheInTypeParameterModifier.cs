@@ -25,7 +25,7 @@
             }
             #endregion Generated Interface Stub
         }
-        static void ChapterMain()
+        static void Main()
         {
             // Allowed in C# 4.0
             ICompareThings<Fruit> fc = new FruitComparer();

@@ -5,7 +5,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_06
 
     public class Program
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             // C# 6.0 (use {"Error", ConsoleColor.Red} pre-C# 6.0)
             Dictionary<string, ConsoleColor> colorMap =

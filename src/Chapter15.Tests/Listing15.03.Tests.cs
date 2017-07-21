@@ -14,13 +14,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_03.Tests
         [TestMethod]
         public void ProjectionWithLinqsSelect_TuplesWithinQueryExpressions()
         {
-            ProjectionWithLinqsSelect(Listing15_03.Program.ChapterMain);
+            ProjectionWithLinqsSelect(Listing15_03.Program.Main);
         }
 
         [TestMethod]
         public void AnonymousTypesWithinQueryExpressions_TuplesWithinQueryExpressions()
         {
-            ProjectionWithLinqsSelect(Listing15_03A.Program.ChapterMain);
+            ProjectionWithLinqsSelect(Listing15_03A.Program.Main);
         }
 
         public void ProjectionWithLinqsSelect(Action mainAction)

@@ -8,7 +8,7 @@
     {
         public unsafe delegate void MethodInvoker(byte* buffer);
 
-        public unsafe static int ChapterMain()
+        public unsafe static int Main()
         {
             if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
             {

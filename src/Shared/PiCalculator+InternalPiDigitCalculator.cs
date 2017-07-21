@@ -2,7 +2,7 @@
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
 {
-    partial class PiCalculator
+    public partial class PiCalculator
     {
         public class InternalPiDigitCalculator
         {

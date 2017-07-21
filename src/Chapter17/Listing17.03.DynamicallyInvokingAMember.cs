@@ -6,7 +6,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_03
 
     public partial class Program
     {
-        public static void ChapterMain(string[] args)
+        public static void Main(string[] args)
         {
             string errorMessage;
             CommandLineInfo commandLine = new CommandLineInfo();

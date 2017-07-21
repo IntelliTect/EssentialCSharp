@@ -2,7 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_21
 {
     public class TicTacToeTrivia
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             int input;    // Declare a variable to store the input.
 

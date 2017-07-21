@@ -13,7 +13,7 @@
 
     public class Program
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             Contact contact = new Contact();
 

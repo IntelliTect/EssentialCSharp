@@ -18,7 +18,7 @@ Visual Basic        	C#
 After clearing, the array size is: 9";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, ProgrammingLanguages.ChapterMain);
+                expected, ProgrammingLanguages.Main);
         }
     }
 }

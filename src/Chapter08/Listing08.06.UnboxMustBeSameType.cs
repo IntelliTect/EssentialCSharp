@@ -4,7 +4,7 @@
 
     public class DisplayFibonacci
     {
-        static void ChapterMain()
+        static void Main()
         {
             // ...
 

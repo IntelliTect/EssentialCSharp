@@ -11,7 +11,7 @@
 //        private System.Windows.Forms.ProgressBar _ProgressBar;
 
 //        [STAThread]
-//        public static void ChapterMain()
+//        public static void Main()
 //        {
 //            Application.Run(new Program());
 //        }

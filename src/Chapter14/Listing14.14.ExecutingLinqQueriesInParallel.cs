@@ -7,7 +7,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_17
 
     public class Program
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             string rootDirectory = Directory.GetCurrentDirectory();
             string searchPattern = "*";

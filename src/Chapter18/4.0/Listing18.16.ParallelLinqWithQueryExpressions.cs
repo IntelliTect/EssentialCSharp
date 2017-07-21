@@ -42,7 +42,7 @@
             return numbers;
         }
 
-        public static void ChapterMain()
+        public static void Main()
         {
             Program program = new Program();
             List<string> data = GetRandomNumbers();

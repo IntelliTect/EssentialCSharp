@@ -27,7 +27,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_15.Tests
                     Directory.GetCurrentDirectory(), "*").Count();
             string output = ConsoleAssert.Execute(null, () =>
             {
-                Program.ChapterMain();
+                Program.Main();
             });
 
             IEnumerable<string> outputItems = output.Split(
@@ -37,7 +37,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_15.Tests
                 expectedItemCount, outputItems.Count());
             foreach (string item in outputItems)
             {
-                Assert.IsTrue(item.IsLike(expectedPattern, '?'));
+                Assert.IsTrue(item.IsLike(expectedPattern));
             }
         }
     }

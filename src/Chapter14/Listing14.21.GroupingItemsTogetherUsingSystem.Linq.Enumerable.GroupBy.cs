@@ -6,7 +6,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_24
 
     public class Program
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             IEnumerable<Employee> employees = CorporateData.Employees;
 
