@@ -3,9 +3,12 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp1.0</TargetFramework>
     <ProductName>Chapter17a</ProductName>
+    <StartupObject>AddisonWesley.Michaelis.EssentialCSharp.Shared</StartupObject> 
   </PropertyGroup>
   <Import Project="..\Versioning.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\SharedCode\SharedCode.csproj" />
+    <Compile Include="..\Shared\Program.cs">
+      <Link>Program.cs</Link>
+    </Compile>
   </ItemGroup>
 </Project>

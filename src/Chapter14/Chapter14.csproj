@@ -3,12 +3,13 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp1.0</TargetFramework>
     <ProductName>Chapter14</ProductName>
+    <StartupObject>AddisonWesley.Michaelis.EssentialCSharp.Shared</StartupObject> 
   </PropertyGroup>
   <Import Project="..\Versioning.targets" />
   <ItemGroup>
     <PackageReference Include="System.ValueTuple" Version="4.3.0" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\SharedCode\SharedCode.csproj" />
+    <Compile Include="..\Shared\Program.cs">
+      <Link>Program.cs</Link>
+    </Compile>
   </ItemGroup>
 </Project>

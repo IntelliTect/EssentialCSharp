@@ -5,9 +5,12 @@
     <ProductName>Chapter20</ProductName>
     <WarningLevel>2</WarningLevel>
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <StartupObject>AddisonWesley.Michaelis.EssentialCSharp.Shared</StartupObject> 
   </PropertyGroup>
   <Import Project="..\Versioning.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\SharedCode\SharedCode.csproj" />
+    <Compile Include="..\Shared\Program.cs">
+      <Link>Program.cs</Link>
+    </Compile>
   </ItemGroup>
 </Project>
