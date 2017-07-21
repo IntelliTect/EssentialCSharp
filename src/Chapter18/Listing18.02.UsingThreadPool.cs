@@ -6,7 +6,7 @@
     public class Program
     {
         public const int Repetitions = 1000;
-        public static void ChapterMain()
+        public static void Main()
         {
             ThreadPool.QueueUserWorkItem(DoWork, '+');
 

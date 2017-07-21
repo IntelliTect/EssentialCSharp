@@ -2,7 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_38
 {
     public class Program
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             byte and, or, xor;
             and = 12 & 7;   // and = 4

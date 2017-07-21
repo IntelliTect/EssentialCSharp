@@ -2,7 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_33
 {
     public class Program
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             if((10 < hourOfTheDay) && (hourOfTheDay < 24))
                 System.Console.WriteLine(

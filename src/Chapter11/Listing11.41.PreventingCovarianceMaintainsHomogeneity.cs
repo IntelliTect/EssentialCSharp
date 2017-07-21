@@ -5,7 +5,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter11.Listing11_41
 {
     public class Program
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             Contact contact1 = new Contact("Princess Buttercup");
             Contact contact2 = new Contact("Inigo Montoya");

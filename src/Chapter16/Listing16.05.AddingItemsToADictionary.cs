@@ -5,7 +5,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_05
 
     public class Program
     {
-        public static void ChapterMain()
+        public static void Main()
         {
 #if !PRECSHARP5
         // C# 6.0

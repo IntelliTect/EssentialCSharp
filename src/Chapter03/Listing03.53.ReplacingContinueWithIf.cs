@@ -2,7 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_51
 {
     class EmailDomain
     {
-        static void ChapterMain()
+        static void Main()
         {
             string email;
             bool insideDomain = false;

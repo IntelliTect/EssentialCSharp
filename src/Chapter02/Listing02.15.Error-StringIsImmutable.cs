@@ -2,7 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_14
 {
     public class Uppercase
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             string text;
 

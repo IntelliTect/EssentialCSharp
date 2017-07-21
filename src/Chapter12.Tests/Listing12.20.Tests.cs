@@ -25,7 +25,7 @@ Items were compared 10 times.
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected,
             () =>
             {
-                Program.ChapterMain();
+                Program.Main();
             });
         }
     }

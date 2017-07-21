@@ -13,7 +13,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_06.Tests
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(view,
             () =>
             {
-                HelloWorld.ChapterMain();
+                HelloWorld.Main();
             });
         }
     }

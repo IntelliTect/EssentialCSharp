@@ -2,7 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_12
 {
     public class Program
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             int x = 0;
 

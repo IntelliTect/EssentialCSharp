@@ -2,7 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_15
 {
     public class Program
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             char current;
             int unicodeValue;

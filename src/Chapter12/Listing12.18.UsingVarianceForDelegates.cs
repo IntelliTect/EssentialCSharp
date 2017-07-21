@@ -4,7 +4,7 @@
 
     public class Program
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             // Contravariance
             Action<object> broadAction =

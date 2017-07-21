@@ -59,7 +59,7 @@ Vincenzo Iaquinta";
             IntelliTect.TestTools.Console.ConsoleAssert.ExpectLike(expected,
             () =>
             {
-                Program.ChapterMain();
+                Program.Main();
             });
         }
     }

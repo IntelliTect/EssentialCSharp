@@ -6,7 +6,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_19
 
     public class Program
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             IEnumerable<Patent> patents = PatentData.Patents;
             bool result;

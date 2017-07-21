@@ -5,7 +5,7 @@
 
     public class Program
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             string[] values;
             Contact contact1, contact2 = null;

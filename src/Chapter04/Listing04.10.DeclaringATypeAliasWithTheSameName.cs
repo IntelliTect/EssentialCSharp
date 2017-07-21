@@ -6,7 +6,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_09
 
     public class HelloWorld
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             Console console;
 

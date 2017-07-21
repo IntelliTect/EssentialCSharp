@@ -7,7 +7,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_06
 
     public class Program
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             FindMonthOldFiles(Directory.GetCurrentDirectory(), "*");
         }

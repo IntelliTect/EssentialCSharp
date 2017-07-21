@@ -5,7 +5,7 @@
 
     public class Program
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             Pair<int, string> historicalEvent =
                 new Pair<int, string>(1914,

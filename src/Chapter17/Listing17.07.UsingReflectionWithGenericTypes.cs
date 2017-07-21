@@ -6,7 +6,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_06
 
     public class Program
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             Stack<int> s = new Stack<int>();
 

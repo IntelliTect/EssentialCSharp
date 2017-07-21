@@ -5,7 +5,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_02
 
     public class Program
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             List<Contact> list = new List<Contact>();
 

@@ -5,7 +5,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_05
 
     public class Program
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             Type type;
             type = typeof(System.Nullable<>);

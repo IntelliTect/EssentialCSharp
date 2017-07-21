@@ -2,7 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_49
 {
     public class Program
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             string input = "";
 
@@ -11,7 +11,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_49
             int position; // The bit that is to be set.
 
             // int.Parse() converts "input" to an integer.
-            // "int.Parse(input) – 1" because arrays 
+            // "int.Parse(input) ï¿½ 1" because arrays 
             // are zero based.
             shifter = int.Parse(input) - 1;
 
