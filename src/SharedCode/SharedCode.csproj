@@ -1,8 +1,0 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <OutputType>Library</OutputType>
-    <TargetFramework>netcoreapp1.0</TargetFramework>
-    <ProductName>SharedCode</ProductName>
-  </PropertyGroup>
-  <Import Project="..\Versioning.targets" />
-</Project>
