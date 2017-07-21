@@ -3,7 +3,7 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp1.0</TargetFramework>
     <ProductName>Chapter16</ProductName>
-    <StartupObject>AddisonWesley.Michaelis.EssentialCSharp.Shared</StartupObject> 
+    <StartupObject>AddisonWesley.Michaelis.EssentialCSharp.Shared.Program</StartupObject> 
   </PropertyGroup>
   <Import Project="..\Versioning.targets" />
   <ItemGroup>

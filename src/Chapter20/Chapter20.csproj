@@ -5,7 +5,7 @@
     <ProductName>Chapter20</ProductName>
     <WarningLevel>2</WarningLevel>
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
-    <StartupObject>AddisonWesley.Michaelis.EssentialCSharp.Shared</StartupObject> 
+    <StartupObject>AddisonWesley.Michaelis.EssentialCSharp.Shared.Program</StartupObject> 
   </PropertyGroup>
   <Import Project="..\Versioning.targets" />
   <ItemGroup>
