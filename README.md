@@ -74,3 +74,9 @@ Use one of the following scripts to execute a batch test on all the projects.
 
 * /EssentialCSharp/RunTests.ps1 **(Windows)**
 * /EssentialCSharp/RunTests.sh **(Linux/Mac)**
+
+If running on Linux you may need to give the script execution permission.  From the /EssentialCSharp/ directory:
+```
+$ chmod +x ./RunTests.sh
+$ ./RunTests.sh
+```
