@@ -22,11 +22,14 @@ $ cd ./EssentialCSharp/
 $ git checkout v7.0
 ```
 
-#### Initialize _TestTools_ 
+#### Initialize and Update _TestTools_ 
 
 _TestTools_ is IntelliTect's code testing framework for .NET console applications.  From the same console:
 ```
 $ git submodule update --init --remote
+$ cd ./submodules/TestTools
+$ git checkout master
+$ git pull
 ```
 
 ### Build
@@ -35,6 +38,7 @@ $ git submodule update --init --remote
  
  For those using the command line, build all the projects from the /EssentialCSharp/ directory with these commands:
 ```
+$ cd ../../
 $ dotnet restore EssentialCSharp.sln
 $ dotnet build EssentialCSharp.sln
 ```
