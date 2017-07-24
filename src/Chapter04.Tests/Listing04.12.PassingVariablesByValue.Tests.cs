@@ -14,7 +14,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_11.Tests
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(view,
             () =>
             {
-                Program.ChapterMain();
+                Program.Main();
             });
         }
     }

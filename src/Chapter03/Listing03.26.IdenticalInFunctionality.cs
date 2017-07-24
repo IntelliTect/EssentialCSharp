@@ -4,7 +4,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_26
 {
     public class Program
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             double radius = -1;
             double area = 0;

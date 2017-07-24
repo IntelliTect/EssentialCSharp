@@ -18,7 +18,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_17.Tests
                     Directory.GetCurrentDirectory(), "*").Count();
             string output = ConsoleAssert.Execute(null, () =>
             {
-                Program.ChapterMain();
+                Program.Main();
             });
 
             IEnumerable<string> outputItems = output.Split(

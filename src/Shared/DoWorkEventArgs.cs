@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
 {

@@ -2,7 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_14
 {
     public class Program
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             int readValue;
             char character;

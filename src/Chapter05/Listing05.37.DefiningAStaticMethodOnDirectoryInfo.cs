@@ -5,7 +5,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_37
 
     public class Program
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             // ...
             DirectoryInfo directory = new DirectoryInfo(".\\Source");

@@ -6,7 +6,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_15
     {
         // Use the first argument as the directory
         // to search, or default to the current directory.
-        public static void ChapterMain(string[] args)
+        public static void Main(string[] args)
         {
             int totalLineCount = 0;
             string directory;

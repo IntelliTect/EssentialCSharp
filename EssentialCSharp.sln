@@ -6,18 +6,23 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F97BC459-B5B9-4326-9E0D-D085FD4DEF96}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
-		global.json = global.json
 		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{91698F73-19EB-4531-980C-5B8B76DC28C9}"
 	ProjectSection(SolutionItems) = preProject
 		src\Shared\Program.cs = src\Shared\Program.cs
+		src\Shared\AsyncCompletedEventArgs.cs = src\Shared\AsyncCompletedEventArgs.cs
+		src\Shared\DoWorkEventArgs.cs = src\Shared\DoWorkEventArgs.cs
+		src\Shared\PiCalculator.cs = src\Shared\PiCalculator.cs
+		src\Shared\PiCalculator+InternalPiDigitCalculator.cs = src\Shared\PiCalculator+InternalPiDigitCalculator.cs
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "submodules", "submodules", "{731AAC54-C91A-4D8D-ABB5-1472B6EFCC36}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IntelliTect.TestTools.Console", "submodules\TestTools\IntelliTect.TestTools.Console\IntelliTect.TestTools.Console.csproj", "{210FAD29-2D8B-46D5-9F62-2BACD00D4A2C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntelliTect.TestTools.Console", "submodules\TestTools\IntelliTect.TestTools.Console\IntelliTect.TestTools.Console.csproj", "{210FAD29-2D8B-46D5-9F62-2BACD00D4A2C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter01", "src\Chapter01\Chapter01.csproj", "{70458AA7-C130-4E97-BBD9-C54BDCDF1A67}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter01.Tests", "src\Chapter01.Tests\Chapter01.Tests.csproj", "{12EF0E9C-FD9D-4CA0-8785-A189A4829B22}"
 EndProject
@@ -42,6 +47,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter07", "src\Chapter07\Chapter07.csproj", "{66EA6FC7-D2F7-4EE3-925C-FA8877646F1B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter08", "src\Chapter08\Chapter08.csproj", "{509426A0-967B-4666-9024-803829973CD2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter08.Tests", "src\Chapter08.Tests\Chapter08.Tests.csproj", "{BAAABB2B-F5DB-4F95-AF4A-45C935C36197}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter09", "src\Chapter09\Chapter09.csproj", "{211120AC-CCBC-45AB-8EAB-B4446A46B5E6}"
 EndProject
@@ -85,19 +92,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter19", "src\Chapter19\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter20", "src\Chapter20\Chapter20.csproj", "{61D77238-EA7E-4C77-8795-158A57E4978C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter20.Tests", "src\Chapter20.Tests\Chapter20.Tests.csproj", "{499FD8E6-D7DC-4295-AD35-517814CAE3AF}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChapterAppB", "src\ChapterAppB\ChapterAppB.csproj", "{24CD323F-A48C-4F3D-9779-25F3E8FAA07C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChapterAppC", "src\ChapterAppC\ChapterAppC.csproj", "{5BA0384E-2A36-4777-BFC5-189D5F14D7B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedCode", "src\SharedCode\SharedCode.csproj", "{640466E0-FB63-4B8E-91D1-A07FF4C92E2A}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter01", "src\Chapter01\Chapter01.csproj", "{70458AA7-C130-4E97-BBD9-C54BDCDF1A67}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IntelliTect.TestTools.Console.Tests", "submodules\TestTools\IntelliTect.TestTools.Console.Tests\IntelliTect.TestTools.Console.Tests.csproj", "{9E1A36E4-F75F-4125-9856-DA631D901E52}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter20.Tests", "src\Chapter20.Tests\Chapter20.Tests.csproj", "{499FD8E6-D7DC-4295-AD35-517814CAE3AF}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chapter08.Tests", "src\Chapter08.Tests\Chapter08.Tests.csproj", "{BAAABB2B-F5DB-4F95-AF4A-45C935C36197}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntelliTect.TestTools.Console.Tests", "submodules\TestTools\IntelliTect.TestTools.Console.Tests\IntelliTect.TestTools.Console.Tests.csproj", "{9E1A36E4-F75F-4125-9856-DA631D901E52}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

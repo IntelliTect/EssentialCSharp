@@ -2,7 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_36A
 {
     class Program
     {
-        static void ChapterMain(string[] args)
+        static void Main(string[] args)
         {
             if (args?.Length == 0)
             {

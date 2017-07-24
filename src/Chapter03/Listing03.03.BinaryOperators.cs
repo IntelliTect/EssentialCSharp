@@ -2,7 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_03
 {
     public class Division
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             int numerator;
             int denominator;

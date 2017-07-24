@@ -21,7 +21,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_05.Tests
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected,
             () =>
             {
-                Program.ChapterMain();
+                Program.Main();
             });
         }
     }

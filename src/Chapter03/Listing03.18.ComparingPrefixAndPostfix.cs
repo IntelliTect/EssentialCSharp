@@ -2,7 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_18
 {
     public class IncrementExample
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             int x = 123;
             // Displays 123, 124, 125.

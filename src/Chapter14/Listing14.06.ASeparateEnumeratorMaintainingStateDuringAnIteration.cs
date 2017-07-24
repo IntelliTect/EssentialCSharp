@@ -4,7 +4,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_09
 
     public class Program
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             System.Collections.Generic.Stack<int> stack =
                 new System.Collections.Generic.Stack<int>();

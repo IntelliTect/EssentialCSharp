@@ -4,7 +4,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_06
 
     public class Program
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             int[] array = new int[] { 1, 2, 3, 4, 5, 6 };
 

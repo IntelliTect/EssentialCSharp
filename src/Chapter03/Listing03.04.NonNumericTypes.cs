@@ -2,7 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_04
 {
     public class FortyTwo
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             short windSpeed = 42;
             System.Console.WriteLine(

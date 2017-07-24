@@ -5,7 +5,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_03
 
     public class Program
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             List<string> sevenWorldBlunders;
             sevenWorldBlunders = new List<string>()

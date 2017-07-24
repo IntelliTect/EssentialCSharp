@@ -6,7 +6,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_18
 
     public class Program
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             IEnumerable<Patent> patents = PatentData.Patents;
             Console.WriteLine($"Patent Count: { patents.Count() }");

@@ -2,7 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_48
 {
     public class TicTacToe      // Declares the TicTacToe class. 
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             int winner = 0;
             // Stores locations each player has moved.

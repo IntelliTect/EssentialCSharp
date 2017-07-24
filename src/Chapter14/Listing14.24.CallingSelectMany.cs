@@ -6,7 +6,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_27
 
     public class Program
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             (string Team, string[] Players)[] worldCup2006Finalists = new[]
             {

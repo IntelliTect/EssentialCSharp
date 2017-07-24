@@ -17,7 +17,7 @@
             Console.WriteLine("DoWork() ending....");
         }
 
-        public static void ChapterMain()
+        public static void Main()
         {
             using(MainSignaledResetEvent =
                 new ManualResetEventSlim())

@@ -6,7 +6,7 @@
 
     public class Program
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             DisplayStatus("Before");
             Task taskA =

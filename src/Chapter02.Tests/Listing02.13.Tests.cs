@@ -13,7 +13,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_13.Tests
 >>The palindrome ""racecar"" is 7 characters.";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, PalindromeLength.ChapterMain);
+                expected, PalindromeLength.Main);
         }
     }
 }

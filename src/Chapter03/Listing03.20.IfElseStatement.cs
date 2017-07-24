@@ -2,14 +2,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_20
 {
     public class TicTacToe // Declares the TicTacToe class.
     {
-        public static void ChapterMain() // Declares the entry point of the program.
+        public static void Main() // Declares the entry point of the program.
         {
             string input;
 
             // Prompt the user to select a 1- or 2- player game.
             System.Console.Write(
-                "1 – Play against the computer\n" +
-                "2 – Play against another player.\n" +
+                "1 - Play against the computer\n" +
+                "2 - Play against another player.\n" +
                 "Choose:"
             );
             input = System.Console.ReadLine();

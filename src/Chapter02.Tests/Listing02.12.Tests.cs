@@ -17,7 +17,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_12.Tests
 end";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, Triangle.ChapterMain);
+                expected, Triangle.Main);
         }
     }
 }

@@ -5,7 +5,7 @@
 
     public class Program
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             Coordinate coordinate1, coordinate2;
             coordinate1 = new Coordinate(

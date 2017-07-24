@@ -7,7 +7,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_10
 
     public class Program
     {
-        public static int ChapterMain(string[] args)
+        public static int Main(string[] args)
         {
             int result;
             string targetFileName;

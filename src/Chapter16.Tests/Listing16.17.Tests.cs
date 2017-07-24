@@ -18,7 +18,7 @@ John Francis Fitzgerald
 Mary Josephine Hannon";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected,
-                () => Program.ChapterMain());
+                () => Program.Main());
         }
     }
 }
