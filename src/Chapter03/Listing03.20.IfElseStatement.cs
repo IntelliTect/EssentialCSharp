@@ -8,8 +8,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_20
 
             // Prompt the user to select a 1- or 2- player game.
             System.Console.Write(
-                "1 � Play against the computer\n" +
-                "2 � Play against another player.\n" +
+                "1 - Play against the computer\n" +
+                "2 - Play against another player.\n" +
                 "Choose:"
             );
             input = System.Console.ReadLine();
