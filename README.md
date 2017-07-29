@@ -17,21 +17,17 @@ Ensure one of the following frameworks is installed at the latest version.
 
 #### Local Copy
 
-Open a console and change the working directory to the desired project location. Once the repo has been cloned, checkout the v7.0 branch.
+Open a console and change the working directory to the desired project location.
 ```
-$ git clone https://github.com/IntelliTect/EssentialCSharp.git
+$ git clone --recursive https://github.com/IntelliTect/EssentialCSharp.git
 $ cd ./EssentialCSharp/
-$ git checkout v7.0
 ```
 
-#### Initialize and Update _TestTools_
+**Note:** `--recursive` is used to ensure that the submodules, specifically `IntelliTect.TestTools` (which includes a testing framework for .NET console applications).
 
-_TestTools_ is IntelliTect's code testing framework for .NET console applications.  From the same console:
+The source code associated with the `master` is the most recently published edition of the book and this is the default branch following the clone command.  However, you can switch to a different branch, v6.0 for example, with the command:
 ```
-$ git submodule update --init --remote
-$ cd ./submodules/TestTools
-$ git checkout master
-$ git pull
+$ git checkout v6.0
 ```
 
 ### Build
@@ -40,7 +36,6 @@ $ git pull
 
  For those using the command line, build all the projects from the /EssentialCSharp/ directory with these commands:
 ```
-$ cd ../../
 $ dotnet restore EssentialCSharp.sln
 $ dotnet build EssentialCSharp.sln
 ```
