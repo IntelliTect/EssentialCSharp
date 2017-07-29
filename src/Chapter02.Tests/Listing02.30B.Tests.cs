@@ -16,7 +16,7 @@ England";
             expected += $"{System.Environment.NewLine + expected}";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, Program.ChapterMain);
+                expected, Program.Main);
 
         }
     }

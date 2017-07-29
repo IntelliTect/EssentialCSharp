@@ -74,7 +74,7 @@
 
     class Program
     {
-        static void ChapterMain()
+        static void Main()
         {
             // Allowed in C# 4.0
             Pair<Contact> contacts =

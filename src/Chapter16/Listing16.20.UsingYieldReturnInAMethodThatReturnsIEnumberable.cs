@@ -6,7 +6,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_20
 
     public class Program
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             var game = new Pair<string>("Redskins", "Eagles");
             foreach(string name in game.GetReverseEnumerator())

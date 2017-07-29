@@ -2,7 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_05
 {
     public class Program
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             System.Console.WriteLine(MyMethod());
         }

@@ -2,7 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_08
 {
     public class SingleQuote
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             //begin 2.8
             string option = "";

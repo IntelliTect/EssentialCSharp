@@ -1,4 +1,4 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_14.Tests
@@ -31,7 +31,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_14.Tests
             IntelliTect.TestTools.Console.ConsoleAssert.ExpectLike(expected, '\\',
             () =>
             {
-                Program.ChapterMain();
+                Program.Main();
             });
         }
     }

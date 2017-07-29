@@ -4,7 +4,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_31
     using Listing17_32;
     public class Program
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             dynamic person = DynamicXml.Parse(
              @"<Person>

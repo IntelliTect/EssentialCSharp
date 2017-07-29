@@ -12,7 +12,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_06.Tests
                 @"Hello. My name is Inigo Montoya.";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, HelloWorld.ChapterMain);
+                expected, HelloWorld.Main);
         }
     }
 }

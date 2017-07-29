@@ -5,7 +5,7 @@
 
     public class Program
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             DirectoryInfo directory = new DirectoryInfo(".\\Source");
             directory.CopyTo(".\\Target",

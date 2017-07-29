@@ -29,7 +29,7 @@ Eric Edmonds (Philanthropy Coordinator)
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected,
             () =>
             {
-                Program.ChapterMain();
+                Program.Main();
             });
         }
     }

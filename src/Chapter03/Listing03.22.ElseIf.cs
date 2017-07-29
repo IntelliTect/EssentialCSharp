@@ -2,7 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_22
 {
     public class Program
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             if(input < 0)
                 System.Console.WriteLine("Exiting...");

@@ -13,7 +13,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_11.Tests
 Mary Josephine Hannon";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected,
-                Program.ChapterMain);
+                Program.Main);
         }
     }
 }

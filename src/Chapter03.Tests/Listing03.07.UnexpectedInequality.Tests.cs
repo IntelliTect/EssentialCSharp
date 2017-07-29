@@ -18,7 +18,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_07.Tests
 4.2F != 4.2D";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, Program.ChapterMain);
+                expected, Program.Main);
 
             // Removed 4.20000028610229 != 4.20000028610229 ... in .Net Core float conversions seem to be more accurate
         }

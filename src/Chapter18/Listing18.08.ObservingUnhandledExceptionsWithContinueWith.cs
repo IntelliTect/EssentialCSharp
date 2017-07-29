@@ -1,12 +1,11 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_08
 {
     using System;
-    using System.Diagnostics;
     using System.Threading.Tasks;
 
-    public class Program
+    public class ProgramObservingUnhandledExceptionsWithContinueWith
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             bool parentTaskFaulted = false;
             Task task = new Task(() =>

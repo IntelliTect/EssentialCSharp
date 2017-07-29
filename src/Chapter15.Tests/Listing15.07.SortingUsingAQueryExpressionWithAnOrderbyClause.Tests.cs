@@ -25,7 +25,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_07.Tests
 
             string output = IntelliTect.TestTools.Console.ConsoleAssert.Execute(null, () =>
             {
-                Program.ChapterMain();
+                Program.Main();
             });
 
             IEnumerable<string> outputItems = output.Split('\n');

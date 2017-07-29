@@ -17,7 +17,7 @@
 
     class Program
     {
-        public void ChapterMain()
+        public void Main()
         {
             // Note: board.Cells does not require initialization.
             TicTacToeBoard board = new TicTacToeBoard();

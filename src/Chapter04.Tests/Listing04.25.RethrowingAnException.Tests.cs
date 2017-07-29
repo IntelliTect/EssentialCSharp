@@ -15,7 +15,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_24.Tests
             try
             {
                 IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                    "", ThrowingExceptions.ChapterMain);
+                    "", ThrowingExceptions.Main);
             }
             catch (Exception)
             {

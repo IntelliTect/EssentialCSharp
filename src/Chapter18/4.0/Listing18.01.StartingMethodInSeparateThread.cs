@@ -5,7 +5,7 @@
 
     public class Program
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             const int repetitions = 10000;
             Task task = new Task(() =>

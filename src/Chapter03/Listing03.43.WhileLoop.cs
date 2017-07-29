@@ -2,7 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_41
 {
     public class FibonacciCalculator
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             decimal current;
             decimal previous;

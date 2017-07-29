@@ -13,7 +13,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_24.Tests
 >>The area of the circle is: 28.27";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, CircleAreaCalculator.ChapterMain);
+                expected, CircleAreaCalculator.Main);
         }
     }
 }

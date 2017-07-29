@@ -19,7 +19,7 @@ Shutting down...";
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(view,
             () =>
             {
-                ThrowingExceptions.ChapterMain();
+                ThrowingExceptions.Main();
             });
         }
     }

@@ -57,7 +57,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_11
 
     public class Program
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             // JFK
             var jfkFamilyTree = new BinaryTree<string>(

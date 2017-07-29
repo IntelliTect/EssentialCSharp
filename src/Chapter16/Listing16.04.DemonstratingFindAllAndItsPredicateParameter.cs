@@ -5,7 +5,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_04
 
     public class Program
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             List<int> list = new List<int>();
             list.Add(1);

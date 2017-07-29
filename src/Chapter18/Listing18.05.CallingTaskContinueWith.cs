@@ -5,7 +5,7 @@
 
     public class Program
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             Console.WriteLine("Before");
             // Use Task.Factory.StartNew<string>() for

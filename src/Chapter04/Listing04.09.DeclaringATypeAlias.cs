@@ -6,7 +6,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_08
 
     public class HelloWorld
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             CountDownTimer timer;
 

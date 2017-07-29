@@ -7,7 +7,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_28
 
     public class Program
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             IEnumerable<object> stuff =
                 new object[] { new object(), 1, 3, 5, 7, 9,

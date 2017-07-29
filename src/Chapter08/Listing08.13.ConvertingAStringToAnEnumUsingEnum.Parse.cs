@@ -5,7 +5,7 @@
 
     public class Program
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             ThreadPriorityLevel priority = (ThreadPriorityLevel)Enum.Parse(
                 typeof(ThreadPriorityLevel), "Idle");
