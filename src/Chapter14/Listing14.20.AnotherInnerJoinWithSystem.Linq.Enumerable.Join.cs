@@ -6,7 +6,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_23
 
     public class Program
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             Department[] departments = CorporateData.Departments;
             Employee[] employees = CorporateData.Employees;

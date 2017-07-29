@@ -3,7 +3,7 @@ using System.Text;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
 {
-    partial class PiCalculator
+    public partial class PiCalculator
     {
         const int Digits = 100;
         #region Helper
@@ -19,20 +19,20 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
 
         public static string Calculate(int digits, int startingAt)
         {
-            System.ComponentModel.DoWorkEventArgs eventArgs = new System.ComponentModel.DoWorkEventArgs(digits);
+            DoWorkEventArgs eventArgs = new DoWorkEventArgs(digits);
 
             CalculatePi(typeof(PiCalculator), eventArgs, startingAt);
             return (string)eventArgs.Result;
         }
 
         private static void CalculatePi(
-            object sender, System.ComponentModel.DoWorkEventArgs eventArgs)
+            object sender, DoWorkEventArgs eventArgs)
         {
             CalculatePi(sender, eventArgs, 0);
         }
 
         private static void CalculatePi(
-            object sender, System.ComponentModel.DoWorkEventArgs eventArgs, int startingAt)
+            object sender, DoWorkEventArgs eventArgs, int startingAt)
         {
             int digits = (int)eventArgs.Argument;
 

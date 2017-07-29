@@ -26,7 +26,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_30.Tests
 
             string output = ConsoleAssert.Execute(null, () =>
             {
-                Program.ChapterMain();
+                Program.Main();
             });
 
             IEnumerable<string> outputItems = output.Split(

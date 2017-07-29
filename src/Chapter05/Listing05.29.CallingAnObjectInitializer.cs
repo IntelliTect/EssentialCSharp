@@ -5,7 +5,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_29
 
     class Program
     {
-        static void ChapterMain()
+        static void Main()
         {
             List<Employee> employees = new List<Employee>()
                 {

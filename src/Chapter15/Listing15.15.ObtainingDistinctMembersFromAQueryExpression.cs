@@ -8,7 +8,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_15
 
     public class Program
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             ListMemberNames();
         }

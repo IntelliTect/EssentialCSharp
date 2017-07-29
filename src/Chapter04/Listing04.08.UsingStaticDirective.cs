@@ -4,7 +4,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_07A
 
     class HeyYou
     {
-        static void ChapterMain()
+        static void Main()
         {
             string firstName;
             string lastName;

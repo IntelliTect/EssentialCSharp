@@ -6,7 +6,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_06
 
     public class HelloWorld
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             // No need to qualify Console with System
             // because of the using directive above.

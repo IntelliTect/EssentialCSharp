@@ -2,7 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_05
 {
     public class Program
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             //Display the value 42 using a hexadecimal literal.
             System.Console.WriteLine(0x002A);

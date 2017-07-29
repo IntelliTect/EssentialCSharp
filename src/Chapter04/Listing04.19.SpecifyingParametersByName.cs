@@ -4,7 +4,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_18
 
     public class Program
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             DisplayGreeting(
                 firstName: "Inigo", lastName: "Montoya");

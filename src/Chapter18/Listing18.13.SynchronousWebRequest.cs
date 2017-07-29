@@ -8,7 +8,7 @@
 
     public class Program
     {
-        public static async void ChapterMain(string[] args)
+        public static async void Main(string[] args)
         {
             string url = "http://www.Intellitect.com";
             if(args.Length > 0)

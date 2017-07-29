@@ -7,7 +7,7 @@
     {
         public const int Repetitions = 1000;
 
-        public static void ChapterMain()
+        public static void Main()
         {
             ThreadStart threadStart = DoWork;
             Thread thread = new Thread(threadStart);

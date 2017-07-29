@@ -2,7 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_30B
 {
     public class Program
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             {
                 (string address1, string city, string countyProvinceState, string zip, string country) =

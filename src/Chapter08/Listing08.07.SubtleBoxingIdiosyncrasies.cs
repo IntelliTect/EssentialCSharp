@@ -3,7 +3,7 @@
     using System;
     class Program
     {
-        static void ChapterMain()
+        static void Main()
         {
             // ...
 

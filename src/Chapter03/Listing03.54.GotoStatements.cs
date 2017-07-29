@@ -2,7 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_52
 {
     public class Program
     {
-        public static void ChapterMain(string[] args)
+        public static void Main(string[] args)
         {
             bool isOutputSet = false;
             bool isFiltered = false;

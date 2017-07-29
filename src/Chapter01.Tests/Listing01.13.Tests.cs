@@ -15,7 +15,7 @@ Enter your first name: <<Inigo
 >>";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, HeyYou.ChapterMain);
+                expected, HeyYou.Main);
         }
     }
 }

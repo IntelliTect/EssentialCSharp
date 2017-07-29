@@ -5,7 +5,7 @@
 
     public class Program
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             ConnectionState1[] states =
                 (ConnectionState1[])(Array)new ConnectionState2[42];

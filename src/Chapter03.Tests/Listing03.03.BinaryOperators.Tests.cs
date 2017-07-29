@@ -13,7 +13,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_03.Tests
 >>42 / 5 = 8 with remainder 2";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, Division.ChapterMain);
+                expected, Division.Main);
         }
     }
 }

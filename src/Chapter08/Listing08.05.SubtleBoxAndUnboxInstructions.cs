@@ -5,7 +5,7 @@
 
     public class DisplayFibonacci
     {
-        static void ChapterMain()
+        static void Main()
         {
             int totalCount;
             List<double> list = new List<double>();

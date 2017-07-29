@@ -38,7 +38,7 @@
             return numbers;
         }
 
-        public static void ChapterMain()
+        public static void Main()
         {
             List<string> files = Directory.GetFiles(Directory.GetCurrentDirectory()).ToList();
             int numberOfFiles = files.Count;

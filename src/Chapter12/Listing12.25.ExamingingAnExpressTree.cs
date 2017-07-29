@@ -5,7 +5,7 @@
 
     public class Program
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             Expression<Func<int, int, bool>> expression;
             expression = (x, y) => x > y;

@@ -2,7 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_50
 {
     public class ProgrammingLanguages
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             string[] languages = new string[]{
                 "C#", "COBOL", "Java",
@@ -29,7 +29,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_50
             System.Console.WriteLine(
                     $"{ languages[0],-20 }\t{ languages[languages.Length - 1],-20 }");
             // Note this does not remove all items from the array.
-            // Rather it sets each item to the type’s default value.
+            // Rather it sets each item to the type's default value.
             System.Array.Clear(languages, 0, languages.Length);
             System.Console.WriteLine(
                     $"{ languages[0],-20 }\t{ languages[languages.Length - 1],-20 }");

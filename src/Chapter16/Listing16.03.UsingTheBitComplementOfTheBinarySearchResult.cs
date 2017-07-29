@@ -5,7 +5,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_03
 
     public class Program
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             List<string> list = new List<string>();
             int search;

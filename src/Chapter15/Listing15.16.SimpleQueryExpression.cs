@@ -6,7 +6,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_16
 
     public class Program
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             ShowContextualKeywords1();
         }

@@ -5,7 +5,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_12
 
     public class Program
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             GroupKeywords1();
         }

@@ -7,7 +7,7 @@
 
     public sealed class Program
     {
-        public static void ChapterMain(string[] args)
+        public static void Main(string[] args)
         {
             try
             {
