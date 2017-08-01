@@ -1,7 +1,8 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-
+﻿
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_08.Tests
 {
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+
     [TestClass]
     public class ProgramTests
     {
@@ -13,7 +14,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_08.Tests
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected,
             () =>
             {
-                ProgramObservingUnhandledExceptionsWithContinueWith.Main();
+                Program.Main();
             });
         }
     }
