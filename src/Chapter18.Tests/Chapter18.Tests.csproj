@@ -6,9 +6,9 @@
   </PropertyGroup>
   <Import Project="..\Versioning.targets" />
   <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.0.0-preview-20170106-08" />
-    <PackageReference Include="MSTest.TestAdapter" Version="1.1.8-rc" />
-    <PackageReference Include="MSTest.TestFramework" Version="1.0.8-rc" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.0.0" />
+    <PackageReference Include="MSTest.TestAdapter" Version="1.2.0-beta" />
+    <PackageReference Include="MSTest.TestFramework" Version="1.2.0-beta" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\submodules\TestTools\IntelliTect.TestTools.Console\IntelliTect.TestTools.Console.csproj" />
