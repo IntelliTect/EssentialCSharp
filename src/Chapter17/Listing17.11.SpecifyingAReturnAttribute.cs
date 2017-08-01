@@ -1,3 +1,6 @@
+// NOTE: This file is intentionally set to not compile as part of the project
+// because we don't have reference for the DescriptionAttribute.
+
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_09
 {
     public class Program
