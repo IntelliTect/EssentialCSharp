@@ -36,7 +36,8 @@ Function Invoke-DotNetTest {
         else {
             Write-Information -MessageData "Testing $Project..."
         }
-        dotnet test $projectPath <#-p:BaseIntermediateOutputPath=$BaseIntermediateOutputPath#> 2>&1 | Tee-Object -FilePath $testOutputFilePath -Append |
+        dotnet test $projectPath <#-p:BaseIntermediateOutputPath=$BaseIntermediateOutputPath#> 2>$null <# Ignore error output as it is captured in the log anyway. #> | 
+            Tee-Object -FilePath $testOutputFilePath -Append |
         Where-Object { 
             if($_) { 
                 if(Test-IsOsPlatformWindows) { #Test because Write-Progress not working correctly on Ubunto on Windows.
@@ -99,8 +100,10 @@ if($matches) {
     Select-Object -skip 1 | 
     Select-Object -ExpandProperty Value | ForEach-Object{ $_ -split [Environment]::NewLine } |
     ForEach-Object {
-        $foregroundColor =  [System.ConsoleColor]:: White
         try{$foregroundColor = ((Get-Host).UI.RawUI.ForegroundColor)} catch{ <# Igore #>} 
+        if(!$foregroundColor -OR ($foregroundColor -lt 0)) {
+            $foregroundColor =  [System.ConsoleColor]:: White
+        }
         if($_ -like "Skipped *") { $foregroundColor = [System.ConsoleColor]::Yellow }
         if($_ -like "Failed *") { $foregroundColor = [System.ConsoleColor]::Red }
 
