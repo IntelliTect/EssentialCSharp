@@ -1,6 +1,6 @@
 [CmdletBinding()]
 param(
-    [int[]]$Chapter,
+    [string[]]$Chapter='*',
     $BaseIntermediateOutputPath="obj$([System.IO.Path]::DirectorySeparatorChar)"
 )
 
@@ -65,12 +65,23 @@ Function Invoke-DotNetTest {
 
 
 Remove-Item -Path 'Test.Results.txt' -ErrorAction ignore
+[string[]]$chapters=$null
+if($Chapter -ne '*' ) {
+    $chapters = ($Chapter | ForEach-Object{ "$_".PadLeft(2, '0')} | ForEach-Object{ "*$_.Tests.csproj" })
+}
+else {
+    $chapters = '*.Tests.csproj'
+}
+
+
 $testResults = $()
-$format = "{0,-20}{1,10}{2,10}{3,10}{4,10}"
-Write-Host ($format -f 'Project','Total','Passed','Failed','Skipped')
-Write-Host ($format -f '-------','-----','------','------','-------')
-Get-ChildItem -recurse -include *18.Tests.csproj -exclude IntelliTect.TestTools.Console.Tests.csproj | 
-    Invoke-DotNetTest <#-BaseIntermediateOutputPath $BaseIntermediateOutputPath#> | ForEach-Object {
+$chapterProjects = @(Get-ChildItem -recurse -include $chapters -exclude IntelliTect.TestTools.Console.Tests.csproj)
+if($chapterProjects.Count -gt 0) {
+    $format = "{0,-20}{1,10}{2,10}{3,10}{4,10}"
+    Write-Host ($format -f 'Project','Total','Passed','Failed','Skipped')
+    Write-Host ($format -f '-------','-----','------','------','-------')
+
+    $chapterProjects | Invoke-DotNetTest <#-BaseIntermediateOutputPath $BaseIntermediateOutputPath#> | ForEach-Object {
         if($_.Failed -gt 0) { 
             $foregroundColor = [System.ConsoleColor]::Red
         } 
@@ -85,28 +96,36 @@ Get-ChildItem -recurse -include *18.Tests.csproj -exclude IntelliTect.TestTools.
         Write-Host ($format -f $_.Project,$_.Total,$_.Passed,$_.Failed,$_.Skipped) -ForegroundColor $foregroundColor
         $_.TestResultDetail | ForEach-Object{ $testResults += $_ }
     }
+}
 
-$text = (get-content .\Test.Results.txt -raw )
+if(!(Test-Path .\Test.Results.txt)) {
+    Write-Warning "No files found for `$Chapter = $Chapter"
+}
+else {
+    $text = (get-content .\Test.Results.txt -raw )
 
-$matches = ([regex]'(?smi)^Starting test execution, please wait\.\.\.(.*?)Total tests.*?$').Matches($text) 
+    $matches = @(([regex]'(?smi)^Starting test execution, please wait\.\.\.\w(.*?)\wTotal tests.*?$').Matches($text))
 
-if($matches) {
-    Write-Host 
-    Write-Host 
-    Write-Host "Details"
-    Write-Host "----------------------"
-    
-    $matches | Select-Object -ExpandProperty Groups | 
-    Select-Object -skip 1 | 
-    Select-Object -ExpandProperty Value | ForEach-Object{ $_ -split [Environment]::NewLine } |
-    ForEach-Object {
-        try{$foregroundColor = ((Get-Host).UI.RawUI.ForegroundColor)} catch{ <# Igore #>} 
-        if(!$foregroundColor -OR ($foregroundColor -lt 0)) {
-            $foregroundColor =  [System.ConsoleColor]:: White
+    if($matches.Count -gt 0) {
+        Write-Host 
+        Write-Host 
+        Write-Host "Details"
+        Write-Host "----------------------"
+        
+        $matches | Select-Object -ExpandProperty Groups | 
+        Select-Object -skip 1 | 
+        Select-Object -ExpandProperty Value | ForEach-Object{ $_ -split [Environment]::NewLine } |
+        ForEach-Object {
+            try{$foregroundColor = ((Get-Host).UI.RawUI.ForegroundColor)} catch{ <# Igore #>} 
+            if(!$foregroundColor -OR ($foregroundColor -lt 0)) {
+                $foregroundColor =  [System.ConsoleColor]:: White
+            }
+            if($_ -like "Skipped *") { $foregroundColor = [System.ConsoleColor]::Yellow }
+            if($_ -like "Failed *") { $foregroundColor = [System.ConsoleColor]::Red }
+
+            Write-Host $_ -ForegroundColor $foregroundColor
         }
-        if($_ -like "Skipped *") { $foregroundColor = [System.ConsoleColor]::Yellow }
-        if($_ -like "Failed *") { $foregroundColor = [System.ConsoleColor]::Red }
-
-        Write-Host $_ -ForegroundColor $foregroundColor
     }
 }
+
+Write-Host ""
