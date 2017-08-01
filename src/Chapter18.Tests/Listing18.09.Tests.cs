@@ -1,5 +1,5 @@
 ﻿
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_15B.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_09.Tests
 {
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -14,8 +14,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_15B.Tests
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected,
             () =>
             {
-                
+                Program.Main();
             });
+
         }
     }
 }

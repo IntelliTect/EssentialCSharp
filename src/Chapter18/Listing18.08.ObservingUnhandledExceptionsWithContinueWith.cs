@@ -3,7 +3,7 @@
     using System;
     using System.Threading.Tasks;
 
-    public class ProgramObservingUnhandledExceptionsWithContinueWith
+    public class Program
     {
         public static void Main()
         {

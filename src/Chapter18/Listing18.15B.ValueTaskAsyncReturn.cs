@@ -1,15 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_08.Tests
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_15B.Tests
 {
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
     public partial class Program
     {
-        private static async ValueTask<byte[]> CompressAsync(byte[] buffer)
+        public static async ValueTask<byte[]> CompressAsync(byte[] buffer)
         {
             if (buffer.Length == 0)
             {
