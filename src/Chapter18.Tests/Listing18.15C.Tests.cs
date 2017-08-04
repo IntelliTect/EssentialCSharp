@@ -21,7 +21,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_15C.Tests
             string expected = $@"Invoking Task.Run...(Thread ID: *)
 Running task... (Thread ID: *)
 Post notification invoked...(Thread ID: *)
-throw Exception...(Thread ID: *)
 Post notification invoked...(Thread ID: *)
 Throwing expected exception....(Thread ID: *)
 System.Exception: Expected Exception
@@ -48,7 +47,7 @@ System.Exception: Expected Exception
                     Assert.AreEqual<int>(firstThreadId, int.Parse(matches[i].Groups[1].Value));
                 }
             }
-            Assert.AreEqual<int>(7, matches.Count, "There were not as many 'Thread Id' matches as expected.");
+            Assert.AreEqual<int>(6, matches.Count, "There were not as many 'Thread Id' matches as expected.");
             Console.WriteLine(output);
         }
     }

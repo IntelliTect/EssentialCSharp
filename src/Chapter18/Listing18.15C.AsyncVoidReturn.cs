@@ -93,11 +93,8 @@
             {
                 Console.WriteLine($@"Running task... (Thread ID: {
                     Thread.CurrentThread.ManagedThreadId})");
+                throw new Exception(ExpectedExceptionMessage);
             });
-            Console.WriteLine($@"throw Exception...(Thread ID: {
-                    Thread.CurrentThread.ManagedThreadId})");
-
-            throw new Exception(ExpectedExceptionMessage);
         }
     }
 }
