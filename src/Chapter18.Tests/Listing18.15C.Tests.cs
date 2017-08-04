@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_15C.Tests
 {
+    using System.Text.RegularExpressions;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     [TestClass]
@@ -16,23 +17,39 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_15C.Tests
         [TestMethod]
         public void AsyncVoidReturnTest()
         {
-            bool ExceptionCaught = false;
-            try
-            {
-                //string expected = "";
-                //IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected,
-                //() =>
-                //{
-                //});
 
+            string expected = $@"Invoking Task.Run...(Thread ID: *)
+Running task... (Thread ID: *)
+Post notification invoked...(Thread ID: *)
+throw Exception...(Thread ID: *)
+Post notification invoked...(Thread ID: *)
+Throwing expected exception....(Thread ID: *)
+System.Exception: Expected Exception
+   at AddisonWesley.Michaelis.EssentialCSharp.Chapter18.{nameof(Listing18_15C)}.Program.Main() in *{nameof(Listing18_15C).Replace('_','.')}.AsyncVoidReturn.cs:line * thrown as expected.(Thread ID: *)";
+
+            string output = IntelliTect.TestTools.Console.ConsoleAssert.ExpectLike(expected,
+            () =>
+            {
                 Program.Main();
-            }
-            catch(Exception ex) when (ex.Message == Program.ExpectedExceptionMessage)
-            {
-                ExceptionCaught = true;
-            }
+            });
 
-            Assert.IsTrue(ExceptionCaught);
+
+            // Verify that only the 'Running task...' thread id (the second line), is unique.
+            MatchCollection matches = Regex.Matches(output, @"\(Thread ID: (\d)\)");
+            int firstThreadId = int.Parse(matches[0].Groups[1].Value);
+            for (int i = 0; i < matches.Count; i++)
+            {
+                if(i == 1)
+                {
+                    Assert.AreNotEqual<int>(firstThreadId, int.Parse(matches[i].Groups[1].Value));
+                }
+                else
+                {
+                    Assert.AreEqual<int>(firstThreadId, int.Parse(matches[i].Groups[1].Value));
+                }
+            }
+            Assert.AreEqual<int>(7, matches.Count, "There were not as many 'Thread Id' matches as expected.");
+            Console.WriteLine(output);
         }
     }
 }

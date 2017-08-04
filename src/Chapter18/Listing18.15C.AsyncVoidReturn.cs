@@ -1,7 +1,6 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_15C
 {
     using System;
-    using System.Diagnostics;
     using System.Threading;
     using System.Threading.Tasks;
 
@@ -14,16 +13,16 @@
         {
             try
             {
-                Console.WriteLine("Inside Send");
+                Console.WriteLine($@"Send notification invoked...(Thread ID: {
+                    Thread.CurrentThread.ManagedThreadId})");
                 d(state);
             }
             catch (Exception ex)
             {
                Exception = ex;
-            }
-            finally
-            {
+#if !WithOutIsingResetEvent
                 ResetEvent.Set();
+#endif
             }
         }
 
@@ -31,18 +30,17 @@
         {
             try
             {
-                Console.WriteLine("Inside Post");
+                Console.WriteLine($@"Post notification invoked...(Thread ID: {
+                    Thread.CurrentThread.ManagedThreadId})");
                 d(state);
             }
             catch (Exception ex)
             {
-               Exception = ex;
-            }
-            finally
-            {
+                Exception = ex;
+#if !WithOutIsingResetEvent
                 ResetEvent.Set();
+#endif
             }
-            
         }
     }
 
@@ -62,27 +60,43 @@
                 
                 OnEvent(null, null);
 
+#if WithOutIsingResetEvent
+                Task.Delay(1000);  // 
+#else
                 synchronizationContext.ResetEvent.Wait();
+#endif
+
                 if(synchronizationContext.Exception != null)
                 {
-                    Console.WriteLine("Throwing expected exception....");
-                    throw synchronizationContext.Exception;
+                    Console.WriteLine($@"Throwing expected exception....(Thread ID: {
+                    Thread.CurrentThread.ManagedThreadId})");
+#if NET40
+                    using System.Runtime.ExceptionServices.ExceptionDispatchInfo.Capture(
+                        synchronizationContext.Exception).Throw();
+#else
+                throw synchronizationContext.Exception;
+#endif
                 }
-
             }
-            finally
+            catch(Exception exception)
             {
-                //if(!EventTriggered) { throw new Exception("The event never triggered.");};
-                
-                //if(synchronizationContext.Exception == null) { throw new Exception("The unhandled exception was not caught."); };
-                //Console.WriteLine($"{synchronizationContext.Exception} thrown as expected.");
+                Console.WriteLine($@"{exception} thrown as expected.(Thread ID: {
+                    Thread.CurrentThread.ManagedThreadId})");
             }
         }
 
         static async void OnEvent(object sender, EventArgs eventArgs)
         {
-            EventTriggered = true;
-            await Task.Run(()=>{;});
+            Console.WriteLine($@"Invoking Task.Run...(Thread ID: {
+                    Thread.CurrentThread.ManagedThreadId})");
+            await Task.Run(()=>
+            {
+                Console.WriteLine($@"Running task... (Thread ID: {
+                    Thread.CurrentThread.ManagedThreadId})");
+            });
+            Console.WriteLine($@"throw Exception...(Thread ID: {
+                    Thread.CurrentThread.ManagedThreadId})");
+
             throw new Exception(ExpectedExceptionMessage);
         }
     }
