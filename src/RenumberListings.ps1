@@ -29,6 +29,10 @@ Function script:Update-ListingNumberInContent {
 
     if(!$NewChapterNumber) { $NewChapterNumber = $ChapterNumber}
 
+    if(($NewChapterNumber -eq $ChapterNumber) -and ($NewListingNumber -eq $ListingNumber)) {
+        Write-Warning "The new and old chapter and listing numbers are the same: $ChapterNumber.$ListingNumber"
+        return
+    }
 
     $shouldProcess = $PSCmdlet.ShouldProcess("`tSearch/Replace Listing $ChapterNumber.$ListingNumber to $NewChapterNumber.$NewListingNumber", 
         "`tSearch/Replace Listing $ChapterNumber.$ListingNumber to $NewChapterNumber.$NewListingNumber", "Search/Replace Listing")
@@ -94,9 +98,11 @@ Function Update-ListingNumber {
 
             if($IsIntermediateName.IsPresent) {
                 # We update the content during the Intermediate stage so that it runs during -Whatif scenario.
+                if(($ChapterNumber -ne $NewChapterNumber) -or ($PaddedListingNumber -ne $PaddedNewListingNumber) ) {
                 script:Update-ListingNumberInContent -Path $oldFilePath `
                     -ChapterNumber $ChapterNumber -NewChapterNumber $NewChapterNumber `
-                    -ListingNumber $eachListingNumber -NewListingNumber $eachNewListingNumber
+                    -ListingNumber $PaddedListingNumber -NewListingNumber $PaddedNewListingNumber
+                }
                 $newFilePath = $oldFilePath -replace "Listing$ChapterNumber.$PaddedListingNumber","Listing$NewChapterNumber.TEMP.$PaddedListingNumber"
             } 
             else {
@@ -118,36 +124,49 @@ Function Update-ListingNumber {
             [switch]$IsIntermediateName
         )
 
+
+
         $fileCollection = for($count=0; $count -lt $ListingNumbers.Count; $count++) {
             $eachListingNumber = $ListingNumbers[$count].PadLeft(2, '0')
             $eachNewListingNumber = "{0:D2}" -f $NewListingNumbers[$count]
+
+        write-host -foregroundcolor magenta "$eachlistingnumber => $eachnewlistingnumber"
+        if($eachlistingnumber -like "15*") { 
+            write-information "we are here" 
+        }
 
             #if($IsIntermediateName.IsPresent) {
                 # We update the content during the Intermediate stage so that it runs during -Whatif scenario.
             #    $oldFilePathPattern = (Join-Path (Join-Path $PSScriptRoot "Chapter$ChapterNumber") "Listing$ChapterNumber.$eachListingNumber*.cs")
             #} 
             #else {
-                $oldFilePathPattern = (Join-Path (Join-Path $PSScriptRoot "Chapter$ChapterNumber") "Listing$ChapterNumber$(if(!$IsIntermediateName.IsPresent){".TEMP"}).$eachListingNumber*.cs")
+                $oldFilePathPattern = (Join-Path (Join-Path $PSScriptRoot "Chapter$ChapterNumber") "Listing$ChapterNumber$(if(!$IsIntermediateName.IsPresent){".TEMP"}).$eachListingNumber.*.cs")
             #}
             
             $files = @(Get-Item $oldFilePathPattern)
 
-            if(!$files -and !$IsIntermediateName -and !$WhatIfPreference) {
-                    throw "There are no files found for the pattern: '$oldFilePathPattern'"
+            if(!$files) {
+                if(!$IsIntermediateName -and !$WhatIfPreference) {
+                    Write-Warning "There are no files found for the pattern: '$oldFilePathPattern'"
+                }
+
             }
-  
-            @{ Files=$files; PaddedListingNumber=$eachListingNumber; PaddedNewListingNumber=$eachNewListingNumber } | Write-Output
+            else {
+                if($files.Count -gt 1) {
+                    Write-Warning "There is more than one file to rename: $($files | %{ "`n`t$($_.FullName)" })"
+                }
+                Write-Output([PSCustomObject]@{ Files=$files; PaddedListingNumber=$eachListingNumber; PaddedNewListingNumber=$eachNewListingNumber })
+            }
 
             # Repeat for the test files except allow for the file not to exist.
-            $oldFilePathPattern = (Join-Path (Join-Path $PSScriptRoot "Chapter$ChapterNumber.Tests") "Listing$ChapterNumber$(if(!$IsIntermediateName.IsPresent){".TEMP"}).$eachListingNumber*.cs")
+            $oldFilePathPattern = (Join-Path (Join-Path $PSScriptRoot "Chapter$ChapterNumber.Tests") "Listing$ChapterNumber$(if(!$IsIntermediateName.IsPresent){".TEMP"}).$eachListingNumber.*.cs")
             $files = Get-Item $oldFilePathPattern
 
             if($files) {
-                @{ Files=$files; PaddedListingNumber=$eachListingNumber; PaddedNewListingNumber=$eachNewListingNumber } | Write-Output 
+                Write-Output([PSCustomObject]@{ Files=$files; PaddedListingNumber=$eachListingNumber; PaddedNewListingNumber=$eachNewListingNumber })
             }
 
         }
-        
 
         $fileCollection | ForEach-Object {
             # We rename to a temorary file (in case the file already exists that we are naming to)
@@ -157,8 +176,12 @@ Function Update-ListingNumber {
                         "Move Listing$NewChapterNumber.TEMP.$($_.PaddedListingNumber)*.cs => Listing$NewChapterNumber.$($_.PaddedNewListingNumber)*.cs",
                         "",
                         "Update-ListingNumber $ChapterNumber ")) {
-
-                script:Update-InternalListingNumber @_ -IsIntermediateName:$IsIntermediateName
+                $_.files | Foreach-Object{ 
+                    if( !( Test-Path $_ ) ) {
+                        Write-Error "$_ cannot be found."
+                    }
+                }
+                script:Update-InternalListingNumber -files $_.Files -PaddedListingNumber $_.PaddedListingnumber -PaddedNewListingNumber $_.PaddedNewListingNumber -IsIntermediateName:$IsIntermediateName
             }
             
         }
