@@ -63,7 +63,7 @@ Function Update-ListingNumber {
     param(
         [Parameter(Mandatory)][string]$ChapterNumber,
         [string]$NewChapterNumber,
-        [Parameter(Mandatory)][int[]]$ListingNumber,
+        [Parameter(Mandatory)][string[]]$ListingNumber, # Not using int[] because some listings are inserted - i.e. 15B
         [Parameter(Mandatory)][int[]]$NewListingNumber
     )
 
@@ -81,7 +81,7 @@ Function Update-ListingNumber {
         [CmdletBinding(SupportsShouldProcess=$true)]
         param(
             [ValidateScript({$_ | Test-Path -PathType Leaf})][Parameter(Mandatory)][IO.FileInfo[]]$files,
-            [ValidateScript({$_.Length -eq 2})][Parameter(Mandatory)][string]$PaddedListingNumber,
+            [Parameter(Mandatory)][string]$PaddedListingNumber,
             [ValidateScript({$_.Length -eq 2})][Parameter(Mandatory)][string]$PaddedNewListingNumber,
             [switch]$IsIntermediateName
         )
@@ -119,7 +119,7 @@ Function Update-ListingNumber {
         )
 
         $fileCollection = for($count=0; $count -lt $ListingNumbers.Count; $count++) {
-            $eachListingNumber = "{0:D2}" -f $ListingNumbers[$count]
+            $eachListingNumber = $ListingNumbers[$count].PadLeft(2, '0')
             $eachNewListingNumber = "{0:D2}" -f $NewListingNumbers[$count]
 
             #if($IsIntermediateName.IsPresent) {
