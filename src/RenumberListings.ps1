@@ -62,7 +62,7 @@ Function script:Update-ListingNumberInContent {
     }
 }
 
-Function Update-ListingNumber {
+Function Update-CodeListingNumber {
     [CmdletBinding(SupportsShouldProcess=$True)] 
     param(
         [Parameter(Mandatory)][string]$ChapterNumber,
