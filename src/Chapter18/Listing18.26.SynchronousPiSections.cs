@@ -1,4 +1,4 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_24
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_26
 {
     using System;
     using AddisonWesley.Michaelis.EssentialCSharp.Shared;
