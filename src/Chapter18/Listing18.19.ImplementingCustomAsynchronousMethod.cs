@@ -1,6 +1,5 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_18
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_19
 {
-    using System;
     using System.Diagnostics;
     using System.Threading;
     using System.Threading.Tasks;
@@ -11,9 +10,7 @@
             string fileName,
             string arguments = null,
             CancellationToken cancellationToken =
-                default(CancellationToken),
-                IProgress<ProcessProgressEventArgs> progress = null,
-                object objectState = null)
+                default(CancellationToken))
         {
             TaskCompletionSource<Process> taskCS =
                           new TaskCompletionSource<Process>();
@@ -23,9 +20,7 @@
                 StartInfo = new ProcessStartInfo(fileName)
                 {
                     UseShellExecute = false,
-                    Arguments = arguments,
-                    RedirectStandardOutput =
-                       progress != null
+                    Arguments = arguments
                 },
                 EnableRaisingEvents = true
             };
@@ -50,9 +45,10 @@
 
         // ...
     }
-
-    class ProcessProgressEventArgs
-    {
-        // ...
-    }
 }
+
+
+
+
+
+

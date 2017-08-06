@@ -1,4 +1,4 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_31
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_32
 {
     using AddisonWesley.Michaelis.EssentialCSharp.Shared;
     using System;
@@ -11,19 +11,6 @@
         public List<string>
           Encrypt(IEnumerable<string> data)
         {
-
-            OrderedParallelQuery<string> parallelGroups =
-            data.AsParallel().OrderBy(item => item);
-
-            // Show the total count of items still
-            // matches the original count
-            if (data.Count() != parallelGroups.Sum(
-                    item => item.Count()))
-            {
-                throw new Exception("data.Count() != parallelGroups.Sum(item => item.Count()");
-            }
-            // ...
-
             return data.AsParallel().Select(
                 item => Encrypt(item)).ToList();
         }

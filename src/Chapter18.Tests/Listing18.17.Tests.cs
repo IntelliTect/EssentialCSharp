@@ -1,4 +1,4 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_15C.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_17.Tests
 {
     using System.Text.RegularExpressions;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -24,7 +24,7 @@ Post notification invoked...(Thread ID: *)
 Post notification invoked...(Thread ID: *)
 Throwing expected exception....(Thread ID: *)
 System.Exception: Expected Exception
-   at AddisonWesley.Michaelis.EssentialCSharp.Chapter18.{nameof(Listing18_15C)}.Program.Main() in *{nameof(Listing18_15C).Replace('_','.')}.AsyncVoidReturn.cs:line * thrown as expected.(Thread ID: *)";
+   at AddisonWesley.Michaelis.EssentialCSharp.Chapter18.{nameof(Listing18_17)}.Program.Main() in *{nameof(Listing18_17).Replace('_','.')}.AsyncVoidReturn.cs:line * thrown as expected.(Thread ID: *)";
 
             string output = IntelliTect.TestTools.Console.ConsoleAssert.ExpectLike(expected,
             () =>
