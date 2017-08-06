@@ -29,6 +29,12 @@ Function script:Update-ListingNumberInContent {
 
     if(!$NewChapterNumber) { $NewChapterNumber = $ChapterNumber}
 
+    # Pad all values as we always use padded values in source code.
+    $ChapterNumber = $ChapterNumber.PadLeft(2, '0')
+    $NewChapterNumber = $NewChapterNumber.PadLeft(2, '0')
+    $ListingNumber = $ListingNumber.PadLeft(2, '0')
+    $NewListingNumber = $NewListingNumber.PadLeft(2, '0')
+
     if(($NewChapterNumber -eq $ChapterNumber) -and ($NewListingNumber -eq $ListingNumber)) {
         Write-Warning "The new and old chapter and listing numbers are the same: $ChapterNumber.$ListingNumber"
         return
@@ -73,13 +79,18 @@ Function Update-CodeListingNumber {
 
     $ErrorActionPreference = 'Stop'
 
-    $ListingNumbers = @($ListingNumber)
-    $NewListingNumbers = @($NewListingNumber)
-    if($ListingNumbers.Length -ne $NewListingNumbers.Length) {
+    $listingNumbers = @($ListingNumber)
+    $newListingNumbers = @($NewListingNumber)
+    if($listingNumbers.Length -ne $newListingNumbers.Length) {
         throw "The number of items in ListingNumber is different from the number of items in NewListingNumber"
     }
 
     if(!$NewChapterNumber) { $NewChapterNumber = $ChapterNumber}
+    # Pad all values as we always use padded values in source code.
+    $ChapterNumber = $ChapterNumber.PadLeft(2, '0')
+    $NewChapterNumber = $NewChapterNumber.PadLeft(2, '0')
+    $listingNumbers = $listingNumbers | ForEach-Object{ $_.PadLeft(2, '0') }
+    $newListingNumbers = $newListingNumbers | ForEach-Object{ $_.ToString().PadLeft(2, '0') }
 
     Function script:Update-InternalListingNumber {
         [CmdletBinding(SupportsShouldProcess=$true)]
@@ -126,14 +137,9 @@ Function Update-CodeListingNumber {
 
 
 
-        $fileCollection = for($count=0; $count -lt $ListingNumbers.Count; $count++) {
-            $eachListingNumber = $ListingNumbers[$count].PadLeft(2, '0')
-            $eachNewListingNumber = "{0:D2}" -f $NewListingNumbers[$count]
-
-        write-host -foregroundcolor magenta "$eachlistingnumber => $eachnewlistingnumber"
-        if($eachlistingnumber -like "15*") { 
-            write-information "we are here" 
-        }
+        $fileCollection = for($count=0; $count -lt $listingNumbers.Count; $count++) {
+            $eachListingNumber = $listingNumbers[$count].PadLeft(2, '0')
+            $eachNewListingNumber = "{0:D2}" -f $newListingNumbers[$count]
 
             #if($IsIntermediateName.IsPresent) {
                 # We update the content during the Intermediate stage so that it runs during -Whatif scenario.
