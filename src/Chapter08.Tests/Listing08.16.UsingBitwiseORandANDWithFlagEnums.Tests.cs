@@ -12,15 +12,20 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_16.Tests
         public void Main_ExpectHiddentAndReadOnlyFlags()
         {
             Directory.SetCurrentDirectory(AppContext.BaseDirectory);
-            FileAttributes fileAttributes = FileAttributes.Hidden | FileAttributes.ReadOnly;
+            FileAttributes fileAttributes;
+            string expected;
 
             if (System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
             {
                 // The only working file attribute on Linux is ReadOnly.
-                FileAttributes fileAttributes = FileAttributes.ReadOnly;
+                fileAttributes = FileAttributes.ReadOnly;
+                expected = $@"ReadOnly = {(int)fileAttributes}";
             }
-            string expected =
-                $@"Hidden | ReadOnly = {fileAttributes}";
+            else
+            {
+                fileAttributes = FileAttributes.Hidden | FileAttributes.ReadOnly;
+                expected = $@"Hidden | ReadOnly = {(int)fileAttributes}";
+            }
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
                 expected, Program.Main);
