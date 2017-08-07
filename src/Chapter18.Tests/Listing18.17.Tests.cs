@@ -41,11 +41,13 @@ System.Exception: Expected Exception
             {
                 if(i == 1)
                 {
-                    Assert.AreNotEqual<int>(firstThreadId, int.Parse(matches[i].Groups[1].Value));
+                    Assert.AreNotEqual<int>(firstThreadId, int.Parse(matches[i].Groups[1].Value),
+                        $"Was '{matches[i].Groups[0].Value}' but '{firstThreadId}' was NOT expected");
                 }
                 else
                 {
-                    Assert.AreEqual<int>(firstThreadId, int.Parse(matches[i].Groups[1].Value));
+                    Assert.AreEqual<int>(firstThreadId, int.Parse(matches[i].Groups[1].Value),
+                        $"Was '{matches[i].Groups[0].Value}' when '{firstThreadId}' was expected");
                 }
             }
             Assert.AreEqual<int>(6, matches.Count, "There were not as many 'Thread Id' matches as expected.");
