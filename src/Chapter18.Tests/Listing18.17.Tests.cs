@@ -37,15 +37,30 @@ System.Exception: Expected Exception
             // Verify that only the 'Running task...' thread id (the second line), is unique.
             MatchCollection matches = Regex.Matches(output, @"\(Thread ID: (\d)\)");
             int firstThreadId = int.Parse(matches[0].Groups[1].Value);
+            int secondThreadId = int.Parse(matches[1].Groups[1].Value);
+            int? expectedThreadId;
             for (int i = 0; i < matches.Count; i++)
             {
-                if(i == 1)
+                switch (i)
                 {
-                    Assert.AreNotEqual<int>(firstThreadId, int.Parse(matches[i].Groups[1].Value));
+                    case 0:
+                    case 4:
+                    case 5:
+                        expectedThreadId = firstThreadId;
+                        break;
+                    case 1:
+                        // Obviously
+                        expectedThreadId = secondThreadId;
+                        break;
+                    default:
+                        // Unknown
+                        expectedThreadId = null;
+                        break;
                 }
-                else
+                if (expectedThreadId != null)
                 {
-                    Assert.AreEqual<int>(firstThreadId, int.Parse(matches[i].Groups[1].Value));
+                    Assert.AreEqual<int?>(expectedThreadId, int.Parse(matches[i].Groups[1].Value),
+                        $"Match {i} was '{matches[i].Groups[0].Value}' when '{expectedThreadId}' was expected");
                 }
             }
             Assert.AreEqual<int>(6, matches.Count, "There were not as many 'Thread Id' matches as expected.");
