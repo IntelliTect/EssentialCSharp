@@ -17,7 +17,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_16.Tests
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
                 expected, Program.Main);
-            var text = nameof(AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_16.Program.Main);
         }
     }
 }
