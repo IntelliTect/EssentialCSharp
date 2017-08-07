@@ -25,9 +25,7 @@
                 file.Attributes = FileAttributes.Hidden |
                     FileAttributes.ReadOnly;
 
-                Console.WriteLine("{0} | {1} = {2}",
-                    FileAttributes.Hidden, FileAttributes.ReadOnly,
-                    (int)file.Attributes);
+                Console.WriteLine($"{file.Attributes} = {(int)file.Attributes}");
 
                 // Only the ReadOnly attrite works on Linux.  (The Hidden attribute does not work on Linux)
                 if (!System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
