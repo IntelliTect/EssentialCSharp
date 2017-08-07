@@ -32,6 +32,7 @@ System.Exception: Expected Exception
                 Program.Main();
             });
 
+            Console.WriteLine(output);
 
             // Verify that only the 'Running task...' thread id (the second line), is unique.
             MatchCollection matches = Regex.Matches(output, @"\(Thread ID: (\d)\)");
@@ -48,7 +49,6 @@ System.Exception: Expected Exception
                 }
             }
             Assert.AreEqual<int>(6, matches.Count, "There were not as many 'Thread Id' matches as expected.");
-            Console.WriteLine(output);
         }
     }
 }
