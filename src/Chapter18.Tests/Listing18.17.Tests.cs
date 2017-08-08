@@ -14,17 +14,32 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_17.Tests
     [TestClass]
     public class ProgramTests
     {
+
+        string TargetNamespaceName { get { return typeof(Program).Namespace; } }
+
         [TestMethod]
         public void AsyncVoidReturnTest()
         {
-
             string expected = $@"Invoking Task.Run...(Thread ID: *)
 Running task... (Thread ID: *)
 Post notification invoked...(Thread ID: *)
 Post notification invoked...(Thread ID: *)
 Throwing expected exception....(Thread ID: *)
 System.Exception: Expected Exception
-   at AddisonWesley.Michaelis.EssentialCSharp.Chapter18.{nameof(Listing18_17)}.Program.Main() in *{nameof(Listing18_17).Replace('_','.')}.AsyncVoidReturn.cs:line * thrown as expected.(Thread ID: *)";
+   at {TargetNamespaceName}.{nameof(Program)}.<>c.<OnEvent>b__6_0() in *
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.Tasks.Task.Execute()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at {TargetNamespaceName}.{nameof(Program)}.<OnEvent>d__6.MoveNext() in *
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at {TargetNamespaceName}.{nameof(AsyncSynchronizationContext)}.Post(SendOrPostCallback callback, Object state) in *
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at {TargetNamespaceName}.{nameof(Program)}.Main() in * thrown as expected.(Thread ID: *)";
 
             string output = IntelliTect.TestTools.Console.ConsoleAssert.ExpectLike(expected,
             () =>
@@ -35,7 +50,7 @@ System.Exception: Expected Exception
             Console.WriteLine(output);
 
             // Verify that only the 'Running task...' thread id (the second line), is unique.
-            MatchCollection matches = Regex.Matches(output, @"\(Thread ID: (\d)\)");
+            MatchCollection matches = Regex.Matches(output, @"\(Thread ID: (\d)+\)");
             int firstThreadId = int.Parse(matches[0].Groups[1].Value);
             int secondThreadId = int.Parse(matches[1].Groups[1].Value);
             int? expectedThreadId;

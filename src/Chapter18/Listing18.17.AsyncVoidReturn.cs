@@ -7,37 +7,38 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_17
     public class AsyncSynchronizationContext : SynchronizationContext
     {
         public Exception Exception { get; set; }
-        public ManualResetEventSlim ResetEvent { get;} = new ManualResetEventSlim();
+        public ManualResetEventSlim ResetEvent { get; } = 
+            new ManualResetEventSlim();
 
-        public override void Send(SendOrPostCallback d, object state)
+        public override void Send(SendOrPostCallback callback, object state)
         {
             try
             {
                 Console.WriteLine($@"Send notification invoked...(Thread ID: {
                     Thread.CurrentThread.ManagedThreadId})");
-                d(state);
+                callback(state);
             }
-            catch (Exception ex)
+            catch (Exception exception)
             {
-               Exception = ex;
-#if !WithOutIsingResetEvent
+                Exception = exception;
+#if !WithOutUsingResetEvent
                 ResetEvent.Set();
 #endif
             }
         }
 
-        public override void Post(SendOrPostCallback d, object state)
+        public override void Post(SendOrPostCallback callback, object state)
         {
             try
             {
                 Console.WriteLine($@"Post notification invoked...(Thread ID: {
                     Thread.CurrentThread.ManagedThreadId})");
-                d(state);
+                callback(state);
             }
-            catch (Exception ex)
+            catch (Exception exception)
             {
-                Exception = ex;
-#if !WithOutIsingResetEvent
+                Exception = exception;
+#if !WithOutUsingResetEvent
                 ResetEvent.Set();
 #endif
             }
@@ -52,33 +53,30 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_17
         public static void Main()
         {
 
-            AsyncSynchronizationContext synchronizationContext = new AsyncSynchronizationContext();
+            AsyncSynchronizationContext synchronizationContext = 
+                new AsyncSynchronizationContext();
             SynchronizationContext.SetSynchronizationContext(synchronizationContext);
-            
+
             try
             {
-                
+
                 OnEvent(null, null);
 
-#if WithOutIsingResetEvent
-                Task.Delay(1000);  // 
+#if WithOutUsingResetEvent
+            Task.Delay(1000);  // 
 #else
                 synchronizationContext.ResetEvent.Wait();
 #endif
 
-                if(synchronizationContext.Exception != null)
+                if (synchronizationContext.Exception != null)
                 {
                     Console.WriteLine($@"Throwing expected exception....(Thread ID: {
                     Thread.CurrentThread.ManagedThreadId})");
-#if NET40
-                    using System.Runtime.ExceptionServices.ExceptionDispatchInfo.Capture(
+                    System.Runtime.ExceptionServices.ExceptionDispatchInfo.Capture(
                         synchronizationContext.Exception).Throw();
-#else
-                throw synchronizationContext.Exception;
-#endif
                 }
             }
-            catch(Exception exception)
+            catch (Exception exception)
             {
                 Console.WriteLine($@"{exception} thrown as expected.(Thread ID: {
                     Thread.CurrentThread.ManagedThreadId})");
@@ -89,7 +87,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_17
         {
             Console.WriteLine($@"Invoking Task.Run...(Thread ID: {
                     Thread.CurrentThread.ManagedThreadId})");
-            await Task.Run(()=>
+            await Task.Run(() =>
             {
                 Console.WriteLine($@"Running task... (Thread ID: {
                     Thread.CurrentThread.ManagedThreadId})");
