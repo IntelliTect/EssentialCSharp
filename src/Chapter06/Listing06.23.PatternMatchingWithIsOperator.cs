@@ -1,22 +1,17 @@
 ﻿using System;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_22
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_23
 {
     public class Program
     {
         public static void Save(object data)
         {
-
-            if (data is string)
+            if (data is string text && text.Length > 0)
             {
-                string text = (string)data;
-                if (text.Length > 0)
-                {
-                    data = Encrypt(text);
-                    // ...
-                }
+                data = Encrypt(text);
+                // ...
             }
-            else if (data == null)
+            else if (data is null)
             {
                 throw new ArgumentNullException(nameof(data));
             }
