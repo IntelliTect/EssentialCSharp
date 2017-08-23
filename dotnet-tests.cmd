@@ -1,0 +1,1 @@
+PowerShell.exe -noprofile -nologo -file RunTests.ps1
