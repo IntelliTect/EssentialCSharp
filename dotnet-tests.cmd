@@ -1,1 +1,1 @@
-PowerShell.exe -noprofile -nologo -file RunTests.ps1
+PowerShell.exe -noprofile -nologo -file dotnet-tests.ps1
