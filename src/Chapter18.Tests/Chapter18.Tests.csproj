@@ -6,7 +6,7 @@
   </PropertyGroup>
   <Import Project="..\Versioning.targets" />
   <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.0.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.5.0-preview-20170727-01" />
     <PackageReference Include="MSTest.TestAdapter" Version="1.2.0-beta" />
     <PackageReference Include="MSTest.TestFramework" Version="1.2.0-beta" />
   </ItemGroup>
