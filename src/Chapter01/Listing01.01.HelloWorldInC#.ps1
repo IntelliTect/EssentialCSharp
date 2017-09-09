@@ -1,8 +1,8 @@
-Function Run-SampleChapter01 {
+Function Invoke-SampleHelloWorld {
     cls
     $expression = @"
-mkdir ./Chapter01
-cd ./Chapter01/
+mkdir ./HelloWorld
+cd ./HelloWorld/
 dotnet new console
 dotnet run
 "@ -split '`n'
@@ -27,5 +27,5 @@ dotnet run
         Write-Host ">$_" -ForegroundColor Yellow;
         Invoke-Expression $_ }
 }
-cd $PSScriptRoot; rmdir .\Chapter01 -Recurse
-Run-SampleChapter01
+cd $PSScriptRoot; rmdir .\HelloWorld -Recurse
+Invoke-SampleHelloWorld
