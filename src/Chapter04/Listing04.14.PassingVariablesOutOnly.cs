@@ -6,8 +6,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_13
     {
         public static int Main(string[] args)
         {
-            char button;
-
             if(args.Length == 0)
             {
                 Console.WriteLine(
@@ -20,7 +18,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_13
             {
                 foreach(char character in word)
                 {
+#if !PRECSHARP7
+                    if(TryGetPhoneButton(character, out char button))
+#else
+                    char button;
                     if(TryGetPhoneButton(character, out button))
+#endif // PRECSHARP7
                     {
                         Console.Write(button);
                     }
