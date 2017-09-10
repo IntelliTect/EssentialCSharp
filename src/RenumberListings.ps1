@@ -129,7 +129,7 @@ Function Update-CodeListingNumber {
     }
 
     # First replace with a prefix of temp and then with no prefix.
-    Function Update-InternalListSequence {
+    Function script:Update-InternalListSequence {
         [CmdletBinding(SupportsShouldProcess=$true)]
         param(
             [switch]$IsIntermediateName
