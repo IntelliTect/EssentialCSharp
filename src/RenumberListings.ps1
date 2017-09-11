@@ -200,7 +200,7 @@ Function Update-CodeListingNumber {
 
             # Repeat for the test files except allow for the file not to exist.
             $oldFilePathPattern = (Join-Path (Join-Path $PSScriptRoot "Chapter$ChapterNumber.Tests") "Listing$(if($IsIntermediateName.IsPresent){"$ChapterNumber"}else{"$NewChapterNumber.TEMP"}).$eachListingNumber*.cs")
-            $files = Get-Item $oldFilePathPattern
+            $files = Get-ChildItem $oldFilePathPattern -ErrorAction Ignore
 
             if($files) {
                 Write-Output([PSCustomObject]@{ Files=$files; PaddedListingNumber=$eachListingNumber; PaddedNewListingNumber=$eachNewListingNumber })
@@ -247,7 +247,7 @@ Function Update-CodeListingNumber {
                 "`tRenaming project(s) ($($solutionReferences -join ", ")) in solution: dotnet sln ...", "Renaming project(s) in solution")) {
 
                 Set-Location (Join-Path $PSScriptRoot "..")
-                $solutionReferences | ForEach-Object {
+                $solutionReferences | ForEach-Object { 
                     dotnet sln 'EssentialCSharp.sln' remove $_ 
                 } 
                 $solutionReferences | 
