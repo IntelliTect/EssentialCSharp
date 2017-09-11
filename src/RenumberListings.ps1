@@ -5,14 +5,28 @@ $script:listingNameRegEx = "Listing(?<Chapter>\d\d)\.(?<Listing>\d\d)(?<Suffix>.
 Function script:Move-GitFile {
     [CmdletBinding(SupportsShouldProcess=$True)] 
     param(
-        [ValidateScript({Test-Path $_ -PathType Leaf})][Parameter(Mandatory)][string]$oldFileName,
-        [ValidateScript({!(Test-Path $_ -PathType Leaf)})][Parameter(Mandatory)][string]$newFileName
+        [ValidateScript({Test-Path $_ })][Parameter(Mandatory)][string]$oldFileName,
+        [ValidateScript({!(Test-Path $_ )})][Parameter(Mandatory)][string]$newFileName
     )
 
     #TODO: Verify that git is the SCC tool.
 
     $command = "git mv $oldFileName $newFileName $(if($PSBoundParameters['Verbose']) {`"-v`"})" # The following is not needed as it is handled by "$PSCmdlet.ShouldProcess": -What $(if($PSBoundParameters['WhatIf']) {`"--dry-run`"})"
     if ($PSCmdlet.ShouldProcess("`tExecuting: $command", "`tExecute git.exe Rename: $command", "Executing Git.exe mv")) {
+        Invoke-Expression "$command" -ErrorAction Stop  #Change error handling to use throw instead.
+    }
+}
+
+Function script:Add-GitFile {
+    [CmdletBinding(SupportsShouldProcess=$True)] 
+    param(
+        [ValidateScript({Test-Path $_ })][Parameter(Mandatory)][string]$path
+    )
+
+    #TODO: Verify that git is the SCC tool. 
+
+    $command = "git add $path $(if($PSBoundParameters['Verbose']) {`"-v`"})" # The following is not needed as it is handled by "$PSCmdlet.ShouldProcess": -What $(if($PSBoundParameters['WhatIf']) {`"--dry-run`"})"
+    if ($PSCmdlet.ShouldProcess("`tExecuting: $command", "`tExecute git.exe add: $command", "Executing Git.exe add")) {
         Invoke-Expression "$command" -ErrorAction Stop  #Change error handling to use throw instead.
     }
 }
@@ -65,9 +79,9 @@ Function script:Update-ListingNumberInContent {
     
     if($PSCmdlet.ShouldProcess("$messageLine", "$messageLine", "Search/Replace Listing")) {
         $newContent | Set-Content $path
+        script:Add-GitFile $path
     }
 
-    Git Add $Path 
 }
 
 Function Update-CodeListingNumber {
@@ -215,8 +229,8 @@ Function Update-CodeListingNumber {
 
     Update-InternalListSequence -IsIntermediateName
     Update-InternalListSequence 
-    $projectFileName = Get-Item (Join-Path (Join-Path $PSScriptRoot "Chapter$ChapterNumber") "Chapter$ChapterNumber.csproj") | Select-Object -ExpandProperty Name
-    $newProjectfileName = $projectFileName -replace "$ChapterNumber","$NewChapterNumber"
+    $projectFileName = Get-Item (Join-Path (Join-Path $PSScriptRoot "Chapter$ChapterNumber") "Chapter$ChapterNumber.csproj") | Select-Object -ExpandProperty FullName
+    $newProjectfileName = $projectFileName -replace "Chapter$ChapterNumber.csproj","Chapter$NewChapterNumber.csproj"
     Move-GitFile -oldFileName $projectFileName -newFileName $projectFileName
     Move-GitFile -oldFileName (Join-Path $PSScriptRoot "Chapter$ChapterNumber") (Join-Path $PSScriptRoot "Chapter$NewChapterNumber")
 }
