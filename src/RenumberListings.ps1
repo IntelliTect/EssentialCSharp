@@ -142,7 +142,7 @@ Function Update-CodeListingNumber {
             if($newFilePath -eq $oldFilePath) {
                 throw "The new and old file names are the same: $newFilePath <==> $oldFilePath"
             }
-            script:Move-GitFile $oldFilePath $newFilePath
+            script:Move-GitFile $oldFilePath $newFilePath 
         }        
     }
 
@@ -164,14 +164,14 @@ Function Update-CodeListingNumber {
             #    $oldFilePathPattern = (Join-Path (Join-Path $PSScriptRoot "Chapter$ChapterNumber") "Listing$ChapterNumber.$eachListingNumber*.cs")
             #} 
             #else {
-                $oldFilePathPattern = (Join-Path (Join-Path $PSScriptRoot "Chapter$ChapterNumber") "Listing$ChapterNumber$(if(!$IsIntermediateName.IsPresent){".TEMP"}).$eachListingNumber.*.cs")
+                $oldFilePathPattern = (Join-Path (Join-Path $PSScriptRoot "Chapter$ChapterNumber") "Listing$(if($IsIntermediateName.IsPresent){"$ChapterNumber"}else{"$NewChapterNumber.TEMP"}).$eachListingNumber*.cs")
             #}
             
             $files = @(Get-Item $oldFilePathPattern)
 
             if(!$files) {
                 if(!$IsIntermediateName -and !$WhatIfPreference) {
-                    Write-Warning "There are no files found for the pattern: '$oldFilePathPattern'"
+                    Write-Warning "There are no files found for the pattern: '$oldFilePathPattern'" 
                 }
 
             }
@@ -183,7 +183,7 @@ Function Update-CodeListingNumber {
             }
 
             # Repeat for the test files except allow for the file not to exist.
-            $oldFilePathPattern = (Join-Path (Join-Path $PSScriptRoot "Chapter$ChapterNumber.Tests") "Listing$ChapterNumber$(if(!$IsIntermediateName.IsPresent){".TEMP"}).$eachListingNumber*.cs")
+            $oldFilePathPattern = (Join-Path (Join-Path $PSScriptRoot "Chapter$ChapterNumber.Tests") "Listing$(if($IsIntermediateName.IsPresent){"$ChapterNumber"}else{"$NewChapterNumber.TEMP"}).$eachListingNumber*.cs")
             $files = Get-Item $oldFilePathPattern
 
             if($files) {
