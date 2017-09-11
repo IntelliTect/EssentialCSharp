@@ -66,6 +66,8 @@ Function script:Update-ListingNumberInContent {
     if($PSCmdlet.ShouldProcess("$messageLine", "$messageLine", "Search/Replace Listing")) {
         $newContent | Set-Content $path
     }
+
+    Git Add $Path 
 }
 
 Function Update-CodeListingNumber {
@@ -213,6 +215,10 @@ Function Update-CodeListingNumber {
 
     Update-InternalListSequence -IsIntermediateName
     Update-InternalListSequence 
+    $projectFileName = Get-Item (Join-Path (Join-Path $PSScriptRoot "Chapter$ChapterNumber") "Chapter$ChapterNumber.csproj") | Select-Object -ExpandProperty Name
+    $newProjectfileName = $projectFileName -replace "$ChapterNumber","$NewChapterNumber"
+    Move-GitFile -oldFileName $projectFileName -newFileName $projectFileName
+    Move-GitFile -oldFileName (Join-Path $PSScriptRoot "Chapter$ChapterNumber") (Join-Path $PSScriptRoot "Chapter$NewChapterNumber")
 }
 
 
