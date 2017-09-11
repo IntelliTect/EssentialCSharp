@@ -229,11 +229,39 @@ Function Update-CodeListingNumber {
 
     Update-InternalListSequence -IsIntermediateName
     Update-InternalListSequence 
-    $projectFileName = Get-Item (Join-Path (Join-Path $PSScriptRoot "Chapter$ChapterNumber") "Chapter$ChapterNumber.csproj") | Select-Object -ExpandProperty FullName
-    $newProjectfileName = $projectFileName -replace "Chapter$ChapterNumber.csproj","Chapter$NewChapterNumber.csproj"
-    Move-GitFile -oldFileName $projectFileName -newFileName $projectFileName
-    Move-GitFile -oldFileName (Join-Path $PSScriptRoot "Chapter$ChapterNumber") (Join-Path $PSScriptRoot "Chapter$NewChapterNumber")
-}
+    Get-ChildItem $PSScriptRoot "Chapter$ChapterNumber*"
+    $projectFileNames = Get-ChildItem (Get-ChildItem $PSScriptRoot "Chapter$ChapterNumber*") "Chapter$ChapterNumber*.csproj" | Select-Object -ExpandProperty FullName
+    $projectFileNames | ForEach-Object { 
+        $projectFileName = $_
+        $newProjectfileName = $_ -replace "Chapter$ChapterNumber(\.Tests)?.csproj","Chapter$NewChapterNumber`$1.csproj" 
+        Move-GitFile -oldFileName $projectFileName -newFileName $newProjectFileName
+        $projectDirectory = [IO.Path]::GetDirectoryName($projectFileName) 
+        $newProjectDirectory = [IO.Path]::GetDirectoryName($newProjectFileName) -replace "Chapter$ChapterNumber","Chapter$NewChapterNumber"
+        Move-GitFile -oldFileName $projectDirectory $newProjectDirectory
+    }   
+
+    $currentPwd = $pwd 
+    try {
+        $solutionReferences = dotnet sln (Join-Path (Join-Path $PSScriptRoot "..") 'EssentialCSharp.sln') list | Where-Object{ $_ -like "*Chapter$ChapterNumber*.csproj" }
+        if ($PSCmdlet.ShouldProcess("`tRenaming project(s) ($($solutionReferences -join ", ")) in solution: dotnet sln ...", 
+                "`tRenaming project(s) ($($solutionReferences -join ", ")) in solution: dotnet sln ...", "Renaming project(s) in solution")) {
+
+                Set-Location (Join-Path $PSScriptRoot "..")
+                $solutionReferences | ForEach-Object {
+                    dotnet sln 'EssentialCSharp.sln' remove $_ 
+                } 
+                $solutionReferences | 
+                    ForEach-Object { $_ -replace "$ChapterNumber","$NewChapterNumber" } |
+                    ForEach-Object { 
+                        dotnet sln 'EssentialCSharp.sln' add $_ 
+                    } 
+                git add 'EssentialCSharp.sln'
+        }
+    }
+    finally {
+        Set-Location $currentPwd
+    }
+} 
 
 
 
