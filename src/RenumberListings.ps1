@@ -73,24 +73,42 @@ Function Update-CodeListingNumber {
     param(
         [Parameter(Mandatory)][string]$ChapterNumber,
         [string]$NewChapterNumber,
-        [Parameter(Mandatory)][string[]]$ListingNumber, # Not using int[] because some listings are inserted - i.e. 15B
-        [Parameter(Mandatory)][int[]]$NewListingNumber
+        [string[]]$ListingNumber, # Not using int[] because some listings are inserted - i.e. 15B
+        [int[]]$NewListingNumber
     )
 
     $ErrorActionPreference = 'Stop'
-
-    $listingNumbers = @($ListingNumber)
-    $newListingNumbers = @($NewListingNumber)
-    if($listingNumbers.Length -ne $newListingNumbers.Length) {
-        throw "The number of items in ListingNumber is different from the number of items in NewListingNumber"
-    }
 
     if(!$NewChapterNumber) { $NewChapterNumber = $ChapterNumber}
     # Pad all values as we always use padded values in source code.
     $ChapterNumber = $ChapterNumber.PadLeft(2, '0')
     $NewChapterNumber = $NewChapterNumber.PadLeft(2, '0')
-    $listingNumbers = $listingNumbers | ForEach-Object{ $_.PadLeft(2, '0') }
-    $newListingNumbers = $newListingNumbers | ForEach-Object{ $_.ToString().PadLeft(2, '0') }
+
+    if(!$listingNumber) {
+        $ListingNumber = Get-Item (Join-Path (Join-Path $PSScriptRoot "Chapter$ChapterNumber") "Listing$ChapterNumber.*cs") | Select -ExpandProperty Name |
+            ForEach-Object{ 
+                if($_ -match "Listing$ChapterNumber\.(?<Listing>\d\d)(?<Suffix>.*)") {
+                    Write-Output $Matches.Listing
+                }
+                else {
+                    throw "Unable to match $_ and retrieve Listing Number"
+                }
+            }
+    }
+
+    
+    if($listingNumber) {
+        $listingNumbers = @($ListingNumber)
+        if(!$NewListingNumber) {
+            $newListingNumbers = $listingNumbers
+        }
+        elseif($listingNumbers.Length -ne $newListingNumbers.Length) {
+            throw "The number of items in ListingNumber is different from the number of items in NewListingNumber"
+        }
+
+        $listingNumbers = $listingNumbers | ForEach-Object{ $_.PadLeft(2, '0') }
+        $newListingNumbers = $newListingNumbers | ForEach-Object{ $_.ToString().PadLeft(2, '0') }
+    }
 
     Function script:Update-InternalListingNumber {
         [CmdletBinding(SupportsShouldProcess=$true)]
@@ -165,7 +183,7 @@ Function Update-CodeListingNumber {
             }
 
             # Repeat for the test files except allow for the file not to exist.
-            $oldFilePathPattern = (Join-Path (Join-Path $PSScriptRoot "Chapter$ChapterNumber.Tests") "Listing$ChapterNumber$(if(!$IsIntermediateName.IsPresent){".TEMP"}).$eachListingNumber.*.cs")
+            $oldFilePathPattern = (Join-Path (Join-Path $PSScriptRoot "Chapter$ChapterNumber.Tests") "Listing$ChapterNumber$(if(!$IsIntermediateName.IsPresent){".TEMP"}).$eachListingNumber*.cs")
             $files = Get-Item $oldFilePathPattern
 
             if($files) {
