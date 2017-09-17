@@ -26,10 +26,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_20
         // Id property declaration
         public string Id
         {
-            get
-            {
-                return _Id;
-            }
+            get => _Id;
             // No setter provided.
         }
         private string _Id = default(string);

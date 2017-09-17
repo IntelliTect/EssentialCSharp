@@ -47,14 +47,8 @@
         // LastName property
         public string LastName
         {
-            get
-            {
-                return _LastName;
-            }
-            set
-            {
-                _LastName = value;
-            }
+            get => _FirstName;
+            set => _FirstName = value;
         }
         private string _LastName;
 
