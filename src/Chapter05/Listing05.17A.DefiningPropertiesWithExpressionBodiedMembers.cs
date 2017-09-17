@@ -1,4 +1,4 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_17
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_17A
 {
     using System;
     using System.IO;
@@ -33,5 +33,13 @@
         }
         private string _FirstName;
 
+
+        // LastName property
+        public string LastName
+        {
+            get => _FirstName;
+            set => _FirstName = value;
+        }
+        private string _LastName;
     }
 }

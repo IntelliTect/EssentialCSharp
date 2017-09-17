@@ -16,9 +16,25 @@
                 employee.FirstName,
                 employee.LastName,
                 employee.Salary);
+#if !PRECSHARP7
+            employee.Deconstruct(out _, out string firstName, 
+                out string lastName, out string salary);
+#else
+            int id;
+            string firstName, lastName, salary;
+            employee.Deconstruct(out id, out firstName, 
+                out lastName, out salary);
+#endif
+            System.Console.WriteLine(
+                "{0} {1}: {2}",
+                firstName, lastName, salary);
 
-            (string firstName, string lastName, string salary) =
-                employee.Deconstruct();
+            (_, firstName, lastName, salary) = employee;
+
+            System.Console.WriteLine(
+                "{0} {1}: {2}",
+                firstName, lastName, salary);
+
         }
     }
 
@@ -60,10 +76,12 @@
             LastName = lastName;
         }
 
-        public Deconstruct(out int id, out string firstName, out string lastName)
+        public void Deconstruct(
+            out int id, out string firstName, 
+            out string lastName, out string salary)
         {
-            (int id, string firstName, string lastName, string salary) = 
-                (Id, FirstName, LastName, Salary)
+           (id, firstName, lastName, salary) = 
+                (Id, FirstName, LastName, Salary);
         }
         // ...
 

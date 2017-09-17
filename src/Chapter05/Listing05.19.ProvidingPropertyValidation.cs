@@ -17,10 +17,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_19
         // LastName property
         public string LastName
         {
-            get
-            {
-                return _LastName;
-            }
+            get => _FirstName;
             set
             {
                 // Validate LastName assignment
