@@ -6,7 +6,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_53
         {
             // ...
 
-#if CSHARP2
+#if CSHARP2PLUS
             System.Console.Clear();
 #endif
 

@@ -1,4 +1,4 @@
-#define CSHARP2
+#define CSHARP2PLUS
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_55
 {

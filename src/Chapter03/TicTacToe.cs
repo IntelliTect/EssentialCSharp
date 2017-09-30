@@ -1,5 +1,5 @@
 ﻿
-#define CSHARP2
+#define CSHARP2PLUS
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.TicTacToe
 {
@@ -188,7 +188,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.TicTacToe
             // Display the current board;
             int border = 0;  // set the first border (border[0] = "|").
 
-#if CSHARP2
+#if CSHARP2PLUS
             System.Console.Clear();
 #endif
 
