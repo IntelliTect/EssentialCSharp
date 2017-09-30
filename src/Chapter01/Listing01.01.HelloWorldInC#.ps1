@@ -1,8 +1,8 @@
 Function Invoke-SampleHelloWorld {
-    cls
+    Clear-Host
     $expression = @"
-mkdir ./HelloWorld
-cd ./HelloWorld/
+New-Item -ItemType Directory ./HelloWorld
+Set-Location ./HelloWorld/
 dotnet new console
 dotnet run
 "@ -split '`n'
@@ -27,5 +27,5 @@ dotnet run
         Write-Host ">$_" -ForegroundColor Yellow;
         Invoke-Expression $_ }
 }
-cd $PSScriptRoot; rmdir .\HelloWorld -Recurse
+Set-Location $PSScriptRoot; Remove-Item .\HelloWorld -Recurse
 Invoke-SampleHelloWorld

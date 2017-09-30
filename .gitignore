@@ -259,3 +259,8 @@ paket-files/
 # CodeRush
 .cr/
 /Test.Results.txt
+
+# Misc. Powershell Generated Sample Directories
+/src/Chapter01/HelloWorld/
+/src/Chapter??/GeoCoordinateProgram/
+/src/Chapter??/GeoCoordinates/
