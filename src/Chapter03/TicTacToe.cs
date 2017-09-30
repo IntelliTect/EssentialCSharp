@@ -1,7 +1,7 @@
 ﻿
 #define CSHARP2
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.AppendixB.ListingB_01
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.TicTacToe
 {
     using System;
 
