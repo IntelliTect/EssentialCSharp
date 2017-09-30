@@ -8,7 +8,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_60
 
             #region Display Tic-tac-toe Board
 
-#if CSHARP2
+#if CSHARP2PLUS
             System.Console.Clear();
 #endif
 
