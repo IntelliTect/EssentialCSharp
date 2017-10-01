@@ -1,31 +1,44 @@
-Function Invoke-SampleHelloWorld {
-    Clear-Host
-    $expression = @"
-New-Item -ItemType Directory ./HelloWorld
-Set-Location ./HelloWorld/
-dotnet new console
-dotnet run
-"@ -split '`n'
-    $expression += @"
-@'
+[CmdletBinding()]
+param(
+    [int]$traceLevel
+)
+if($traceLevel -notin $PSBoundParameters.Keys) {
+    $traceLevel = Read-Host -Prompt @"
+    Specifiy the trace level:
+    - 0: Turn script tracing off.
+    - 1: Trace script lines as they run.
+    - 2: Trace script lines, variable assignments, function calls, and scripts.
+
+"@ 
+}
+
+try {
+    Get-Item .\HelloWorld -ErrorAction Ignore | Remove-Item -Recurse
+    $startLocation = Get-Location 
+    Set-PSDebug -Trace $traceLevel
+
+
+    New-Item -ItemType Directory ./HelloWorld
+    Set-Location ./HelloWorld/
+    dotnet new console
+    Get-Content Program.cs
+    dotnet run
+    $codeListing = 
+    @"
 class HelloWorld
 {
- static void Main()
- {
-   System.Console.WriteLine("Hello. My name is Inigo Montoya.");
- }
+    static void Main()
+    {
+        System.Console.WriteLine("Hello. My name is Inigo Montoya.");
+    }
 }
-'@ > Program.cs
 "@
 
-    $expression +=
-@'
-dotnet run
-'@ -split '`n'
-
-    $expression | %{
-        Write-Host ">$_" -ForegroundColor Yellow;
-        Invoke-Expression $_ }
+    $codeListing > Program.cs
+    Get-Content Program.cs
+    dotnet run
 }
-Set-Location $PSScriptRoot; Remove-Item .\HelloWorld -Recurse
-Invoke-SampleHelloWorld
+finally {
+    Set-PSDebug -Off
+    Set-Location $startLocation
+}
