@@ -5,7 +5,7 @@
     public class Thermostat
     {
         // Using C# 3.0 or later syntax.
-        // Define the event publisher
+        // Define the event publisher (initially without the sender)
         public Action<float> OnTemperatureChange { get; set; }
 
         public float CurrentTemperature
