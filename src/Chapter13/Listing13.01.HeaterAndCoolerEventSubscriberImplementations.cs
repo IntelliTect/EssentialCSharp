@@ -7,8 +7,10 @@
             Temperature = temperature;
         }
 
+        // Cooler is activated when ambient temperature is higher than this.
         public float Temperature { get; set; }
 
+        // Notifies that the temperature changed on this instance.
         public void OnTemperatureChanged(float newTemperature)
         {
             if(newTemperature > Temperature)
@@ -29,8 +31,10 @@
             Temperature = temperature;
         }
 
+        // Cooler is activated when ambient temperature is higher than this.
         public float Temperature { get; set; }
 
+        // Notifies that the temperature changed on this instance.
         public void OnTemperatureChanged(float newTemperature)
         {
             if(newTemperature < Temperature)

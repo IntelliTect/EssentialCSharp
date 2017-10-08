@@ -46,9 +46,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_09
                         return Second;
                     default:
                         throw new NotImplementedException(
-                            string.Format(
-                            "The enum {0} has not been implemented",
-                            index.ToString()));
+                            $"The enum { index.ToString() } has not been implemented");
+
                 }
             }
 

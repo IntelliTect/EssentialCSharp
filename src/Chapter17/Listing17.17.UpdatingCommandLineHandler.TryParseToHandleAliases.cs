@@ -68,9 +68,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_16
                 {
                     // No setting was provided for the switch.
                     success = false;
-                    errorMessage = string.Format(
-                        "You must specify the value for the {0} option.",
-                        property.Name);
+                    errorMessage =
+                         $"You must specify the value for the { property.Name } option.";
                 }
                 else if(
                     property.PropertyType == typeof(string))
