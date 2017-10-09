@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_13A
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_14A
 {
     using System;
 
@@ -21,7 +21,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_13A
         {
             byte[] image = null;
             // Load image.
-            // ...
+            image = new byte[42];
+            for (int i = 0; i < image.Length; i++)
+            {
+                image[i] = (byte)ConsoleColor.Black;
+            }
+            image[(new Random()).Next(0, image.Length - 1)] = (byte)ConsoleColor.Red;
+
             // Obtain a reference to the first red pixel.
             ref byte redPixel = ref FindFirstRedEyePixel(image);
             // Update it to be Black.
