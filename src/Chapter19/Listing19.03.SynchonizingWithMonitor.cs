@@ -4,7 +4,7 @@
     using System.Threading;
     using System.Threading.Tasks;
 
-    class Program
+    public class Program
     {
         readonly static object _Sync = new object();
         const int _Total = int.MaxValue;

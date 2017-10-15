@@ -3,7 +3,7 @@
     using System;
     using System.Threading.Tasks;
 
-    class Program
+    public class Program
     {
         const int _Total = int.MaxValue;
         static long _Count = 0;
@@ -20,7 +20,7 @@
             }
 
             task.Wait();
-            Console.WriteLine("Count = {0}", _Count);
+            Console.WriteLine($"Count = {_Count}");
         }
 
         static void Decrement()
