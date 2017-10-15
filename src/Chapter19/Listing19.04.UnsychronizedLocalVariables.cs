@@ -3,37 +3,40 @@
     using System;
     using System.Threading.Tasks;
 
-    class Program
+    public class Program
     {
+        readonly static object _Sync = new object();
         const int _Total = int.MaxValue;
         static long _Count = 0;
 
         public static void Main()
         {
-            CountAsync();
-        }
-
-        // ...
-
-        public static async void CountAsync()
-        {
             // Use Task.Factory.StartNew for .NET 4.0
             Task task = Task.Run(() => Decrement());
 
             // Increment
-            for(int i = 0; i < _Total; i++)
+            for (int i = 0; i < _Total; i++)
             {
-                _Count++;
+                lock (_Sync)
+                {
+                    _Count++;
+                }
             }
 
-            await task;
+            task.Wait();
             Console.WriteLine($"Count = {_Count}");
         }
 
-        private static Task Decrement()
+        static void Decrement()
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < _Total; i++)
+            {
+                lock (_Sync)
+                {
+                    _Count--;
+                }
+            }
         }
-
     }
+
 }
