@@ -11,7 +11,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_41
 
             System.Console.Write("Enter a positive integer:");
 
-            // decimal.Parse convert the ReadLine to a decimal.
+            // decimal.Parse convert the ReadLine to a decimal
             input = decimal.Parse(System.Console.ReadLine());
 
             // Initialize current and previous to 1, the first
@@ -19,7 +19,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_41
             current = previous = 1;
 
             // While the current Fibonacci number in the series is
-            // less than the value input by the user.
+            // less than the value input by the user
             while (current <= input)
             {
                 temp = current;
