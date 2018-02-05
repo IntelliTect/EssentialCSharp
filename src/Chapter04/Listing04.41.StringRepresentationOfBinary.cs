@@ -10,7 +10,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_39
 
             System.Console.Write("Enter an integer: ");
             // Use long.Parse() to support negative numbers
-            // Assumes unchecked assignment to ulong.
+            // Assumes unchecked assignment to ulong
             value = (ulong)long.Parse(System.Console.ReadLine());
 
             // Set initial mask to 100....
