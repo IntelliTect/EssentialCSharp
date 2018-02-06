@@ -17,7 +17,7 @@
             item.Name = "Inigo Montoya";
 
             // Display that FirstName & LastName
-            // properties were set.
+            // properties were set
             Console.WriteLine(
                 $"{ contact.FirstName } { contact.LastName}");
 
