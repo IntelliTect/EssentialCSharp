@@ -15,7 +15,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_12
     class DataStorage
     {
         // Save an employee object to a file 
-        // named with the Employee name.
+        // named with the Employee name
         public static void Store(Employee employee)
         {
             // ...
