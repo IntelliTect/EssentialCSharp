@@ -12,7 +12,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_15
             // ...
 
             // Password is private, so it cannot be
-            // accessed from outside the class.
+            // accessed from outside the class
             // Console.WriteLine(
             //    ("Password = {0}", employee.Password);
         }
