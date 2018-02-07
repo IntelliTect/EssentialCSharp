@@ -7,7 +7,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_14A
         // Returning a reference
         static public ref byte FindFirstRedEyePixel(byte[] image)
         {
-            // Do fancy image detection perhaps with machine learning.
+            // Do fancy image detection perhaps with machine learning
             for (int counter = 0; counter < image.Length; counter++)
             {
                 if (image[counter] == (byte)ConsoleColor.Red)
@@ -20,7 +20,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_14A
         public static void Main()
         {
             byte[] image = null;
-            // Load image.
+            // Load image
             image = new byte[42];
             for (int i = 0; i < image.Length; i++)
             {
@@ -28,9 +28,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_14A
             }
             image[(new Random()).Next(0, image.Length - 1)] = (byte)ConsoleColor.Red;
 
-            // Obtain a reference to the first red pixel.
+            // Obtain a reference to the first red pixel
             ref byte redPixel = ref FindFirstRedEyePixel(image);
-            // Update it to be Black.
+            // Update it to be Black
             redPixel = (byte)ConsoleColor.Black;
             System.Console.WriteLine((ConsoleColor)image[redPixel]);
         }

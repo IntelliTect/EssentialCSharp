@@ -13,7 +13,7 @@
             employee2.SetName("Inigo", "Montoya");
             employee2.Save();
 
-            // Modify employee2 after saving.
+            // Modify employee2 after saving
             IncreaseSalary(employee2);
 
             // Load employee1 from the saved version of employee2
@@ -57,28 +57,28 @@
     class DataStorage
     {
         // Save an employee object to a file 
-        // named with the Employee name.
-        // Error handling not shown.
+        // named with the Employee name
+        // Error handling not shown
         public static void Store(Employee employee)
         {
             // Instantiate a FileStream using FirstNameLastName.dat
             // for the filename. FileMode.Create will force
             // a new file to be created or override an
-            // existing file.
+            // existing file
             FileStream stream = new FileStream(
                 employee.FirstName + employee.LastName + ".dat",
                 FileMode.Create);
 
             // Create a StreamWriter object for writing text
-            // into the FileStream.
+            // into the FileStream
             StreamWriter writer = new StreamWriter(stream);
 
-            // Write all the data associated with the employee.
+            // Write all the data associated with the employee
             writer.WriteLine(employee.FirstName);
             writer.WriteLine(employee.LastName);
             writer.WriteLine(employee.Salary);
 
-            // Dispose the StreamWriter and its stream.
+            // Dispose the StreamWriter and its stream
             writer.Dispose();  // Automatically closes the stream
         }
 
@@ -88,11 +88,11 @@
 
             // Instantiate a FileStream using FirstNameLastName.dat
             // for the filename. FileMode.Open will open
-            // an existing file or else report an error.
+            // an existing file or else report an error
             FileStream stream = new FileStream(
                 firstName + lastName + ".dat", FileMode.Open);
 
-            // Create a StreamReader for reading text from the file.
+            // Create a StreamReader for reading text from the file
             StreamReader reader = new StreamReader(stream);
 
             // Read each line from the file and place it into
@@ -101,7 +101,7 @@
             employee.LastName = reader.ReadLine();
             employee.Salary = reader.ReadLine();
 
-            // Dispose the StreamReader and its Stream.
+            // Dispose the StreamReader and its Stream
             reader.Dispose();  // Automatically closes the stream
 
             return employee;
