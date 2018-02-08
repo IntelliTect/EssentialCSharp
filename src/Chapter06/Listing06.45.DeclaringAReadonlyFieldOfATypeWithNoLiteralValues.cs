@@ -19,7 +19,7 @@
     {
         public void Main()
         {
-            // Note: board.Cells does not require initialization.
+            // Note: board.Cells does not require initialization
             TicTacToeBoard board = new TicTacToeBoard();
             Console.WriteLine(board.Cells);
         }
@@ -28,7 +28,7 @@
 
     class TicTacToeBoard
     {
-        // Set both player's initial board to all false (blank).
+        // Set both player's initial board to all false (blank)
         //    |   |          |   |
         // ---+---+---    ---+---+---
         //    |   |          |   |   
@@ -49,7 +49,7 @@
     {
         public TicTacToeBoardPreCSharp5()
         {
-            // Set both player's initial board to all false (blank).
+            // Set both player's initial board to all false (blank)
             //    |   |
             // ---+---+---
             //    |   |   
