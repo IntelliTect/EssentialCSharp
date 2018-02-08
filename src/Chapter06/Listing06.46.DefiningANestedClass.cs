@@ -4,7 +4,7 @@
 
     class Program
     {
-        // Define a nested class for processing the command line.
+        // Define a nested class for processing the command line
         private class CommandLine
         {
             public CommandLine(string[] arguments)

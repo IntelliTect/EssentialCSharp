@@ -19,7 +19,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_47
     // File: Program+CommandLine.cs
     partial class Program
     {
-        // Define a nested class for processing the command line.
+        // Define a nested class for processing the command line
         private class CommandLine
         {
             public CommandLine(string[] args)
