@@ -68,7 +68,7 @@
             set
             {
                 // Split the assigned value into 
-                // first and last names.
+                // first and last names
                 string[] names;
                 names = value.Split(new char[] { ' ' });
                 if(names.Length == 2)
@@ -79,7 +79,7 @@
                 else
                 {
                     // Throw an exception if the full 
-                    // name was not assigned.
+                    // name was not assigned
                     throw new System.ArgumentException(
                         $"Assigned value '{value}' is invalid");
                 }
