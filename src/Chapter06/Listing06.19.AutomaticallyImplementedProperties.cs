@@ -12,17 +12,17 @@
             Employee employee2 =
                 new Employee();
 
-            // Call the FirstName property's setter.
+            // Call the FirstName property's setter
             employee1.FirstName = "Inigo";
 
-            // Call the FirstName property's getter.
+            // Call the FirstName property's getter
             System.Console.WriteLine(employee1.FirstName);
 
             // Assign an auto-implemented property
             employee2.Title = "Computer Nerd";
             employee1.Manager = employee2;
 
-            // Print employee1's manager's title.
+            // Print employee1's manager's title
             System.Console.WriteLine(employee1.Manager.Title);
         }
 

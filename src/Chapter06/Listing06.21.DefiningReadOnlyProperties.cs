@@ -8,7 +8,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_20
             employee1.Initialize(42);
 
             // ERROR:  Property or indexer 'Employee.Id' 
-            // cannot be assigned to; it is read-only.
+            // cannot be assigned to; it is read-only
             // employee1.Id = "490";
         }
     }
@@ -18,7 +18,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_20
         public void Initialize(int id)
         {
             // Use field because Id property has no setter;
-            // it is read-only.
+            // it is read-only
             _Id = id.ToString();
         }
 
@@ -27,7 +27,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_20
         public string Id
         {
             get => _Id;
-            // No setter provided.
+            // No setter provided
         }
         private string _Id = default(string);
 
