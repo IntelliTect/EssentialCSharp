@@ -9,7 +9,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_19
             string newFirstName, string newLastName)
         {
             // Use property inside the Employee
-            // class as well.
+            // class as well
             FirstName = newFirstName;
             LastName = newLastName;
         }
@@ -29,7 +29,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_19
                 else
                 {
                     // Remove any whitespace around
-                    // the new last name.
+                    // the new last name
                     value = value.Trim();
                     if(value == "")
                     {
@@ -63,7 +63,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_19
                 else
                 {
                     // Remove any whitespace around
-                    // the new last name.
+                    // the new last name
                     value = value.Trim();
                     if(value == "")
                     {
