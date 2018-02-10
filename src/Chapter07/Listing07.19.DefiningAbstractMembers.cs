@@ -31,7 +31,7 @@
             set
             {
                 string[] names = value.Split(' ');
-                // Error handling not shown.
+                // Error handling not shown
                 FirstName = names[0];
                 LastName = names[1];
             }

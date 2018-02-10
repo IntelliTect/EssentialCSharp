@@ -28,7 +28,7 @@
         void Save()
         {
             // Instantiate a FileStream using <ObjectKey>.dat
-            // for the filename.
+            // for the filename
             FileStream stream = System.IO.File.OpenWrite(
                 ObjectKey + ".dat");
         }
@@ -37,12 +37,12 @@
         {
             // ERROR:  'pdaItem.ObjectKey' is inaccessible
             // due to its protection level
-            //pdaItem.ObjectKey =...;
+            //pdaItem.ObjectKey =...
 
             Contact contact = pdaItem as Contact;
             if(contact != null)
             {
-                contact.ObjectKey = new Guid();//...; 
+                contact.ObjectKey = new Guid();//... 
             }
         }
         // ...

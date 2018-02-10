@@ -15,7 +15,7 @@
         public class DerivedClass : BaseClass
         {
             // Compiler WARNING: DisplayName() hides inherited 
-            // member. Use the new keyword if hiding was intended.
+            // member. Use the new keyword if hiding was intended
             public virtual void DisplayName()
             {
                 Console.WriteLine("DerivedClass");
