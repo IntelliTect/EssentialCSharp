@@ -11,7 +11,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_24
                 case null: // The location of case null doesn't matter
                     throw new ArgumentNullException(nameof(storage));
                 // ** Causes compile error because case statments below
-                // ** are unreachable.
+                // ** are unreachable
                 // case Storage tempStorage:
                 //    throw new Exception();
                 //    break;

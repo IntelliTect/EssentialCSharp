@@ -22,7 +22,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_23
 
         private static object Encrypt(string data)
         {
-            // See Chapter 19 for actual encryption implementation.
+            // See Chapter 19 for actual encryption implementation
             return $"ENCRYPTED <{data}> ENCRYPTED";
         }
     }
