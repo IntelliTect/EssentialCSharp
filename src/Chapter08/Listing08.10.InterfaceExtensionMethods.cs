@@ -17,7 +17,7 @@
 
 
         // Classes are implicitly converted to
-        // their supported interfaces.
+        // their supported interfaces
         contacts.List(Contact.Headers);
 
             Console.WriteLine();
