@@ -35,7 +35,7 @@
             };
 
             // Classes are cast implicitly to
-            // their supported interfaces.
+            // their supported interfaces
             ConsoleListControl.List(Contact.Headers, contacts);
 
             Console.WriteLine();
@@ -57,7 +57,7 @@
 
     interface IListable
     {
-        // Return the value of each column in the row.
+        // Return the value of each column in the row
         string[] ColumnValues
         {
             get;

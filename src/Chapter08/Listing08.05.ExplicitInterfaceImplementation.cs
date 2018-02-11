@@ -13,10 +13,10 @@
             // ...
 
             // ERROR:  Unable to call ColumnValues() directly
-            //         on a contact.
+            //         on a contact
             // values = contact1.ColumnValues;
 
-            // First cast to IListable.
+            // First cast to IListable
             values = ((IListable)contact2).ColumnValues;
             // ...
 
@@ -37,9 +37,9 @@
         /// </summary>
         /// <param name="obj"></param>
         /// <returns>
-        /// Less than zero:      This instance is less than obj. 
-        /// Zero                 This instance is equal to obj. 
-        /// Greater than zero    This instance is greater than obj. 
+        /// Less than zero:      This instance is less than obj
+        /// Zero                 This instance is equal to obj
+        /// Greater than zero    This instance is greater than obj
         /// </returns>
         public int CompareTo(object obj)
         {
@@ -48,13 +48,13 @@
 
             if(obj == null)
             {
-                // This instance is greater than obj. 
+                // This instance is greater than obj 
                 result = 1;
             }
             else if(obj.GetType() != typeof(Contact))
             {
                 // Use C# 6.0 nameof operator in message to
-                // ensure consistency in the Type name.
+                // ensure consistency in the Type name
                 throw new ArgumentException(
                     $"The parameter is not a of type { nameof(Contact) }",
                     nameof(obj));
