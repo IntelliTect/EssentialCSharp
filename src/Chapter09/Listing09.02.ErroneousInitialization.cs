@@ -1,6 +1,6 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_01
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_02
 {
-    // Use keyword struct to declare a value type.
+    // Use keyword struct to declare a value type 
     struct Angle
     {
         public Angle(int degrees, int minutes, int seconds)
@@ -10,8 +10,11 @@
             Seconds = seconds;
         }
 
-        // Using C# 6.0 read-only, automatically implememted properties.
+        // ERROR:  Fields cannot be initialized at declaration time
+        // private int _Degrees = 42;
+
         public int Degrees { get; }
+
         public int Minutes { get; }
         public int Seconds { get; }
 
@@ -24,14 +27,23 @@
         }
     }
 
-    // Declaring a class--a reference type
+    // Declaring a class - a reference type
     // (declaring it as a struct would create a value type
     // larger than 16 bytes.)
     class Coordinate
     {
-        public Angle Longitude { get; set; }
+        public Angle Longitude
+        {
+            get { return _Longitude; }
+            set { _Longitude = value; }
+        }
+        private Angle _Longitude;
 
-        public Angle Latitude { get; set; }
+        public Angle Latitude
+        {
+            get { return _Latitude; }
+            set { _Latitude = value; }
+        }
+        private Angle _Latitude;
     }
-
 }

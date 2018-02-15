@@ -27,7 +27,7 @@
 
                 Console.WriteLine($"{file.Attributes} = {(int)file.Attributes}");
 
-                // Only the ReadOnly attrite works on Linux.  (The Hidden attribute does not work on Linux)
+                // Only the ReadOnly attribute works on Linux  (The Hidden attribute does not work on Linux)
                 if (!System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
                 {
                     // Added in C# 4.0/.NET 4.0

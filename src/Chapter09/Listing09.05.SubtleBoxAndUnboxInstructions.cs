@@ -14,9 +14,9 @@
             totalCount = int.Parse(Console.ReadLine());
 
             // Execution-time error:
-            // list.Add(0);  // Cast to double or 'D' suffix required.
+            // list.Add(0);  // Cast to double or 'D' suffix required
                              // Whether cast or using 'D' suffix,
-                             // CIL is identical.
+                             // CIL is identical
             list.Add((double)0);
             list.Add((double)1);
             for(int count = 2; count < totalCount; count++)

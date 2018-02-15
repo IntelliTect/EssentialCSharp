@@ -11,7 +11,7 @@
             number = 42;
             // Boxing
             thing = number;
-            // No unboxing conversion.
+            // No unboxing conversion
             string text = ((IFormattable)thing).ToString(
                 "X", null);
             Console.WriteLine(text);
