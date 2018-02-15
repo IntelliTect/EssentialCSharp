@@ -1,6 +1,6 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_03
 {
-    // Use keyword struct to declare a value type.
+    // Use keyword struct to declare a value type
     struct Angle
     {
         // ERROR:  The 'this' object cannot be used before
