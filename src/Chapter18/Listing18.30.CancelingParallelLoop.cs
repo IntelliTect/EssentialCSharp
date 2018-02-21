@@ -30,7 +30,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_30
             ParallelOptions parallelOptions =
                 new ParallelOptions { CancellationToken = cts.Token };
             cts.Token.Register(
-                () => Console.WriteLine("Cancelling..."));
+                () => Console.WriteLine("Canceling..."));
 
             Console.WriteLine("Push ENTER to exit.");
 
