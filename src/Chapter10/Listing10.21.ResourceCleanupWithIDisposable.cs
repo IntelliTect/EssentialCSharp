@@ -11,7 +11,7 @@
             TemporaryFileStream fileStream =
                 new TemporaryFileStream();
 
-            // Use temporary file stream;
+            // Use temporary file stream
             // ...
 
             fileStream.Dispose();
