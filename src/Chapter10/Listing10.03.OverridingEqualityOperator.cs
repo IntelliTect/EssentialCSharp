@@ -14,7 +14,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_03
             ProductSerialNumber serialNumber3 =
                 new ProductSerialNumber("PV", 1000, 09187234);
 
-            // These serial numbers ARE the same object identity.
+            // These serial numbers ARE the same object identity
             if(!ProductSerialNumber.ReferenceEquals(serialNumber1,
                 serialNumber2))
             {
@@ -22,7 +22,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_03
                     "serialNumber1 does NOT " +
                     "reference equal serialNumber2");
             }
-            // And, therefore, they are equal.
+            // And, therefore, they are equal
             else if(!serialNumber1.Equals(serialNumber2))
             {
                 throw new Exception(
@@ -37,7 +37,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_03
             }
 
 
-            // These serial numbers are NOT the same object identity.
+            // These serial numbers are NOT the same object identity
             if(ProductSerialNumber.ReferenceEquals(serialNumber1,
                     serialNumber3))
             {
@@ -45,7 +45,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_03
                     "serialNumber1 DOES reference " +
                     "equal serialNumber3");
             }
-            // But they are equal (assuming Equals is overloaded).
+            // But they are equal (assuming Equals is overloaded)
             else if(!serialNumber1.Equals(serialNumber3) ||
                 serialNumber1 != serialNumber3)
             {

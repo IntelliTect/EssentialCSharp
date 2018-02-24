@@ -77,7 +77,7 @@
               Coordinate rightHandSide)
         {
 
-            // Check if leftHandSide is null. 
+            // Check if leftHandSide is null
             // (operator== would be recursive)
             if(ReferenceEquals(leftHandSide, null))
             {
@@ -142,7 +142,7 @@
             // } 
 
             // STEP 6: Compare identifying fields for equality
-            //         using an overload of Equals on Longitude.
+            //         using an overload of Equals on Longitude
             return ((Longitude.Equals(obj.Longitude)) &&
                 (Latitude.Equals(obj.Latitude)));
         }

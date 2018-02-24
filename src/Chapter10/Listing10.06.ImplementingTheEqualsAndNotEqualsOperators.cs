@@ -69,12 +69,12 @@
             ProductSerialNumber rightHandSide)
         {
 
-            // Check if leftHandSide is null.  
+            // Check if leftHandSide is null
             // (operator== would be recursive)
             if(ReferenceEquals(leftHandSide, null))
             {
                 // Return true if rightHandSide is also null
-                // and false otherwise.
+                // and false otherwise
                 return ReferenceEquals(rightHandSide, null);
             }
 
