@@ -50,12 +50,12 @@
               Coordinate rightHandSide)
         {
 
-            // Check if leftHandSide is null. 
+            // Check if leftHandSide is null
             // (operator== would be recursive)
             if (ReferenceEquals(leftHandSide, null))
             {
                 // Return true if rightHandSide is also null
-                // but false otherwise.
+                // but false otherwise
                 return ReferenceEquals(rightHandSide, null);
             }
 
@@ -115,12 +115,12 @@
             // } 
 
             // STEP 6: Compare identifying fields for equality
-            //         using an overload of Equals on Longitude.
+            //         using an overload of Equals on Longitude
             return ((Longitude.Equals(obj.Longitude)) &&
                 (Latitude.Equals(obj.Latitude)));
         }
 
-        // STEP 7: Override GetHashCode.
+        // STEP 7: Override GetHashCode
         public override int GetHashCode()
         {
             int hashCode = Longitude.GetHashCode();

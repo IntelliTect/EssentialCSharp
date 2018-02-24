@@ -21,7 +21,7 @@
                 // ...
 
                 // Create a weak reference
-                // to data for use later.
+                // to data for use later
                 Data.Target = data;
             }
             return data;
