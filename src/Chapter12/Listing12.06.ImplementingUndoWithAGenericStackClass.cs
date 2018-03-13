@@ -32,13 +32,13 @@
             do
             {
                 // Etch in the direction indicated by the
-                // arrow keys that the user enters.
+                // arrow keys that the user enters
                 key = Move();
 
                 switch(key.Key)
                 {
                     case ConsoleKey.Z:
-                        // Undo the previous Move.
+                        // Undo the previous Move
                         if(path.Count >= 1)
                         {
                             // No cast required
@@ -55,7 +55,7 @@
                             currentPosition = new Cell(
                                 Console.CursorLeft, Console.CursorTop + 1);
                         }
-                        // Only type Cell allowed in call to Push().
+                        // Only type Cell allowed in call to Push()
                         path.Push(currentPosition);
                         FillCell(currentPosition);
                         break;
@@ -65,7 +65,7 @@
                             currentPosition = new Cell(
                                 Console.CursorLeft, Console.CursorTop - 1);
                         }
-                        // Only type Cell allowed in call to Push().
+                        // Only type Cell allowed in call to Push()
                         path.Push(currentPosition);
                         FillCell(currentPosition);
                         break;
@@ -75,7 +75,7 @@
                             currentPosition = new Cell(
                                 Console.CursorLeft - 1, Console.CursorTop);
                         }
-                        // Only type Cell allowed in call to Push().
+                        // Only type Cell allowed in call to Push()
                         path.Push(currentPosition);
                         FillCell(currentPosition);
                         break;
@@ -86,7 +86,7 @@
                             currentPosition = new Cell(
                                 Console.CursorLeft + 1, Console.CursorTop);
                         }
-                        // Only type Cell allowed in call to Push().
+                        // Only type Cell allowed in call to Push()
                         path.Push(currentPosition);
                         FillCell(currentPosition);
                         break;
@@ -97,7 +97,7 @@
                 }
 
             }
-            while(key.Key != ConsoleKey.X);  // Use X to quit.
+            while(key.Key != ConsoleKey.X);  // Use X to quit
         }
 
         private static ConsoleKeyInfo Move()

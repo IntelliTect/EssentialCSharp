@@ -10,7 +10,7 @@
     // ERROR: 
     // The type 'T' must be convertible to 'System.IComparable<T>' 
     // to use it as parameter 'T' in the generic type or 
-    // method. 
+    // method
     // class Entity<T> : EntityBase<T>
     // {
     //     ...

@@ -37,7 +37,7 @@
             // both co- and contra-variant conversions. Because
             // a programmer can turn any food into a computer 
             // program, it can be used as a device that turns pizza
-            // into documents.
+            // into documents
             ITransformer<Pizza, Document> transformer = programmer;
             Document d = transformer.Transform(new Pizza());
         }
