@@ -13,7 +13,7 @@
         public T Pop()
         {
             //...
-            return InternalItems[0];//just for the example. 
+            return InternalItems[0];//just for the example
         }
     }
 }

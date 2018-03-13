@@ -4,9 +4,9 @@
                                  // with overlapping name
     class Container<T, U>
     {
-        // Nested classes inherit type parameters.
+        // Nested classes inherit type parameter
         // Reusing a type parameter name will cause
-        // a warning.
+        // a warning
         class Nested<U>
         {
             void Method(T param0, U param1)

@@ -18,13 +18,13 @@
 
                 //if(first.CompareTo(value.Second) < 0)
                 //{
-                //    // first is less than second.
+                //    // first is less than second
                 //    //...
                 //}
                 //else
                 //{
                 //    // first and second are the same or
-                //    // second is less than first.
+                //    // second is less than first
                 //    //...
                 //}
                 _SubItems = value;
