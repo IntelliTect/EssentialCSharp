@@ -1,9 +1,8 @@
-﻿using AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_02;
-
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_11
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_03
 {
     using System;
     using Listing13_01;
+    using Listing13_02;
 
     public class Program
     {
@@ -14,14 +13,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_11
             Cooler cooler = new Cooler(80);
             string temperature;
 
-            // Note: Use new Action(cooler.OnTemperatureChanged)
-            // for C# 1.0 syntax.
-            thermostat.OnTemperatureChange =
+            // Using C# 2.0 or later syntax
+            thermostat.OnTemperatureChange +=
                 heater.OnTemperatureChanged;
-
-            // Bug: Assignment operator overrides 
-            // previous assignment.
-            thermostat.OnTemperatureChange = 
+            thermostat.OnTemperatureChange +=
                 cooler.OnTemperatureChanged;
 
             Console.Write("Enter temperature: ");

@@ -12,7 +12,7 @@
             Cooler cooler = new Cooler(80);
             string temperature;
 
-            // Using C# 2.0 or later syntax.
+            // Using C# 2.0 or later syntax
             thermostat.OnTemperatureChange +=
                 heater.OnTemperatureChanged;
             thermostat.OnTemperatureChange +=

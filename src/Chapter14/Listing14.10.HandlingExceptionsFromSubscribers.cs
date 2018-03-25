@@ -6,7 +6,7 @@
 
     public class Thermostat
     {
-        // Using C# 3.0 or later syntax.
+        // Using C# 3.0 or later syntax
         // Define the event publisher
         public Action<float> OnTemperatureChange;
 
@@ -61,7 +61,7 @@
                 Cooler cooler = new Cooler(80);
                 string temperature;
 
-                // Using C# 2.0 or later syntax.
+                // Using C# 2.0 or later syntax
                 thermostat.OnTemperatureChange +=
                     heater.OnTemperatureChanged;
                 // Using C# 3.0.  Change to anonymous method
