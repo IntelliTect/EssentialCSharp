@@ -1,4 +1,4 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_08
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_07
 {
     using System;
     using Listing13_01;
@@ -16,18 +16,18 @@
             Action<float> delegate2;
             Action<float> delegate3;
 
-            // Note: Use new Action(cooler.OnTemperatureChanged)
-            // for C# 1.0 syntax.
+            // use Constructor syntax for C# 1.0
             delegate1 = heater.OnTemperatureChanged;
             delegate2 = cooler.OnTemperatureChanged;
 
-            Console.WriteLine("Combine delegates using + operator:");
-            delegate3 = delegate1 + delegate2;
-            delegate3(60);
+            Console.WriteLine("Invoke both delegates:");
+            delegate3 = delegate1;
+            delegate3 += delegate2;
+            delegate3(90);
 
-            Console.WriteLine("Uncombine delegates using - operator:");
-            delegate3 = delegate3 - delegate2;
-            delegate3(60);
+            Console.WriteLine("Invoke only delegate2");
+            delegate3 -= delegate1;
+            delegate3(30);
         }
     }
 }

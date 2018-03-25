@@ -12,7 +12,7 @@
             Cooler cooler = new Cooler(80);
 
             // Note: Use new Action(cooler.OnTemperatureChanged)
-            // for C# 1.0 syntax.
+            // for C# 1.0 syntax
             thermostat.OnTemperatureChange +=
                 heater.OnTemperatureChanged;
 

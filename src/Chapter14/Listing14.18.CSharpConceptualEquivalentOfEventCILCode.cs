@@ -6,7 +6,7 @@
     {
         // ...
         // Declaring the delegate field to save the 
-        // list of subscribers.
+        // list of subscribers
         private EventHandler<TemperatureArgs> _OnTemperatureChange;
 
         public void add_OnTemperatureChange(
@@ -23,12 +23,12 @@
 
         //public event EventHandler<TemperatureArgs> OnTemperatureChange
         //{
-        //    //Would cause a compiler error.
+        //    //Would cause a compiler error
         //    add
         //    {
         //        add_OnTemperatureChange(value);
         //    }
-        //    //Would cause a compiler error.
+        //    //Would cause a compiler error
         //    remove
         //    {
         //        remove_OnTemperatureChange(value);
