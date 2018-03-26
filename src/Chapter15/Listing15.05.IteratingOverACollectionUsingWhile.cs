@@ -11,7 +11,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_08
             int number;
             // ...
 
-            // This code is conceptual, not the actual code.
+            // This code is conceptual, not the actual code
             while(stack.Pop() != -1) //this is actually not the right logic, but the point is the while, not stack
             {
                 number = stack.Peek();

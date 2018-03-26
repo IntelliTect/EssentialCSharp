@@ -22,7 +22,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_01
                 new
                 {
                     patent1.Title,
-                    // Renamed to show property naming.
+                    // Renamed to show property naming
                     Year = patent1.YearOfPublication
                 };
 
