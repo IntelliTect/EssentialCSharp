@@ -5,7 +5,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_42
         public static void Main()
         {
             // Repeatedly request player to move until he
-            // enter a valid position on the board
+            // enters a valid position on the board
             bool valid;
             do
             {
