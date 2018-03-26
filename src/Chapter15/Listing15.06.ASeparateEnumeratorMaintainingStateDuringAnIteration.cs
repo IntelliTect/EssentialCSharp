@@ -15,7 +15,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_09
             // ...
 
             // If IEnumerable<T> is implemented explicitly, 
-            // then a cast is required.
+            // then a cast is required
             // ((IEnumerable<int>)stack).GetEnumerator();
             enumerator = stack.GetEnumerator();
             while(enumerator.MoveNext())

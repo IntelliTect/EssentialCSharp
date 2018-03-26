@@ -23,12 +23,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_10
             }
             finally
             {
-                // Explicit cast used for IEnumerator<T>.
+                // Explicit cast used for IEnumerator<T>
                 disposable = (IDisposable)enumerator;
                 disposable.Dispose();
 
                 // IEnumerator will use the as operator unless IDisposable
-                // support is known at compile time.
+                // support is known at compile time
                 // disposable = (enumerator as IDisposable);
                 // if (disposable != null)
                 // {

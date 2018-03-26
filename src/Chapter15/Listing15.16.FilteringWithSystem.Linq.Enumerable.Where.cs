@@ -19,7 +19,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_19
                         // Side effects like this in a predicate
                         // are used here to demonstrate a 
                         // principle and should generally be
-                        // avoided.
+                        // avoided
                         Console.WriteLine("\t" + patent);
                     }
                     return result;
