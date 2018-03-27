@@ -49,7 +49,7 @@ System.Exception: Expected Exception
 
             Console.WriteLine(output);
 
-            // Verify that only the 'Running task...' thread id (the second line), is unique.
+            // Verify that only the 'Running task...' thread id (the second line), is unique
             MatchCollection matches = Regex.Matches(output, @"\(Thread ID: (\d)+\)");
             int firstThreadId = int.Parse(matches[0].Groups[1].Value);
             int secondThreadId = int.Parse(matches[1].Groups[1].Value);
