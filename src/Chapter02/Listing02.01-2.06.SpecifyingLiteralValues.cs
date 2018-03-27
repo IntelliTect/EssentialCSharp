@@ -22,7 +22,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_01
             //end listing 2.4
 
             //begin listing 2.5
-            //Display the value 42 using a hexadecimal literal.
+            //Display the value 42 using a hexadecimal literal
             System.Console.WriteLine(0x002A);
             //end listing 2.5
 
