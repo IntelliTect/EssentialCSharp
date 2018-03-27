@@ -8,11 +8,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_44
                 "C#", "COBOL", "Java",
                 "C++", "Visual Basic", "Pascal",
                 "Fortran", "Lisp", "J#" };
-            // Save "C++" to variable called language.
+            // Save "C++" to variable called language
             string language = languages[3];
-            // Assign "Java" to the C++ position.
+            // Assign "Java" to the C++ position
             languages[3] = languages[2];
-            // Assign language to location of "Java".
+            // Assign language to location of "Java"
             languages[2] = language;
         }
     }
