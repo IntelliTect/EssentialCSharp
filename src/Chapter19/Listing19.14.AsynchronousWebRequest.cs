@@ -36,7 +36,7 @@
                     exception.Handle(innerException =>
                     {
                         // Rethrowing rather than using
-                        // if condition on the type.
+                        // if condition on the type
                         ExceptionDispatchInfo.Capture(
                                               exception.InnerException)
                                               .Throw();

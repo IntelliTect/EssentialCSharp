@@ -23,7 +23,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_18
                 async (string webRequestUrl) =>
                 {
                     // Error handling ommitted for 
-                    // elucidation.
+                    // elucidation
                     WebRequest webRequest =
                        WebRequest.Create(url);
 
