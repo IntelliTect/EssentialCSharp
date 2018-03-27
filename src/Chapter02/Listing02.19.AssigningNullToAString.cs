@@ -7,7 +7,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_16
             string faxNumber;
             //...
 
-            // Clear the value of faxNumber.
+            // Clear the value of faxNumber
             faxNumber = null;
 
             //...

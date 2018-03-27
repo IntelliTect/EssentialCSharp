@@ -1,5 +1,5 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_12
-{
+{ 
     using static System.Console;
     class HeyYou
     {
