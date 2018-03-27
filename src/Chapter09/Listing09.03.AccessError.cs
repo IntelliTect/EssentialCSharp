@@ -37,7 +37,7 @@
         }
     }
 
-    // Declaring a class - a reference type
+    // Declaring a class a reference type
     // (declaring it as a struct would create a value type
     // larger than 16 bytes.)
     class Coordinate
