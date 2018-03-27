@@ -53,7 +53,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_16.Tests
                 //Transform byte[] unzip data to string
                 StringBuilder data = new System.Text.StringBuilder(bytesRead);
                 //Read the number of bytes GZipStream red and do not a for each bytes in
-                //resultByteArray;
+                //resultByteArray
                 for (int i = 0; i < bytesRead; i++)
                 {
                     data.Append((char)byteArray[i]);

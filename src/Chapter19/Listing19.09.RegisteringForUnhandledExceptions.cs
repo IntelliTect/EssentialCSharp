@@ -16,7 +16,7 @@
                 clock.Start();
 
                 // Register a callback to receive notifications
-                // of any unhandled exception.
+                // of any unhandled exception
 #if NETCOREAPP1_1
                 System.Threading.Tasks.TaskScheduler.UnobservedTaskException += (s, e) =>
                 {
@@ -69,7 +69,7 @@
                     throw new Exception("Timed out waiting for unhandled exception.");
 #endif // DEBUG
                 }
-                //Delay(2000);
+                //Delay(2000)
             }
             finally
             {
