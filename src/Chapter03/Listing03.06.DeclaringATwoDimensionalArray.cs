@@ -4,9 +4,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_31
     {
         public static void Main()
         {
-            // | | 
-            // ---+---+---// | | 
-            // ---+---+---// | | 
+            //    |   | 
+            // ---+---+--- 
+            //    |   | 
+            // ---+---+---
+            //    |   | 
             int[,] cells;
         }
     }

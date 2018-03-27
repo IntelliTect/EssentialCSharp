@@ -21,7 +21,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_54
             System.Array.Reverse(temp);
 
             // Convert the array back to a string and
-            // check if reverse string is the same.
+            // check if reverse string is the same
             if(reverse == new string(temp))
             {
                 System.Console.WriteLine(
