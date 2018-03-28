@@ -1,4 +1,4 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_05
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_05
 {
     class GPSCoordinates
     {
