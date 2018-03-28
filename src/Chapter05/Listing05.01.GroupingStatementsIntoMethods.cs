@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_01
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_01
 {
     public class LineCount
     {
