@@ -1,7 +1,7 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_10
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_10
 {
     using System;
-    using Listing07_02;
+    using Listing08_02;
 
     class Program
     {
