@@ -25,7 +25,7 @@
         }
     }
 
-    public struct Coordinate
+    public struct Coordinate : IEquatable<Coordinate>
     {
         public Coordinate(Longitude longitude, Latitude latitude)
         {
