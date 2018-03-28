@@ -1,6 +1,6 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_11
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_11
 {
-    using Listing07_02;
+    using Listing08_02;
 
     interface IPerson
     {

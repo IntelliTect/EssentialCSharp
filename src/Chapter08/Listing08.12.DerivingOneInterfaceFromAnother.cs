@@ -1,6 +1,6 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_12
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_12
 {
-    using Listing07_09;
+    using Listing08_09;
 
     interface IDistributedSettingsProvider : ISettingsProvider
     {
