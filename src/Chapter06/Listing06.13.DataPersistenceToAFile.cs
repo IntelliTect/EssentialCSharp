@@ -1,8 +1,8 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_13
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_13
 {
     // IO namespace
     using System.IO;
-    using Listing05_12;
+    using Listing06_12;
 
     class DataStorage
     {

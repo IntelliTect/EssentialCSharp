@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_46
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_47
 {
     // File: Program1.cs
     partial class Program

@@ -1,7 +1,7 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_29
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_29
 {
     using System.Collections.Generic;
-    using Listing05_25;
+    using Listing06_25;
 
     class Program
     {
