@@ -1,8 +1,8 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_45
 {
-    public class TicTacToe // Declares the TicTacToe class. 
+    public class TicTacToe // Declares the TicTacToe class
     {
-        public static void Main() // Declares the entry point of the program.
+        public static void Main() // Declares the entry point of the program
         {
             // Hardcode initial board as follows
             // ---+---+---
