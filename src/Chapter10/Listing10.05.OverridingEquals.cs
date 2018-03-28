@@ -1,4 +1,4 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_05
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_05
 {
     using System;
 
@@ -12,7 +12,7 @@
                 new Coordinate(new Longitude(48, 52),
                                 new Latitude(-2, -20));
 
-            // Value types will never be reference equal.
+            // Value types will never be reference equal
             if(Coordinate.ReferenceEquals(coordinate1,
                 coordinate1))
             {

@@ -1,6 +1,6 @@
 ﻿using Chapter09;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_17
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_17
 {
     /// <summary>
     /// DataStorage is used to persist and retrieve

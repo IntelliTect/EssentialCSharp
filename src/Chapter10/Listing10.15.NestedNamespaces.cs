@@ -1,4 +1,4 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_14
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_14
 {
     // Define the namespace AddisonWesley
     namespace AddisonWesley

@@ -1,6 +1,6 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_23
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23
 {
-    using AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_21;
+    using AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_21;
 
     class DataCache
     {
@@ -18,9 +18,9 @@
     }
 }
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_23_PreCSharp6
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23_PreCSharp6
 {
-    using AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_21;
+    using AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_21;
 
     class DataCache
     {
