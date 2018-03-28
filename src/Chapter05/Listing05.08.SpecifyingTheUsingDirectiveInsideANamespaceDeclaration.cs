@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_07
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_07
 {
     using System;
 
@@ -7,7 +7,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_07
         public static void Main()
         {
             // No need to qualify Console with System
-            // because of the using directive above.
+            // because of the using directive above
             Console.WriteLine("Hello, my name is Inigo Montoya");
         }
     }
