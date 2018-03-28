@@ -12,7 +12,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_47
         {
             bool valid = false;
 
-            // Check the current player's input.
+            // Check the current player's input
             switch(input)
             {
                 case "1":
@@ -24,7 +24,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_47
                 case "7":
                 case "8":
                 case "9":
-                    // Save/move as the player directed.
+                    // Save/move as the player directed
                     // ...
                     valid = true;
                     break;
@@ -34,7 +34,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_47
                     break;
                 default:
                     // If none of the other case statements
-                    // is encountered then the text is invalid.
+                    // is encountered then the text is invalid
                     System.Console.WriteLine(
                     "\nERROR:  Enter a value from 1-9. "
                     + "Push ENTER to quit");

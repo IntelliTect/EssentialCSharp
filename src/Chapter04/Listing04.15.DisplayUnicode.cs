@@ -7,16 +7,16 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_15
             char current;
             int unicodeValue;
 
-            // Set the initial value of current.
+            // Set the initial value of current
             current = 'z';
 
             do
             {
-                // Retrieve the Unicode value of current.
+                // Retrieve the Unicode value of current
                 unicodeValue = current;
                 System.Console.Write($"{current}={unicodeValue}\t");
 
-                // Proceed to the previous letter in the alphabet;
+                // Proceed to the previous letter in the alphabet
                 current--;
             }
             while(current >= 'a');

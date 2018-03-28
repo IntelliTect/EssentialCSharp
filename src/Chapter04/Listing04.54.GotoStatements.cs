@@ -28,7 +28,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_52
                         }
                         else if(isFiltered)
                         {
-                            // Add option to list of filters.
+                            // Add option to list of filters
                             // ...
                         }
                         break;

@@ -15,7 +15,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_41
             input = decimal.Parse(System.Console.ReadLine());
 
             // Initialize current and previous to 1, the first
-            // two numbers in the Fibonacci series.
+            // two numbers in the Fibonacci series
             current = previous = 1;
 
             // While the current Fibonacci number in the series is

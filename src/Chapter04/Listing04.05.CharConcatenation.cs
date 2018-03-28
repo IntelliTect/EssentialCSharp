@@ -6,7 +6,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_05
         {
             int n = '3' + '4';
             char c = (char)n;
-            System.Console.WriteLine(c);  // Writes out g.
+            System.Console.WriteLine(c);  // Writes out g
         }
     }
 }

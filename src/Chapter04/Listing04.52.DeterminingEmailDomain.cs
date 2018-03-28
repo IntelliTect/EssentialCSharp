@@ -12,7 +12,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_50
 
             System.Console.Write("The email domain is: ");
 
-            // Iterate through each letter in the email address.
+            // Iterate through each letter in the email address
             foreach(char letter in email)
             {
                 if(!insideDomain)
