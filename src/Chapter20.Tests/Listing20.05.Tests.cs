@@ -3,9 +3,9 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_04.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_05.Tests
 {
-    using static Listing19_03.Tests.ProgramTests;
+    using static Listing20_03.Tests.ProgramTests;
 
     [TestClass]
     public class ProgramTests
@@ -14,7 +14,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_04.Tests
         [TestMethod]
         public void Unsynchronized()
         {
-            TestUnsychronizedIncrementDecrement(Program.Main);
+            TestUnsychronizedIncrementDecrement(()=>Program.Main().Wait());
         }
 
     }
