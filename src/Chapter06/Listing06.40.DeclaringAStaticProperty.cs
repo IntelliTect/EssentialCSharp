@@ -9,7 +9,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_40
     }
 }
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_39_PreCSharp6
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_40_PreCSharp6
 {
     class Employee
     {
