@@ -1,4 +1,4 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_01
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_01
 {
     // Use keyword struct to declare a value type 
     struct Angle

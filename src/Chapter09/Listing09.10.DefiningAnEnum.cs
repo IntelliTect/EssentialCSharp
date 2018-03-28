@@ -1,4 +1,4 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_10
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_10
 {
     enum ConnectionState
     {

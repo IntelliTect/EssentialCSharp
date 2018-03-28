@@ -1,6 +1,6 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_09
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_09
 {
-    using Listing08_10;
+    using Listing09_10;
 
     public class Program
     {
