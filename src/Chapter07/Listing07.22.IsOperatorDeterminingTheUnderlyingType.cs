@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_22
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_22
 {
     public class Program
     {
@@ -27,7 +27,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_22
 
         private static object Encrypt(string data)
         {
-            // See Chapter 19 for actual encryption implementation.
+            // See Chapter 19 for actual encryption implementation
             return $"ENCRYPTED <{data}> ENCRYPTED";
         }
     }

@@ -1,4 +1,4 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_12
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_12
 {
     public class Controller
     {

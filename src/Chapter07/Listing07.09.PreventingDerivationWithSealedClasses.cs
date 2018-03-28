@@ -1,4 +1,4 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_09
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_09
 {
     public sealed class CommandLineParser
     {

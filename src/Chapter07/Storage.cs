@@ -1,4 +1,4 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07
 {
     using System;
 
