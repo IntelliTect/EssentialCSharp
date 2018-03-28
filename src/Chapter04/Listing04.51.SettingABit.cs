@@ -7,8 +7,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_49
             string input = "";
 
             int shifter;  // The number of places to shift 
-                          // over to set a bit.
-            int position; // The bit that is to be set.
+                          // over to set a bit
+            int position; // The bit that is to be set
 
             // int.Parse() converts "input" to an integer.
             // "int.Parse(input) - 1" because arrays 

@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_10
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_10
 {
     using System;
     using System.IO;
@@ -16,7 +16,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_10
             switch(args.Length)
             {
                 default:
-                    // Exactly two arguments must be specified; give an error.
+                    // Exactly two arguments must be specified; give an error
                     Console.WriteLine(
                         "ERROR:  You must specify the "
                         + "URL and the file name");

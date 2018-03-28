@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_07A
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_07A
 {
     using static System.Console;
 

@@ -1,4 +1,4 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_19
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_19
 {
     using System;
     using static System.Environment;

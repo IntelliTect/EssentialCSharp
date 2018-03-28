@@ -1,4 +1,4 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_18
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_18
 {
     public abstract class PdaItem
     {

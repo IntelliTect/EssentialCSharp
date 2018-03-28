@@ -8,7 +8,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_46
 
             bool valid = false;
 
-            // Check the current player's input.
+            // Check the current player's input
             if((input == "1") ||
                 (input == "2") ||
                 (input == "3") ||
@@ -19,7 +19,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_46
                 (input == "8") ||
                 (input == "9"))
             {
-                // Save/move as the player directed.
+                // Save/move as the player directed
                 // ...
 
                 valid = true;
