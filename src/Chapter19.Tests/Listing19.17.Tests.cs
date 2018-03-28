@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_17.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_17.Tests
 {
     using System.Text.RegularExpressions;
     using Microsoft.VisualStudio.TestTools.UnitTesting;

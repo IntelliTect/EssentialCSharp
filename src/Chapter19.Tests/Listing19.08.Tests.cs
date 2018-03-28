@@ -1,5 +1,5 @@
 ﻿
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_08.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_08.Tests
 {
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 

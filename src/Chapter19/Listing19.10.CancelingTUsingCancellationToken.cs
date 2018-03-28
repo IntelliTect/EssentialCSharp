@@ -1,4 +1,4 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_10
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_10
 {
     using System;
     using System.Threading;

@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_21
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_21
 {
     using System.Diagnostics;
     using System.Threading;
