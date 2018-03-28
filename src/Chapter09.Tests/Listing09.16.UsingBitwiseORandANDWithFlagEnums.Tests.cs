@@ -3,7 +3,7 @@ using System;
 using System.IO;
 
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_16.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_16.Tests
 {
     [TestClass]
     public class ProgramTests
