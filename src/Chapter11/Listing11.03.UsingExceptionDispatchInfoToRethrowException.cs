@@ -1,4 +1,4 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_03
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter11.Listing11_03
 {
 #pragma warning disable 0168 // Disabled warning for unused variables for elucidation
     using System;
