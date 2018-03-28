@@ -1,4 +1,4 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_17A
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_17A
 {
     using System;
     using System.IO;
@@ -9,10 +9,10 @@
         {
             Employee employee = new Employee();
 
-            // Call the FirstName property's setter.
+            // Call the FirstName property's setter
             employee.FirstName = "Inigo";
 
-            // Call the FirstName property's getter.
+            // Call the FirstName property's getter
             System.Console.WriteLine(employee.FirstName);
         }
     }
