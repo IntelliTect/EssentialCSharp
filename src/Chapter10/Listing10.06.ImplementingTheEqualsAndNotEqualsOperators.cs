@@ -1,4 +1,4 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_06
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_06
 {
     public sealed class ProductSerialNumber
     {

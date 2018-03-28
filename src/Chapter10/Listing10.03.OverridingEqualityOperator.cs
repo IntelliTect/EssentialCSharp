@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_03
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_03
 {
-    using AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_06;
+    using AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_06;
 
     public class Program
     {

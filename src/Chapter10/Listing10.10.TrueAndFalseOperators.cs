@@ -1,4 +1,4 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_10
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_10
 {
     public struct Example
     {
