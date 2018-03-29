@@ -1,6 +1,6 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_03.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_03.Tests
 {
     [TestClass]
     public class ProgramTests
