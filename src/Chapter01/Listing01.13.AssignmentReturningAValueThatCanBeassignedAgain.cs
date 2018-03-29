@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_12
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_13
 {
     public class MiracleMax
     {
