@@ -6,12 +6,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_04.Tests
     public class ProgramTests
     {
         [TestMethod]
-        public void Main_GiveNone_GetZero()
+        public void Main_InigoHello()
         {
-            int expected = 0;
-            int value = Program.Main(new string[0]);
+            const string expected = @"Hello, My name is Inigo Montoya";
 
-            Assert.AreEqual(expected, value);
+            IntelliTect.TestTools.Console.ConsoleAssert.Expect(
+                expected, Program.Main);
         }
     }
 }
