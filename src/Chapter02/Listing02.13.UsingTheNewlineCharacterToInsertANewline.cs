@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_11
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_13
 {
     public class DuelOfWits
     {

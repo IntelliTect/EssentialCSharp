@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_05B.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_06.Tests
 {
     [TestClass]
     public class SingleQuoteTests

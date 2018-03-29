@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_12
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_14
 {
     public class Triangle
     {

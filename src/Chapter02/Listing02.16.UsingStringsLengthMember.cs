@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_13
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_16
 {
     public class PalindromeLength
     {

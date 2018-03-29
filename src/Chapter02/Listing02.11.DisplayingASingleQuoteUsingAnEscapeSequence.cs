@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_09
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_11
 {
     public class SingleQuote
     {
