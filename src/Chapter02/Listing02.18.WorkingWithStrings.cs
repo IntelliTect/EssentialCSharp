@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_15
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_18
 {
     public class Uppercase
     {
