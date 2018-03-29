@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_43
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_18
 {
     public class Program
     {
@@ -8,7 +8,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_43
                 "C#", "COBOL", "Java",
                 "C++", "Visual Basic", "Pascal",
                 "Fortran", "Lisp", "J#"};
-            // Retrieve 5th item in languages array (Visual Basic)
+            // Retrieve 5th item in languages array (Java)
             string language = languages[4];
         }
     }
