@@ -1,4 +1,4 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_12
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_13
 {
     public struct Coordinate
     {

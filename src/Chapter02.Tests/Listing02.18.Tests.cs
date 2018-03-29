@@ -3,17 +3,17 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_18.Tests
 {
     [TestClass]
-    public class ProgramTests
+    public class UppercaseTests
     {
         [TestMethod]
-        public void Main_WriteInventions()
+        public void Main_InputLorem_OutputIsCapitalized()
         {
             const string expected =
-@"Bifocals (1784)
-Phonograph (1877)";
+@"Enter text: <<Lorem
+>>LOREM";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, Program.Main);
+                expected, Uppercase.Main);
         }
     }
 }

@@ -3,17 +3,15 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_13.Tests
 {
     [TestClass]
-    public class PalindromeLengthTests
+    public class DuelOfWitsTests
     {
         [TestMethod]
-        public void Main_InputRacecar_OutputPalindromeSevenChars()
+        public void Main_WriteDizzyQuote()
         {
-            const string expected =
-@"Enter a palindrome: <<racecar
->>The palindrome ""racecar"" is 7 characters.";
+            const string expected = "\"Truly, you have a dizzying intellect.\"\n\"Wait 'til I get going!\"\n";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, PalindromeLength.Main);
+                expected, DuelOfWits.Main, replaceCRLF:false);
         }
     }
 }
