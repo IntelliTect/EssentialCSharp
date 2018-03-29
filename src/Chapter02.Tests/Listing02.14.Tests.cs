@@ -3,17 +3,21 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_14.Tests
 {
     [TestClass]
-    public class UppercaseTests
+    public class TriangleTests
     {
         [TestMethod]
-        public void Main_InputLorem_OutputNotCapitalized()
+        public void Main_WriteTriangle()
         {
-            const string expected =
-@"Enter text: <<Lorem
->>Lorem";
+            const string expected = @"begin
+                   /\
+                  /  \
+                 /    \
+                /      \
+               /________\
+end";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, Uppercase.Main);
+                expected, Triangle.Main);
         }
     }
 }

@@ -3,21 +3,17 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_12.Tests
 {
     [TestClass]
-    public class TriangleTests
+    public class SingleQuoteTests
     {
         [TestMethod]
-        public void Main_WriteTriangle()
+        public void Main_WriteSmiley()
         {
-            const string expected = @"begin
-                   /\
-                  /  \
-                 /    \
-                /      \
-               /________\
-end";
+            const string expected =
+@"'
+:)";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, Triangle.Main);
+                expected, SingleQuote.Main);
         }
     }
 }

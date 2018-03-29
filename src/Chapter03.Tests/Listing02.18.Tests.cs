@@ -1,14 +1,16 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_06.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_18.Tests
 {
     [TestClass]
-    public class SingleQuoteTests
+    public class ProgramTests
     {
         [TestMethod]
-        public void Main_BooleanWritesAsDecimal()
+        public void Main_WriteInventions()
         {
-            const string expected = "42";
+            const string expected =
+@"Bifocals (1784)
+Phonograph (1877)";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
                 expected, Program.Main);
