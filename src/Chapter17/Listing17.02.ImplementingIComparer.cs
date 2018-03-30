@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_02
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_02
 {
     using System;
     using System.Collections.Generic;
@@ -10,7 +10,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_02
             List<Contact> list = new List<Contact>();
 
             // Lists automatically expand as elements
-            // are added.
+            // are added
             list.Add(new Contact("Sneezy", "Dwarf"));
             list.Add(new Contact("Happy", "Dwarf"));
             list.Add(new Contact("Dopey", "Dwarf"));

@@ -1,7 +1,7 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_16
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_16
 {
     using System.Collections.Generic;
-    using Listing16_14;
+    using Listing17_14;
 
     public class BinaryTree<T> :
       IEnumerable<T>
@@ -14,17 +14,17 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_16
         #region IEnumerable<T>
         public IEnumerator<T> GetEnumerator()
         {
-            // Return the item at this node.
+            // Return the item at this node
             yield return Value;
 
-            // Iterate through each of the elements in the pair.
+            // Iterate through each of the elements in the pair
             foreach(BinaryTree<T> tree in SubItems)
             {
                 if(tree != null)
                 {
                     // Since each element in the pair is a tree,
                     // traverse the tree and yield each
-                    // element.
+                    // element
                     foreach(T item in tree)
                     {
                         yield return item;
