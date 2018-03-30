@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_13
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_13
 {
     using System;
     using System.Collections.Generic;
@@ -26,7 +26,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_13
         }
 
         // The IEnumerable.GetEnumerator method is also required 
-        // because IEnumerable<T> derives from IEnumerable.
+        // because IEnumerable<T> derives from IEnumerable
         System.Collections.IEnumerator
             System.Collections.IEnumerable.GetEnumerator()
         {

@@ -2,9 +2,9 @@ using System.Collections;
 
 namespace
 
-AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_19
+AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_19
 {
-    using Listing16_10;
+    using Listing17_10;
     using System;
     using System.Collections.Generic;
 

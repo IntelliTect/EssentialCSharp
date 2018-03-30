@@ -1,6 +1,6 @@
-using AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_10;
+using AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_10;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_11
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_11
 {
     using System;
 
@@ -13,7 +13,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_11
         }
 
         /// <summary>
-        /// Returns the BinaryTree<typeparamref name="T"/> at a particular location.
+        /// Returns the BinaryTree<typeparamref name="T"/> at a particular location
         /// </summary>
         /// <param name="branches">An array of PairItems 
         /// pointing to a particular branch.</param>
@@ -27,7 +27,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_11
                 BinaryTree<T> currentNode = this;
 
                 // Allow either an empty array or null
-                // to refer to the root node.
+                // to refer to the root node
                 int totalLevels = branches?.Length ?? 0;
                 int currentLevel = 0;
 
@@ -40,7 +40,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_11
                         branches[currentLevel]];
                     if (currentNode == null)
                     {
-                        // The binary tree at this location is null.
+                        // The binary tree at this location is null
                         throw new IndexOutOfRangeException();
                     }
                     currentLevel++;

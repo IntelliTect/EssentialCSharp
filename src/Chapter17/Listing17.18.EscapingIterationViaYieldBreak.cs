@@ -1,7 +1,7 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_18
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_18
 {
     using System;
-    using Listing16_10;
+    using Listing17_10;
     using System.Collections.Generic;
 
     public struct Pair<T> : IPair<T>, IEnumerable<T>
@@ -35,7 +35,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_18
         }
         #endregion Members
 
-        //Listing 16.18 Escaping Iteration via yield break
+        //Listing 17.18 Escaping Iteration via yield break
         public System.Collections.Generic.IEnumerable<T> GetNotNullEnumerator()
         {
             if((First == null) || (Second == null))
@@ -46,7 +46,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_18
             yield return First;
         }
 
-        //Listing 16.18 Escaping Iteration via yield break
+        //Listing 17.18 Escaping Iteration via yield break
 
 
         #region IEnumerable<T>

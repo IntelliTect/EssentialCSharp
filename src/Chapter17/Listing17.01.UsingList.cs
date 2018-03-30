@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_01
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_01
 {
     using System;
     using System.Collections.Generic;
@@ -10,7 +10,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_01
             List<string> list = new List<string>();
 
             // Lists automatically expand as elements
-            // are added.
+            // are added
             list.Add("Sneezy");
             list.Add("Happy");
             list.Add("Dopey");
