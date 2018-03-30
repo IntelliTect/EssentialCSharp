@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_11
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_14
 {
     using System;
     using System.Collections.Generic;
@@ -8,37 +8,21 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_11
     {
         public static void Main()
         {
-            GroupKeywords1();
+            KeywordProducts();
         }
 
-        private static void GroupKeywords1()
+        private static void KeywordProducts()
         {
-            IEnumerable<IGrouping<bool, string>> keywordGroups =
-                from word in Keywords
-                group word by word.Contains('*');
+            var numbers = new[] { 1, 2, 3 };
+            IEnumerable<(string Word, int Number)> product =
+                 from word in Keywords
+                 from number in numbers
+                 select (word, number);
 
-            IEnumerable<(bool IsContextualKeyword, IGrouping<bool, string> Items)> selection =
-                from groups in keywordGroups
-                select
-                (
-                    IsContextualKeyword: groups.Key,
-                    Items: groups
-                );
-
-
-            foreach (
-                (bool IsContextualKeyword, IGrouping<bool, string> Items)
-                    wordGroup in selection)
+            foreach ((string Word, int Number) value in product)
             {
-
-                Console.WriteLine(Environment.NewLine + "{0}:",
-                    wordGroup.IsContextualKeyword ?
-                        "Contextual Keywords" : "Keywords");
-
-                foreach (string keyword in wordGroup.Items)
-                {
-                    Console.Write(" " + keyword.Replace("*", null));
-                }
+                Console.WriteLine(
+                    $"({value.Word}, {value.Number})");
             }
         }
 

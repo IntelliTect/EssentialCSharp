@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 using System.Reflection;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_03.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_03.Tests
 {
     [TestClass]
     public class ProgramTests
@@ -14,13 +14,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_03.Tests
         [TestMethod]
         public void ProjectionWithLinqsSelect_TuplesWithinQueryExpressions()
         {
-            ProjectionWithLinqsSelect(Listing15_03.Program.Main);
+            ProjectionWithLinqsSelect(Listing16_03.Program.Main);
         }
 
         [TestMethod]
         public void AnonymousTypesWithinQueryExpressions_TuplesWithinQueryExpressions()
         {
-            ProjectionWithLinqsSelect(Listing15_03A.Program.Main);
+            ProjectionWithLinqsSelect(Listing16_03A.Program.Main);
         }
 
         public void ProjectionWithLinqsSelect(Action mainAction)

@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_11A
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_11
 {
     using System;
     using System.Collections.Generic;

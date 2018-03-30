@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_05.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_04.Tests
 {
 
     [TestClass]
@@ -9,14 +9,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_05.Tests
         [TestMethod]
         public void InvokingDelegateWithoutCheckingForNull()
         {
-            string expected = @"1. delegateInvocations=0
-2. Contextual keyword count=27
-3. delegateInvocations=27
-4. Contextual keyword count=27
-5. delegateInvocations=54
-6. delegateInvocations=81
-7. selectionCache count=27
-8. delegateInvocations=81";
+            string expected = @"Query created.
+ add* alias* ascending* async* await* by* descending* dynamic* equals* from* get* global* group* into* join* let* nameof* on* orderby* partial* remove* select* set* value* var* where* yield*";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected,
             () =>

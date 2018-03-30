@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_05
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_05
 {
     using System;
     using System.Collections.Generic;
@@ -52,7 +52,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_05
                 $"1. delegateInvocations={ delegateInvocations }");
 
             // Executing count should invoke func once for 
-            // each item selected.
+            // each item selected
             Console.WriteLine(
                 $"2. Contextual keyword count={ selection.Count() }");
 
@@ -60,7 +60,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_05
                 $"3. delegateInvocations={ delegateInvocations }");
 
             // Executing count should invoke func once for 
-            // each item selected.
+            // each item selected
             Console.WriteLine(
                 $"4. Contextual keyword count={ selection.Count() }");
 
@@ -68,13 +68,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_05
                 $"5. delegateInvocations={ delegateInvocations }");
 
             // Cache the value so future counts will not trigger
-            // another invocation of the query.
+            // another invocation of the query
             List<string> selectionCache = selection.ToList();
 
             Console.WriteLine(
                 $"6. delegateInvocations={ delegateInvocations }");
 
-            // Retrieve the count from the cached collection.
+            // Retrieve the count from the cached collection
             Console.WriteLine(
                 $"7. selectionCache count={ selectionCache.Count() }");
 
