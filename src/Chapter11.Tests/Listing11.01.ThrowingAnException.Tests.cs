@@ -18,6 +18,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter11.Listing11_01.Tests
         public void Parse_GivenOne_Returns1()
         {
             Assert.AreEqual<int>(1, TextNumberParser.Parse("one"));
-        }gi
+        }
     }
 }
