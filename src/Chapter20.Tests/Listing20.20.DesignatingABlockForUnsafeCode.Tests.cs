@@ -3,10 +3,10 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_20.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_20.Tests
 {
     [TestClass]
-    public class Listing20_20_Tests
+    public class Listing21_20_Tests
     {
 
         [TestMethod]
