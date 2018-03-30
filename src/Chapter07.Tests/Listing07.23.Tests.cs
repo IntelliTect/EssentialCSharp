@@ -11,13 +11,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_23.Tests
         [TestMethod]
         public void SaveWithDataTest()
         {
-            Listing06_22.Tests.ProgramTests.SaveWithData(Program.Save);
+            Listing07_22.Tests.ProgramTests.SaveWithData(Program.Save);
         }
 
         [TestMethod][ExpectedException(typeof(ArgumentNullException))]
         public void SaveWithNullTest()
         {
-            Listing06_22.Tests.ProgramTests.SaveWithNull(Program.Save);
+            Listing07_22.Tests.ProgramTests.SaveWithNull(Program.Save);
         }
     }
 }
