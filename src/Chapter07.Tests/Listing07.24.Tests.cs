@@ -3,7 +3,7 @@ using System;
 using System.IO;
 using System.Runtime.InteropServices;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_24.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_24.Tests
 {
     [TestClass]
     public class ProgramTests
