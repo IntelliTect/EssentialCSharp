@@ -1,7 +1,7 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_12
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_17
 {
     using System;
-    using Listing12_10;
+    using Listing13_11;
 
     public class Program
     {
@@ -17,7 +17,7 @@
             }
 
             DelegateSample.BubbleSort(items,
-                (first, second) =>
+                delegate(int first, int second)
                 {
                     return first < second;
                 }

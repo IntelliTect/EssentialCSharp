@@ -1,15 +1,11 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_19
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_11
 {
     using System;
-    using Listing12_10;
 
     public class DelegateSample
     {
-        #region Members
-        public delegate bool ComparisonHandler(int first, int second);
-
         public static void BubbleSort(
-            int[] items, ComparisonHandler comparisonMethod)
+            int[] items, Func<int, int, bool> compare)
         {
             int i;
             int j;
@@ -19,7 +15,7 @@
             {
                 for(j = 1; j <= i; j++)
                 {
-                    if(comparisonMethod(items[j - 1], items[j]))
+                    if(compare(items[j - 1], items[j]))
                     {
                         temp = items[j - 1];
                         items[j - 1] = items[j];
@@ -28,7 +24,22 @@
                 }
             }
         }
-        #endregion Members
+
+        public static bool GreaterThan(int first, int second)
+        {
+            return first > second;
+        }
+
+        // New method
+        public static bool AlphabeticalGreaterThan(
+            int first, int second)
+        {
+            int comparison;
+            comparison = (first.ToString().CompareTo(
+                second.ToString()));
+
+            return comparison > 0;
+        }
 
         public static void Main()
         {
@@ -37,25 +48,16 @@
 
             for(i = 0; i < items.Length; i++)
             {
-                Console.Write("Enter an integer:");
+                Console.Write("Enter an integer: ");
                 items[i] = int.Parse(Console.ReadLine());
             }
 
-            BubbleSort(items,
-                DelegateSample.__AnonymousMethod_00000000);
-
+            BubbleSort(items, AlphabeticalGreaterThan);
 
             for(i = 0; i < items.Length; i++)
             {
                 Console.WriteLine(items[i]);
             }
-
-        }
-
-        private static bool __AnonymousMethod_00000000(
-            int first, int second)
-        {
-            return first < second;
         }
     }
 }
