@@ -31,7 +31,7 @@
                 // Use Task.Factory.StartNew for .NET 4.0
                 Task task = Task.Run(() => DoWork());
 
-                // Block until DoWork() has started.
+                // Block until DoWork() has started
                 DoWorkSignaledResetEvent.Wait();
                 Console.WriteLine(
                     " Waiting while thread executes...");
