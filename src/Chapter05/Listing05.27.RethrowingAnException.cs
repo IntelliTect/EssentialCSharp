@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_24
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_27
 {
     using System;
 

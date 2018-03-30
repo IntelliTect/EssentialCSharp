@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_22
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_25
 {
     public class ExceptionHandling
     {
