@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_09
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_11
 {
     // Declare alias Console to refer to SubListing04_09.Console to 
     // avoid code ambiguity with System.Console

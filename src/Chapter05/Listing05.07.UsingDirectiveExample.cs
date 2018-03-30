@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_06
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_07
 {
     // The using directive imports all types from the 
     // specified namespace into the entire file
