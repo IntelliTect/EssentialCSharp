@@ -1,12 +1,9 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_03
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_07
 {
     using System;
-    using Listing12_07;
 
-    class DelegateSample
+     class DelegateSample
     {
-        // ...
-
         public static void BubbleSort(
             int[] items, Func<int, int, bool> compare)
         {
@@ -14,15 +11,13 @@
             int j;
             int temp;
 
-
-            if(compare == null)
-            {
-                throw new ArgumentNullException(nameof(compare));
-            }
-
             if(items == null)
             {
                 return;
+            }
+            if(compare == null)
+            {
+                throw new ArgumentNullException(nameof(compare));
             }
 
             for(i = items.Length - 1; i >= 0; i--)
@@ -38,6 +33,12 @@
                 }
             }
         }
+
+        public static bool GreaterThan(int first, int second)
+        {
+            return first > second;
+        }
+
         // ...
     }
 }

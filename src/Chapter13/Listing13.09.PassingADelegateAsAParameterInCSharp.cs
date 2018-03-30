@@ -1,24 +1,31 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_10
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_09
 {
     using System;
+    using Listing13_05;
 
     public class DelegateSample
     {
-
-        public delegate bool ComparisonHandler(int first, int second);
-
         public static void BubbleSort(
-            int[] items, ComparisonHandler comparisonMethod)
+            int[] items, Comparer compare)
         {
             int i;
             int j;
             int temp;
 
+            if(items == null)
+            {
+                return;
+            }
+            if(compare == null)
+            {
+                throw new ArgumentNullException(nameof(compare));
+            }
+
             for(i = items.Length - 1; i >= 0; i--)
             {
                 for(j = 1; j <= i; j++)
                 {
-                    if(comparisonMethod(items[j - 1], items[j]))
+                    if(compare(items[j - 1], items[j]))
                     {
                         temp = items[j - 1];
                         items[j - 1] = items[j];
@@ -33,29 +40,19 @@
             return first > second;
         }
 
-        // New method
-        public static bool AlphabeticalGreaterThan(
-            int first, int second)
-        {
-            int comparison;
-            comparison = (first.ToString().CompareTo(
-                second.ToString()));
-
-            return comparison > 0;
-        }
-
         public static void Main()
         {
             int i;
-            int[] items = new int[5];
+            int[] items = new int[100];
+            Random random = new Random();
 
             for(i = 0; i < items.Length; i++)
             {
-                Console.Write("Enter an integer: ");
-                items[i] = int.Parse(Console.ReadLine());
+                items[i] = random.Next(int.MinValue, int.MaxValue);
             }
 
-            BubbleSort(items, AlphabeticalGreaterThan);
+            BubbleSort(items,
+                new Comparer(GreaterThan));
 
             for(i = 0; i < items.Length; i++)
             {

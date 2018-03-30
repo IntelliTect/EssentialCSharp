@@ -1,4 +1,4 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_02
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_02
 {
     class SimpleSort2
     {
