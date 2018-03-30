@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_11A.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_12.Tests
 {
     [TestClass]
     public class TextNumberParserTests
