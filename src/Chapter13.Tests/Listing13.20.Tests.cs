@@ -1,30 +1,31 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_10.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_20.Tests
 {
     [TestClass]
-    public class DelegateSampleTests
+    public class ProgramTests
     {
         [TestMethod]
         public void Main()
         {
             string expected =
-            @"Enter an integer: <<1
->>Enter an integer: <<12
->>Enter an integer: <<13
->>Enter an integer: <<5
->>Enter an integer: <<4
->>1
-12
-13
+            @"Enter an integer:<<5
+>>Enter an integer:<<1
+>>Enter an integer:<<4
+>>Enter an integer:<<2
+>>Enter an integer:<<3
+>>5
 4
-5
+3
+2
+1
+Items were compared 10 times.
 ";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected,
             () =>
             {
-                DelegateSample.Main();
+                Program.Main();
             });
         }
     }
