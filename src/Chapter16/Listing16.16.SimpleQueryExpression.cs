@@ -1,29 +1,30 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_13
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_16
 {
     using System;
+    using System.Collections.Generic;
     using System.Linq;
 
     public class Program
     {
         public static void Main()
         {
-            KeywordCharacters();
+            ShowContextualKeywords1();
         }
 
-        private static void KeywordCharacters()
+        private static void ShowContextualKeywords1()
         {
-            var selection =
+            IEnumerable<string> selection =
                 from word in Keywords
-                from character in word
-                select character;
+                where word.Contains('*')
+                select word;
 
-            foreach(var wordCharacter in selection)
+            foreach(var selectionWord in selection)
             {
-                Console.WriteLine(wordCharacter);
+                Console.WriteLine(Environment.NewLine + selectionWord);
             }
         }
 
-        public static string[] Keywords = {
+        private static string[] Keywords = {
             "abstract", "add*", "alias*", "as", "ascending*",
             "async*", "await*", "base","bool", "break",
             "by*", "byte", "case", "catch", "char", "checked",

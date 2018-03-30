@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_09
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_08
 {
     using System;
     using System.Collections.Generic;
@@ -9,29 +9,27 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_09
     {
         public static void Main()
         {
-            ListByFileSize3(Directory.GetCurrentDirectory(), "*");
+            ListByFileSize2(Directory.GetCurrentDirectory(), "*");
         }
 
-        static void ListByFileSize3(
+        static void ListByFileSize2(
             string rootDirectory, string searchPattern)
         {
             IEnumerable<FileInfo> files =
-                from fileName in Directory.GetFiles(
+                from fileName in Directory.EnumerateFiles(
                     rootDirectory, searchPattern)
-                let file = new FileInfo(fileName)
-                orderby file.Length, fileName
-                select file;
-
+                orderby new FileInfo(fileName).Length, fileName
+                select new FileInfo(fileName);
 
             foreach(FileInfo file in files)
             {
-                //  As simplification, current directory is
-                //  assumed to be a subdirectory of
+                //  As a simplification, the current directory 
+                //  is assumed to be a subdirectory of
                 //  rootDirectory
                 string relativePath = file.FullName.Substring(
                     Directory.GetCurrentDirectory().Length);
-                Console.WriteLine( 
-                    $".{ relativePath }({ file.Length })" );
+                Console.WriteLine(
+                    $".{ relativePath }({ file.Length })");
             }
         }
     }

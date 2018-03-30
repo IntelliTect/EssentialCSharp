@@ -4,8 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_07.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_08.Tests
 {
     [TestClass]
     public class ProgramTests
@@ -21,19 +22,21 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_07.Tests
 
             int expectedItemCount = Directory.EnumerateFiles(
                 Directory.GetCurrentDirectory(), "*").Count();
-            string expectedPattern = $@"{ Directory.GetCurrentDirectory() }{Path.DirectorySeparatorChar}*";
-
+            string expectedPattern = $@".{Path.DirectorySeparatorChar}*(*)";
+            
             string output = IntelliTect.TestTools.Console.ConsoleAssert.Execute(null, () =>
             {
                 Program.Main();
             });
 
-            IEnumerable<string> outputItems = output.Split('\n');
+            IEnumerable<string> outputItems = output.Split(
+                new string[] { Environment.NewLine }, StringSplitOptions.None);
 
             Assert.AreEqual(expectedItemCount, outputItems.Count());
             foreach (string item in outputItems)
             {
-                Assert.IsTrue(item.IsLike(expectedPattern));
+                Assert.IsTrue(item.IsLike(expectedPattern),
+                    $"{item} is not like {expectedPattern}");
             }
         }
     }

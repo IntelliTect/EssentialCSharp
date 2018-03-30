@@ -1,47 +1,29 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_04
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_13
 {
     using System;
-    using System.Collections.Generic;
     using System.Linq;
 
     public class Program
     {
         public static void Main()
         {
-            ShowContextualKeywords2();
+            KeywordCharacters();
         }
 
-        private static void ShowContextualKeywords2()
+        private static void KeywordCharacters()
         {
-            IEnumerable<string> selection = from word in Keywords
-                                            where IsKeyword(word)
-                                            select word;
-            Console.WriteLine("Query created.");
-            foreach(string keyword in selection)
+            var selection =
+                from word in Keywords
+                from character in word
+                select character;
+
+            foreach(var wordCharacter in selection)
             {
-                // No space output here. 
-                Console.Write(keyword);
+                Console.WriteLine(wordCharacter);
             }
         }
 
-        // The side effect of console output is included 
-        // in the predicate to demonstrate deferred execution;
-        // predicates with side effects are a poor practice in
-        // production code. 
-        private static bool IsKeyword(string word)
-        {
-            if(word.Contains('*'))
-            {
-                Console.Write(" ");
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-
-        private static string[] Keywords = {
+        public static string[] Keywords = {
             "abstract", "add*", "alias*", "as", "ascending*",
             "async*", "await*", "base","bool", "break",
             "by*", "byte", "case", "catch", "char", "checked",

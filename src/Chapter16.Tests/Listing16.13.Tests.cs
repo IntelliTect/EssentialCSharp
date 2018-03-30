@@ -2,7 +2,7 @@
 using System.Linq;
 using System;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_13.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_13.Tests
 {
 
     [TestClass]

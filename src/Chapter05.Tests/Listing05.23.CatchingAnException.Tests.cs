@@ -2,7 +2,7 @@
 using System.IO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_20.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_23.Tests
 {
     [TestClass]
     public class ExceptionHandlingTests
