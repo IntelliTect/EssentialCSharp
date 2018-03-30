@@ -2,6 +2,43 @@ Set-StrictMode -Version Latest
 
 $script:listingNameRegEx = "Listing(?<Chapter>\d\d)\.(?<Listing>\d\d)(?<Suffix>.*)";
 
+<#
+$chapterNumber = '19'
+$listingUpdateData=  dir ".\Chapter$chapterNumber\",".\Chapter$chapterNumber.Tests\" *.cs   | ?{ $fileName=$_.FullName;$_.name -match $listingNameRegEx } | %{
+  $fileNameMatches = $Matches
+  Get-Content -Path $_.fullname | ?{ $_ -like '*namespace *' } | %{
+      if($_ -match 'namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter(?<Chapter>\d\d)\.Listing(?<Chapter>\d\d)_(?<Listing>\d\d)(?<Suffix>.*)') {
+          if( ($fileNameMatches.Chapter -ne $Matches.Chapter) -or ($fileNameMatches.Listing -ne $Matches.Listing) ) {
+              #Write-Host -ForegroundColor Yellow $_
+              #Write-Host "$($fileNameMatches.Chapter).$($fileNameMatches.Listing) != $($Matches.Chapter).$($Matches.Listing)"
+              #Update-ListingNumberInContent -Path $fileName -ChapterNumber $Matches.Chapter -NewChapterNumber `
+              #    $fileNameMatches.Chapter -ListingNumber $Matches.Listing -NewListingNumber $fileNameMatches.Listing
+              [PSCustomObject]@{
+                   FileName     = $fileName
+                   NewChapter   = $fileNameMatches.Chapter
+                   OldChapter   = $Matches.Chapter
+                   NewListing   = $fileNameMatches.Listing
+                   OldListing   = $Matches.Listing
+              }
+          }
+          else {
+              Write-Host $fileName
+          }
+      }
+      else {
+             Write-Host $_ -ForegroundColor red
+      }
+  }
+}
+
+$ListingUpdateData | %{ Update-ListingNumberInContent -Path $_.FileName -ChapterNumber $_.OldChapter -NewChapterNumber $_.NewChapter `
+       -ListingNumber $_.OldListing -NewListingNumber $_.NewListing
+}
+
+
+#>
+
+
 Function script:Move-GitFile {
     [CmdletBinding(SupportsShouldProcess=$True)] 
     param(
