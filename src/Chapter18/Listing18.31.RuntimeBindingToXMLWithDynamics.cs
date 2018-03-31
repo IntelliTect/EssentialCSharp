@@ -1,7 +1,7 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_31
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_31
 {
     using System;
-    using Listing17_32;
+    using Listing18_32;
     public class Program
     {
         public static void Main()

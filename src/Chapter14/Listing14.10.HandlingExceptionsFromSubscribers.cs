@@ -1,8 +1,8 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_10
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_10
 {
     using System;
     using System.Collections.Generic;
-    using Listing13_01;
+    using Listing14_01;
 
     public class Thermostat
     {
