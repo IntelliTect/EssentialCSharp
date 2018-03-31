@@ -1,7 +1,7 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter11.Listing11_43
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_43
 {
-    using Chapter07.Listing07_02;
-    using Chapter07.Listing07_11;
+    using Chapter08.Listing08_02;
+    using Chapter08.Listing08_11;
 
     interface IReadOnlyPair<out T>
     {

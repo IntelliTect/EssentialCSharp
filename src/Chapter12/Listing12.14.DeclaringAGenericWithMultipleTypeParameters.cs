@@ -1,4 +1,4 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter11.Listing11_14
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_14
 {
     interface IPair<TFirst, TSecond>
     {

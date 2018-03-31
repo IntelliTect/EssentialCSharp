@@ -1,4 +1,4 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter11.Listing11_23
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_23
 {
     public class EntityDictionary<TKey, TValue>
         : System.Collections.Generic.Dictionary<TKey, TValue>
