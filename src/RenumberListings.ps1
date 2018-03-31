@@ -1,6 +1,21 @@
 Set-StrictMode -Version Latest
 
-$script:listingNameRegEx = "Listing(?<Chapter>\d\d)\.(?<Listing>\d\d)(?<Suffix>.*)";
+$script:listingNameRegEx = 'Listing(?<Chapter>\d\d)\.(?<Listing>\d\d\w?)\.(?<Suffix>.*)';
+$script:namespaceRegex = '\s?namespace\sAddisonWesley.Michaelis.EssentialCSharp.Chapter(?<Chapter>\d\d)\.Listing(?<Chapter>\d\d)_(?<Listing>\d\d\w?)(?<Suffix>.*)'
+
+Function PadNumber {
+    [CmdletBinding()]
+    param(
+        [string]$number
+    )
+
+    if($number -match '(?<Number>\d?\d)(?<Suffix>.*)') {
+        return "{0:D2}$($Matches.Suffix)" -f ([int]$Matches.Number) 
+    }
+    else {
+        throw "Unable to Pad $Number"
+    }
+}
 
 <#
 $chapterNumber = '19'
@@ -121,7 +136,55 @@ Function script:Update-ListingNumberInContent {
 
 }
 
-Function Update-CodeListingNumber {
+Function Update-CodechapterListingNumber {
+    [CmdletBinding(SupportsShouldProcess=$True)] 
+    param(
+        [Parameter(ParameterSetName='files')][string]$path,
+        [string]$NewChapterNumber,
+        [string]$NewListingNumber
+    )
+
+    $NewChapterNumber = PadNumber $NewChapterNumber
+    $NewListingNumber = PadNumber $NewListingNumber
+
+    # Regex Replace would be preferable but require more experiment.
+    $file=Get-Item -path $path
+    [string]$namespaceMessage = "Updating Namespace: "
+    $newContent = Get-Content -Path $file.FullName | %{ 
+        if( ($_ -match $namespaceRegex) -and 
+            ( ($NewChapterNumber -ne $Matches.Chapter) -or ($NewListingNumber -ne $Matches.Listing) )
+        ) {
+            $newNamespaceLine = ($_ -replace "Chapter$($Matches.Chapter)","Chapter$NewChapterNumber" `
+                -replace "Listing$($Matches.Chapter).$($Matches.Listing)","Listing$NewChapterNumber.$NewListingNumber")
+            $namespaceMessage = $namespaceMessage + "$_ => $newNamespaceLine"
+            Write-Output $newNamespaceLine
+        }
+        else {
+            Write-Output $_
+        }
+    }
+    
+        
+    if($file.Name -match $listingNameRegEx) {
+        $fileNameMatches = $Matches
+        $newFileName = $file.FullName -replace "Chapter$($fileNameMatches.Chapter)","Chapter$NewChapterNumber" `
+            -replace "Listing$($fileNameMatches.Chapter).$($fileNameMatches.Listing)","Listing$NewChapterNumber.$NewListingNumber"
+        
+        # $message = "Move-CodeListingFile -path $($file.FullName) -NewChapterNumber $NewChapterNumber -NewListingNumber $NewListingNumber"
+        # $PSCmdlet.ShouldProcess($message, $message, "Move-CodeListingFile") > $null          
+        if($namespaceMessage -and $PSCmdlet.ShouldProcess($namespaceMessage, $namespaceMessage, "Move-CodeListingFile") ) {
+            $newContent | Set-Content -Path $file.FullName
+        }
+        if($file.FullName -ne $newFileName) {
+            Move-GitFile -oldFileName $file.FullName -newFileName $newFileName
+        }
+    }
+    else {
+        throw "$($_.Name) does not match the regular expression '$listingNameRegEx'"
+    }
+}
+
+Function Update-CodeListingSequence {
     [CmdletBinding(SupportsShouldProcess=$True)] 
     param(
         [Parameter(Mandatory)][string]$ChapterNumber,
@@ -148,20 +211,20 @@ Function Update-CodeListingNumber {
                 }
             }
     }
+    $listingNumbers = @($ListingNumber)
 
-    
-    if($listingNumber) {
-        $listingNumbers = @($ListingNumber)
-        if(!$NewListingNumber) {
-            $newListingNumbers = $listingNumbers
-        }
-        elseif($listingNumbers.Length -ne $newListingNumbers.Length) {
+    if(!$NewListingNumber) {
+        $newListingNumbers = $listingNumbers
+    }
+    else {
+        $newListingNumbers = @($newListingNumber)
+        if($listingNumbers.Length -ne $newListingNumbers.Length) {
             throw "The number of items in ListingNumber is different from the number of items in NewListingNumber"
         }
-
-        $listingNumbers = $listingNumbers | ForEach-Object{ $_.PadLeft(2, '0') }
-        $newListingNumbers = $newListingNumbers | ForEach-Object{ $_.ToString().PadLeft(2, '0') }
     }
+
+    $listingNumbers = @($listingNumbers | ForEach-Object{ $_.PadLeft(2, '0') })
+    $newListingNumbers = @($newListingNumbers | ForEach-Object{ $_.ToString().PadLeft(2, '0') })
 
     Function script:Update-InternalListingNumber {
         [CmdletBinding(SupportsShouldProcess=$true)]
@@ -181,14 +244,18 @@ Function Update-CodeListingNumber {
             if($IsIntermediateName.IsPresent) {
                 # We update the content during the Intermediate stage so that it runs during -Whatif scenario.
                 if(($ChapterNumber -ne $NewChapterNumber) -or ($PaddedListingNumber -ne $PaddedNewListingNumber) ) {
-                script:Update-ListingNumberInContent -Path $oldFilePath `
-                    -ChapterNumber $ChapterNumber -NewChapterNumber $NewChapterNumber `
-                    -ListingNumber $PaddedListingNumber -NewListingNumber $PaddedNewListingNumber
+                    script:Update-ListingNumberInContent -Path $oldFilePath `
+                        -ChapterNumber $ChapterNumber -NewChapterNumber $NewChapterNumber `
+                        -ListingNumber $PaddedListingNumber -NewListingNumber $PaddedNewListingNumber
                 }
-                $newFilePath = $oldFilePath -replace "Listing$ChapterNumber.$PaddedListingNumber","Listing$NewChapterNumber.TEMP.$PaddedListingNumber"
+                $newFilePath = $oldFilePath -replace `
+                    "Listing$ChapterNumber.$PaddedListingNumber","Listing$NewChapterNumber.TEMP.$PaddedListingNumber"
             } 
             else {
                 $newFilePath = $oldFilePath -replace "Listing$NewChapterNumber.TEMP.$PaddedListingNumber","Listing$NewChapterNumber.$PaddedNewListingNumber"
+            }
+            if($ChapterNumber -ne $NewChapterNumber) {
+                $newFilePath = $newFilePath -replace "Chapter$ChapterNumber","Chapter$NewChapterNumber"
             }
             $oldFilePath = $oldFilePath.Replace("$pwd",".")  #Shorten to use the relative path
             $newFilePath = $newFilePath.Replace("$pwd",".")  #Shorten to use the relative path
