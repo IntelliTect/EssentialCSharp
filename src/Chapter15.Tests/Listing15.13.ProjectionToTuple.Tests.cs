@@ -5,7 +5,7 @@ using System.Linq;
 using System.IO;
 using System;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_16.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_13.Tests
 {
     [TestClass]
     public class ProgramTests

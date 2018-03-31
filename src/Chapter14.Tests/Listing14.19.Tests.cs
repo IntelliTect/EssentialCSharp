@@ -1,9 +1,9 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_19.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_19.Tests
 {
-    using Listing13_19;
+    using Listing14_19;
 
     [TestClass]
     public class ProgramTests
