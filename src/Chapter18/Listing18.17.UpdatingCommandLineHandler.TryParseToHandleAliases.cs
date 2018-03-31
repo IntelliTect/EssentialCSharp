@@ -1,9 +1,9 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_16
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_17
 {
     using System;
     using System.Reflection;
     using System.Collections.Generic;
-    using Listing17_15;
+    using Listing18_16;
 
     public class CommandLineHandler
     {
