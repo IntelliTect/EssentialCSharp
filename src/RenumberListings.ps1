@@ -1,7 +1,7 @@
 Set-StrictMode -Version Latest
 
-$script:listingNameRegEx = 'Listing(?<Chapter>\d\d)\.(?<Listing>\d\d\w?)\.(?<Suffix>.*)';
-$script:namespaceRegex = '\s?namespace\sAddisonWesley.Michaelis.EssentialCSharp.Chapter(?<Chapter>\d\d)\.Listing(?<Chapter>\d\d)_(?<Listing>\d\d\w?)(?<Suffix>.*)'
+$script:listingNameRegEx = 'Listing(?<Chapter>\d\d)\.(?<Listing>\d\d[A-Za-z]*)\.(?<Suffix>.*)';
+$script:namespaceRegex = '\s?namespace\sAddisonWesley.Michaelis.EssentialCSharp.Chapter(?<Chapter>\d\d)\.Listing(?<Chapter>\d\d)_(?<Listing>\d\d[A-Za-z]*)(?<Suffix>.*)'
 
 Function PadNumber {
     [CmdletBinding()]
@@ -99,12 +99,48 @@ Function script:Update-ListingNumberInContent {
 
 }
 
+Function Get-CodechapterListingNumber {
+    [CmdletBinding()] 
+    param(
+        [ValidateScript({Test-Path $_ })][parameter(Mandatory, ValueFromPipeline, ValueFromPipelineByPropertyName)][string[]]$path
+    )
+    
+    PROCESS {
+        $paths = Get-Item -path $path
+
+        $paths | %{
+            $namespaceListing = Get-Content -Path $_.FullName | %{ 
+                if($_ -match $namespaceRegex) {
+                    Write-Output "$($Matches.Chapter).$($Matches.Listing)"
+                }
+            }
+
+
+
+            if($_.Name -match $listingNameRegEx) {
+                $fileListing = "$($Matches.Chapter).$($Matches.Listing)"
+            }
+            else {
+                Write-Warning "$($_.Name) does not match $listingNameRegEx"
+                $fileListing=$null
+            }
+
+            Write-Output ([PSCustomObject]@{
+                Name = $_.Name;
+                FileChapterListing=$fileListing
+                NamespaceChapterListing=$namespaceListing;
+            })
+        }
+    }
+}
+
+
 Function Update-CodechapterListingNumber {
     [CmdletBinding(SupportsShouldProcess=$True)] 
     param(
-        [Parameter(ParameterSetName='files')][string]$path,
-        [string]$NewChapterNumber,
-        [string]$NewListingNumber
+        [ValidateScript({Test-Path $_ })][parameter(Mandatory,ValueFromPipelineByPropertyName)][string]$path,
+        [parameter(Mandatory,ValueFromPipelineByPropertyName)][string]$NewChapterNumber,
+        [parameter(Mandatory,ValueFromPipelineByPropertyName)][string]$NewListingNumber
     )
 
     $NewChapterNumber = PadNumber $NewChapterNumber
