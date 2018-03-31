@@ -163,18 +163,15 @@ Function Update-CodechapterListingNumber {
             Write-Output $_
         }
     }
-    
+    if($namespaceMessage -and $PSCmdlet.ShouldProcess($namespaceMessage, $namespaceMessage, "Move-CodeListingFile") ) {
+        $newContent | Set-Content -Path $file.FullName
+    }
         
     if($file.Name -match $listingNameRegEx) {
         $fileNameMatches = $Matches
         $newFileName = $file.FullName -replace "Chapter$($fileNameMatches.Chapter)","Chapter$NewChapterNumber" `
-            -replace "Listing$($fileNameMatches.Chapter).$($fileNameMatches.Listing)","Listing$NewChapterNumber.$NewListingNumber"
+            -replace "Listing$($fileNameMatches.Chapter).$($fileNameMatches.Listing)","Listing$NewChapterNumber.$NewListingNumber"         
         
-        # $message = "Move-CodeListingFile -path $($file.FullName) -NewChapterNumber $NewChapterNumber -NewListingNumber $NewListingNumber"
-        # $PSCmdlet.ShouldProcess($message, $message, "Move-CodeListingFile") > $null          
-        if($namespaceMessage -and $PSCmdlet.ShouldProcess($namespaceMessage, $namespaceMessage, "Move-CodeListingFile") ) {
-            $newContent | Set-Content -Path $file.FullName
-        }
         if($file.FullName -ne $newFileName) {
             Move-GitFile -oldFileName $file.FullName -newFileName $newFileName
         }
