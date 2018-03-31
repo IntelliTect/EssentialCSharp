@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_09
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_11
 {
     public class DescriptionAttribute : Attribute
     {

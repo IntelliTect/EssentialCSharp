@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_32
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_32
 {
     using System.Dynamic;
     using System.Linq;

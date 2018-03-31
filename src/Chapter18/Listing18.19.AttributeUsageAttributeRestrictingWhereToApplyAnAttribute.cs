@@ -1,6 +1,6 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_18
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_19
 {
-    using Listing17_17;
+    using Listing18_18;
 
     // ERROR: The attribute usage is restricted to properties
     //[CommandLineSwitchAlias("?")] //will not compile if uncommented

@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_08
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_08
 {
     using System;
 
@@ -7,16 +7,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_08
         [CommandLineSwitchAlias("?")]
         public bool Help { get; set; }
 
-        //Two Ways to do it
-        //[CommandLineSwitchRequired]
-        //[CommandLineSwitchAlias("FileName")]
-        [CommandLineSwitchRequired,
-        CommandLineSwitchAlias("FileName")]
+        [CommandLineSwitchRequired]
         public string Out { get; set; }
 
         public System.Diagnostics.ProcessPriorityClass Priority
-            { get; set; } = 
-                System.Diagnostics.ProcessPriorityClass.Normal;
+        { get; set; } = 
+            System.Diagnostics.ProcessPriorityClass.Normal;
+
+
     }
 
     internal class CommandLineSwitchRequiredAttribute : Attribute
@@ -31,5 +29,4 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_08
             //not implimented
         }
     }
-
 }
