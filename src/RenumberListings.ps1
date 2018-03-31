@@ -118,7 +118,7 @@ Function Update-CodechapterListingNumber {
             ( ($NewChapterNumber -ne $Matches.Chapter) -or ($NewListingNumber -ne $Matches.Listing) )
         ) {
             $newNamespaceLine = ($_ -replace "Chapter$($Matches.Chapter)","Chapter$NewChapterNumber" `
-                -replace "Listing$($Matches.Chapter).$($Matches.Listing)","Listing$NewChapterNumber.$NewListingNumber")
+                -replace "Listing$($Matches.Chapter)_$($Matches.Listing)","Listing$($NewChapterNumber)_$NewListingNumber")
             $namespaceMessage = $namespaceMessage + "$_ => $newNamespaceLine"
             Write-Output $newNamespaceLine
         }
