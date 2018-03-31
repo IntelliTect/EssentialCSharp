@@ -128,9 +128,10 @@ Function Update-CodechapterListingNumber {
     }
     if($namespaceMessage -and $PSCmdlet.ShouldProcess($namespaceMessage, $namespaceMessage, "Move-CodeListingFile") ) {
         $newContent | Set-Content -Path $file.FullName
-        Add-GitFile -path $file.FullName
+        Add-GitFile -path $file.FullName 
     }
         
+    
     if($file.Name -match $listingNameRegEx) {
         $fileNameMatches = $Matches
         $newFileName = $file.FullName -replace "Chapter$($fileNameMatches.Chapter)","Chapter$NewChapterNumber" `
