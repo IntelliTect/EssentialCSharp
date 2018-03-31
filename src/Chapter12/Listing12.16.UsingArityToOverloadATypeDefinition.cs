@@ -1,7 +1,7 @@
-﻿using System;
+using System;
 using System.Collections;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter11.Listing11_16
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_16
 {
     public class Tuple
     {

@@ -1,4 +1,4 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter11.Listing11_18
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_18
 {
     #pragma warning disable 0693 // Disabled warning due to nested type parameter
                                  // with overlapping name

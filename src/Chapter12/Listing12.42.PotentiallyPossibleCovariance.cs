@@ -1,4 +1,4 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter11.Listing11_42
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_42
 {
     interface IReadOnlyPair<T>
     {

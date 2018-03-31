@@ -1,4 +1,4 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter11.Listing11_44
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_44
 {
     class Fruit { }
 

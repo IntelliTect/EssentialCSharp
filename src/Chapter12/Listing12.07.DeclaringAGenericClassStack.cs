@@ -1,4 +1,4 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter11.Listing11_07
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_07
 {
     public class Stack<T>
     {

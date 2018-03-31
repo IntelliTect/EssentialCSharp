@@ -11,4 +11,7 @@
       <Link>Program.cs</Link>
     </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Chapter08\Chapter08.csproj" />
+  </ItemGroup>
 </Project>

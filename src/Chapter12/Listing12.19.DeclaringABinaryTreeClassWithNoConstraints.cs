@@ -1,6 +1,6 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter11.Listing11_19
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_19
 {
-    using Listing11_13;
+    using Listing12_13;
 
     public class BinaryTree<T>
     {
