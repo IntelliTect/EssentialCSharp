@@ -1,6 +1,6 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter11.Listing11_12
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_12
 {
-    using Listing11_08;
+    using Listing12_08;
 
     public struct Pair<T> : IPair<T>
     {

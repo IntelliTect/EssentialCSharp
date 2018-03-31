@@ -1,6 +1,6 @@
 using System;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_19
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_20
 {
     class Employee
     {

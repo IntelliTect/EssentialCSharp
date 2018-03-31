@@ -1,7 +1,7 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter11.Listing11_22
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_22
 {
     using System;
-    using Listing11_13;
+    using Listing12_13;
 
     public class BinaryTree<T>
         where T : System.IComparable<T>
