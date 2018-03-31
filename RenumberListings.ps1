@@ -1,43 +1,21 @@
 Set-StrictMode -Version Latest
 
-$script:listingNameRegEx = "Listing(?<Chapter>\d\d)\.(?<Listing>\d\d)(?<Suffix>.*)";
+$script:listingNameRegEx = 'Listing(?<Chapter>\d\d)\.(?<Listing>\d\d[A-Za-z]*)\.(?<Suffix>.*)';
+$script:namespaceRegex = '\s?namespace\sAddisonWesley.Michaelis.EssentialCSharp.Chapter(?<Chapter>\d\d)\.Listing(?<Chapter>\d\d)_(?<Listing>\d\d[A-Za-z]*)(?<Suffix>.*)'
 
-<#
-$chapterNumber = '19'
-$listingUpdateData=  dir ".\Chapter$chapterNumber\",".\Chapter$chapterNumber.Tests\" *.cs   | ?{ $fileName=$_.FullName;$_.name -match $listingNameRegEx } | %{
-  $fileNameMatches = $Matches
-  Get-Content -Path $_.fullname | ?{ $_ -like '*namespace *' } | %{
-      if($_ -match 'namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter(?<Chapter>\d\d)\.Listing(?<Chapter>\d\d)_(?<Listing>\d\d)(?<Suffix>.*)') {
-          if( ($fileNameMatches.Chapter -ne $Matches.Chapter) -or ($fileNameMatches.Listing -ne $Matches.Listing) ) {
-              #Write-Host -ForegroundColor Yellow $_
-              #Write-Host "$($fileNameMatches.Chapter).$($fileNameMatches.Listing) != $($Matches.Chapter).$($Matches.Listing)"
-              #Update-ListingNumberInContent -Path $fileName -ChapterNumber $Matches.Chapter -NewChapterNumber `
-              #    $fileNameMatches.Chapter -ListingNumber $Matches.Listing -NewListingNumber $fileNameMatches.Listing
-              [PSCustomObject]@{
-                   FileName     = $fileName
-                   NewChapter   = $fileNameMatches.Chapter
-                   OldChapter   = $Matches.Chapter
-                   NewListing   = $fileNameMatches.Listing
-                   OldListing   = $Matches.Listing
-              }
-          }
-          else {
-              Write-Host $fileName
-          }
-      }
-      else {
-             Write-Host $_ -ForegroundColor red
-      }
-  }
+Function PadNumber {
+    [CmdletBinding()]
+    param(
+        [string]$number
+    )
+
+    if($number -match '(?<Number>\d?\d)(?<Suffix>.*)') {
+        return "{0:D2}$($Matches.Suffix)" -f ([int]$Matches.Number) 
+    }
+    else {
+        throw "Unable to Pad $Number"
+    }
 }
-
-$ListingUpdateData | %{ Update-ListingNumberInContent -Path $_.FileName -ChapterNumber $_.OldChapter -NewChapterNumber $_.NewChapter `
-       -ListingNumber $_.OldListing -NewListingNumber $_.NewListing
-}
-
-
-#>
-
 
 Function script:Move-GitFile {
     [CmdletBinding(SupportsShouldProcess=$True)] 
@@ -121,7 +99,90 @@ Function script:Update-ListingNumberInContent {
 
 }
 
-Function Update-CodeListingNumber {
+Function Get-CodechapterListingNumber {
+    [CmdletBinding()] 
+    param(
+        [ValidateScript({Test-Path $_ })][parameter(Mandatory, ValueFromPipeline, ValueFromPipelineByPropertyName)][string[]]$path
+    )
+    
+    PROCESS {
+        $paths = Get-Item -path $path
+
+        $paths | %{
+            $namespaceListing = Get-Content -Path $_.FullName | %{ 
+                if($_ -match $namespaceRegex) {
+                    Write-Output "$($Matches.Chapter).$($Matches.Listing)"
+                }
+            }
+
+
+
+            if($_.Name -match $listingNameRegEx) {
+                $fileListing = "$($Matches.Chapter).$($Matches.Listing)"
+            }
+            else {
+                Write-Warning "$($_.Name) does not match $listingNameRegEx"
+                $fileListing=$null
+            }
+
+            Write-Output ([PSCustomObject]@{
+                Name = $_.Name;
+                FileChapterListing=$fileListing
+                NamespaceChapterListing=$namespaceListing;
+            })
+        }
+    }
+}
+
+
+Function Update-CodechapterListingNumber {
+    [CmdletBinding(SupportsShouldProcess=$True)] 
+    param(
+        [ValidateScript({Test-Path $_ })][parameter(Mandatory,ValueFromPipelineByPropertyName)][string]$path,
+        [parameter(Mandatory,ValueFromPipelineByPropertyName)][string]$NewChapterNumber,
+        [parameter(Mandatory,ValueFromPipelineByPropertyName)][string]$NewListingNumber
+    )
+
+    $NewChapterNumber = PadNumber $NewChapterNumber
+    $NewListingNumber = PadNumber $NewListingNumber
+
+    # Regex Replace would be preferable but require more experiment.
+    $file=Get-Item -path $path
+    [string]$namespaceMessage = "Updating Namespace: "
+    $newContent = Get-Content -Path $file.FullName | %{ 
+        if( ($_ -match $namespaceRegex) -and 
+            ( ($NewChapterNumber -ne $Matches.Chapter) -or ($NewListingNumber -ne $Matches.Listing) )
+        ) {
+            $newNamespaceLine = ($_ -replace "Chapter$($Matches.Chapter)","Chapter$NewChapterNumber" `
+                -replace "Listing$($Matches.Chapter)_$($Matches.Listing)","Listing$($NewChapterNumber)_$NewListingNumber")
+            $namespaceMessage = $namespaceMessage + "$_ => $newNamespaceLine"
+            Write-Output $newNamespaceLine
+        }
+        else {
+            Write-Output $_
+        }
+    }
+    if($namespaceMessage -and $PSCmdlet.ShouldProcess($namespaceMessage, $namespaceMessage, "Move-CodeListingFile") ) {
+        $newContent | Set-Content -Path $file.FullName
+        Add-GitFile -path $file.FullName 
+    }
+        
+    
+    if($file.Name -match $listingNameRegEx) {
+        $fileNameMatches = $Matches
+        $newFileName = $file.FullName -replace "Chapter$($fileNameMatches.Chapter)","Chapter$NewChapterNumber" `
+            -replace "Listing$($fileNameMatches.Chapter).$($fileNameMatches.Listing)","Listing$NewChapterNumber.$NewListingNumber"         
+        
+        if($file.FullName -ne $newFileName) {
+            Move-GitFile -oldFileName $file.FullName -newFileName $newFileName
+        }
+    }
+    else {
+        throw "$($_.Name) does not match the regular expression '$listingNameRegEx'"
+    }
+}
+
+Function Update-CodeListingSequence {
     [CmdletBinding(SupportsShouldProcess=$True)] 
     param(
         [Parameter(Mandatory)][string]$ChapterNumber,
@@ -148,20 +209,20 @@ Function Update-CodeListingNumber {
                 }
             }
     }
+    $listingNumbers = @($ListingNumber)
 
-    
-    if($listingNumber) {
-        $listingNumbers = @($ListingNumber)
-        if(!$NewListingNumber) {
-            $newListingNumbers = $listingNumbers
-        }
-        elseif($listingNumbers.Length -ne $newListingNumbers.Length) {
+    if(!$NewListingNumber) {
+        $newListingNumbers = $listingNumbers
+    }
+    else {
+        $newListingNumbers = @($newListingNumber)
+        if($listingNumbers.Length -ne $newListingNumbers.Length) {
             throw "The number of items in ListingNumber is different from the number of items in NewListingNumber"
         }
-
-        $listingNumbers = $listingNumbers | ForEach-Object{ $_.PadLeft(2, '0') }
-        $newListingNumbers = $newListingNumbers | ForEach-Object{ $_.ToString().PadLeft(2, '0') }
     }
+
+    $listingNumbers = @($listingNumbers | ForEach-Object{ $_.PadLeft(2, '0') })
+    $newListingNumbers = @($newListingNumbers | ForEach-Object{ $_.ToString().PadLeft(2, '0') })
 
     Function script:Update-InternalListingNumber {
         [CmdletBinding(SupportsShouldProcess=$true)]
@@ -181,14 +242,18 @@ Function Update-CodeListingNumber {
             if($IsIntermediateName.IsPresent) {
                 # We update the content during the Intermediate stage so that it runs during -Whatif scenario.
                 if(($ChapterNumber -ne $NewChapterNumber) -or ($PaddedListingNumber -ne $PaddedNewListingNumber) ) {
-                script:Update-ListingNumberInContent -Path $oldFilePath `
-                    -ChapterNumber $ChapterNumber -NewChapterNumber $NewChapterNumber `
-                    -ListingNumber $PaddedListingNumber -NewListingNumber $PaddedNewListingNumber
+                    script:Update-ListingNumberInContent -Path $oldFilePath `
+                        -ChapterNumber $ChapterNumber -NewChapterNumber $NewChapterNumber `
+                        -ListingNumber $PaddedListingNumber -NewListingNumber $PaddedNewListingNumber
                 }
-                $newFilePath = $oldFilePath -replace "Listing$ChapterNumber.$PaddedListingNumber","Listing$NewChapterNumber.TEMP.$PaddedListingNumber"
+                $newFilePath = $oldFilePath -replace `
+                    "Listing$ChapterNumber.$PaddedListingNumber","Listing$NewChapterNumber.TEMP.$PaddedListingNumber"
             } 
             else {
                 $newFilePath = $oldFilePath -replace "Listing$NewChapterNumber.TEMP.$PaddedListingNumber","Listing$NewChapterNumber.$PaddedNewListingNumber"
+            }
+            if($ChapterNumber -ne $NewChapterNumber) {
+                $newFilePath = $newFilePath -replace "Chapter$ChapterNumber","Chapter$NewChapterNumber"
             }
             $oldFilePath = $oldFilePath.Replace("$pwd",".")  #Shorten to use the relative path
             $newFilePath = $newFilePath.Replace("$pwd",".")  #Shorten to use the relative path
