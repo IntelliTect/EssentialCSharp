@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_03A
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_07
 {
 using System.ComponentModel;
 
