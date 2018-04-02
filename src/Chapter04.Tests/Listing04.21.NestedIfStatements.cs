@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_18.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_21.Tests
 {
     [TestClass]
     public class ProgramTests
@@ -9,11 +9,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_18.Tests
         public void MainTest()
         {
             const string expected =
-@"123, 124, 125
-126, 127, 127";
+@"<<9>>What is the maximum number of turns in tic-tac-toe? (Enter 0 to exit.): Correct, tic-tac-toe has a maximum of 9 turns.";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, IncrementExample.Main);
+                expected, TicTacToeTrivia.Main);
         }
     }
 }

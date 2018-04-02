@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_45
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_47
 {
     public class TicTacToe // Declares the TicTacToe class
     {

@@ -1,14 +1,15 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.IO;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_12.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_13.Tests
 {
     [TestClass]
     public class ProgramTests
     {
         [TestMethod]
-        public void Main_WriteSwappedVariables()
+        public void Main_WritePath()
         {
-            string view = @"first = ""goodbye"", second = ""hello""";
+            string view = $"C:{Path.DirectorySeparatorChar}{Path.Combine("Data", "index.html")}";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(view,
             () =>

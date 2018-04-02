@@ -1,6 +1,6 @@
 using System;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_25
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_25
 {
     public class Program
     {

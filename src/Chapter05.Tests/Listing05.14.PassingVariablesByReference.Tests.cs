@@ -1,14 +1,14 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_14A.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_14.Tests
 {
     [TestClass]
     public class ProgramTests
     {
         [TestMethod]
-        public void Main_InputInigoMontoya_WriteFullName()
+        public void Main_WriteSwappedVariables()
         {
-            string view = "Black";
+            string view = @"first = ""goodbye"", second = ""hello""";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(view,
             () =>

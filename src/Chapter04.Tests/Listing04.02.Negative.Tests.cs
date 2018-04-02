@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_24.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_02.Tests
 {
     [TestClass]
     public class ProgramTests
@@ -8,12 +8,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_24.Tests
         [TestMethod]
         public void MainTest()
         {
-            const string expected = 
-@"Enter the radius of the circle: <<3
->>The area of the circle is: 28.27";
+            const string expected = @"-18125876697430.99";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, CircleAreaCalculator.Main);
+                expected, Program.Main);
         }
     }
 }

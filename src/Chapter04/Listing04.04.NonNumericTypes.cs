@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_04
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_04
 {
     public class FortyTwo
     {

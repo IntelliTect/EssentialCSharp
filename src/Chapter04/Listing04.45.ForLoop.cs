@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_43
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_45
 {
     public class BinaryConverter
     {

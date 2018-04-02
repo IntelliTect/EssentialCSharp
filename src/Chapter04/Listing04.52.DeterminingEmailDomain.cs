@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_50
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_52
 {
     public class EmailDomain
     {
