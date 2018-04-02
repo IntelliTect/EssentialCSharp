@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_03
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_03
 {
     public class Division
     {

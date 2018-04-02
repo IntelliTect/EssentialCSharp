@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_21
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_21
 {
     public class TicTacToeTrivia
     {

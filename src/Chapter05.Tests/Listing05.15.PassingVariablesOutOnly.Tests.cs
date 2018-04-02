@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_13.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_15.Tests
 {
     [TestClass]
     public class ConvertToPhoneNumberTests
@@ -29,7 +29,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_13.Tests
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(view,
             () =>
             {
-                AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_13.ConvertToPhoneNumber.Main(args);
+                AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_15.ConvertToPhoneNumber.Main(args);
             });
         }
 
@@ -42,7 +42,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_13.Tests
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(view,
             () =>
             {
-                AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_13.ConvertToPhoneNumber.Main(args);
+                AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_15.ConvertToPhoneNumber.Main(args);
             });
         }
     }

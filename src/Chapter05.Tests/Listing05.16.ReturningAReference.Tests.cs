@@ -1,15 +1,14 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.IO;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_11.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_16.Tests
 {
     [TestClass]
     public class ProgramTests
     {
         [TestMethod]
-        public void Main_WritePath()
+        public void Main_InputInigoMontoya_WriteFullName()
         {
-            string view = $"C:{Path.DirectorySeparatorChar}{Path.Combine("Data", "index.html")}";
+            string view = "Black";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(view,
             () =>

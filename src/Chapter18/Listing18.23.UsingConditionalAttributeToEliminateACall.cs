@@ -1,6 +1,6 @@
 #define CONDITION_A
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_23
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_23
 {
     using System;
     using System.Diagnostics;
