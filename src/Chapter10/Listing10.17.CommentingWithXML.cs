@@ -1,4 +1,4 @@
-﻿using Chapter09;
+﻿using Chapter10;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_17
 {
