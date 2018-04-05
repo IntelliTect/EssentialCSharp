@@ -9,8 +9,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_12.Tests
         public void Main_WriteSmiley()
         {
             const string expected =
-@"'
-:)";
+@":)";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
                 expected, SingleQuote.Main);

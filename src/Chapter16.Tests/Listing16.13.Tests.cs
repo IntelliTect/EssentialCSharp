@@ -12,7 +12,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_13.Tests
         public void SelectingAnonymousTypeFollowingGroupClause()
         {
             // Intentionally use something other than select to 
-            // determine the result.
+            // determine the result
             string expected = Program.Keywords.Aggregate("",
                 (string result, string word) => {
                     var splitCharactersOntoEachLine = word.Aggregate("",
