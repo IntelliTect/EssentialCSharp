@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_11.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_11.Tests
 {
 
     [TestClass]
@@ -10,13 +10,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_11.Tests
         [TestMethod]
         public void SelectingFollowingGroupClause_UsingTuple()
         {
-            SelectingFollowingGroupClause(Listing15_11.Program.Main);
+            SelectingFollowingGroupClause(Listing16_11.Program.Main);
         }
 
         [TestMethod]
         public void SelectingFollowingTheGroupbyClause_UsingAnonymous()
         {
-            SelectingFollowingGroupClause(Listing15_11A.Program.Main);
+            SelectingFollowingGroupClause(Listing16_11A.Program.Main);
         }
 
 
