@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_03A.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_07.Tests
 {
     [TestClass]
     public class PersonTests
@@ -13,7 +13,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_03A.Tests
             person.PropertyChanged += (sender, eventArgs) =>
             {
                 Assert.AreEqual(
-                    nameof(AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_03A.Person.Name), 
+                    nameof(AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_07.Person.Name), 
                     eventArgs.PropertyName);
                 called = true;
             };
