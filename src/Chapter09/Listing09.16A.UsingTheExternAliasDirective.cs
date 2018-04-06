@@ -1,4 +1,4 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_16
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_16A
 {
     // extern must precede all other namespace elements 
     /* extern alias CoordPlus; --> not actually referencing anything, so commented out */
