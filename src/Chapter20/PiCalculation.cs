@@ -4,7 +4,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using AddisonWesley.Michaelis.EssentialCSharp.Shared;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20
 {
     partial class PiCalculation
     {

@@ -9,6 +9,10 @@
   </PropertyGroup>
   <Import Project="..\Versioning.targets" />
   <ItemGroup>
+    <Compile Include="..\Shared\AsyncCompletedEventArgs.cs" Link="AsyncCompletedEventArgs.cs" />
+    <Compile Include="..\Shared\DoWorkEventArgs.cs" Link="DoWorkEventArgs.cs" />
+    <Compile Include="..\Shared\PiCalculator+InternalPiDigitCalculator.cs" Link="PiCalculator+InternalPiDigitCalculator.cs" />
+    <Compile Include="..\Shared\PiCalculator.cs" Link="PiCalculator.cs" />
     <Compile Include="..\Shared\Program.cs">
       <Link>Program.cs</Link>
     </Compile>
