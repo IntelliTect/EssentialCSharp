@@ -10,7 +10,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_15.Tests
         [TestMethod]
         public void SelectingAnonymousTypeFollowingGroupClause()
         {
-            // New lines added for output formatting in the chapter
+            // New lines added for output formatting in the chapter.
             string expected =
 @"Aggregate, All, Any, Append, AsEnumerable, Average, Cast, Concat, Contains, 
 Count, DefaultIfEmpty, Distinct, ElementAt, ElementAtOrDefault, Empty, 
