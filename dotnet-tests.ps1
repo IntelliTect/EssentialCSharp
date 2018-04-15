@@ -50,7 +50,7 @@ Function Invoke-ChapterFullBuild {
                         Write-Output $buildResult | Format-ColorizeOutput -severity 'Warning'
                     }                        
                     else{
-                        Write-Output | Format-ColorizeOutput
+                        Write-Output $buildResult | Format-ColorizeOutput
                     }
                 }
             }
