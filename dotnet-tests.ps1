@@ -7,8 +7,9 @@ param(
 
 #[string]$testResultName = 'VisualStudio.TestTools.UnitTesting.TestResult'
 #Update-TypeData -TypeName $testResultName  -DefaultDisplayProperty Key -DefaultDisplayPropertySet Project,Total,Passed,Failed,Skipped -Force
-[string]$dotnetCliResultName = 'DotNet.Cli.Result'
-Update-TypeData -TypeName $dotnetCliResultName  -DefaultDisplayProperty ProjectName -DefaultDisplayPropertySet ProjectName,WarningCount,ErrorCount,TestErrorCount,TotalTests,Passed,Failed,Skipped -Force
+#Update-TypeData -TypeName 'BuildResult'  -DefaultDisplayProperty ProjectName -DefaultDisplayPropertySet ProjectName,WarningCount,ErrorCount,TestErrorCount,TotalTests,Passed,Failed,Skipped -Force
+#Update-TypeData -TypeName 'TestResult'  -DefaultDisplayProperty ProjectName -DefaultDisplayPropertySet ProjectName,WarningCount,ErrorCount,TestErrorCount,TotalTests,Passed,Failed,Skipped -Force
+#Update-TypeData -TypeName $dotnetCliResultName  -DefaultDisplayProperty ProjectName -DefaultDisplayPropertySet ProjectName,WarningCount,ErrorCount,TestErrorCount,TotalTests,Passed,Failed,Skipped -Force
 
 Function Invoke-ChapterFullBuild {
     [CmdletBinding()]
@@ -18,7 +19,6 @@ Function Invoke-ChapterFullBuild {
             [Alias('Path','FullName')][string[]]$testProject = 'Chapter??.Tests.csproj'
     )
     BEGIN {
-        $warningsGroupedByChapter = @{}
         $errorsGroupbedByChapter = @{}
     }
     PROCESS {
@@ -32,36 +32,36 @@ Function Invoke-ChapterFullBuild {
             $errors = $null
             Invoke-DotNetBuild $eachTestProjectFile -ErrorAction SilentlyContinue -ErrorVariable +errors -WarningAction SilentlyContinue -WarningVariable +errors | ForEach-Object{
                 $buildResult = $_
-                Add-Member -InputObject $buildResult NoteProperty 'PSTypeName'  $dotnetCliResultName
+                $buildResult.ProjectName = $buildResult.ProjectName -replace '\.Tests',''
+                # Add-Member -InputObject $buildResult NoteProperty 'PSTypeName'  $dotnetCliResultName
                 if($buildResult.ErrorCount -gt 0) {
-                    Write-Output $buildResult  | Format-ColorizeOutput -severity 'Error'
+                    Write-Output $buildResult  # | Format-ColorizeOutput -severity 'Error'
                 }
                 else {
                     $testResult = Invoke-DotNetTest $eachTestProjectFile -ErrorAction SilentlyContinue -ErrorVariable +errors -WarningAction SilentlyContinue -WarningVariable +errors
+                    # Add-Member -InputObject $testResult NoteProperty 'PSTypeName'  $dotnetCliResultName
                     Add-Member -InputObject $buildResult NoteProperty 'TestErrorCount'  $testResult.TestErrorCount
                     Add-Member -InputObject $buildResult NoteProperty 'TotalTests'  $testResult.TotalTests
                     Add-Member -InputObject $buildResult NoteProperty 'Passed'  $testResult.Passed
                     Add-Member -InputObject $buildResult NoteProperty 'Failed' $testResult.Failed
                     Add-Member -InputObject $buildResult NoteProperty 'Skipped'  $testResult.Skipped
                     if($testResult.TestErrorCount+$testResult.Failed -gt 0) {
-                        Write-Output $buildResult | Format-ColorizeOutput -severity 'Error'
+                        Write-Output $buildResult # | Format-ColorizeOutput -severity 'Error'
                     }
                     elseif($buildResult.warningCount+$buildResult.Skipped -gt 0) {
-                        Write-Output $buildResult | Format-ColorizeOutput -severity 'Warning'
+                        Write-Output $buildResult #| Format-ColorizeOutput -severity 'Warning'
                     }
                     else{
-                        Write-Output $buildResult | Format-ColorizeOutput
+                        Write-Output $buildResult #| Format-ColorizeOutput
                     }
                 }
             }
-            #$warningsGroupedByChapter.Add( $eachTargetProjectFile, $warnings )
             $errorsGroupbedByChapter.Add( $eachTargetProjectFile, $errors)
         }
 
     }
     END {
         @($errorsGroupbedByChapter.GetEnumerator()) | ForEach-Object{
-            # Write-Host $_.Key -ForegroundColor Magenta
             $_.Value | ForEach-Object{
                 $output = $null
                 $severity = $null;
@@ -95,17 +95,20 @@ Function Script:Write-Status {
     param(
         [Parameter(Mandatory)][string]$Message,
         [Parameter(Mandatory)][string]$Activity,
-        [switch]$doNotClear
+        [switch]$append
     )
     if(Test-IsOsPlatformWindows) {
-        if(!$doNotClear.IsPresent) {
+        if(!$append.IsPresent) {
             [string]$script:WriteStatus_Message = ''
         }
 
         $padding = $host.UI.RawUi.BufferSize.Width - ($_.Length % $host.UI.RawUi.BufferSize.Width)
-        Write-Host "`$padding = $padding" -ForegroundColor Cyan
-        $script:WriteStatus_Message += "$($_.PadRight($host.UI.RawUi.BufferSize.Width))"
-        Write-Host $script:WriteStatus_Message
+        $script:WriteStatus_Message += "$($_.PadRight($_.Length + $padding))"
+        # if($script:WriteStatus_Message.Length % $host.UI.RawUi.BufferSize.Width -ne 0) {
+        #     Write-Error "Not 0!"
+        # }
+        # Write-Host "Total = $($script:WriteStatus_Message.Length), `$padding = $padding; Remainder = $($script:WriteStatus_Message.Length % $host.UI.RawUi.BufferSize.Width))" -ForegroundColor Cyan
+        # Write-Host $script:WriteStatus_Message
         Write-Progress -Activity $Activity -Status $script:WriteStatus_Message
     }
     else {
@@ -113,7 +116,15 @@ Function Script:Write-Status {
     }
 }
 
-
+Function Split {
+    [string]$targetGroup = "Line";
+    $maxCharacters = 100
+    [string]$pattern = [string]::Format( '(?<{0}>.{{1,{1}}})(?:\W|$)', $targetGroup, $MaxCharacters )
+    $matches = [Regex]::Matches(
+        $sample, $pattern,
+        [System.Text.RegularExpressions.RegexOptions]::Multiline -bor [ System.Text.RegularExpressions.RegexOptions]::CultureInvariant )
+    $lines =  $matches | ?{ $_.GetType().Name -eq 'Match' } | Select-Object -ExpandProperty Value
+}
 Function Invoke-DotNetBuild {
     [CmdletBinding()]
     param(
@@ -147,6 +158,7 @@ Function Read-DotNetBuildOutput {
                 $this.BuildOutputResultLines=New-Object 'System.Collections.Generic.List[BuildOutputResultLine]'
             }
         }
+        Update-TypeData -TypeName 'BuildResult'  -DefaultDisplayProperty ProjectName -DefaultDisplayPropertySet ProjectName,WarningCount,ErrorCount,TestErrorCount,TotalTests,Passed,Failed,Skipped,BuildOutputResultLines -Force
         class BuildOutputResultLine {
             [string]$FileName
             [int]$LineNumber
@@ -186,12 +198,13 @@ Function Read-DotNetBuildOutput {
     }
     PROCESS{
         if($_ -match '\s(?<ProjectName>.*)\s->\s(?<OutputPath>.*)') {
+            # e.g. Chapter16 -> C:\Dropbox\EssentialCSharp\SCC\src\Chapter16\bin\Debug\netcoreapp2.0\Chapter16.dll
             $currentBuildResult = New-Object BuildResult
             $currentBuildResult.projectName = $Matches.ProjectName.Trim()
             $currentBuildResult.AssemblyPath = $Matches.OutputPath
             $activity = "Bulding $($currentBuildResult.projectName)"
             $message = $_
-            Write-Status -Activity $activity -Message $message -DoNotClear
+            Write-Status -Activity $activity -Message 'Building...'
             }
         elseif($_ -match 'Build (Succeeded|FAILED)\.') {
             if($currentBuildResult -eq $null) {
@@ -200,10 +213,8 @@ Function Read-DotNetBuildOutput {
             $activity = "Bulding $($currentBuildResult.projectName)"
             $completed = $true
             $message = $_
-            Write-Status -Activity $activity -Message $message -DoNotClear
         }
         elseif(!$completed) {
-            Write-Status -Activity $activity -Message $message -DoNotClear
         }
         elseif($completed) {
             $warningErrorCountRegEx = '\s(?<Count>\d+)\s{0}\(s\)'
@@ -218,12 +229,8 @@ Function Read-DotNetBuildOutput {
             elseif($_ -match 'Time Elapsed.*') {
                 Write-Output $currentBuildResult
                 $activity = "Completed building $($currentBuildResult.ProjectName)"
-                # if($currentBuildResult.ErrorCount -gt 0) {
-                #     Write-Warning "$($currentBuildResult.ProjectName) failed with $($currentBuildResult.ErrorCount) errors and $($currentBuildResult.WarningCount) warnings."
-                # }
                 $currentBuildResult = $null
                 $completed = $false
-                Script:Write-status -Activity $activity $_ -doNotClear
             }
             elseif($_.Trim() -eq '') {}
             else {
@@ -242,6 +249,7 @@ Function Read-DotNetBuildOutput {
                 }
                 else { Write-Error "Unable to parse: $_" -ErrorAction Stop }
             }
+            Write-Status -Activity $activity -Message $message -append
         }
     }
     END {
@@ -299,10 +307,14 @@ Function Read-DotNetTestOutput {
             }
             TestResult() {
                 # Add Project Name property
-                $this | Add-Member ScriptProperty 'ProjectName' `
+                $this | Add-Member ScriptProperty 'TestProjectName' `
                     { "$([IO.Path]::GetFileNameWithoutExtension($this.AssemblyPath) )" }
+                $this | Add-Member ScriptProperty 'TargetProjectName' `
+                    { "$([IO.Path]::GetFileNameWithoutExtension($this.AssemblyPath).Repace('.Tests','') )" }
+
             }
         }
+        Update-TypeData -TypeName 'TestResult'  -DefaultDisplayProperty TargetProjectName -DefaultDisplayPropertySet ProjectName,WarningCount,ErrorCount,TestErrorCount,TotalTests,Passed,Failed,Skipped -Force
 
         [System.Collections.Generic.List`1[string]]$output=
             new-object 'System.Collections.Generic.List`1[string]'
@@ -312,7 +324,7 @@ Function Read-DotNetTestOutput {
         $message = ''
     }
     PROCESS {
-        Script:Write-Status -Activity $activity -Message $message -DoNotClear
+        Script:Write-Status -Activity $activity -Message $message -append
 
         if([string]::IsNullOrWhiteSpace($_)){}
         elseif( $_ -match 'Test run for (?<AssemblyPath>.*)\((?<Platform>.*)\)') {
@@ -357,14 +369,14 @@ Function Format-ColorizeOutput {
             Write-Warning $output
         }
         'Error' {
-            Write-PlainError $output
+            Write-ErrorMessage $output
         }
     }
 }
 
 
 
-Function Write-PlainError {
+Function Write-ErrorMessage {
     [CmdletBinding(DefaultParameterSetName='ErrorMessage')]
     param(
          [Parameter(Position=0,ParameterSetName='ErrorMessage',Mandatory)][string]$errorMessage
@@ -391,12 +403,12 @@ Function Write-PlainError {
 };
 
 <#
-Write-PlainError  "Error message"
+Write-ErrorMessage  "Error message"
 Write-Host "Next" -ForegroundColor Cyan
 Write-Error "This is a sample error"  -ErrorAction SilentlyContinue
 Write-Host "Last" -ForegroundColor Cyan
-Write-PlainError $error[0]
-Write-PlainError (New-Object Exception  "Exception message")
+Write-ErrorMessage $error[0]
+Write-ErrorMessage (New-Object Exception  "Exception message")
 #>
 
 
