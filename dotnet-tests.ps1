@@ -1,27 +1,26 @@
 [CmdletBinding()]
 param(
-    [string[]]$Chapter='*',
-    $BaseIntermediateOutputPath="obj$([System.IO.Path]::DirectorySeparatorChar)"
+    [ValidateScript({$regex = '(.*Chapter)?(\d?\d|\??\?|\*)(\.Tests\.csproj)?';$_ -match $regex })]
+    [Parameter(Position=0,ParameterSetName='ChapterNumber',ValueFromPipeline,ValueFromPipelineByPropertyName,
+        HelpMessage="Provide the chapter number.  * or ? wildcards are also supported")]
+        [string[]]$chapterFilter= @('*')
 )
 
-
-#[string]$testResultName = 'VisualStudio.TestTools.UnitTesting.TestResult'
-#Update-TypeData -TypeName $testResultName  -DefaultDisplayProperty Key -DefaultDisplayPropertySet Project,Total,Passed,Failed,Skipped -Force
-#Update-TypeData -TypeName 'BuildResult'  -DefaultDisplayProperty ProjectName -DefaultDisplayPropertySet ProjectName,WarningCount,ErrorCount,TestErrorCount,TotalTests,Passed,Failed,Skipped -Force
-#Update-TypeData -TypeName 'TestResult'  -DefaultDisplayProperty ProjectName -DefaultDisplayPropertySet ProjectName,WarningCount,ErrorCount,TestErrorCount,TotalTests,Passed,Failed,Skipped -Force
-#Update-TypeData -TypeName $dotnetCliResultName  -DefaultDisplayProperty ProjectName -DefaultDisplayPropertySet ProjectName,WarningCount,ErrorCount,TestErrorCount,TotalTests,Passed,Failed,Skipped -Force
+$script:Invoke_ChapterFullBuild_Regex = '(.*Chapter)?(\d?\d|\??\?|\*)(\.Tests\.csproj)?'
 
 Function Invoke-ChapterFullBuild {
-    [CmdletBinding()]
+    [CmdletBinding(DefaultParameterSetName='ChapterNumber')]
     param(
-        [ValidateScript({($_ -like '*Chapter??.Tests.csproj')})]
-        [Parameter(ValueFromPipeline,ValueFromPipelineByPropertyName)]
-            [Alias('Path','FullName')][string[]]$testProject = 'Chapter??.Tests.csproj'
+        [ValidateScript({@($_) | %{$regex = $Invoke_ChapterFullBuild_Regex; $_ -match $regex} })]
+        [Parameter(Position=0,ParameterSetName='ChapterNumber',ValueFromPipeline,ValueFromPipelineByPropertyName,Mandatory,
+            HelpMessage="Provide the chapter number.  * or ? wildcards are also supported")]
+            [string[]]$chapterFilter = @('*')
     )
     BEGIN {
         $errorsGroupbedByChapter = @{}
     }
     PROCESS {
+        if($chapterFilter.Length -le 2) { $testProject = "Chapter$chapterFilter.Tests.csproj" }
         $testProject | Get-ChildItem -Recurse | ForEach-Object{
 
             $eachTestProjectFile = $_.FullName
@@ -32,35 +31,38 @@ Function Invoke-ChapterFullBuild {
             $errors = $null
             Invoke-DotNetBuild $eachTestProjectFile -ErrorAction SilentlyContinue -ErrorVariable +errors -WarningAction SilentlyContinue -WarningVariable +errors | ForEach-Object{
                 $buildResult = $_
-                $buildResult.ProjectName = $buildResult.ProjectName -replace '\.Tests',''
-                # Add-Member -InputObject $buildResult NoteProperty 'PSTypeName'  $dotnetCliResultName
+                $buildResult.ProjectName = "$($buildResult.ProjectName)  " -replace '\.Tests',''
                 if($buildResult.ErrorCount -gt 0) {
-                    Write-Output $buildResult  # | Format-ColorizeOutput -severity 'Error'
+                    Add-Member -InputObject $buildResult NoteProperty 'TestErrorCount'  'N/A'
+                    Add-Member -InputObject $buildResult NoteProperty 'TotalTests'  'N/A'
+                    Add-Member -InputObject $buildResult NoteProperty 'Passed'  'N/A'
+                    Add-Member -InputObject $buildResult NoteProperty 'Failed' 'N/A'
+                    Add-Member -InputObject $buildResult NoteProperty 'Skipped'  'N/A'
+                    Write-Output $buildResult
                 }
                 else {
                     $testResult = Invoke-DotNetTest $eachTestProjectFile -ErrorAction SilentlyContinue -ErrorVariable +errors -WarningAction SilentlyContinue -WarningVariable +errors
-                    # Add-Member -InputObject $testResult NoteProperty 'PSTypeName'  $dotnetCliResultName
-                    Add-Member -InputObject $buildResult NoteProperty 'TestErrorCount'  $testResult.TestErrorCount
-                    Add-Member -InputObject $buildResult NoteProperty 'TotalTests'  $testResult.TotalTests
-                    Add-Member -InputObject $buildResult NoteProperty 'Passed'  $testResult.Passed
-                    Add-Member -InputObject $buildResult NoteProperty 'Failed' $testResult.Failed
-                    Add-Member -InputObject $buildResult NoteProperty 'Skipped'  $testResult.Skipped
+                    Add-Member -InputObject $buildResult NoteProperty 'TestErrorCount'  "$($testResult.TestErrorCount)"
+                    Add-Member -InputObject $buildResult NoteProperty 'TotalTests'  "$($testResult.TotalTests)"
+                    Add-Member -InputObject $buildResult NoteProperty 'Passed'  "$($testResult.Passed)"
+                    Add-Member -InputObject $buildResult NoteProperty 'Failed' "$($testResult.Failed)"
+                    Add-Member -InputObject $buildResult NoteProperty 'Skipped'  "$($testResult.Skipped)"
                     if($testResult.TestErrorCount+$testResult.Failed -gt 0) {
-                        Write-Output $buildResult # | Format-ColorizeOutput -severity 'Error'
+                        Write-Output $buildResult | Format-ColorizeOutput -severity 'Error'
                     }
                     elseif($buildResult.warningCount+$buildResult.Skipped -gt 0) {
-                        Write-Output $buildResult #| Format-ColorizeOutput -severity 'Warning'
+                        Write-Output $buildResult | Format-ColorizeOutput -severity 'Warning'
                     }
                     else{
-                        Write-Output $buildResult #| Format-ColorizeOutput
+                        Write-Output $buildResult
                     }
                 }
             }
             $errorsGroupbedByChapter.Add( $eachTargetProjectFile, $errors)
         }
-
     }
     END {
+        <#
         @($errorsGroupbedByChapter.GetEnumerator()) | ForEach-Object{
             $_.Value | ForEach-Object{
                 $output = $null
@@ -73,9 +75,10 @@ Function Invoke-ChapterFullBuild {
                     $severity = 'Error'
                     $output = $_.Exception
                 }
-                $output | Format-ColorizeOutput $severity
+                #$output # | Format-ColorizeOutput $severity
             }
         }
+        #>
     }
 }
 
@@ -116,15 +119,16 @@ Function Script:Write-Status {
     }
 }
 
-Function Split {
+Function script:Split {
     [string]$targetGroup = "Line";
     $maxCharacters = 100
     [string]$pattern = [string]::Format( '(?<{0}>.{{1,{1}}})(?:\W|$)', $targetGroup, $MaxCharacters )
     $matches = [Regex]::Matches(
         $sample, $pattern,
         [System.Text.RegularExpressions.RegexOptions]::Multiline -bor [ System.Text.RegularExpressions.RegexOptions]::CultureInvariant )
-    $lines =  $matches | ?{ $_.GetType().Name -eq 'Match' } | Select-Object -ExpandProperty Value
+    $lines =  $matches | Where-Object{ $_.GetType().Name -eq 'Match' } | Select-Object -ExpandProperty Value
 }
+
 Function Invoke-DotNetBuild {
     [CmdletBinding()]
     param(
@@ -158,7 +162,7 @@ Function Read-DotNetBuildOutput {
                 $this.BuildOutputResultLines=New-Object 'System.Collections.Generic.List[BuildOutputResultLine]'
             }
         }
-        Update-TypeData -TypeName 'BuildResult'  -DefaultDisplayProperty ProjectName -DefaultDisplayPropertySet ProjectName,WarningCount,ErrorCount,TestErrorCount,TotalTests,Passed,Failed,Skipped,BuildOutputResultLines -Force
+        Update-TypeData -TypeName 'BuildResult'  -DefaultDisplayProperty ProjectName -DefaultDisplayPropertySet ProjectName,ErrorCount,WarningCount,TestErrorCount,TotalTests,Passed,Failed,Skipped,BuildOutputResultLines -Force
         class BuildOutputResultLine {
             [string]$FileName
             [int]$LineNumber
@@ -314,7 +318,7 @@ Function Read-DotNetTestOutput {
 
             }
         }
-        Update-TypeData -TypeName 'TestResult'  -DefaultDisplayProperty TargetProjectName -DefaultDisplayPropertySet ProjectName,WarningCount,ErrorCount,TestErrorCount,TotalTests,Passed,Failed,Skipped -Force
+        Update-TypeData -TypeName 'TestResult'  -DefaultDisplayProperty TargetProjectName -DefaultDisplayPropertySet ProjectName,ErrorCount,WarningCount,TestErrorCount,TotalTests,Passed,Failed,Skipped -Force
 
         [System.Collections.Generic.List`1[string]]$output=
             new-object 'System.Collections.Generic.List`1[string]'
@@ -361,17 +365,49 @@ Function Read-DotNetTestOutput {
 Function Format-ColorizeOutput {
     [CmdletBinding()]
     param(
-        [ValidateSet('Warning','Error',$null)][AllowNull()][AllowEmptyString()][string]$severity,
+        [ValidateSet('Warning','Error',$null)][AllowNull()][string]$severity,
         [Parameter(ValueFromPipeline)]$output
     )
-    switch ($severity) {
-        'Warning' {
-            Write-Warning $output
+    # switch ($severity) {
+    #     'Warning' {
+    #         Write-Warning $output
+    #     }
+    #     'Error' {
+    #         Write-ErrorMessage $output
+    #     }
+    # }
+    BEGIN {}
+    PROCESS {
+        try{
+            [ConsoleColor]$consoleForegroundColor = [Console]::ForegroundColor
+            [ConsoleColor]$consoleBackgroundColor = [Console]::BackgroundColor
+            [ConsoleColor]$defaultWarningColor = 'Yellow'
+            [ConsoleColor]$defaultErrorColor = 'Red'
+            try {
+                # On ISE $host.PrivateData colors are of type System.Media.Color rather than
+                # ConsoleColor so conversion is unsuccessful and we fall back to the defaults.
+                switch ($severity) {
+                    'Warning' {
+                        [Console]::ForegroundColor = $defaultWarningColor
+                        [Console]::ForegroundColor = $host.PrivateData.WarningForegroundColor # Might throw exception
+                        [Console]::BackgroundColor = $host.PrivateData.WarningBackgroundColor # Might throw exception
+                    }
+                    'Error' {
+                        [Console]::ForegroundColor = $defaultErrorColor
+                        [Console]::ForegroundColor = $host.PrivateData.ErrorForegroundColor # Might throw exception
+                        [Console]::BackgroundColor = $host.PrivateData.ErrorBackgroundColor # Might throw exception
+                    }
+                }
+            }
+            catch { <# Ignore conversion errors and just go with default colors. #> }
+            Write-Output $output
         }
-        'Error' {
-            Write-ErrorMessage $output
+        finally {
+            [Console]::ForegroundColor = $consoleForegroundColor
+            [Console]::BackgroundColor = $consoleBackgroundColor
         }
     }
+    END{}
 }
 
 
@@ -411,7 +447,29 @@ Write-ErrorMessage $error[0]
 Write-ErrorMessage (New-Object Exception  "Exception message")
 #>
 
+$help = @"
+Added functions:
+    $((Get-Command Invoke-ChapterFullBuild -Syntax).Trim())
+    $((Get-Command Invoke-DotNetBuild -Syntax).Trim())
+    $((Get-Command Invoke-DotNetTest -Syntax).Trim())
+    $((Get-Command Read-DotNetTestOutput -Syntax).Trim())
+    $((Get-Command Read-DotNetBuildOutput -Syntax).Trim())
 
+"@
+
+Write-Host $help
+
+# [string[]]$chapters=$null
+# if($Chapter -ne '*' ) {
+#     $chapters = ($Chapter |
+#         ForEach-Object{ "$_".PadLeft(2, '0')} |
+#         ForEach-Object{ "Chapter$_.Tests.csproj" })
+# }
+# else {
+#     $chapters = 'Chapter??.Tests.csproj'
+# }
+
+$chapterFilter | Invoke-ChapterFullBuild |
 
 return
 
