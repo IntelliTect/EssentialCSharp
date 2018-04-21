@@ -646,27 +646,16 @@ BEGIN {
 
 END {
 
-    $lines = (($input | Format-Table -A | Out-String) -replace "`r", "" -split "`n") |
-        Where-Object {$_.Trim() -ne ""};
-    If(!($lines))
-    {
-        $lines = (($Object | Format-Table -A | Out-String) -replace "`r", "" -split "`n") |
-            Where-Object {$_.Trim() -ne ""};
-    }
-    else
-    {
-        $Object = $input;
-    }
-
-    If(!($lines) -Or $lines.Length -eq 0)
-    {
-        Return;
+    if($input) {  # It is unclear if/how $input is ever set but this was in original script.
+        $Object = $input
     }
 
     $l = 0;
     $colCount = 0
-    Foreach($line in $lines)
-    {
+    $lines = $Object | Format-Table -A | Out-String | ForEach-Object{
+        $_ -replace "`r",'' -split "`n"} |  Where-Object {$_.Trim() -ne '' }
+    $lines | ForEach-Object {
+        $line = $_
         $l++;
 
         If($l -le 2)
@@ -676,7 +665,9 @@ END {
                 #$columns = $Object[0] | Get-Member -MemberType NoteProperty | Select Name -ExpandProperty Name;
                 $headerLine = $line;
                 $header = $lines[0];
-                $headerLines = $headerLine -split " " | ? {$_.Trim() -ne ""} | Foreach {$_.Trim("`t").Trim();};
+                $headerLines = $headerLine -split " " |
+                    Where-Object {$_.Trim() -ne ""} |
+                    ForEach-Object {$_.Trim("`t").Trim();};
                 $colCount = $headerLines.Count;
                 $columns = @($null) * $colCount;
 
@@ -689,7 +680,7 @@ END {
 
                 $columns[$i] = $header.Substring($pos, $headerLines[$i].Length);
                 $col = $Columns[$i];
-                $headersLen[$i] = $object | Select $col, @{Name="Len";Expression={$_.$col.ToString().Length}} | Sort Len -Descending | Select Len -First 1 -ExpandProperty Len;
+                $headersLen[$i] = $object | Select-Object $col, @{Name="Len";Expression={$_.$col.ToString().Length}} | Sort Len -Descending | Select Len -First 1 -ExpandProperty Len;
                 While($pos -ne -1)
                 {
                     $i++;
@@ -702,7 +693,7 @@ END {
 
                     $columns[$i] = $header.Substring($pos + 1, $headerLines[$i].Length);
                     $col = $Columns[$i];
-                    $colLen = $object | Select $col, @{Name="Len";Expression={$_.$col.ToString().Length}} | Sort Len -Descending | Select Len -First 1 -ExpandProperty Len;
+                    $colLen = $object | Select-Object $col, @{Name="Len";Expression={$_.$col.ToString().Length}} | Sort Len -Descending | Select Len -First 1 -ExpandProperty Len;
                     If ($col.Length -gt $colLen)
                     {
                         $colLen = $col.Length;
@@ -752,8 +743,6 @@ END {
                     Return;
                 }
             }
-
-            Continue;
         }
         elseIf($l -gt 2  -And ($MatchMethod -Or $ColoredColumns))
         {
@@ -764,228 +753,228 @@ END {
             {
                 $col = $Columns[$i];
                 #$values[$i] = ($oLine | Get-Member -Name $col).Definition.Split("=")[1];
-                $values[$i] = $oLine | Select $col -ExpandProperty $col;
+                $values[$i] = $oLine | Select-Object $col -ExpandProperty $col;
             }
-        }
 
-        If($FormatTableColor)
-        {
-            If($l % 2 -eq 0)
+            If($FormatTableColor)
             {
-                $BodyForeColor = $EvenRowForeColor;
-                $BodyBackColor = $EvenRowBackColor;
-            }
-            else
-            {
-                $BodyForeColor = $OddRowForeColor;
-                $BodyBackColor = $OddRowBackColor;
-            }
-        }
-
-        $fc = @($BodyForeColor) * $colCount;
-        $bc = @($BodyBackColor) * $colCount;
-
-        If ($ColoredColumns)
-        {
-            For($j = 0; $j -lt $columns.Count; $j++)
-            {
-                If ($ColoredColumns -contains $columns[$j])
+                If($l % 2 -eq 0)
                 {
-                    $fColIndex = [System.Array]::IndexOf(($ColoredColumns | Foreach {$_.ToLower()}), $columns[$j].ToLower());
-
-                    If($fColIndex -lt $ColumnForeColor.Count)
-                    {
-                        $fc[$j] = $ColumnForeColor[$fColIndex];
-                    }
-
-                    If($fColIndex -lt $ColumnBackColor.Count)
-                    {
-                        $bc[$j] = $ColumnBackColor[$fColIndex];
-                    }
-                }
-            }
-        }
-
-        If($MatchMethod -Or $ColoredColumns)
-        {
-            $matchCond = $false;
-            $matchCondGroup = @($false) * $Column.Count;
-            $matchColumnFlag = @($false) * $columns.Count;
-            For($i = 0; $i -lt $columns.Count; $i++)
-            {
-                For($j = 0; $j -lt $Column.Count; $j++)
-                {
-                    $colPos = $null;
-                    $colVal = $null;
-                    $col = $Column[$j];
-                    $val = $Value[$j];
-
-                    If ($col -eq $columns[$i] -Or $col -eq "*")
-                    {
-                        $colPos = $i;
-                        $colVal = $values[$i];
-                        $query = $null;
-                        $r = $null;
-                        Switch ($MatchMethod[$j])
-                        {
-                            "Exact" {$query = """$colVal"" -eq ""$val"""};
-                            "Match" {$query = """$colVal"" -match ""$val"""};
-                            "Query"
-                            {
-                                For($c = 0; $c -lt $columns.Count; $c++)
-                                {
-                                    $colC = $Columns[$c];
-                                    $valC = $values[$c];
-                                    [double]$valCNum = New-Object System.Double;
-                                    $isNum = [double]::TryParse($valC, [ref] $valCNum);
-                                    if($isNum)
-                                    {
-                                        $val = $val -replace "'$colC'" , "$valC";
-                                    }
-                                    else
-                                    {
-                                        $val = $val -replace "'$colC'" , "'$valC'";
-                                    }
-                                    $query = $val;
-                                }
-                            };
-                        }
-
-                        $r = Invoke-Expression $query;
-                        If ($r)
-                        {
-                            $matchCond = $true;
-                            If($ValueForeColor -ne $null -and $ValueForeColor.Count -gt $j)
-                            {
-                                $fColor = $ValueForeColor[$j]
-                            }
-                            elseIf($RowForeColor)
-                            {
-                                $fColor = $RowForeColor;
-                            }
-                            else
-                            {
-                                $fColor = $BodyForeColor;
-                            }
-
-                            If($ValueBackColor -ne $null -and $ValueBackColor.Count -gt $j)
-                            {
-                                $bColor = $ValueBackColor[$j]
-                            }
-                            elseIf($RowBackColor)
-                            {
-                                $bColor = $RowBackColor;
-                            }
-                            else
-                            {
-                                $bColor = $BodyBackColor;
-                            }
-
-                            $fc[$i] = $fColor;
-                            $bc[$i] = $bColor;
-
-                            $matchCondGroup[$j] = $True;
-                            $matchColumnFlag[$i] = $True;
-                            If($FlagColumns -ne $null -and $FlagColumns.Count -gt $j -and $FlagColumns[$j] -ne $null -and $FlagColumns[$j].Trim() -ne "")
-                            {
-                                [String[]]$fColumnsSplit = @();
-                                $fColumnsSplit = $FlagColumns[$j] -split "," | ? {$_.Trim() -ne ""} | Foreach {$_.Trim("").Trim("'");};
-
-                                Foreach($fcs  in $fColumnsSplit)
-                                {
-                                    $fColIndex = [System.Array]::IndexOf(($columns | Foreach {$_.ToLower()}), $fcs.ToLower());
-                                    If($fColIndex -ne -1)
-                                    {
-                                        If($j -lt $FlagsForeColor.Count)
-                                        {
-                                            $matchColumnFlag[$fColIndex] = $True;
-                                            $fc[$fColIndex] = $FlagsForeColor[$j];
-                                        }
-
-                                        If($j -lt $FlagsBackColor.Count)
-                                        {
-                                            $matchColumnFlag[$fColIndex] = $True;
-                                            $bc[$fColIndex] = $FlagsBackColor[$j];
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-
-            For($j = 0; $j -lt $columns.Count; $j++)
-            {
-                $foreColor = $fc[$j];
-                $backColor = $bc[$j];
-
-                If ($matchCond)
-                {
-                    If (!($matchColumnFlag[$j]))
-                    {
-                        If ($RowForeColor -ne $null)
-                        {
-                            $foreColor = $RowForeColor;
-                        }
-
-                        If ($RowBackColor -ne $null)
-                        {
-                            $backColor = $RowBackColor;
-                        }
-                    }
-                }
-
-                If ($j -eq 0)
-                {
-                    $vPos = $headersPos[$j];
-                    $vLen = $headersLen[$j];
+                    $BodyForeColor = $EvenRowForeColor;
+                    $BodyBackColor = $EvenRowBackColor;
                 }
                 else
                 {
-                    If ($RowBackColor -ne $null -and $matchCond)
+                    $BodyForeColor = $OddRowForeColor;
+                    $BodyBackColor = $OddRowBackColor;
+                }
+            }
+
+            $fc = @($BodyForeColor) * $colCount;
+            $bc = @($BodyBackColor) * $colCount;
+
+            If ($ColoredColumns)
+            {
+                For($j = 0; $j -lt $columns.Count; $j++)
+                {
+                    If ($ColoredColumns -contains $columns[$j])
                     {
-                        Write-Line " " -NoNewline -BackgroundColor $RowBackColor;
+                        $fColIndex = [System.Array]::IndexOf(($ColoredColumns | Foreach {$_.ToLower()}), $columns[$j].ToLower());
+
+                        If($fColIndex -lt $ColumnForeColor.Count)
+                        {
+                            $fc[$j] = $ColumnForeColor[$fColIndex];
+                        }
+
+                        If($fColIndex -lt $ColumnBackColor.Count)
+                        {
+                            $bc[$j] = $ColumnBackColor[$fColIndex];
+                        }
+                    }
+                }
+            }
+
+            If($MatchMethod -Or $ColoredColumns)
+            {
+                $matchCond = $false;
+                $matchCondGroup = @($false) * $Column.Count;
+                $matchColumnFlag = @($false) * $columns.Count;
+                For($i = 0; $i -lt $columns.Count; $i++)
+                {
+                    For($j = 0; $j -lt $Column.Count; $j++)
+                    {
+                        $colPos = $null;
+                        $colVal = $null;
+                        $col = $Column[$j];
+                        $val = $Value[$j];
+
+                        If ($col -eq $columns[$i] -Or $col -eq "*")
+                        {
+                            $colPos = $i;
+                            $colVal = $values[$i];
+                            $query = $null;
+                            $r = $null;
+                            Switch ($MatchMethod[$j])
+                            {
+                                "Exact" {$query = """$colVal"" -eq ""$val"""};
+                                "Match" {$query = """$colVal"" -match ""$val"""};
+                                "Query"
+                                {
+                                    For($c = 0; $c -lt $columns.Count; $c++)
+                                    {
+                                        $colC = $Columns[$c];
+                                        $valC = $values[$c];
+                                        [double]$valCNum = New-Object System.Double;
+                                        $isNum = [double]::TryParse($valC, [ref] $valCNum);
+                                        if($isNum)
+                                        {
+                                            $val = $val -replace "'$colC'" , "$valC";
+                                        }
+                                        else
+                                        {
+                                            $val = $val -replace "'$colC'" , "'$valC'";
+                                        }
+                                        $query = $val;
+                                    }
+                                };
+                            }
+
+                            $r = Invoke-Expression $query;
+                            If ($r)
+                            {
+                                $matchCond = $true;
+                                If($ValueForeColor -ne $null -and $ValueForeColor.Count -gt $j)
+                                {
+                                    $fColor = $ValueForeColor[$j]
+                                }
+                                elseIf($RowForeColor)
+                                {
+                                    $fColor = $RowForeColor;
+                                }
+                                else
+                                {
+                                    $fColor = $BodyForeColor;
+                                }
+
+                                If($ValueBackColor -ne $null -and $ValueBackColor.Count -gt $j)
+                                {
+                                    $bColor = $ValueBackColor[$j]
+                                }
+                                elseIf($RowBackColor)
+                                {
+                                    $bColor = $RowBackColor;
+                                }
+                                else
+                                {
+                                    $bColor = $BodyBackColor;
+                                }
+
+                                $fc[$i] = $fColor;
+                                $bc[$i] = $bColor;
+
+                                $matchCondGroup[$j] = $True;
+                                $matchColumnFlag[$i] = $True;
+                                If($FlagColumns -ne $null -and $FlagColumns.Count -gt $j -and $FlagColumns[$j] -ne $null -and $FlagColumns[$j].Trim() -ne "")
+                                {
+                                    [String[]]$fColumnsSplit = @();
+                                    $fColumnsSplit = $FlagColumns[$j] -split "," | ? {$_.Trim() -ne ""} | Foreach {$_.Trim("").Trim("'");};
+
+                                    Foreach($fcs  in $fColumnsSplit)
+                                    {
+                                        $fColIndex = [System.Array]::IndexOf(($columns | Foreach {$_.ToLower()}), $fcs.ToLower());
+                                        If($fColIndex -ne -1)
+                                        {
+                                            If($j -lt $FlagsForeColor.Count)
+                                            {
+                                                $matchColumnFlag[$fColIndex] = $True;
+                                                $fc[$fColIndex] = $FlagsForeColor[$j];
+                                            }
+
+                                            If($j -lt $FlagsBackColor.Count)
+                                            {
+                                                $matchColumnFlag[$fColIndex] = $True;
+                                                $bc[$fColIndex] = $FlagsBackColor[$j];
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                For($j = 0; $j -lt $columns.Count; $j++)
+                {
+                    $foreColor = $fc[$j];
+                    $backColor = $bc[$j];
+
+                    If ($matchCond)
+                    {
+                        If (!($matchColumnFlag[$j]))
+                        {
+                            If ($RowForeColor -ne $null)
+                            {
+                                $foreColor = $RowForeColor;
+                            }
+
+                            If ($RowBackColor -ne $null)
+                            {
+                                $backColor = $RowBackColor;
+                            }
+                        }
+                    }
+
+                    If ($j -eq 0)
+                    {
+                        $vPos = $headersPos[$j];
+                        $vLen = $headersLen[$j];
                     }
                     else
                     {
-                        Write-Line " " -NoNewline -BackgroundColor $BodyBackColor;
+                        If ($RowBackColor -ne $null -and $matchCond)
+                        {
+                            Write-Line " " -NoNewline -BackgroundColor $RowBackColor;
+                        }
+                        else
+                        {
+                            Write-Line " " -NoNewline -BackgroundColor $BodyBackColor;
+                        }
+
+                        $vPos = $headersPos[$j];
+                        $vLen = $headersLen[$j];
                     }
 
-                    $vPos = $headersPos[$j];
-                    $vLen = $headersLen[$j];
-                }
-
-                if(($line.Length -lt $vPos+$vLen)) {
-                    $redrawRequired = $true
-                    $valueText = '...'
-                }
-                else {
-                    $valueText = $line.SubString($vPos, $vLen);
-                }
-                Write-Line -Object $valueText -NoNewline -ForegroundColor $foreColor -BackgroundColor $backColor;
-                If ($j -eq $columns.Count - 1)
-                {
-                    Write-Host;
+                    if(($line.Length -lt $vPos+$vLen)) {
+                        $redrawRequired = $true
+                        $valueText = '...'
+                    }
+                    else {
+                        $valueText = $line.SubString($vPos, $vLen);
+                    }
+                    Write-Line -Object $valueText -NoNewline -ForegroundColor $foreColor -BackgroundColor $backColor;
+                    If ($j -eq $columns.Count - 1)
+                    {
+                        Write-Host;
+                    }
                 }
             }
-        }
-        ElseIf(!($HeadersOnly))
-        {
-            Write-Line -ForegroundColor $BodyForeColor -BackgroundColor $BodyBackColor $line;
-        }
-
-        If ($l -ne ($lines.Length))
-        {
-            If ($InjectRowsSeparator)
+            ElseIf(!($HeadersOnly))
             {
-                If ($RowsSeparator)
-                {
-                    $RowsSeparatorLine =  $RowsSeparator * $line.Length;
-                    $RowsSeparatorLine = $RowsSeparatorLine.Substring(0, $line.Length);
-                }
+                Write-Line -ForegroundColor $BodyForeColor -BackgroundColor $BodyBackColor $line;
+            }
 
-                Script:Write-Line -Object $RowsSeparatorLine -ForegroundColor $RowsSeparatorForeColor -BackgroundColor $RowsSeparatorBackColor;
+            If ($l -ne ($lines.Length))
+            {
+                If ($InjectRowsSeparator)
+                {
+                    If ($RowsSeparator)
+                    {
+                        $RowsSeparatorLine =  $RowsSeparator * $line.Length;
+                        $RowsSeparatorLine = $RowsSeparatorLine.Substring(0, $line.Length);
+                    }
+
+                    Script:Write-Line -Object $RowsSeparatorLine -ForegroundColor $RowsSeparatorForeColor -BackgroundColor $RowsSeparatorBackColor;
+                }
             }
         }
     }
