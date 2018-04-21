@@ -20,6 +20,7 @@ Function Invoke-ChapterFullBuild {
         $errorsGroupbedByChapter = @{}
     }
     PROCESS {
+        if($chapterFilter -match '\d') { $chapterFilter = $chapterFilter.PadLeft(2,'0') }
         if($chapterFilter.Length -le 2) { $testProject = "Chapter$chapterFilter.Tests.csproj" }
         $testProject | Get-ChildItem -Recurse | ForEach-Object{
 
@@ -469,7 +470,14 @@ Write-Host $help
 #     $chapters = 'Chapter??.Tests.csproj'
 # }
 
+. ./Utilities/Write-PSObject.ps1
+
 $chapterFilter | Invoke-ChapterFullBuild |
+    Write-PSObject -MatchMethod Match,Match,Match,Match `
+        -Value '[1-9][0-9]*','[1-9][0-9]*','[1-9][0-9]*','[1-9][0-9]*' `
+        -Column 'ErrorCount','WarningCount','Failed','Skipped' `
+        -ValueBackColor Red,Yellow,Red,Yellow `
+        -ValueForeColor ([Console]::ForegroundColor),([Console]::ForegroundColor),([Console]::ForegroundColor),Black
 
 return
 
