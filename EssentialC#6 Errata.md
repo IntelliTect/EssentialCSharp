@@ -12,6 +12,7 @@ The following corrections will be made in the second printing. (To determine whi
 
 Chapter     | Page         | Correction 
 ----------- | ------------ | ---------- 
+1           | 14           | Listing 1.9: The class name of `miracleMax` uses camel case, which violates the guideline given previously on page 8 to use Pascal case for all class names. The class name should be `MiracleMax`.
 1           | 16           | Listing 1.11: The second assignment of `miracleMax` was incorrectly made instead to an undeclared variable named `max`. The correct line of code is `miracleMax = "It would take a miracle.";` 
 1           | 22           | Listing 1.18 is a modification of Listing 1.16, not 1.15.
 2           | 52           | Table 2.5: The last string.Compare statement contains two errors (a round bracket after strB parameter instead of a comma and ignoreCase should be bool instead of string). The correct statement is "static int string.Compare(string strA, string strB, bool ignoreCase)" 
