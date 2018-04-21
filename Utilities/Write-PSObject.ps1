@@ -482,32 +482,13 @@ Function Write-PSObject
         [Parameter(Mandatory=$False, Position=37)][Alias("HWBC")] [ConsoleColor]$HostWindowBackColor
     )
 
-    Function Write-Line
-    {
-        [CmdletBinding()]
-        [OutputType("Void")]
-        Param
-        (
-            [Parameter(Mandatory=$True,  Position= 0, ValueFromPipeline=$True, ValueFromPipelineByPropertyName=$True)][Alias("O", "I")][object]$Object,
-            [Parameter(Mandatory=$False, Position= 1)][Alias("F", "FC")] [ConsoleColor]$ForegroundColor = (Get-Host).UI.RawUI.ForegroundColor,
-            [Parameter(Mandatory=$False, Position= 2)][Alias("B", "BC")] [ConsoleColor]$BackgroundColor = (Get-Host).UI.RawUI.BackgroundColor,
-            [Parameter(Mandatory=$False, Position= 3)][Alias("NNL")] [Switch]$NoNewline
-        )
-
-        If (([int]$ForegroundColor) -eq -1)
-        {
-            $ForegroundColor = [ConsoleColor]::White;
-        }
-
-        If (([int]$BackgroundColor) -eq -1)
-        {
-            Write-Host -NoNewline:$NoNewline -ForegroundColor $ForegroundColor -Object $Object;
-        }
-        Else
-        {
-            Write-Host -NoNewline:$NoNewline -ForegroundColor $ForegroundColor -BackgroundColor $BackgroundColor -Object $Object;
-        }
+BEGIN {
+    [bool]$consoleHost = $host.Name -notlike '*ISE*'
+    if($consoleHost) {
+        $startCursorPosition = $host.UI.RawUI.CursorPosition
+        $previouslyOutput = ''
     }
+    [bool]$redrawRequired = $false
 
     If(($HostWindowWidth -And $HostWindowWidth -ne 0) -Or ($HostWindowHeight -And $HostWindowHeight -ne 0) -OR $HostWindowForeColor -ne $null -Or $HostWindowBackColor  -ne $null)
     {
@@ -587,22 +568,6 @@ Function Write-PSObject
         }
         Catch{}
     }
-
-    $lines = (($input | FT -A | Out-String) -replace "`r", "" -split "`n") | ? {$_.Trim() -ne ""};
-    If(!($lines))
-    {
-        $lines = (($Object | FT -A | Out-String) -replace "`r", "" -split "`n") | ? {$_.Trim() -ne ""};
-    }
-    else
-    {
-        $Object = $input;
-    }
-
-    If(!($lines) -Or $lines.Length -eq 0)
-    {
-        Return;
-    }
-
     If($MatchMethod)
     {
         If((@($Column).Count -ne $Value.Count))
@@ -676,6 +641,27 @@ Function Write-PSObject
     }
     #endregion Flag Columns
     #endregion Set Default Colors
+
+}
+
+END {
+
+    $lines = (($input | Format-Table -A | Out-String) -replace "`r", "" -split "`n") |
+        Where-Object {$_.Trim() -ne ""};
+    If(!($lines))
+    {
+        $lines = (($Object | Format-Table -A | Out-String) -replace "`r", "" -split "`n") |
+            Where-Object {$_.Trim() -ne ""};
+    }
+    else
+    {
+        $Object = $input;
+    }
+
+    If(!($lines) -Or $lines.Length -eq 0)
+    {
+        Return;
+    }
 
     $l = 0;
     $colCount = 0
@@ -970,7 +956,13 @@ Function Write-PSObject
                     $vLen = $headersLen[$j];
                 }
 
-                $valueText = $line.SubString($vPos, $vLen);
+                if(($line.Length -lt $vPos+$vLen)) {
+                    $redrawRequired = $true
+                    $valueText = '...'
+                }
+                else {
+                    $valueText = $line.SubString($vPos, $vLen);
+                }
                 Write-Line -Object $valueText -NoNewline -ForegroundColor $foreColor -BackgroundColor $backColor;
                 If ($j -eq $columns.Count - 1)
                 {
@@ -993,8 +985,37 @@ Function Write-PSObject
                     $RowsSeparatorLine = $RowsSeparatorLine.Substring(0, $line.Length);
                 }
 
-                Write-Line -Object $RowsSeparatorLine -ForegroundColor $RowsSeparatorForeColor -BackgroundColor $RowsSeparatorBackColor;
+                Script:Write-Line -Object $RowsSeparatorLine -ForegroundColor $RowsSeparatorForeColor -BackgroundColor $RowsSeparatorBackColor;
             }
         }
+    }
+}
+}
+
+
+Function Script:Write-Line
+{
+    [CmdletBinding()]
+    [OutputType("Void")]
+    Param
+    (
+        [Parameter(Mandatory=$True,  Position= 0, ValueFromPipeline=$True, ValueFromPipelineByPropertyName=$True)][Alias("O", "I")][object]$Object,
+        [Parameter(Mandatory=$False, Position= 1)][Alias("F", "FC")] [ConsoleColor]$ForegroundColor = (Get-Host).UI.RawUI.ForegroundColor,
+        [Parameter(Mandatory=$False, Position= 2)][Alias("B", "BC")] [ConsoleColor]$BackgroundColor = (Get-Host).UI.RawUI.BackgroundColor,
+        [Parameter(Mandatory=$False, Position= 3)][Alias("NNL")] [Switch]$NoNewline
+    )
+
+    If (([int]$ForegroundColor) -eq -1)
+    {
+        $ForegroundColor = [ConsoleColor]::White;
+    }
+
+    If (([int]$BackgroundColor) -eq -1)
+    {
+        Write-Host -NoNewline:$NoNewline -ForegroundColor $ForegroundColor -Object $Object;
+    }
+    Else
+    {
+        Write-Host -NoNewline:$NoNewline -ForegroundColor $ForegroundColor -BackgroundColor $BackgroundColor -Object $Object;
     }
 }
