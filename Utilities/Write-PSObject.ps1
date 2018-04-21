@@ -652,19 +652,20 @@ END {
 
     $l = 0;
     $colCount = 0
-    $lines = $Object | Format-Table -A | Out-String | ForEach-Object{
-        $_ -replace "`r",'' -split "`n"} |  Where-Object {$_.Trim() -ne '' }
-    $lines | ForEach-Object {
+    $Object | Format-Table -A | Out-String | ForEach-Object{
+        $_ -replace "`r",'' -split "`n"} |  Where-Object {$_.Trim() -ne '' } | ForEach-Object {
         $line = $_
         $l++;
 
+        if($l -eq 1) {
+            $header = $line
+        }
         If($l -le 2)
         {
             If($l -eq 2 -And ($MatchMethod -Or $ColoredColumns))
             {
                 #$columns = $Object[0] | Get-Member -MemberType NoteProperty | Select Name -ExpandProperty Name;
                 $headerLine = $line;
-                $header = $lines[0];
                 $headerLines = $headerLine -split " " |
                     Where-Object {$_.Trim() -ne ""} |
                     ForEach-Object {$_.Trim("`t").Trim();};
@@ -725,7 +726,7 @@ END {
                         else
                         {
                             $line = $line.Replace("-", $HeadersSeparator);
-                            $line = $line.Substring(0, $lines[0].Length);
+                            $line = $line.Substring(0, $hea.Length);
                         }
 
                         $hfc = $HeadersSeparatorForeColor;
@@ -963,8 +964,8 @@ END {
                 Write-Line -ForegroundColor $BodyForeColor -BackgroundColor $BodyBackColor $line;
             }
 
-            If ($l -ne ($lines.Length))
-            {
+            #If ($l -ne ($lines.Length))
+            #{
                 If ($InjectRowsSeparator)
                 {
                     If ($RowsSeparator)
@@ -975,7 +976,7 @@ END {
 
                     Script:Write-Line -Object $RowsSeparatorLine -ForegroundColor $RowsSeparatorForeColor -BackgroundColor $RowsSeparatorBackColor;
                 }
-            }
+            #}
         }
     }
 }
