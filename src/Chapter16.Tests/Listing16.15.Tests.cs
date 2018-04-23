@@ -17,8 +17,8 @@ Count, DefaultIfEmpty, Distinct, ElementAt, ElementAtOrDefault, Empty,
 Except, First, FirstOrDefault, GroupBy, GroupJoin, Intersect, Join, Last, 
 LastOrDefault, LongCount, Max, Min, OfType, OrderBy, OrderByDescending, 
 Prepend, Range, Repeat, Reverse, Select, SelectMany, SequenceEqual, 
-Single, SingleOrDefault, Skip, SkipWhile, Sum, Take, TakeWhile, ThenBy, 
-ThenByDescending, ToArray, ToDictionary, ToList, ToLookup, Union, Where, Zip, ";
+Single, SingleOrDefault, Skip, SkipLast, SkipWhile, Sum, Take, TakeLast, TakeWhile, ThenBy, 
+ThenByDescending, ToArray, ToDictionary, ToHashSet, ToList, ToLookup, Union, Where, Zip, ";
 
             expected = expected.Replace("\r\n", string.Empty);
             expected = expected.Replace("\n", string.Empty);
