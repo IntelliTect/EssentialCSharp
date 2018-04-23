@@ -1,1 +1,0 @@
-PowerShell.exe -noprofile -nologo -file dotnet-tests.ps1
