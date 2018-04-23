@@ -26,20 +26,7 @@ Post notification invoked...(Thread ID: *)
 Post notification invoked...(Thread ID: *)
 Throwing expected exception....(Thread ID: *)
 System.Exception: Expected Exception
-   at {TargetNamespaceName}.{nameof(Program)}.<>c.<OnEvent>b__6_0() in *
-   at System.Threading.Tasks.Task`1.InnerInvoke()
-   at System.Threading.Tasks.Task.Execute()
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
-   at {TargetNamespaceName}.{nameof(Program)}.<OnEvent>d__6.MoveNext() in *
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
-   at {TargetNamespaceName}.{nameof(AsyncSynchronizationContext)}.Post(SendOrPostCallback callback, Object state) in *
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
-   at {TargetNamespaceName}.{nameof(Program)}.Main() in * thrown as expected.(Thread ID: *)";
+   *(Thread ID: *)";
 
             string output = IntelliTect.TestTools.Console.ConsoleAssert.ExpectLike(expected,
             () =>
