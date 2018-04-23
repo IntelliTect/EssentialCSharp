@@ -49,10 +49,10 @@ Function Invoke-ChapterFullBuild {
                     Add-Member -InputObject $buildResult NoteProperty 'Failed' "$($testResult.Failed)"
                     Add-Member -InputObject $buildResult NoteProperty 'Skipped'  "$($testResult.Skipped)"
                     if($testResult.TestErrorCount+$testResult.Failed -gt 0) {
-                        Write-Output $buildResult | Format-ColorizeOutput -severity 'Error'
+                        Write-Output $buildResult
                     }
                     elseif($buildResult.warningCount+$buildResult.Skipped -gt 0) {
-                        Write-Output $buildResult | Format-ColorizeOutput -severity 'Warning'
+                        Write-Output $buildResult
                     }
                     else{
                         Write-Output $buildResult
@@ -83,6 +83,7 @@ Function Invoke-ChapterFullBuild {
     }
 }
 
+
 Function Test-IsOsPlatformWindows {
     [CmdletBinding()]
     param(
@@ -108,11 +109,6 @@ Function Script:Write-Status {
 
         $padding = $host.UI.RawUi.BufferSize.Width - ($_.Length % $host.UI.RawUi.BufferSize.Width)
         $script:WriteStatus_Message += "$($_.PadRight($_.Length + $padding))"
-        # if($script:WriteStatus_Message.Length % $host.UI.RawUi.BufferSize.Width -ne 0) {
-        #     Write-Error "Not 0!"
-        # }
-        # Write-Host "Total = $($script:WriteStatus_Message.Length), `$padding = $padding; Remainder = $($script:WriteStatus_Message.Length % $host.UI.RawUi.BufferSize.Width))" -ForegroundColor Cyan
-        # Write-Host $script:WriteStatus_Message
         Write-Progress -Activity $Activity -Status $script:WriteStatus_Message
     }
     else {
@@ -139,9 +135,7 @@ Function Invoke-DotNetBuild {
     )
     Write-Verbose "dotnet build $projectPath $args | Read-DotNetBuildOutput"
     dotnet build $projectPath $args |
-        Read-DotNetBuildOutput -ErrorAction SilentlyContinue -ErrorVariable +errors -WarningAction SilentlyContinue -WarningVariable +errors
-    $warnings | Write-Warning
-    $errors | Write-Error
+        Read-DotNetBuildOutput
 }
 
 
@@ -174,7 +168,6 @@ Function Read-DotNetBuildOutput {
             [string]$ProjectPath
             static [BuildOutputResultLine] Create([string]$resultLine) {
                 if( $resultLine -match [BuildOutputResultLine]::RegEx) {
-                    #Write-Host $Matches
                     return (New-Object BuildOutputResultLine $matches)
 
                 }
@@ -275,14 +268,10 @@ Function Invoke-DotNetTest {
             [alias("Path","FullName")][string]$projectPath,
         [string[]]$args = '--no-build',
         [string]$testOutputFilePath = 'Test.Results.txt'
-        #, [string]$BaseIntermediateOutputPath = "obj$([System.IO.Path]::DirectorySeparatorChar)"
     )
 
     dotnet test $projectPath $args |
-        Read-DotNetTestOutput -ErrorAction SilentlyContinue -ErrorVariable +errors -WarningAction SilentlyContinue -WarningVariable +errors
-    $warnings | Write-Warning
-    $errors | Write-Error
-
+        Read-DotNetTestOutput
 }
 
 
@@ -363,21 +352,24 @@ Function Read-DotNetTestOutput {
     }
 }
 
+Function Format-ColorizeBuildResult {
+    [CmdletBinding()]
+    param(
+        [Parameter(ValueFromPipeline)]$output
+    )
+    $output | Write-PSObject -MatchMethod Match,Match,Match,Match `
+         -Value '[1-9][0-9]*','[1-9][0-9]*','[1-9][0-9]*','[1-9][0-9]*' `
+         -Column 'ErrorCount','WarningCount','Failed','Skipped' `
+         -ValueBackColor Red,Yellow,Red,Yellow `
+         -ValueForeColor ([Console]::ForegroundColor),Black,([Console]::ForegroundColor),Black
+}
+
 Function Format-ColorizeOutput {
     [CmdletBinding()]
     param(
         [ValidateSet('Warning','Error',$null)][AllowNull()][string]$severity,
         [Parameter(ValueFromPipeline)]$output
     )
-    # switch ($severity) {
-    #     'Warning' {
-    #         Write-Warning $output
-    #     }
-    #     'Error' {
-    #         Write-ErrorMessage $output
-    #     }
-    # }
-    BEGIN {}
     PROCESS {
         try{
             [ConsoleColor]$consoleForegroundColor = [Console]::ForegroundColor
@@ -408,7 +400,6 @@ Function Format-ColorizeOutput {
             [Console]::BackgroundColor = $consoleBackgroundColor
         }
     }
-    END{}
 }
 
 
@@ -455,98 +446,19 @@ Added functions:
     $((Get-Command Invoke-DotNetTest -Syntax).Trim())
     $((Get-Command Read-DotNetTestOutput -Syntax).Trim())
     $((Get-Command Read-DotNetBuildOutput -Syntax).Trim())
+    $((Get-Command Format-ColorizeBuildResult -Syntax).Trim())
 
 "@
 
 Write-Host $help
 
-# [string[]]$chapters=$null
-# if($Chapter -ne '*' ) {
-#     $chapters = ($Chapter |
-#         ForEach-Object{ "$_".PadLeft(2, '0')} |
-#         ForEach-Object{ "Chapter$_.Tests.csproj" })
-# }
-# else {
-#     $chapters = 'Chapter??.Tests.csproj'
-# }
-
 . ./Utilities/Write-PSObject.ps1
 
-$chapterFilter | Invoke-ChapterFullBuild |
-    Write-PSObject -MatchMethod Match,Match,Match,Match `
-        -Value '[1-9][0-9]*','[1-9][0-9]*','[1-9][0-9]*','[1-9][0-9]*' `
-        -Column 'ErrorCount','WarningCount','Failed','Skipped' `
-        -ValueBackColor Red,Yellow,Red,Yellow `
-        -ValueForeColor ([Console]::ForegroundColor),([Console]::ForegroundColor),([Console]::ForegroundColor),Black
-
-return
-
-
-Remove-Item -Path 'Test.Results.txt' -ErrorAction ignore
-[string[]]$chapters=$null
-if($Chapter -ne '*' ) {
-    $chapters = ($Chapter | ForEach-Object{ "$_".PadLeft(2, '0')} | ForEach-Object{ "*$_.Tests.csproj" })
-}
-else {
-    $chapters = '*.Tests.csproj'
-}
-
-
-$testResults = $()
-$chapterProjects = @(Get-ChildItem -recurse -include $chapters -exclude IntelliTect.TestTools.Console.Tests.csproj | Sort-Object)
-if($chapterProjects.Count -gt 0) {
-    $format = "{0,-20}{1,10}{2,10}{3,10}{4,10}"
-    Write-Host ($format -f 'Errors','Warnings','Project','Total','Passed','Failed','Skipped')
-    Write-Host ($format -f '------','--------','-------','-----','------','------','-------')
-
-    $chapterProjects | Invoke-DotNetTest <#-BaseIntermediateOutputPath $BaseIntermediateOutputPath#> | ForEach-Object {
-        if($_.Failed -gt 0) {
-            $foregroundColor = [System.ConsoleColor]::Red
-        }
-        else {
-            if($_.Skipped -gt 0) {
-                $foregroundColor = [System.ConsoleColor]::Yellow
-            }
-            else {
-                $foregroundColor = [System.ConsoleColor]::Green
-            }
-        }
-        Write-Host ($format -f $_.Project,$_.Total,$_.Passed,$_.Failed,$_.Skipped) -ForegroundColor $foregroundColor
-        $_.TestResultDetail | ForEach-Object{ $testResults += $_ }
-    }
-}
-
-if(!(Test-Path .\Test.Results.txt)) {
-    Write-Warning "No files found for `$Chapter = $Chapter"
-}
-else {
-    $text = (get-content .\Test.Results.txt -raw )
-
-    $matches = @(([regex]'(?smi)^Starting test execution, please wait\.\.\.\w(.*?)\wTotal tests.*?$').Matches($text))
-
-    if($matches.Count -gt 0) {
-        Write-Host
-        Write-Host
-        Write-Host "Details"
-        Write-Host "----------------------"
-
-        $matches | Select-Object -ExpandProperty Groups |
-        Select-Object -skip 1 |
-        Select-Object -ExpandProperty Value | ForEach-Object{ $_ -split [Environment]::NewLine } |
-        ForEach-Object {
-            try{$foregroundColor = ((Get-Host).UI.RawUI.ForegroundColor)} catch{ <# Igore #>}
-            if(!$foregroundColor -OR ($foregroundColor -lt 0)) {
-                $foregroundColor =  [System.ConsoleColor]:: White
-            }
-            if($_ -like "Skipped *") { $foregroundColor = [System.ConsoleColor]::Yellow }
-            if($_ -like "Failed *") { $foregroundColor = [System.ConsoleColor]::Red }
-
-            Write-Host $_ -ForegroundColor $foregroundColor
-        }
-    }
-}
-
-Write-Host ""
+$chapterFilter | Invoke-ChapterFullBuild | Write-PSObject -MatchMethod Match,Match,Match,Match `
+    -Value '[1-9][0-9]*','[1-9][0-9]*','[1-9][0-9]*','[1-9][0-9]*' `
+    -Column 'ErrorCount','WarningCount','Failed','Skipped' `
+    -ValueBackColor Red,Yellow,Red,Yellow `
+    -ValueForeColor ([Console]::ForegroundColor),Black,([Console]::ForegroundColor),Black
 
 
 $SampleBuildOutput = @"
