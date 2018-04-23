@@ -652,7 +652,7 @@ END {
 
     $l = 0;
     $colCount = 0
-    $Object | Format-Table -A | Out-String | ForEach-Object{
+    $Object | Format-Table | Out-String -stream | ForEach-Object{
         $_ -replace "`r",'' -split "`n"} |  Where-Object {$_.Trim() -ne '' } | ForEach-Object {
         $line = $_
         $l++;
@@ -662,7 +662,7 @@ END {
         }
         If($l -le 2)
         {
-            If($l -eq 2 -And ($MatchMethod -Or $ColoredColumns))
+            If($MatchMethod -Or $ColoredColumns)
             {
                 #$columns = $Object[0] | Get-Member -MemberType NoteProperty | Select Name -ExpandProperty Name;
                 $headerLine = $line;
@@ -705,8 +705,9 @@ END {
                 }
             }
 
-            If ($l -eq 2 -And $RemoveHeadersSeparator)
+            If ($RemoveHeadersSeparator)
             {
+                # TODO: Remove continue as it doesn't work as expected with Foreach-Object
                 Continue;
             }
 
@@ -737,15 +738,13 @@ END {
                 Write-Line -Object $line -ForegroundColor $hfc -BackgroundColor $hbc;
             }
 
-            If($l -eq 2)
+            If($HeadersOnly)
             {
-                If($HeadersOnly)
-                {
-                    Return;
-                }
+                # TODO: Remove continue as it doesn't work as expected with Foreach-Object
+                Return;
             }
         }
-        elseIf($l -gt 2  -And ($MatchMethod -Or $ColoredColumns))
+        elseIf($MatchMethod -Or $ColoredColumns)
         {
             $oLine = $object[$l -3];
             $values = @($null) * $colCount;
