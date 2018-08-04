@@ -1,5 +1,3 @@
-This project contains the source code for the book Essential C# by Mark Michaelis (Addison-Wesley).
-=======
 # EssentialCSharp
 
 This project contains the source code for the book **Essential C#** by Mark Michaelis (Addison-Wesley).
@@ -15,9 +13,9 @@ Ensure one of the following frameworks is installed at the latest version.
 
 ### Download the Code
 
-#### Local Copy
+#### Local Copy  
 
-Open a console and change the working directory to the desired project location.
+Open a console and change the working directory to the desired project location. 
 ```
 $ git clone --recursive https://github.com/IntelliTect/EssentialCSharp.git
 $ cd ./EssentialCSharp/
@@ -33,7 +31,7 @@ $ git checkout v6.0
 ### Build
 
 **EssentialCSharp.sln** is the project's main solution, open this with Visual Studio and _Build All_.
-
+ 
  For those using the command line, build all the projects from the /EssentialCSharp/ directory with these commands:
 ```
 $ dotnet restore EssentialCSharp.sln
@@ -58,7 +56,7 @@ Press any key to exit.
 $
 ```
 
-Documentation for .NET CLI tools can be found here:
+Documentation for .NET CLI tools can be found here: 
 
 https://docs.microsoft.com/en-us/dotnet/core/tools/
 

@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.IO;
-
+using System.Runtime.InteropServices;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_16.Tests
 {
@@ -28,7 +28,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_16.Tests
                 Assert.AreEqual<int>(3, (int)fileAttributes);
                 expected = $@"ReadOnly, Hidden = {(int)fileAttributes}";
             }
-
+            
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
                 expected, Program.Main);
         }
