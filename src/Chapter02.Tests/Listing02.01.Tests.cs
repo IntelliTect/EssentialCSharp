@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_01.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_01To06.Tests
 {
     [TestClass]
     public class ProgramTests
@@ -18,7 +18,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_01.Tests
 0x2A";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, Program.ChapterMain);
+                expected, Program.Main);
         }
     }
 }

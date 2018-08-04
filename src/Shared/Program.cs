@@ -11,7 +11,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
         public static void Main(string[] args)
         {
             string listing;
-            IEnumerable<string> arguments = null;
+            IEnumerable<string> stringArguments = null;
             if (args.Length == 0)
             {
                 Console.Write("Enter the listing number to execute (e.g. For Listing 18.1 enter \"18.1\"): ");
@@ -20,14 +20,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
             else
             {
                 listing = args[0];
-                arguments = args.Skip(1);
+                stringArguments = args.Skip(1);
             }
 
-            LaunchMain(listing, arguments);
-        }
-
-        private static void LaunchMain(string listing, IEnumerable<string> stringArguments)
-        {
             Console.WriteLine();
             Console.WriteLine("____________________________");
             Console.WriteLine();
@@ -35,11 +30,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
 
             try
             {
+                string chapterName = "";
+                listing = ParseListingName(listing, out chapterName);
 
-                listing = ParseListingName(listing);
+                var assembly = Assembly.Load(new AssemblyName(chapterName));
 
-                Type target = Assembly.GetExecutingAssembly().GetTypes().First(
-                    type => type.FullName.Contains(listing + "."));
+                Type target = assembly.GetTypes().First(type => type.FullName.Contains(listing + "."));
                 var method = (MethodInfo)target.GetMember("Main").First();
 
                 object[] arguments;
@@ -61,7 +57,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                 if (method.GetCustomAttributes(typeof(STAThreadAttribute), false).Any())
                 {
                     Thread thread = new Thread(() => method.Invoke(null, arguments));
-                    thread.SetApartmentState(ApartmentState.STA);
+                    //thread.SetApartmentState(ApartmentState.STA);
                     thread.Start();
                     thread.Join();
                 }
@@ -148,8 +144,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
             return args;
         }
 
-        private static string ParseListingName(string listing)
+        private static string ParseListingName(string listing, out string chapterName)
         {
+            var appendices = new List<string> { "A", "B", "C", "D" };
+
+            chapterName = "";
+
             string[] chapterListing = listing.Split('.');
             listing = string.Empty;
 
@@ -159,6 +159,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
             {
                 startPosition = 1;
                 listing += chapterListing[0].ToUpper() + ".";
+                chapterName = "Chapter" + (appendices.Contains(chapterListing[0].ToUpper()) ? "App" : "") + chapterListing[0];
             }
             else
             {
@@ -167,6 +168,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
 
             for (int index = startPosition; index < chapterListing.Length; index++)
             {
+                if (index == startPosition && string.IsNullOrEmpty(chapterName)) chapterName = "Chapter" + chapterListing[index].PadLeft(2, '0');
                 listing += chapterListing[index].PadLeft(2, '0') + ".";
             }
 

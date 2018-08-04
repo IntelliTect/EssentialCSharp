@@ -6,7 +6,7 @@
 
     public class Program
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             string stars = "*".PadRight(Console.WindowWidth - 1, '*');
             Console.WriteLine("Push ENTER to exit.");

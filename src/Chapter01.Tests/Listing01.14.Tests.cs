@@ -3,15 +3,19 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_14.Tests
 {
     [TestClass]
-    public class ProgramTests
+    public class HeyYouTests
     {
         [TestMethod]
-        public void Main_InputOne_WriteOne()
+        public void Main_InputInigoMontoya_WriteNothing()
         {
-            const string expected = @"1<<1>>";
+            const string expected =
+@"Hey you!
+Enter your first name: <<Inigo
+>>Enter your last name: <<Montoya
+>>";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, Program.ChapterMain);
+                expected, HeyYou.Main);
         }
     }
 }

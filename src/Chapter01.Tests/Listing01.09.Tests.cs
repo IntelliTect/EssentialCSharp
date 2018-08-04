@@ -3,15 +3,15 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_09.Tests
 {
     [TestClass]
-    public class MiracleMaxTests
+    public class ProgramTests
     {
         [TestMethod]
-        public void Main_StormCastleShort()
+        public void Main_HelloToInigo()
         {
-            const string expected = @"Have fun storming the castle!";
+            const string expected = @"Hello Inigo Montoya";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, MiracleMax.ChapterMain);
+                expected, Program.Main);
         }
     }
 }

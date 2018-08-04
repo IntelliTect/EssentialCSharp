@@ -38,7 +38,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared.Listing18_15
             return numbers;
         }
 
-        public static void ChapterMain()
+        public static void Main()
         {
             List<string> numbersForParallel = GetRandomNumbers();
             List<string> numbersForSynchronous = new List<string>(numbersForParallel);

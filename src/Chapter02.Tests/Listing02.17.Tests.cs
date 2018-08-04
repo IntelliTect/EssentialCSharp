@@ -6,14 +6,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_17.Tests
     public class UppercaseTests
     {
         [TestMethod]
-        public void Main_InputLorem_OutputIsCapitalized()
+        public void Main_InputLorem_OutputNotCapitalized()
         {
             const string expected =
 @"Enter text: <<Lorem
->>LOREM";
+>>Lorem";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, Uppercase.ChapterMain);
+                expected, Uppercase.Main);
         }
     }
 }

@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>    
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.5.0-preview-20170727-01" />
+    <PackageReference Include="MSTest.TestAdapter" Version="1.2.0-beta" />
+    <PackageReference Include="MSTest.TestFramework" Version="1.2.0-beta" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\submodules\TestTools\IntelliTect.TestTools.Console\IntelliTect.TestTools.Console.csproj" />
+    <ProjectReference Include="..\Chapter19\Chapter19.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{82a7f48d-3b50-4b1e-b82e-3ada8210c358}" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <ProductName>Chapter13</ProductName>
+    <StartupObject>AddisonWesley.Michaelis.EssentialCSharp.Shared.Program</StartupObject> 
+  </PropertyGroup>
+  <Import Project="..\Versioning.targets" />
+  <ItemGroup>
+    <Compile Include="..\Shared\Program.cs">
+      <Link>Program.cs</Link>
+    </Compile>
+  </ItemGroup>
+</Project>

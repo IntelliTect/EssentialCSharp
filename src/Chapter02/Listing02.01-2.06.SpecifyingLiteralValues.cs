@@ -1,8 +1,8 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_01
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_01To06
 {
     public class Program
     {
-        public static void ChapterMain()
+        public static void Main()
         {
             //begin listing 2.1
             System.Console.WriteLine(42);
@@ -22,7 +22,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_01
             //end listing 2.4
 
             //begin listing 2.5
-            //Display the value 42 using a hexadecimal literal.
+            //Display the value 42 using a hexadecimal literal
             System.Console.WriteLine(0x002A);
             //end listing 2.5
 

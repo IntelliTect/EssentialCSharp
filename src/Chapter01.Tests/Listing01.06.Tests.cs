@@ -6,13 +6,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_06.Tests
     public class HelloWorldTests
     {
         [TestMethod]
-        public void Main_InigoHello()
+        public void Main_UpDown()
         {
-            const string expected = 
-                @"Hello. My name is Inigo Montoya.";
+            const string expected =
+@"Up
+Down";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, HelloWorld.ChapterMain);
+                expected, HelloWorld.Main);
         }
     }
 }
