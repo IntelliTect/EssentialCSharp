@@ -11,7 +11,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{91698F73-19EB-4531-980C-5B8B76DC28C9}"
 	ProjectSection(SolutionItems) = preProject
-		src\Shared\AsyncCompletedEventArgs.cs = src\Shared\AsyncCompletedEventArgs.cs
 		src\Shared\DoWorkEventArgs.cs = src\Shared\DoWorkEventArgs.cs
 		src\Shared\PiCalculator+InternalPiDigitCalculator.cs = src\Shared\PiCalculator+InternalPiDigitCalculator.cs
 		src\Shared\PiCalculator.cs = src\Shared\PiCalculator.cs
@@ -94,10 +93,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chapter20", "src\Chapter20\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chapter20.Tests", "src\Chapter20.Tests\Chapter20.Tests.csproj", "{499FD8E6-D7DC-4295-AD35-517814CAE3AF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChapterAppB", "src\ChapterAppB\ChapterAppB.csproj", "{24CD323F-A48C-4F3D-9779-25F3E8FAA07C}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChapterAppC", "src\ChapterAppC\ChapterAppC.csproj", "{5BA0384E-2A36-4777-BFC5-189D5F14D7B4}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IntelliTect.TestTools.Console.Tests", "submodules\TestTools\IntelliTect.TestTools.Console.Tests\IntelliTect.TestTools.Console.Tests.csproj", "{9E1A36E4-F75F-4125-9856-DA631D901E52}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chapter06.Tests", "src\Chapter06.Tests\Chapter06.Tests.csproj", "{7646D694-EBEE-47C7-AD41-A1503B958B9C}"
@@ -106,7 +101,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chapter19.Tests", "src\Chap
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chapter07.Tests", "src\Chapter07.Tests\Chapter07.Tests.csproj", "{C0B9BAB1-C9C4-4220-8684-09871CAC92D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter21", "src\Chapter21\Chapter21.csproj", "{336D5C56-0046-43CE-920C-0BA18E14BCEC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chapter21", "src\Chapter21\Chapter21.csproj", "{336D5C56-0046-43CE-920C-0BA18E14BCEC}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chapter21.Tests", "src\Chapter21.Tests\Chapter21.Tests.csproj", "{54AB095B-2810-4FE6-8C62-50BB6A2321D7}"
 EndProject
@@ -564,30 +559,6 @@ Global
 		{499FD8E6-D7DC-4295-AD35-517814CAE3AF}.Release|x64.Build.0 = Release|Any CPU
 		{499FD8E6-D7DC-4295-AD35-517814CAE3AF}.Release|x86.ActiveCfg = Release|Any CPU
 		{499FD8E6-D7DC-4295-AD35-517814CAE3AF}.Release|x86.Build.0 = Release|Any CPU
-		{24CD323F-A48C-4F3D-9779-25F3E8FAA07C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{24CD323F-A48C-4F3D-9779-25F3E8FAA07C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{24CD323F-A48C-4F3D-9779-25F3E8FAA07C}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{24CD323F-A48C-4F3D-9779-25F3E8FAA07C}.Debug|x64.Build.0 = Debug|Any CPU
-		{24CD323F-A48C-4F3D-9779-25F3E8FAA07C}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{24CD323F-A48C-4F3D-9779-25F3E8FAA07C}.Debug|x86.Build.0 = Debug|Any CPU
-		{24CD323F-A48C-4F3D-9779-25F3E8FAA07C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{24CD323F-A48C-4F3D-9779-25F3E8FAA07C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{24CD323F-A48C-4F3D-9779-25F3E8FAA07C}.Release|x64.ActiveCfg = Release|Any CPU
-		{24CD323F-A48C-4F3D-9779-25F3E8FAA07C}.Release|x64.Build.0 = Release|Any CPU
-		{24CD323F-A48C-4F3D-9779-25F3E8FAA07C}.Release|x86.ActiveCfg = Release|Any CPU
-		{24CD323F-A48C-4F3D-9779-25F3E8FAA07C}.Release|x86.Build.0 = Release|Any CPU
-		{5BA0384E-2A36-4777-BFC5-189D5F14D7B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5BA0384E-2A36-4777-BFC5-189D5F14D7B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5BA0384E-2A36-4777-BFC5-189D5F14D7B4}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{5BA0384E-2A36-4777-BFC5-189D5F14D7B4}.Debug|x64.Build.0 = Debug|Any CPU
-		{5BA0384E-2A36-4777-BFC5-189D5F14D7B4}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{5BA0384E-2A36-4777-BFC5-189D5F14D7B4}.Debug|x86.Build.0 = Debug|Any CPU
-		{5BA0384E-2A36-4777-BFC5-189D5F14D7B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5BA0384E-2A36-4777-BFC5-189D5F14D7B4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5BA0384E-2A36-4777-BFC5-189D5F14D7B4}.Release|x64.ActiveCfg = Release|Any CPU
-		{5BA0384E-2A36-4777-BFC5-189D5F14D7B4}.Release|x64.Build.0 = Release|Any CPU
-		{5BA0384E-2A36-4777-BFC5-189D5F14D7B4}.Release|x86.ActiveCfg = Release|Any CPU
-		{5BA0384E-2A36-4777-BFC5-189D5F14D7B4}.Release|x86.Build.0 = Release|Any CPU
 		{9E1A36E4-F75F-4125-9856-DA631D901E52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9E1A36E4-F75F-4125-9856-DA631D901E52}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E1A36E4-F75F-4125-9856-DA631D901E52}.Debug|x64.ActiveCfg = Debug|Any CPU
