@@ -13,9 +13,6 @@
     <Compile Include="..\Shared\PiCalculator+InternalPiDigitCalculator.cs">
       <Link>PiCalculator+InternalPiDigitCalculator.cs</Link>
     </Compile>
-    <Compile Include="..\Shared\AsyncCompletedEventArgs.cs">
-      <Link>AsyncCompletedEventArgs.cs</Link>
-    </Compile>
     <Compile Include="..\Shared\DoWorkEventArgs.cs">
       <Link>DoWorkEventArgs.cs</Link>
     </Compile>
