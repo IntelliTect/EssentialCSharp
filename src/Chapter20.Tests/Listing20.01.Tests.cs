@@ -1,37 +1,73 @@
 using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Collections.Generic;
-using System.Runtime.InteropServices;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_01.Tests
 {
     [TestClass]
     public class ProgramTests
     {
-        public static void TestUnsychronizedIncrementDecrement(Action action)
+        public static bool IsIncrementDecrementSynchronized(Action<string[]> action)
         {
-            string expected = @"Count = *";
+            string expected = $"Increment and decrementing \\d* times...{Environment.NewLine}Count = (?<Count>\\d*)";
+            bool synchronized = true;
 
-            string output = "";
+            CancellationTokenSource cancellationtokenSource
+                = new CancellationTokenSource();
 
-            // Try 3 times just in case there is a fluke
-            for (int i = 0; i < 3; i++)
+            // Try multiple times, increasing the increment/decrement iterations, just in case there is a fluke
+            ParallelOptions options = new ParallelOptions();
+            options.CancellationToken = cancellationtokenSource.Token;
+            Program.CancellationToken = cancellationtokenSource.Token;
+
+            try
             {
-                output = IntelliTect.TestTools.Console.ConsoleAssert.ExpectLike(expected,
-                () =>
+                Parallel.For(5, 9, options, i =>
                 {
-                    action();
-                });
-                if (output != "Count = 0") break;
-            }
+                    string output = "";
+                    string[] count = { (2 * Math.Pow(10, i)).ToString() };
 
-            Assert.AreNotEqual<string>("Count = 0", output);
+                    output = IntelliTect.TestTools.Console.ConsoleAssert.Execute("",
+                    () =>
+                    {
+                        action(count);
+                    });
+                    Console.WriteLine(output);
+                    MatchCollection matches = Regex.Matches(output, expected, System.Text.RegularExpressions.RegexOptions.Multiline);
+                    if(matches.Count > 0 && matches[0].Success)
+                    {
+                        string result = matches[0].Groups["Count"].Value;
+                        if (result != "0")
+                        {
+                            synchronized = false;  // No synchronization required for bool
+                            cancellationtokenSource.Cancel();
+                        }
+                    }
+                });
+            }
+            catch(OperationCanceledException){ }
+            catch(AggregateException exception)
+            {
+                foreach (Exception innerException in exception.Flatten().InnerExceptions)
+                {
+                    if (!(innerException is OperationCanceledException)){}
+                    else
+                    {
+                        System.Runtime.ExceptionServices.ExceptionDispatchInfo.Capture(
+                            exception.InnerException).Throw();
+                    }
+                }
+            }
+            return synchronized;
         }
 
         [TestMethod]
         public void UnsynchronizedIncrementAndDecrement()
         {
-            TestUnsychronizedIncrementDecrement(Program.Main);
+            Assert.IsFalse(
+                IsIncrementDecrementSynchronized(Program.Main));
         }
     }
 }

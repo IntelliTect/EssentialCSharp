@@ -6,11 +6,14 @@
     public class Program
     {
         readonly static object _Sync = new object();
-        const int _Total = int.MaxValue;
+        static int _Total = int.MaxValue;
         static long _Count = 0;
 
-        public static async Task Main()
+        public static async Task Main(string[] args)
         {
+            if (args?.Length > 0) { int.TryParse(args[0], out _Total); }
+            Console.WriteLine($"Increment and decrementing {_Total} times...");
+
             // Use Task.Factory.StartNew for .NET 4.0
             Task task = Task.Run(() => Decrement());
 

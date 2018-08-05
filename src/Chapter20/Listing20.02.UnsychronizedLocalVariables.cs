@@ -1,14 +1,22 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_02
 {
     using System;
+    using System.Threading;
     using System.Threading.Tasks;
 
-    class Program
+    public class Program
     {
-        public static void Main()
+        static public CancellationToken CancellationToken;
+
+        public static void Main(string[] args)
         {
+            int total = int.MaxValue;
             int x = 0;
-            Parallel.For(0, int.MaxValue, i =>
+            if (args?.Length > 0) { int.TryParse(args[0], out total); }
+
+            Parallel.For(0, total, 
+                new ParallelOptions() { CancellationToken = CancellationToken}
+                , i =>
             {
                 x++;
                 x--;
