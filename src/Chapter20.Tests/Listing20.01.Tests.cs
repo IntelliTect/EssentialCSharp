@@ -9,10 +9,26 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_01.Tests
     [TestClass]
     public class ProgramTests
     {
-        public static bool IsIncrementDecrementSynchronized(Action<string[]> action)
+        public static bool IsIncrementDecrementLikelySynchronized(
+            Func<string[], int> func, long iterations)
         {
-            string expected = $"Increment and decrementing \\d* times...{Environment.NewLine}Count = (?<Count>\\d*)";
-            bool synchronized = true;
+            string[] args = { iterations.ToString() };
+            return func(args) == 0;
+        }
+
+
+        /// <summary>
+        /// Returns true if the increment/decrement operations are not atomic.
+        /// 
+        /// IMPORTANT: This method does not prove something is atomic.  It returns
+        /// true if they are not atomic.  A return of false indicates atomicity is unknown.
+        /// </summary>
+        /// <param name="func"></param>
+        /// <returns></returns>
+        public static bool IsIncrementDecrementNotAtomic(
+            Func<string[], int> func)
+        {
+            bool unsyncrhonized = false;
 
             CancellationTokenSource cancellationtokenSource
                 = new CancellationTokenSource();
@@ -24,50 +40,62 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_01.Tests
 
             try
             {
-                Parallel.For(5, 9, options, i =>
+                Parallel.For(1, 3, options, i =>
                 {
-                    string output = "";
-                    string[] count = { (2 * Math.Pow(10, i)).ToString() };
+                    string[] count = { int.MaxValue.ToString() };
+                    // Alternatively, iterate from 5-9 (10 exclusive) and 
+                    // set count using { (2 * Math.Pow(10, i)).ToString() };
+                    // Thereby, incrementing count logarithmically until int.MaxValue.
 
-                    output = IntelliTect.TestTools.Console.ConsoleAssert.Execute("",
-                    () =>
-                    {
-                        action(count);
-                    });
-                    Console.WriteLine(output);
-                    MatchCollection matches = Regex.Matches(output, expected, System.Text.RegularExpressions.RegexOptions.Multiline);
-                    if(matches.Count > 0 && matches[0].Success)
-                    {
-                        string result = matches[0].Groups["Count"].Value;
-                        if (result != "0")
-                        {
-                            synchronized = false;  // No synchronization required for bool
-                            cancellationtokenSource.Cancel();
-                        }
-                    }
+                if (func(count) != 0)
+                {
+                    unsyncrhonized = true;
+                    cancellationtokenSource.Cancel();
+                }
+
                 });
             }
-            catch(OperationCanceledException){ }
-            catch(AggregateException exception)
-            {
-                foreach (Exception innerException in exception.Flatten().InnerExceptions)
-                {
-                    if (!(innerException is OperationCanceledException)){}
-                    else
-                    {
-                        System.Runtime.ExceptionServices.ExceptionDispatchInfo.Capture(
-                            exception.InnerException).Throw();
-                    }
-                }
-            }
-            return synchronized;
+            catch (OperationCanceledException) { }
+
+            return unsyncrhonized;
         }
 
+        static public void VerifyOutputIncrementAndDecrement(Func<string[], int> main)
+        {
+            int? result = null;
+            string expected = $"Increment and decrementing \\d* times...{Environment.NewLine}Count = (?<Count>\\d*)";
+            string output = IntelliTect.TestTools.Console.ConsoleAssert.Execute("",
+            () =>
+            {
+                result = main(new string[] { "1" });
+            });
+            MatchCollection matches = Regex.Matches(output, expected, System.Text.RegularExpressions.RegexOptions.Multiline);
+            Assert.IsTrue(matches.Count > 0);
+            Assert.IsTrue(matches[0].Success);
+            Assert.AreEqual(result.ToString(), matches[0].Groups["Count"].Value);
+        }
+
+
+        [TestMethod]
+        public void MainVerifyOutputIncrementAndDecrement()
+        {
+            VerifyOutputIncrementAndDecrement(Program.Main);
+        }
+
+        /// <summary>
+        /// Indicates that a the increment/decrement operations are not atomic
+        /// IMPORTANT: Returns Inconclusive as it may just happen to increment/decrement 
+        /// consistently but that doesn't prove that it is synchronized (which is not reasonably
+        /// possible to prove with code execution).
+        /// </summary>      
         [TestMethod]
         public void UnsynchronizedIncrementAndDecrement()
         {
-            Assert.IsFalse(
-                IsIncrementDecrementSynchronized(Program.Main));
+            bool isUnsynchronized = IsIncrementDecrementNotAtomic(Program.Main);
+            if (!isUnsynchronized)
+            {
+                Assert.Inconclusive("Unexpectedly, the number of increments and decrements was the same even though there was no lock mechanism.");
+            }
         }
     }
 }

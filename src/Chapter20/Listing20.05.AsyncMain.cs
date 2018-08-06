@@ -7,9 +7,9 @@
     {
         readonly static object _Sync = new object();
         static int _Total = int.MaxValue;
-        static long _Count = 0;
+        static int _Count = 0;
 
-        public static async Task Main(string[] args)
+        public static async Task<int> Main(string[] args)
         {
             if (args?.Length > 0) { int.TryParse(args[0], out _Total); }
             Console.WriteLine($"Increment and decrementing {_Total} times...");
@@ -28,6 +28,7 @@
 
             await task;
             Console.WriteLine($"Count = {_Count}");
+            return _Count;
         }
 
         static void Decrement()

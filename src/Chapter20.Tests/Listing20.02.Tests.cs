@@ -9,10 +9,25 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_02.Tests
     {
 
         [TestMethod]
+        public void MainVerifyOutputIncrementAndDecrement()
+        {
+            VerifyOutputIncrementAndDecrement(Program.Main);
+        }
+
+        /// <summary>
+        /// Indicates that a the increment/decrement operations are not atomic
+        /// IMPORTANT: Returns Inconclusive as it may just happen to increment/decrement 
+        /// consistently but that doesn't prove that it is synchronized (which is not reasonably
+        /// possible to prove with code execution).
+        /// </summary>
+        [TestMethod]
         public void UnsynchronizedIncrementAndDecrement()
         {
-            Assert.IsFalse(
-                IsIncrementDecrementSynchronized(Program.Main));
+            bool isUnsynchronized = IsIncrementDecrementNotAtomic(Program.Main);
+            if (!isUnsynchronized)
+            {
+                Assert.Inconclusive("Unexpectedly, the number of increments and decrements was the same even though there was no lock mechanism.");
+            }
         }
     }
 }

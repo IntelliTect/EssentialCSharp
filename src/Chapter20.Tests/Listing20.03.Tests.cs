@@ -7,12 +7,18 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_03.Tests
     [TestClass]
     public class ProgramTests
     {
+        [TestMethod]
+        public void MainVerifyOutputIncrementAndDecrement()
+        {
+            VerifyOutputIncrementAndDecrement(Program.Main);
+        }
 
         [TestMethod]
         public void SynchronizedIncrementAndDecrement()
         {
-            Assert.IsFalse(
-                IsIncrementDecrementSynchronized(Program.Main));
+            Assert.IsTrue(
+                IsIncrementDecrementLikelySynchronized(Program.Main, short.MaxValue));
         }
     }
 }
+

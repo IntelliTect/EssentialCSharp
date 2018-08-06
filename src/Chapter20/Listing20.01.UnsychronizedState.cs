@@ -6,11 +6,11 @@
 
     public class Program
     {
-        static public CancellationToken CancellationToken;
+        static public CancellationToken? CancellationToken;
         static int _Total = int.MaxValue;
         static int _Count = 0;
 
-        public static void Main(string[] args)
+        public static int Main(string[] args)
         {
             if (args?.Length > 0) { int.TryParse(args[0], out int _Total); }
 
@@ -20,19 +20,25 @@
             Task task = Task.Run(() => Decrement());
 
             // Increment
-            for(int i = 0; i < _Total && !CancellationToken.IsCancellationRequested; i++)
+            for(int i = 0; (i < _Total) && 
+                (CancellationToken != null) &&!CancellationToken.Value.IsCancellationRequested; 
+                i++)
             {
                 _Count++;
             }
 
             task.Wait();
             Console.WriteLine($"Count = {_Count}");
+
+            return _Count;
         }
 
         static void Decrement()
         {
             // Decrement
-            for(int i = 0; i < _Total && !CancellationToken.IsCancellationRequested; i++)
+            for(int i = 0; i < _Total && 
+                (CancellationToken != null) && !CancellationToken.Value.IsCancellationRequested; 
+                i++)
             {
                 _Count--;
             }

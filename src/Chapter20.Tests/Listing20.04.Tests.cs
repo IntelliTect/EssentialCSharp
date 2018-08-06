@@ -12,8 +12,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_04.Tests
         [TestMethod]
         public void SynchronizedIncrementAndDecrement()
         {
-            Assert.IsFalse(
-                IsIncrementDecrementSynchronized(Program.Main));
+            Assert.IsTrue(
+                IsIncrementDecrementLikelySynchronized(Program.Main, short.MaxValue));
         }
 
     }
