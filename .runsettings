@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RunSettings>
+  <RunConfiguration>
+    <MaxCpuCout>0</MaxCpuCout>
+  </Runconfiguration>
+  <!-- MSTest adapter -->
+  <!--
+  <MSTest>
+    <Parallelize>
+      <Workers>4</Workers>
+      <Scope>ProcessLevel</Scope>
+    </Parallelize>
+  </MSTest>
+  -->
+</RunSettings>
