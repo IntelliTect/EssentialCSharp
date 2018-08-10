@@ -18,9 +18,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{91698F
 		src\Shared\Program.cs = src\Shared\Program.cs
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "submodules", "submodules", "{731AAC54-C91A-4D8D-ABB5-1472B6EFCC36}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "submodules", "src\submodules", "{731AAC54-C91A-4D8D-ABB5-1472B6EFCC36}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IntelliTect.TestTools.Console", "submodules\TestTools\IntelliTect.TestTools.Console\IntelliTect.TestTools.Console.csproj", "{210FAD29-2D8B-46D5-9F62-2BACD00D4A2C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IntelliTect.TestTools.Console", "src\submodules\TestTools\IntelliTect.TestTools.Console\IntelliTect.TestTools.Console.csproj", "{210FAD29-2D8B-46D5-9F62-2BACD00D4A2C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chapter01", "src\Chapter01\Chapter01.csproj", "{70458AA7-C130-4E97-BBD9-C54BDCDF1A67}"
 EndProject
@@ -94,7 +94,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chapter20", "src\Chapter20\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chapter20.Tests", "src\Chapter20.Tests\Chapter20.Tests.csproj", "{499FD8E6-D7DC-4295-AD35-517814CAE3AF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IntelliTect.TestTools.Console.Tests", "submodules\TestTools\IntelliTect.TestTools.Console.Tests\IntelliTect.TestTools.Console.Tests.csproj", "{9E1A36E4-F75F-4125-9856-DA631D901E52}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IntelliTect.TestTools.Console.Tests", "src\submodules\TestTools\IntelliTect.TestTools.Console.Tests\IntelliTect.TestTools.Console.Tests.csproj", "{9E1A36E4-F75F-4125-9856-DA631D901E52}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chapter06.Tests", "src\Chapter06.Tests\Chapter06.Tests.csproj", "{7646D694-EBEE-47C7-AD41-A1503B958B9C}"
 EndProject
