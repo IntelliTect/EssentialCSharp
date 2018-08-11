@@ -12,7 +12,7 @@
     <PackageReference Include="System.Reflection" Version="4.3.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\submodules\TestTools\IntelliTect.TestTools.Console\IntelliTect.TestTools.Console.csproj" />
+    <ProjectReference Include="..\submodules\TestTools\IntelliTect.TestTools.Console\IntelliTect.TestTools.Console.csproj" />
     <ProjectReference Include="..\Chapter14\Chapter14.csproj" />
   </ItemGroup>
   <ItemGroup>

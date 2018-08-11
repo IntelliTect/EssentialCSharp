@@ -11,7 +11,7 @@
     <PackageReference Include="MSTest.TestFramework" Version="1.2.0-beta" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\submodules\TestTools\IntelliTect.TestTools.Console\IntelliTect.TestTools.Console.csproj" />
+    <ProjectReference Include="..\submodules\TestTools\IntelliTect.TestTools.Console\IntelliTect.TestTools.Console.csproj" />
     <ProjectReference Include="..\Chapter12\Chapter12.csproj" />
   </ItemGroup>
   <ItemGroup>
