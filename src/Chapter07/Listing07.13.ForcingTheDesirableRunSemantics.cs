@@ -7,7 +7,7 @@
             // Critical code
         }
 
-        private void Run()
+        public void Run()
         {
             Start();
             InternalRun();
