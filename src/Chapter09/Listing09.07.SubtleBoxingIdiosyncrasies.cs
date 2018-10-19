@@ -30,7 +30,7 @@
 
     interface IAngle
     {
-        void MoveTo(int hours, int minutes, int seconds);
+        void MoveTo(int degrees, int minutes, int seconds);
     }
 
     struct Angle : IAngle
