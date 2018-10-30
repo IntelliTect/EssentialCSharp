@@ -5,6 +5,7 @@
     <ProductName>Chapter14.Tests</ProductName>
   </PropertyGroup>
   <Import Project="..\Versioning.targets" />
+  <Import Project="..\ChapterTests.targets"/>
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.5.0-preview-20170727-01" />
     <PackageReference Include="MSTest.TestAdapter" Version="1.2.0-beta" />
@@ -12,7 +13,6 @@
     <PackageReference Include="System.Reflection" Version="4.3.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\submodules\TestTools\IntelliTect.TestTools.Console\IntelliTect.TestTools.Console.csproj" />
     <ProjectReference Include="..\Chapter14\Chapter14.csproj" />
   </ItemGroup>
   <ItemGroup>
