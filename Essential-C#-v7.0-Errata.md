@@ -14,3 +14,4 @@ Found by     |Chapter     | Page         | Correction
 ------------ |----------- | ------------ | ----------
 Zhou Jing    |7           | 329          | Listing 7.13: The `Run()` method should be public, `private void Run()`.
 Kyle Amonson |13          | 544          | Incorrect: `Predicate<int T>` Change `Predicate<in T>`
+Kyle Amonson |13          | 550          | "In Listings 13.7 and 13.10" changed to "In Listings 13.7 and 13.11"
