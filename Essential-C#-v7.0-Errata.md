@@ -16,3 +16,4 @@ Zhou Jing    |7           | 329          | Listing 7.13: The `Run()` method shou
 Kyle Amonson |13          | 544          | Incorrect: `Predicate<int T>` Change `Predicate<in T>`
 Kyle Amonson |13          | 550          | "In Listings 13.7 and 13.10" changed to "In Listings 13.7 and 13.11"
 Kyle Amonson |5           | 190          | Output 5.1 corrected Hello Inigo Montoya! Your initials are I. M.
+Kyle Amonson |5           | 200          | “and the optional second argument is…” corrected to “and the second argument is”.  The second argument is not optional in the code example.
