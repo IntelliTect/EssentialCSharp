@@ -20,3 +20,5 @@ Kyle Amonson |5           | 200          | “and the optional second argument i
 Kyle Amonson |6           | 251          | “what you learned in Chapter 4” corrected to “what you learned in Chapter 5”.  Introduced in Listing 5.06
 Kyle Amonson |7           | 327          | “Overloading a member” corrected to “Overriding a member”
 Kyle Amonson |9           | 390          | “DO overload” corrected to “DO override”
+Kyle Amonson |9           | 395          | “calls `MoveTo()` to change `Hours`” corrected: “calls `MoveTo()` to change `_Degrees`”
+Kyle Amonson |9           | 396          | “updates the `_Hours` value” corrected to “updates the `_Degrees` value”
