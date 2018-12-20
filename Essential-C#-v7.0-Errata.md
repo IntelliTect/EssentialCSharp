@@ -19,3 +19,4 @@ Kyle Amonson |5           | 190          | Output 5.1 corrected Hello Inigo Mont
 Kyle Amonson |5           | 200          | “and the optional second argument is…” corrected to “and the second argument is”.  The second argument is not optional in the code example.
 Kyle Amonson |6           | 251          | “what you learned in Chapter 4” corrected to “what you learned in Chapter 5”.  Introduced in Listing 5.06
 Kyle Amonson |7           | 327          | “Overloading a member” corrected to “Overriding a member”
+Kyle Amonson |9           | 390          | “DO overload” corrected to “DO override”
