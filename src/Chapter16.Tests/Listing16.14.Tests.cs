@@ -25,8 +25,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_14.Tests
 (yield\*, 1)
 (yield\*, 2)
 (yield\*, 3)";
-    
 
+            expected = IntelliTect.TestTools.Console.ConsoleAssert.ReplaceCRLF(expected);
 
             IntelliTect.TestTools.Console.ConsoleAssert.ExpectLike(expected, '\\',
             () =>
