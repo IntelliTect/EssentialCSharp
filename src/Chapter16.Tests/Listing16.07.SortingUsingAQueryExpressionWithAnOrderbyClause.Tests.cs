@@ -28,7 +28,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_07.Tests
                 Program.Main();
             });
 
-            IEnumerable<string> outputItems = output.Split('\n');
+            IEnumerable<string> outputItems = output.Split('\n',System.StringSplitOptions.RemoveEmptyEntries);
 
             Assert.AreEqual(expectedItemCount, outputItems.Count());
             foreach (string item in outputItems)

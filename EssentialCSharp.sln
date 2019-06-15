@@ -18,7 +18,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{91698F
 		src\Shared\Program.cs = src\Shared\Program.cs
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "submodules", "src\submodules", "{731AAC54-C91A-4D8D-ABB5-1472B6EFCC36}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "submodules", "submodules", "{731AAC54-C91A-4D8D-ABB5-1472B6EFCC36}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IntelliTect.TestTools.Console", "src\submodules\TestTools\IntelliTect.TestTools.Console\IntelliTect.TestTools.Console.csproj", "{210FAD29-2D8B-46D5-9F62-2BACD00D4A2C}"
 EndProject
