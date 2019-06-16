@@ -74,5 +74,5 @@ $ ./RunTests.sh
 ```
 
 ## Build Status
-Windows: [![Build Status](https://dev.azure.com/intelliTect/EssentialCSharp/_apis/build/status/Branch%20Master%20-%20EssentialCSharp-Windows?branchName=v8.0)](https://dev.azure.com/intelliTect/EssentialCSharp/_build/latest?definitionId=46&branchName=v8.0)
-Linux: [![Build status](https://dev.azure.com/intelliTect/EssentialCSharp/_apis/build/status/Branch%20v8.0%20-%20EssentialCSharp-Linux)](https://dev.azure.com/intelliTect/EssentialCSharp/_build/latest?definitionId=45)
+* *Windows*: [![Build Status](https://dev.azure.com/intelliTect/EssentialCSharp/_apis/build/status/Branch%20Master%20-%20EssentialCSharp-Windows?branchName=v8.0)](https://dev.azure.com/intelliTect/EssentialCSharp/_build/latest?definitionId=46&branchName=v8.0)
+* *Linux*: [![Build status](https://dev.azure.com/intelliTect/EssentialCSharp/_apis/build/status/Branch%20v8.0%20-%20EssentialCSharp-Linux)](https://dev.azure.com/intelliTect/EssentialCSharp/_build/latest?definitionId=45)
