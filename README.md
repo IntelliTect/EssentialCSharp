@@ -62,7 +62,6 @@ https://docs.microsoft.com/en-us/dotnet/core/tools/
 
 
 ## Batch Testing
-
 Use one of the following scripts to execute a batch test on all the projects.
 
 * /EssentialCSharp/RunTests.ps1 **(Windows)**
@@ -73,3 +72,7 @@ If running on Linux you may need to give the script execution permission.  From 
 $ chmod +x ./RunTests.sh
 $ ./RunTests.sh
 ```
+
+## Build Status
+* *Windows*: [![Build Status](https://dev.azure.com/intelliTect/EssentialCSharp/_apis/build/status/Branch%20V7%20-%20EssentialCSharp-Windows?branchName=v7.0)](https://dev.azure.com/intelliTect/EssentialCSharp/_build/latest?definitionId=43&branchName=v7.0)
+* *Linux*: [![Build Status](https://dev.azure.com/intelliTect/EssentialCSharp/_apis/build/status/Branch%20V7%20-%20EssentialCSharp-Linux?branchName=v7.0)](https://dev.azure.com/intelliTect/EssentialCSharp/_build/latest?definitionId=42&branchName=v7.0)
