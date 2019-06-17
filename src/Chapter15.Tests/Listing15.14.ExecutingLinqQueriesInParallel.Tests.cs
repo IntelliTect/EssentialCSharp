@@ -22,7 +22,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_14.Tests
             });
 
             IEnumerable<string> outputItems = output.Split(
-                new string[] { Environment.NewLine }, StringSplitOptions.None);
+                new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
 
             Assert.AreEqual(expectedItemCount, outputItems.Count());
             foreach (string item in outputItems)
