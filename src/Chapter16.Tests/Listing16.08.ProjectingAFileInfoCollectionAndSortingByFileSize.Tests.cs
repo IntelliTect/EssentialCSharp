@@ -30,7 +30,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_08.Tests
             });
 
             IEnumerable<string> outputItems = output.Split(
-                new string[] { Environment.NewLine }, StringSplitOptions.None);
+                new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
 
             Assert.AreEqual(expectedItemCount, outputItems.Count());
             foreach (string item in outputItems)
