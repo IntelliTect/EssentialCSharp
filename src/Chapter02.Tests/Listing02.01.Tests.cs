@@ -17,7 +17,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_01To06.Tes
 42
 0x2A";
 
-            const string netCoreApp3expected =
+            string expected = // netcoreapp3.0 and later
 @"42
 1.618034
 1.618033988749895
@@ -25,23 +25,16 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_01To06.Tes
 6.023E+23
 42
 0x2A";
-            string expected;
+
             string netCoreVersion = NetCore.GetNetCoreVersion();
-            if(netCoreVersion.StartsWith("2.1"))
+            if (string.Compare(netCoreVersion, "3") < 0)
             {
                 expected = netCoreApp2expected;
-            }
-            else if(netCoreVersion.StartsWith("3"))
-            {
-                expected = netCoreApp3expected;
-            }
-            else
-            {
-                throw new System.Exception(".NET Core Version ({netCoreVersion}) not handled.");
             }
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
                     expected, Program.Main);
+
         }
     }
 }
