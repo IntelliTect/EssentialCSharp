@@ -1,5 +1,6 @@
 ﻿using IntelliTect.TestTools.Console;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -28,7 +29,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_07.Tests
                 Program.Main();
             });
 
-            IEnumerable<string> outputItems = output.Split('\n',System.StringSplitOptions.RemoveEmptyEntries);
+            IEnumerable<string> outputItems = output.Split(
+                new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
 
             Assert.AreEqual(expectedItemCount, outputItems.Count());
             foreach (string item in outputItems)
