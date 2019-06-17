@@ -1,16 +1,25 @@
 [CmdletBinding(SupportsShouldProcess)]
 param($chapterNumber)
-Get-ChildItems "Chapter$chapterNumber*.csproj" -Recurse | ForEach-Object {
-    [xml]$csproj=Get-Content $_.FullName
-    $csproj.Project.PropertyGroup.TargetFramework ='netcoreapp3.0'
-    $nullable=$csproj.CreateElement('Nullable')
-    $nullable.InnerXml = 'enable'
-    $csproj.Project.PropertyGroup.AppendChild( $nullable )
-    $langVersion = $csproj.CreateElement('LangVersion')
-    $langVersion.InnerXml = '8.0'
-    $csproj.Project.PropertyGroup.AppendChild( $langVersion )
-    if ($PSCmdlet.ShouldProcess("Update csproj with netcoreapp3.0, Nullable, and LangVersion (8.0)", "Update csproj with netcoreapp3.0, Nullable, and LangVersion (8.0)")) {
-        $csproj.Save("$($_.FullName)") #| Format-Xml | Compare-Object (Get-Content $_.FullName)
-        get-content "$($_.FullName)"
-    }
+$chapterNumber | Foreach-Object{
+  $projects = Get-ChildItem "Chapter$_*.csproj" -Recurse | Select-Object -ExpandProperty FullName  | Sort-Object -Descending
+  $projects | Write-Host -ForegroundColor Magenta
+  $projects | Foreach-Object{
+      git checkout $_
+      return
+      Get-ChildItem (split-path $_ -Parent) obj | remove-item -Recurse -Force -ErrorAction SilentlyContinue
+      dotnet clean $_  ;
+  }
+  $projects | Where-Object{ $_ -like '*Tests.*' } | %{
+      return
+      dotnet test $_
+  }
+  $projects | Foreach-Object{
+      Update-CSProjectFileToCSharp8 -csprojFilePath $_
+      nukeeper update  --useprerelease Always --change Major --maxpackageupdates 100 -v D (split-path $_ -Parent)
+      Get-ChildItem (split-path $_ -Parent) obj | remove-item -Recurse -Force -ErrorAction SilentlyContinue
+      dotnet clean $_  ;
+  }
+  $projects | ?{ $_ -like '*Tests.*' } | Foreach-Object{
+      dotnet test $_
+  }
 }
