@@ -14,11 +14,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_07
             System.Console.WriteLine(
                 $"{decimalNumber} != {(decimal)doubleNumber1}");
 
-            // 2. Displays: 4.2 != 4.20000028610229
+            // 2. Displays: 4.2 != 4.200000286102295
             System.Console.WriteLine(
                 $"{(double)decimalNumber} != {doubleNumber1}");
 
-            // 3. Displays: (float)4.2M != 4.2F
+            // 3. Displays: (float)4.2M != 4.2000003F
             System.Console.WriteLine(
                 $"(float){(float)decimalNumber}M != {floatNumber}F");
 
@@ -28,15 +28,15 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_07
             //System.Console.WriteLine(
             //    $"{doubleNumber1} != {(double)floatNumber}");
 
-            // 5. Displays: 4.20000028610229 != 4.2
+            // 5. Displays: 4.200000286102295 != 4.2
             System.Console.WriteLine(
                 $"{doubleNumber1} != {doubleNumber2}");
 
-            // 6. Displays: 4.2F != 4.2D
+            // 6. Displays: 4.2000003F != 4.2D
             System.Console.WriteLine(
                 $"{floatNumber}F != {doubleNumber2}D");
 
-            // 7. Displays: 4.19999980926514 != 4.2
+            // 7. Displays: 4.199999809265137 != 4.2
             System.Console.WriteLine(
                 $"{(double)4.2F} != {4.2D}");
 
