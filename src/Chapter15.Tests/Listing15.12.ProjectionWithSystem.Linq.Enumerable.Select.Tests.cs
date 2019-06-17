@@ -31,7 +31,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_12.Tests
             });
 
             IEnumerable<string> outputItems = output.Split(
-                new string[] { Environment.NewLine }, StringSplitOptions.None);
+                new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
 
             Assert.AreEqual<int>(
                 expectedItemCount, outputItems.Count());
