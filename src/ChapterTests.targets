@@ -1,6 +1,9 @@
 <Project>
-  <ItemGroup>
-    <PackageReference Include="IntelliTect.TestTools.Console" Version="*" Condition="!Exists('..\submodules\TestTools\IntelliTect.TestTools.Console\IntelliTect.TestTools.Console.csproj')" />
-    <ProjectReference Include="..\submodules\TestTools\IntelliTect.TestTools.Console\IntelliTect.TestTools.Console.csproj" Condition="Exists('..\submodules\TestTools\IntelliTect.TestTools.Console\IntelliTect.TestTools.Console.csproj')" />
-  </ItemGroup>
+<ItemGroup>
+  <!--
+  <PackageReference Include="IntelliTect.TestTools.Console" Version="*" Condition="!Exists('..\submodules\TestTools\IntelliTect.TestTools.Console\IntelliTect.TestTools.Console.csproj')" />
+  <ProjectReference Include="..\submodules\TestTools\IntelliTect.TestTools.Console\IntelliTect.TestTools.Console.csproj" Condition="Exists('..\submodules\TestTools\IntelliTect.TestTools.Console\IntelliTect.TestTools.Console.csproj')" />
+  -->
+  <PackageReference Include="IntelliTect.TestTools.Console" Version="0.6.0-*" />
+</ItemGroup>
 </Project>
