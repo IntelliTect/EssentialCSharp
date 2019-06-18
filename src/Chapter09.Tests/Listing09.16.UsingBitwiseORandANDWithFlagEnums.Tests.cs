@@ -8,14 +8,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_16.Tests
     [TestClass]
     public class ProgramTests
     {
-        [TestMethod]
+        [TestMethod][Ignore]
         public void Main_ExpectHiddenAndReadOnlyFlags()
         {
             Directory.SetCurrentDirectory(AppContext.BaseDirectory);
             FileAttributes fileAttributes;
             string expected;
 
-            if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux) || RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
             {
                 // The only working file attribute on Linux is ReadOnly.
                 fileAttributes = FileAttributes.ReadOnly;

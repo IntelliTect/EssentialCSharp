@@ -28,7 +28,8 @@
                 Console.WriteLine($"{file.Attributes} = {(int)file.Attributes}");
 
                 // Only the ReadOnly attribute works on Linux  (The Hidden attribute does not work on Linux)
-                if (!RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+                if (!(RuntimeInformation.IsOSPlatform(OSPlatform.Linux) 
+                      || RuntimeInformation.IsOSPlatform(OSPlatform.OSX)))
                 {
                     // Added in C# 4.0/.NET 4.0
                     if (!file.Attributes.HasFlag(FileAttributes.Hidden))
