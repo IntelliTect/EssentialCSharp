@@ -5,7 +5,7 @@
     <ProductName>Chapter04.Tests</ProductName>
   </PropertyGroup>
   <Import Project="..\Versioning.targets" />
-  <Import Project="..\ChapterTests.targets"/>
+  <Import Project="..\ChapterTests.targets" />
   <ItemGroup>
     <Compile Include="..\Shared\NetCore.cs" Link="NetCore.cs" />
   </ItemGroup>

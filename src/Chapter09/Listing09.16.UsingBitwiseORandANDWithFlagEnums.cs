@@ -10,8 +10,8 @@
         {
             // ...
             string fileName = @"enumtest.txt";
-            System.IO.FileInfo enumFile =
-                new System.IO.FileInfo(fileName);
+            FileInfo enumFile =
+                new FileInfo(fileName);
             if (!enumFile.Exists)
             {
                 enumFile.Create().Dispose();
@@ -19,8 +19,8 @@
 
             try
             {
-                System.IO.FileInfo file =
-                    new System.IO.FileInfo(fileName);
+                FileInfo file =
+                    new FileInfo(fileName);
 
                 file.Attributes = FileAttributes.Hidden |
                     FileAttributes.ReadOnly;
@@ -28,7 +28,7 @@
                 Console.WriteLine($"{file.Attributes} = {(int)file.Attributes}");
 
                 // Only the ReadOnly attribute works on Linux  (The Hidden attribute does not work on Linux)
-                if (!System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+                if (!RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
                 {
                     // Added in C# 4.0/.NET 4.0
                     if (!file.Attributes.HasFlag(FileAttributes.Hidden))

@@ -5,7 +5,7 @@
     <ProductName>Chapter16.Tests</ProductName>
   </PropertyGroup>
   <Import Project="..\Versioning.targets" />
-  <Import Project="..\ChapterTests.targets"/>
+  <Import Project="..\ChapterTests.targets" />
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.5.0-preview-20170727-01" />
     <PackageReference Include="MSTest.TestAdapter" Version="1.2.0-beta" />
