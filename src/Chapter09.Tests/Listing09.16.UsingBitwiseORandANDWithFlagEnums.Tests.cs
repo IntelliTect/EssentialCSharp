@@ -8,7 +8,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_16.Tests
     [TestClass]
     public class ProgramTests
     {
-        [TestMethod][Ignore]
+        [TestMethod]
+        [Ignore]
         public void Main_ExpectHiddenAndReadOnlyFlags()
         {
             Directory.SetCurrentDirectory(AppContext.BaseDirectory);
