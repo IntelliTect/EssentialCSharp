@@ -11,6 +11,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_07.Tests
     [TestClass]
     public class ProgramTests
     {
+        // cSpell:ignore Linqs
         [TestMethod]
         public void ProjectionWithLinqsSelect()
         {
