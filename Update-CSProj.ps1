@@ -1,16 +1,17 @@
 [CmdletBinding(SupportsShouldProcess)]
-param($chapterNumber)
+param([string]$chapterNumber)
 $chapterNumber | Foreach-Object{
-  $projects = Get-ChildItem "Chapter$_*.csproj" -Recurse | Select-Object -ExpandProperty FullName  | Sort-Object -Descending
+  $eachChapterNumber = $_
+  $projects = (Get-ChildItem .\ "Chapter$eachChapterNumber*.csproj" -Recurse | Select-Object -ExpandProperty FullName  | Sort-Object -Descending)
   $projects | Write-Host -ForegroundColor Magenta
   $projects | Foreach-Object{
       git checkout $_
-      return
+      # return
       Get-ChildItem (split-path $_ -Parent) obj | remove-item -Recurse -Force -ErrorAction SilentlyContinue
       dotnet clean $_  ;
   }
   $projects | Where-Object{ $_ -like '*Tests.*' } | %{
-      return
+      #return
       dotnet test $_
   }
   $projects | Foreach-Object{
