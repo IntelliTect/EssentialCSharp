@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_13.Tests
 {
@@ -11,7 +12,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_13.Tests
             const string expected = "\"Truly, you have a dizzying intellect.\"\n\"Wait 'til I get going!\"\n";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, DuelOfWits.Main, false);
+                expected, (Action)DuelOfWits.Main, false);
         }
     }
 }
