@@ -54,11 +54,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                 {
                     if (stringArguments.Count()==0)
                     {
-                        arguments = new object[] { GetArguments() };
+                        arguments = GetArguments();
                     }
                     else
                     {
-                        arguments = new object[] { stringArguments.ToArray() };
+                        arguments = stringArguments.ToArray();
                     }
                 }
                 if (method.GetCustomAttributes(typeof(STAThreadAttribute), false).Any())
@@ -70,7 +70,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                 }
                 else
                 {
-                    method.Invoke(null, arguments);
+                    var result = method.Invoke(null, arguments);
+
+                    Console.WriteLine($"Result: {result}");
                 }
             }
             catch (System.IO.FileNotFoundException)
@@ -126,7 +128,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                 Console.WriteLine("____________________________");
                 Console.WriteLine("End of Listing " + input);
                 Console.Write("Press any key to exit.");
-                Console.ReadKey();
+                Console.Read();
             }
         }
 
