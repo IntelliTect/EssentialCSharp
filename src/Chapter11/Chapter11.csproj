@@ -8,7 +8,6 @@
   <Import Project="..\Versioning.targets" />
   <ItemGroup>
     <PackageReference Include="System.ValueTuple" Version="4.4.0" />
-    <ProjectReference Include="..\Chapter07\Chapter07.csproj" />
     <Compile Include="..\Shared\Program.cs">
       <Link>Program.cs</Link>
     </Compile>

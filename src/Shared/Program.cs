@@ -36,9 +36,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                 var assembly = Assembly.Load(new AssemblyName(chapterName));
 
                 Type target = assembly.GetTypes().First(type => type.FullName.Contains(listing + "."));
-                var method = (MethodInfo)target.GetMember("Main").First();
+                var method = (MethodInfo) target.GetMembers().First();
 
-                object[] arguments;
+                string[] arguments;
                 if (!method.GetParameters().Any())
                 {
                     arguments = null;
@@ -47,11 +47,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                 {
                     if (stringArguments == null)
                     {
-                        arguments = new object[] { GetArguments() };
+                        arguments = GetArguments();
                     }
                     else
                     {
-                        arguments = new object[] { stringArguments.ToArray() };
+                        arguments = stringArguments.ToArray();
                     }
                 }
                 if (method.GetCustomAttributes(typeof(STAThreadAttribute), false).Any())
@@ -63,7 +63,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                 }
                 else
                 {
-                    method.Invoke(null, arguments);
+                    var result = method.Invoke(null, arguments);
+
+                    Console.WriteLine($"Result: {result}");
                 }
             }
             catch (TargetParameterCountException exception)
@@ -113,7 +115,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                 Console.WriteLine("____________________________");
                 Console.WriteLine("End of Listing " + listing);
                 Console.Write("Press any key to exit.");
-                Console.ReadKey();
+                Console.Read();
             }
         }
 
