@@ -169,11 +169,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
             for (int index = startPosition; index < chapterListing.Length; index++)
             {
                 if (index == startPosition && string.IsNullOrEmpty(chapterName)) chapterName = "Chapter" + chapterListing[index].PadLeft(2, '0');
-                listing += chapterListing[index].PadLeft(2, '0') + ".";
+                listing += chapterListing[index].PadLeft(2, '0') 
+                           + ((index+1 != chapterListing.Length) ? "." : "");
             }
 
-            listing = listing.Substring(0, listing.Length - 1);
-            return listing.Replace('.', '_');
+            int.TryParse(chapterListing[0], out var chapterNum);
+
+            return listing.Replace('.', '_').Replace($"-{chapterNum}_", "To");
         }
     }
 }
