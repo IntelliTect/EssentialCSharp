@@ -5,11 +5,11 @@
     <ProductName>Chapter07.Tests</ProductName>
   </PropertyGroup>
   <Import Project="..\Versioning.targets" />
-  <Import Project="..\ChapterTests.targets"/>
+  <Import Project="..\ChapterTests.targets" />
   <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.5.0" />
-    <PackageReference Include="MSTest.TestAdapter" Version="1.2.0" />
-    <PackageReference Include="MSTest.TestFramework" Version="1.2.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.1.1" />
+    <PackageReference Include="MSTest.TestAdapter" Version="1.4.0" />
+    <PackageReference Include="MSTest.TestFramework" Version="1.4.0" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Chapter07\Chapter07.csproj" />
