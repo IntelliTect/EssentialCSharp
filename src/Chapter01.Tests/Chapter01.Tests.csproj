@@ -3,6 +3,8 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <ProductName>Chapter01.Tests</ProductName>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
   </PropertyGroup>
   <Import Project="..\Versioning.targets" />
   <Import Project="..\ChapterTests.targets" />

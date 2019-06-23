@@ -4,6 +4,12 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <ProductName>Chapter04</ProductName>
     <StartupObject>AddisonWesley.Michaelis.EssentialCSharp.Shared.Program</StartupObject>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+    <WarningsNotAsErrors>1030</WarningsNotAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(IgnoreExpectedWarnings)'=='true'">
+    <NoWarn>1030</NoWarn>
   </PropertyGroup>
   <Import Project="..\Versioning.targets" />
   <ItemGroup>

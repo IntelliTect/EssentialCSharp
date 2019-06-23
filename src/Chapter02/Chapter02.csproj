@@ -3,7 +3,9 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <ProductName>Chapter02</ProductName>
-    <StartupObject>AddisonWesley.Michaelis.EssentialCSharp.Shared.Program</StartupObject> 
+    <StartupObject>AddisonWesley.Michaelis.EssentialCSharp.Shared.Program</StartupObject>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
   </PropertyGroup>
   <Import Project="..\Versioning.targets" />
   <ItemGroup>
