@@ -1,3 +1,4 @@
+#pragma warning disable CS0168 // Variable is declared but never used
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_10
 {
     using System;

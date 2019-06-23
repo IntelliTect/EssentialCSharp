@@ -1,3 +1,5 @@
+#pragma warning disable CS0219 // Variable is assigned but its value is never used
+#pragma warning disable CS0168 // Variable is declared but never used
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_27
 {
     public class Program
@@ -17,6 +19,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_27
             {
                 // ...
             }
+
             // Error: message is not in scope:
             //System.Console.WriteLine(message);
         }

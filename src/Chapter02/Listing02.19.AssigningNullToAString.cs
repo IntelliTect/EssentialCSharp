@@ -11,6 +11,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_19
             faxNumber = null;
 
             //...
+
+            System.Console.WriteLine(faxNumber);
         }
     }
 }
