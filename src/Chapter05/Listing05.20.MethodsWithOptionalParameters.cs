@@ -58,9 +58,23 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_20
 
         private static int CountLines(string file)
         {
-            return 0;
+            int lineCount = 0;
+            string line;
+            FileStream stream =
+                new FileStream(file, FileMode.Open);
+            StreamReader reader = new StreamReader(stream);
+            line = reader.ReadLine();
+            while (line != null)
+            {
+                if (line.Trim() != "")
+                {
+                    lineCount++;
+                }
+                line = reader.ReadLine();
+            }
 
-            // ...
+            reader.Dispose();  // Automatically closes the stream
+            return lineCount;
         }
     }
 }

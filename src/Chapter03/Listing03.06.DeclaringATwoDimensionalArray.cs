@@ -1,3 +1,4 @@
+#pragma warning disable CS0168 // Variable is declared but never used
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_06
 {
     public class Program

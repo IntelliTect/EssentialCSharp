@@ -1,3 +1,6 @@
+#pragma warning disable CS0162 // Unreachable code detected
+#pragma warning disable CS1058 // A previous catch clause already catches all exceptions
+#pragma warning disable CS0168 // Variable is declared but never used
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_27
 {
     using System;
@@ -13,7 +16,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_27
                 throw new Exception("Arbitrary exception");
                 Console.WriteLine("End executing");
             }
-            catch(FormatException exception)
+            catch (FormatException exception)
             {
                 Console.WriteLine(
                     "A FormateException was thrown");

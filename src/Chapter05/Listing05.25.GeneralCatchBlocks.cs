@@ -1,3 +1,5 @@
+#pragma warning disable CS1058 // A previous catch clause already catches all exceptions
+#pragma warning disable CS0168 // Variable is declared but never used
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_25
 {
     public class ExceptionHandling
