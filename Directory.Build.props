@@ -1,5 +1,5 @@
 <Project>
   <PropertyGroup>
-    <NullableContextOptions>enable</NullableContextOptions>
+    <NullableContextOptions>$(CSharp8Nullable)</NullableContextOptions>
   </PropertyGroup>
 </Project>
