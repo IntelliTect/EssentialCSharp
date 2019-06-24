@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Text.RegularExpressions;
 using System.Threading;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
@@ -10,16 +11,16 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
     {
         public static void Main(string[] args)
         {
-            string listing;
-            IEnumerable<string> stringArguments = null;
+            string input;
+            IEnumerable<string> stringArguments = new string[0];
             if (args.Length == 0)
             {
                 Console.Write("Enter the listing number to execute (e.g. For Listing 18.1 enter \"18.1\"): ");
-                listing = Console.ReadLine();
+                input = Console.ReadLine();
             }
             else
             {
-                listing = args[0];
+                input = args[0];
                 stringArguments = args.Skip(1);
             }
 
@@ -30,22 +31,27 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
 
             try
             {
+                System.Diagnostics.Debugger.Break();
                 string chapterName = "";
-                listing = ParseListingName(listing, out chapterName);
+                string listing = ParseListingName(input, out chapterName);
 
-                var assembly = Assembly.Load(new AssemblyName(chapterName));
+                var assembly = Assembly.Load(new AssemblyName(chapterName)); // Throws System.IO.FileNotFound exception if assembly does not exist.
 
-                Type target = assembly.GetTypes().First(type => type.FullName.Contains(listing + "."));
+                Type? target = assembly.GetTypes().FirstOrDefault(type => type.FullName.Contains(listing + "."));
+                if(target == null)
+                {
+                    throw new InvalidOperationException($"There is no listing '{input}'.");
+                }
                 var method = (MethodInfo)target.GetMember("Main").First();
 
-                object[] arguments;
+                object[]? arguments;
                 if (!method.GetParameters().Any())
                 {
-                    arguments = null;
+                    arguments = null;  // If there are no parameters to the method, the arguments parameter should be null.
                 }
                 else
                 {
-                    if (stringArguments == null)
+                    if (stringArguments.Count()==0)
                     {
                         arguments = new object[] { GetArguments() };
                     }
@@ -66,17 +72,23 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                     method.Invoke(null, arguments);
                 }
             }
-            catch (TargetParameterCountException exception)
-            {
-                throw new InvalidOperationException(
-                    string.Format("Fatal Error invoking Listing {0}.\n", listing),
-                        exception);
-            }
-            catch (InvalidOperationException)
+            catch (System.IO.FileNotFoundException)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("----Exception----");
-                Console.WriteLine(string.Format("Error, could not run the Listing '{0}', please make sure it is a valid listing and in the correct format", listing));
+                Console.WriteLine($"There is no chapter corresponding to listing {input}.");
+            }
+            catch (TargetParameterCountException exception)
+            {
+                throw new InvalidOperationException(
+                    $"Fatal Error invoking Listing '{input}'.\n",
+                        exception);
+            }
+            catch (InvalidOperationException exception)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("----Exception----");
+                Console.WriteLine(exception.Message);
             }
             catch (Exception exception)
             {
@@ -102,7 +114,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                 else
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine(string.Format("Listing {0} threw an exception of type {1}.", listing, exception.GetType()));
+                    Console.WriteLine(string.Format("Listing {0} threw an exception of type {1}.", input, exception.GetType()));
                 }
             }
             finally
@@ -111,7 +123,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
 
                 Console.WriteLine();
                 Console.WriteLine("____________________________");
-                Console.WriteLine("End of Listing " + listing);
+                Console.WriteLine("End of Listing " + input);
                 Console.Write("Press any key to exit.");
                 Console.ReadKey();
             }
