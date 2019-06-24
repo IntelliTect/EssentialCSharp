@@ -10,6 +10,6 @@ public class NetCore
         int netCoreAppIndex = Array.IndexOf(assemblyPath, "Microsoft.NETCore.App");
         if (netCoreAppIndex > 0 && netCoreAppIndex < assemblyPath.Length - 2)
             return assemblyPath[netCoreAppIndex + 1];
-        return null;
+        throw new Exception("Unable to determine .NET Core version.");
     }
 }
