@@ -1,5 +1,6 @@
 <Project>
   <PropertyGroup>
     <NullableContextOptions>$(CSharp8Nullable)</NullableContextOptions>
+    <TreatWarningsAsErrors>$(TreatWarningsAsErrors)</TreatWarningsAsErrors>
   </PropertyGroup>
 </Project>
