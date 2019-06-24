@@ -1,6 +1,8 @@
 <Project>
   <ItemGroup>
-    <PackageReference Include="IntelliTect.TestTools.Console" Version="0.6.0-*" Condition="!Exists('..\submodules\TestTools\IntelliTect.TestTools.Console\IntelliTect.TestTools.Console.csproj')" />
+    <!-- 
     <ProjectReference Include="..\submodules\TestTools\IntelliTect.TestTools.Console\IntelliTect.TestTools.Console.csproj" Condition="Exists('..\submodules\TestTools\IntelliTect.TestTools.Console\IntelliTect.TestTools.Console.csproj')" />
+    -->
+    <PackageReference Include="IntelliTect.TestTools.Console" Version="0.6.0-*" />
   </ItemGroup>
 </Project>

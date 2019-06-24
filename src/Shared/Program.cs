@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Text.RegularExpressions;
 using System.Threading;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
@@ -10,11 +11,17 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
     {
         public static void Main(string[] args)
         {
+            var assembly = Assembly.GetEntryAssembly();
+
+            string regexMatch = Regex.Match(assembly.FullName.Split(',')[0], "\\d{1,2}").Value;
+
+            int.TryParse(regexMatch, out int chapterNumber);
+
             string listing;
             IEnumerable<string> stringArguments = null;
             if (args.Length == 0)
             {
-                Console.Write("Enter the listing number to execute (e.g. For Listing 18.1 enter \"18.1\"): ");
+                Console.Write($"Enter the listing number to execute (e.g. For Listing {chapterNumber}.1 enter \"{chapterNumber}.1\"): ");
                 listing = Console.ReadLine();
             }
             else
@@ -30,13 +37,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
 
             try
             {
-                string chapterName = "";
-                listing = ParseListingName(listing, out chapterName);
+                listing = ParseListingName(listing);
 
-                var assembly = Assembly.Load(new AssemblyName(chapterName));
-
-                Type target = assembly.GetTypes().First(type => type.FullName.Contains(listing + "."));
-                var method = (MethodInfo) target.GetMembers().First();
+                Type target = assembly.GetTypes().First(type => type.FullName.Contains(listing));
+                MethodInfo method = target.GetMethods().First();
 
                 string[] arguments;
                 if (!method.GetParameters().Any())
@@ -115,7 +119,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                 Console.WriteLine("____________________________");
                 Console.WriteLine("End of Listing " + listing);
                 Console.Write("Press any key to exit.");
-                Console.Read();
+                Console.ReadKey();
             }
         }
 
@@ -146,11 +150,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
             return args;
         }
 
-        private static string ParseListingName(string listing, out string chapterName)
+        private static string ParseListingName(string listing)
         {
             var appendices = new List<string> { "A", "B", "C", "D" };
 
-            chapterName = "";
+            string chapterName = "";
 
             string[] chapterListing = listing.Split('.');
             listing = string.Empty;
