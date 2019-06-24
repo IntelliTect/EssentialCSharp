@@ -1,6 +1,6 @@
 <Project>
   <PropertyGroup>
-    <CSharp8Nullable Condition=" '$(CSharp8Nullable)' == ''">enable</CSharp8Nullable>
+    <CSharp8Nullable Condition=" '$(CSharp8Nullable)' == ''">disable</CSharp8Nullable>
     <NullableContextOptions>$(CSharp8Nullable)</NullableContextOptions>
     <TreatWarningsAsErrors>$(TreatWarningsAsErrors)</TreatWarningsAsErrors>
   </PropertyGroup>
