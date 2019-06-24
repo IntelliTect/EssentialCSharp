@@ -5,8 +5,7 @@ by Mark Michaelis
 ISBN-13: 978-1-5093-0358-8
 IISBN-10: 1-5093-0358-8
 Copyright © 2018 Pearson Education, Inc.
-
-First printing, September 2015
+First printing, May 2018
 
 The following corrections will be made in the second printing. (To determine which printing you have, turn to page IV of your book. The last line on that page contains the printing information.)
 
@@ -22,3 +21,4 @@ Kyle Amonson |7           | 327          | “Overloading a member” corrected 
 Kyle Amonson |9           | 390          | “DO overload” corrected to “DO override”
 Kyle Amonson |9           | 395          | “calls `MoveTo()` to change `Hours`” corrected: “calls `MoveTo()` to change `_Degrees`”
 Kyle Amonson |9           | 396          | “updates the `_Hours` value” corrected to “updates the `_Degrees` value”
+Kevin Bost   |13          | 544          | `Predicate<int T>` should be `Predicate<in T>`
