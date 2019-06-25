@@ -39,14 +39,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
       {
         input = ParseListingName(input);
 
-        Type? target = assembly.GetTypes().FirstOrDefault(type => type.FullName.Contains(input + "."));
+        Type? target = assembly.GetTypes().FirstOrDefault(type => type.FullName.Contains(input));
         if (target == null)
         {
           throw new InvalidOperationException($"There is no listing '{input}'.");
         }
-        MethodInfo method = target.GetMethod("Main");
+        MethodInfo method = target.GetMethods().First();
 
-        object[]? arguments;
+        string[]? arguments;
         if (!method.GetParameters().Any())
         {
           arguments = null;  // If there are no parameters to the method, the arguments parameter should be null.
@@ -166,7 +166,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
 
       string chapterName = "";
 
-      string[] chapterListing = listing.Split('.');
+      string[] chapterListing = listing.Split('.', '-');
       listing = string.Empty;
 
       int startPosition;
@@ -189,9 +189,24 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                    + ((index + 1 != chapterListing.Length) ? "." : "");
       }
 
-      int.TryParse(chapterListing[0], out var chapterNum);
+      if (listing.Split('.').Length > 2)  // 02.01.02.06
+      {
+        List<int> indexes = new List<int>();
 
-      return listing.Replace('.', '_').Replace($"-{chapterNum}_", "To");
+        for (var i = 0; i < listing.Length; i++)
+        {
+          if (listing[i] == '.')
+          {
+            indexes.Add(i);
+          }
+        }
+
+        string toReplace = listing.Substring(indexes[1], indexes[2]-indexes[1]+1);
+
+        listing = listing.Replace(toReplace, "To");
+      }
+
+      return listing.Replace('.', '_');
     }
   }
 }
