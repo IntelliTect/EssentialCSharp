@@ -13,9 +13,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
         {
             var assembly = Assembly.GetEntryAssembly();
 
-            string regexMatch = Regex.Match(assembly.FullName.Split(',')[0], "\\d{1,2}").Value;
+            string regexMatch = Regex.Match(assembly.GetName().Name, "\\d{1,2}").Value;
 
-            int.TryParse(regexMatch, out int chapterNumber);
+            int chapterNumber = int.Parse(regexMatch);
 
             string listing;
             IEnumerable<string> stringArguments = null;
@@ -60,16 +60,26 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                 }
                 if (method.GetCustomAttributes(typeof(STAThreadAttribute), false).Any())
                 {
-                    Thread thread = new Thread(() => method.Invoke(null, arguments));
+                    object result = "";
+                    
+                    Thread thread = new Thread(() => result = method.Invoke(null, arguments));
                     //thread.SetApartmentState(ApartmentState.STA);
                     thread.Start();
                     thread.Join();
+                    
+                    if (!(method.ReturnType == typeof(void)))
+                    {
+                        Console.WriteLine($"Result: {result}");
+                    }
                 }
                 else
                 {
                     var result = method.Invoke(null, arguments);
 
-                    Console.WriteLine($"Result: {result}");
+                    if (!(method.ReturnType == typeof(void)))
+                    {
+                        Console.WriteLine($"Result: {result}");
+                    }
                 }
             }
             catch (TargetParameterCountException exception)
@@ -156,7 +166,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
 
             string chapterName = "";
 
-            string[] chapterListing = listing.Split('.');
+            string[] chapterListing = listing.Split('.', '-');
             listing = string.Empty;
 
             int startPosition;
@@ -179,21 +189,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                            + ((index+1 != chapterListing.Length) ? "." : "");
             }
 
-            if (listing.Split('.').Length > 2)  // 02.01.02.06
+            string[] parts = listing.Split('.'); // 02.01.02.06
+            if (parts.Length > 2)
             {
-                List<int> indexes = new List<int>();
-
-                for (var i = 0; i < listing.Length; i++)
-                {
-                    if (listing[i] == '.')
-                    {
-                        indexes.Add(i);
-                    }
-                }
-
-                string toReplace = listing.Substring(indexes[1], indexes[2]-indexes[1]+1);
-
-                listing = listing.Replace(toReplace, "To");
+                listing = $"{parts[0]}.{parts[1]}To{string.Join('.', parts.Skip(3))}";
             }
 
             return listing.Replace('.', '_');
