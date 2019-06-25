@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Text.RegularExpressions;
 using System.Threading;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
@@ -10,11 +11,17 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
     {
         public static void Main(string[] args)
         {
+            var assembly = Assembly.GetEntryAssembly();
+
+            string regexMatch = Regex.Match(assembly.GetName().Name, "\\d{1,2}").Value;
+
+            int chapterNumber = int.Parse(regexMatch);
+
             string listing;
             IEnumerable<string> stringArguments = null;
             if (args.Length == 0)
             {
-                Console.Write("Enter the listing number to execute (e.g. For Listing 18.1 enter \"18.1\"): ");
+                Console.Write($"Enter the listing number to execute (e.g. For Listing {chapterNumber}.1 enter \"{chapterNumber}.1\"): ");
                 listing = Console.ReadLine();
             }
             else
@@ -30,15 +37,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
 
             try
             {
-                string chapterName = "";
-                listing = ParseListingName(listing, out chapterName);
+                listing = ParseListingName(listing);
 
-                var assembly = Assembly.Load(new AssemblyName(chapterName));
+                Type target = assembly.GetTypes().First(type => type.FullName.Contains(listing));
+                MethodInfo method = target.GetMethods().First();
 
-                Type target = assembly.GetTypes().First(type => type.FullName.Contains(listing + "."));
-                var method = (MethodInfo)target.GetMember("Main").First();
-
-                object[] arguments;
+                string[] arguments;
                 if (!method.GetParameters().Any())
                 {
                     arguments = null;
@@ -47,23 +51,35 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                 {
                     if (stringArguments == null)
                     {
-                        arguments = new object[] { GetArguments() };
+                        arguments = GetArguments();
                     }
                     else
                     {
-                        arguments = new object[] { stringArguments.ToArray() };
+                        arguments = stringArguments.ToArray();
                     }
                 }
                 if (method.GetCustomAttributes(typeof(STAThreadAttribute), false).Any())
                 {
-                    Thread thread = new Thread(() => method.Invoke(null, arguments));
+                    object result = "";
+                    
+                    Thread thread = new Thread(() => result = method.Invoke(null, arguments));
                     //thread.SetApartmentState(ApartmentState.STA);
                     thread.Start();
                     thread.Join();
+                    
+                    if (!(method.ReturnType == typeof(void)))
+                    {
+                        Console.WriteLine($"Result: {result}");
+                    }
                 }
                 else
                 {
-                    method.Invoke(null, arguments);
+                    var result = method.Invoke(null, arguments);
+
+                    if (!(method.ReturnType == typeof(void)))
+                    {
+                        Console.WriteLine($"Result: {result}");
+                    }
                 }
             }
             catch (TargetParameterCountException exception)
@@ -144,13 +160,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
             return args;
         }
 
-        private static string ParseListingName(string listing, out string chapterName)
+        private static string ParseListingName(string listing)
         {
             var appendices = new List<string> { "A", "B", "C", "D" };
 
-            chapterName = "";
+            string chapterName = "";
 
-            string[] chapterListing = listing.Split('.');
+            string[] chapterListing = listing.Split('.', '-');
             listing = string.Empty;
 
             int startPosition;
@@ -169,10 +185,16 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
             for (int index = startPosition; index < chapterListing.Length; index++)
             {
                 if (index == startPosition && string.IsNullOrEmpty(chapterName)) chapterName = "Chapter" + chapterListing[index].PadLeft(2, '0');
-                listing += chapterListing[index].PadLeft(2, '0') + ".";
+                listing += chapterListing[index].PadLeft(2, '0') 
+                           + ((index+1 != chapterListing.Length) ? "." : "");
             }
 
-            listing = listing.Substring(0, listing.Length - 1);
+            string[] parts = listing.Split('.'); // 02.01.02.06
+            if (parts.Length > 2)
+            {
+                listing = $"{parts[0]}.{parts[1]}To{string.Join('.', parts.Skip(3))}";
+            }
+
             return listing.Replace('.', '_');
         }
     }
