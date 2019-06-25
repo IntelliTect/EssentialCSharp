@@ -4,15 +4,16 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_19
     {
         public static void Main()
         {
-            string faxNumber;
-            //...
-
-            // Clear the value of faxNumber
-            faxNumber = null;
+            int? age;
 
             //...
 
-            System.Console.WriteLine(faxNumber);
+            // Clear the value of age
+            age = null;
+
+            //...
+
+            System.Console.WriteLine($"The age is: {age}");  
         }
     }
 }
