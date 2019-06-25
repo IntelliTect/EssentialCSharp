@@ -179,9 +179,24 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                            + ((index+1 != chapterListing.Length) ? "." : "");
             }
 
-            int.TryParse(chapterListing[0], out var chapterNum);
+            if (listing.Split('.').Length > 2)  // 02.01.02.06
+            {
+                List<int> indexes = new List<int>();
 
-            return listing.Replace('.', '_').Replace($"-{chapterNum}_", "To");
+                for (var i = 0; i < listing.Length; i++)
+                {
+                    if (listing[i] == '.')
+                    {
+                        indexes.Add(i);
+                    }
+                }
+
+                string toReplace = listing.Substring(indexes[1], indexes[2]-indexes[1]+1);
+
+                listing = listing.Replace(toReplace, "To");
+            }
+
+            return listing.Replace('.', '_');
         }
     }
 }
