@@ -1,4 +1,4 @@
-﻿#nullable enable 
+﻿#nullable enable
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,9 +14,15 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
         {
             string input;
             IEnumerable<string> stringArguments = new string[0];
+            var assembly = Assembly.GetEntryAssembly();
+
+            string regexMatch = Regex.Match(assembly.GetName().Name, "\\d{1,2}").Value;
+
+            int chapterNumber = int.Parse(regexMatch);
             if (args.Length == 0)
             {
-                Console.Write("Enter the listing number to execute (e.g. For Listing 18.1 enter \"18.1\"): ");
+                Console.Write(
+                    $"Enter the listing number to execute (e.g. For Listing {chapterNumber}.1 enter \"{chapterNumber}.1\"): ");
                 input = Console.ReadLine();
             }
             else
@@ -32,45 +38,53 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
 
             try
             {
-                System.Diagnostics.Debugger.Break();
-                string chapterName = "";
-                string listing = ParseListingName(input, out chapterName);
+                input = ParseListingName(input);
 
-                var assembly = Assembly.Load(new AssemblyName(chapterName)); // Throws System.IO.FileNotFound exception if assembly does not exist.
-
-                Type? target = assembly.GetTypes().FirstOrDefault(type => type.FullName.Contains(listing + "."));
-                if(target == null)
+                Type? target = assembly.GetTypes().FirstOrDefault(type => type.FullName.Contains(input));
+                if (target == null)
                 {
                     throw new InvalidOperationException($"There is no listing '{input}'.");
                 }
-                var method = (MethodInfo)target.GetMember("Main").First();
 
-                object[]? arguments;
+                MethodInfo method = target.GetMethods().First();
+
+                string[]? arguments;
                 if (!method.GetParameters().Any())
                 {
-                    arguments = null;  // If there are no parameters to the method, the arguments parameter should be null.
+                    arguments =
+                        null; // If there are no parameters to the method, the arguments parameter should be null.
                 }
                 else
                 {
-                    if (stringArguments.Count()==0)
+                    if (stringArguments.Count() == 0)
                     {
-                        arguments = new object[] { GetArguments() };
+                        arguments = GetArguments();
                     }
                     else
                     {
-                        arguments = new object[] { stringArguments.ToArray() };
+                        arguments = stringArguments.ToArray();
                     }
                 }
+
                 if (method.GetCustomAttributes(typeof(STAThreadAttribute), false).Any())
                 {
-                    Thread thread = new Thread(() => method.Invoke(null, arguments));
-                    //thread.SetApartmentState(ApartmentState.STA);
-                    thread.Start();
-                    thread.Join();
+                    Thread thread = new Thread(() =>
+                    {
+                        object result = method.Invoke(null, arguments);
+                        if (!(method.ReturnType == typeof(void)))
+                        {
+                            Console.WriteLine($"Result: {result}");
+                        }
+                    });
                 }
                 else
                 {
-                    method.Invoke(null, arguments);
+                    var result = method.Invoke(null, arguments);
+
+                    if (!(method.ReturnType == typeof(void)))
+                    {
+                        Console.WriteLine($"Result: {result}");
+                    }
                 }
             }
             catch (System.IO.FileNotFoundException)
@@ -83,7 +97,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
             {
                 throw new InvalidOperationException(
                     $"Fatal Error invoking Listing '{input}'.\n",
-                        exception);
+                    exception);
             }
             catch (InvalidOperationException exception)
             {
@@ -101,12 +115,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                     // exist in .NET 4.0 or earlier and we want to maintain compatibility
                     // while still taking advantage of it if it is available.
                     Type exceptionDispatchInfoType =
-                            Type.GetType(
-                                "System.Runtime.ExceptionServices.ExceptionDispatchInfo");
+                        Type.GetType(
+                            "System.Runtime.ExceptionServices.ExceptionDispatchInfo");
                     if (exceptionDispatchInfoType != null)
                     {
                         dynamic exceptionDispatchInfo = exceptionDispatchInfoType.GetMethod("Capture")
-                            .Invoke(exceptionDispatchInfoType, new object[] { exception.InnerException });
+                            .Invoke(exceptionDispatchInfoType, new object[] {exception.InnerException});
                         exceptionDispatchInfo.Throw();
                     }
                     else
@@ -115,7 +129,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                 else
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine(string.Format("Listing {0} threw an exception of type {1}.", input, exception.GetType()));
+                    Console.WriteLine(string.Format("Listing {0} threw an exception of type {1}.", input,
+                        exception.GetType()));
                 }
             }
             finally
@@ -152,18 +167,19 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
             }
             else
             {
-                args = userArguments.Split(new[] { ' ' });
+                args = userArguments.Split(new[] {' '});
             }
+
             return args;
         }
 
-        private static string ParseListingName(string listing, out string chapterName)
+        private static string ParseListingName(string listing)
         {
-            var appendices = new List<string> { "A", "B", "C", "D" };
+            var appendices = new List<string> {"A", "B", "C", "D"};
 
-            chapterName = "";
+            string chapterName = "";
 
-            string[] chapterListing = listing.Split('.');
+            string[] chapterListing = listing.Split('.', '-');
             listing = string.Empty;
 
             int startPosition;
@@ -172,7 +188,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
             {
                 startPosition = 1;
                 listing += chapterListing[0].ToUpper() + ".";
-                chapterName = "Chapter" + (appendices.Contains(chapterListing[0].ToUpper()) ? "App" : "") + chapterListing[0];
+                chapterName = "Chapter" + (appendices.Contains(chapterListing[0].ToUpper()) ? "App" : "") +
+                              chapterListing[0];
             }
             else
             {
@@ -181,11 +198,18 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
 
             for (int index = startPosition; index < chapterListing.Length; index++)
             {
-                if (index == startPosition && string.IsNullOrEmpty(chapterName)) chapterName = "Chapter" + chapterListing[index].PadLeft(2, '0');
-                listing += chapterListing[index].PadLeft(2, '0') + ".";
+                if (index == startPosition && string.IsNullOrEmpty(chapterName))
+                    chapterName = "Chapter" + chapterListing[index].PadLeft(2, '0');
+                listing += chapterListing[index].PadLeft(2, '0')
+                           + ((index + 1 != chapterListing.Length) ? "." : "");
             }
 
-            listing = listing.Substring(0, listing.Length - 1);
+            string[] parts = listing.Split('.'); // 02.01.02.06
+            if (parts.Length > 2)
+            {
+                listing = $"{parts[0]}.{parts[1]}To{string.Join('.', parts.Skip(3))}";
+            }
+
             return listing.Replace('.', '_');
         }
     }

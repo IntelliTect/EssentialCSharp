@@ -17,13 +17,10 @@ Ensure one of the following frameworks is installed at the latest version.
 
 Open a console and change the working directory to the desired project location. 
 ```
-$ git clone --recursive https://github.com/IntelliTect/EssentialCSharp.git
+$ git clone https://github.com/IntelliTect/EssentialCSharp.git
 $ cd ./EssentialCSharp/
 ```
-
-**Note:** `--recursive` is used to ensure that the submodules, specifically `IntelliTect.TestTools` (which includes a testing framework for .NET console applications).
-
-The source code associated with the `master` is the most recently published edition of the book and this is the default branch following the clone command.  However, you can switch to a different branch, v6.0 for example, with the command:
+The source code is the most recently published edition of the book and this is the default branch following the clone command.  However, you can switch to a different branch, v6.0 for example, with the command:
 ```
 $ git checkout v6.0
 ```
@@ -41,10 +38,13 @@ $ dotnet build EssentialCSharp.sln
 
 Navigate to an individual project in the /EssentialCSharp/src/(project)/ directory and run the code. The example below is for Chapter01 with the user entering _1.1_ to execute the listing number.
 
+To run a listing you must run the the project that contains it. For example, to run Listing 1.1 you must navigate to Chapter01 in the 
+_Solution Explorer_ and set Chapter01 as the startup project. In Rider this can be done by locating the desired project in the _Explorer_ tab, right clicking on the project and clicking _run_.
+
 ```
 $ cd ./src/Chapter01/
 $ dotnet run
-Enter the listing number to execute (e.g. For Listing 18.1 enter "18.1"): 1.1
+Enter the listing number to execute (e.g. For Listing 1.1 enter "1.1"): 1.1
 
 ____________________________
 
