@@ -1,5 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_48
 {
+#pragma warning disable CS1522
     using System;
 
     // File: Program.cs
@@ -35,4 +36,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_48
             }
         }
     }
+#pragma warning restore CS1522
 }

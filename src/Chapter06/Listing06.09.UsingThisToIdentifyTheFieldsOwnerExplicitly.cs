@@ -1,5 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_09
 {
+#pragma warning disable CS0649
     class Employee
     {
         public string FirstName;
@@ -18,4 +19,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_09
             this.LastName = newLastName;
         }
     }
+#pragma warning restore CS0649
 }

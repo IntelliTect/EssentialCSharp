@@ -1,5 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_12
 {
+#pragma warning disable CS0649
     class Employee
     {
         public string FirstName;
@@ -21,4 +22,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_12
             // ...
         }
     }
+#pragma warning restore CS0649
 }

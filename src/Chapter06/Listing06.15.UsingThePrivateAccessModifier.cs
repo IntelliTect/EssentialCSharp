@@ -1,5 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_15
 {
+#pragma warning disable CS0649
     public class Program
     {
         public static void Main()
@@ -42,4 +43,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_15
         }
         // ...
     }
+#pragma warning restore CS0649
 }

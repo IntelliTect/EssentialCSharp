@@ -1,7 +1,7 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_28
 {
     using Listing06_26;
-
+#pragma warning disable CS0168
     class Program
     {
         static void Main()
@@ -14,4 +14,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_28
             // ...
         }
     }
+#pragma warning restore CS0168
 }
