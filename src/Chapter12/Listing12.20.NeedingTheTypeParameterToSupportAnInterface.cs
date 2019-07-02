@@ -2,6 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_20
 {
     using System;
     using Listing12_13;
+#pragma warning disable CS0168
 
     public class BinaryTree<T>
     {
@@ -32,4 +33,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_20
         }
         private Pair<BinaryTree<T>> _SubItems;
     }
+#pragma warning restore CS0168
 }

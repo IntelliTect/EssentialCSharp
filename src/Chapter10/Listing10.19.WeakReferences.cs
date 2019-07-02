@@ -2,6 +2,7 @@
 {
     using System;
     using System.IO;
+#pragma warning disable CS0649
 
     public class Program
     {
@@ -32,4 +33,5 @@
             Console.WriteLine("No output in this example.");
         }
     }
+#pragma warning restore CS0649
 }

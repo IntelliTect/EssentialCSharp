@@ -1,6 +1,7 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_17
 {
     using System;
+#pragma warning disable CS0067
 
     public class Thermostat
     {
@@ -18,7 +19,8 @@
             }
             private float _NewTemperature;
         }
-
+        
         public event EventHandler<TemperatureArgs> OnTemperatureChange;
     }
+#pragma warning restore CS0067
 }

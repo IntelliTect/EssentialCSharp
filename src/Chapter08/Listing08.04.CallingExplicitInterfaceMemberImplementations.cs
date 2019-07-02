@@ -8,7 +8,7 @@
         public static void Main()
         {
             string[] values;
-            Contact contact1, contact2 = null;
+            Contact contact1 = null;
 
             // ...
 
@@ -17,7 +17,7 @@
             // values = contact1.ColumnValues;
 
             // First cast to IListable
-            values = ((IListable)contact2).ColumnValues;
+            values = ((IListable)contact1).ColumnValues;
             // ...
         }
     }

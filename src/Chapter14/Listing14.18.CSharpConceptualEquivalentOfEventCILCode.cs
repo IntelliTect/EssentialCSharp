@@ -1,6 +1,7 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_18
 {
     using System;
+#pragma warning disable CS0649
 
     public class Thermostat
     {
@@ -43,4 +44,5 @@
 
         }
     }
+#pragma warning restore CS0649
 }
