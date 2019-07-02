@@ -2,13 +2,14 @@
 {
     using System;
     using Listing08_02;
+#pragma warning disable CS0168
 
     public class Program
     {
         public static void Main()
         {
             string[] values;
-            Contact contact1 = null;
+            Contact contact1, contact2 = null;
 
             // ...
 
@@ -17,7 +18,7 @@
             // values = contact1.ColumnValues;
 
             // First cast to IListable
-            values = ((IListable)contact1).ColumnValues;
+            values = ((IListable)contact2).ColumnValues;
             // ...
 
         }
@@ -96,4 +97,5 @@
         protected string Phone { get; set; }
         protected string Address { get; set; }
     }
+#pragma warning restore CS0168
 }
