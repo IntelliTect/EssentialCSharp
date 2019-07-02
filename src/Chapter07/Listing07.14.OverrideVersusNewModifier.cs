@@ -1,7 +1,7 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_14
 {
     using System;
-
+    //TODO: This error is displayed intentionally
     public class Program
     {
         public class BaseClass
