@@ -1,5 +1,7 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_06
 {
+// In a properly implemented class we could use our Contact class
+#pragma warning disable CS0169
     public class PdaItem
     {
         private string _Name;
@@ -22,4 +24,5 @@
             //contact._Name = "Inigo Montoya";  //uncomment this line and it will not compile
         }
     }
+#pragma warning restore CS0169
 }
