@@ -22,4 +22,4 @@ Kyle Amonson    |9           | 390          | “DO overload” corrected to “
 Kyle Amonson    |9           | 395          | “calls `MoveTo()` to change `Hours`” corrected: “calls `MoveTo()` to change `_Degrees`”
 Kyle Amonson    |9           | 396          | “updates the `_Hours` value” corrected to “updates the `_Degrees` value”
 Kevin Bost      |13          | 544          | `Predicate<int T>` should be `Predicate<in T>`
-Cameron Osborn  |6           | 264 && 266   | Listing06.18 && Listing06.19 FirstName property gets and sets _LastName backing field
+Cameron Osborn  |6           | 264 && 266   | Listing 6.18 && Listing 6.19 FirstName property gets and sets _LastName backing field
