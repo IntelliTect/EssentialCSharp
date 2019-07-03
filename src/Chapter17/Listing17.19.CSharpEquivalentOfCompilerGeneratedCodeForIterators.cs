@@ -5,7 +5,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_19
     using Listing17_10;
     using System;
     using System.Collections.Generic;
-// Not concerned about Type naming for compiler generated code
+// Not concerned about Type naming for compiler simulated code
 #pragma warning disable CS0693
 
     public class Pair<T> : IPair<T>, IEnumerable<T>
