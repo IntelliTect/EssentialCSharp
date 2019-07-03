@@ -1,5 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_15
 {
+// Our Main doesn't leverage everything in our Employee implementation - in production it would
 #pragma warning disable CS0649
     public class Program
     {

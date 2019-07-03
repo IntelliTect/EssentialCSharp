@@ -1,5 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_48
 {
+// We dont fully implement our switch block here
 #pragma warning disable CS1522
     using System;
 

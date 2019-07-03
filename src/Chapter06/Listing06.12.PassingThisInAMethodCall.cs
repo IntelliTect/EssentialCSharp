@@ -1,5 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_12
 {
+// Salary is used later in the Chapter as the implementation expands
 #pragma warning disable CS0649
     class Employee
     {

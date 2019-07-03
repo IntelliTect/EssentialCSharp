@@ -1,6 +1,7 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_18
 {
     using System;
+// In an actual implementation _OnTemperatureChange would be used
 #pragma warning disable CS0649
 
     public class Thermostat
