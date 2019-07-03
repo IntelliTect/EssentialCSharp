@@ -2,6 +2,8 @@
 {
     using System;
     using Listing08_02;
+// In a production implementation we would do something with our declared Contacts
+#pragma warning disable CS0168
 
     public class Program
     {
@@ -96,4 +98,5 @@
         protected string Phone { get; set; }
         protected string Address { get; set; }
     }
+#pragma warning restore CS0168
 }

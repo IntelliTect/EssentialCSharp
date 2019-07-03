@@ -1,7 +1,9 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_02
 {
     using Listing06_01;
-
+    
+// In a completed implementation we would use our Employee objects
+#pragma warning disable CS0168
     class Program
     {
         static void Main()
@@ -15,4 +17,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_02
             // ...
         }
     }
+#pragma warning restore CS0168
 }

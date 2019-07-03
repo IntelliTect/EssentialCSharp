@@ -1,12 +1,12 @@
 using System.Collections;
 
-namespace
-
-AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_19
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_19
 {
     using Listing17_10;
     using System;
     using System.Collections.Generic;
+// Not concerned about Type naming for compiler simulated code
+#pragma warning disable CS0693
 
     public class Pair<T> : IPair<T>, IEnumerable<T>
     {
@@ -50,7 +50,7 @@ AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_19
             }
         }
         #endregion Indexer
-
+        
         private sealed class __ListEnumerator<T> : IEnumerator<T>
         {
             public __ListEnumerator(int itemCount)
@@ -103,4 +103,5 @@ AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_19
             }
         }
     }
+#pragma warning restore CS0693
 }

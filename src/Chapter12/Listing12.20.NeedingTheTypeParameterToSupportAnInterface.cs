@@ -2,6 +2,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_20
 {
     using System;
     using Listing12_13;
+// In an actual implementation Item would be used to hold some value
+#pragma warning disable CS0168
 
     public class BinaryTree<T>
     {
@@ -32,4 +34,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_20
         }
         private Pair<BinaryTree<T>> _SubItems;
     }
+#pragma warning restore CS0168
 }

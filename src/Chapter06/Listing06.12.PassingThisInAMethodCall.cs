@@ -1,5 +1,8 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_12
 {
+// In a completed Employee implementation FirstName, LastName
+// and salary would be accessed
+#pragma warning disable CS0649
     class Employee
     {
         public string FirstName;
@@ -21,4 +24,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_12
             // ...
         }
     }
+#pragma warning restore CS0649
 }
