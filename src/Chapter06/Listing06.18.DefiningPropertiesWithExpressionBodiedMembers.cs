@@ -37,8 +37,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_18
         // LastName property
         public string LastName
         {
-            get => _FirstName;
-            set => _FirstName = value;
+            get => _LastName;
+            set => _LastName = value;
         }
         private string _LastName;
     }

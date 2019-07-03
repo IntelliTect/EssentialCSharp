@@ -1,6 +1,8 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_49
 {
     using System;
+// In a fully implemented Person class, PersonId would be unique for every person
+#pragma warning disable CS0169
 
     // File: Person.Designer.cs
     public partial class Person
@@ -88,4 +90,5 @@
             }
         }
     }
+#pragma warning restore CS0169
 }
