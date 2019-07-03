@@ -11,10 +11,6 @@
         #endregion
 
         // ...
-        public System.Guid PersonId { get; set; }
-        private System.Guid _PersonId;
-
-        // ...
         public string LastName
         {
             get
@@ -41,7 +37,7 @@
             }
             set
             {
-                if((_FirstName != value))
+                if(_FirstName != value)
                 {
                     OnFirstNameChanging(value);
                     _FirstName = value;

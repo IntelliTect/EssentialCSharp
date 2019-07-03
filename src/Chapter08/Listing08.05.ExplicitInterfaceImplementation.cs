@@ -8,16 +8,16 @@
         public static void Main()
         {
             string[] values;
-            Contact contact1, contact2 = null;
+            Contact contact = null;
 
             // ...
 
-            // ERROR:  Unable to call ColumnValues() directly
+            // ERROR:  Unable to call .ColumnValues directly
             //         on a contact
-            // values = contact1.ColumnValues;
+            // values = contact.ColumnValues;
 
             // First cast to IListable
-            values = ((IListable)contact2).ColumnValues;
+            values = ((IListable)contact).ColumnValues;
             // ...
 
         }

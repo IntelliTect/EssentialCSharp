@@ -5,7 +5,7 @@
 
     public class Program
     {
-        private WeakReference Data;
+        private readonly WeakReference Data = new WeakReference(null);
 
         public FileStream GetData()
         {

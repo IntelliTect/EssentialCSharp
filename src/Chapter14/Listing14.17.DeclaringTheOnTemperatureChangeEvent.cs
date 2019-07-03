@@ -1,6 +1,8 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_17
 {
     using System;
+// In an actual implementation we would utilize this event
+#pragma warning disable CS0067
 
     public class Thermostat
     {
@@ -21,4 +23,5 @@
 
         public event EventHandler<TemperatureArgs> OnTemperatureChange;
     }
+#pragma warning restore CS0067
 }

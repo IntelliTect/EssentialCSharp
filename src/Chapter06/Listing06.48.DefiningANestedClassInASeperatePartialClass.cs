@@ -1,6 +1,9 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_48
 {
     using System;
+// We dont fully implement our switch block here
+#pragma warning disable CS1522
+
 
     // File: Program.cs
     partial class Program
@@ -35,4 +38,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_48
             }
         }
     }
+#pragma warning restore CS1522
 }
