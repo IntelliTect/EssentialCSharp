@@ -1,6 +1,7 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_12
 {
-// Salary is used later in the Chapter as the implementation expands
+// In a completed Employee implementation FirstName, LastName
+// and salary would be accessed
 #pragma warning disable CS0649
     class Employee
     {
