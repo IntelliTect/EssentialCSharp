@@ -1,8 +1,6 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_49
 {
     using System;
-// In a fully implemented Person class, PersonId would be unique for every person
-#pragma warning disable CS0169
 
     // File: Person.Designer.cs
     public partial class Person
@@ -11,10 +9,6 @@
         partial void OnLastNameChanging(string value);
         partial void OnFirstNameChanging(string value);
         #endregion
-
-        // ...
-        public System.Guid PersonId { get; set; }
-        private System.Guid _PersonId;
 
         // ...
         public string LastName
@@ -43,7 +37,7 @@
             }
             set
             {
-                if((_FirstName != value))
+                if(_FirstName != value)
                 {
                     OnFirstNameChanging(value);
                     _FirstName = value;
@@ -90,5 +84,4 @@
             }
         }
     }
-#pragma warning restore CS0169
 }
