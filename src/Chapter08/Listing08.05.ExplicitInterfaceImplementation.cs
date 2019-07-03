@@ -12,7 +12,7 @@
 
             // ...
 
-            // ERROR:  Unable to call ColumnValues() directly
+            // ERROR:  Unable to call .ColumnValues directly
             //         on a contact
             // values = contact.ColumnValues;
 
