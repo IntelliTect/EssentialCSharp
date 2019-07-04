@@ -69,12 +69,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_19
 
             public T Current
             {
-                get { return this._Current; }
+                get { return _Current; }
             }
 
             object IEnumerator.Current
             {
-                get { return this.Current; }
+                get { return Current; }
             }
 
             public bool MoveNext()
