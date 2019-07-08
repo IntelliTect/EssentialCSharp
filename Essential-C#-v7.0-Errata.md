@@ -23,3 +23,8 @@ Kyle Amonson    |9           | 395          | “calls `MoveTo()` to change `Hou
 Kyle Amonson    |9           | 396          | “updates the `_Hours` value” corrected to “updates the `_Degrees` value”
 Kevin Bost      |13          | 544          | `Predicate<int T>` should be `Predicate<in T>`
 Cameron Osborn  |6           | 264 && 266   | Listing 6.18 && Listing 6.19 FirstName property gets and sets _LastName backing field
+Rob Mantel      |5           | 236          | Listing 5.26 typo on Console.WriteLine "FormateException" changed to "FormatException"
+Rob Mantel      |1           | 16           | Change execute by typing HelloWorld.exe to 'dotnet run'
+Rob Mantel      |1           | 29           | Change Listing1.19 ClassName to "CommentSamples" from "Comment Samples"
+Rob Mantel      |1           | 30           | Change Table 1.2 reference from Listing 1.18 to Listing 1.19
+Rob Mantel      |6           | 294 && 299   | Change references from Copy to CopyTo
