@@ -12,7 +12,6 @@ The following corrections will be made in the second printing. (To determine whi
 Found by        |Chapter     | Page         | Correction
 ------------    |----------- | ------------ | ----------
 Zhou Jing       |7           | 329          | Listing 7.13: The `Run()` method should be public, `private void Run()`.
-Kyle Amonson    |13          | 544          | Incorrect: `Predicate<int T>` Change `Predicate<in T>`
 Kyle Amonson    |13          | 550          | "In Listings 13.7 and 13.10" changed to "In Listings 13.7 and 13.11"
 Kyle Amonson    |5           | 190          | Output 5.1 corrected Hello Inigo Montoya! Your initials are I. M.
 Kyle Amonson    |5           | 200          | “and the optional second argument is…” corrected to “and the second argument is”.  The second argument is not optional in the code example.
@@ -23,3 +22,4 @@ Kyle Amonson    |9           | 395          | “calls `MoveTo()` to change `Hou
 Kyle Amonson    |9           | 396          | “updates the `_Hours` value” corrected to “updates the `_Degrees` value”
 Kevin Bost      |13          | 544          | `Predicate<int T>` should be `Predicate<in T>`
 Cameron Osborn  |6           | 264 && 266   | Listing 6.18 && Listing 6.19 FirstName property gets and sets _LastName backing field
+Cameron Osborn  |5           | 236          | Listing 5.26 typo on Console.WriteLine "FormateException" changed to "FormatException"
