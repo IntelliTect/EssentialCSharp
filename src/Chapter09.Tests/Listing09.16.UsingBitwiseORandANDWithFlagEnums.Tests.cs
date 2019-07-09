@@ -15,7 +15,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_16.Tests
             FileAttributes fileAttributes;
             string expected;
 
-            if (System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+            if (!(System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform(OSPlatform.Linux)
+                || System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform(OSPlatform.OSX)))
             {
                 // The only working file attribute on Linux is ReadOnly.
                 fileAttributes = FileAttributes.ReadOnly;
