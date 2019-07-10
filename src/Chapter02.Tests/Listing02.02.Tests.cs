@@ -6,6 +6,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_02.Tests
     public class LiteralValueTests
     {
         [TestMethod]
+        [Ignore]
         public void Main_WriteNumbers()
         {
             const string expected = @"1.61803398874989";
