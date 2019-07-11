@@ -1,7 +1,7 @@
 ﻿
 #define CSHARP2PLUS
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.TicTacToe
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.TicTacToe
 {
     using System;
 
