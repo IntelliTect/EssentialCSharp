@@ -1,40 +1,19 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_01To06.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_01.Tests
 {
-    [TestClass]
-    public class ProgramTests
+  [TestClass]
+  public class LiteralValueTests
+  {
+    [TestMethod]
+    public void Main_WriteNumbers()
     {
-        [TestMethod]
-        public void Main_WriteNumbers()
-        {
-            const string netCoreApp2expected =
+      const string expected =
 @"42
-1.618034
-1.61803398874989
-1.618033988749895
-6.023E+23
-42
-0x2A";
+1.618034";
 
-            string expected = // netcoreapp3.0 and later
-@"42
-1.618034
-1.618033988749895
-1.618033988749895
-6.023E+23
-42
-0x2A";
-
-            string netCoreVersion = NetCore.GetNetCoreVersion();
-            if (string.Compare(netCoreVersion, "3") < 0)
-            {
-                expected = netCoreApp2expected;
-            }
-
-            IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                    expected, Program.Main);
-
-        }
+      IntelliTect.TestTools.Console.ConsoleAssert.Expect(
+          expected, Program.Main);
     }
+  }
 }
