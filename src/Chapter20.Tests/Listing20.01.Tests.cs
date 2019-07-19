@@ -29,33 +29,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_01.Tests
             Func<string[], int> func)
         {
             bool unsyncrhonized = false;
+            
+            string[] count = { "10000000" };
 
-            CancellationTokenSource cancellationtokenSource
-                = new CancellationTokenSource();
-
-            // Try multiple times, increasing the increment/decrement iterations, just in case there is a fluke
-            ParallelOptions options = new ParallelOptions();
-            options.CancellationToken = cancellationtokenSource.Token;
-            Program.CancellationToken = cancellationtokenSource.Token;
-
-            try
+            if (func(count) != 0)
             {
-                Parallel.For(1, 3, options, i =>
-                {
-                    string[] count = { int.MaxValue.ToString() };
-                    // Alternatively, iterate from 5-9 (10 exclusive) and 
-                    // set count using { (2 * Math.Pow(10, i)).ToString() };
-                    // Thereby, incrementing count logarithmically until int.MaxValue.
-
-                if (func(count) != 0)
-                {
-                    unsyncrhonized = true;
-                    cancellationtokenSource.Cancel();
-                }
-
-                });
+                unsyncrhonized = true;
             }
-            catch (OperationCanceledException) { }
 
             return unsyncrhonized;
         }
@@ -63,7 +43,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_01.Tests
         static public void VerifyOutputIncrementAndDecrement(Func<string[], int> main)
         {
             int? result = null;
-            string expected = $"Increment and decrementing \\d* times...{Environment.NewLine}Count = (?<Count>\\d*)";
+            string expected = $"Increment and decrementing \\d+ times...{Environment.NewLine}Count = (?<Count>\\d*)";
             string output = IntelliTect.TestTools.Console.ConsoleAssert.Execute("",
             () =>
             {
