@@ -16,7 +16,4 @@
       <Link>Program.cs</Link>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Listing03.01B.DereferencingAnUnassignedVariable.cs" />
-  </ItemGroup>
 </Project>
