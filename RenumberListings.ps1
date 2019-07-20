@@ -9,6 +9,7 @@ Function PadNumber {
         [string]$number
     )
 
+    # Should use string.PadLeft(2, '0') instead.
     if($number -match '(?<Number>\d?\d)(?<Suffix>.*)') {
         return "{0:D2}$($Matches.Suffix)" -f ([int]$Matches.Number) 
     }
