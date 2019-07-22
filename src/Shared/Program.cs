@@ -40,12 +40,16 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
             {
                 input = ParseListingName(input);
 
-                Type? target = assembly.GetTypes().FirstOrDefault(type => type.FullName.Contains(input));
+                Type? target = assembly.GetTypes().First(type =>
+                {
+                    Regex reg = new Regex($"{input}\\.+");
+                    return reg.IsMatch(type.FullName);
+                });
                 if (target == null)
                 {
                     throw new InvalidOperationException($"There is no listing '{input}'.");
                 }
-
+                
                 MethodInfo method = target.GetMethods().First();
 
                 string[]? arguments;
