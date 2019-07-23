@@ -4,9 +4,11 @@ using System.Linq;
 using System.Reflection;
 using System.Text.RegularExpressions;
 using System.Threading;
+using System.Diagnostics.CodeAnalysis;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
 {
+    [ExcludeFromCodeCoverage]
     public class Program
     {
         public static void Main(string[] args)
@@ -39,7 +41,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
             {
                 listing = ParseListingName(listing);
 
-                Type target = assembly.GetTypes().First(type => type.FullName.Contains(listing));
+                Regex reg = new Regex($"{listing}\\.+");
+                Type target = assembly.GetTypes().First(type =>
+                {
+                    return reg.IsMatch(type.FullName);
+                });
                 MethodInfo method = target.GetMethods().First();
 
                 string[] arguments;
