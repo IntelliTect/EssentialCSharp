@@ -1,14 +1,18 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Chapter01.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_11.Tests
 {
     [TestClass]
-    public class Listing01_11_Tests
+    public class HelloWorldTests
     {
         [TestMethod]
-        public void Main_DeclaringTwoVariablesWithinOneStatement()
+        public void Main_InigoMantra_ProperOutput()
         {
-            
+            const string expected =
+@"My name is Inigo Montoya.
+You killed my father....";
+
+            IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected, HelloWorld.Main);
         }
     }
 }

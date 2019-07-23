@@ -4,9 +4,11 @@ using System.Linq;
 using System.Reflection;
 using System.Text.RegularExpressions;
 using System.Threading;
+using System.Diagnostics.CodeAnalysis;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
 {
+    [ExcludeFromCodeCoverage]
     public class Program
     {
         public static void Main(string[] args)
