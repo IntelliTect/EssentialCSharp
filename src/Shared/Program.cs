@@ -41,9 +41,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
             {
                 listing = ParseListingName(listing);
 
+                Regex reg = new Regex($"{listing}\\.+");
                 Type target = assembly.GetTypes().First(type =>
                 {
-                    Regex reg = new Regex($"{listing}\\.+");
                     return reg.IsMatch(type.FullName);
                 });
                 MethodInfo method = target.GetMethods().First();
