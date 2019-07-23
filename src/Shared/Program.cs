@@ -42,7 +42,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
             {
                 input = ParseListingName(input);
 
-                Type? target = assembly.GetTypes().First(type =>
+                Type? target = assembly.GetTypes().FirstOrDefault(type =>
                 {
                     Regex reg = new Regex($"{input}\\.+");
                     return reg.IsMatch(type.FullName);
@@ -51,7 +51,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                 {
                     throw new InvalidOperationException($"There is no listing '{input}'.");
                 }
-                
+
                 MethodInfo method = target.GetMethods().First();
 
                 string[]? arguments;
