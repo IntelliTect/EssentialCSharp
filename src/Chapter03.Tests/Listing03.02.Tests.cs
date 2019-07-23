@@ -6,7 +6,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_02.Tests
     public class UppercaseTests
     {
         [TestMethod]
-        public void Main_WriteInventions()
+        public void Main_GivenValidString_MakeUppercase()
         {
             const string expected =
 @"Enter text: <<test
