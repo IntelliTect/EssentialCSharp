@@ -42,9 +42,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
             {
                 input = ParseListingName(input);
 
+                Regex reg = new Regex($"{input}\\.+");
                 Type? target = assembly.GetTypes().FirstOrDefault(type =>
                 {
-                    Regex reg = new Regex($"{input}\\.+");
                     return reg.IsMatch(type.FullName);
                 });
                 if (target == null)
