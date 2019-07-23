@@ -5,9 +5,11 @@ using System.Linq;
 using System.Reflection;
 using System.Text.RegularExpressions;
 using System.Threading;
+using System.Diagnostics.CodeAnalysis;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
 {
+    [ExcludeFromCodeCoverage]
     public class Program
     {
         public static void Main(string[] args)
@@ -40,7 +42,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
             {
                 input = ParseListingName(input);
 
-                Type? target = assembly.GetTypes().FirstOrDefault(type => type.FullName.Contains(input));
+                Regex reg = new Regex($"{input}\\.+");
+                Type? target = assembly.GetTypes().FirstOrDefault(type =>
+                {
+                    return reg.IsMatch(type.FullName);
+                });
                 if (target == null)
                 {
                     throw new InvalidOperationException($"There is no listing '{input}'.");
