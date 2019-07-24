@@ -1,8 +1,8 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_53
 {
-    class EmailDomain
+    public class EmailDomain
     {
-        static void Main()
+        public static void Main()
         {
             string email;
             bool insideDomain = false;

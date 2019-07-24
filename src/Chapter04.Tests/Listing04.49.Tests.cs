@@ -11,10 +11,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_49.Tests
             const string expected =
                 @"";
 
-            string[] args = {"0", "4"};
+            int currentPlayer = 0;
+            string input = "4";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, HelperMethod, true, args);
+                expected,
+                _ => Program.ValidateAndMove(null, currentPlayer, input),
+                true);
         }
         
         [TestMethod]
@@ -23,11 +26,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_49.Tests
             const string expected =
 @"
 ERROR:  Enter a value from 1-9. Push ENTER to quit";
-            
-            string[] args = {"0", "10"};
+
+            int currentPlayer = 0;
+            string input = "10";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, HelperMethod, false, args);
+                expected,
+                _ => Program.ValidateAndMove(null, currentPlayer, input),
+                false);
         }
         
         [TestMethod]
@@ -36,15 +42,13 @@ ERROR:  Enter a value from 1-9. Push ENTER to quit";
             const string expected =
                 @"";
 
-            string[] args = {"0", "quit"};
+            int currentPlayer = 0;
+            string input = "quit";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, HelperMethod, true, args);
-        }
-
-        public bool HelperMethod(string[] args)
-        {
-            return Program.ValidateAndMove(null, int.Parse(args[0]), args[1]);
+                expected, 
+                _ => Program.ValidateAndMove(null, currentPlayer, input), 
+                true);
         }
     }
 }
