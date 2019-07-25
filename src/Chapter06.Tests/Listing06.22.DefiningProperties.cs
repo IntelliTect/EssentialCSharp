@@ -6,9 +6,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_22.Tests
     public class ProgramTests
     {
         [TestMethod]
-        public void UnitTest1()
+        public void Main_CalculatedPropertySetGet_WriteGetterValue()
         {
-            Assert.Fail();
+            const string expected =
+                @"Inigo Montoya";
+
+            IntelliTect.TestTools.Console.ConsoleAssert.Expect(
+                expected, Program.Main);
         }
     }
 }
