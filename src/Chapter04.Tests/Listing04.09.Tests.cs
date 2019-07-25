@@ -1,3 +1,4 @@
+using System.Globalization;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_09.Tests
@@ -8,9 +9,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_09.Tests
         [TestMethod]
         public void Main_OverflowBoundsOfFloat_WriteInfinity()
         {
-            const string expected =
-@"-Infinity
-Infinity";
+            string expected = $"-{NumberFormatInfo.CurrentInfo.PositiveInfinitySymbol}\n" + 
+                              $"{NumberFormatInfo.CurrentInfo.PositiveInfinitySymbol}";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
                 expected, Program.Main);
