@@ -7,7 +7,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_49
             // ...
         }
 
-        static bool ValidateAndMove(
+        public static bool ValidateAndMove(
             int[] playerPositions, int currentPlayer, string input)
         {
             bool valid = false;
