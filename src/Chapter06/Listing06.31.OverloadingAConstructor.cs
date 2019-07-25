@@ -1,6 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_31
 {
-    class Employee
+    public class Employee
     {
         public Employee(string firstName, string lastName)
         {
