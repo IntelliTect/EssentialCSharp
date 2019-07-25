@@ -2,9 +2,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_09
 {
     using static System.Console;
 
-    class HeyYou
+    public class HeyYou
     {
-        static void Main()
+        public static void Main()
         {
             string firstName;
             string lastName;
