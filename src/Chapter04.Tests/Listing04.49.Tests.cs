@@ -11,12 +11,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_49.Tests
             const string expected =
                 @"";
 
+            int[] playerPositions = new int[1];
             int currentPlayer = 0;
             string input = "4";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
                 expected,
-                _ => Program.ValidateAndMove(null, currentPlayer, input),
+                _ => Program.ValidateAndMove(playerPositions, currentPlayer, input),
                 true);
         }
         
@@ -27,12 +28,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_49.Tests
 @"
 ERROR:  Enter a value from 1-9. Push ENTER to quit";
 
+            int[] playerPositions = new int[1];
             int currentPlayer = 0;
             string input = "10";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
                 expected,
-                _ => Program.ValidateAndMove(null, currentPlayer, input),
+                _ => Program.ValidateAndMove(playerPositions, currentPlayer, input),
                 false);
         }
         
@@ -42,12 +44,13 @@ ERROR:  Enter a value from 1-9. Push ENTER to quit";
             const string expected =
                 @"";
 
+            int[] playerPositions = new int[1];
             int currentPlayer = 0;
             string input = "quit";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
                 expected, 
-                _ => Program.ValidateAndMove(null, currentPlayer, input), 
+                _ => Program.ValidateAndMove(playerPositions, currentPlayer, input), 
                 true);
         }
     }
