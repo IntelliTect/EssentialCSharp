@@ -17,7 +17,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_22
 
             else
                 System.Console.WriteLine(
-                    "Correct, tic-tac-toe has a maximum " +
+                    "Correct, tic-tac-toe has a maximum" +
                     " of 9 turns.");
         }
 
