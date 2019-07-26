@@ -1,6 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_26.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_28.Tests
 {
     [TestClass]
     public class LeveragingTryParseTests
