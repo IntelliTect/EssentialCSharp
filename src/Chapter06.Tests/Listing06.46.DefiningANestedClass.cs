@@ -7,7 +7,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_46.Tests
     public class ProgramTests
     {
         [TestMethod]
-        public void Main_CreateEmployee_EmployeeCreated()
+        public void Main_CreatesEmployee()
         {
             string[] arguments = {
                 "new",
@@ -41,7 +41,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_46.Tests
         }
         
         [TestMethod]
-        public void Main_RemovingEmployee_EmployeeRemoved()
+        public void Main_RemovesEmployee()
         {
             string[] arguments = {
                 "update",

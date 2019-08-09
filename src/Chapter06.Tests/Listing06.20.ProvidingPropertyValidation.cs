@@ -9,7 +9,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_20.Tests
     {
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
-        public void Initialize_NullForFirstName_ArgumentNullException()
+        public void Initialize_NullForFirstName_ThrowsArgumentNullException()
         {
             Employee employee = new Employee();
             employee.Initialize(null, "Montoya");
@@ -17,7 +17,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_20.Tests
         
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
-        public void Initialize_NullForLastName_ArgumentNullException()
+        public void Initialize_NullForLastName_ThrowsArgumentNullException()
         {
             Employee employee = new Employee();
             employee.Initialize("Inigo", null);
@@ -43,7 +43,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_20.Tests
         
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
-        public void Initialize_BlankForFirstName_ArgumentException()
+        public void Initialize_BlankForFirstName_ThrowsArgumentException()
         {
             Employee employee = new Employee();
             employee.Initialize("", "Montoya");
@@ -51,7 +51,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_20.Tests
         
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
-        public void Initialize_BlankForLastName_ArgumentException()
+        public void Initialize_BlankForLastName_ThrowsArgumentException()
         {
             Employee employee = new Employee();
             employee.Initialize("Inigo", "");
