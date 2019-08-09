@@ -1,3 +1,4 @@
+using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_46.Tests
@@ -19,7 +20,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_46.Tests
                 @"'Creating' a new Employee.";
             
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, Program.Main, arguments);
+                expected, (Action<string[]>)Program.Main, arguments);
         }
         
         [TestMethod]
@@ -36,7 +37,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_46.Tests
                 @"'Updating' a new Employee.";
             
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, Program.Main, arguments);
+                expected, (Action<string[]>)Program.Main, arguments);
         }
         
         [TestMethod]
@@ -53,7 +54,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_46.Tests
                 @"'Updating' a new Employee.";
             
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, Program.Main, arguments);
+                expected, (Action<string[]>)Program.Main, arguments);
         }
     }
 }
