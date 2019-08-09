@@ -12,8 +12,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_26.Tests
         {
             const string expected =
 @"Enter your first name: <<Inigo
->>Enter your age: <<35
->>Hi Inigo! You are 420 months old.";
+>>Enter your age: <<36
+>>Hi Inigo! You are 432 months old.";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected, 
                 LeveragingTryParse.Main);
