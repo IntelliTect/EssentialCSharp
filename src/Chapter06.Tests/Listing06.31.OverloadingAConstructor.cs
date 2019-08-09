@@ -3,12 +3,15 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_31.Tests
 {
     [TestClass]
-    public class ProgramTests
+    public class EmployeeTests
     {
         [TestMethod]
-        public void UnitTest1()
+        public void EmployeeConstructor_CallConstructorWithTwoParameters_CorrectConstructorCalled()
         {
-            Assert.Fail();
+            Employee employee = new Employee("Inigo", "Montoya");
+            
+            Assert.AreEqual("Inigo", employee.FirstName);
+            Assert.AreEqual("Montoya", employee.LastName);
         }
     }
 }

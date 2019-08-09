@@ -3,7 +3,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_12
 // In a completed Employee implementation FirstName, LastName
 // and salary would be accessed
 #pragma warning disable CS0649
-    class Employee
+    public class Employee
     {
         public string FirstName;
         public string LastName;
