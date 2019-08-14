@@ -6,7 +6,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_31.Tests
     public class EmployeeTests
     {
         [TestMethod]
-        public void EmployeeConstructor_CallConstructorWithTwoParameters_CorrectConstructorCalled()
+        public void EmployeeConstructor_TwoParameterConstructorSuccess()
         {
             Employee employee = new Employee("Inigo", "Montoya");
             

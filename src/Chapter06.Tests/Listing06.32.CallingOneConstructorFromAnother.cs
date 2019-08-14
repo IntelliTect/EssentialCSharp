@@ -6,7 +6,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_32.Tests
     public class EmployeeTests
     {
         [TestMethod]
-        public void CallConstructor_OtherConstructorCalled_AllFieldsSet()
+        public void CallConstructor_OtherConstructorCalled_AllPropertiesSet()
         {
             Employee employee = new Employee(15, "Inigo", "Montoya");
             
