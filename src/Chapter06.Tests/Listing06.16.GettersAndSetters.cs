@@ -6,57 +6,27 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_16.Tests
     public class EmployeeTests
     {
         [TestMethod]
-        public void SetFirstName_Inigo_FirstNameSetToInigo()
+        [DataRow("Inigo")]
+        [DataRow(null)]
+        [DataRow("")]
+        public void SetFirstName_FirstNamePropertySet(string firstName)
         {
             Employee employee = new Employee();
-            employee.SetFirstName("Inigo");
+            employee.SetFirstName(firstName);
             
-            Assert.AreEqual("Inigo", employee.GetFirstName());
-        }
-
-        [TestMethod]
-        public void SetFirstName_Null_FirstNameRemainsNull()
-        {
-            Employee employee = new Employee();
-            employee.SetFirstName(null);
-            
-            Assert.AreEqual(null, employee.GetFirstName());
-        }
-
-        [TestMethod]
-        public void SetFirstName_Blank_FirstNameRemainsNull()
-        {
-            Employee employee = new Employee();
-            employee.SetFirstName("");
-            
-            Assert.AreEqual(null, employee.GetFirstName());
+            Assert.AreEqual(firstName == "" ? null : firstName, employee.GetFirstName());
         }
         
         [TestMethod]
-        public void SetLastName_Montoya_LastNameSetToInigo()
+        [DataRow("Montoya")]
+        [DataRow(null)]
+        [DataRow("")]
+        public void SetLastName_LastNamePropertySet(string lastName)
         {
             Employee employee = new Employee();
-            employee.SetLastName("Montoya");
+            employee.SetLastName(lastName);
             
-            Assert.AreEqual("Montoya", employee.GetLastName());
-        }
-
-        [TestMethod]
-        public void SetLastName_Null_LastNameRemainsNull()
-        {
-            Employee employee = new Employee();
-            employee.SetLastName(null);
-            
-            Assert.AreEqual(null, employee.GetLastName());
-        }
-
-        [TestMethod]
-        public void SetLastName_Blank_LastNameRemainsNull()
-        {
-            Employee employee = new Employee();
-            employee.SetLastName("");
-            
-            Assert.AreEqual(null, employee.GetLastName());
+            Assert.AreEqual(lastName == "" ? null : lastName, employee.GetLastName());
         }
     }
 }
