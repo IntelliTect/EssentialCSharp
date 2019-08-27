@@ -21,9 +21,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_13.Tests
 
             DataStorage.Store(employee);
 
-            var contents = File.ReadAllText(employee.FirstName + employee.LastName + ".dat");
+            string fileName = employee.FirstName + employee.LastName + ".dat";
+
+            var contents = File.ReadAllText(fileName);
             
             Assert.AreEqual(expected, contents);
+            
+            //Cleanup file
+            File.Delete(employee.FirstName + employee.LastName + ".dat");
         }
     }
 }
