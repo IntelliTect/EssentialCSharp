@@ -35,7 +35,7 @@
         // LastName property
         public string LastName
         {
-            get => _FirstName;
+            get => _LastName;
             set => _LastName = value;
         }
         private string _LastName;

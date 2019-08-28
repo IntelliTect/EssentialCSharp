@@ -7,7 +7,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_02
             string firstName;
             string lastName;
 
-            System.Console.Write("Hey you!");
+            System.Console.WriteLine("Hey you!");
 
             System.Console.Write("Enter your first name: ");
             firstName = System.Console.ReadLine();

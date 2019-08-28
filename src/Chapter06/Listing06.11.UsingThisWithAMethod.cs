@@ -20,7 +20,7 @@
 
         public string GetName()
         {
-            return $"{ FirstName }  { LastName }";
+            return $"{ FirstName } { LastName }";
         }
 
         public void SetName(string newFirstName, string newLastName)

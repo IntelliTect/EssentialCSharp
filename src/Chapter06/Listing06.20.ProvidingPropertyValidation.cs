@@ -2,7 +2,7 @@ using System;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_20
 {
-    class Employee
+    public class Employee
     {
         // ...
         public void Initialize(
@@ -17,7 +17,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_20
         // LastName property
         public string LastName
         {
-            get => _FirstName;
+            get => _LastName;
             set
             {
                 // Validate LastName assignment

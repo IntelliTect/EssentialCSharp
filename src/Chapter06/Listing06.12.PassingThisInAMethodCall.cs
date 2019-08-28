@@ -2,7 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_12
 {
 // In a finished implementation these fields would be used
 #pragma warning disable CS0649
-    class Employee
+    public class Employee
     {
         public string FirstName;
         public string LastName;
