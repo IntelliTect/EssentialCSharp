@@ -27,7 +27,7 @@ Address: Apt 56B, Whitehaven Mansions, Sandhurst Sq, London
 ";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, Program.Main, true);
+                expected, Program.Main);
         }
     }
 }
