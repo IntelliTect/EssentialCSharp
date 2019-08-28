@@ -1,7 +1,7 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_43
 {
     using Chapter08.Listing08_02;
-    using Chapter08.Listing08_11;
+    using Contact = Chapter08.Listing08_11.Contact;
 
     interface IReadOnlyPair<out T>
     {
