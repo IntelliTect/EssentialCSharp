@@ -1,7 +1,10 @@
 <Project>
   <PropertyGroup>
-    <CSharp8Nullable Condition=" '$(CSharp8Nullable)' == ''">disable</CSharp8Nullable>
-    <NullableContextOptions>$(CSharp8Nullable)</NullableContextOptions>
-    <TreatWarningsAsErrors>$(TreatWarningsAsErrors)</TreatWarningsAsErrors>
+    <Nullable Condition="'$(Nullable)'==''">enable</Nullable>
+    <TreatWarningsAsErrors Condition="'$(TreatWarningsAsErrors)'==''">true</TreatWarningsAsErrors>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <Authors>Mark Michaelis</Authors>
+    <Company>Addison Wesley</Company>
+    <Copyright>Copyright © Addison Wesley 2003</Copyright>
   </PropertyGroup>
 </Project>
