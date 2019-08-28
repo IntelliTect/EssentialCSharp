@@ -1,6 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_16
 {
-    class Employee
+    public class Employee
     {
         private string FirstName;
         // FirstName getter

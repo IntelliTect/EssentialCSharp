@@ -2,7 +2,7 @@
 {
     using System;
 
-    class Program
+    public class Program
     {
         // Define a nested class for processing the command line
         private class CommandLine

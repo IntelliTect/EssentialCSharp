@@ -1,6 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_31
 {
-    class Employee
+    public class Employee
     {
         public Employee(string firstName, string lastName)
         {
@@ -18,9 +18,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_31
 
         public Employee(int id) => Id = id;
 
+        private int _Id;
         public int Id
         {
-            get => Id;
+            get => _Id;
             private set
             {
                 // Look up employee name...

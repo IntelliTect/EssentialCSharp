@@ -4,7 +4,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_13
     using System.IO;
     using Listing06_12;
 
-    class DataStorage
+    public class DataStorage
     {
         // Save an employee object to a file 
         // named with the Employee name

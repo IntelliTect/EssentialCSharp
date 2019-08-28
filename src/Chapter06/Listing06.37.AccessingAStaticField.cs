@@ -29,7 +29,7 @@
         }
     }
 
-    class Employee
+    public class Employee
     {
         public Employee(string firstName, string lastName)
         {
