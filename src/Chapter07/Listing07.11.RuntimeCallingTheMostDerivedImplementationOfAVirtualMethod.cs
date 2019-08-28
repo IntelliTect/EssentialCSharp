@@ -20,7 +20,6 @@
             // properties were set
             Console.WriteLine(
                 $"{ contact.FirstName } { contact.LastName}");
-
         }
     }
 }
