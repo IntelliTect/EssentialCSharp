@@ -1,6 +1,6 @@
 <Project>
   <PropertyGroup>
-    <Nullable Condition="'$(Nullable)'==''">enable</Nullable>
+    <Nullable Condition="'$(Nullable)'==''">disable</Nullable>
     <TreatWarningsAsErrors Condition="'$(TreatWarningsAsErrors)'==''">true</TreatWarningsAsErrors>
     <TargetFramework>netcoreapp3.0</TargetFramework>
     <Authors>Mark Michaelis</Authors>
