@@ -3,7 +3,7 @@
     using System;
     using Listing08_02;
 
-    class Program
+    public class Program
     {
         public static void Main()
         {
