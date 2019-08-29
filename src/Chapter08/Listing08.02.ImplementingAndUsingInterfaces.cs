@@ -175,7 +175,7 @@
 
         /// <summary>Displays the column headers</summary>
         /// <returns>Returns an array of column widths</returns>
-        public static int[] DisplayHeaders(string[] headers)
+        private static int[] DisplayHeaders(string[] headers)
         {
             var columnWidths = new int[headers.Length];
             for(int index = 0; index < headers.Length; index++)
@@ -187,7 +187,7 @@
             return columnWidths;
         }
 
-        public static void DisplayItemRow(
+        private static void DisplayItemRow(
             int[] columnWidths, string[] values)
         {
             if(columnWidths.Length != values.Length)

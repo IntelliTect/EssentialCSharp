@@ -1,28 +1,21 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_02;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_02
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_10.Tests
 {
     [TestClass]
     public class ProgramTests
     {
         [TestMethod]
-        public void Main_OutputListsOfContactsAndPublicationsToConsole()
+        public void Main_ContactsDisplayedToConsole()
         {
             const string expected =
 @"First NameLast Name    Phone       Address                       
 Dick      Traci        123-123-1234123 Main St., Spokane, WA  99037
-Andrew    Littman      555-123-45671417 Palmary St., Dallas, TX 55555
-Mary      Hartfelt     444-123-45671520 Thunder Way, Elizabethton, PA 44444
-John      Lindherst    222-987-65431 Aerial Way Dr., Monteray, NH 88888
-Pat       Wilson       123-456-7890565 Irving Dr., Parksdale, FL 22222
-Jane      Doe          333-345-6789123 Main St., Aurora, IL 66666
 
 Title                                                    Author             Year
-The End of Poverty: Economic Possibilities for Our Time  Jeffrey Sachs      2006
+Celebration of Discipline                                Richard Foster     1978
 Orthodoxy                                                G.K. Chesterton    1908
 The Hitchhiker's Guide to the Galaxy                     Douglas Adams      1979
 ";
@@ -31,8 +24,7 @@ The Hitchhiker's Guide to the Galaxy                     Douglas Adams      1979
                 expected, Program.Main);
         }
     }
-
-    [TestClass]
+    
     public class ConsoleListControlTests
     {
         [TestMethod]
@@ -71,7 +63,7 @@ The Hitchhiker's Guide to the Galaxy                     Douglas Adams      1979
             };
 
             const string expected =
-@"First NameLast Name    Phone       Address                       
+                @"First NameLast Name    Phone       Address                       
 Inigo     Montoya      123-123-1234123 Main St., Spokane, WA 99037";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
