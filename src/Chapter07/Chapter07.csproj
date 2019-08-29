@@ -1,9 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp3.0</TargetFramework>
     <ProductName>Chapter07</ProductName>
-    <StartupObject>AddisonWesley.Michaelis.EssentialCSharp.Shared.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
     <!-- CS0108 is a hides inherited member warning where 'new' is advised -->

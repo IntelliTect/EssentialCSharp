@@ -1,20 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp3.0</TargetFramework>
     <ProductName>Chapter04.Tests</ProductName>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <WarningsAsErrors />
   </PropertyGroup>
-  <Import Project="..\Versioning.targets" />
-  <Import Project="..\ChapterTests.targets" />
+  <Import Project="..\ChapterTests.props" />
   <ItemGroup>
     <Compile Include="..\Shared\NetCore.cs" Link="NetCore.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.2.0-preview-20190606-02" />
-    <PackageReference Include="MSTest.TestAdapter" Version="2.0.0-beta4" />
-    <PackageReference Include="MSTest.TestFramework" Version="2.0.0-beta4" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Chapter04\Chapter04.csproj" />
