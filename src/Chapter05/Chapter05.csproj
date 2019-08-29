@@ -4,8 +4,6 @@
     <TargetFramework>netcoreapp3.0</TargetFramework>
     <ProductName>Chapter05</ProductName>
     <StartupObject>AddisonWesley.Michaelis.EssentialCSharp.Shared.Program</StartupObject>
-    <Nullable>enable</Nullable>
-    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <Import Project="..\Versioning.targets" />
   <ItemGroup>
