@@ -31,7 +31,7 @@ Usage: Downloader.exe <URL> <TargetFileName>";
             {
                 Assert.AreEqual(0, Program.Main(args));
             }
-            catch (AggregateException exception) when(exception.InnerException.GetType() == typeof(System.Net.Http.HttpRequestException))
+            catch (AggregateException exception) when(exception.InnerException!.GetType() == typeof(System.Net.Http.HttpRequestException))
             {
                 Assert.Inconclusive("Unable to download the file.  Check your Internet connection.");
             }

@@ -3,10 +3,8 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.0</TargetFramework>
     <ProductName>Chapter02.Tests</ProductName>
-    <Nullable>enable</Nullable>
-    <LangVersion>8.0</LangVersion>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <WarningsAsErrors />
+    <WarningsAsErrors>8602</WarningsAsErrors>
   </PropertyGroup>
   <Import Project="..\Versioning.targets" />
   <Import Project="..\ChapterTests.targets" />

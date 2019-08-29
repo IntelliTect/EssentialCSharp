@@ -1,13 +1,12 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp3.0</TargetFramework>
     <ProductName>Chapter18</ProductName>
-    <StartupObject>AddisonWesley.Michaelis.EssentialCSharp.Shared.Program</StartupObject>
-    <Nullable>enable</Nullable>
-    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
-  <Import Project="..\Versioning.targets" />
+  <PropertyGroup>
+    <!-- CS0612 is an Obsolete warning demonstrating the Obsolete attribute -->
+    <ExpectedWarnings>0612</ExpectedWarnings>
+  </PropertyGroup>
+  <Import Project="..\Chapter.props" />
   <ItemGroup>
     <Compile Remove="4.0\**" />
     <EmbeddedResource Remove="4.0\**" />

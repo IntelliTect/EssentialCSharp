@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.0</TargetFramework>
@@ -6,8 +6,6 @@
     <WarningLevel>2</WarningLevel>
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
     <StartupObject>AddisonWesley.Michaelis.EssentialCSharp.Shared.Program</StartupObject>
-    <Nullable>enable</Nullable>
-    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <Import Project="..\Versioning.targets" />
   <ItemGroup>
