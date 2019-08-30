@@ -1,6 +1,7 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_13
 {
     using System;
+#pragma warning disable 67 // OnTemperatureChange is declared but never used
 
     public class Thermostat
     {
@@ -25,4 +26,5 @@
         }
         private float _CurrentTemperature;
     }
+#pragma warning restore 67
 }
