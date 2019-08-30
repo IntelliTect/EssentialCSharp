@@ -2,7 +2,7 @@
   <PropertyGroup>
     <ProductName>Chapter17</ProductName>
   </PropertyGroup>
-  <Import Project="..\Versioning.targets" />
+  <Import Project="..\Chapter.props" />
   <ItemGroup>
     <None Include="Listing17.11.SpecifyingAReturnAttribute.Description.cs" />
     <Compile Include="..\Shared\Program.cs">

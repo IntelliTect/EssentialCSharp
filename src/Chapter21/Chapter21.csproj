@@ -3,7 +3,7 @@
     <ProductName>Chapter21</ProductName>
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
   </PropertyGroup>
-  <Import Project="..\Versioning.targets" />
+  <Import Project="..\Chapter.props" />
   <ItemGroup>
     <Compile Include="..\Shared\Program.cs">
       <Link>Program.cs</Link>

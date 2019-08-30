@@ -2,7 +2,7 @@
   <PropertyGroup>
     <ProductName>Chapter10</ProductName>
   </PropertyGroup>
-  <Import Project="..\Versioning.targets" />
+  <Import Project="..\Chapter.props" />
   <ItemGroup>
     <Compile Include="..\Shared\Program.cs">
       <Link>Program.cs</Link>
