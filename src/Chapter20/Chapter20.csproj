@@ -4,7 +4,7 @@
     <WarningLevel>2</WarningLevel>
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
   </PropertyGroup>
-  <Import Project="..\Versioning.targets" />
+  <Import Project="..\Chapter.props" />
   <ItemGroup>
     <Compile Include="..\Shared\DoWorkEventArgs.cs" Link="DoWorkEventArgs.cs" />
     <Compile Include="..\Shared\PiCalculator+InternalPiDigitCalculator.cs" Link="PiCalculator+InternalPiDigitCalculator.cs" />

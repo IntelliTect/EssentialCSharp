@@ -2,7 +2,7 @@
   <PropertyGroup>
     <ProductName>Chapter11</ProductName>
   </PropertyGroup>
-  <Import Project="..\Versioning.targets" />
+  <Import Project="..\Chapter.props" />
   <ItemGroup>
     <PackageReference Include="System.ValueTuple" Version="4.4.0" />
     <ProjectReference Include="..\Chapter07\Chapter07.csproj" />

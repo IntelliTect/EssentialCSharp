@@ -2,7 +2,7 @@
   <PropertyGroup>
     <ProductName>Chapter03</ProductName>
   </PropertyGroup>
-  <Import Project="..\Versioning.targets" />
+  <Import Project="..\Chapter.props" />
   <ItemGroup>
     <Compile Remove="Listing03.01B.DereferencingAnUnassignedVariable.cs" />
   </ItemGroup>
