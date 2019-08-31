@@ -1,21 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <PropertyGroup>
     <ProductName>Chapter01.Tests</ProductName>
-    <Nullable>enable</Nullable>
-    <LangVersion>8.0</LangVersion>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <WarningsAsErrors />
   </PropertyGroup>
-  <Import Project="..\Versioning.targets" />
-  <Import Project="..\ChapterTests.targets" />
-  <ItemGroup>
-    <PackageReference Include="coverlet.msbuild" Version="2.6.3" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.2.0-preview-20190606-02" />
-    <PackageReference Include="MSTest.TestAdapter" Version="2.0.0-beta4" />
-    <PackageReference Include="MSTest.TestFramework" Version="2.0.0-beta4" />
-  </ItemGroup>
+  <Import Project="..\ChapterTests.props" />
   <ItemGroup>
     <ProjectReference Include="..\Chapter01\Chapter01.csproj" />
   </ItemGroup>

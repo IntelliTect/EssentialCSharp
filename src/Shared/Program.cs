@@ -16,8 +16,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
         {
             string input;
             IEnumerable<string> stringArguments = new string[0];
-            var assembly = Assembly.GetEntryAssembly();
-
+            Assembly assembly = Assembly.GetEntryAssembly()!;
+            if (assembly is null)
+            {
+                throw new InvalidOperationException("Unable to retrieve the EntryAssembly.");
+            }
             string regexMatch = Regex.Match(assembly.GetName().Name, "\\d{1,2}").Value;
 
             int chapterNumber = int.Parse(regexMatch);
@@ -45,7 +48,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                 Regex reg = new Regex($"{input}\\.+");
                 Type? target = assembly.GetTypes().FirstOrDefault(type =>
                 {
-                    return reg.IsMatch(type.FullName);
+                    return reg.IsMatch(type.FullName!);
                 });
                 if (target == null)
                 {
@@ -76,7 +79,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                 {
                     Thread thread = new Thread(() =>
                     {
-                        object result = method.Invoke(null, arguments);
+                        object? result = method.Invoke(null, arguments);
                         if (!(method.ReturnType == typeof(void)))
                         {
                             Console.WriteLine($"Result: {result}");
@@ -85,7 +88,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                 }
                 else
                 {
-                    var result = method.Invoke(null, arguments);
+                    object? result = method.Invoke(null, arguments);
 
                     if (!(method.ReturnType == typeof(void)))
                     {
@@ -115,28 +118,28 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("----Exception----");
-                if (exception.InnerException != null)
-                {
-                    // Invoke ExceptionDispatchInfo using reflection because it doesn't 
-                    // exist in .NET 4.0 or earlier and we want to maintain compatibility
-                    // while still taking advantage of it if it is available.
-                    Type exceptionDispatchInfoType =
-                        Type.GetType(
-                            "System.Runtime.ExceptionServices.ExceptionDispatchInfo");
-                    if (exceptionDispatchInfoType != null)
-                    {
-                        dynamic exceptionDispatchInfo = exceptionDispatchInfoType.GetMethod("Capture")
-                            .Invoke(exceptionDispatchInfoType, new object[] {exception.InnerException});
-                        exceptionDispatchInfo.Throw();
-                    }
-                    else
-                        throw exception.InnerException;
-                }
-                else
+                if (exception.InnerException is null)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine(string.Format("Listing {0} threw an exception of type {1}.", input,
                         exception.GetType()));
+                }
+                else
+                {
+                    // Invoke ExceptionDispatchInfo using reflection because it doesn't 
+                    // exist in .NET 4.0 or earlier and we want to maintain compatibility
+                    // while still taking advantage of it if it is available.
+                    Type? exceptionDispatchInfoType =
+                        // Don't use nameof here as the type may not exists and, therefore, won't compile.
+                        Type.GetType("System.Runtime.ExceptionServices.ExceptionDispatchInfo");
+                    if (exceptionDispatchInfoType is null)
+                        throw exception.InnerException;
+                    else
+                    {
+                        dynamic exceptionDispatchInfo = exceptionDispatchInfoType.GetMethod("Capture")
+                            !.Invoke(exceptionDispatchInfoType, new object[] { exception.InnerException })!;
+                        exceptionDispatchInfo.Throw();
+                    }
                 }
             }
             finally
@@ -173,7 +176,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
             }
             else
             {
-                args = userArguments.Split(new[] {' '});
+                args = userArguments.Split(new[] { ' ' });
             }
 
             return args;
@@ -181,7 +184,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
 
         private static string ParseListingName(string listing)
         {
-            var appendices = new List<string> {"A", "B", "C", "D"};
+            var appendices = new List<string> { "A", "B", "C", "D" };
 
             string chapterName = "";
 

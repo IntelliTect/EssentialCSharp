@@ -9,6 +9,7 @@ Function PadNumber {
         [string]$number
     )
 
+    # Should use string.PadLeft(2, '0') instead.
     if($number -match '(?<Number>\d?\d)(?<Suffix>.*)') {
         return "{0:D2}$($Matches.Suffix)" -f ([int]$Matches.Number) 
     }
@@ -199,7 +200,7 @@ Function Update-CodeListingSequence {
     $NewChapterNumber = $NewChapterNumber.PadLeft(2, '0')
 
     if(!$listingNumber) {
-        $ListingNumber = Get-Item (Join-Path (Join-Path $PSScriptRoot "Chapter$ChapterNumber") "Listing$ChapterNumber.*cs") | Select -ExpandProperty Name |
+        $ListingNumber = Get-Item (Join-Path (Join-Path $PSScriptRoot 'src' "Chapter$ChapterNumber") "Listing$ChapterNumber.*cs") | Select-Object -ExpandProperty Name |
             ForEach-Object{ 
                 if($_ -match "Listing$ChapterNumber\.(?<Listing>\d\d)(?<Suffix>.*)") {
                     Write-Output $Matches.Listing
@@ -282,7 +283,7 @@ Function Update-CodeListingSequence {
             #    $oldFilePathPattern = (Join-Path (Join-Path $PSScriptRoot "Chapter$ChapterNumber") "Listing$ChapterNumber.$eachListingNumber*.cs")
             #} 
             #else {
-                $oldFilePathPattern = (Join-Path (Join-Path $PSScriptRoot "Chapter$ChapterNumber") "Listing$(if($IsIntermediateName.IsPresent){"$ChapterNumber"}else{"$NewChapterNumber.TEMP"}).$eachListingNumber*.cs")
+                $oldFilePathPattern = (Join-Path (Join-Path $PSScriptRoot 'src' "Chapter$ChapterNumber") "Listing$(if($IsIntermediateName.IsPresent){"$ChapterNumber"}else{"$NewChapterNumber.TEMP"}).$eachListingNumber*.cs")
             #}
             
             $files = @(Get-Item $oldFilePathPattern)

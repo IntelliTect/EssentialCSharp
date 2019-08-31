@@ -11,7 +11,8 @@
         {
             try
             {
-                throw new Win32Exception(42);
+                //throw new Win32Exception(42);
+                // ...
                 //TextNumberParser.Parse("negative forty-two");
                 // ...
                 throw new InvalidOperationException(
@@ -19,9 +20,10 @@
                 // ...
             }
             catch(Win32Exception exception) 
-                when(args.Length == exception.NativeErrorCode)
+                when(exception.NativeErrorCode  == 42)
             {
-
+                // Handle Win32Exception where
+                // ErrorCode is 42
             }
             catch(NullReferenceException exception)
             {
@@ -33,7 +35,7 @@
             }
             catch(InvalidOperationException exception)
             {
-                // Handle ApplicationException
+                // Handle InvalidOperationException
             }
             catch(Exception exception)
             {
