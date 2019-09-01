@@ -72,7 +72,7 @@
         }
         #endregion
 
-        protected string Name
+        protected new string Name
         {
             get
             {
