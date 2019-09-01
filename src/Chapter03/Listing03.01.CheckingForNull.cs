@@ -2,19 +2,25 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_01
 {
     public class Program
     {
-        public static void Main()
+        public static void Main(string[] args)
         {
             int? number = null;
+
             // ...
+            if(args.Length>0)
+            {
+                number = args[0].Length;
+            }
+
             if (number is null)
             {
                 System.Console.WriteLine(
-                    $"{ nameof(number) } requires a value and cannot be null");
+                    "'number' requires a value and cannot be null");
             }
             else
             {
                 System.Console.WriteLine(
-                    $"{ nameof(number) } is of type { number.GetType() }.");
+                    $"'number' doubled is { number * 2 }.");
             }
 
         }
