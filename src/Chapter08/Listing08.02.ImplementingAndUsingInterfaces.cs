@@ -55,7 +55,7 @@
         }
     }
 
-    interface IListable
+    public interface IListable
     {
         // Return the value of each column in the row
         string[] ColumnValues
@@ -74,7 +74,7 @@
         public virtual string Name { get; set; }
     }
 
-    class Contact : PdaItem, IListable
+    public class Contact : PdaItem, IListable
     {
         public Contact(string firstName, string lastName,
             string address, string phone)
@@ -119,7 +119,7 @@
         // ...
     }
 
-    class Publication : IListable
+    public class Publication : IListable
     {
         public Publication(string title, string author, int year)
         {
@@ -160,7 +160,7 @@
     }
 
 
-    class ConsoleListControl
+    public class ConsoleListControl
     {
         public static void List(string[] headers, IListable[] items)
         {
