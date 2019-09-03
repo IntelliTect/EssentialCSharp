@@ -72,7 +72,7 @@
         }
         #endregion
 
-        protected new string Name
+        public override string Name
         {
             get
             {

@@ -15,7 +15,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_03.Tests
         }
 
         [TestMethod]
-        public void CompareTo_ObjLargerThanThis_ReturnNegative1()
+        public void CompareTo_ThisSmallerThanObj_ReturnNegative1()
         {
             Contact firstContact = new Contact("Inigo Montoya");
             Contact secondContact = new Contact("Zero Zero");
@@ -24,7 +24,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_03.Tests
         }
 
         [TestMethod]
-        public void CompareTo_ObjLargerThanThis_Return1()
+        public void CompareTo_ThisLargerThanObj_Return1()
         {
             Contact firstContact = new Contact("Zero Zero");
             Contact secondContact = new Contact("Inigo Montoya");
