@@ -9,6 +9,7 @@
         public Contact(string name)
             : base(name)
         {
+            Name = name;
         }
 
         #region IComparable Members
@@ -71,6 +72,33 @@
         }
         #endregion
 
+        public override string Name
+        {
+            get
+            {
+                return FirstName + " " + LastName;
+            }
+            set
+            {
+                // Split the assigned value into 
+                // first and last names
+                string[] names;
+                names = value.Split(new char[] { ' ' });
+                if(names.Length == 2)
+                {
+                    FirstName = names[0];
+                    LastName = names[1];
+                }
+                else
+                {
+                    // Throw an exception if the full 
+                    // name was not assigned
+                    throw new System.ArgumentException(
+                        $"Assigned value '{value}' is invalid");
+                }
+            }
+        }
+        
         protected string LastName { get; set; }
         protected string FirstName { get; set; }
         protected string Phone { get; set; }
