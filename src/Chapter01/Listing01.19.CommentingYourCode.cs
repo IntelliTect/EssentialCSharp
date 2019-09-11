@@ -18,7 +18,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_19
             lastName = System.Console.ReadLine();
             
             /* Display a greeting to the console 
-               using composite fomatting. */
+               using composite formatting. */
 
             System.Console.WriteLine("Your full name is {1}, {0}.", 
                 firstName, lastName);
