@@ -65,7 +65,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                 }
                 else
                 {
-                    if (stringArguments.Count() == 0)
+                    if (!stringArguments.Any())
                     {
                         arguments = GetArguments();
                     }
@@ -79,7 +79,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                 {
                     Thread thread = new Thread(() =>
                     {
-                        object? result = method.Invoke(null, arguments);
+                        object? result = method.Invoke(null, new object?[]{arguments});
                         if (!(method.ReturnType == typeof(void)))
                         {
                             Console.WriteLine($"Result: {result}");
@@ -88,7 +88,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                 }
                 else
                 {
-                    object? result = method.Invoke(null, arguments);
+                    object? result = method.Invoke(null, new object?[] { arguments });
 
                     if (!(method.ReturnType == typeof(void)))
                     {
@@ -121,8 +121,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                 if (exception.InnerException is null)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine(string.Format("Listing {0} threw an exception of type {1}.", input,
-                        exception.GetType()));
+                    Console.WriteLine($"Listing {input} threw an exception of type {exception.GetType()}.");
                 }
                 else
                 {
