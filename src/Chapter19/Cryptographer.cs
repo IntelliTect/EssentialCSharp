@@ -56,7 +56,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
             //Encrypt the data.
             using(MemoryStream msEncrypt = new MemoryStream())
             using(CryptoStream csEncrypt = new CryptoStream(msEncrypt,
-            encryptor, CryptoStreamMode.Write))
+                encryptor, CryptoStreamMode.Write))
             {
                 //Write all data to the crypto stream and flush it.
                 csEncrypt.Write(data, 0, data.Length);
