@@ -12,12 +12,18 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_28.Tests
 
     [TestClass]
     public class ProgramTests
+<<<<<<< HEAD
     {
         public TestContext TestContext { get; set; }
+=======
+    {
+        public TestContext TestContext { get; set; }
+>>>>>>> 62073a4... Added tests for Listing 19.28
         [TestMethod]
         public void EncryptDecrypt_GivenSmallFile_EncryptDecryptSuccessfully()
         {
             string fileName = Path.GetTempFileName();
+<<<<<<< HEAD
             string text = "You've fallen for one of the two classic blunders! The first being never get involved in a land war in Asia but only slightly lesser known: never go in against a cicelean when DEATH is on the line! HAHAHAHAHAHAHA *dies* You only think I guessed wrong! That's what's so funny! I switched glasses when your back was turned! Ha ha! You fool! You fell victim to one of the classic blunders - The most famous of which is 'never get involved in a land war in Asia' - but only slightly less well - known is this: 'Never go against a Sicilian when death is on the line!' Ha ha ha ha ha ha ha!";
             TestContext.WriteLine(text.Length.ToString());
             AssertEncryptIsDecryptedSuccessfully(fileName, text);
@@ -25,12 +31,26 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_28.Tests
 
         private static void AssertEncryptIsDecryptedSuccessfully(string fileName, string text)
         {
+=======
+            string text = "You've fallen for one of the two classic blunders! The first being never get involved in a land war in Asia but only slightly lesser known: never go in against a cicelean when DEATH is on the line! HAHAHAHAHAHAHA *dies* You only think I guessed wrong! That's what's so funny! I switched glasses when your back was turned! Ha ha! You fool! You fell victim to one of the classic blunders - The most famous of which is 'never get involved in a land war in Asia' - but only slightly less well - known is this: 'Never go against a Sicilian when death is on the line!' Ha ha ha ha ha ha ha!";
+            TestContext.WriteLine(text.Length.ToString());
+            AssertEncryptIsDecryptedSuccessfully(fileName, text);
+        }
+
+        private static void AssertEncryptIsDecryptedSuccessfully(string fileName, string text)
+        {
+>>>>>>> 62073a4... Added tests for Listing 19.28
             File.WriteAllText(fileName, text);
             string encryptedFileName = Program.Encrypt(fileName);
             Assert.IsTrue(File.Exists(encryptedFileName));
             Program.Decrypt(encryptedFileName, fileName);
             string decryptedText = File.ReadAllText(fileName);
+<<<<<<< HEAD
             Assert.AreEqual<string>(text, decryptedText);
         }
+=======
+            Assert.AreEqual<string>(text, decryptedText);
+        }
+>>>>>>> 62073a4... Added tests for Listing 19.28
     }
 }

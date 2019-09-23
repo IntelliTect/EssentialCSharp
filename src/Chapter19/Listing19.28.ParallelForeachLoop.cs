@@ -28,6 +28,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_28
 
         // ...
 
+<<<<<<< HEAD
         public static string Encrypt(string fileName)
         {
             string outputFileName = $"{fileName}.encrypt";
@@ -54,6 +55,34 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_28
             using (FileStream outputFileStream = new FileStream(outputFileName, FileMode.Create))
             {
                 Cryptographer.DecryptAsync(bytes, outputFileStream).Wait();
+=======
+        public static string Encrypt(string fileName)
+        {
+            string outputFileName = $"{fileName}.encrypt";
+            Encrypt(fileName, outputFileName);
+            return outputFileName;
+        }
+
+        static Cryptographer Cryptographer { get; } = new Cryptographer();
+
+        public static void Encrypt(string inputFileName, string outputFileName)
+        {
+            Console.WriteLine($">>>>>Encrypting '{ inputFileName }'.");
+            using (FileStream outputFileStream = new FileStream($"{inputFileName}.encrypt", FileMode.Create))
+            {
+                byte[] encryptedText = Cryptographer.EncryptAsync(File.ReadAllText(inputFileName), outputFileStream).Result;
+            }
+            Console.WriteLine($"<<<<<Finished encrypting '{ inputFileName}'.");
+        }
+
+        public static void Decrypt(string inputFileName, string outputFileName)
+        {
+            Console.WriteLine($">>>>>Decrypting '{ inputFileName }'.");
+            byte[] bytes = File.ReadAllBytes(inputFileName);
+            using (FileStream outputFileStream = new FileStream(outputFileName, FileMode.Create))
+            {
+                Cryptographer.DecryptAsync(bytes, outputFileStream).Wait();
+>>>>>>> 62073a4... Added tests for Listing 19.28
             }
             Console.WriteLine($"<<<<<Finished decrypting '{ inputFileName}'.");
         }
