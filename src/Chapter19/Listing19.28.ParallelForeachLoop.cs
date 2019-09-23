@@ -42,7 +42,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_28
             Console.WriteLine($">>>>>Encrypting '{ inputFileName }'.");
             using (FileStream outputFileStream = new FileStream($"{inputFileName}.encrypt", FileMode.Create))
             {
-                byte[] encryptedText = Cryptographer.EncryptAsync(File.ReadAllText(inputFileName), outputFileStream).Result;
+                Cryptographer.EncryptAsync(File.ReadAllText(inputFileName), outputFileStream).Wait();
             }
             Console.WriteLine($"<<<<<Finished encrypting '{ inputFileName}'.");
         }

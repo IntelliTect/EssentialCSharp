@@ -37,9 +37,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
             return await EncryptAsync(text, CryptoAlgorithm.CreateEncryptor());
         }
 
-        public async Task<byte[]> EncryptAsync(string text, Stream outputFileStream)
+        public async Task EncryptAsync(string text, Stream outputFileStream)
         {
-            return await EncryptAsync(text, CryptoAlgorithm.CreateEncryptor(), outputFileStream);
+            await EncryptAsync(text, CryptoAlgorithm.CreateEncryptor(), outputFileStream);
         }
 
         static public async Task<byte[]> EncryptAsync(string plainText, byte[] key, byte[] iv)
@@ -61,15 +61,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
         {
             using (MemoryStream memoryStream = new MemoryStream())
             {
-                return await EncryptAsync(plainText, encryptor, memoryStream);
+                await EncryptAsync(plainText, encryptor, memoryStream);
+                return memoryStream.ToArray();
             }
         }
 
-        private static async Task<byte[]> EncryptAsync(string plainText, ICryptoTransform encryptor, Stream outputStream)
+        private static async Task EncryptAsync(string plainText, ICryptoTransform encryptor, Stream outputStream)
         {
-            byte[] encrypted;
-            MemoryStream memoryStream;
-
             // Create crypto stream using the CryptoStream class. This class is the key to encryption    
             // and encrypts and decrypts data from any given stream. In this case, we will pass a memory stream    
             // to encrypt    
@@ -78,22 +76,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
             using (StreamWriter streamWriter = new StreamWriter(cryptoStream))
             {
                 await streamWriter.WriteAsync(plainText);
-                if (outputStream is MemoryStream)
-                {
-                    streamWriter.Close();
-                    memoryStream = (MemoryStream)outputStream;
-                }
-                else
-                {
-                    using (memoryStream = new MemoryStream())
-                    {
-                        outputStream.CopyTo(memoryStream);
-                    }
-                }
-                encrypted = memoryStream.ToArray();
              }
-
-            return encrypted;
         }
 
         public string Decrypt(byte[] encryptedData)
