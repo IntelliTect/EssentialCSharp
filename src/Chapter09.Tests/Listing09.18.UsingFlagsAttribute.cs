@@ -10,7 +10,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_18.Tests
         public void Main_FileAttributes_UseFlagsAttribute()
         {
             string expected = RuntimeInformation.IsOSPlatform(OSPlatform.Windows) 
-                ? @"\""ReadOnly | Hidden\"" outputs as \""ReadOnly, Hidden\""
+                ? @"""ReadOnly | Hidden"" outputs as ""ReadOnly, Hidden""
 ReadOnly, Hidden" 
                 : @"""ReadOnly"" outputs as ""ReadOnly""
 ReadOnly";
