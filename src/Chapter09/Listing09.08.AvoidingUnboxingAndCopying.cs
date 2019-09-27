@@ -1,10 +1,10 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_08
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_08
 {
     using System;
 
-    class Program
+    public class Program
     {
-        static void Main()
+        public static void Main()
         {
             int number;
             object thing;
