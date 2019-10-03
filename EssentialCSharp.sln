@@ -1,14 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27130.2027
-
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29215.179
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F97BC459-B5B9-4326-9E0D-D085FD4DEF96}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
 		.runsettings = .runsettings
+		Directory.Build.props = Directory.Build.props
 		README.md = README.md
+		Solution.ruleset = Solution.ruleset
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{91698F73-19EB-4531-980C-5B8B76DC28C9}"
@@ -607,8 +608,6 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {712ED6C0-5F52-4F27-B3D2-B0273E92F5F0}
