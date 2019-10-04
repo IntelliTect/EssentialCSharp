@@ -1,4 +1,5 @@
 using System;
+#pragma warning disable CA1507 // Use nameof
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_20
 {
@@ -24,7 +25,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_20
                 if(value == null)
                 {
                     // Report error
-                    throw new ArgumentNullException(nameof(value));
+                    throw new ArgumentNullException("value");
                 }
                 else
                 {
@@ -34,7 +35,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_20
                     if(value == "")
                     {
                         throw new ArgumentException(
-                            "LastName cannot be blank.", nameof(value));
+                            "LastName cannot be blank.", "value");
                     }
                     else
                     {
@@ -80,3 +81,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_20
         private string _FirstName;
     }
 }
+
+#pragma warning restore CA1507 // Use nameof

@@ -13,7 +13,7 @@
             {
                 // In C# 6.0 replace "numbers" with nameof(numbers)
                 throw new ArgumentException(
-                    "numbers cannot be empty", "numbers");
+                    "numbers cannot be empty", nameof(numbers));
             }
 
             int result;
@@ -36,7 +36,7 @@
             {
                 // In C# 6.0 replace "numbers" with nameof(numbers)
                 throw new ArgumentException(
-                    "numbers cannot be empty", "numbers");
+                    "numbers cannot be empty", nameof(numbers));
             }
 
             int result;

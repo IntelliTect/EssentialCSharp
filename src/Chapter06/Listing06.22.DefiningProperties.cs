@@ -65,7 +65,7 @@
                     // name was not assigned
                     throw new System.ArgumentException(
                         $"Assigned value '{ value }' is invalid",
-                        "value");
+                        nameof(value));
                 }
             }
         }

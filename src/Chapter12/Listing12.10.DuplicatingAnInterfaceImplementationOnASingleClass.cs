@@ -2,6 +2,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_10
 {
     using System.Collections.Generic;
 
+#pragma warning disable CA2227 // A full implementation would leverage writing and retreiving this property
+
     public interface IContainer<T>
     {
         ICollection<T> Items
@@ -55,4 +57,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_10
     public class Address { } // For example purposes only
     public class Phone { } // For example purposes only
     public class Email { } // For example purposes only
+
+#pragma warning restore CA2227 // A full implementation would leverage writing and retreiving this property
 }

@@ -19,14 +19,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_08
 
     internal class CommandLineSwitchRequiredAttribute : Attribute
     {
-        //not implimented
+        //not implemented
     }
 
     internal class CommandLineSwitchAliasAttribute : Attribute
     {
         public CommandLineSwitchAliasAttribute(string s)
         {
-            //not implimented
+            //not implemented
         }
     }
 }
