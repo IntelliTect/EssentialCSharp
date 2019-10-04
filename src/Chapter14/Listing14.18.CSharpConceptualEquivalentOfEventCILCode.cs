@@ -1,8 +1,9 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_18
 {
     using System;
-// In an actual implementation _OnTemperatureChange would be used
+    // In an actual implementation _OnTemperatureChange would be used
 #pragma warning disable CS0649
+#pragma warning disable CA1030 // This is an example of CIL code and should not be interpreted as an example implementation
 
     public class Thermostat
     {
@@ -45,5 +46,5 @@
 
         }
     }
-#pragma warning restore CS0649
+#pragma warning restore CS0649, CA1030
 }

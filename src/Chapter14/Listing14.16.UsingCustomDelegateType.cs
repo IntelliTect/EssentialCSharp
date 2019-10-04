@@ -1,5 +1,7 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_16
 {
+#pragma warning disable CA1003 // This is a basic example of an EventHandler
+
     public class Thermostat
     {
         public class TemperatureArgs : System.EventArgs
@@ -45,4 +47,6 @@
         }
         private float _CurrentTemperature;
     }
+
+#pragma warning restore CA1003 // This is a basic example of an EventHandler
 }

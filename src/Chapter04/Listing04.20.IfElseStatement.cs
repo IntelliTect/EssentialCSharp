@@ -1,5 +1,7 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_20
 {
+#pragma warning disable CA1724 // namespace collision from shared TicTacToe class
+
     public class TicTacToe // Declares the TicTacToe class
     {
         public static void Main() // Declares the entry point of the program
@@ -24,5 +26,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_20
                     "Play against another player.");
         }
     }
-
+#pragma warning restore CA1724 // namespace collision from shared TicTacToe class
 }

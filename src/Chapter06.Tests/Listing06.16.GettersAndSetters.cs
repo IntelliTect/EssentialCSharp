@@ -6,27 +6,27 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_16.Tests
     public class EmployeeTests
     {
         [TestMethod]
-        [DataRow("Inigo")]
-        [DataRow(null)]
-        [DataRow("")]
-        public void SetFirstName_FirstNamePropertySet(string firstName)
+        [DataRow("Inigo", "Inigo")]
+        [DataRow(null, null)]
+        [DataRow("", null)]
+        public void SetFirstName_FirstNamePropertySet(string firstName, string expected)
         {
             Employee employee = new Employee();
             employee.SetFirstName(firstName);
             
-            Assert.AreEqual(firstName == "" ? null : firstName, employee.GetFirstName());
+            Assert.AreEqual(expected, employee.GetFirstName());
         }
         
         [TestMethod]
-        [DataRow("Montoya")]
-        [DataRow(null)]
-        [DataRow("")]
-        public void SetLastName_LastNamePropertySet(string lastName)
+        [DataRow("Montoya", "Montoya")]
+        [DataRow(null, null)]
+        [DataRow("", null)]
+        public void SetLastName_LastNamePropertySet(string lastName, string expected)
         {
             Employee employee = new Employee();
             employee.SetLastName(lastName);
             
-            Assert.AreEqual(lastName == "" ? null : lastName, employee.GetLastName());
+            Assert.AreEqual(expected, employee.GetLastName());
         }
     }
 }

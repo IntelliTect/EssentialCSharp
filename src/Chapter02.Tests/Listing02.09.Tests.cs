@@ -1,3 +1,4 @@
+using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_09.Tests
@@ -17,7 +18,7 @@ True: 1.61803398874989 == 1.61803398874989";
 True: 1.618033988749895 == 1.618033988749895";
 
             string netCoreVersion = NetCore.GetNetCoreVersion();
-            if (string.Compare(netCoreVersion, "3")<0)
+            if (string.Compare(netCoreVersion, "3", StringComparison.Ordinal) <0)
             {
                 expected = netCoreApp2expected;
             }

@@ -17,7 +17,8 @@
     <Rule Id="CA1013" Action="Warning" />
     <Rule Id="CA1014" Action="None" />         <!--Not concerned with CLS compliance as this is not production software-->
     <Rule Id="CA1016" Action="Warning" />
-    <Rule Id="CA1017" Action="Warning" />
+    <!--Mark assemblies with ComVisible(false) at assembly level. Mark types exposed to COM clients with ComVisible(true)-->
+    <Rule Id="CA1017" Action="None" />         <!--Externally visible types are not intended for use outside of the scope of unit tests/other chapters-->
     <Rule Id="CA1018" Action="None" />         <!--Attributes are examples only. Decorating these Attributes might confuse the reader, but should be done in production code-->
     <Rule Id="CA1019" Action="Warning" />
     <Rule Id="CA1020" Action="Warning" />
@@ -108,7 +109,8 @@
     <Rule Id="CA1708" Action="Warning" />
     <Rule Id="CA1709" Action="Warning" />
     <Rule Id="CA1710" Action="Warning" />
-    <Rule Id="CA1711" Action="Warning" />
+    <!--Replace suffix 'Ex' with numeric alternate. Don't end class with 'Stack'-->
+    <Rule Id="CA1711" Action="None" />            <!--Naming convention is broken to make reading of listings outside of an IDE easier-->
     <Rule Id="CA1712" Action="Warning" />
     <Rule Id="CA1713" Action="Warning" />
     <Rule Id="CA1714" Action="Warning" />

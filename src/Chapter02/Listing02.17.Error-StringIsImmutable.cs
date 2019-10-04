@@ -1,5 +1,7 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_17
 {
+#pragma warning disable CA1806 // Example of string immutability
+
     public class Uppercase
     {
         public static void Main()
@@ -15,4 +17,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_17
             System.Console.WriteLine(text);
         }
     }
+
+#pragma warning restore CA1806 // Example of string immutability
 }
