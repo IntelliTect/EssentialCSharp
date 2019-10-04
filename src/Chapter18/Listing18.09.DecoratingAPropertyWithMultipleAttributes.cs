@@ -2,6 +2,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_09
 {
     using System;
 
+#pragma warning disable CA1019 // This is an incomplete implementation
+
     class CommandLineInfo
     {
         [CommandLineSwitchAlias("?")]
@@ -32,4 +34,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_09
         }
     }
 
+#pragma warning restore CA1019 // This is an incomplete implementation
 }
