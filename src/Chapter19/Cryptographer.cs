@@ -49,9 +49,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
         public byte[] Encrypt(ICryptoTransform encryptor, byte[] data)
         {
             if(encryptor == null)
-                throw new ArgumentNullException("encryptor");
+                throw new ArgumentNullException(nameof(encryptor));
             if(data == null)
-                throw new ArgumentNullException("data");
+                throw new ArgumentNullException(nameof(data));
 
             //Encrypt the data.
             using(MemoryStream msEncrypt = new MemoryStream())
@@ -84,9 +84,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
         public byte[] Decrypt(ICryptoTransform decryptor, byte[] encrypted)
         {
             if(decryptor == null)
-                throw new ArgumentNullException("decryptor");
+                throw new ArgumentNullException(nameof(decryptor));
             if(encrypted == null)
-                throw new ArgumentNullException("encrypted");
+                throw new ArgumentNullException(nameof(encrypted));
 
             using(MemoryStream msDecrypt = new MemoryStream(encrypted))
             using(CryptoStream csDecrypt = new CryptoStream(msDecrypt,

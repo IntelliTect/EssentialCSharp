@@ -1,5 +1,7 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_31
 {
+#pragma warning disable CS0649 // Id would be assigned to in a full implementation
+
     public class Employee
     {
         public Employee(string firstName, string lastName)
@@ -36,4 +38,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_31
 
         // ...
     }
+
+#pragma warning restore CS0649 // Id would be assigned to in a full implementation
 }

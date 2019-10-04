@@ -31,3 +31,5 @@ Rob Mantel      |7           | 334          | Change 'therefore no overload' to 
 Brian Bos       |11          | 467          | 'ArgumentNullException' is listed twice
 Brian Bos       |11          | 472          | 'ExeptionDispatchInfo.Throw' added missing c to Exception
 Brian Bos       |11          | 473          | C does not support exception throwing as described. Removed claim
+Cameron Osborn  |6           | 274          | Use nameof instead of string literal
+Cameron Osborn  |6           | 297          | Use nameof instead of string literal
