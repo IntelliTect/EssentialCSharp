@@ -8,6 +8,8 @@ using System.Diagnostics;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
 {
+#pragma warning disable CA1063, CA1816
+
     public class Cryptographer : IDisposable
     {
         #region PROPERTIES
@@ -116,4 +118,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
         #endregion
     }
 
+#pragma warning restore CA1063, CA1816
 }

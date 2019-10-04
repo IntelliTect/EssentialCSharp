@@ -3,6 +3,7 @@ using AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_10;
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_11
 {
     using System;
+#pragma warning disable CA1043
 
     public class BinaryTree<T> 
     {
@@ -83,4 +84,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_11
             Console.WriteLine(jfkFamilyTree[PairItem.Second, PairItem.Second].Value);
         }
     }
+
+#pragma warning restore CA1043
 }
