@@ -22,6 +22,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23_PreCSha
 {
     using AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_21;
 
+#pragma warning disable CA1001 // A completed implementation would have be disposable
+
     class DataCache
     {
         // ...
@@ -41,4 +43,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23_PreCSha
 
         // ...
     }
+
+#pragma warning restore CA1001 // A completed implementation would have be disposable
 }

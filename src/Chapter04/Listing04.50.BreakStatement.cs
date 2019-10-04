@@ -1,5 +1,7 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_50
 {
+#pragma warning disable CA1724 // namespace collision from shared TicTacToe class
+
     public class TicTacToe      // Declares the TicTacToe class
     {
         public static void Main()
@@ -41,4 +43,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_50
                 $"Player { winner } was the winner");
         }
     }
+
+#pragma warning restore CA1724 // namespace collision from shared TicTacToe class
 }

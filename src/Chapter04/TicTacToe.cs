@@ -70,7 +70,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.TicTacToe
 
         static bool EndGame(int winner, int turn, string input)
         {
-            bool endGame = false;
+            bool endGame = false; 
             if(winner > 0)
             {
                 System.Console.WriteLine($"\nPlayer {winner} has won!!!!");

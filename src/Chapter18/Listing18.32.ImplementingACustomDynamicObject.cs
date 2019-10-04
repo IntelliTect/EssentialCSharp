@@ -4,6 +4,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_32
     using System.Linq;
     using System.Xml.Linq;
 
+#pragma warning disable CA1827 // Count is used here for readability for use in the text
+
     public class DynamicXml : DynamicObject
     {
         private XElement Element { get; set; }
@@ -61,4 +63,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_32
             return success;
         }
     }
+
+#pragma warning restore CA1827 // Count is used here for readability for use in the text
 }

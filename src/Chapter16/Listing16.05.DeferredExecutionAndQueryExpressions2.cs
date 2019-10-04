@@ -4,6 +4,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_05
     using System.Collections.Generic;
     using System.Linq;
 
+#pragma warning disable CA1829 // This chapter is showing off LINQ expressions
+
     public class Program
     {
         private static string[] Keywords = {
@@ -82,4 +84,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_05
                 $"8. delegateInvocations={ delegateInvocations }");
         }
     }
+
+#pragma warning restore CA1829 // This chapter is showing off LINQ expressions
 }

@@ -1,5 +1,7 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_19
 {
+#pragma warning disable CA1003, CA1030 // This is an example of CIL code and should not be interpreted as an example implementation
+
     public class Thermostat
     {
         public class TemperatureArgs : System.EventArgs
@@ -53,4 +55,6 @@
         }
         private float _CurrentTemperature;
     }
+
+#pragma warning disable CA1003, CA1030 // This is an example of CIL code and should not be interpreted as an example implementation
 }

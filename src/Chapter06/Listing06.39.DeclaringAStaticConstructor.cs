@@ -2,6 +2,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_39
 {
     using System;
 
+#pragma warning disable CA1810 // Implementation is incomplete
+
     class Employee
     {
         static Employee()
@@ -14,4 +16,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_39
         public static int NextId = 42;
         // ...
     }
+
+#pragma warning restore CA1810 // Implementation is incomplete
 }

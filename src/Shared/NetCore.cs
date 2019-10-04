@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Reflection;
 
+#pragma warning disable CA1050 // This is shared across the solution for Test projects to leverage. It is not strictly a 'type'
+
 public class NetCore
 {
     public static string GetNetCoreVersion()
@@ -13,3 +15,5 @@ public class NetCore
         return null;
     }
 }
+
+#pragma warning restore CA1050 // This is shared across the solution for Test projects to leverage. It is not strictly a 'type'
