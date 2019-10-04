@@ -5,6 +5,7 @@
     // In a production implementation we would do something with our declared Contacts
 #pragma warning disable CS0168
 #pragma warning disable CA1036 // Operator implementations are discussed in another section of the text
+#pragma warning disable CA1033 // Basic implementation of an interface
 
     public class Program
     {
@@ -98,5 +99,5 @@
         protected string Phone { get; set; }
         protected string Address { get; set; }
     }
-#pragma warning restore CS0168, CA1036
+#pragma warning restore CS0168, CA1033, CA1036
 }

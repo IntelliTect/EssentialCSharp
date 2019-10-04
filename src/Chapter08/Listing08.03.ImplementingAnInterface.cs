@@ -4,6 +4,7 @@
     using Listing08_02;
 
 #pragma warning disable CA1036 // Operator implementations are discussed in another section of the text
+#pragma warning disable CA1033 // Basic implementation of an interface
 
     public class Contact : PdaItem, IListable, IComparable
     {
@@ -107,5 +108,5 @@
         protected string Address { get; set; }
     }
 
-#pragma warning restore CA1036 // Operator implementations are discussed in another section of the text
+#pragma warning restore CA1033, CA1036
 }

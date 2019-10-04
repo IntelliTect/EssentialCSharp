@@ -4,6 +4,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_16
     using System.Reflection;
     using System.Collections.Generic;
 
+#pragma warning disable CA1019 // This is an incomplete implementation
+
     public class CommandLineSwitchAliasAttribute : Attribute
     {
         public CommandLineSwitchAliasAttribute(string alias)
@@ -36,4 +38,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_16
             return options;
         }
     }
+
+#pragma warning restore CA1019 // This is an incomplete implementation
 }
