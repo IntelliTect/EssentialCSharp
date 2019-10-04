@@ -1,3 +1,4 @@
+using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_07.Tests
@@ -27,7 +28,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_07.Tests
 4.2F != 4.2D";
 
             string netCoreVersion = NetCore.GetNetCoreVersion();
-            if (string.Compare(netCoreVersion, "3") < 0)
+            if (string.Compare(netCoreVersion, "3", StringComparison.Ordinal) < 0)
             {
                 expected = netCoreApp2expected;
             }

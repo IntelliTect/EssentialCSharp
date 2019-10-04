@@ -4,6 +4,8 @@
     using System.Threading;
     using System.Threading.Tasks;
 
+#pragma warning disable CA1806
+
     public class Program
     {
         static int _Total = int.MaxValue;
@@ -39,4 +41,6 @@
             }
         }
     }
+
+#pragma warning restore CA1806
 }

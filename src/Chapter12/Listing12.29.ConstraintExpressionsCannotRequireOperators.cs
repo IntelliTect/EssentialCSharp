@@ -1,5 +1,7 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_29
 {
+#pragma warning disable CA1000
+
     public abstract class MathEx<T>
     {
         public static T Add(T first, T second)
@@ -10,4 +12,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_29
             return default(T);
         }
     }
+
+#pragma warning restore CA1000
 }

@@ -10,7 +10,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_12.Tests
         [TestMethod]
         public void Main_NoArgs_ExpectErrors()
         {
-            string[] args = new string[0];
+            string[] args = Array.Empty<string>();
             string view =
 @"ERROR:  You must specify the URL and the file name
 Usage: Downloader.exe <URL> <TargetFileName>";

@@ -4,6 +4,8 @@
     using System.Threading;
     using System.Threading.Tasks;
 
+#pragma warning disable CA1806
+
     public class Program
     {
         readonly static object _Sync = new object();
@@ -61,4 +63,6 @@
             }
         }
     }
+
+#pragma warning restore CA1806
 }

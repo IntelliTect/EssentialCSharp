@@ -2,6 +2,8 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_28.Tests
 {
+#pragma warning disable CA2211
+
     [TestClass]
     public class LeveragingTryParseTests
     {
@@ -31,4 +33,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_28.Tests
                 expected, LeveragingTryParse.Main);
         }
     }
+
+#pragma warning restore CA2211
 }

@@ -3,6 +3,7 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_09
 {
 #pragma warning disable CA1720 // Obj is used as typename for clarity when reading text
+#pragma warning disable CA1725
 
     public struct Arc
     {

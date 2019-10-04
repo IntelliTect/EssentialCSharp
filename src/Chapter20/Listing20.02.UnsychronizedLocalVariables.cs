@@ -5,6 +5,7 @@
     using System.Threading.Tasks;
 
 #pragma warning disable CA2211 //Non-constant fields should not be visible
+#pragma warning disable CA1806
 
     public class Program
     {
@@ -29,5 +30,5 @@
         }
     }
 
-#pragma warning restore CA2211
+#pragma warning restore CA2211, CA1806
 }
