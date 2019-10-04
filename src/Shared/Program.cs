@@ -172,7 +172,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
 
             if (string.IsNullOrWhiteSpace(userArguments))
             {
-                args = new string[0];
+                args = Array.Empty<string>();
             }
             else
             {

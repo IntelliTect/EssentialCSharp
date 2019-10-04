@@ -3,6 +3,8 @@
     using System;
     using static System.Environment;
 
+#pragma warning disable CA1012 // Abstract class provides constructor as an example of CSharp (wrong) implementation
+
     // Define an abstract class
     public abstract class PdaItem
     {
@@ -72,4 +74,6 @@
                 + $"Location: { Location }";
         }
     }
+
+#pragma warning restore CA1012 // Abstract class provides constructor as an example of CSharp (wrong) implementation
 }

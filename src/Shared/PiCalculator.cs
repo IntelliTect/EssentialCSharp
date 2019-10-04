@@ -3,6 +3,8 @@ using System.Text;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
 {
+#pragma warning disable CA1823 // In an actual implementation these fields would be utilized
+
     public partial class PiCalculator
     {
         const int Digits = 100;
@@ -87,4 +89,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
         }
         #endregion
     }
+
+#pragma warning restore CA1823 // In an actual implementation these fields would be utilized
 }

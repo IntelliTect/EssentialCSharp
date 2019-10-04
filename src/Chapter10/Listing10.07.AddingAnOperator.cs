@@ -1,5 +1,7 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_07
 {
+#pragma warning disable CA1720 // Obj is used as typename for clarity when reading text
+
     public struct Arc
     {
         public Arc(
@@ -197,4 +199,6 @@
             return new Latitude(leftHandSide.Degrees - rightHandSide.Degrees, leftHandSide.Minutes - rightHandSide.Minutes);
         }
     }
+
+#pragma warning restore CA1720 // Obj is used as typename for clarity when reading text
 }

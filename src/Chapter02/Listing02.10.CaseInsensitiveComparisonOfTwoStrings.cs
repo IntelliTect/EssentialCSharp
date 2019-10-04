@@ -1,5 +1,7 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_10
 {
+#pragma warning disable CA1309 // Culture for the context of this book can be reasonably asserted to be en
+
     public class Program
     {
         public static void Main()
@@ -11,4 +13,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_10
             System.Console.WriteLine($"{comparison}");
         }
     }
+
+#pragma warning restore CA1309 // Culture for the context of this book can be reasonably asserted to be en
 }

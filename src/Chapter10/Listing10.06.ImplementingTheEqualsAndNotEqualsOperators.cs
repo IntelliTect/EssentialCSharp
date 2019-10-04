@@ -1,5 +1,7 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_06
 {
+#pragma warning disable CA1720 // Obj is used as typename for clarity when reading text
+
     public sealed class ProductSerialNumber
     {
         public ProductSerialNumber(
@@ -89,4 +91,5 @@
         }
     }
 
+#pragma warning restore CA1720 // Obj is used as typename for clarity when reading text
 }

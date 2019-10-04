@@ -2,6 +2,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_08
 {
     using System;
 
+#pragma warning disable CA1019 // 
+
     class CommandLineInfo
     {
         [CommandLineSwitchAlias("?")]

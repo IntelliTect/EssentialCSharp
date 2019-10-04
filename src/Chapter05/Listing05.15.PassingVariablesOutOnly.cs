@@ -2,6 +2,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_15
 {
     using System;
 
+#pragma warning disable CA1502 // TryGetPhoneButton cannot easily reduce cyclomatic complexity
+
     public class ConvertToPhoneNumber
     {
         public static int Main(string[] args)
@@ -130,4 +132,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_15
             return success;
         }
     }
+
+#pragma warning restore CA1502 // TryGetPhoneButton cannot easily reduce cyclomatic complexity
 }

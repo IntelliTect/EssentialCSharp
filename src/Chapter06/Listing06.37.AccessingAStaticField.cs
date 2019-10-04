@@ -2,6 +2,8 @@
 {
     using System;
 
+#pragma warning disable CA2211 //Non-constant fields should not be visible
+
     public class Program
     {
         public static void Main()
@@ -46,4 +48,6 @@
         public string LastName { get; set; }
         public string Salary { get; set; } = "Not Enough";
     }
+
+#pragma warning restore CA2211
 }

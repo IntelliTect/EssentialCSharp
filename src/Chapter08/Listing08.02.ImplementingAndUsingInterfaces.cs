@@ -2,6 +2,8 @@
 {
     using System;
 
+#pragma warning disable CA1012 // Abstract class provides constructor as an example of CSharp (wrong) implementation
+
     public class Program
     {
         public static void Main()
@@ -205,4 +207,6 @@
             Console.WriteLine();
         }
     }
+
+#pragma warning restore CA1012 // Abstract class provides constructor as an example of CSharp (wrong) implementation
 }

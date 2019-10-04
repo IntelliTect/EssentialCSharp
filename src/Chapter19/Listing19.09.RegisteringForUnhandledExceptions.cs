@@ -5,6 +5,8 @@
     using System.Threading;
     using System.Threading.Tasks;
 
+#pragma warning disable CA2211 //Non-constant fields should not be visible
+
     public class Program
     {
         public static Stopwatch clock = new Stopwatch();
@@ -90,4 +92,6 @@
                 $"{Thread.CurrentThread.ManagedThreadId}:{text}");
         }
     }
+
+#pragma warning restore CA2211
 }

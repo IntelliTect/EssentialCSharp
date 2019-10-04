@@ -3,6 +3,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_13
     using System;
     using System.Linq;
 
+#pragma warning disable CA2211 //Non-constant fields should not be visible
+
     public class Program
     {
         public static void Main()
@@ -45,4 +47,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_13
             "unchecked", "void", "volatile", "where*", "while", "yield*"
         };
     }
+
+#pragma warning restore CA2211
 }
