@@ -2,12 +2,12 @@
 {
     using System;
 // In an actual implementation we would get/set this
-#pragma warning disable CS0169
+#pragma warning disable CS0169, CA1823
 
     public class Stack<T> where T : IComparable
     {
         T[] items;
         // rest of the class here
     }
-#pragma warning restore CS0169
+#pragma warning restore CS0169, CA1823
 }

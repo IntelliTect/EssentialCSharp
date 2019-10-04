@@ -3,6 +3,8 @@
     using System;
     using Listing08_02;
 
+#pragma warning disable CA1036 // Operator implementations are discussed in another section of the text
+
     public class Contact : PdaItem, IListable, IComparable
     {
         // ...
@@ -104,4 +106,6 @@
         protected string Phone { get; set; }
         protected string Address { get; set; }
     }
+
+#pragma warning restore CA1036 // Operator implementations are discussed in another section of the text
 }

@@ -43,7 +43,7 @@ The Hitchhiker's Guide to the Galaxy                     Douglas Adams      1979
         [TestMethod]
         public void List_NoItemsInArray_HeadersProperlyDisplayed()
         {
-            IListable[] contacts = {};
+            IListable[] contacts = Array.Empty<IListable>();
 
             string expected = "Header1Header2";
 

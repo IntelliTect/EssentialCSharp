@@ -2,6 +2,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_24
 {
     using System;
 
+#pragma warning disable CA1036 // Operator implementations are discussed in another section of the text
+
     public struct Nullable<T> :
         IFormattable, IComparable,
         IComparable<Nullable<T>>, INullable
@@ -29,4 +31,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_24
         }
     }
 
+#pragma warning restore CA1036 // Operator implementations are discussed in another section of the text
 }

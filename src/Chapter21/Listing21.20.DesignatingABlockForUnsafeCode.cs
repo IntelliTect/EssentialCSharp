@@ -4,6 +4,9 @@
     using System.Runtime.InteropServices;
     using System.Text;
 
+#pragma warning disable CA2216 // Finalizers are discussed in other chapters. It is ommitted here to avoid clutter
+#pragma warning disable CA1060 // In this limited example Native Method invokation can be reasonably asserted to be safe
+
     public class Program
     {
         public unsafe delegate void MethodInvoker(byte* buffer);
@@ -271,4 +274,6 @@
                 size, GetCurrentProcessHandle());
         }
     }
+
+#pragma warning restore CA2216, CA1060
 }
