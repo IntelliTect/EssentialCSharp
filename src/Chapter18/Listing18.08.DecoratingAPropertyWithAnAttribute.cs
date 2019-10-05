@@ -2,7 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_08
 {
     using System;
 
-#pragma warning disable CA1019 // 
+#pragma warning disable CA1019 // Attributes are not full implemented in this listing
 
     class CommandLineInfo
     {

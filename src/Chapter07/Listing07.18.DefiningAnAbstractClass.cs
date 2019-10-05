@@ -1,6 +1,6 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_18
 {
-    // With a concrete implementation we could use our PdaItem object
+// With a concrete implementation we could use our PdaItem object
 #pragma warning disable CS0168
 #pragma warning disable CA1012 // Abstract class provides constructor as an example of CSharp (wrong) implementation
     public abstract class PdaItem
