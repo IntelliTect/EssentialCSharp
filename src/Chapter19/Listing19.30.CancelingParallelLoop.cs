@@ -1,3 +1,5 @@
+using System.Text;
+
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_30
 {
     using AddisonWesley.Michaelis.EssentialCSharp.Shared;
@@ -65,7 +67,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_30
             Console.WriteLine($">>>>>Encrypting '{ fileName }'.");
             Cryptographer cryptographer = new Cryptographer();
             File.Delete($"{fileName}.encrypt");
-            byte[] encryptedText = cryptographer.Encrypt(File.ReadAllBytes(fileName));
+            byte[] encryptedText = cryptographer.EncryptAsync(File.ReadAllText(fileName)).Result;
             File.WriteAllBytes($"{fileName}.encrypt", encryptedText);
             Console.WriteLine($"<<<<<Finished encrypting '{ fileName}'.");
         }
