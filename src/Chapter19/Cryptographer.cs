@@ -111,7 +111,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
             await DecryptAsync(encryptedData, CryptoAlgorithm.CreateDecryptor(), outputStream);
         }
 
-        static public async Task<string> DecryptAsync(byte[] encryptedData, byte[] key, byte[] iV)
+        public static async Task<string> DecryptAsync(byte[] encryptedData, byte[] key, byte[] iV)
         {
             string plaintext = null;
             // Create AesManaged    
