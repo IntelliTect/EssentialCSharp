@@ -67,8 +67,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_30
             Console.WriteLine($">>>>>Encrypting '{ fileName }'.");
             Cryptographer cryptographer = new Cryptographer();
             File.Delete($"{fileName}.encrypt");
-            string encryptedText = cryptographer.Encrypt(File.ReadAllText(fileName));
-            File.WriteAllBytes($"{fileName}.encrypt", Encoding.UTF8.GetBytes(encryptedText));
+            byte[] encryptedText = cryptographer.EncryptAsync(File.ReadAllText(fileName)).Result;
+            File.WriteAllBytes($"{fileName}.encrypt", encryptedText);
             Console.WriteLine($"<<<<<Finished encrypting '{ fileName}'.");
         }
     }
