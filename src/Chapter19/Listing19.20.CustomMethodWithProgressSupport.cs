@@ -5,8 +5,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_20
     using System.Threading;
     using System.Threading.Tasks;
 
-#pragma warning disable CA1068
-
     class Program
     {
         static public Task<Process> RunProcessAsync(
@@ -57,6 +55,4 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_20
     {
         // ...
     }
-
-#pragma warning restore CA1068
 }

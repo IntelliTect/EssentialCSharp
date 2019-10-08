@@ -4,8 +4,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_17
     using System.Threading;
     using System.Threading.Tasks;
 
-#pragma warning disable CA1725
-
     public class AsyncSynchronizationContext : SynchronizationContext
     {
         public Exception Exception { get; set; }
@@ -97,6 +95,4 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_17
             });
         }
     }
-
-#pragma warning restore CA1725
 }

@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_15.Tests
 {
@@ -9,7 +8,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_15.Tests
         [TestMethod]
         public void Main_InputNoPhrase_ExpectHelp()
         {
-            string[] args = Array.Empty<string>();
+            string[] args = new string[0];
             string view =
 @"ConvertToPhoneNumber.exe <phrase>
 '_' indicates no standard phone button";

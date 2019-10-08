@@ -119,7 +119,7 @@
     <Rule Id="CA1707" Action="None" />            <!--Underscores are used throughout the solution in namespaces, as well as in test names to provide clarity-->
     <Rule Id="CA1708" Action="Warning" />
     <Rule Id="CA1709" Action="Warning" />
-    <Rule Id="CA1710" Action="None" />
+    <Rule Id="CA1710" Action="Warning" />
     <!--Replace suffix 'Ex' with numeric alternate. Don't end class with 'Stack'-->
     <Rule Id="CA1711" Action="None" />            <!--Naming convention is broken to make reading of listings outside of an IDE easier-->
     <Rule Id="CA1712" Action="Warning" />
@@ -156,7 +156,7 @@
     <Rule Id="CA1816" Action="Warning" />
     <!--Properties should not return arrays-->
     <Rule Id="CA1819" Action="None" />            <!--Arrays are used to explain concepts-->
-    <Rule Id="CA1820" Action="None" />
+    <Rule Id="CA1820" Action="Warning" />
     <Rule Id="CA1821" Action="Warning" />
     <!--Member does not access instance data and can be marked as static-->
     <Rule Id="CA1822" Action="None" />            <!--Implementations should not be considered complete. Full implementations likely would access instance data-->
@@ -165,7 +165,7 @@
     <Rule Id="CA1900" Action="Warning" />
     <Rule Id="CA1901" Action="Warning" />
     <Rule Id="CA1903" Action="Warning" />
-    <Rule Id="CA2000" Action="None" />
+    <Rule Id="CA2000" Action="Warning" />
     <Rule Id="CA2001" Action="Warning" />
     <Rule Id="CA2002" Action="Warning" />
     <Rule Id="CA2003" Action="Warning" />
@@ -248,7 +248,7 @@
     <Rule Id="CA2231" Action="Warning" />
     <Rule Id="CA2232" Action="Warning" />
     <Rule Id="CA2233" Action="Warning" />
-    <Rule Id="CA2234" Action="None" />
+    <Rule Id="CA2234" Action="Warning" />
     <Rule Id="CA2235" Action="Warning" />
     <Rule Id="CA2236" Action="Warning" />
     <Rule Id="CA2237" Action="Warning" />

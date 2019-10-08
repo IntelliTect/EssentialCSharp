@@ -6,8 +6,6 @@ using AddisonWesley.Michaelis.EssentialCSharp.Shared;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20
 {
-#pragma warning disable CA1068
-
     partial class PiCalculation
     {
         public void CalculateAsync(
@@ -60,6 +58,4 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20
             public string Result { get; private set; }
         }
     }
-
-#pragma warning restore CA1068
 }

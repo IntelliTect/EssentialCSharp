@@ -2,8 +2,6 @@
 {
     using System;
 
-#pragma warning disable CA1725
-
     public class Program
     {
         public static void Main()
@@ -120,6 +118,4 @@
     {
         public Latitude(int x, int y) { }
     }
-
-#pragma warning restore CA1725
 }
