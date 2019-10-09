@@ -10,7 +10,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_24
             {
                 case null: // The location of case null doesn't matter
                     throw new ArgumentNullException(nameof(storage));
-                // ** Causes compile error because case statments below
+                // ** Causes compile error because case statements below
                 // ** are unreachable
                 // case Storage tempStorage:
                 //    throw new Exception();
@@ -28,7 +28,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_24
                 case HardDrive hardDrive:
                     throw new InvalidOperationException();
                 default:   // The location of case default doesn't matter
-                    throw new ArgumentException(nameof(storage));
+                    throw new ArgumentException("Must be Storage type", nameof(storage));
             }
         }
     }

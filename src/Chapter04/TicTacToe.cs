@@ -5,7 +5,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.TicTacToe
 {
     using System;
 
-#pragma warning disable 1030 // Disable user-defined warnings
+#pragma warning disable 1030, CA1820 // Disable user-defined warnings, prefer string.Length check over equality
 
     // The TicTacToe class enables two players to 
     // play tic-tac-toe.
@@ -236,4 +236,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.TicTacToe
         // Generated code goes here.
 #line default
     }
+    
+#pragma warning restore 1030, CA1820
 }

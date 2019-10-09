@@ -2,6 +2,8 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_07.Tests
 {
+#pragma warning disable CA1309 // Use ordinal stringcomparison
+    
     [TestClass]
     public class ProgramTests
     {
@@ -36,4 +38,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_07.Tests
                     expected, Program.Main);
         }
     }
+    
+#pragma warning restore CA1309 // Use ordinal stringcomparison
 }

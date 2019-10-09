@@ -15,7 +15,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
         public static void Main(string[] args)
         {
             string input;
-            IEnumerable<string> stringArguments = new string[0];
+            IEnumerable<string> stringArguments = Array.Empty<string>();
             Assembly assembly = Assembly.GetEntryAssembly()!;
             if (assembly is null)
             {
@@ -65,7 +65,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                 }
                 else
                 {
-                    if (stringArguments.Count() == 0)
+                    if (stringArguments.Any())
                     {
                         arguments = GetArguments();
                     }

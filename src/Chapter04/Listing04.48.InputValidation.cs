@@ -1,4 +1,4 @@
-#pragma warning disable CS0219 // Variable is assigned but its value is never used
+#pragma warning disable CS0219, CA1820 // Variable is assigned but its value is never used, prefer string.IsNullOrEmpty
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_48
 {
     public class Program
@@ -41,3 +41,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_48
         public static string input { get; set; }
     }
 }
+
+#pragma warning restore CS0219, CA1820 // Variable is assigned but its value is never used, prefer string.IsNullOrEmpty
