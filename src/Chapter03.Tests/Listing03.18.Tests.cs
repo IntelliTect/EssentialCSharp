@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_03.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_18.Tests
 {
     [TestClass]
     public class ProgramTests
@@ -9,8 +9,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_03.Tests
         public void Main_WriteInventions()
         {
             const string expected =
-@"Bifocals (1784)
-Phonograph (1877)";
+@"TypeScript
+Python";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
                 expected, Program.Main);
