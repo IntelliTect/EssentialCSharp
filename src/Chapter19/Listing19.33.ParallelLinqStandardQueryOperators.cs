@@ -34,7 +34,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_33
         {
             Console.WriteLine($">>>>>Encrypting '{ item }'.");
             Cryptographer cryptographer = new Cryptographer();
-            string itemEncrypted = cryptographer.Encrypt(item);
+            string itemEncrypted = System.Text.Encoding.UTF8.GetString(cryptographer.Encrypt(item));
             Console.WriteLine($"<<<<<Finished encrypting '{ itemEncrypted }'.");
             return itemEncrypted;
         }

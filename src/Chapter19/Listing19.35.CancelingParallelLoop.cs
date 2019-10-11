@@ -86,7 +86,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_35
         private static string Encrypt(string item)
         {
             Cryptographer cryptographer = new Cryptographer();
-            return  cryptographer.Encrypt(item);
+            return System.Text.Encoding.UTF8.GetString(cryptographer.Encrypt(item));
         }
 
         // ...
