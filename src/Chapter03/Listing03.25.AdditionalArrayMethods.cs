@@ -6,8 +6,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_25
         {
             string[] languages = new string[]{
                 "C#", "COBOL", "Java",
-                "C++", "Visual Basic", "Pascal",
-                "Fortran", "Lisp", "J#"};
+                "C++", "TypeScript", "Pascal",
+                "Python", "Lisp", "JavaScript"};
 
             System.Array.Sort(languages);
 
@@ -24,15 +24,15 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_25
             System.Console.WriteLine(
                 $"{ "-------------",-20 }\t{ "------------",-20 }");
             System.Console.WriteLine(
-                    $"{ languages[0],-20 }\t{ languages[languages.Length - 1],-20 }");
+                    $"{ languages[0],-20 }\t{ languages[^1],-20 }");
             System.Array.Reverse(languages);
             System.Console.WriteLine(
-                    $"{ languages[0],-20 }\t{ languages[languages.Length - 1],-20 }");
+                    $"{ languages[0],-20 }\t{ languages[^1],-20 }");
             // Note this does not remove all items from the array
             // Rather it sets each item to the type's default value
             System.Array.Clear(languages, 0, languages.Length);
             System.Console.WriteLine(
-                    $"{ languages[0],-20 }\t{ languages[languages.Length - 1],-20 }");
+                    $"{ languages[0],-20 }\t{ languages[^1],-20 }");
             System.Console.WriteLine(
                 $"After clearing, the array size is: { languages.Length }");
         }

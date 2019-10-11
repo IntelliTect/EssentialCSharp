@@ -1,16 +1,16 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_22B.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_26B.Tests
 {
     [TestClass]
     public class ProgramTests
     {
         [TestMethod]
-        [ExpectedException(typeof(System.IndexOutOfRangeException))]
-        public void Main_GetCountOnArray_ReturnArrayLength()
+        public void Main_GetLengthOfDimensionOf3DArray_ReturnsLength()
         {
             const string expected =
-                "There are 9 languages in the array.";
+@"TypeScript
+Python";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
                 expected, Program.Main);
