@@ -4,12 +4,18 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_18
     {
         public static void Main()
         {
-            string[] languages = new string[9] {
+            string[] languages = new string[] {
                 "C#", "COBOL", "Java",
-                "C++", "Visual Basic", "Pascal",
-                "Fortran", "Lisp", "J#"};
-            // Retrieve 5th item in languages array (Java)
-            string language = languages[4];
+                "C++", "TypeScript", "Pascal",
+                "Python", "Lisp", "JavaScript"};
+                // Retrieve fifth item in languages array (TypeScript)
+                string language = languages[4];
+                // Write “TypeScript”
+                System.Console.WriteLine(language);
+                // Retrieve second item from the end (Python)
+                language = languages[^3];
+                // Write “Python”
+                System.Console.WriteLine(language);
         }
     }
 }

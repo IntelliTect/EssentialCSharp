@@ -12,8 +12,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_25.Tests
 
 First Element       	Last Element        
 -------------       	------------        
-C#                  	Visual Basic        
-Visual Basic        	C#                  
+C#                  	TypeScript          
+TypeScript          	C#                  
                     	                    
 After clearing, the array size is: 9";
 
