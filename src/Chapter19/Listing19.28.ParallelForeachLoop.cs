@@ -13,7 +13,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_28
             EncryptFiles(Directory.GetCurrentDirectory(), "*.*");
         }
 
-        static public void EncryptFiles(
+        static void EncryptFiles(
             string directoryPath, string searchPattern)
         {
             IEnumerable<string> files = Directory.EnumerateFiles(
@@ -28,40 +28,18 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_28
 
         // ...
 
-        public static string Encrypt(string fileName)
+        private static void Encrypt(string fileName)
         {
-            string outputFileName = $"{fileName}.encrypt";
-            Encrypt(fileName, outputFileName);
-            return outputFileName;
-        }
-
-        static Cryptographer Cryptographer { get; } = new Cryptographer();
-
-        public static void Encrypt(string inputFileName, string outputFileName)
-        {
-            Console.WriteLine($">>>>>Encrypting '{ inputFileName }'.");
-            using (FileStream outputFileStream = new FileStream($"{inputFileName}.encrypt", FileMode.Create))
-            {
-                byte[] encryptedText = Cryptographer.EncryptAsync(File.ReadAllText(inputFileName), outputFileStream).Result;
-            }
-            Console.WriteLine($"<<<<<Finished encrypting '{ inputFileName}'.");
-        }
-
-        public static void Decrypt(string inputFileName, string outputFileName)
-        {
-            Console.WriteLine($">>>>>Decrypting '{ inputFileName }'.");
-            byte[] bytes = File.ReadAllBytes(inputFileName);
-            using (FileStream outputFileStream = new FileStream(outputFileName, FileMode.Create))
-            {
-                Cryptographer.DecryptAsync(bytes, outputFileStream).Wait();
-            }
-            Console.WriteLine($"<<<<<Finished decrypting '{ inputFileName}'.");
+            if (Path.GetExtension(fileName) == ".encrypt") return;
+            Console.WriteLine($">>>>>Encrypting '{ fileName }'.");
+            Cryptographer cryptographer = new Cryptographer();
+            File.Delete($"{fileName}.encrypt");
+            byte[] encryptedText = cryptographer.Encrypt(File.ReadAllBytes(fileName));
+            File.WriteAllBytes($"{fileName}.encrypt", encryptedText);
+            Console.WriteLine($"<<<<<Finished encrypting '{ fileName}'.");
         }
 
     }
-
-
-
 
 }
 
