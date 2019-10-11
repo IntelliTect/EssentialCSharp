@@ -27,9 +27,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
         }
         #endregion CONSTRUCTORS
 
-        public string Encrypt(string text)
+        public byte[] Encrypt(string text)
         {
-            return Encoding.UTF8.GetString(EncryptAsync(text).Result);
+            return EncryptAsync(text).Result;
         }
 
         public async Task<byte[]> EncryptAsync(string text)
@@ -111,7 +111,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
             await DecryptAsync(encryptedData, CryptoAlgorithm.CreateDecryptor(), outputStream);
         }
 
-        public static async Task<string> DecryptAsync(byte[] encryptedData, byte[] key, byte[] iV)
+        static public async Task<string> DecryptAsync(byte[] encryptedData, byte[] key, byte[] iV)
         {
             string plaintext = null;
             // Create AesManaged    
