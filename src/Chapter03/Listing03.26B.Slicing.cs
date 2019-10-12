@@ -8,14 +8,35 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_26B
                 "C#", "COBOL", "Java",
                 "C++", "TypeScript", "Pascal",
                 "Python", "Lisp", "JavaScript"};
-            // Retrieve fifth item in languages array (TypeScript)
-            string language = languages[4];
-            // Write “TypeScript”
-            System.Console.WriteLine(language);
-            // Retrieve second item from the end (Python)
-            language = languages[^3];
-            // Write “Python”
-            System.Console.WriteLine(language);
+
+            System.Console.WriteLine($@"  0..3: {
+                string.Join(", ", languages[0..3])  // C#, COBOL, Java
+            }"); 
+            System.Console.WriteLine($@"^3..^0: {
+                string.Join(", ", languages[^3..^0]) // Python, Lisp, JavaScript
+            }"); 
+            System.Console.WriteLine($@" 3..^3: {
+                string.Join(", ", languages[3..^3]) // C++, TypeScript, Pascal
+            }");
+            System.Console.WriteLine($@"  ..^6: {
+                string.Join(", ", languages[..^6])  // C#, COBOL, Java
+            }");
+            System.Console.WriteLine($@"   6..: {
+                string.Join(", ", languages[6..])  // Python, Lisp, JavaScript
+            }");
+            System.Console.WriteLine($@"    ..: {
+                // C#, COBOL, Java, C++, TypeScript, Pascal, Python, Lisp, JavaScript
+                string.Join(", ", languages[..])  // Python, Lisp, JavaScript
+            }");
+
+
+
+
+
+            System.Console.WriteLine($@"    ..: {
+                // C#, COBOL, Java, C++, TypeScript, Pascal, Python, Lisp, JavaScript
+                string.Join(", ", languages[0..^0])  // Python, Lisp, JavaScript
+            }");
         }
     }
 }
