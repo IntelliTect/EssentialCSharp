@@ -9,8 +9,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_26B.Tests
         public void Main_GetLengthOfDimensionOf3DArray_ReturnsLength()
         {
             const string expected =
-@"TypeScript
-Python";
+@"  0..3: C#, COBOL, Java
+^3..^0: Python, Lisp, JavaScript
+ 3..^3: C++, TypeScript, Pascal
+  ..^6: C#, COBOL, Java
+   6..: Python, Lisp, JavaScript
+    ..: C#, COBOL, Java, C++, TypeScript, Pascal, Python, Lisp, JavaScript
+    ..: C#, COBOL, Java, C++, TypeScript, Pascal, Python, Lisp, JavaScript";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
                 expected, Program.Main);
