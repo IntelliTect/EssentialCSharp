@@ -9,8 +9,9 @@
         public static void Main()
         {
             string fileName = @"enumtest.txt";
+            File.Delete(fileName);
             FileInfo file = new FileInfo(fileName);
-            file.Open(FileMode.Create).Dispose();
+            file.Open(FileMode.OpenOrCreate).Dispose();
 
             FileAttributes startingAttributes =
                 file.Attributes;

@@ -1,7 +1,7 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_01
 {
     // Use keyword struct to declare a value type 
-    struct Angle
+    readonly public struct Angle
     {
         public Angle(int degrees, int minutes, int seconds)
         {

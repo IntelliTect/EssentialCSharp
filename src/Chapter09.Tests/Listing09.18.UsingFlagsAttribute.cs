@@ -10,10 +10,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_18.Tests
         [TestMethod]
         public void Main_FileAttributes_UseFlagsAttribute()
         {
-            if (File.Exists("enum.txt"))
-            {
-                File.Delete("enum.txt");
-            }
             string expected = RuntimeInformation.IsOSPlatform(OSPlatform.Windows)
                 ? @"""ReadOnly | Hidden"" outputs as ""ReadOnly, Hidden""
 ReadOnly, Hidden"
