@@ -1,10 +1,15 @@
 <Project>
   <PropertyGroup>
-    <Nullable Condition="'$(Nullable)'==''">disable</Nullable>
+    <!--<Nullable>enable</Nullable>--> <!-- See Directory.Build.targets for override value -->
+    <ProductName Condition="'$(ProductName)'==''">Chapter$(ChapterNumber)</ProductName>
     <TreatWarningsAsErrors Condition="'$(TreatWarningsAsErrors)'==''">true</TreatWarningsAsErrors>
     <TargetFramework>netcoreapp3.0</TargetFramework>
     <Authors>Mark Michaelis</Authors>
     <Company>Addison Wesley</Company>
     <Copyright>Copyright © Addison Wesley 2003</Copyright>
+    
+    <OutputPath Condition="'$(WSL_DISTRO_NAME)'!=''">.\bin\Linux\$(Configuration)\</OutputPath>
+
+
   </PropertyGroup>
 </Project>

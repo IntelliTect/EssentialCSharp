@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <ProductName>Chapter04</ProductName>
+    <ChapterNumber>04</ChapterNumber>
   </PropertyGroup>
   <PropertyGroup>
     <!-- CS1030 results from an explicit #warning preprocessor command -->
