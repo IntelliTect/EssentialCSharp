@@ -28,7 +28,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_24
                 case HardDrive hardDrive:
                     throw new InvalidOperationException();
                 default:   // The location of case default doesn't matter
-                    throw new ArgumentException(nameof(storage));
+                    throw new InvalidOperationException(
+                        $"The storage type { storage.GetType() } is not handled.");
             }
         }
     }
