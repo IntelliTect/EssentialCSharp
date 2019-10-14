@@ -9,7 +9,6 @@
         public static void Main()
         {
             string fileName = @"enumtest.txt";
-            File.Delete(fileName);
             FileInfo file = new FileInfo(fileName);
             file.Open(FileMode.OpenOrCreate).Dispose();
 
