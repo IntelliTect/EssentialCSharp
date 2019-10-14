@@ -27,8 +27,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
     }
     static public class CompilerAssert
     {
-        static CSharpCodeProvider Compiler { get; }  = new CSharpCodeProvider();
-        //public static ICodeCompiler CodeCompiler { get; } = CodeProvider.CreateCompiler();
         async static public Task ExpectErrorsAsync(string sourceCode, params CompileError[] diagnostics)
         {
             try
