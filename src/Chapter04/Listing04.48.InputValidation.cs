@@ -38,6 +38,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_48
             // ...
         }
 
-        public static string input { get; set; }
+        public static string input { get; set; } = "Let the game begin!";
     }
 }

@@ -4,6 +4,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_44
     {
         public static void Main()
         {
+            int currentPlayer = 1;
+                
             // Repeatedly request player to move until he
             // enters a valid position on the board
             bool valid;
@@ -21,7 +23,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_44
 
             } while(!valid);
         }
-
-        public static object[] currentPlayer { get; set; }
     }
 }

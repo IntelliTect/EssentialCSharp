@@ -11,7 +11,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.TicTacToe
     // play tic-tac-toe.
     public class TicTacToeGame      // Declares the TicTacToeGame class.
     {
-        public static void Main()  // Declares the entry point to the program.
+        static public void Main()  // Declares the entry point to the program.
         {
             // Stores locations each player has moved.
             int[] playerPositions = { 0, 0 };
@@ -22,8 +22,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.TicTacToe
             // Winning player
             int winner = 0;
 
-            string input = null;
-
+            string input = "Let the game begin!";
 
             // Display the board and 
             // prompt the current player

@@ -4,6 +4,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_51
     {
         public static void Main()
         {
+
+            int[] playerPositions = { 0, 0 };
+            int currentPlayer = 1;
             string input = "";
 
             int shifter;  // The number of places to shift 
@@ -26,8 +29,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_51
             // index in a zero based array.
             playerPositions[currentPlayer - 1] |= position;
         }
-
-        public static int[] playerPositions { get; set; }
-        public static int currentPlayer { get; set; }
     }
 }

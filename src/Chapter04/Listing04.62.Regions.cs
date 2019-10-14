@@ -6,7 +6,17 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_62
         {
             // ...
 
-            #region Display Tic-tac-toe Board
+            int border;
+            string[] borders = {
+                "|", "|", "\n---+---+---\n", "|", "|",
+                "\n---+---+---\n", "|", "|", ""
+            };
+            System.Collections.Generic.IEnumerable<char> cells  = new char []{
+                '1', '2', '3', '4', '5', '6', '7', '8', '9'
+            };
+
+
+        #region Display Tic-tac-toe Board
 
 #if CSHARP2PLUS
             System.Console.Clear();
@@ -37,9 +47,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_62
 
             // ...
         }
-
-        public static int border { get; set; }
-        public static int[] borders { get; set; }
-        public static System.Collections.Generic.IEnumerable<char> cells { get; set; }
     }
 }

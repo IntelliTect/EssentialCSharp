@@ -2,6 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_36A
 {
     class Program
     {
+#nullable disable
         static void Main(string[] args)
         {
             if (args?.Length == 0)
