@@ -4,7 +4,7 @@
   </PropertyGroup>
   <PropertyGroup>
     <!-- CS0108 is a hides inherited member warning where 'new' is advised -->
-    <ExpectedWarnings>0108</ExpectedWarnings>
+    <ExpectedWarnings>$(ExpectedWarnings),CS0108</ExpectedWarnings>
   </PropertyGroup>
   <Import Project="..\Chapter.props" />
   <ItemGroup>
