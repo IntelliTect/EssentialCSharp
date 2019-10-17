@@ -11,7 +11,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09.Tests
     [TestClass]
     public class MyTestClass
     {
-        [TestMethod][Ignore("WIP: Currently an error is not reported when one is expected.")]
+        [TestMethod]// [Ignore("WIP: Currently an error is not reported when one is expected.")]
         async public Task ReadOnlyMethod_ModifyObject_ErrorReported()
         {
             string thingCode = @"
@@ -37,7 +37,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09.Tests
                 }";
 
             await CompilerAssert.ExpectErrorsAsync(thingCode,
-                new CompileError("CS1606", "Cannot assign to 'Number' because it is read-only")
+                new CompileError("CS1604", "Cannot assign to 'Number' because it is read-only")
                 );
         }
     }
