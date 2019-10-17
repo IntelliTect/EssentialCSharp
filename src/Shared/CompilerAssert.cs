@@ -1,10 +1,10 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Microsoft.CodeAnalysis.CSharp.Scripting;
 using Microsoft.CodeAnalysis.Scripting;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Collections.Generic;
-using System;
 
 #nullable enable
 namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
@@ -69,7 +69,21 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
     }
     static public class CompilerAssert
     {
-        async static public Task<CompileError[]> ExpectErrorsAsync(
+            async static public Task<CompileError[]> ExpectErrorsInFileAsync(
+                string fileName, params CompileError[] diagnostics)
+            {
+                string sourceCode =
+                    (await File.ReadAllLinesAsync(fileName))
+                    // Namespace is not supported so we need to remove 
+                    // it's declaration (and curlys) or take a different approach than C# Scripting.
+                    .Aggregate(
+                        (string result, string item) =>
+                            result += $"\n{item}");
+
+            return await ExpectErrorsAsync(sourceCode, diagnostics);
+            }
+
+            async static public Task<CompileError[]> ExpectErrorsAsync(
             string sourceCode, params CompileError[] diagnostics)
         {
             try

@@ -1,24 +1,38 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_36A
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_37
 {
-    class Program
+    public class Program
     {
-#nullable disable
-        static void Main(string[] args)
+        public static string[]? Segments { get; set; }
+
+        static public void Main(string[] args)
         {
-            if (args?.Length == 0)
+
+            string[]? segments = null;
+
+            // ...
+            segments = Segments;  // Included to support unit testing.
+
+            string? uri = null;
+
+            int? length = segments?.Length;
+            if (length is { } && length != 0)
+            {
+                uri = string.Join('/', segments!);
+            }
+
+            // Null-conditional with array accessor
+            // uri = segments?[0];
+                
+
+            if (uri is null || length is 0)
             {
                 System.Console.WriteLine(
-                    "ERROR: File missing. "
-                    + "Use:\n\tfind.exe file:<filename>");
+                    "There were no segments to combine.");
             }
             else
             {
-                if (args[0]?.ToLower().StartsWith("file:")??false)
-                {
-                    
-                    string fileName = args[0]?.Remove(0, 5);
-                    // ...
-                }
+                System.Console.WriteLine(
+                    $"Uri: { uri }");
             }
         }
     }
