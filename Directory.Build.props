@@ -1,15 +1,14 @@
 <Project>
   <PropertyGroup>
-    <!--<Nullable>enable</Nullable>--> <!-- See Directory.Build.targets for override value -->
+    <Nullable>enable</Nullable>
     <ProductName Condition="'$(ProductName)'==''">Chapter$(ChapterNumber)</ProductName>
     <TreatWarningsAsErrors Condition="'$(TreatWarningsAsErrors)'==''">true</TreatWarningsAsErrors>
     <TargetFramework>netcoreapp3.0</TargetFramework>
     <Authors>Mark Michaelis</Authors>
     <Company>Addison Wesley</Company>
     <Copyright>Copyright © Addison Wesley 2003</Copyright>
-    
     <OutputPath Condition="'$(WSL_DISTRO_NAME)'!=''">.\bin\Linux\$(Configuration)\</OutputPath>
-
-
+    <NullableWarnings>CS8600,CS8601,CS8602,CS8603,CS8604,CS8610,CS8614,CS8618,CS8622,CS8625,CS8653,CS8714</NullableWarnings>
+    <ExpectedWarnings Condition="'$(ChapterNumber)'==''">$(ExpectedWarnings),$(NullableWarnings)</ExpectedWarnings>
   </PropertyGroup>
 </Project>

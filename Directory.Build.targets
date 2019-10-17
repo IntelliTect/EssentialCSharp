@@ -7,6 +7,6 @@
     <CallTarget Targets="VSTest" Condition="'$(IsTestProject)' == 'true'" />
   </Target>
   <PropertyGroup>
-    <Nullable Condition="'$(ChapterNumber)'!=''">enable</Nullable>
+    <!--<Nullable Condition="'$(ChapterNumber)'!=''">enable</Nullable>-->
   </PropertyGroup>
 </Project>
