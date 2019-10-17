@@ -1,3 +1,5 @@
+#nullable enable
+
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_18
 {
     using System.IO;
@@ -42,7 +44,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_18
 
         private static int CountLines(string file)
         {
-            string line;
+            string? line;
             int lineCount = 0;
             FileStream stream =
                 new FileStream(file, FileMode.Open);
