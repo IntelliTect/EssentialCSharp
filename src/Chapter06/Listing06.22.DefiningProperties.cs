@@ -1,4 +1,9 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_22
+﻿// Non-nullable field is uninitialized. Consider declaring as nullable.
+#pragma warning disable CS8618 // Pending a constructors
+// Disabled pending introductin to object initializers
+#pragma warning disable IDE0017 
+
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_22
 {
     using System;
     using System.IO;
@@ -73,9 +78,9 @@
         public string Initials => $"{ FirstName[0] } { LastName[0] }";
 
         // Title property
-        public string Title { get; set; }
+        public string? Title { get; set; }
 
         // Manager property
-        public Employee Manager { get; set; }
+        public Employee? Manager { get; set; }
     }
 }

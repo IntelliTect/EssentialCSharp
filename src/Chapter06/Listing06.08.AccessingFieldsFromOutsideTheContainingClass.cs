@@ -1,4 +1,9 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_08
+﻿// Non-nullable field is uninitialized. Consider declaring as nullable.
+#pragma warning disable CS8618
+// Unnecessary assignment of a value
+#pragma warning disable IDE0059
+
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_08
 {
     using System;
 
@@ -29,7 +34,7 @@
     {
         public string FirstName;
         public string LastName;
-        public string Salary = "Not enough";
+        public string? Salary = "Not enough";
 
         public string GetName()
         {

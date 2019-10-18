@@ -1,12 +1,13 @@
+// Non-nullable field is uninitialized. Consider declaring as nullable.
+#pragma warning disable CS8618
+
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_12
 {
-// In a finished implementation these fields would be used
-#pragma warning disable CS0649
     public class Employee
     {
         public string FirstName;
         public string LastName;
-        public string Salary;
+        public string? Salary;
 
         public void Save()
         {
@@ -20,8 +21,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_12
         // named with the Employee name
         public static void Store(Employee employee)
         {
+            System.Diagnostics.Trace.WriteLine(
+                $@"Writing employee ({
+                    employee.FirstName} {employee.LastName
+                    }) information to file.");
             // ...
         }
     }
-#pragma warning restore CS0649
 }

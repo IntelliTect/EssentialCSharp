@@ -1,6 +1,9 @@
+// Add readonly modifier ignored pending introduction of the concept
+#pragma warning disable IDE0044
+#pragma warning disable 649 // _Id is never assigned
+
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_31
 {
-#pragma warning disable 649 // _Id is never assigned
     public class Employee
     {
         public Employee(string firstName, string lastName)
@@ -17,8 +20,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_31
             LastName = lastName;
         }
 
+// FirstName&LastName set inside Id property Setter.
+#pragma warning disable CS8618
         public Employee(int id) => Id = id;
-        
+#pragma warning restore CS8618
+
         private int _Id;
         public int Id
         {
@@ -32,10 +38,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_31
 
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string Salary { get; set; } = "Not Enough";
+        public string? Salary { get; set; } = "Not Enough";
 
 
         // ...
     }
-#pragma warning restore 649
 }

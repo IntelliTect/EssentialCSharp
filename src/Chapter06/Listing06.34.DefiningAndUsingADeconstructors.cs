@@ -8,8 +8,11 @@
         public static void Main()
         {
             Employee employee;
-            employee = new Employee("Inigo", "Montoya");
-            employee.Salary = "Too Little";
+            employee = new Employee("Inigo", "Montoya")
+            {
+                // Leveraging object initializer syntax
+                Salary = "Too Little"
+            };
 
             System.Console.WriteLine(
                 "{0} {1}: {2}",
@@ -18,7 +21,7 @@
                 employee.Salary);
 #if !PRECSHARP7
             employee.Deconstruct(out _, out string firstName, 
-                out string lastName, out string salary);
+                out string lastName, out string? salary);
 #else
             int id;
             string firstName, lastName, salary;
@@ -40,6 +43,8 @@
 
     class Employee
     {
+        // FirstName&LastName set inside Initizlize() method.
+        #pragma warning disable CS8618
         public Employee(string firstName, string lastName)
         {
             int id;
@@ -67,6 +72,7 @@
 
             Initialize(id, firstName, lastName);
         }
+        #pragma warning disable CS8618
 
         private void Initialize(
             int id, string firstName, string lastName)
@@ -78,7 +84,7 @@
 
         public void Deconstruct(
             out int id, out string firstName, 
-            out string lastName, out string salary)
+            out string lastName, out string? salary)
         {
            (id, firstName, lastName, salary) = 
                 (Id, FirstName, LastName, Salary);
@@ -89,9 +95,9 @@
         public int Id { get; private set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string Salary { get; set; } = "Not Enough";
-        public string Title { get; set; }
-        public Employee Manager { get; set; }
+        public string? Salary { get; set; } = "Not Enough";
+        public string? Title { get; set; }
+        public Employee? Manager { get; set; }
 
         // Name property
         public string Name

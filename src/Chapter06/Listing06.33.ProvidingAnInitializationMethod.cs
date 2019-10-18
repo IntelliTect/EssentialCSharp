@@ -13,6 +13,8 @@
 
     public class Employee
     {
+        // FirstName&LastName set inside Initizlize() method.
+        #pragma warning disable CS8618
         public Employee(string firstName, string lastName)
         {
             int id;
@@ -40,6 +42,7 @@
 
             Initialize(id, firstName, lastName);
         }
+        #pragma warning restore CS8618
 
         private void Initialize(
             int id, string firstName, string lastName)
@@ -54,9 +57,9 @@
         public int Id { get; private set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string Salary { get; set; } = "Not Enough";
-        public string Title { get; set; }
-        public Employee Manager { get; set; }
+        public string? Salary { get; set; } = "Not Enough";
+        public string? Title { get; set; }
+        public Employee? Manager { get; set; }
 
         // Name property
         public string Name

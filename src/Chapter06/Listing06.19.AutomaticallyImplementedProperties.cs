@@ -1,3 +1,6 @@
+// Non-nullable field is uninitialized. Consider declaring as nullable.
+#pragma warning disable CS8618
+
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_19
 {
     using System;
@@ -53,12 +56,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_19
         private string _LastName;
 
         // Title property
-        public string Title { get; set; }
+        public string? Title { get; set; }
 
         // Manager property
-        public Employee Manager { get; set; }
+        public Employee? Manager { get; set; }
 
-        public string Salary { get; set; } = "Not Enough";
+        public string? Salary { get; set; } = "Not Enough";
 
     }
 }
