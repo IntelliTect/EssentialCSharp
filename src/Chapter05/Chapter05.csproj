@@ -3,6 +3,10 @@
     <ChapterNumber>05</ChapterNumber>
   </PropertyGroup>
   <Import Project="..\Chapter.props" />
+  <PropertyGroup>
+    <!-- CS1058 // A previous catch clause already catches all exceptions -->
+    <ExpectedWarnings>$(ExpectedWarnings),CS1058</ExpectedWarnings>
+  </PropertyGroup>
   <ItemGroup>
     <Compile Include="..\Shared\Program.cs">
       <Link>Program.cs</Link>
