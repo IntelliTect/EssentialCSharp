@@ -1,5 +1,6 @@
 #pragma warning disable CS0168 // Variable is declared but never used
 #pragma warning disable IDE0059 // Unnecessary assignment of a value
+
 using System;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_36

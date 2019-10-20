@@ -4,7 +4,7 @@
   </PropertyGroup>
   <PropertyGroup>
     <!-- CS1030 results from an explicit #warning preprocessor command -->
-    <ExpectedWarnings>1030</ExpectedWarnings>
+    <ExpectedWarnings>$(ExpectedWarnings),1030</ExpectedWarnings>
   </PropertyGroup>
   <Import Project="..\Chapter.props" />
   <ItemGroup>
