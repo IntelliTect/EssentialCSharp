@@ -16,10 +16,13 @@
     }
     public class Contact : PdaItem
     {
+        // Non-nullable field is uninitialized. Consider declaring as nullable.
+        #pragma warning disable CS8618 
         public Contact(string name)
             : base(name)
         {
         }
+        #pragma warning restore CS8618
 
         public override string Name
         {
@@ -39,7 +42,7 @@
 
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string Address { get; set; }
+        public string? Address { get; set; }
 
         public override string GetSummary()
         {
@@ -53,10 +56,13 @@
 
     public class Appointment : PdaItem
     {
-        public Appointment(string name) :
+        public Appointment(string name, 
+            string location, DateTime startDateTime, DateTime endDateTime) :
             base(name)
         {
-            Name = name;
+            Location = location;
+            StartDateTime = startDateTime;
+            EndDateTime = endDateTime;
         }
 
         public DateTime StartDateTime { get; set; }

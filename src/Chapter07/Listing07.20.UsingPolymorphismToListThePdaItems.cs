@@ -9,20 +9,22 @@
         {
             PdaItem[] pda = new PdaItem[3];
 
-            Contact contact = new Contact("Sherlock Holmes");
-            contact.Address = "221B Baker Street, London, England";
+            Contact contact = new Contact("Sherlock Holmes")
+            {
+                Address = "221B Baker Street, London, England"
+            };
             pda[0] = contact;
 
             Appointment appointment =
-               new Appointment("Soccer tournament");
-            appointment.StartDateTime = new DateTime(2008, 7, 18);
-            appointment.EndDateTime = new DateTime(2008, 7, 19);
-            appointment.Location = "Estádio da Machava";
+                new Appointment(
+                   "Soccer tournament", "Estádio da Machava", 
+                   new DateTime(2008, 7, 18), new DateTime(2008, 7, 19));
             pda[1] = appointment;
 
-            contact = new Contact("Anne Frank");
-            contact.Address =
-                "Apt 56B, Whitehaven Mansions, Sandhurst Sq, London";
+            contact = new Contact("Anne Frank")
+            {
+                Address = "Apt 56B, Whitehaven Mansions, Sandhurst Sq, London"
+            };
             pda[2] = contact;
 
             List(pda);

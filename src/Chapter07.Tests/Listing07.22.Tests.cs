@@ -28,7 +28,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_22.Tests
         {
             string expected = $"Warning: Nothing to save{Environment.NewLine}";
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, ()=>targetTest(null)
+                expected, ()=>targetTest(null!)
             );
         }
 

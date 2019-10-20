@@ -1,4 +1,6 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_05
+﻿#pragma warning disable IDE0060 // Remove unused parameter
+
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_05
 {
     class GPSCoordinates
     {
@@ -8,7 +10,7 @@
             GPSCoordinates coordinates)
         {
             // ...
-            return null;//return the new UTMCoordinates object
+            return null!; //return the new UTMCoordinates object
         }
     }
 

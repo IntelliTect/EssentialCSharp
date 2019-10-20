@@ -8,17 +8,37 @@
         }
 
         // ...
-        public string Name { get; set; }
+        public virtual string Name { get; set; }
     }
     public class Contact : PdaItem
     {
-        public Contact(string name) :
-            base(name)
+        // Disable warning since FirstName&LastName set via Name property
+        #pragma warning disable CS8618 // Non-nullable field is uninitialized.
+        public Contact(string name)
+            : base(name)
         {
-            Name = name;
+        }
+        #pragma warning restore CS8618
+
+        public override string Name
+        {
+            get
+            {
+                return $"{ FirstName } { LastName }";
+            }
+
+            set
+            {
+                string[] names = value.Split(' ');
+                // Error handling not shown
+                FirstName = names[0];
+                LastName = names[1];
+            }
         }
 
-        public new string Name { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+
         // ...
     }
 }

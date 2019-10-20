@@ -47,7 +47,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_24.Tests
             string expected = $"Warning: Nothing to save{Environment.NewLine}";
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
                 expected, () =>
-                    Program.Eject(null)
+                    Program.Eject(null!)
             );
         }
     }
