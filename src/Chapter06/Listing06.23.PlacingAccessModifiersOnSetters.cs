@@ -29,8 +29,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_23
         public string Id
         {
             get => _Id;
-            // Providing an access modifier is possible in C# 2.0
-            // and higher only
             private set => _Id = value;
         }
         private string _Id;
