@@ -1,5 +1,5 @@
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_15.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_13.Tests
 {
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System;
@@ -11,16 +11,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_15.Tests
         [TestMethod]
         public void ValueTaskAsyncReturnTest()
         {
-<<<<<<< HEAD
-            string expected = "http://www.IntelliTect.com..............*";
-=======
-            string expected = "http://www.IntelliTect.com.*";
->>>>>>> Create Async example #WIP
+            string expected = "http://www.IntelliTect.com...*";
 
             IntelliTect.TestTools.Console.ConsoleAssert.ExpectLike(expected,
             () =>
             {
-                Program.Main(Array.Empty<string>());
+                Program.Main(Array.Empty<string>()).Wait();
             });
         }
     }
