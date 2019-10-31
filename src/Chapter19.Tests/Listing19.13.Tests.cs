@@ -1,23 +1,23 @@
-using AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_13to14.Tests;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_13.Tests
 {
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using System;
+    using System.Threading.Tasks;
 
     [TestClass]
-    public class ProgramTests : BaseProgramTests
+    public class ProgramTests
     {
-       [ClassInitialize]
-       static public void ClassInitialize(TestContext _)
+        [TestMethod]
+        public void ValueTaskAsyncReturnTest()
         {
-            ProgramWrapper = new ProgramWrapper(
-                (args)=>
-                    new ValueTask(Task.Run(() => Program.Main(args))), 
-                (findText, url, progress) => 
-                    Task.Run(()=>Program.FindTextInWebUri(findText, url.First())));
+            string expected = "http://www.IntelliTect.com...*";
+
+            IntelliTect.TestTools.Console.ConsoleAssert.ExpectLike(expected,
+            () =>
+            {
+                Program.Main(Array.Empty<string>()).Wait();
+            });
         }
     }
 }
