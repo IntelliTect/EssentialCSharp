@@ -11,24 +11,25 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_15B.Tests
         [TestMethod]
         public void GivenNoArgs_DownlaodIntelliTectDotCom()
         {
-            string expected = "http://www.IntelliTect.com..............*";
+            string expected = "https://www.IntelliTect.com.*";
 
             IntelliTect.TestTools.Console.ConsoleAssert.ExpectLike(expected,
             () =>
             {
-                Program.Main(Array.Empty<string>());
+                Program.Main(Array.Empty<string>()).Wait();
             });
         }
 
         [TestMethod]
         public void GivenNoArgs_DownlaodIntelliTectDotComAndGoogleDotCom()
         {
-            string expected = "http://www.IntelliTect.com..............*";
+            string expected = @"https://IntelliTect.com.*
+https://google.com......*";
 
             IntelliTect.TestTools.Console.ConsoleAssert.ExpectLike(expected,
             () =>
             {
-                Program.Main(new[] { "https://IntelliTect.com", "https://google.com"});
+                Program.Main(new[] { "https://IntelliTect.com", "https://google.com"}).Wait();
             });
         }
     }
