@@ -5,12 +5,13 @@
     using System.Net;
     using System.Linq;
     using System.Net.Http;
+    using System.Threading.Tasks;
 
     public class Program
     {
-        public static async void Main(string[] args)
+        public static async Task Main(string[] args)
         {
-            string url = "http://www.Intellitect.com";
+            string url = "http://www.IntelliTect.com";
             if(args.Length > 0)
             {
                 url = args[0];
@@ -20,17 +21,18 @@
             {
                 Console.Write(url);
 
-                WebRequest webRequest =
-                    WebRequest.Create(url);
+                WebClient webClient = new WebClient();
+                webClient.DownloadProgressChanged += (sender, eventArgs) =>
+                {
+                    Console.Write('.');
+                };
 
-                WebResponse response =
-                    await webRequest.GetResponseAsync();
-
-                Console.Write(".....");
+                string fileName = Path.GetTempFileName();
+                await webClient.DownloadFileTaskAsync(url, fileName);
 
                 using (StreamReader reader =
                     new StreamReader(
-                        response.GetResponseStream()))
+                        File.OpenRead(fileName)))
                 {
                     string text =
                         reader.ReadToEnd();
@@ -38,17 +40,20 @@
                         FormatBytes(text.Length));
                 }
             }
-            catch(WebException)
+            catch (WebException)
             {
                 // ...
+                throw;
             }
-            catch(IOException)
+            catch (IOException)
             {
                 // ...
+                throw;
             }
             catch(NotSupportedException)
             {
                 // ...
+                throw;
             }
         }
 
