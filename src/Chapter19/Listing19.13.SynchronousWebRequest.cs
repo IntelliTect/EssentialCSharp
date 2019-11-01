@@ -11,67 +11,75 @@
     {
         public static async Task Main(string[] args)
         {
-            string url = "http://www.IntelliTect.com";
-            if(args.Length == 0)
+            if (args.Length == 0)
             {
-                    throw new ArgumentException("No findString value was specified.");
+                throw new ArgumentException("No findString value was specified.");
             }
             string findText = args[0];
             Console.WriteLine($"Searching for {findText}...");
-            if(args.Length > 1)
+
+            string url = "http://www.IntelliTect.com";
+            if (args.Length > 1)
             {
                 url = args[1];
                 // Ignore additional parameters
             }
+            Console.Write(url);
 
+            Progress<DownloadProgressChangedEventArgs> progress = 
+                new Progress<DownloadProgressChangedEventArgs>(
+                    (progressData) => Console.Write('.')
+                );
+            bool textFound = await FindTextInWebUriAsync(url, findText, progress);
+
+            Console.WriteLine(
+                textFound ? "FOUND" : "missing"
+                );
+        }
+
+        private static async Task<bool> FindTextInWebUriAsync(
+            string url, string findText, IProgress<DownloadProgressChangedEventArgs> progressCallback)
+        {
+            bool textFound = false;
             try
             {
-                Console.Write(url);
 
-                WebClient webClient = new WebClient();
+                using WebClient webClient = new WebClient();
                 webClient.DownloadProgressChanged += (sender, eventArgs) =>
                 {
-                    Console.Write('.');
+                    progressCallback.Report(eventArgs);
                 };
 
-                string fileName = Path.GetTempFileName();
-                await webClient.DownloadFileTaskAsync(url, fileName);
+                byte[] downloadData = await webClient.DownloadDataTaskAsync(url);
 
-                using (StreamReader reader =
-                    new StreamReader(
-                        File.OpenRead(fileName)))
+                using MemoryStream stream = new MemoryStream(downloadData);
+                using StreamReader reader = new StreamReader(stream);
+
+                int findIndex = 0;
+                int length = 0;
+                do
                 {
-
-                    int findIndex = 0;
-                    int length = 0;
-                    bool textFound = false;
-                    do
+                    char[] data = new char[reader.BaseStream.Length];
+                    length = await reader.ReadAsync(data);
+                    for (int i = 0; i < length; i++)
                     {
-                        char[] data = new char[reader.BaseStream.Length];
-                        length = await reader.ReadAsync(data);
-                        for (int i = 0; i < length; i++)
+                        if (findText[findIndex] == data[i])
                         {
-                            if (findText[findIndex] == data[i])
+                            findIndex++;
+                            if (findIndex == findText.Length)
                             {
-                                findIndex++;
-                                if (findIndex == findText.Length)
-                                {
-                                    // Text was found
-                                    textFound = true;
-                                    break;
-                                }
-                            }
-                            else
-                            {
-                                findIndex = 0;
+                                // Text was found
+                                textFound = true;
+                                break;
                             }
                         }
+                        else
+                        {
+                            findIndex = 0;
+                        }
                     }
-                    while (!textFound && length != 0);
-                    Console.WriteLine(
-                        textFound?"FOUND":"missing"
-                        );
                 }
+                while (!textFound && length != 0);
             }
             catch (WebException)
             {
@@ -83,11 +91,13 @@
                 // ...
                 throw;
             }
-            catch(NotSupportedException)
+            catch (NotSupportedException)
             {
                 // ...
                 throw;
             }
+
+            return textFound;
         }
 
         static public string FormatBytes(long bytes)
