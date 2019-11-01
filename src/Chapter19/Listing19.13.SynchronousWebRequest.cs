@@ -30,17 +30,17 @@
                 new Progress<DownloadProgressChangedEventArgs>(
                     (progressData) => Console.Write('.')
                 );
-            bool textFound = await FindTextInWebUriAsync(url, findText, progress);
+            int textApperanceCount = await FindTextInWebUriAsync(url, findText, progress);
 
             Console.WriteLine(
-                textFound ? "FOUND" : "missing"
+                textApperanceCount
                 );
         }
 
-        private static async Task<bool> FindTextInWebUriAsync(
+        private static async Task<int> FindTextInWebUriAsync(
             string url, string findText, IProgress<DownloadProgressChangedEventArgs> progressCallback)
         {
-            bool textFound = false;
+            int textApperanceCount = 0;
 
             using WebClient webClient = new WebClient();
             webClient.DownloadProgressChanged += (sender, eventArgs) =>
@@ -67,8 +67,8 @@
                         if (findIndex == findText.Length)
                         {
                             // Text was found
-                            textFound = true;
-                            break;
+                            textApperanceCount++;
+                            findIndex = 0;
                         }
                     }
                     else
@@ -77,9 +77,9 @@
                     }
                 }
             }
-            while (!textFound && length != 0);
+            while (length != 0);
 
-            return textFound;
+            return textApperanceCount;
         }
 
         static public string FormatBytes(long bytes)
