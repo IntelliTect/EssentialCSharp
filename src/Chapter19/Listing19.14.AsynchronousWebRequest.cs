@@ -11,22 +11,33 @@
     {
         public static void Main(string[] args)
         {
-            string url = "http://www.IntelliTect.com";
-            if(args.Length > 0)
-            {
-                url = args[0];
-            }
-
-            Console.Write(url);
-
-            Task task = WriteWebRequestSizeAsync(url);
-
             try
-            {
-                while(!task.Wait(100))
+            { 
+                if (args.Length == 0)
+                {
+                    throw new ArgumentException("No findString value was specified.");
+                }
+                string findText = args[0];
+                Console.WriteLine($"Searching for {findText}...");
+
+                string url = "http://www.IntelliTect.com";
+                if (args.Length > 1)
+                {
+                    url = args[1];
+                    // Ignore additional parameters
+                }
+                Console.Write(url);
+
+                Task<int> task =
+                    FindTextInWebUriAsync(url, findText);
+
+                while (!task.Wait(100))
                 {
                     Console.Write(".");
                 }
+
+                Console.WriteLine(task.Result);
+
             }
             catch(AggregateException exception)
             {
@@ -38,8 +49,8 @@
                         // Rethrowing rather than using
                         // if condition on the type
                         ExceptionDispatchInfo.Capture(
-                                              exception.InnerException)
-                                              .Throw();
+                            exception.InnerException!).Throw();
+
                         return true;
                     });
                 }
@@ -58,37 +69,53 @@
             }
         }
 
-
-        private static Task WriteWebRequestSizeAsync(
-            string url)
+        private static async Task<int> FindTextInWebUriAsync(
+            string url, string findText,
+            IProgress<DownloadProgressChangedEventArgs>? progressCallback = null)
         {
-            StreamReader reader = null;
-            WebRequest webRequest =
-                 WebRequest.Create(url);
+            int textApperanceCount = 0;
 
-            Task task =
-                webRequest.GetResponseAsync()
-            .ContinueWith(antecedent =>
+            using WebClient webClient = new WebClient();
+            if (progressCallback is object)
             {
-                WebResponse response =
-                   antecedent.Result;
+                webClient.DownloadProgressChanged += (sender, eventArgs) =>
+                {
+                    progressCallback.Report(eventArgs);
+                };
+            }
 
-                reader =
-                    new StreamReader(
-                        response.GetResponseStream());
-                return reader.ReadToEndAsync();
-            })
-            .Unwrap()
-            .ContinueWith(antecedent =>
+            byte[] downloadData = await webClient.DownloadDataTaskAsync(url);
+
+            using MemoryStream stream = new MemoryStream(downloadData);
+            using StreamReader reader = new StreamReader(stream);
+
+            int findIndex = 0;
+            int length = 0;
+            do
             {
-                if(reader != null)
-                    reader.Dispose();
-                string text = antecedent.Result;
-                Console.WriteLine(
-                    FormatBytes(text.Length));
-            });
+                char[] data = new char[reader.BaseStream.Length];
+                length = await reader.ReadAsync(data);
+                for (int i = 0; i < length; i++)
+                {
+                    if (findText[findIndex] == data[i])
+                    {
+                        findIndex++;
+                        if (findIndex == findText.Length)
+                        {
+                            // Text was found
+                            textApperanceCount++;
+                            findIndex = 0;
+                        }
+                    }
+                    else
+                    {
+                        findIndex = 0;
+                    }
+                }
+            }
+            while (length != 0);
 
-            return task;
+            return textApperanceCount;
         }
 
         static public string FormatBytes(long bytes)
@@ -102,12 +129,7 @@
                 magnitudes.FirstOrDefault(
                     magnitude =>
                         bytes > (max /= 1024)) ?? "0 Bytes",
-                    (decimal)bytes / (decimal)max).Trim();
+                    (decimal)bytes / (decimal)max);
         }
     }
 }
-
-
-
-
-
