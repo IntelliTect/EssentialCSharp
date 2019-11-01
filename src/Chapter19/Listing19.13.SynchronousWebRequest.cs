@@ -12,9 +12,15 @@
         public static async Task Main(string[] args)
         {
             string url = "http://www.IntelliTect.com";
-            if(args.Length > 0)
+            if(args.Length == 0)
             {
-                url = args[0];
+                    throw new ArgumentException("No findString value was specified.");
+            }
+            string findText = args[0];
+            if(args.Length > 1)
+            {
+                url = args[1];
+                // Ignore additional parameters
             }
 
             try
@@ -34,10 +40,32 @@
                     new StreamReader(
                         File.OpenRead(fileName)))
                 {
-                    string text =
-                        reader.ReadToEnd();
-                    Console.WriteLine(
-                        FormatBytes(text.Length));
+
+                    int findIndex = 0;
+                    int length = 0;
+                    do
+                    {
+                        char[] data = new char[reader.BaseStream.Length];
+                        length = await reader.ReadAsync(data);
+                        for (int i = 0; i < length; i++)
+                        {
+                            if (findText[findIndex] == data[i])
+                            {
+                                findIndex++;
+                                if (findIndex == findText.Length)
+                                {
+                                    // Text was found
+                                    Console.WriteLine($"{findText} was found in {url}");
+                                    return;
+                                }
+                            }
+                            else
+                            {
+                                findIndex = 0;
+                            }
+                        }
+                    }
+                    while (length != 0);
                 }
             }
             catch (WebException)
