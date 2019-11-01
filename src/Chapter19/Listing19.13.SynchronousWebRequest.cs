@@ -26,7 +26,7 @@
             }
             Console.Write(url);
 
-            Progress<DownloadProgressChangedEventArgs> progress = 
+            Progress<DownloadProgressChangedEventArgs> progress =
                 new Progress<DownloadProgressChangedEventArgs>(
                     (progressData) => Console.Write('.')
                 );
@@ -41,61 +41,43 @@
             string url, string findText, IProgress<DownloadProgressChangedEventArgs> progressCallback)
         {
             bool textFound = false;
-            try
+
+            using WebClient webClient = new WebClient();
+            webClient.DownloadProgressChanged += (sender, eventArgs) =>
             {
+                progressCallback.Report(eventArgs);
+            };
 
-                using WebClient webClient = new WebClient();
-                webClient.DownloadProgressChanged += (sender, eventArgs) =>
+            byte[] downloadData = await webClient.DownloadDataTaskAsync(url);
+
+            using MemoryStream stream = new MemoryStream(downloadData);
+            using StreamReader reader = new StreamReader(stream);
+
+            int findIndex = 0;
+            int length = 0;
+            do
+            {
+                char[] data = new char[reader.BaseStream.Length];
+                length = await reader.ReadAsync(data);
+                for (int i = 0; i < length; i++)
                 {
-                    progressCallback.Report(eventArgs);
-                };
-
-                byte[] downloadData = await webClient.DownloadDataTaskAsync(url);
-
-                using MemoryStream stream = new MemoryStream(downloadData);
-                using StreamReader reader = new StreamReader(stream);
-
-                int findIndex = 0;
-                int length = 0;
-                do
-                {
-                    char[] data = new char[reader.BaseStream.Length];
-                    length = await reader.ReadAsync(data);
-                    for (int i = 0; i < length; i++)
+                    if (findText[findIndex] == data[i])
                     {
-                        if (findText[findIndex] == data[i])
+                        findIndex++;
+                        if (findIndex == findText.Length)
                         {
-                            findIndex++;
-                            if (findIndex == findText.Length)
-                            {
-                                // Text was found
-                                textFound = true;
-                                break;
-                            }
-                        }
-                        else
-                        {
-                            findIndex = 0;
+                            // Text was found
+                            textFound = true;
+                            break;
                         }
                     }
+                    else
+                    {
+                        findIndex = 0;
+                    }
                 }
-                while (!textFound && length != 0);
             }
-            catch (WebException)
-            {
-                // ...
-                throw;
-            }
-            catch (IOException)
-            {
-                // ...
-                throw;
-            }
-            catch (NotSupportedException)
-            {
-                // ...
-                throw;
-            }
+            while (!textFound && length != 0);
 
             return textFound;
         }
