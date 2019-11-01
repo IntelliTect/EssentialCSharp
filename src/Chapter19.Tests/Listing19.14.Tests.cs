@@ -1,29 +1,62 @@
-using AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_13to14.Tests;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Linq;
-using System.Runtime.ExceptionServices;
-using System.Threading.Tasks;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_14.Tests
 {
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using System;
+    using System.Runtime.ExceptionServices;
 
     [TestClass]
-    public class ProgramTests : BaseProgramTests
+    public class ProgramTests
     {
-        [ClassInitialize]
-        static public void ClassInitialize(TestContext _)
+        [TestMethod]
+        public void ValueTaskAsyncReturnTest()
         {
-            ProgramWrapper = new ProgramWrapper(
-                Program.Main,
-                (findText, urls, progress) => Program.FindTextInWebUriAsync(findText, urls.First(), progress));
+            string findText = "IntelliTect";
+            string expected = @$"Searching for {findText}...
+http://www.IntelliTect.com";
+
+            string actual = IntelliTect.TestTools.Console.ConsoleAssert.Execute("",
+            () =>
+            {
+                Program.Main(new string[] { findText });
+            });
+
+            IntelliTect.TestTools.Console.StringExtensions.IsLike(
+                $"{expected}...*", actual);
+            IntelliTect.TestTools.Console.StringExtensions.IsLikeRegEx(
+                @$"expected\.+^[1-9]\d*$", actual);
         }
 
-        protected override void AssertMainException(string messagePrefix, Exception exception)
+        [TestMethod]
+        public void Main_FindTextDoesNotExist_NotFound()
         {
-            Assert.AreEqual<Type>(typeof(AggregateException), exception.GetType());  // Testing type first (even though the cast will also verify)
+            string findText = "RANDOM TEXT NOT ON SITE";
+            string expected = @$"Searching for {findText}...
+http://www.IntelliTect.com";
 
-            AssertAggregateExceptionType(messagePrefix, (AggregateException)exception);
+            string actual = IntelliTect.TestTools.Console.ConsoleAssert.Execute("",
+            () =>
+            {
+                Program.Main(new string[] { findText });
+            });
+
+            IntelliTect.TestTools.Console.StringExtensions.IsLike(
+                $"{expected}...*0", actual);
+            IntelliTect.TestTools.Console.StringExtensions.IsLikeRegEx(
+                @$"expected\.+0$", actual);
+        }
+
+        [TestMethod][ExpectedException(typeof(ArgumentException))]
+        public void Main_PassEmptyArray_ThrowException()
+        {
+            try
+            {
+                Program.Main(Array.Empty<string>());
+            }
+            catch(AggregateException exception)
+            {
+                ExceptionDispatchInfo.Throw(exception.Flatten().InnerExceptions[0]);
+            }
         }
     }
 }

@@ -6,9 +6,25 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_13.Tests
     using System.Runtime.ExceptionServices;
     using System.Threading.Tasks;
 
+    public class ProgramWrapper
+    {
+        Action<string[]> MainMethod { get; }
+        public ProgramWrapper(Action<string[]> mainMethod)
+        {
+            MainMethod = mainMethod;
+        }
+
+        public void Main(string[] args)
+        {
+            MainMethod(args);
+        }
+    }
+
     [TestClass]
     public class ProgramTests
     {
+        public ProgramWrapper ProgramWrapper { get;set;}
+
         [TestMethod]
         public void ValueTaskAsyncReturnTest()
         {
@@ -19,7 +35,7 @@ http://www.IntelliTect.com";
             string actual = IntelliTect.TestTools.Console.ConsoleAssert.Execute("",
             () =>
             {
-                Program.Main(new string[] { findText }).Wait();
+                Program.Main(new string[] { findText });
             });
 
             IntelliTect.TestTools.Console.StringExtensions.IsLike(
@@ -38,7 +54,7 @@ http://www.IntelliTect.com";
             string actual = IntelliTect.TestTools.Console.ConsoleAssert.Execute("",
             () =>
             {
-                Program.Main(new string[] { findText }).Wait();
+                Program.Main(new string[] { findText });
             });
 
             IntelliTect.TestTools.Console.StringExtensions.IsLike(
@@ -52,7 +68,7 @@ http://www.IntelliTect.com";
         {
             try
             {
-                Program.Main(Array.Empty<string>()).Wait();
+                Program.Main(Array.Empty<string>());
             }
             catch(AggregateException exception)
             {
