@@ -2,7 +2,7 @@
   <PropertyGroup>
     <Nullable>enable</Nullable>
     <ProductName Condition="'$(ProductName)'==''">Chapter$(ChapterNumber)</ProductName>
-    <TreatWarningsAsErrors Condition="'$(TreatWarningsAsErrors)'==''">true</TreatWarningsAsErrors>
+    <TreatWarningsAsErrors Condition="'$(TreatWarningsAsErrors)'==''">false</TreatWarningsAsErrors>
     <TargetFramework>netcoreapp3.0</TargetFramework>
     <Authors>Mark Michaelis</Authors>
     <Company>Addison Wesley</Company>
