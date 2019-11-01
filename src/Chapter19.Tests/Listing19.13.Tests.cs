@@ -12,12 +12,28 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_13.Tests
         [TestMethod]
         public void ValueTaskAsyncReturnTest()
         {
-            string expected = "http://www.IntelliTect.com...*";
+            string findText = "IntelliTect";
+            string expected = @$"Searching for {findText}...
+http://www.IntelliTect.com...*FOUND";
 
             IntelliTect.TestTools.Console.ConsoleAssert.ExpectLike(expected,
             () =>
             {
-                Program.Main(new string[] { "IntelliTect" }).Wait();
+                Program.Main(new string[] { findText }).Wait();
+            });
+        }
+
+        [TestMethod]
+        public void Main_FindTextDoesNotExist_NotFound()
+        {
+            string findText = "RANDOM TEXT";
+            string expected = @$"Searching for {findText}...
+http://www.IntelliTect.com...*missing";
+
+            IntelliTect.TestTools.Console.ConsoleAssert.ExpectLike(expected,
+            () =>
+            {
+                Program.Main(new string[] { findText }).Wait();
             });
         }
 
