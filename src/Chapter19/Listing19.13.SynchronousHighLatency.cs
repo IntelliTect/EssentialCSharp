@@ -2,6 +2,7 @@
 {
     using System;
     using System.IO;
+<<<<<<< HEAD
     using System.Linq;
     using System.Net;
 
@@ -10,6 +11,43 @@
 
         public static int FindTextInWebUri(
             string findText, string url)
+=======
+    using System.Net;
+    using System.Linq;
+    using System.Net.Http;
+    using System.Threading.Tasks;
+
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            if (args.Length == 0)
+            {
+                Console.WriteLine("ERROR: No findText argument specified.");
+                return;
+            }
+            string findText = args[0];
+            Console.WriteLine($"Searching for {findText}...");
+
+            string url = "http://www.IntelliTect.com";
+            if (args.Length > 1)
+            {
+                url = args[1];
+                // Ignore additional parameters
+            }
+            Console.Write(url);
+
+            int textApperanceCount = 
+                FindTextInWebUri(url, findText);
+
+            Console.WriteLine(
+                textApperanceCount
+                );
+        }
+
+        private static int FindTextInWebUri(
+            string url, string findText)
+>>>>>>> Updated examles to use WebClient
         {
             int textApperanceCount = 0;
 
@@ -49,6 +87,7 @@
             return textApperanceCount;
         }
 
+<<<<<<< HEAD
         public static void Main(string[] args)
         {
             if (args.Length == 0)
@@ -73,6 +112,8 @@
             Console.WriteLine(occurances);
         }
 
+=======
+>>>>>>> Updated examles to use WebClient
         static public string FormatBytes(long bytes)
         {
             string[] magnitudes =

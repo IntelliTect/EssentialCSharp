@@ -64,17 +64,14 @@ http://www.IntelliTect.com";
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentException))]
         public void Main_PassEmptyArray_ThrowException()
         {
-            try
+            string expected = "ERROR: No findText argument specified.";
+
+            IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected, () =>
             {
                 ProgramWrapper.Main(Array.Empty<string>());
-            }
-            catch (AggregateException exception)
-            {
-                ExceptionDispatchInfo.Throw(exception.Flatten().InnerExceptions[0]);
-            }
+            });
         }
     }
 }
