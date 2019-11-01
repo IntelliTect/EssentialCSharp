@@ -11,26 +11,27 @@
     {
         public static void Main(string[] args)
         {
+            if (args.Length == 0)
+            {
+                Console.WriteLine("ERROR: No findText argument specified.");
+                return;
+            }
+            string findText = args[0];
+            Console.WriteLine($"Searching for {findText}...");
+
+            string url = "http://www.IntelliTect.com";
+            if (args.Length > 1)
+            {
+                url = args[1];
+                // Ignore additional parameters
+            }
+            Console.Write(url);
+
+            Task<int> task =
+                FindTextInWebUriAsync(url, findText);
+
             try
             { 
-                if (args.Length == 0)
-                {
-                    throw new ArgumentException("No findString value was specified.");
-                }
-                string findText = args[0];
-                Console.WriteLine($"Searching for {findText}...");
-
-                string url = "http://www.IntelliTect.com";
-                if (args.Length > 1)
-                {
-                    url = args[1];
-                    // Ignore additional parameters
-                }
-                Console.Write(url);
-
-                Task<int> task =
-                    FindTextInWebUriAsync(url, findText);
-
                 while (!task.Wait(100))
                 {
                     Console.Write(".");
@@ -69,7 +70,7 @@
             }
         }
 
-        private static async Task<int> FindTextInWebUriAsync(
+        private static Task<int> FindTextInWebUriAsync(
             string url, string findText,
             IProgress<DownloadProgressChangedEventArgs>? progressCallback = null)
         {
@@ -84,38 +85,44 @@
                 };
             }
 
-            byte[] downloadData = await webClient.DownloadDataTaskAsync(url);
-
-            using MemoryStream stream = new MemoryStream(downloadData);
-            using StreamReader reader = new StreamReader(stream);
-
-            int findIndex = 0;
-            int length = 0;
-            do
-            {
-                char[] data = new char[reader.BaseStream.Length];
-                length = await reader.ReadAsync(data);
-                for (int i = 0; i < length; i++)
+            Task<int> downloadTask = webClient.DownloadDataTaskAsync(url)
+                .ContinueWith(antecedent =>
                 {
-                    if (findText[findIndex] == data[i])
-                    {
-                        findIndex++;
-                        if (findIndex == findText.Length)
-                        {
-                            // Text was found
-                            textApperanceCount++;
-                            findIndex = 0;
-                        }
-                    }
-                    else
-                    {
-                        findIndex = 0;
-                    }
-                }
-            }
-            while (length != 0);
 
-            return textApperanceCount;
+                    using MemoryStream stream = new MemoryStream(antecedent.Result);
+                    using StreamReader reader = new StreamReader(stream);
+
+                    int findIndex = 0;
+                    int length = 0;
+                    do
+                    {
+                        char[] data = new char[reader.BaseStream.Length];
+                        Task childTask = reader.ReadAsync(data, 0, (int)reader.BaseStream.Length)
+                            .ContinueWith(childAnticedent =>
+                            {
+                                for (int i = 0; i < childAnticedent.Result; i++)
+                                {
+                                    if (findText[findIndex] == data[i])
+                                    {
+                                        findIndex++;
+                                        if (findIndex == findText.Length)
+                                        {
+                                            // Text was found
+                                            textApperanceCount++;
+                                            findIndex = 0;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        findIndex = 0;
+                                    }
+                                }
+                            });
+                    }
+                    while (length != 0);
+                    return textApperanceCount;
+                });
+            return downloadTask;
         }
 
         static public string FormatBytes(long bytes)

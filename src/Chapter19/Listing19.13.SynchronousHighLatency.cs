@@ -1,4 +1,4 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_15
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_13
 {
     using System;
     using System.IO;
@@ -9,11 +9,12 @@
 
     public class Program
     {
-        public static async Task Main(string[] args)
+        public static void Main(string[] args)
         {
             if (args.Length == 0)
             {
-                throw new ArgumentException("No findString value was specified.");
+                Console.WriteLine("ERROR: No findText argument specified.");
+                return;
             }
             string findText = args[0];
             Console.WriteLine($"Searching for {findText}...");
@@ -26,31 +27,22 @@
             }
             Console.Write(url);
 
-            Progress<DownloadProgressChangedEventArgs> progress =
-                new Progress<DownloadProgressChangedEventArgs>(
-                    (progressData) => Console.Write('.')
-                );
-            int textApperanceCount =
-                await FindTextInWebUriAsync(url, findText, progress);
+            int textApperanceCount = 
+                FindTextInWebUri(url, findText);
 
             Console.WriteLine(
                 textApperanceCount
                 );
         }
 
-        private static async Task<int> FindTextInWebUriAsync(
-            string url, string findText,
-            IProgress<DownloadProgressChangedEventArgs> progressCallback)
+        private static int FindTextInWebUri(
+            string url, string findText)
         {
             int textApperanceCount = 0;
 
             using WebClient webClient = new WebClient();
-            webClient.DownloadProgressChanged += (sender, eventArgs) =>
-            {
-                progressCallback.Report(eventArgs);
-            };
 
-            byte[] downloadData = await webClient.DownloadDataTaskAsync(url);
+            byte[] downloadData = webClient.DownloadData(url);
 
             using MemoryStream stream = new MemoryStream(downloadData);
             using StreamReader reader = new StreamReader(stream);
@@ -60,7 +52,7 @@
             do
             {
                 char[] data = new char[reader.BaseStream.Length];
-                length = await reader.ReadAsync(data);
+                length = reader.Read(data);
                 for (int i = 0; i < length; i++)
                 {
                     if (findText[findIndex] == data[i])
