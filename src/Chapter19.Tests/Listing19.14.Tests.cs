@@ -1,30 +1,13 @@
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_13.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_14.Tests
 {
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System;
     using System.Runtime.ExceptionServices;
-    using System.Threading.Tasks;
-
-    public class ProgramWrapper
-    {
-        Action<string[]> MainMethod { get; }
-        public ProgramWrapper(Action<string[]> mainMethod)
-        {
-            MainMethod = mainMethod;
-        }
-
-        public void Main(string[] args)
-        {
-            MainMethod(args);
-        }
-    }
 
     [TestClass]
     public class ProgramTests
     {
-        public ProgramWrapper ProgramWrapper { get;set;}
-
         [TestMethod]
         public void ValueTaskAsyncReturnTest()
         {
