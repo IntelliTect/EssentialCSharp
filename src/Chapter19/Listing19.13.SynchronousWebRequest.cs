@@ -17,6 +17,7 @@
                     throw new ArgumentException("No findString value was specified.");
             }
             string findText = args[0];
+            Console.WriteLine($"Searching for {findText}...");
             if(args.Length > 1)
             {
                 url = args[1];
@@ -43,6 +44,7 @@
 
                     int findIndex = 0;
                     int length = 0;
+                    bool textFound = false;
                     do
                     {
                         char[] data = new char[reader.BaseStream.Length];
@@ -55,8 +57,8 @@
                                 if (findIndex == findText.Length)
                                 {
                                     // Text was found
-                                    Console.WriteLine($"{findText} was found in {url}");
-                                    return;
+                                    textFound = true;
+                                    break;
                                 }
                             }
                             else
@@ -65,7 +67,10 @@
                             }
                         }
                     }
-                    while (length != 0);
+                    while (!textFound && length != 0);
+                    Console.WriteLine(
+                        textFound?"FOUND":"missing"
+                        );
                 }
             }
             catch (WebException)
