@@ -14,27 +14,37 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_13.Tests
         {
             string findText = "IntelliTect";
             string expected = @$"Searching for {findText}...
-http://www.IntelliTect.com...*FOUND";
+http://www.IntelliTect.com";
 
-            IntelliTect.TestTools.Console.ConsoleAssert.ExpectLike(expected,
+            string actual = IntelliTect.TestTools.Console.ConsoleAssert.Execute("",
             () =>
             {
                 Program.Main(new string[] { findText }).Wait();
             });
+
+            IntelliTect.TestTools.Console.StringExtensions.IsLike(
+                $"{expected}...*", actual);
+            IntelliTect.TestTools.Console.StringExtensions.IsLikeRegEx(
+                @$"expected\.+^[1-9]\d*$", actual);
         }
 
         [TestMethod]
         public void Main_FindTextDoesNotExist_NotFound()
         {
-            string findText = "RANDOM TEXT";
+            string findText = "RANDOM TEXT NOT ON SITE";
             string expected = @$"Searching for {findText}...
-http://www.IntelliTect.com...*missing";
+http://www.IntelliTect.com";
 
-            IntelliTect.TestTools.Console.ConsoleAssert.ExpectLike(expected,
+            string actual = IntelliTect.TestTools.Console.ConsoleAssert.Execute("",
             () =>
             {
                 Program.Main(new string[] { findText }).Wait();
             });
+
+            IntelliTect.TestTools.Console.StringExtensions.IsLike(
+                $"{expected}...*0", actual);
+            IntelliTect.TestTools.Console.StringExtensions.IsLikeRegEx(
+                @$"expected\.+0$", actual);
         }
 
         [TestMethod][ExpectedException(typeof(ArgumentException))]
