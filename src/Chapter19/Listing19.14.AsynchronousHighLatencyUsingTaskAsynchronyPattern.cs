@@ -11,7 +11,7 @@
     {
 
         async static public Task<int> FindTextInWebUriAsync(
-            string url, string findText,
+            string findText, string url,
             IProgress<DownloadProgressChangedEventArgs>? progressCallback = null)
         {
             int textApperanceCount = 0;
@@ -87,7 +87,7 @@
             try
             {
                 int occurances =
-                    await FindTextInWebUriAsync(url, findText, progress);
+                    await FindTextInWebUriAsync(findText, url, progress);
                 Console.WriteLine(occurances);
             }
             catch (AggregateException)

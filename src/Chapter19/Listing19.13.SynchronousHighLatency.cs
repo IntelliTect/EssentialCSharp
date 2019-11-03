@@ -9,7 +9,7 @@
     {
 
         public static int FindTextInWebUri(
-            string url, string findText)
+            string findText, string url)
         {
             int textApperanceCount = 0;
 
@@ -68,7 +68,7 @@
             Console.Write(url);
 
             int occurances =
-                FindTextInWebUri(url, findText);
+                FindTextInWebUri(findText, url);
 
             Console.WriteLine(occurances);
         }

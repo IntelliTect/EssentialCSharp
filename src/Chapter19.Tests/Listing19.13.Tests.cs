@@ -11,7 +11,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_13.Tests
        [ClassInitialize]
        static public void ClassInitialize(TestContext textContext)
         {
-            ProgramWrapper = new ProgramWrapper<int>(Program.Main, (url, findText, progress) => Program.FindTextInWebUri(url, findText));
+            ProgramWrapper = new ProgramWrapper<int>(Program.Main, (url, findText, progress) => Program.FindTextInWebUri(findText, url));
         }
     }
 }
