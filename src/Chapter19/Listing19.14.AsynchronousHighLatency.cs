@@ -9,67 +9,6 @@
 
     public class Program
     {
-        public static void Main(string[] args)
-        {
-            if (args.Length == 0)
-            {
-                Console.WriteLine("ERROR: No findText argument specified.");
-                return;
-            }
-            string findText = args[0];
-            Console.WriteLine($"Searching for {findText}...");
-
-            string url = "http://www.IntelliTect.com";
-            if (args.Length > 1)
-            {
-                url = args[1];
-                // Ignore additional parameters
-            }
-            Console.Write(url);
-
-            Task<int> task =
-                FindTextInWebUriAsync(url, findText);
-
-            try
-            { 
-                while (!task.Wait(100))
-                {
-                    Console.Write(".");
-                }
-
-                Console.WriteLine(task.Result);
-
-            }
-            catch(AggregateException exception)
-            {
-                exception = exception.Flatten();
-                try
-                {
-                    exception.Handle(innerException =>
-                    {
-                        // Rethrowing rather than using
-                        // if condition on the type
-                        ExceptionDispatchInfo.Capture(
-                            exception.InnerException!).Throw();
-
-                        return true;
-                    });
-                }
-                catch(WebException)
-                {
-                    // ...
-                }
-                catch(IOException)
-                {
-                    // ...
-                }
-                catch(NotSupportedException)
-                {
-                    // ...
-                }
-            }
-        }
-
         private static Task<int> FindTextInWebUriAsync(
             string url, string findText,
             IProgress<DownloadProgressChangedEventArgs>? progressCallback = null)
@@ -123,6 +62,64 @@
                     return textApperanceCount;
                 });
             return downloadTask;
+        }
+
+        public static void Main(string[] args)
+        {
+            if (args.Length == 0)
+            {
+                Console.WriteLine("ERROR: No findText argument specified.");
+                return;
+            }
+            string findText = args[0];
+            Console.WriteLine($"Searching for {findText}...");
+
+            string url = "http://www.IntelliTect.com";
+            if (args.Length > 1)
+            {
+                url = args[1];
+                // Ignore additional parameters
+            }
+            Console.Write(url);
+
+            try
+            {
+                Task<int> task =
+                    FindTextInWebUriAsync(url, findText);
+
+                while (!task.Wait(100))
+                {
+                    Console.Write(".");
+                }
+
+                Console.WriteLine(task.Result);
+
+            }
+            catch (AggregateException exception)
+            {
+                exception = exception.Flatten();
+                if(exception.InnerExceptions.Count != 1)
+                {
+                    throw new InvalidOperationException("Unexpected scenario with there being more than one inner exception.");
+                }
+                try
+                {
+                    exception.Handle(innerException =>
+                    {
+                        // Rethrowing rather than using
+                        // if condition on the type
+                        ExceptionDispatchInfo.Capture(
+                            exception.InnerException!).Throw();
+
+                        return true;
+                    });
+                }
+                catch (WebException innerExcpetion)
+                {
+                    // ...
+                    throw new WebException("Rethrowing...", innerExcpetion);
+                }
+            }
         }
 
         static public string FormatBytes(long bytes)
