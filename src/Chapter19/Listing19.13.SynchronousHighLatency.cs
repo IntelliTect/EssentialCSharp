@@ -2,38 +2,11 @@
 {
     using System;
     using System.IO;
-    using System.Net;
     using System.Linq;
-    using System.Net.Http;
-    using System.Threading.Tasks;
+    using System.Net;
 
     public class Program
     {
-        public static void Main(string[] args)
-        {
-            if (args.Length == 0)
-            {
-                Console.WriteLine("ERROR: No findText argument specified.");
-                return;
-            }
-            string findText = args[0];
-            Console.WriteLine($"Searching for {findText}...");
-
-            string url = "http://www.IntelliTect.com";
-            if (args.Length > 1)
-            {
-                url = args[1];
-                // Ignore additional parameters
-            }
-            Console.Write(url);
-
-            int textApperanceCount = 
-                FindTextInWebUri(url, findText);
-
-            Console.WriteLine(
-                textApperanceCount
-                );
-        }
 
         private static int FindTextInWebUri(
             string url, string findText)
@@ -74,6 +47,30 @@
             while (length != 0);
 
             return textApperanceCount;
+        }
+
+        public static void Main(string[] args)
+        {
+            if (args.Length == 0)
+            {
+                Console.WriteLine("ERROR: No findText argument specified.");
+                return;
+            }
+            string findText = args[0];
+            Console.WriteLine($"Searching for {findText}...");
+
+            string url = "http://www.IntelliTect.com";
+            if (args.Length > 1)
+            {
+                url = args[1];
+                // Ignore additional parameters
+            }
+            Console.Write(url);
+
+            int occurances =
+                FindTextInWebUri(url, findText);
+
+            Console.WriteLine(occurances);
         }
 
         static public string FormatBytes(long bytes)
