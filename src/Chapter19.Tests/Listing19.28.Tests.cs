@@ -13,7 +13,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_28.Tests
     [TestClass]
     public class ProgramTests
     {
+#pragma warning disable CS8618 // Value is set by MSTest
         public TestContext TestContext { get; set; }
+#pragma warning restore CS8618 
+
         [TestMethod]
         public void EncryptDecrypt_GivenSmallFile_EncryptDecryptSuccessfully()
         {
