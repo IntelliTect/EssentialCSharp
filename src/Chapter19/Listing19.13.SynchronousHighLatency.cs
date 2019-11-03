@@ -8,7 +8,7 @@
     public class Program
     {
 
-        private static int FindTextInWebUri(
+        public static int FindTextInWebUri(
             string url, string findText)
         {
             int textApperanceCount = 0;

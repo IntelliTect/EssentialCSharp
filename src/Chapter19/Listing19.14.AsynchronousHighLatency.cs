@@ -9,7 +9,7 @@
 
     public class Program
     {
-        private static Task<int> FindTextInWebUriAsync(
+        public static Task<int> FindTextInWebUriAsync(
             string url, string findText,
             IProgress<DownloadProgressChangedEventArgs>? progressCallback = null)
         {

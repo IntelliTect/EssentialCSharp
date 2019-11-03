@@ -9,9 +9,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_13to14.Tes
     public class ProgramWrapper<TFindTextInWebUriReturn>
     {
         Action<string[]> MainMethod { get; }
-        Func<TFindTextInWebUriReturn, string, string>? FindTextInWebUriMethod { get; }
+        Func<string, string, IProgress<DownloadProgressChangedEventArgs>?, TFindTextInWebUriReturn>? FindTextInWebUriMethod { get; }
 
-        public ProgramWrapper(Action<string[]> mainMethod, Func<TFindTextInWebUriReturn, string, string>? findTextInWebUriMethod = null)
+        public ProgramWrapper(
+            Action<string[]> mainMethod, Func<string, string, IProgress<DownloadProgressChangedEventArgs>?, TFindTextInWebUriReturn>? findTextInWebUriMethod = null)
         {
             MainMethod = mainMethod;
             FindTextInWebUriMethod = findTextInWebUriMethod;
@@ -21,9 +22,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_13to14.Tes
         {
             MainMethod(args);
         }
-        public TFindTextInWebUriReturn FindTextInWebUri(string findText, string url)
+        public TFindTextInWebUriReturn FindTextInWebUri(
+            string findText, string url, IProgress<DownloadProgressChangedEventArgs>? progressCallback)
         {
-            return FindTextInWebUri(url, findText);
+            return FindTextInWebUri(url, findText, progressCallback);
         }
     }
 
@@ -92,6 +94,7 @@ http://www.IntelliTect.com";
             try
             {
                 ProgramWrapper.Main(new string[] { "irrelevant", uri });
+                Assert.Fail("Expected exception was not thrown.");
             }
             catch (Exception exception)
             {
@@ -139,6 +142,54 @@ http://www.IntelliTect.com";
             try
             {
                 ProgramWrapper.Main(new string[] { "irrelevant", null! });
+                Assert.Fail("Expected exception was not thrown.");
+            }
+            catch (AggregateException exception)
+            {
+                if (exception.InnerExceptions.Count != 1)
+                {
+                    throw new InvalidOperationException("Unexpected scenario with there being more than one inner exception.");
+                }
+                exception.Handle(innerException =>
+                {
+                    // Rethrowing rather than using
+                    // if condition on the type
+                    ExceptionDispatchInfo.Capture(
+                        exception.InnerException!).Throw();
+
+                    return true;
+                });
+            }
+        }
+
+
+        [TestMethod]
+        [DataRow("Bad Uri", "Could not find file *")]
+        [DataRow("https://bad uri", "The filename, directory name, or volume label syntax is incorrect. *")]
+        [DataRow("https://thisisanotherbadurlthatpresumablyldoesnotexist.notexist", "No such host is known. No such host is known.")]
+        [ExpectedException(typeof(WebException))]
+        public void FindTextInWebUri_GivenBadUri_ThrowException(string url, string messagePrefix)
+        {
+            try
+            {
+                ProgramWrapper.FindTextInWebUri("irrelevant", url, null);
+                Assert.Fail("Expected exception was not thrown.");
+            }
+            catch (Exception exception)
+            {
+                AssertExceptionTypeAndMessage(messagePrefix, exception);
+                throw;
+            }
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(System.ArgumentNullException))]
+        public void FindTextInWebUri_GivenNullUri_ThrowException()
+        {
+            try
+            {
+                ProgramWrapper.FindTextInWebUri("irrelevant", null!, null );
+                Assert.Fail("Expected exception was not thrown.");
             }
             catch (AggregateException exception)
             {
