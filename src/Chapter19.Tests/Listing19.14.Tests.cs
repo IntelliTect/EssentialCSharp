@@ -1,7 +1,7 @@
 using AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_13to14.Tests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using System.Net;
+using System.Runtime.ExceptionServices;
 using System.Threading.Tasks;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_14.Tests
@@ -13,16 +13,16 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_14.Tests
         [ClassInitialize]
         static public void ClassInitialize(TestContext textContext)
         {
-            ProgramWrapper = new ProgramWrapper<Task<int>>(Program.Main, Program.FindTextInWebUriAsync);
+            ProgramWrapper = new ProgramWrapper<Task<int>>(
+                (string[] args)=>Program.Main(args).AsTask().Wait(), 
+                Program.FindTextInWebUriAsync);
         }
 
-        override protected void AssertExceptionTypeAndMessage(string messagePrefix, Exception exception)
+        protected override void AssertExceptionTypeAndMessage(string messagePrefix, Exception exception)
         {
-            Assert.IsTrue(
-                    // Handle exceptions rethrown in Listing 19.14
-                    IntelliTect.TestTools.Console.StringExtensions.IsLike(exception.Message, "Rethrowing...*") &&
-                    IntelliTect.TestTools.Console.StringExtensions.IsLike(exception?.InnerException?.Message, messagePrefix)
-                );
+            Assert.AreEqual<Type>(typeof(AggregateException), exception.GetType());  // Testing type first (even though the cast will also verify)
+
+            AssertAggregateExceptionType(messagePrefix, (AggregateException)exception);
         }
     }
 }
