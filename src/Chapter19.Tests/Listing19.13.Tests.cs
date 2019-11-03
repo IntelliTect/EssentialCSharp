@@ -1,5 +1,6 @@
 using AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_13to14.Tests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_13.Tests
 {
@@ -10,7 +11,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_13.Tests
        [ClassInitialize]
        static public void ClassInitialize(TestContext textContext)
         {
-            ProgramWrapper = new ProgramWrapper<int>(Program.Main);
+            ProgramWrapper = new ProgramWrapper<int>(Program.Main, (url, findText, progress) => Program.FindTextInWebUri(url, findText));
         }
     }
 }

@@ -14,7 +14,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_15.Tests
         static public void ClassInitialize(TestContext textContext)
         {
             ProgramWrapper = new ProgramWrapper<Task<int>>(
-                (string[] args)=>Program.Main(args).AsTask().Wait());
+                (string[] args)=>Program.Main(args).AsTask().Wait(), 
+                Program.FindTextInWebUriAsync);
         }
 
         protected override void AssertExceptionTypeAndMessage(string messagePrefix, Exception exception)

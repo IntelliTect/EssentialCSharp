@@ -13,7 +13,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_14.Tests
         [ClassInitialize]
         static public void ClassInitialize(TestContext textContext)
         {
-            ProgramWrapper = new ProgramWrapper<Task<int>>(Program.Main);
+            ProgramWrapper = new ProgramWrapper<Task<int>>(Program.Main, Program.FindTextInWebUriAsync);
         }
 
         override protected void AssertExceptionTypeAndMessage(string messagePrefix, Exception exception)
