@@ -1,4 +1,4 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_15
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_14
 {
     using System;
     using System.IO;
@@ -7,79 +7,11 @@
     using System.Threading.Tasks;
     using System.Runtime.ExceptionServices;
 
-    static public class Program
+    public class Program
     {
-<<<<<<< HEAD:src/Chapter19/Listing19.14.AsynchronousHighLatencyUsingTaskAsynchronyPattern.cs
 
         async static public Task<int> FindTextInWebUriAsync(
-            string findText, string url,
-=======
-        public static void Main(string[] args)
-        {
-            try
-            {
-                if (args.Length == 0)
-                {
-                    Console.WriteLine("ERROR: No findText argument specified.");
-                    return;
-                }
-                string findText = args[0];
-                Console.WriteLine($"Searching for {findText}...");
-
-                string url = "http://www.IntelliTect.com";
-                if (args.Length > 1)
-                {
-                    url = args[1];
-                    // Ignore additional parameters
-                }
-                Console.Write(url);
-
-                Progress<DownloadProgressChangedEventArgs> progress = 
-                    new Progress<DownloadProgressChangedEventArgs>((value) =>
-                    {
-                        Console.Write(".");
-                    }
-                );
-
-                Task<int> task =
-                    FindTextInWebUriAsync(url, findText, progress);
-
-                Console.WriteLine(task.Result);
-
-            }
-            catch (AggregateException exception)
-            {
-                exception = exception.Flatten();
-                try
-                {
-                    exception.Handle(innerException =>
-                    {
-                        // Rethrowing rather than using
-                        // if condition on the type
-                        ExceptionDispatchInfo.Capture(
-                            exception.InnerException!).Throw();
-
-                        return true;
-                    });
-                }
-                catch (WebException)
-                {
-                    // ...
-                }
-                catch (IOException)
-                {
-                    // ...
-                }
-                catch (NotSupportedException)
-                {
-                    // ...
-                }
-            }
-        }
-
-        private static async Task<int> FindTextInWebUriAsync(
             string url, string findText,
->>>>>>> Updated examles to use WebClient:src/Chapter19/Listing19.15.AsynchronousHighLatencyUsingTaskAsynchronyPattern.cs
             IProgress<DownloadProgressChangedEventArgs>? progressCallback = null)
         {
             int textApperanceCount = 0;
@@ -155,7 +87,7 @@
             try
             {
                 int occurances =
-                    await FindTextInWebUriAsync(findText, url, progress);
+                    await FindTextInWebUriAsync(url, findText, progress);
                 Console.WriteLine(occurances);
             }
             catch (AggregateException)

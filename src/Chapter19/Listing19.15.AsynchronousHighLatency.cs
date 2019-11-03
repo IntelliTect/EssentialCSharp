@@ -7,10 +7,10 @@
     using System.Threading.Tasks;
     using System.Runtime.ExceptionServices;
 
-    static public class Program
+    public class Program
     {
         public static Task<int> FindTextInWebUriAsync(
-            string findText, string url,
+            string url, string findText,
             IProgress<DownloadProgressChangedEventArgs>? progressCallback = null)
         {
             int textApperanceCount = 0;
@@ -85,7 +85,7 @@
             try
             {
                 Task<int> task =
-                    FindTextInWebUriAsync(findText, url);
+                    FindTextInWebUriAsync(url, findText);
 
                 while (!task.Wait(100))
                 {
