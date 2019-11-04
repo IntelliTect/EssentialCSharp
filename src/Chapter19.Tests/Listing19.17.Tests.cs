@@ -1,13 +1,21 @@
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_17.Tests
 {
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using System;
     using System.Text.RegularExpressions;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     [TestClass]
     public class ProgramTests
     {
+
+        string TargetNamespaceName { get { return typeof(Program).Namespace!; } }
 
         [TestMethod]
         public void AsyncVoidReturnTest()

@@ -1,6 +1,7 @@
 using AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_13to14.Tests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Linq;
 using System.Runtime.ExceptionServices;
 using System.Threading.Tasks;
 
@@ -8,17 +9,17 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_14.Tests
 {
 
     [TestClass]
-    public class ProgramTests : BaseProgramTests<Task<int>>
+    public class ProgramTests : BaseProgramTests
     {
         [ClassInitialize]
         static public void ClassInitialize(TestContext textContext)
         {
-            ProgramWrapper = new ProgramWrapper<Task<int>>(
-                (string[] args)=>Program.Main(args).AsTask().Wait(), 
-                Program.FindTextInWebUriAsync);
+            ProgramWrapper = new ProgramWrapper(
+                Program.Main,
+                (findText, urls, progress) => Program.FindTextInWebUriAsync(findText, urls.First(), progress));
         }
 
-        protected override void AssertExceptionTypeAndMessage(string messagePrefix, Exception exception)
+        protected override void AssertMainException(string messagePrefix, Exception exception)
         {
             Assert.AreEqual<Type>(typeof(AggregateException), exception.GetType());  // Testing type first (even though the cast will also verify)
 
