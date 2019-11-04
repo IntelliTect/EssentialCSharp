@@ -10,12 +10,10 @@
     public class Program
     {
 
-        async static public Task<int> FindTextInWebUriAsync(
+        async static public IAsyncEnumerable<int> FindTextInWebUriAsync(
             string findText, IEnumerable<string> urls,
             IProgress<DownloadProgressChangedEventArgs>? progressCallback = null)
         {
-            int textApperanceCount = 0;
-
             using WebClient webClient = new WebClient();
             if (progressCallback is object)
             {
@@ -25,38 +23,48 @@
                 };
             }
 
-            byte[] downloadData =
-                await webClient.DownloadDataTaskAsync(urls.First());
-
-            using MemoryStream stream = new MemoryStream(downloadData);
-            using StreamReader reader = new StreamReader(stream);
-
-            int findIndex = 0;
-            int length = 0;
-            do
+            if(urls is null)
             {
-                char[] data = new char[reader.BaseStream.Length];
-                length = await reader.ReadAsync(data);
-                for (int i = 0; i < length; i++)
+                throw new ArgumentNullException(nameof(urls));
+            }
+
+            foreach (string url in urls)
+            {
+                int textApperanceCount = 0;
+
+                byte[] downloadData =
+                    await webClient.DownloadDataTaskAsync(url);
+
+                using MemoryStream stream = new MemoryStream(downloadData);
+                using StreamReader reader = new StreamReader(stream);
+
+                int findIndex = 0;
+                int length = 0;
+                do
                 {
-                    if (findText[findIndex] == data[i])
+                    char[] data = new char[reader.BaseStream.Length];
+                    length = await reader.ReadAsync(data);
+                    for (int i = 0; i < length; i++)
                     {
-                        findIndex++;
-                        if (findIndex == findText.Length)
+                        if (findText[findIndex] == data[i])
                         {
-                            // Text was found
-                            textApperanceCount++;
+                            findIndex++;
+                            if (findIndex == findText.Length)
+                            {
+                                // Text was found
+                                textApperanceCount++;
+                                findIndex = 0;
+                            }
+                        }
+                        else
+                        {
                             findIndex = 0;
                         }
                     }
-                    else
-                    {
-                        findIndex = 0;
-                    }
                 }
+                while (length != 0);
+                yield return textApperanceCount;
             }
-            while (length != 0);
-            return textApperanceCount;
         }
 
         async public static ValueTask Main(string[] args)
@@ -69,20 +77,18 @@
             string findText = args[0];
             Console.WriteLine($"Searching for {findText}...");
 
-            string[] urls = new string[args.Length];
+            // ERROR: Not allowed in Async Method
+            // Span<string> urls = args.AsSpan(1..);
+
+            IEnumerable<string> urls;
             if (args.Length > 1)
             {
-                for (int i = 0; i < urls.Length-1; i++)
-                {
-                    urls[i] = args[i+1];
-                    Console.Write(urls[i]);
-                }
+                urls = args.Skip(1);
             }
             else
             {
                 // The default if no Urls are specified.
-                urls[0] = "http://www.IntelliTect.com";
-                Console.Write(urls[0]);
+                urls = new string[] { "http://www.IntelliTect.com" };
             }
 
             Progress<DownloadProgressChangedEventArgs> progress =
@@ -94,9 +100,14 @@
 
             try
             {
-                int occurances =
-                    await FindTextInWebUriAsync(findText, urls, progress);
-                Console.WriteLine(occurances);
+                IEnumerator<string> urlsEnumerator = urls.GetEnumerator();
+                await foreach (int occurances in
+                    FindTextInWebUriAsync(findText, urls, progress))
+                {
+                    urlsEnumerator.MoveNext();
+
+                    Console.WriteLine($"{urlsEnumerator.Current}....{occurances}");
+                }
             }
             catch (AggregateException)
             {
