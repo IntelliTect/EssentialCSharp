@@ -7,7 +7,7 @@
     using System.Threading.Tasks;
     using System.Runtime.ExceptionServices;
 
-    public class Program
+    static public class Program
     {
 
         async static public Task<int> FindTextInWebUriAsync(
