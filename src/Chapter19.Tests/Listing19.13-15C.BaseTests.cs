@@ -27,9 +27,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_13to14.Tes
             await MainMethod(args);
         }
         async public Task<int> FindTextInWebUri(
-            string findText, IEnumerable<string> url, IProgress<DownloadProgressChangedEventArgs>? progressCallback)
+            string findText, IEnumerable<string> urls, IProgress<DownloadProgressChangedEventArgs>? progressCallback)
         {
-            return await FindTextInWebUriMethod(findText, url, progressCallback);
+            return await FindTextInWebUriMethod(findText, urls, progressCallback);
         }
     }
 
