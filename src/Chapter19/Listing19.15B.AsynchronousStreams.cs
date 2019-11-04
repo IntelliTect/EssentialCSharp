@@ -7,7 +7,7 @@
     using System.Threading.Tasks;
     using System.Collections.Generic;
 
-    public class Program
+    static public class Program
     {
 
         async static public IAsyncEnumerable<int> FindTextInWebUriAsync(
