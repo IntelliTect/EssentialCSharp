@@ -5,7 +5,7 @@
     using System.Linq;
     using System.Net;
 
-    public class Program
+    static  public class Program
     {
 
         public static int FindTextInWebUri(

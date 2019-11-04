@@ -11,7 +11,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_13.Tests
     public class ProgramTests : BaseProgramTests
     {
        [ClassInitialize]
-       static public void ClassInitialize(TestContext textContext)
+       static public void ClassInitialize(TestContext _)
         {
             ProgramWrapper = new ProgramWrapper(
                 (args)=>
