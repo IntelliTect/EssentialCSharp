@@ -3,36 +3,40 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_13to14.Tes
 {
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System;
+    using System.Collections.Generic;
     using System.Net;
     using System.Runtime.ExceptionServices;
+    using System.Threading.Tasks;
 
-    public class ProgramWrapper<TFindTextInWebUriReturn>
+    public class ProgramWrapper
     {
-        Action<string[]> MainMethod { get; }
-        Func<string, string, IProgress<DownloadProgressChangedEventArgs>?, TFindTextInWebUriReturn>? FindTextInWebUriMethod { get; }
+        Func<string[],ValueTask> MainMethod { get; }
+        private Func<string, IEnumerable<string>, IProgress<DownloadProgressChangedEventArgs>?, Task<int>> FindTextInWebUriMethod { get; }
 
         public ProgramWrapper(
-            Action<string[]> mainMethod, Func<string, string, IProgress<DownloadProgressChangedEventArgs>?, TFindTextInWebUriReturn>? findTextInWebUriMethod = null)
+            Func<string[], ValueTask> mainMethod, 
+            Func<string, IEnumerable<string>, 
+                IProgress<DownloadProgressChangedEventArgs>?, Task<int>> findTextInWebUriMethod)
         {
             MainMethod = mainMethod;
             FindTextInWebUriMethod = findTextInWebUriMethod;
         }
 
-        public void Main(string[] args)
+        async public ValueTask Main(string[] args)
         {
-            MainMethod(args);
+            await MainMethod(args);
         }
-        public TFindTextInWebUriReturn FindTextInWebUri(
-            string findText, string url, IProgress<DownloadProgressChangedEventArgs>? progressCallback)
+        async public Task<int> FindTextInWebUri(
+            string findText, IEnumerable<string> url, IProgress<DownloadProgressChangedEventArgs>? progressCallback)
         {
-            return FindTextInWebUri(url, findText, progressCallback);
+            return await FindTextInWebUriMethod(findText, url, progressCallback);
         }
     }
 
-    abstract public class BaseProgramTests<TFindTextInWebUriReturn>
+    abstract public class BaseProgramTests
     {
 #pragma warning disable CS8618 // Non-nullable field is uninitialized. Consider declaring as nullable.
-        static public ProgramWrapper<TFindTextInWebUriReturn> ProgramWrapper { get; set; }
+        static public ProgramWrapper ProgramWrapper { get; set; }
 #pragma warning restore CS8618 // Non-nullable field is uninitialized. Consider declaring as nullable.
 
         [TestMethod]
@@ -45,7 +49,7 @@ http://www.IntelliTect.com";
             string actual = IntelliTect.TestTools.Console.ConsoleAssert.Execute("",
             () =>
             {
-                ProgramWrapper.Main(new string[] { findText });
+                ProgramWrapper.Main(new string[] { findText }).AsTask().Wait();
             });
 
             IntelliTect.TestTools.Console.StringExtensions.IsLike(
@@ -64,7 +68,7 @@ http://www.IntelliTect.com";
             string actual = IntelliTect.TestTools.Console.ConsoleAssert.Execute("",
             () =>
             {
-                ProgramWrapper.Main(new string[] { findText });
+                ProgramWrapper.Main(new string[] { findText }).AsTask().Wait();
             });
 
             IntelliTect.TestTools.Console.StringExtensions.IsLike(
@@ -80,7 +84,7 @@ http://www.IntelliTect.com";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected, () =>
             {
-                ProgramWrapper.Main(Array.Empty<string>());
+                ProgramWrapper.Main(Array.Empty<string>()).AsTask().Wait();
             });
         }
 
@@ -89,24 +93,28 @@ http://www.IntelliTect.com";
         [DataRow("https://bad uri", "The filename, directory name, or volume label syntax is incorrect. *")]
         [DataRow("https://thisisanotherbadurlthatpresumablyldoesnotexist.notexist", "No such host is known. No such host is known.")]
         [ExpectedException(typeof(WebException))]
-        public void Main_GivenBadUri_ThrowException(string uri, string messagePrefix)
+        async public ValueTask Main_GivenBadUri_ThrowException(string uri, string messagePrefix)
         {
             try
             {
-                ProgramWrapper.Main(new string[] { "irrelevant", uri });
+                await ProgramWrapper.Main(new string[] { "irrelevant", uri });
                 Assert.Fail("Expected exception was not thrown.");
             }
             catch (Exception exception)
             {
-                AssertExceptionTypeAndMessage(messagePrefix, exception);
+                AssertMainException(messagePrefix, exception);
                 throw;
             }
         }
 
-        protected virtual void AssertExceptionTypeAndMessage(string messagePrefix, Exception exception)
+        protected virtual void AssertMainException(string messagePrefix, Exception exception)
         {
             // Default to testing for Web Exception
-            Assert.AreEqual<Type>(typeof(WebException), exception.GetType());
+            AssertWebExceptionType(messagePrefix, (WebException)exception);
+        }
+
+        private static void AssertWebExceptionType(string messagePrefix, WebException exception)
+        {
             Assert.IsTrue(
                 IntelliTect.TestTools.Console.StringExtensions.IsLike(exception.Message, messagePrefix)
             );
@@ -137,11 +145,11 @@ http://www.IntelliTect.com";
 
         [TestMethod]
         [ExpectedException(typeof(System.ArgumentNullException))]
-        public void Main_GivenNullUri_ThrowException()
+        async public Task Main_GivenNullUri_ThrowException()
         {
             try
             {
-                ProgramWrapper.Main(new string[] { "irrelevant", null! });
+                await ProgramWrapper.Main(new string[] { "irrelevant", null! });
                 Assert.Fail("Expected exception was not thrown.");
             }
             catch (AggregateException exception)
@@ -168,27 +176,37 @@ http://www.IntelliTect.com";
         [DataRow("https://bad uri", "The filename, directory name, or volume label syntax is incorrect. *")]
         [DataRow("https://thisisanotherbadurlthatpresumablyldoesnotexist.notexist", "No such host is known. No such host is known.")]
         [ExpectedException(typeof(WebException))]
-        public void FindTextInWebUri_GivenBadUri_ThrowException(string url, string messagePrefix)
+        async public Task FindTextInWebUri_GivenBadUri_ThrowException(string url, string messagePrefix)
         {
             try
             {
-                ProgramWrapper.FindTextInWebUri("irrelevant", url, null);
+                await ProgramWrapper.FindTextInWebUri("irrelevant", new string[] { url }, null);
                 Assert.Fail("Expected exception was not thrown.");
+            }
+            catch(AssertFailedException)
+            {
+                throw;
             }
             catch (Exception exception)
             {
-                AssertExceptionTypeAndMessage(messagePrefix, exception);
+                AssertFindTextInWebUriException(messagePrefix, exception);
                 throw;
             }
         }
 
+        virtual protected void AssertFindTextInWebUriException(string messagePrefix, Exception exception)
+        {
+            // Default to asserting a webException
+            AssertWebExceptionType(messagePrefix, (WebException)exception);
+        }
+
         [TestMethod]
         [ExpectedException(typeof(System.ArgumentNullException))]
-        public void FindTextInWebUri_GivenNullUri_ThrowException()
+        async public Task FindTextInWebUri_GivenNullUri_ThrowException()
         {
             try
             {
-                ProgramWrapper.FindTextInWebUri("irrelevant", null!, null );
+                await ProgramWrapper.FindTextInWebUri("irrelevant", null!, null );
                 Assert.Fail("Expected exception was not thrown.");
             }
             catch (AggregateException exception)
