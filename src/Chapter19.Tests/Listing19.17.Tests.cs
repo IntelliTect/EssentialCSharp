@@ -15,7 +15,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_17.Tests
     public class ProgramTests
     {
 
-        string TargetNamespaceName { get { return typeof(Program).Namespace; } }
+        string TargetNamespaceName { get { return typeof(Program).Namespace!; } }
 
         [TestMethod]
         public void AsyncVoidReturnTest()

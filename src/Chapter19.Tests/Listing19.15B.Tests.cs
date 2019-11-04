@@ -1,52 +1,27 @@
+using AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_13to14.Tests;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Threading.Tasks;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_15B.Tests
 {
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using System;
-    using System.Threading.Tasks;
 
     [TestClass]
-    public class ProgramTests
+    public class ProgramTests : BaseProgramTests
     {
-        [TestMethod]
-        public void GivenNoArgs_DownlaodIntelliTectDotCom()
+        [ClassInitialize]
+        static public void ClassInitialize(TestContext textContext)
         {
-<<<<<<< HEAD
-            string expected = "http://www.IntelliTect.com..............*";
-=======
-            string expected = "https://www.IntelliTect.com.*";
->>>>>>> Create Async example #WIP
-
-            IntelliTect.TestTools.Console.ConsoleAssert.ExpectLike(expected,
-            () =>
-            {
-<<<<<<< HEAD
-                Program.Main(Array.Empty<string>());
-=======
-                Program.Main(Array.Empty<string>()).Wait();
->>>>>>> Create Async example #WIP
-            });
+            ProgramWrapper = new ProgramWrapper(
+                Program.Main,
+                (findText, urls, progress) => Program.FindTextInWebUriAsync(findText, urls, progress));
         }
 
-        [TestMethod]
-        public void GivenNoArgs_DownlaodIntelliTectDotComAndGoogleDotCom()
+        protected override void AssertMainException(string messagePrefix, Exception exception)
         {
-<<<<<<< HEAD
-            string expected = "http://www.IntelliTect.com..............*";
-=======
-            string expected = @"https://IntelliTect.com.*
-https://google.com......*";
->>>>>>> Create Async example #WIP
+            Assert.AreEqual<Type>(typeof(AggregateException), exception.GetType());  // Testing type first (even though the cast will also verify)
 
-            IntelliTect.TestTools.Console.ConsoleAssert.ExpectLike(expected,
-            () =>
-            {
-<<<<<<< HEAD
-                Program.Main(new[] { "https://IntelliTect.com", "https://google.com"});
-=======
-                Program.Main(new[] { "https://IntelliTect.com", "https://google.com"}).Wait();
->>>>>>> Create Async example #WIP
-            });
+            AssertAggregateExceptionType(messagePrefix, (AggregateException)exception);
         }
     }
 }
