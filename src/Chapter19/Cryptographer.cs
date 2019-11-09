@@ -8,7 +8,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
     public class Cryptographer : IDisposable
     {
         #region PROPERTIES
-        public SymmetricAlgorithm CryptoAlgorithm { get;  }
+        public SymmetricAlgorithm CryptoAlgorithm { get; }
         #endregion PROPERTIES
 
         #region CONSTRUCTORS
@@ -87,7 +87,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                     }
                 }
                 encrypted = memoryStream.ToArray();
-             }
+            }
 
             return encrypted;
         }
@@ -109,52 +109,42 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
 
         static public async Task<string> DecryptAsync(byte[] encryptedData, byte[] key, byte[] iV)
         {
-            string plaintext = null;
+            string plaintext;
             // Create AesManaged    
-            using (AesManaged aes = new AesManaged())
-            {
-                // Create a decryptor    
-                ICryptoTransform decryptor = aes.CreateDecryptor(key, iV);
-                // Create the streams used for decryption.    
-                plaintext = await DecryptAsync(encryptedData, decryptor);
-            }
+            using AesManaged aes = new AesManaged();
+            // Create a decryptor    
+            ICryptoTransform decryptor = aes.CreateDecryptor(key, iV);
+            // Create the streams used for decryption.    
+            plaintext = await DecryptAsync(encryptedData, decryptor);
             return plaintext;
         }
 
         private static async Task<string> DecryptAsync(byte[] encryptedData, ICryptoTransform decryptor)
         {
-            using (MemoryStream encryptedStream = new MemoryStream(encryptedData))
-            {
-                return await DecryptAsync(encryptedStream, decryptor);
-            }
+            using MemoryStream encryptedStream = new MemoryStream(encryptedData);
+            return await DecryptAsync(encryptedStream, decryptor);
         }
 
         private static async Task DecryptAsync(byte[] encryptedData, ICryptoTransform decryptor, Stream outputStream)
         {
-            using (MemoryStream encryptedStream = new MemoryStream(encryptedData))
-            {
-                await DecryptAsync(encryptedStream, decryptor, outputStream);
-            }
+            using MemoryStream encryptedStream = new MemoryStream(encryptedData);
+            await DecryptAsync(encryptedStream, decryptor, outputStream);
         }
 
         private static async Task<string> DecryptAsync(Stream encryptedStream, ICryptoTransform decryptor)
         {
             // Create crypto stream
-            using (CryptoStream cryptoStream = new CryptoStream(encryptedStream, decryptor, CryptoStreamMode.Read))
+            using CryptoStream cryptoStream = new CryptoStream(encryptedStream, decryptor, CryptoStreamMode.Read);
             // Read crypto stream    
-            using (StreamReader reader = new StreamReader(cryptoStream))
-            {
-                return await reader.ReadToEndAsync();
-            }
+            using StreamReader reader = new StreamReader(cryptoStream);
+            return await reader.ReadToEndAsync();
         }
 
         private static async Task DecryptAsync(Stream encryptedStream, ICryptoTransform decryptor, Stream decryptedStream)
         {
             // Create crypto stream
-            using (CryptoStream cryptoStream = new CryptoStream(encryptedStream, decryptor, CryptoStreamMode.Read))
-            {
-                await cryptoStream.CopyToAsync(decryptedStream);
-            }
+            using CryptoStream cryptoStream = new CryptoStream(encryptedStream, decryptor, CryptoStreamMode.Read);
+            await cryptoStream.CopyToAsync(decryptedStream);
         }
 
         #region IDisposable Members
