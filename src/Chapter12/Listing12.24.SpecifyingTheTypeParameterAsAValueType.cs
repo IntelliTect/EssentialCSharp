@@ -8,12 +8,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_24
         where T : struct
     {
         // ...
-        public string ToString(string format, IFormatProvider formatProvider)
+        public string ToString(string? format, IFormatProvider? formatProvider)
         {
             throw new NotImplementedException();
         }
 
-        public int CompareTo(object obj)
+        public int CompareTo(object? obj)
         {
             throw new NotImplementedException();
         }
