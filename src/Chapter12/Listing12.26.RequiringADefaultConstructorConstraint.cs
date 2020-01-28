@@ -4,8 +4,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_26
     using System.Collections.Generic;
 
     public class EntityBase<TKey>
+        where TKey: notnull
     {
         public TKey Key { get; set; }
+
+        public EntityBase(TKey key)
+        {
+            Key = key;
+        }
     }
 
     public class EntityDictionary<TKey, TValue> :
@@ -17,8 +23,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_26
 
         public TValue MakeValue(TKey key)
         {
-            TValue newEntity = new TValue();
-            newEntity.Key = key;
+            TValue newEntity = new TValue
+            {
+                Key = key
+            };
             Add(newEntity.Key, newEntity);
             return newEntity;
         }

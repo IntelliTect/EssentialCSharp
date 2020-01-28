@@ -7,6 +7,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_20
 
     public class BinaryTree<T>
     {
+        public BinaryTree(T item)
+        {
+            Item = item;
+        }
+
         public T Item { get; set; }
 
         public Pair<BinaryTree<T>> SubItems

@@ -7,7 +7,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_13
         public Pair(T first)
         {
             First = first;
-            Second = default(T);
+// Justifiction: Ignore warning pending struct/class constraints, later on in the chapter, 
+//               so that Second can be declared as T?.
+#pragma warning disable CS8601 // Possible null reference assignment.
+            Second = default;
+#pragma warning restore CS8601 // Possible null reference assignment.
         }
 
         public Pair(T first, T second)
@@ -18,6 +22,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_13
 
         public T First { get; set; }
         public T Second { get; set; }
-
     }
 }
