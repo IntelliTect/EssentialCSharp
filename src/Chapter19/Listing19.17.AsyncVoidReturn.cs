@@ -6,11 +6,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_17
 
     public class AsyncSynchronizationContext : SynchronizationContext
     {
-        public Exception Exception { get; set; }
+        public Exception? Exception { get; set; }
         public ManualResetEventSlim ResetEvent { get; } = 
             new ManualResetEventSlim();
 
-        public override void Send(SendOrPostCallback callback, object state)
+        public override void Send(SendOrPostCallback callback, object? state)
         {
             try
             {
@@ -27,7 +27,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_17
             }
         }
 
-        public override void Post(SendOrPostCallback callback, object state)
+        public override void Post(SendOrPostCallback callback, object? state)
         {
             try
             {
@@ -60,7 +60,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_17
             try
             {
 
-                OnEvent(null, null);
+                OnEvent(typeof(Program), new EventArgs());
 
 #if WithOutUsingResetEvent
             Task.Delay(1000);  // 

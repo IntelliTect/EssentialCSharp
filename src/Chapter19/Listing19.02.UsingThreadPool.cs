@@ -9,7 +9,7 @@
         public static void Main()
         {
             ThreadPool.QueueUserWorkItem(DoWork, '+');
-
+            
             for(int count = 0; count < Repetitions; count++)
             {
                 Console.Write('-');
@@ -21,7 +21,7 @@
             // production code.
             Thread.Sleep(1000);
         }
-        public static void DoWork(object state)
+        public static void DoWork(object? state)
         {
             for(int count = 0; count < Repetitions; count++)
             {
