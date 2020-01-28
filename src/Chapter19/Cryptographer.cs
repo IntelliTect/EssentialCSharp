@@ -55,10 +55,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
 
         private static async Task<byte[]> EncryptAsync(string plainText, ICryptoTransform encryptor)
         {
-            using (MemoryStream memoryStream = new MemoryStream())
-            {
-                return await EncryptAsync(plainText, encryptor, memoryStream);
-            }
+            using MemoryStream memoryStream = new MemoryStream();
+            return await EncryptAsync(plainText, encryptor, memoryStream);
         }
 
         private static async Task<byte[]> EncryptAsync(string plainText, ICryptoTransform encryptor, Stream outputStream)
