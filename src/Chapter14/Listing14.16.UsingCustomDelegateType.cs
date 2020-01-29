@@ -20,7 +20,7 @@
         public delegate void TemperatureChangeHandler(
             object sender, TemperatureArgs newTemperature);
 
-        public event TemperatureChangeHandler
+        public event TemperatureChangeHandler?
             OnTemperatureChange;
 
         public float CurrentTemperature
@@ -34,12 +34,9 @@
                     // If there are any subscribers
                     // then notify them of changes in 
                     // temperature
-                    if(OnTemperatureChange != null)
-                    {
-                        // Call subscribers
-                        OnTemperatureChange(
-                          this, new TemperatureArgs(value));
-                    }
+                    // Call subscribers
+                    OnTemperatureChange?.Invoke(
+                      this, new TemperatureArgs(value));
                 }
             }
         }

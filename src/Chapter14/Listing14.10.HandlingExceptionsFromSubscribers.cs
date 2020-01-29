@@ -8,7 +8,7 @@
     {
         // Using C# 3.0 or later syntax
         // Define the event publisher
-        public Action<float> OnTemperatureChange;
+        public Action<float>? OnTemperatureChange;
 
         public float CurrentTemperature
         {
@@ -18,7 +18,7 @@
                 if(value != CurrentTemperature)
                 {
                     _CurrentTemperature = value;
-                    Action<float> onTemperatureChange = OnTemperatureChange;
+                    Action<float>? onTemperatureChange = OnTemperatureChange;
                     if (onTemperatureChange != null)
                     {
                         List<Exception> exceptionCollection =

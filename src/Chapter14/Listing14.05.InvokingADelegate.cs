@@ -5,7 +5,7 @@
     public class Thermostat
     {
         // Define the event publisher
-        public Action<float> OnTemperatureChange { get; set; }
+        public Action<float>? OnTemperatureChange { get; set; }
 
         public float CurrentTemperature
         {

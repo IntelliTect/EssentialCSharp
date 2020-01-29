@@ -1,5 +1,7 @@
-﻿// In an actual implementation _OnTemperatureChange would be used
-#pragma warning disable CS0649
+﻿// This is pseudo code to represent the generated IL so guidelines not followed.
+#pragma warning disable IDE0044 // Add readonly modifier
+#pragma warning disable IDE0060 // Remove unused parameter
+#pragma warning disable IDE1006 // Naming Styles
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_18
 {
@@ -7,10 +9,17 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_18
 
     public class Thermostat
     {
+        // Used to suppress warning CS0469: field never assigned to, and 
+        // will always have its default value null.
+        public Thermostat(EventHandler<TemperatureArgs>? onTemperatureChange)
+        {
+            _OnTemperatureChange = onTemperatureChange;
+        }
+
         // ...
         // Declaring the delegate field to save the 
         // list of subscribers
-        private EventHandler<TemperatureArgs> _OnTemperatureChange;
+        private EventHandler<TemperatureArgs>? _OnTemperatureChange;
 
         public void add_OnTemperatureChange(
             EventHandler<TemperatureArgs> handler)

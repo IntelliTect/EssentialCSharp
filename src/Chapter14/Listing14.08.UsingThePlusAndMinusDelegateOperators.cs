@@ -26,7 +26,7 @@
             delegate3(60);
 
             Console.WriteLine("Uncombine delegates using - operator:");
-            delegate3 = delegate3 - delegate2;
+            delegate3 = (delegate3 - delegate2)!;
             delegate3(60);
         }
     }

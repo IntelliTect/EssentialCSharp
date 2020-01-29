@@ -11,12 +11,7 @@
                 NewTemperature = newTemperature;
             }
 
-            public float NewTemperature
-            {
-                get { return _newTemperature; }
-                set { _newTemperature = value; }
-            }
-            private float _newTemperature;
+            public float NewTemperature { get; set; }
         }
 
         // Define the event publisher

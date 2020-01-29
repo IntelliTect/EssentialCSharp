@@ -1,8 +1,11 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_17
+﻿// This is pseudo code to represent the generated IL so guidelines not followed.
+#pragma warning disable CS0067 // The event is never used
+#pragma warning disable CS0469 // Field is never assigned to, and will always have its default value - null
+
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_17
 {
     using System;
 // In an actual implementation we would utilize this event
-#pragma warning disable CS0067
 
     public class Thermostat
     {
@@ -13,15 +16,9 @@
                 NewTemperature = newTemperature;
             }
 
-            public float NewTemperature
-            {
-                get { return _NewTemperature; }
-                set { _NewTemperature = value; }
-            }
-            private float _NewTemperature;
+            public float NewTemperature { get; set; }
         }
 
-        public event EventHandler<TemperatureArgs> OnTemperatureChange;
+        public event EventHandler<TemperatureArgs>? OnTemperatureChange;
     }
-#pragma warning restore CS0067
 }
