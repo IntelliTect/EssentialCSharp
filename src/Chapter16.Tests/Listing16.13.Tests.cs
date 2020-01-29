@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Linq;
 using System;
+using AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_13.Tests
 {
@@ -13,7 +14,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_13.Tests
         {
             // Intentionally use something other than select to 
             // determine the result.
-            string expected = Program.Keywords.Aggregate("",
+            string expected = CSharp.Keywords.Aggregate("",
                 (string result, string word) => {
                     var splitCharactersOntoEachLine = word.Aggregate("",
                 (string wordResult, char character) =>
