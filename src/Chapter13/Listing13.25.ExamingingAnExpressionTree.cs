@@ -38,11 +38,9 @@
         }
 
         private static void PrintSingle(
-            Expression expression, int indent)
-        {
+                Expression expression, int indent) =>
             Console.WriteLine("{0," + indent * 5 + "}{1}",
               "", NodeToString(expression));
-        }
 
         private static string NodeToString(Expression expression) =>
             expression.NodeType switch
