@@ -1,10 +1,13 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_06
+﻿// Justification: Only partial implementation provided.
+#pragma warning disable IDE0051 // Remove unused private members
+
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_06
 {
     using System.Threading;
 
     class SynchronizationUsingInterlocked
     {
-        private static object _Data;
+        private static object? _Data;
 
         // Initialize data if not yet assigned
         static void Initialize(object newValue)

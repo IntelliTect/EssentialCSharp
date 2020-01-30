@@ -8,29 +8,25 @@
     {
         public static void Main()
         {
-            // Indicates whether this is the first
-            // application instance.
-            bool firstApplicationInstance;
-
             // Obtain the mutex name from the full 
             // assembly name.
             string mutexName =
-                Assembly.GetEntryAssembly().FullName;
+                Assembly.GetEntryAssembly()!.FullName!;
 
-            using(Mutex mutex = new Mutex(false, mutexName,
-                 out firstApplicationInstance))
+            // firstApplicationInstance indicates whether this is the first
+            // application instance.
+            using Mutex mutex = new Mutex(false, mutexName,
+                 out bool firstApplicationInstance);
+
+            if (!firstApplicationInstance)
             {
-
-                if(!firstApplicationInstance)
-                {
-                    Console.WriteLine(
-                        "This application is already running.");
-                }
-                else
-                {
-                    Console.WriteLine("ENTER to shut down");
-                    Console.ReadLine();
-                }
+                Console.WriteLine(
+                    "This application is already running.");
+            }
+            else
+            {
+                Console.WriteLine("ENTER to shut down");
+                Console.ReadLine();
             }
         }
     }

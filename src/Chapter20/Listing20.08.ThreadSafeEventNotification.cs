@@ -4,7 +4,7 @@
 
     class Program
     {
-        private static TemperatureChangedHandler OnTemperatureChanged;
+        private static TemperatureChangedHandler OnTemperatureChanged = delegate { };
 
         public void Main()
         {
@@ -24,12 +24,15 @@
 #endif
         }
 
-        public object value { get; set; }
+        // Justification: Lowercase to simulate the value keyword form a stetter.
+        #pragma warning disable IDE1006 // Naming Styles
+        public object? value { get; set; }
+        #pragma warning restore IDE1006 // Naming Styles
     }
 
     class TemperatureEventArgs
     {
-        public TemperatureEventArgs(object value)
+        public TemperatureEventArgs(object? _)
         {
             // ...
         }
