@@ -1,31 +1,32 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_07
 {
-using System.ComponentModel;
+    using System.ComponentModel;
 
 
-public class Person : INotifyPropertyChanged
-{
-    public event PropertyChangedEventHandler PropertyChanged;
-    public Person(string name)
+    public class Person : INotifyPropertyChanged
     {
-        Name = name;
-    }
-    private string _Name;
-    public string Name
-    {
-        get { return _Name; }
-        set
+        public event PropertyChangedEventHandler PropertyChanged = delegate { };
+
+        public Person(string name)
         {
-            if (_Name != value)
+            Name = name;
+        }
+        private string _Name=string.Empty;
+        public string Name
+        {
+            get { return _Name; }
+            set
             {
-                _Name = value;
-                PropertyChanged?.Invoke(
-                    this,
-                    new PropertyChangedEventArgs(
-                        nameof(Name)));
+                if (_Name != value)
+                {
+                    _Name = value;
+                    PropertyChanged?.Invoke(
+                        this,
+                        new PropertyChangedEventArgs(
+                            nameof(Name)));
+                }
             }
         }
+        // ...
     }
-    // ...
-}
 }

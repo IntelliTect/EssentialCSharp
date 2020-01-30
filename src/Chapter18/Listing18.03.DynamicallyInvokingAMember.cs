@@ -8,10 +8,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_03
     {
         public static void Main(string[] args)
         {
-            string errorMessage;
             CommandLineInfo commandLine = new CommandLineInfo();
             if(!CommandLineHandler.TryParse(
-                args, commandLine, out errorMessage))
+                args, commandLine, out string? errorMessage))
             {
                 Console.WriteLine(errorMessage);
                 DisplayHelp();
@@ -50,7 +49,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_03
         {
             public bool Help { get; set; }
 
-            public string Out { get; set; }
+            public string? Out { get; set; }
 
             public ProcessPriorityClass Priority { get; set; }
                 = ProcessPriorityClass.Normal;
@@ -62,15 +61,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_03
     {
         public static void Parse(string[] args, object commandLine)
         {
-            string errorMessage;
-            if(!TryParse(args, commandLine, out errorMessage))
+            if(!TryParse(args, commandLine, out string? errorMessage))
             {
                 throw new Exception(errorMessage);
             }
         }
 
         public static bool TryParse(string[] args, object commandLine,
-            out string errorMessage)
+            out string? errorMessage)
         {
             bool success = false;
             errorMessage = null;
@@ -84,7 +82,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_03
 
                     // Remove the slash|dash
                     option = optionParts[0].Remove(0, 1);
-                    PropertyInfo property =
+                    PropertyInfo? property =
                         commandLine.GetType().GetProperty(option,
                             BindingFlags.IgnoreCase |
                             BindingFlags.Instance |
@@ -131,10 +129,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_03
                             success = false;
                             errorMessage = 
                                 $@"Data type '{
-                                    property.PropertyType.ToString()
-                                    }' on {
-                                    commandLine.GetType().ToString()
-                                    } is not supported.";
+                                    property.PropertyType }' on {
+                                    commandLine.GetType() } is not supported.";
                         }
                     }
                     else

@@ -12,7 +12,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
             return Calculate();
         }
 
-        public static string Calculate(int digits = 100)
+        public static string Calculate(int digits = Digits)
         {
             return Calculate(digits, 0);
         }
@@ -22,7 +22,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
             DoWorkEventArgs eventArgs = new DoWorkEventArgs(digits);
 
             CalculatePi(typeof(PiCalculator), eventArgs, startingAt);
-            return (string)eventArgs.Result;
+            return (string)eventArgs.Result!;
         }
 
         private static void CalculatePi(

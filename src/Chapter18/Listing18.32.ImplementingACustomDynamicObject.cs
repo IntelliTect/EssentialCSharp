@@ -19,7 +19,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_32
         }
 
         public override bool TryGetMember(
-            GetMemberBinder binder, out object result)
+            GetMemberBinder binder, out object? result)
         {
             bool success = false;
             result = null;

@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <ProductName>Chapter18</ProductName>
+    <ChapterNumber>18</ChapterNumber>
   </PropertyGroup>
   <PropertyGroup>
     <!-- CS0612 is an Obsolete warning demonstrating the Obsolete attribute -->
