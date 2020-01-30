@@ -8,7 +8,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_19
     {
         static public Task<Process> RunProcessAsync(
             string fileName,
-            string arguments = null,
+            string arguments = "",
             CancellationToken cancellationToken =
                 default(CancellationToken))
         {
