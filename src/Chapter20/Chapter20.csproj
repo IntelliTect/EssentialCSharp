@@ -2,7 +2,6 @@
   <PropertyGroup>
     <ChapterNumber>20</ChapterNumber>
     <WarningLevel>2</WarningLevel>
-    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
   </PropertyGroup>
   <Import Project="..\Chapter.props" />
   <ItemGroup>
