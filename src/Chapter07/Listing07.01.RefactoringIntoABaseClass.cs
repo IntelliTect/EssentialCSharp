@@ -1,13 +1,12 @@
-﻿// Non-nullable field is uninitialized. Consider declaring as nullable.
-#pragma warning disable CS8618 // Disabled pending base class invocation
-
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_01
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_01
 {
     using System;
+    using System.Diagnostics.CodeAnalysis;
 
     public class PdaItem
     {
-        public string Name { get; set; }
+        [DisallowNull]
+        public string? Name { get; set; }
         public DateTime LastUpdated { get; set; }
     }
 

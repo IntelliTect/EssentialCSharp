@@ -1,6 +1,7 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_19
 {
     using System;
+    using System.Diagnostics.CodeAnalysis;
     using static System.Environment;
 
     // Define an abstract class
@@ -16,13 +17,10 @@
     }
     public class Contact : PdaItem
     {
-        // Non-nullable field is uninitialized. Consider declaring as nullable.
-        #pragma warning disable CS8618 
         public Contact(string name)
             : base(name)
         {
         }
-        #pragma warning restore CS8618
 
         public override string Name
         {
@@ -40,8 +38,10 @@
             }
         }
 
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
+        [NotNull][DisallowNull]
+        public string? FirstName { get; set; }
+        [NotNull][DisallowNull]
+        public string? LastName { get; set; }
         public string? Address { get; set; }
 
         public override string GetSummary()

@@ -1,8 +1,4 @@
-﻿// Non-nullable field is uninitialized. Consider declaring as nullable.
-#pragma warning disable CS8618 // Ignored pending constructor
-#pragma warning disable IDE0059 // Unnecessary assignment of a value
-
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_25
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_25B
 {
     using System;
     using System.IO;
@@ -17,12 +13,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_25
     public class Contact : PdaItem
     {
 
-        // ...
+        public Contact(string name) => Name = name;
 
         static public Contact Load(PdaItem pdaItem)
         {
-            #pragma warning disable IDE0019 // Use pattern matching
+#pragma warning disable IDE0019 // Use pattern matching
             Contact? contact = pdaItem as Contact;
+#pragma warning restore IDE0019 // Use pattern matching
             if (contact != null)
             {
                 System.Diagnostics.Trace.WriteLine(
@@ -31,11 +28,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_25
             }
             else
             {
-                Contact newContact = new Contact();
-
-                // ...
-
-                return newContact;
+                throw new ArgumentException(
+                    $"{nameof(pdaItem)} was not of type {nameof(Contact)}");
             }
         }
 

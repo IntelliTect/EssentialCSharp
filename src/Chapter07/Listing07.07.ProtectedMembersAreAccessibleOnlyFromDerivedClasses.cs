@@ -1,5 +1,4 @@
-﻿// Non-nullable field is uninitialized. Consider declaring as nullable.
-#pragma warning disable CS8618 // Ignored pending constructor
+﻿// Justification: Invalid code commented out resulting in partial implementation
 #pragma warning disable IDE0059 // Unnecessary assignment of a value
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_07
@@ -7,61 +6,42 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_07
     using System;
     using System.IO;
 
-    public class Program
-    {
-        public static void Main()
-        {
-            Contact contact = new Contact
-            {
-                Name = "Inigo Montoya"
-            };
-
-            // ERROR:  'PdaItem.ObjectKey' is inaccessible
-            // due to its protection level
-            // contact.ObjectKey = Guid.NewGuid(); //uncomment this line and it will not compile
-        }
-    }
-
     public class PdaItem
     {
+        public PdaItem(Guid objectKey) => ObjectKey = objectKey;
         protected Guid ObjectKey { get; set; }
-
-        // ...
     }
 
     public class Contact : PdaItem
     {
+        public Contact(Guid objectKey)
+            : base(objectKey) { }
+
         public void Save()
         {
             // Instantiate a FileStream using <ObjectKey>.dat
             // for the filename
-            FileStream stream = System.IO.File.OpenWrite(
+            using FileStream stream = File.OpenWrite(
                 ObjectKey + ".dat");
             // ...
             stream.Dispose();
         }
+        static public Contact Copy(Contact contact)
+            => new Contact(contact.ObjectKey);
 
-        static public Contact Load(PdaItem pdaItem)
+         // static public Contact Copy(PdaItem pdaItem) =>
+            // Error: Cannot access protected member PdaItem.ObjectKey.
+            // new Contact(((Contact)pdaItem).ObjectKey);
+    }
+
+    public class Program
+    {
+        public static void Main()
         {
-            if(pdaItem is Contact contact)
-            {
-                System.Diagnostics.Trace.WriteLine(
-                    $"ObjectKey: {contact.ObjectKey}");
-                return (Contact)pdaItem;
-            }
-            else
-            {
-                Contact newContact = new Contact();
-                // ERROR:  'pdaItem.ObjectKey' is inaccessible
-                // due to its protection level even though
-                // contact.ObjectKey is.
-                // contact.ObjectKey = pdaItem.ObjectKey;
+            Contact contact = new Contact(Guid.NewGuid());
 
-                return newContact;
-            }
+            // ERROR:  'PdaItem.ObjectKey' is inaccessible
+            // Console.WriteLine(contact.ObjectKey);
         }
-
-        // ...
-        public string Name { get; set; }
     }
 }

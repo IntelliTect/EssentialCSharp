@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_23
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Table07_03
 {
     public class Program
     {
@@ -11,9 +11,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_23
                 data = Encrypt(text);
                 // ...
             }
-            else if (data is null)
+            else
             {
-                throw new ArgumentNullException(nameof(data));
+                throw new ArgumentException();
             }
             // ...
 

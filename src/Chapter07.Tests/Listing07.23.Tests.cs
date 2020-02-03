@@ -1,23 +1,38 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.IO;
-using System.Runtime.InteropServices;
+using System.Threading.Tasks;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_23.Tests
 {
     [TestClass]
     public class ProgramTests
     {
+
         [TestMethod]
-        public void SaveWithDataTest()
+        public async Task Main_EncryptFile_Success()
         {
-            Listing07_22.Tests.ProgramTests.SaveWithData(Program.Save);
+
+            const string encryptedFileName = "temp.out";
+            const string data = "DATA";
+            await File.WriteAllTextAsync(Program.DataFile, data);
+            string expected = $"ENCRYPTED <{data}> ENCRYPTED";
+
+            Program.Main("Encrypt", encryptedFileName);
+
+            string actual = await File.ReadAllTextAsync(encryptedFileName);
+            Assert.AreEqual<string>(expected, actual);
         }
 
-        [TestMethod][ExpectedException(typeof(ArgumentNullException))]
-        public void SaveWithNullTest()
+        [TestMethod]
+        public async Task Main_ShowFile_Success()
         {
-            Listing07_22.Tests.ProgramTests.SaveWithNull(Program.Save);
+            const string data = "DATA";
+            await File.WriteAllTextAsync(Program.DataFile, data);
+
+            IntelliTect.TestTools.Console.ConsoleAssert.Expect(
+                data,
+                ()=>Program.Main("show"));
         }
     }
 }

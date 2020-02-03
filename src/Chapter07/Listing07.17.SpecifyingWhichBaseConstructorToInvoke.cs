@@ -1,4 +1,6 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_17
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_17
 {
     public class PdaItem
     {
@@ -8,17 +10,15 @@
         }
 
         // ...
+
         public virtual string Name { get; set; }
     }
     public class Contact : PdaItem
     {
-        // Disable warning since FirstName&LastName set via Name property
-        #pragma warning disable CS8618 // Non-nullable field is uninitialized.
         public Contact(string name)
             : base(name)
         {
         }
-        #pragma warning restore CS8618
 
         public override string Name
         {
@@ -36,8 +36,10 @@
             }
         }
 
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
+        [NotNull] [DisallowNull]
+        public string? FirstName { get; set; }
+        [NotNull] [DisallowNull]
+        public string? LastName { get; set; }
 
         // ...
     }
