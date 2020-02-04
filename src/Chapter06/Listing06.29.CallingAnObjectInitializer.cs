@@ -1,8 +1,5 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_29
 {
-    using System;
-    using System.IO;
-
     public class Program
     {
         public static void Main()

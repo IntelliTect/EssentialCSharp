@@ -3,9 +3,6 @@
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_26
 {
-    using System;
-    using System.IO;
-
     public class Program
     {
         public static void Main()

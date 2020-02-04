@@ -3,11 +3,8 @@
 // Disabled pending introductin to object initializers
 #pragma warning disable IDE0017 
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_22
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_33B
 {
-    using System;
-    using System.IO;
-
     public class Program
     {
         public static void Main()
@@ -59,7 +56,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_22
                 // first and last names
                 string[] names;
                 names = value.Split(new char[] { ' ' });
-                if(names.Length == 2)
+                if (names.Length == 2)
                 {
                     FirstName = names[0];
                     LastName = names[1];
