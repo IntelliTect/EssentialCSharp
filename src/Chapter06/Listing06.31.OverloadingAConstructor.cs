@@ -35,8 +35,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_31
                 // ...
             }
         }
-
+        [System.Diagnostics.CodeAnalysis.NotNull]
+        [System.Diagnostics.CodeAnalysis.DisallowNull]
         public string FirstName { get; set; }
+        [System.Diagnostics.CodeAnalysis.DisallowNull]
+        [System.Diagnostics.CodeAnalysis.NotNull]
         public string LastName { get; set; }
         public string? Salary { get; set; } = "Not Enough";
 

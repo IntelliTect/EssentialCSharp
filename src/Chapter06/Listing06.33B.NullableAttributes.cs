@@ -1,18 +1,17 @@
-﻿// Non-nullable field is uninitialized. Consider declaring as nullable.
-#pragma warning disable CS8618 // Pending a constructors
-// Disabled pending introductin to object initializers
-#pragma warning disable IDE0017 
-
+﻿
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_33B
 {
+    using System;
+    using System.Diagnostics.CodeAnalysis;
+    using System.IO;
+
     public class Program
     {
         public static void Main()
         {
-            Employee employee1 = new Employee();
+            Employee employee = new Employee("Inigo Montoya");
 
-            employee1.Name = "Inigo Montoya";
-            System.Console.WriteLine(employee1.Name);
+            System.Console.WriteLine(employee.Name);
 
             // ...
         }
@@ -20,64 +19,104 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_33B
 
     class Employee
     {
-        // FirstName property
-        public string FirstName
+        public Employee(string name)
         {
-            get
-            {
-                return _FirstName;
-            }
-            set
-            {
-                _FirstName = value;
-            }
+            Name = name;
         }
-        private string _FirstName;
 
-        // LastName property
-        public string LastName
-        {
-            get => _LastName;
-            set => _LastName = value;
-        }
-        private string _LastName;
-        // ...
-
-        // Name property
         public string Name
         {
-            get
-            {
-                return $"{ FirstName } { LastName }";
-            }
-            set
-            {
-                // Split the assigned value into 
-                // first and last names
-                string[] names;
-                names = value.Split(new char[] { ' ' });
-                if (names.Length == 2)
-                {
-                    FirstName = names[0];
-                    LastName = names[1];
-                }
-                else
-                {
-                    // Throw an exception if the full 
-                    // name was not assigned
-                    throw new System.ArgumentException(
-                        $"Assigned value '{ value }' is invalid",
-                        "value");
-                }
-            }
+            get => _Name!;
+            set => _Name = AssertIsNotNullOrWhiteSpace(value);
         }
+        private string? _Name;
 
-        public string Initials => $"{ FirstName[0] } { LastName[0] }";
+        string AssertIsNotNullOrWhiteSpace(string? value) =>
+             string.IsNullOrWhiteSpace(value ?? throw new ArgumentNullException(nameof(value))) ?
+             throw new ArgumentException("null, or whitespace is invalide.", nameof(value)) : value;
 
-        // Title property
-        public string? Title { get; set; }
+bool TryGetDigitAsText(int number, [NotNullWhen(false)]out string? text) =>
+    (text = number switch 
+    {
+        1 => "one",
+        2 => "two",
+        // ...
+        9 => "nine",
+        _ => null
+    }) is string;
 
-        // Manager property
-        public Employee? Manager { get; set; }
+        void ReplaceIfNull([NotNullIfNotNull("text")]ref string? text) =>
+            text ??= "";
+
+        //public string LastName
+        //{
+        //    get => _LastName!;
+        //    set => _LastName = value ?? throw new ArgumentNullException(nameof(value));
+        //}
+        //private string? _LastName;
+
+        ////public string Name 
+        ////{
+        ////    get => ConcactName(Name, LastName);
+        ////    set => ParseName(value);
+        ////}
+
+        //private void ParseName(string name)
+        //{
+        //    // Split the assigned value into 
+        //    // first and last names
+        //    string[] names = name.Split(new char[] { ' ' });
+        //    if (names.Length == 2)
+        //    {
+        //        Name = names[0];
+        //        LastName = names[1];
+        //    }
+        //    else
+        //    {
+        //        // Throw an exception if the full 
+        //        // name was not assigned
+        //        throw new System.ArgumentException(
+        //            $"Assigned value '{ name }' is invalid",
+        //            "value");
+        //    }
+        //}
+
+        //static private string ConcactName(
+        //    string firstName, string lastName) => $"{ firstName } { lastName }";
+
+        //[DisallowNull][NotNull]
+        //public string? Id { get; set; }
+        //// ...
+
+        //public const string EmployeeDataFile = "employees.txt";
+        //private const int IdIndex = 0;
+        //private const int FirstNameIndex = 1;
+        //private const int LastNameIndex = 2;
+        //public Employee(string id, string firstName, string lastName)
+        //{
+        //    Id = id;
+
+        //    // Look up employee data using id
+        //    Name = firstName;
+        //    LastName = lastName;
+        //    // ...
+        //}
+        //public static bool TryGetEmployee(string id, [NotNullWhen(true)] out Employee? employee)
+        //{
+        //    if (File.Exists(EmployeeDataFile))
+        //    {
+        //        foreach (string line in File.ReadLines(EmployeeDataFile))
+        //        {
+        //            if (line.StartsWith(id))
+        //            {
+        //                string[] employeeData = line.Split(",");
+        //                employee = new Employee(employeeData[IdIndex], employeeData[FirstNameIndex], employeeData[LastNameIndex]);
+        //                return true;
+        //            }
+        //        }
+        //    }
+        //    employee = null;
+        //    return false;
+        //}
     }
 }
