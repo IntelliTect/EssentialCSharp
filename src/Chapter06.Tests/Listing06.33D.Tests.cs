@@ -19,7 +19,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_33D.Tests
         [TestMethod]
         public void TryGetAsText_GivenX_ReturnFalse()
         {
-            Assert.IsFalse(NullabilityAttributesExamined.TryGetDigitAsText('X', out string? text));
+            Assert.IsFalse(NullabilityAttributesExamined.TryGetDigitAsText('X', out _));
         }
 
         [TestMethod]
