@@ -1,5 +1,6 @@
 using AddisonWesley.Michaelis.EssentialCSharp.Shared;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_01B.Tests
@@ -7,6 +8,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_01B.Tests
     [TestClass]
     public class UppercaseTests
     {
+        [NotNull]
         public TestContext? TestContext { get; set; }
 
         [TestMethod]
