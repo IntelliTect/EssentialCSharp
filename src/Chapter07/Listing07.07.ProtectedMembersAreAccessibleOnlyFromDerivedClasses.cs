@@ -9,7 +9,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_07
     public class PdaItem
     {
         public PdaItem(Guid objectKey) => ObjectKey = objectKey;
-        protected Guid ObjectKey { get; set; }
+        protected Guid ObjectKey { get; }
     }
 
     public class Contact : PdaItem

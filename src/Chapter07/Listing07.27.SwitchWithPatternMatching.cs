@@ -17,7 +17,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_27
                 string dateText => DateTime.TryParse(
                     dateText, out DateTime dateTime) ?
                         (dateTime.Year, dateTime.Month, dateTime.Day) :
-                        default((int Year, int Month, int Day)?),
+                        // default ((int Year, int Month, int Day)?) preferable
+                        // not covered until Chapter 12.
+                        ((int Year, int Month, int Day)?)null,
                 _ => null
             } is { } date? string.Format(
                 compositFormatString, date.Year, date.Month, date.Day) : null;

@@ -5,7 +5,7 @@
 
     public class PdaItem
     {
-        protected Guid ObjectKey { get; set; }
+        protected Guid ObjectKey { get; }
 
         // ...
     }

@@ -8,13 +8,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_06
 
     public class PdaItem
     {
-        private string? _Name;
-        [DisallowNull]
-        public string? Name
-        {
-            get { return _Name; }
-            set { _Name = value; }
-        }
+  private string? _Name;
+  [DisallowNull]
+  public string? Name
+  {
+      get { return _Name; }
+      set { _Name = value; }
+  }
 
         // ...
     }

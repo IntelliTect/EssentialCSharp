@@ -38,10 +38,32 @@
             }
         }
 
-        [NotNull][DisallowNull]
-        public string? FirstName { get; set; }
-        [NotNull][DisallowNull]
-        public string? LastName { get; set; }
+        public string FirstName
+        {
+            get
+            {
+                return _FirstName!;
+            }
+            set
+            {
+                _FirstName = value ?? throw new ArgumentNullException(nameof(value)); ;
+            }
+        }
+        private string? _FirstName;
+
+        public string LastName
+        {
+            get
+            {
+                return _LastName!;
+            }
+            set
+            {
+                _LastName = value ?? throw new ArgumentNullException(nameof(value));
+            }
+        }
+        private string? _LastName;
+
         public string? Address { get; set; }
 
         public override string GetSummary()
