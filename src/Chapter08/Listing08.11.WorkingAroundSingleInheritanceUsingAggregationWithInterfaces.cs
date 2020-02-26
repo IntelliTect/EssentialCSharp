@@ -1,6 +1,7 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_11
 {
     using Listing08_02;
+    using System;
 
     interface IPerson
     {
@@ -19,9 +20,23 @@
 
     public class Person : IPerson
     {
-        // ...
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
+        public Person(string firstName, string lastName)
+        {
+            FirstName = firstName;
+            LastName = lastName;
+        }
+        public string? _FirstName;
+        public string FirstName 
+        { 
+            get => _FirstName!; 
+            set => _FirstName = value ?? throw new ArgumentNullException(nameof(value)); 
+        }
+        public string? _LastName;
+        public string LastName
+        {
+            get => _LastName!;
+            set => _LastName = value ?? throw new ArgumentNullException(nameof(value));
+        }
     }
 
     public class Contact : PdaItem, IPerson
@@ -33,21 +48,21 @@
 
         private Person Person
         {
-            get { return _Person; }
-            set { _Person = value; }
+            get { return _Person!; }
+            set { _Person = value??throw new ArgumentNullException(nameof(value)); }
         }
-        private Person _Person;
+        private Person? _Person;
 
         public string FirstName
         {
-            get { return _Person.FirstName; }
-            set { _Person.FirstName = value; }
+            get { return Person.FirstName; }
+            set { Person.FirstName = value; }
         }
 
         public string LastName
         {
-            get { return _Person.LastName; }
-            set { _Person.LastName = value; }
+            get { return Person.LastName; }
+            set { Person.LastName = value; }
         }
 
         // ...

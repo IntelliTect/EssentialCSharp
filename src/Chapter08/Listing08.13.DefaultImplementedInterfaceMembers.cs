@@ -1,4 +1,4 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_02
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_13
 {
     using System;
 
@@ -44,7 +44,7 @@
                 new Publication(
                     "The End of Poverty: Economic Possibilities for Our Time",
                     "Jeffrey Sachs", 2006),
-                new Publication("Orthodoxy", 
+                new Publication("Orthodoxy",
                     "G.K. Chesterton", 1908),
                 new Publication(
                     "The Hitchhiker's Guide to the Galaxy",
@@ -62,7 +62,20 @@
         {
             get;
         }
+
+        virtual ConsoleColor[] CellColors
+        {
+            get
+            {
+                var result = new ConsoleColor[CellValues.Length];
+                // Using generic Array method to populate array (see Chapter 12)
+                Array.Fill(result, DefaultColumnColor);
+                return result;
+            }
+        }
+        static public ConsoleColor DefaultColumnColor { get; set; }
     }
+
 
     public abstract class PdaItem
     {
@@ -91,7 +104,8 @@
         public string Address { get; set; }
         public string Phone { get; set; }
 
-        public string[] CellValues
+        #region IListable
+        string[] IListable.CellValues
         {
             get
             {
@@ -104,6 +118,7 @@
                 };
             }
         }
+        #endregion IListable
 
         public static string[] Headers
         {
@@ -129,15 +144,28 @@
             Year = year;
         }
 
+        private const int YearIndex = 2;
         public string Title { get; set; }
         public string Author { get; set; }
         public int Year { get; set; }
 
-        public string?[] CellValues
+        public static string[] Headers
         {
             get
             {
-                return new string?[]
+                return new string[] {
+                    "Title                                                    ",
+                    "Author             ",
+                    "Year" };
+            }
+        }
+
+        #region IListable
+        string?[] IListable.CellValues
+        {
+            get
+            {
+                return new string[]
                 {
                     Title,
                     Author,
@@ -146,16 +174,21 @@
             }
         }
 
-        public static string[] Headers
+        ConsoleColor[] IListable.CellColors
         {
             get
             {
-                return new string[] {
-                    "Title                                                    ", 
-                    "Author             ", 
-                    "Year" };
+                string?[] columns = ((IListable)this).CellValues;
+                ConsoleColor[] result = ((IListable)this).CellColors;
+                if (columns[YearIndex]?.Length != 4)
+                {
+                    result[YearIndex] = ConsoleColor.Red;
+                }
+                return result;
             }
+
         }
+        #endregion IListable
 
         // ...
     }
@@ -167,10 +200,9 @@
         {
             int[] columnWidths = DisplayHeaders(headers);
 
-            for(int count = 0; count < items.Length; count++)
+            for (int count = 0; count < items.Length; count++)
             {
-                string?[] values = items[count].CellValues;
-                DisplayItemRow(columnWidths, values);
+                DisplayItemRow(columnWidths, items[count]);
             }
         }
 
@@ -179,7 +211,7 @@
         private static int[] DisplayHeaders(string[] headers)
         {
             var columnWidths = new int[headers.Length];
-            for(int index = 0; index < headers.Length; index++)
+            for (int index = 0; index < headers.Length; index++)
             {
                 Console.Write(headers[index]);
                 columnWidths[index] = headers[index].Length;
@@ -189,20 +221,26 @@
         }
 
         private static void DisplayItemRow(
-            int[] columnWidths, string?[] values)
+            int[] columnWidths, IListable item)
         {
-            if(columnWidths.Length != values.Length)
+            string?[] columValues = item.CellValues;
+            if (columnWidths.Length != columValues.Length)
             {
                 throw new ArgumentOutOfRangeException(
-                    $"{ nameof(columnWidths) },{ nameof(values) }",
+                    $"{ nameof(columnWidths) },{ nameof(item) }.{nameof(item.CellColors) }",
                     "The number of column widths must match the number of values to print");
             }
 
-            for(int index = 0; index < values.Length; index++)
+            // Exception handling excluded for elucidation
+            ConsoleColor originalColor = Console.ForegroundColor;
+            ConsoleColor[] itemColors = ((IListable)item).CellColors;
+            for (int index = 0; index < columValues.Length; index++)
             {
-                string itemToPrint = (values[index]??"").PadRight(columnWidths[index], ' ');
+                string itemToPrint = (columValues[index] ?? "").PadRight(columnWidths[index], ' ');
+                Console.ForegroundColor = itemColors[index];
                 Console.Write(itemToPrint);
             }
+            Console.ForegroundColor = originalColor;
             Console.WriteLine();
         }
     }

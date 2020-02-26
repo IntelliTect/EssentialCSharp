@@ -46,7 +46,7 @@
             {
                 if (items[itemCount] != null)
                 {
-                    string[] values = items[itemCount].ColumnValues;
+                    string?[] values = items[itemCount].CellValues;
 
                     DisplayItemRow(columnWidths, values);
                 }
@@ -68,7 +68,7 @@
         }
 
         private static void DisplayItemRow(
-            int[] columnWidths, string[] values)
+            int[] columnWidths, string?[] values)
         {
             if(columnWidths.Length != values.Length)
             {
@@ -79,7 +79,7 @@
 
             for(int index = 0; index < values.Length; index++)
             {
-                string itemToPrint = values[index].PadRight(columnWidths[index], ' ');
+                string? itemToPrint = values[index]?.PadRight(columnWidths[index], ' ');
                 Console.Write(itemToPrint);
             }
             Console.WriteLine();
