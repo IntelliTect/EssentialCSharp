@@ -1,10 +1,10 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter11.Listing11_09
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter11.Listing11_07
 {
     public class Program
     {
         public static void Main()
         {
-            unchecked
+            checked
             {
                 // int.MaxValue equals 2147483647
                 int n = int.MaxValue;

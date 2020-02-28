@@ -1,4 +1,4 @@
-﻿//namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter11.Listing11_06
+//namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter11.Listing11_06
 //{
 //    using System;
 //    using System.Runtime.Serialization;
