@@ -7,53 +7,17 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_12.Tests
     public class TextNumberParserTests
     {
         [TestMethod]
-        public void Main_InigoMontoya_Success()
+        public void Main_HospitalEmergencyCodes_DisplaysCodes()
         {
             const string expected =
-                @"Hello Inigo Montoya.";
+                @"info: Console[0]
+      Hospital Emergency Codes: = 'black', 'blue', 'brown', 'CBR', 'orange', 'purple', 'red', 'yellow'
+warn: Console[0]
+      This is a test of the emergency...";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, (Action<string[]>)(Program.Main), "Inigo Montoya" );
-        }
-        [TestMethod]
-        public void Main_InigoMontoyaWithGreeting_Success()
-        {
-            const string expected =
-                @"Hello Inigo Montoya.  Welcome!";
-
-            IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, (Action<string[]>)(Program.Main), "Inigo Montoya", "-g", "Hello {name}.  Welcome!");
-        }
-
-        [TestMethod]
-        public void Main_GreetingWithInigoMontoya_Success()
-        {
-            const string expected =
-                @"Hello Inigo Montoya.  Welcome!";
-
-            IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, (Action<string[]>)(Program.Main), "-g", "Hello {name}.  Welcome!", "Inigo Montoya");
-        }
-
-        [TestMethod]
-        public void Main_OptionQuestionMark_Success()
-        {
-            const string expected =
-                @"
-
-Usage:  [arguments] [options]
-
-Arguments:
-  name  Enter the full name of the person to be greeted.
-
-Options:
-  -$|-g |--greeting <greeting>  The greeting to display. The greeting supports a format string where '{name}' will be substituted with the name.
-  -? | -h | --help              Show help information
-
-Hello .";
-
-            IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, (Action<string[]>)(Program.Main), "-?");
+                expected, (Action<string[]>)(Program.Main), 
+                new string[] { "black", "blue", "brown", "CBR", "orange", "purple", "red", "yellow" });
         }
     }
 }
