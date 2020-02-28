@@ -2,7 +2,7 @@
 using System;
 using System.ComponentModel;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_02A.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter11.Listing11_02A.Tests
 {
     [TestClass]
     public class ProgramTests
@@ -10,7 +10,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_02A.Tests
         [TestMethod]
         public void MainTest()
         {
-            Assert.ThrowsException<Win32Exception>(() => Program.Main(null));
+            Assert.ThrowsException<Win32Exception>(() => Program.Main(null!));
         }
     }
 }

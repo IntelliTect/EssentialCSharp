@@ -11,7 +11,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter11.Listing11_01.Tests
         [ExpectedException(typeof(ArgumentNullException))]
         public void Parse_GivenNull_ThrowsArgumentNullException()
         {
-            TextNumberParser.Parse(null);
+            TextNumberParser.Parse(null!);
         }
 
         [TestMethod]
