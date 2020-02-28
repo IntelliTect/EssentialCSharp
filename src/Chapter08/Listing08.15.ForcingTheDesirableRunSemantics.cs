@@ -28,7 +28,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_15
         // Private and, therefore, not virtual
         private void Stop() =>
             Console.WriteLine(
-                "IWorkflowActivity.Stop()..");
+                "IWorkflowActivity.Stop()...");
     }
 
     public interface IExecuteProcessActivity : IWorkflowActivity

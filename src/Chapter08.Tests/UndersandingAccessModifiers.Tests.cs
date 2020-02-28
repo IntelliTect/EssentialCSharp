@@ -81,7 +81,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.UndersatndingAccessM
                     item!.GetMethod()!.DeclaringType!.Assembly == Assembly.GetExecutingAssembly()
                 ).Where(
                 item =>
-                    !item!.GetMethod()!.DeclaringType!.Name!.EndsWith(".Tests")
+                    !item!.GetMethod()!.DeclaringType!.Name!.EndsWith("Tests")
                 ).Select(
                     item => $"{item!.GetMethod()!.ReflectedType!.Name}.{item.GetMethod()!.Name.Replace($"{item!.GetMethod()!.ReflectedType!.Namespace}.", "")}").Reverse().ToArray();
             return string.Join("=>", frames);
@@ -130,7 +130,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.UndersatndingAccessM
                     string.Join("=>",
                         new string[]{
                         $"{nameof(Information)}.{nameof(Information.CallConcreteInterfaceMethod3)}",
-                        $"{nameof(ISampleInterface)}.{nameof(ISampleInterface.PublicConcreteInterfaceMethod)}"
+                        $"{nameof(Information)}.{nameof(ISampleInterface.PublicConcreteInterfaceMethod)}"
                         }),
                     information.CallConcreteInterfaceMethod3());
             }
@@ -140,7 +140,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.UndersatndingAccessM
             {
                 Information information = new Information();
                 Assert.AreEqual(
-                    $"{nameof(ISampleInterface)}.{nameof(ISampleInterface.PublicConcreteInterfaceMethod)}",
+                    $"{nameof(Information)}.{nameof(ISampleInterface.PublicConcreteInterfaceMethod)}",
                     ((ISampleInterface)information).PublicConcreteInterfaceMethod());
             }
 
@@ -158,7 +158,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.UndersatndingAccessM
             {
                 ISampleInterface information = new SubClass();
                 Assert.AreEqual(
-                    $"{nameof(ISampleInterface)}.{nameof(ISampleInterface.PublicConcreteInterfaceMethod)}",
+                    $"{nameof(Information)}.{nameof(ISampleInterface.PublicConcreteInterfaceMethod)}",
                     information.PublicConcreteInterfaceMethod());
             }
         }
