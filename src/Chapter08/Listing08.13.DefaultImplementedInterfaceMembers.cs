@@ -63,7 +63,7 @@
             get;
         }
 
-        virtual ConsoleColor[] CellColors
+        ConsoleColor[] CellColors
         {
             get
             {

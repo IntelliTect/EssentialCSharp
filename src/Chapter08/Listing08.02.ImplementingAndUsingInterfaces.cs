@@ -86,10 +86,10 @@
             Phone = phone;
         }
 
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Address { get; set; }
-        public string Phone { get; set; }
+        public string FirstName { get; }
+        public string LastName { get; }
+        public string Address { get; }
+        public string Phone { get; }
 
         public string[] CellValues
         {
@@ -129,9 +129,9 @@
             Year = year;
         }
 
-        public string Title { get; set; }
-        public string Author { get; set; }
-        public int Year { get; set; }
+        public string Title { get; }
+        public string Author { get; }
+        public int Year { get; }
 
         public string?[] CellValues
         {
