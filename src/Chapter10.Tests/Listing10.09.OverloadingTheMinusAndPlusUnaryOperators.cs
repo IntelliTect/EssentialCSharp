@@ -64,7 +64,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_09.Tests
                 new Latitude(-2, -20));
             Coordinate? coordinate2 = null;
             
-            Assert.IsFalse(coordinate1.Equals(coordinate2));
+            Assert.IsFalse(coordinate1.Equals(coordinate2!));
         }
 
         [TestMethod]

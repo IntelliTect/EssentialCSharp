@@ -1,4 +1,6 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_05
+﻿// Justification: Listing is incomplete for purposes of elucidation.
+#pragma warning disable IDE0060 // Remove unused parameter
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_05
 {
     using System;
 
@@ -36,10 +38,10 @@
         public Longitude Longitude { get; }
         public Latitude Latitude { get; }
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             // STEP 1: Check for null
-            if (obj == null)
+            if (obj is null)
             {
                 return false;
             }

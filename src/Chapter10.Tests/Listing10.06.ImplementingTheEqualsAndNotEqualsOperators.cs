@@ -31,10 +31,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_06.Tests
         public void Equals_GivenNull_NotEqual()
         {
             ProductSerialNumber productSerialNumber1 = new ProductSerialNumber("12", 11, 11001);
-            ProductSerialNumber productSerialNumber2 = null;
+            ProductSerialNumber? productSerialNumber2 = null;
             
             
-            Assert.IsFalse(productSerialNumber1.Equals(productSerialNumber2));
+            Assert.IsFalse(productSerialNumber1.Equals(productSerialNumber2!));
         }
 
         [TestMethod]
