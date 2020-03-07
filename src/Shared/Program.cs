@@ -50,7 +50,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                 {
                     return reg.IsMatch(type.FullName!);
                 });
-                if (target == null)
+                if (target is null)
                 {
                     throw new InvalidOperationException($"There is no listing '{input}'.");
                 }
@@ -187,7 +187,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
 
             int startPosition;
 
-            if (!int.TryParse(chapterListing[0], out startPosition))
+            if (!int.TryParse(chapterListing[0], out _))
             {
                 startPosition = 1;
                 listing += chapterListing[0].ToUpper() + ".";
