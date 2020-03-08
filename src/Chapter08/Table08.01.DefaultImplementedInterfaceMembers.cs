@@ -124,6 +124,51 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Table08_01
     }
 
     // 8. 
+    namespace PrivateProtectedAccessModifiers
+    {
+    class Program
+    {
+        static void Main()
+        {
+            IPerson? person = null;
+            // Non-deriving classes cannot call
+            // private protected member.
+            // person?.GetName();
+            Console.WriteLine(person);
+        }
+    }
+    public interface IPerson
+    {
+        string FirstName { get; }
+        string LastName { get; }
+        string Name => GetName();
+        private protected string GetName() =>
+            $"{FirstName} {LastName}";
+    }
+    public interface IEmployee: IPerson
+    {
+        int EmpoyeeId => GetName().GetHashCode();
+    }
+    public class Person : IPerson
+    {
+        public Person(string firstName, string lastName)
+        {
+            FirstName = firstName ??
+                throw new ArgumentNullException(nameof(firstName));
+            LastName = lastName ?? 
+                throw new ArgumentNullException(nameof(lastName));
+        }
+        public string FirstName { get; }
+        public string LastName { get; }
+
+        // private protected interface members
+        // are not accessible in derived classes.
+       
+        // public int PersonTitle => GetName().ToUpper();
+    }
+    }
+
+    // 9. 
     namespace VirtualMembers
     {
         public interface IPerson
@@ -138,7 +183,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Table08_01
         }
     }
 
-    // 9.
+    // 10.
     namespace SealedMembers
     {
         public interface IWorkflowActivity
@@ -171,7 +216,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Table08_01
         }
     }
 
-    // 10. 
+    // 11. 
     namespace AbstractMembers
     {
         public interface IPerson
@@ -188,7 +233,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Table08_01
         }
     }
 
-    // 11. 
+    // 12. 
     namespace PartialMembers
     {
         public partial interface IThing
