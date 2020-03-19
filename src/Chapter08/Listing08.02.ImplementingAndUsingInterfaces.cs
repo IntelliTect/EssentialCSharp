@@ -44,7 +44,7 @@
                 new Publication(
                     "The End of Poverty: Economic Possibilities for Our Time",
                     "Jeffrey Sachs", 2006),
-                new Publication("Orthodoxy", 
+                new Publication("Orthodoxy",
                     "G.K. Chesterton", 1908),
                 new Publication(
                     "The Hitchhiker's Guide to the Galaxy",
@@ -57,8 +57,8 @@
 
     public interface IListable
     {
-        // Return the value of each cell in the row
-        string?[] CellValues
+        // Return the value of each column in the row
+        string[] ColumnValues
         {
             get;
         }
@@ -76,22 +76,57 @@
 
     public class Contact : PdaItem, IListable
     {
+        // Non-nullable field is uninitialized. Consider declaring as nullable.
+#pragma warning disable CS8618  // Disabled because the properties are set via the based classes
+        // call to the virtual Name property.
         public Contact(string firstName, string lastName,
             string address, string phone)
             : base(GetName(firstName, lastName))
         {
-            FirstName = firstName;
-            LastName = lastName;
+            // FirstName and LastName are set via the based classes
+            // call to the virtual Name property.
+            // FirstName = firstName;
+            // LastName = lastName;
             Address = address;
             Phone = phone;
         }
+#pragma warning restore CS8618 // Non-nullable field is uninitialized. Consider declaring as nullable.
 
-        public string FirstName { get; }
-        public string LastName { get; }
-        public string Address { get; }
-        public string Phone { get; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Address { get; set; }
+        public string Phone { get; set; }
 
-        public string[] CellValues
+        static string GetName(string firstName, string lastName) => $"{ firstName } { lastName }";
+        override public string Name
+        {
+            get
+            {
+                return GetName(FirstName, LastName);
+            }
+            set
+            {
+                // Split the assigned value into 
+                // first and last names
+                string[] names;
+                names = value.Split(new char[] { ' ' });
+                if (names.Length == 2)
+                {
+                    FirstName = names[0];
+                    LastName = names[1];
+                }
+                else
+                {
+                    // Throw an exception if the full 
+                    // name was not assigned
+                    throw new System.ArgumentException(
+                        $"Assigned value '{ value }' is invalid",
+                        "value");
+                }
+            }
+        }
+
+        public string[] ColumnValues
         {
             get
             {
@@ -116,8 +151,7 @@
             }
         }
 
-        static public string GetName(string firstName, string lastName)
-            => $"{ firstName } { lastName }";
+        // ...
     }
 
     public class Publication : IListable
@@ -129,15 +163,15 @@
             Year = year;
         }
 
-        public string Title { get; }
-        public string Author { get; }
-        public int Year { get; }
+        public string Title { get; set; }
+        public string Author { get; set; }
+        public int Year { get; set; }
 
-        public string?[] CellValues
+        public string[] ColumnValues
         {
             get
             {
-                return new string?[]
+                return new string[]
                 {
                     Title,
                     Author,
@@ -151,8 +185,8 @@
             get
             {
                 return new string[] {
-                    "Title                                                    ", 
-                    "Author             ", 
+                    "Title                                                    ",
+                    "Author             ",
                     "Year" };
             }
         }
@@ -167,9 +201,9 @@
         {
             int[] columnWidths = DisplayHeaders(headers);
 
-            for(int count = 0; count < items.Length; count++)
+            for (int count = 0; count < items.Length; count++)
             {
-                string?[] values = items[count].CellValues;
+                string[] values = items[count].ColumnValues;
                 DisplayItemRow(columnWidths, values);
             }
         }
@@ -179,7 +213,7 @@
         private static int[] DisplayHeaders(string[] headers)
         {
             var columnWidths = new int[headers.Length];
-            for(int index = 0; index < headers.Length; index++)
+            for (int index = 0; index < headers.Length; index++)
             {
                 Console.Write(headers[index]);
                 columnWidths[index] = headers[index].Length;
@@ -189,18 +223,18 @@
         }
 
         private static void DisplayItemRow(
-            int[] columnWidths, string?[] values)
+            int[] columnWidths, string[] values)
         {
-            if(columnWidths.Length != values.Length)
+            if (columnWidths.Length != values.Length)
             {
                 throw new ArgumentOutOfRangeException(
                     $"{ nameof(columnWidths) },{ nameof(values) }",
                     "The number of column widths must match the number of values to print");
             }
 
-            for(int index = 0; index < values.Length; index++)
+            for (int index = 0; index < values.Length; index++)
             {
-                string itemToPrint = (values[index]??"").PadRight(columnWidths[index], ' ');
+                string itemToPrint = values[index].PadRight(columnWidths[index], ' ');
                 Console.Write(itemToPrint);
             }
             Console.WriteLine();
