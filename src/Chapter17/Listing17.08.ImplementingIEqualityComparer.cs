@@ -5,7 +5,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_08
 
     class ContactEquality : IEqualityComparer<Contact>
     {
-        public bool Equals(Contact x, Contact y)
+        public bool Equals(Contact? x, Contact? y)
         {
             if(Object.ReferenceEquals(x, y))
                 return true;
@@ -17,7 +17,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_08
 
         public int GetHashCode(Contact x)
         {
-            if(Object.ReferenceEquals(x, null))
+            if(x is null)
                 return 0;
 
             int h1 = x.FirstName == null ? 0 : x.FirstName.GetHashCode();
