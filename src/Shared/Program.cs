@@ -6,6 +6,9 @@ using System.Reflection;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Diagnostics.CodeAnalysis;
+using System.Threading.Tasks;
+using System.Text;
+using System.Runtime.CompilerServices;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
 {
@@ -55,21 +58,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                     throw new InvalidOperationException($"There is no listing '{input}'.");
                 }
 
-                MethodInfo method = target.GetMethods().First();
+                MethodInfo method = target.GetMethod("Main") ??
+                    target.GetMethods().First();
+                
                 string[]? arguments;
-                void InvokeMethodUsingReflection()
-                {
-                    // Note: 'arguments' here are the array of commandline args, so they 
-                    // it is the first item in the "parameters" array specified to the 
-                    // Invoke method.
-                    object? result = method.Invoke(null,
-                        parameters: arguments is null ? new object[0] : new object[] { arguments! });
-
-                    if (method.ReturnType != typeof(void))
-                    {
-                        Console.WriteLine($"Result: {result}");
-                    }
-                }
 
                 if (!method.GetParameters().Any())
                 {
@@ -88,16 +80,27 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                     }
                 }
 
-                if (method.GetCustomAttributes(typeof(STAThreadAttribute), false).Any())
+                string? output = null;
+                
+                // TODO: Remove STA check now that the methods are async anyway.
+                // TODO: Test... this seems backwards/opposite
+                if (method.GetCustomAttribute(typeof(STAThreadAttribute), false) is object)
                 {
-                    Thread thread = new Thread(() =>
+                    Task task = new Task(() =>
                     {
-                        InvokeMethodUsingReflection();
+                        // TODO: Change to use async/await.
+                        output = InvokeMethodUsingReflection(method,arguments).GetAwaiter().GetResult();
                     });
+                    task.Wait();
                 }
                 else
                 {
-                    InvokeMethodUsingReflection();
+                    // TODO: Change to use async/await.
+                    output = InvokeMethodUsingReflection(method, arguments).GetAwaiter().GetResult();
+                }
+                if(output is { })
+                {
+                    Console.WriteLine($"Result: {output}");
                 }
             }
             catch (System.IO.FileNotFoundException)
@@ -146,6 +149,73 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                 Console.Write("Press any key to exit.");
                 Console.ReadKey();
             }
+        }
+
+        public static async ValueTask<string?> InvokeMethodUsingReflection(MethodInfo method, string[]? arguments)
+        {
+            // Note: 'arguments' here are the array of commandline args, so 
+            // it is the first item in the "parameters" array specified to the 
+            // Invoke method.
+            object? result = method.Invoke(null,
+            parameters: arguments is null ? new object[0] : new object[] { arguments! });
+
+            if(method.ReturnType == typeof(void))
+            {
+                return null;
+            }
+            else if(result is null)
+            {
+                return "<null>";
+            }
+            else if(method.GetCustomAttribute(typeof(AsyncIteratorStateMachineAttribute), false) is object)
+            {
+                switch(result)
+                {
+                    case IAsyncEnumerable<int> asyncEnumerable:
+                        return await AggregateToString(asyncEnumerable);
+                    case IAsyncEnumerable<string> asyncEnumerable:
+                        return await AggregateToString(asyncEnumerable);
+                    case null:
+                        throw new InvalidOperationException($"Given an {nameof(IAsyncEnumerable<string>)} method, the result is unexpectedly null.");
+                    default:
+                        throw new NotImplementedException($"This {nameof(IAsyncEnumerable<string>)} type parameter is not implemented.");
+                }
+            }
+            else if (method.GetCustomAttribute(typeof(AsyncStateMachineAttribute), false) is object)
+            {
+                switch(result)
+                {
+                    case Task task when method.ReturnType == typeof(Task):
+                        await task;
+                        return null;
+                    case Task<int> task:
+                        return $"{await task}";
+                    case Task<string> task:
+                        return await task;
+                    case ValueTask<int> task:
+                        return $"{await task}";
+                    case ValueTask<string> task:
+                        return await task;
+                    default:
+                        dynamic awaitable = result!;
+                        await awaitable;
+                        return awaitable.GetAwaiter().GetResult();
+                }
+            }
+            else
+            {
+                return $"{result}";
+            }
+        }
+
+        private static async Task<string?> AggregateToString<T>(IAsyncEnumerable<T> asyncEnumerable)
+        {
+            List<string> list = new List<string>();
+            await foreach (T item in asyncEnumerable)
+            {
+                list.Add($"{item}");
+            }
+            return string.Join(", ", list);
         }
 
         private static string[] GetArguments()
