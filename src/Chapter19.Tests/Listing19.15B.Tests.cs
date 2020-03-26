@@ -48,7 +48,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_15B.Tests
         {
             string expected = @"Searching for IntelliTect...
 .*https://Google.com....0
-.*https://IntelliTect.com....
+.*https://IntelliTect.com....*
 .*https://Google.com....0";
 
             IntelliTect.TestTools.Console.ConsoleAssert.ExpectLike(expected, () =>
