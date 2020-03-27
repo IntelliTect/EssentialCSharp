@@ -30,41 +30,48 @@
 
             foreach (string url in urls)
             {
-                int textApperanceCount = 0;
 
                 byte[] downloadData =
                     await webClient.DownloadDataTaskAsync(url);
 
-                using MemoryStream stream = new MemoryStream(downloadData);
-                using StreamReader reader = new StreamReader(stream);
+                yield return await CountOccurances(downloadData, findText);
+            }
+        }
 
-                int findIndex = 0;
-                int length = 0;
-                do
+        private static async Task<int> CountOccurances(byte[] downloadData, string findText)
+        {
+            int textApperanceCount = 0;
+
+            using MemoryStream stream = new MemoryStream(downloadData);
+            using StreamReader reader = new StreamReader(stream);
+
+            int findIndex = 0;
+            int length = 0;
+            do
+            {
+                char[] data = new char[reader.BaseStream.Length];
+                length = await reader.ReadAsync(data);
+                for (int i = 0; i < length; i++)
                 {
-                    char[] data = new char[reader.BaseStream.Length];
-                    length = await reader.ReadAsync(data);
-                    for (int i = 0; i < length; i++)
+                    if (findText[findIndex] == data[i])
                     {
-                        if (findText[findIndex] == data[i])
+                        findIndex++;
+                        if (findIndex == findText.Length)
                         {
-                            findIndex++;
-                            if (findIndex == findText.Length)
-                            {
-                                // Text was found
-                                textApperanceCount++;
-                                findIndex = 0;
-                            }
-                        }
-                        else
-                        {
+                            // Text was found
+                            textApperanceCount++;
                             findIndex = 0;
                         }
                     }
+                    else
+                    {
+                        findIndex = 0;
+                    }
                 }
-                while (length != 0);
-                yield return textApperanceCount;
             }
+            while (length != 0);
+
+            return textApperanceCount;
         }
 
         async public static ValueTask Main(string[] args)
