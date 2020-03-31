@@ -1,5 +1,7 @@
+using AddisonWesley.Michaelis.EssentialCSharp.Shared;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
@@ -22,14 +24,17 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_15B.Tests
                 File.Delete(item);
             });
 
+            IEnumerable<string> files = Directory.EnumerateFiles(
+                Directory.GetCurrentDirectory(), "*.*");
+
             // Count files to start
-            int count = Directory.EnumerateFiles(Directory.GetCurrentDirectory(), "*").Count();
+            int count = files.Count();
 
             try
             {
+
                 // string text = "You've fallen for one of the two classic blunders! The first being never get involved in a land war in Asia but only slightly lesser known: never go in against a cicelean when DEATH is on the line! HAHAHAHAHAHAHA *dies* You only think I guessed wrong! That's what's so funny! I switched glasses when your back was turned! Ha ha! You fool! You fell victim to one of the classic blunders - The most famous of which is 'never get involved in a land war in Asia' - but only slightly less well - known is this: 'Never go against a Sicilian when death is on the line!' Ha ha ha ha ha ha ha!";
-                await foreach (string fileName in
-                    Program.EncryptFilesAsync(Directory.GetCurrentDirectory(), "*.*"))
+                await foreach (string fileName in Program.EncryptFilesAsync(files))
                 {
                     byte[] encryptedData = await File.ReadAllBytesAsync(fileName);
                     string decryptedData = await Program.Cryptographer.DecryptAsync(encryptedData);
@@ -66,8 +71,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_15B.Tests
 
             using CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
 
+            IEnumerable<string> files = Directory.EnumerateFiles(
+                Directory.GetCurrentDirectory(), "*.*");
+
             // Count files to start
-            int unencryptedFileCount = Directory.EnumerateFiles(Directory.GetCurrentDirectory(), "*").Count();
+            int unencryptedFileCount = files.Count();
 
             int count = 0;
             int maxIterationCount = unencryptedFileCount / 2;
@@ -75,7 +83,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_15B.Tests
             {
                 // string text = "You've fallen for one of the two classic blunders! The first being never get involved in a land war in Asia but only slightly lesser known: never go in against a cicelean when DEATH is on the line! HAHAHAHAHAHAHA *dies* You only think I guessed wrong! That's what's so funny! I switched glasses when your back was turned! Ha ha! You fool! You fell victim to one of the classic blunders - The most famous of which is 'never get involved in a land war in Asia' - but only slightly less well - known is this: 'Never go against a Sicilian when death is on the line!' Ha ha ha ha ha ha ha!";
                 await foreach (string fileName in
-                    Program.EncryptFilesAsync(Directory.GetCurrentDirectory(), "*.*")
+                    Program.EncryptFilesAsync(files)
                     .WithCancellation(cancellationTokenSource.Token))
                 {
                     count++;
