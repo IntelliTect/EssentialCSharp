@@ -21,7 +21,7 @@ warn: Console[0]
             Action act = () => Program.Main(new[] {"black", "blue", "brown", "CBR", 
                 "orange", "purple", "red", "yellow"});
 
-            var result = Execute(act, false);
+            var result = Execute(act);
             
             Assert.AreEqual(expected, result);
         }
