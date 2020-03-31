@@ -10,7 +10,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_26
 
         public static void Main()
         {
-            string pi = null;
+            string pi = "";
             const int iterations = TotalDigits / BatchSize;
             for(int i = 0; i < iterations; i++)
             {

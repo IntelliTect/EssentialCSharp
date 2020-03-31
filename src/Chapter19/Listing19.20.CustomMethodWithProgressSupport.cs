@@ -9,11 +9,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_20
     {
         static public Task<Process> RunProcessAsync(
             string fileName,
-            string arguments = null,
+            string arguments = "",
             CancellationToken cancellationToken =
                 default(CancellationToken),
-                IProgress<ProcessProgressEventArgs> progress = null,
-                object objectState = null)
+                IProgress<ProcessProgressEventArgs>? progress = null,
+                object? objectState = null)
         {
             TaskCompletionSource<Process> taskCS =
                           new TaskCompletionSource<Process>();

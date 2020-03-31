@@ -29,7 +29,7 @@
                 throw new Exception("Task should be faulted");
             }
 
-            task.Exception.Handle(eachException =>
+            task.Exception!.Handle(eachException =>
             {
                 Console.WriteLine(
                     $"ERROR: { eachException.Message }");
