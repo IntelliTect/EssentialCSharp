@@ -11,7 +11,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_27
 
         public static void Main()
         {
-            string pi = null;
+            string pi = "";
             const int iterations = TotalDigits / BatchSize;
             string[] sections = new string[iterations];
             Parallel.For(0, iterations, (i) =>
