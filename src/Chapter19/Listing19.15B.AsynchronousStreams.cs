@@ -15,22 +15,21 @@
         {
             // Create a cancellation token source to cancel 
             // if the operation takes more than a minute.
-            using (CancellationTokenSource cancellationTokenSource =
-                new CancellationTokenSource(1))
+            using CancellationTokenSource cancellationTokenSource =
+                new CancellationTokenSource(1000 * 60);
+
+            try
             {
-                try
+                await foreach (string fileName in
+                    EncryptFilesAsync()
+                        .WithCancellation(cancellationTokenSource.Token))
                 {
-                    await foreach (string fileName in
-                        EncryptFilesAsync()
-                            .WithCancellation(cancellationTokenSource.Token))
-                    {
-                        Console.WriteLine(fileName);
-                    }
+                    Console.WriteLine(fileName);
                 }
-                finally
-                {
-                    Cryptographer?.Dispose();
-                }
+            }
+            finally
+            {
+                Cryptographer?.Dispose();
             }
         }
 
@@ -45,17 +44,17 @@
             foreach (string fileName in files)
             {
                 string encryptedFileName = $"{fileName}.encrypt";
-                using (FileStream outputFileStream =
-                    new FileStream(encryptedFileName, FileMode.Create))
-                {
-                    string data = await File.ReadAllTextAsync(fileName);
+                await using FileStream outputFileStream =
+                    new FileStream(encryptedFileName, FileMode.Create);
+                
+                string data = await File.ReadAllTextAsync(fileName);
 
-                    await Cryptographer.EncryptAsync(data, outputFileStream);
+                await Cryptographer.EncryptAsync(data, outputFileStream);
 
-                    yield return encryptedFileName;
+                yield return encryptedFileName;
 
-                    cancellationToken.ThrowIfCancellationRequested();
-                }
+                cancellationToken.ThrowIfCancellationRequested();
+                
             }
         }
 
