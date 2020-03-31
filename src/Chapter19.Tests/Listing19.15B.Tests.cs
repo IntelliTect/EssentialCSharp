@@ -30,14 +30,16 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_15B.Tests
             // Count files to start
             int count = files.Count();
 
+            using Cryptographer cryptographer = new Cryptographer();
+
             try
             {
 
                 // string text = "You've fallen for one of the two classic blunders! The first being never get involved in a land war in Asia but only slightly lesser known: never go in against a cicelean when DEATH is on the line! HAHAHAHAHAHAHA *dies* You only think I guessed wrong! That's what's so funny! I switched glasses when your back was turned! Ha ha! You fool! You fell victim to one of the classic blunders - The most famous of which is 'never get involved in a land war in Asia' - but only slightly less well - known is this: 'Never go against a Sicilian when death is on the line!' Ha ha ha ha ha ha ha!";
-                await foreach (string fileName in Program.EncryptFilesAsync(files))
+                await foreach (string fileName in Program.EncryptFilesAsync(files, cryptographer))
                 {
                     byte[] encryptedData = await File.ReadAllBytesAsync(fileName);
-                    string decryptedData = await Program.Cryptographer.DecryptAsync(encryptedData);
+                    string decryptedData = await cryptographer.DecryptAsync(encryptedData);
                     string decryptedFileName = Path.GetFileNameWithoutExtension(fileName);
                     if (File.Exists(decryptedFileName))
                     {
@@ -77,13 +79,15 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_15B.Tests
             // Count files to start
             int unencryptedFileCount = files.Count();
 
+            using Cryptographer cryptographer = new Cryptographer();
+
             int count = 0;
             int maxIterationCount = unencryptedFileCount / 2;
             try
             {
                 // string text = "You've fallen for one of the two classic blunders! The first being never get involved in a land war in Asia but only slightly lesser known: never go in against a cicelean when DEATH is on the line! HAHAHAHAHAHAHA *dies* You only think I guessed wrong! That's what's so funny! I switched glasses when your back was turned! Ha ha! You fool! You fell victim to one of the classic blunders - The most famous of which is 'never get involved in a land war in Asia' - but only slightly less well - known is this: 'Never go against a Sicilian when death is on the line!' Ha ha ha ha ha ha ha!";
                 await foreach (string fileName in
-                    Program.EncryptFilesAsync(files)
+                    Program.EncryptFilesAsync(files, cryptographer)
                     .WithCancellation(cancellationTokenSource.Token))
                 {
                     count++;

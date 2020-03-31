@@ -28,7 +28,7 @@
                     break;
             }
 
-
+            using Cryptographer cryptographer = new Cryptographer();
 
             IEnumerable<string> files = Directory.EnumerateFiles(
                 directoryPath ?? Directory.GetCurrentDirectory(), searchPattern);
@@ -38,28 +38,30 @@
             using CancellationTokenSource cancellationTokenSource =
                 new CancellationTokenSource(1);
 
-            IAsyncEnumerable<string> items = files.ToAsyncEnumerable();
-            items = items.SelectAwait((text, id) => EncryptFileAsync(text));
-
             await foreach ((string fileName, string encryptedFileName)
-                in EncryptFilesAsync(files).Zip(files.ToAsyncEnumerable()))
+                in EncryptFilesAsync(files, cryptographer)
+                .Zip(files.ToAsyncEnumerable())
+                .WithCancellation(cancellationTokenSource.Token)
+                )
             {
                 Console.WriteLine($"{fileName}=>{encryptedFileName}");
             }
+
         }
 
         static public async IAsyncEnumerable<string> EncryptFilesAsync(
-            IEnumerable<string> files,
+            IEnumerable<string> files, Cryptographer cryptographer,
             [EnumeratorCancellation] CancellationToken cancellationToken = default)
         {
             foreach (string fileName in files)
             {
-                yield return await EncryptFileAsync(fileName);
+                yield return await EncryptFileAsync(fileName, cryptographer);
                 cancellationToken.ThrowIfCancellationRequested();
             }
         }
 
-        private static async ValueTask<string> EncryptFileAsync(string fileName)
+        private static async ValueTask<string> EncryptFileAsync(
+            string fileName, Cryptographer cryptographer)
         {
             string encryptedFileName = $"{fileName}.encrypt";
             await using FileStream outputFileStream =
@@ -67,16 +69,14 @@
 
             string data = await File.ReadAllTextAsync(fileName);
 
-            await Cryptographer.EncryptAsync(data, outputFileStream);
+            await cryptographer.EncryptAsync(data, outputFileStream);
 
             return encryptedFileName;
         }
 
 
-        // ...
-
-        // Exposed publially for simpler testing.
-        static public Cryptographer Cryptographer { get; } = new Cryptographer();
+        // Included to simplify testing
+        public static Cryptographer? Cryptographer { get; private set; }
 
         private static void DisplayHelp() { /* ... */ }
 
