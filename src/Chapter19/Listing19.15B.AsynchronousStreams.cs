@@ -2,139 +2,66 @@
 {
     using System;
     using System.IO;
-    using System.Net;
     using System.Linq;
     using System.Threading.Tasks;
     using System.Collections.Generic;
+    using System.Threading;
+    using System.Runtime.CompilerServices;
+    using AddisonWesley.Michaelis.EssentialCSharp.Shared;
 
-    static public class Program
+    public class Program
     {
-
-        async static public IAsyncEnumerable<int> FindTextInWebUriAsync(
-            string findText, IEnumerable<string> urls,
-            IProgress<DownloadProgressChangedEventArgs>? progressCallback = null)
+        static public async void Main()
         {
-            using WebClient webClient = new WebClient();
-            if (progressCallback is object)
+            // Create a cancellation token source to cancel 
+            // if the operation takes more than a minute.
+            using (CancellationTokenSource cancellationTokenSource =
+                new CancellationTokenSource(1))
             {
-                webClient.DownloadProgressChanged += (sender, eventArgs) =>
+                try
                 {
-                    progressCallback.Report(eventArgs);
-                };
-            }
-
-            if(urls is null)
-            {
-                throw new ArgumentNullException(nameof(urls));
-            }
-
-            foreach (string url in urls)
-            {
-
-                byte[] downloadData =
-                    await webClient.DownloadDataTaskAsync(url);
-
-                yield return await CountOccurances(downloadData, findText);
-            }
-        }
-
-        private static async Task<int> CountOccurances(byte[] downloadData, string findText)
-        {
-            int textApperanceCount = 0;
-
-            using MemoryStream stream = new MemoryStream(downloadData);
-            using StreamReader reader = new StreamReader(stream);
-
-            int findIndex = 0;
-            int length = 0;
-            do
-            {
-                char[] data = new char[reader.BaseStream.Length];
-                length = await reader.ReadAsync(data);
-                for (int i = 0; i < length; i++)
-                {
-                    if (findText[findIndex] == data[i])
+                    await foreach (string fileName in
+                        EncryptFilesAsync()
+                            .WithCancellation(cancellationTokenSource.Token))
                     {
-                        findIndex++;
-                        if (findIndex == findText.Length)
-                        {
-                            // Text was found
-                            textApperanceCount++;
-                            findIndex = 0;
-                        }
-                    }
-                    else
-                    {
-                        findIndex = 0;
+                        Console.WriteLine(fileName);
                     }
                 }
-            }
-            while (length != 0);
-
-            return textApperanceCount;
-        }
-
-        async public static ValueTask Main(string[] args)
-        {
-            if (args.Length == 0)
-            {
-                Console.WriteLine("ERROR: No findText argument specified.");
-                return;
-            }
-            string findText = args[0];
-            Console.WriteLine($"Searching for {findText}...");
-
-            // ERROR: Not allowed in Async Method
-            // Span<string> urls = args.AsSpan(1..);
-
-            IEnumerable<string> urls;
-            if (args.Length > 1)
-            {
-                urls = args.Skip(1);
-            }
-            else
-            {
-                // The default if no Urls are specified.
-                urls = new string[] { "http://www.IntelliTect.com" };
-            }
-
-            Progress<DownloadProgressChangedEventArgs> progress =
-                new Progress<DownloadProgressChangedEventArgs>((value) =>
+                finally
                 {
-                    Console.Write(".");
-                }
-            );
-
-            try
-            {
-                IEnumerator<string> urlsEnumerator = urls.GetEnumerator();
-                await foreach (int occurances in
-                    FindTextInWebUriAsync(findText, urls, progress))
-                {
-                    urlsEnumerator.MoveNext();
-
-                    Console.WriteLine($"{urlsEnumerator.Current}....{occurances}");
+                    Cryptographer?.Dispose();
                 }
             }
-            catch (AggregateException)
+        }
+
+        static public async IAsyncEnumerable<string> EncryptFilesAsync(
+            string? directoryPath = null, string searchPattern = "*",
+            [EnumeratorCancellation] CancellationToken cancellationToken = default)
+        {
+            IEnumerable<string> files = Directory.EnumerateFiles(
+                directoryPath ?? Directory.GetCurrentDirectory(), searchPattern,
+                SearchOption.AllDirectories);
+
+            foreach (string fileName in files)
             {
-                throw new InvalidOperationException(
-                    $"AggregateException not expected for the {nameof(FindTextInWebUriAsync)} async method.");
+                string encryptedFileName = $"{fileName}.encrypt";
+                using (FileStream outputFileStream =
+                    new FileStream(encryptedFileName, FileMode.Create))
+                {
+                    string data = await File.ReadAllTextAsync(fileName);
+
+                    await Cryptographer.EncryptAsync(data, outputFileStream);
+
+                    yield return encryptedFileName;
+
+                    cancellationToken.ThrowIfCancellationRequested();
+                }
             }
         }
 
-        static public string FormatBytes(long bytes)
-        {
-            string[] magnitudes =
-                new string[] { "GB", "MB", "KB", "Bytes" };
-            long max =
-                (long)Math.Pow(1024, magnitudes.Length);
+        // ...
 
-            return string.Format("{1:##.##} {0}",
-                magnitudes.FirstOrDefault(
-                    magnitude =>
-                        bytes > (max /= 1024)) ?? "0 Bytes",
-                    (decimal)bytes / (decimal)max);
-        }
+        static public Cryptographer Cryptographer { get; } = new Cryptographer();
+
     }
 }
