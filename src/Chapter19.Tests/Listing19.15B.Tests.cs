@@ -1,62 +1,99 @@
-using AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_13to14.Tests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_15B.Tests
 {
-
     [TestClass]
-    public class ProgramTests : BaseProgramTests
+    public class AsyncStreamsTests
     {
-        [ClassInitialize]
-        static public void ClassInitialize(TestContext _)
-        {
-            ProgramWrapper = new ProgramWrapper(
-                Program.Main,
-                async (findText, urls, progress) => {
-                    var items = Program.FindTextInWebUriAsync(findText, urls, progress);
-                    IAsyncEnumerator<int> enumerator = items.GetAsyncEnumerator();
-                    Assert.IsTrue(await enumerator.MoveNextAsync());
-                    return enumerator.Current;
-                    });
-        }
-
-        protected override void AssertMainException(string messagePrefix, Exception exception)
-        {
-            Assert.AreEqual<Type>(typeof(AggregateException), exception.GetType());  // Testing type first (even though the cast will also verify)
-
-            AssertAggregateExceptionType(messagePrefix, (AggregateException)exception);
-        }
-
+        public TestContext? TestContext { get; set; }
 
         [TestMethod]
-        async public Task FindTextInWebUriAsync_3Urls_Success()
+        public async Task EncryptFilesAsync_FilesInCurrentDirectory_EncryptFilesSuccessfully()
         {
-            await foreach (int occurrences in 
-                Program.FindTextInWebUriAsync(
-                    "IntelliTect", new string[] { "https://IntelliTect.com", "https://IntelliTect.com", "https://IntelliTect.com"}))
+
+            Parallel.ForEach(Directory.EnumerateFiles(Directory.GetCurrentDirectory(), "*.encrypt"), item =>
             {
-                Assert.IsTrue(occurrences > 0);
+                // Delete each file with the *.encrypt extension.
+                File.Delete(item);
+            });
+
+            // Count files to start
+            int count = Directory.EnumerateFiles(Directory.GetCurrentDirectory(), "*").Count();
+
+            try
+            {
+                // string text = "You've fallen for one of the two classic blunders! The first being never get involved in a land war in Asia but only slightly lesser known: never go in against a cicelean when DEATH is on the line! HAHAHAHAHAHAHA *dies* You only think I guessed wrong! That's what's so funny! I switched glasses when your back was turned! Ha ha! You fool! You fell victim to one of the classic blunders - The most famous of which is 'never get involved in a land war in Asia' - but only slightly less well - known is this: 'Never go against a Sicilian when death is on the line!' Ha ha ha ha ha ha ha!";
+                await foreach (string fileName in
+                    Program.EncryptFilesAsync(Directory.GetCurrentDirectory(), "*.*"))
+                {
+                    byte[] encryptedData = await File.ReadAllBytesAsync(fileName);
+                    string decryptedData = await Program.Cryptographer.DecryptAsync(encryptedData);
+                    string decryptedFileName = Path.GetFileNameWithoutExtension(fileName);
+                    if (File.Exists(decryptedFileName))
+                    {
+                        string expected = File.ReadAllText(decryptedFileName);
+                        Assert.AreEqual<string>(expected, decryptedData);
+                    }
+                }
+            }
+            catch (AggregateException exception)
+            {
+                TestContext!.WriteLine(exception.Flatten().ToString());
+                throw;
+            }
+
+            Assert.AreEqual<int>(count,
+                Directory.EnumerateFiles(Directory.GetCurrentDirectory(), "*.encrypt").Count());
+
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(OperationCanceledException))]
+        public async Task EncryptFilesAsync_GivenCancellationToken_DontEncryptAllFiles()
+        {
+
+            Parallel.ForEach(Directory.EnumerateFiles(Directory.GetCurrentDirectory(), "*.encrypt"), item =>
+            {
+                // Delete each file with the *.encrypt extension.
+                File.Delete(item);
+            });
+
+
+            using CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
+
+            // Count files to start
+            int unencryptedFileCount = Directory.EnumerateFiles(Directory.GetCurrentDirectory(), "*").Count();
+
+            int count = 0;
+            int maxIterationCount = unencryptedFileCount / 2;
+            try
+            {
+                // string text = "You've fallen for one of the two classic blunders! The first being never get involved in a land war in Asia but only slightly lesser known: never go in against a cicelean when DEATH is on the line! HAHAHAHAHAHAHA *dies* You only think I guessed wrong! That's what's so funny! I switched glasses when your back was turned! Ha ha! You fool! You fell victim to one of the classic blunders - The most famous of which is 'never get involved in a land war in Asia' - but only slightly less well - known is this: 'Never go against a Sicilian when death is on the line!' Ha ha ha ha ha ha ha!";
+                await foreach (string fileName in
+                    Program.EncryptFilesAsync(Directory.GetCurrentDirectory(), "*.*")
+                    .WithCancellation(cancellationTokenSource.Token))
+                {
+                    count++;
+                    if (count >= maxIterationCount)
+                    {
+                        cancellationTokenSource.Cancel();
+                    }
+                }
+            }
+            finally
+            {
+                TestContext!.WriteLine($"{count}");
+                Assert.IsTrue(unencryptedFileCount >
+                    Directory.EnumerateFiles(Directory.GetCurrentDirectory(), "*.encrypt").Count());
+                Assert.AreEqual<int>(maxIterationCount, count);
             }
         }
 
-        [TestMethod]
-        public void FindTextInWebUriAsync_3Urls_ConsoleOutput()
-        {
-            string expected = @"Searching for IntelliTect...
-.*https://Google.com....0
-.*https://IntelliTect.com....*
-.*https://Google.com....0";
 
-            IntelliTect.TestTools.Console.ConsoleAssert.ExpectLike(expected, () =>
-            {
-                ValueTask task = Program.Main(
-                    new string[] { "IntelliTect", "https://Google.com", "https://IntelliTect.com", "https://Google.com" });
-                task.AsTask().Wait();
-            });
-        }
     }
 }
