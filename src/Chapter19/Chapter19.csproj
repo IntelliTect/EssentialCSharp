@@ -17,4 +17,7 @@
       <Link>PiCalculator.cs</Link>
     </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Linq.Async" Version="4.0.0" />
+  </ItemGroup>
 </Project>

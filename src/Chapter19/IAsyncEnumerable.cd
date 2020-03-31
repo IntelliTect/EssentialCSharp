@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Interface Name="System.Collections.Generic.IAsyncEnumerable&lt;T&gt;">
+    <Position X="3.25" Y="3.25" Width="3" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="System.Collections.Generic.IAsyncEnumerator&lt;T&gt;">
+    <Position X="6.5" Y="3.25" Width="2.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="System.IAsyncDisposable">
+    <Position X="6.75" Y="1.75" Width="2" />
+    <TypeIdentifier />
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
