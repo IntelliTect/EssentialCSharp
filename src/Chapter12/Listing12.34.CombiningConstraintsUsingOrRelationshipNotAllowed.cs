@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_30
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_34
 {
     public class BinaryTree<T>
         // Error: OR is not supported
