@@ -12,9 +12,12 @@
 
             // Cleanup in case the file is left in read-only state
             // and can't get created.
-            FileAttributes attrs = File.GetAttributes(fileName);
-            if (attrs.HasFlag(FileAttributes.ReadOnly))
-                File.SetAttributes(fileName, attrs & ~FileAttributes.ReadOnly);
+            if (File.Exists(fileName))
+            {
+                FileAttributes attrs = File.GetAttributes(fileName);
+                if (attrs.HasFlag(FileAttributes.ReadOnly))
+                    File.SetAttributes(fileName, attrs & ~FileAttributes.ReadOnly);
+            }
 
             FileInfo file = new FileInfo(fileName);
 
