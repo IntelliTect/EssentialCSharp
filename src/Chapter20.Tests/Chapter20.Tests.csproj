@@ -1,0 +1,8 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+  </PropertyGroup>
+  <Import Project="..\ChapterTests.props" />
+  <ItemGroup>
+    <ProjectReference Include="..\Chapter20\Chapter20.csproj" />
+  </ItemGroup>
+</Project>
