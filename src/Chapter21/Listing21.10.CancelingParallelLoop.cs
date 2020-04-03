@@ -30,7 +30,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_10
         public static void Main()
         {
             ConsoleColor originalColor = Console.ForegroundColor;
-            List<string> data = Utility.GetData(100000).ToList();
+            List<string> data = GetData(100000).ToList();
 
             CancellationTokenSource cts =
                 new CancellationTokenSource();
@@ -87,6 +87,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_10
         {
             Cryptographer cryptographer = new Cryptographer();
             return System.Text.Encoding.UTF8.GetString(cryptographer.Encrypt(item));
+        }
+
+        private static IEnumerable<string> GetData(int count)
+        {
+            for (int i = 0; i < count; i++)
+                yield return Guid.NewGuid().ToString();
         }
 
         // ...
