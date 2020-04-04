@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <ChapterNumber>22</ChapterNumber>
+    <WarningLevel>2</WarningLevel>
+  </PropertyGroup>
+  <Import Project="..\Chapter.props" />
+  <ItemGroup>
+    <Compile Include="..\Shared\DoWorkEventArgs.cs" Link="DoWorkEventArgs.cs" />
+    <Compile Include="..\Shared\PiCalculator+InternalPiDigitCalculator.cs" Link="PiCalculator+InternalPiDigitCalculator.cs" />
+    <Compile Include="..\Shared\PiCalculator.cs" Link="PiCalculator.cs" />
+    <Compile Include="..\Shared\Program.cs">
+      <Link>Program.cs</Link>
+    </Compile>
+  </ItemGroup>
+</Project>
