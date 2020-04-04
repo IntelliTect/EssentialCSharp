@@ -4,7 +4,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_01
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_01.Tests
 {
     [TestClass]
     public class ProgramTests
