@@ -10,6 +10,9 @@
     <Compile Include="..\Shared\PiCalculator+InternalPiDigitCalculator.cs">
       <Link>PiCalculator+InternalPiDigitCalculator.cs</Link>
     </Compile>
+    <Compile Include="..\Shared\Cryptographer.cs">
+      <Link>Cryptographer.cs</Link>
+    </Compile>
     <Compile Include="..\Shared\DoWorkEventArgs.cs">
       <Link>DoWorkEventArgs.cs</Link>
     </Compile>

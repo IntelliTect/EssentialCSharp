@@ -6,12 +6,6 @@
 
     static class Utility
     {
-        public static IEnumerable<string> GetData(int count)
-        {
-            for(int i = 0; i < count; i++)
-                yield return Guid.NewGuid().ToString();
-        }
-
         public static void DisplayComparison(string title, long synchElapsed, long parallelElapsed)
         {
             string message = string.Format("synchronous {0} > {1} parallel by {2}%",

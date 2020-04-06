@@ -10,11 +10,15 @@
     <Compile Include="..\Shared\PiCalculator+InternalPiDigitCalculator.cs">
       <Link>PiCalculator+InternalPiDigitCalculator.cs</Link>
     </Compile>
+    <Compile Include="..\Shared\Cryptographer.cs">
+      <Link>Cryptographer.cs</Link>
+    </Compile>
     <Compile Include="..\Shared\DoWorkEventArgs.cs">
       <Link>DoWorkEventArgs.cs</Link>
     </Compile>
     <Compile Include="..\Shared\PiCalculator.cs">
       <Link>PiCalculator.cs</Link>
     </Compile>
+    <PackageReference Include="System.Linq.Async" Version="4.0.0" />
   </ItemGroup>
 </Project>

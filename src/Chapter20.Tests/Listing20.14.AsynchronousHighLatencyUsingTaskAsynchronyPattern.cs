@@ -1,11 +1,11 @@
-using AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_13to14.Tests;
+using AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_13;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Linq;
 using System.Runtime.ExceptionServices;
 using System.Threading.Tasks;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_14
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_14.Tests
 {
 
     [TestClass]
