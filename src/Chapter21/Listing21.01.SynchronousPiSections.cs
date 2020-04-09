@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_26
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_01
 {
     using System;
     using AddisonWesley.Michaelis.EssentialCSharp.Shared;

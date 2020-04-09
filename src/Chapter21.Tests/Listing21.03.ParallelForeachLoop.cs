@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_28
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_03
 {
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
