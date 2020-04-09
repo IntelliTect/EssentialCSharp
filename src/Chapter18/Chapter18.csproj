@@ -23,5 +23,6 @@
     <Compile Include="..\Shared\DoWorkEventArgs.cs">
       <Link>DoWorkEventArgs.cs</Link>
     </Compile>
+    <None Include="Listing18.11B.csproj" />
   </ItemGroup>
 </Project>

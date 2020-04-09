@@ -62,8 +62,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_17
             {
 
                 if((optionParts.Length < 2)
-                    || optionParts[1] == ""
-                    || optionParts[1] == ":")
+                    || optionParts[1] == "")
                 {
                     // No setting was provided for the switch.
                     success = false;

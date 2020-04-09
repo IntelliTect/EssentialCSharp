@@ -21,11 +21,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_16
                 new Dictionary<string, PropertyInfo>();
 
             properties = commandLine.GetType().GetProperties(
-                BindingFlags.Public | BindingFlags.NonPublic |
-                BindingFlags.Instance);
+                BindingFlags.Public | BindingFlags.Instance);
             foreach(PropertyInfo property in properties)
             {
-                options.Add(property.Name.ToLower(), property);
+                options.Add(property.Name, property);
                 foreach(CommandLineSwitchAliasAttribute attribute in
                     property.GetCustomAttributes(
                     typeof(CommandLineSwitchAliasAttribute), false))
