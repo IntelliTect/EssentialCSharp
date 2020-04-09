@@ -13,7 +13,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_05
             Console.WriteLine(type.GetTypeInfo().IsGenericType);
 
             type = typeof(System.Nullable<DateTime>);
-            Console.WriteLine(!type.GetTypeInfo().ContainsGenericParameters);
+            Console.WriteLine(type.GetTypeInfo().ContainsGenericParameters);
             Console.WriteLine(type.GetTypeInfo().IsGenericType);
         }
     }
