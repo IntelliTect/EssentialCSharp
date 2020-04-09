@@ -4,6 +4,12 @@
   </PropertyGroup>
   <Import Project="..\Chapter.props" />
   <ItemGroup>
+    <Compile Remove="Listing20.06B.SignaturesOfAsyncEnumerableSelectMethods.cs" />
+    <Compile Remove="Listing20.13.SynchronousHighLatencyInvocationInWPF.cs" />
+    <Compile Remove="Listing20.14.SynchronousHighLatencyInvocationInWPFUsingAwait.cs" />
+    <Compile Remove="Listing20.15.IteratingOverAwaitOperation.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="..\Shared\Program.cs">
       <Link>Program.cs</Link>
     </Compile>
@@ -19,6 +25,10 @@
     <Compile Include="..\Shared\PiCalculator.cs">
       <Link>PiCalculator.cs</Link>
     </Compile>
+    <None Include="Listing20.06B.SignaturesOfAsyncEnumerableSelectMethods.cs" />
+    <None Include="Listing20.13.SynchronousHighLatencyInvocationInWPF.cs" />
+    <None Include="Listing20.14.SynchronousHighLatencyInvocationInWPFUsingAwait.cs" />
+    <None Include="Listing20.15.IteratingOverAwaitOperation.cs" />
     <PackageReference Include="System.Linq.Async" Version="4.0.0" />
   </ItemGroup>
 </Project>
