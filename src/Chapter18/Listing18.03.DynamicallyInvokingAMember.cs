@@ -2,6 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_03
 {
     using System;
     using System.Diagnostics;
+    using System.IO;
     using System.Reflection;
 
     public partial class Program
@@ -14,9 +15,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_03
             {
                 Console.WriteLine(errorMessage);
                 DisplayHelp();
-            }
-
-            if(commandLine.Help)
+            } 
+            else if(commandLine.Help || string.IsNullOrWhiteSpace(commandLine.Out))
             {
                 DisplayHelp();
             }
@@ -27,6 +27,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_03
                 {
                     // Change thread priority
                 }
+                Console.WriteLine(
+                    @$"Running {
+                        Path.GetFileName(Environment.GetCommandLineArgs()[0])} /Out:{
+                            commandLine.Out} /Priority:{
+                            commandLine.Priority}");
 
             }
             // ...
@@ -36,8 +41,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_03
         {
             // Display the command-line help.
             Console.WriteLine(
-                "Compress.exe / Out:< file name > / Help \n"
-                + "/ Priority:RealTime | High | "
+                "Compress.exe /Out:< file name > /Help "
+                + "/Priority:RealTime | High | "
                 + "AboveNormal | Normal | BelowNormal | Idle");
 
         }
@@ -103,7 +108,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_03
                                 commandLine, optionParts[1], null);
                             success = true;
                         }
-                        else if(property.PropertyType.GetTypeInfo().IsEnum)
+                        else if (
+                            // property.PropertyType.IsEnum also available
+                            property.PropertyType ==
+                                typeof(ProcessPriorityClass))
                         {
                             try
                             {
