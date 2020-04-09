@@ -5,7 +5,7 @@ using System.Linq;
 using System.Runtime.ExceptionServices;
 using System.Threading.Tasks;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_14.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_02
 {
 
     [TestClass]

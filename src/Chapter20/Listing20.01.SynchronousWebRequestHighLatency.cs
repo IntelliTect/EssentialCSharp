@@ -1,32 +1,21 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_14
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_01
 {
     using System;
     using System.IO;
-    using System.Net;
     using System.Linq;
-    using System.Threading.Tasks;
-    using System.Runtime.ExceptionServices;
+    using System.Net;
 
-    static public class Program
+    static  public class Program
     {
 
-        async static public Task<int> FindTextInWebUriAsync(
-            string findText, string url,
-            IProgress<DownloadProgressChangedEventArgs>? progressCallback = null)
+        public static int FindTextInWebUri(
+            string findText, string url)
         {
             int textApperanceCount = 0;
 
             using WebClient webClient = new WebClient();
-            if (progressCallback is object)
-            {
-                webClient.DownloadProgressChanged += (sender, eventArgs) =>
-                {
-                    progressCallback.Report(eventArgs);
-                };
-            }
 
-            byte[] downloadData = 
-                await webClient.DownloadDataTaskAsync(url);
+            byte[] downloadData = webClient.DownloadData(url);
 
             using MemoryStream stream = new MemoryStream(downloadData);
             using StreamReader reader = new StreamReader(stream);
@@ -36,7 +25,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_14
             do
             {
                 char[] data = new char[reader.BaseStream.Length];
-                length = await reader.ReadAsync(data);
+                length = reader.Read(data);
                 for (int i = 0; i < length; i++)
                 {
                     if (findText[findIndex] == data[i])
@@ -56,10 +45,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_14
                 }
             }
             while (length != 0);
+
             return textApperanceCount;
         }
 
-        async public static ValueTask Main(string[] args)
+        public static void Main(string[] args)
         {
             if (args.Length == 0)
             {
@@ -77,24 +67,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_14
             }
             Console.Write(url);
 
-            Progress<DownloadProgressChangedEventArgs> progress =
-                new Progress<DownloadProgressChangedEventArgs>((value) =>
-                {
-                    Console.Write(".");
-                }
-            );
+            int occurances =
+                FindTextInWebUri(findText, url);
 
-            try
-            {
-                int occurances =
-                    await FindTextInWebUriAsync(findText, url, progress);
-                Console.WriteLine(occurances);
-            }
-            catch (AggregateException)
-            {
-                throw new InvalidOperationException(
-                    $"AggregateException not expected for the {nameof(FindTextInWebUriAsync)} async method.");
-            }
+            Console.WriteLine(occurances);
         }
 
         static public string FormatBytes(long bytes)
