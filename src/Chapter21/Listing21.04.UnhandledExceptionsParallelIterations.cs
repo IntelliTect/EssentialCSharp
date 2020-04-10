@@ -21,7 +21,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_04
                 SearchOption.AllDirectories);
             try
             {
-                Parallel.ForEach(files, (fileName) =>
+                Parallel.ForEach(files, fileName =>
                 {
                     Encrypt(fileName);
                 });

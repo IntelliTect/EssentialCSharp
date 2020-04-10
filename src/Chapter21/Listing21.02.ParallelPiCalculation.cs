@@ -14,7 +14,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_02
             string pi = "";
             const int iterations = TotalDigits / BatchSize;
             string[] sections = new string[iterations];
-            Parallel.For(0, iterations, (i) =>
+            Parallel.For(0, iterations, i =>
             {
                 sections[i] = PiCalculator.Calculate(
                     BatchSize, i * BatchSize);
