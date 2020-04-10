@@ -1,8 +1,8 @@
-using AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_13;
+using AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_01;
+using AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Tests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Linq;
-using System.Net;
 using System.Threading.Tasks;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_03
@@ -16,7 +16,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_03
         {
             ProgramWrapper = new ProgramWrapper(
                 (args) =>
-                    new ValueTask(Task.Run(() => Program.Main(args))), 
+                    Task.Run(() => Program.Main(args)), 
                 (findText, urls, progress) => Program.FindTextInWebUriAsync(findText, urls.First(), progress));
         }
 

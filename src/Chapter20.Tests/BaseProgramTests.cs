@@ -1,38 +1,14 @@
+﻿﻿using AddisonWesley.Michaelis.EssentialCSharp.Shared;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.IO;
+using System.Net;
+using System.Runtime.ExceptionServices;
+using System.Security.Cryptography;
+using System.Threading.Tasks;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_01
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Tests
 {
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using System;
-    using System.Collections.Generic;
-    using System.Net;
-    using System.Runtime.ExceptionServices;
-    using System.Threading.Tasks;
-
-    public class ProgramWrapper
-    {
-        Func<string[],ValueTask> MainMethod { get; }
-        private Func<string, IEnumerable<string>, IProgress<DownloadProgressChangedEventArgs>?, Task<int>> FindTextInWebUriMethod { get; }
-
-        public ProgramWrapper(
-            Func<string[], ValueTask> mainMethod, 
-            Func<string, IEnumerable<string>, 
-                IProgress<DownloadProgressChangedEventArgs>?, Task<int>> findTextInWebUriMethod)
-        {
-            MainMethod = mainMethod;
-            FindTextInWebUriMethod = findTextInWebUriMethod;
-        }
-
-        async public ValueTask Main(string[] args)
-        {
-            await MainMethod(args);
-        }
-        async public Task<int> FindTextInWebUri(
-            string findText, IEnumerable<string> urls, IProgress<DownloadProgressChangedEventArgs>? progressCallback)
-        {
-            return await FindTextInWebUriMethod(findText, urls, progressCallback);
-        }
-    }
-
     abstract public class BaseProgramTests
     {
 #pragma warning disable CS8618 // Non-nullable field is uninitialized. Consider declaring as nullable.
@@ -49,7 +25,7 @@ http://www.IntelliTect.com";
             string actual = IntelliTect.TestTools.Console.ConsoleAssert.Execute("",
             () =>
             {
-                ProgramWrapper.Main(new string[] { findText }).AsTask().Wait();
+                ProgramWrapper.Main(new string[] { findText }).Wait();
             });
 
             IntelliTect.TestTools.Console.StringExtensions.IsLike(
@@ -68,7 +44,7 @@ http://www.IntelliTect.com";
             string actual = IntelliTect.TestTools.Console.ConsoleAssert.Execute("",
             () =>
             {
-                ProgramWrapper.Main(new string[] { findText }).AsTask().Wait();
+                ProgramWrapper.Main(new string[] { findText }).Wait();
             });
 
             IntelliTect.TestTools.Console.StringExtensions.IsLike(
@@ -84,7 +60,7 @@ http://www.IntelliTect.com";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected, () =>
             {
-                ProgramWrapper.Main(Array.Empty<string>()).AsTask().Wait();
+                ProgramWrapper.Main(Array.Empty<string>()).Wait();
             });
         }
 
@@ -183,7 +159,7 @@ http://www.IntelliTect.com";
                 await ProgramWrapper.FindTextInWebUri("irrelevant", new string[] { url }, null);
                 Assert.Fail("Expected exception was not thrown.");
             }
-            catch(AssertFailedException)
+            catch (AssertFailedException)
             {
                 throw;
             }
@@ -206,7 +182,7 @@ http://www.IntelliTect.com";
         {
             try
             {
-                await ProgramWrapper.FindTextInWebUri("irrelevant", null!, null );
+                await ProgramWrapper.FindTextInWebUri("irrelevant", null!, null);
                 Assert.Fail("Expected exception was not thrown.");
             }
             catch (AggregateException exception)
@@ -227,4 +203,5 @@ http://www.IntelliTect.com";
             }
         }
     }
+
 }

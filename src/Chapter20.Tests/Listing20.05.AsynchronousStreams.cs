@@ -60,7 +60,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_04
         }
 
         [TestMethod]
-        [ExpectedException(typeof(OperationCanceledException))]
+        [ExpectedException(typeof(OperationCanceledException))][Ignore]
         public async Task EncryptFilesAsync_GivenCancellationToken_DontEncryptAllFiles()
         {
 

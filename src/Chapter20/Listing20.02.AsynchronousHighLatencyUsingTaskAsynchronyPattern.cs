@@ -59,7 +59,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_02
             return textApperanceCount;
         }
 
-        async public static ValueTask Main(string[] args)
+        async public static Task Main(string[] args)
         {
             if (args.Length == 0)
             {

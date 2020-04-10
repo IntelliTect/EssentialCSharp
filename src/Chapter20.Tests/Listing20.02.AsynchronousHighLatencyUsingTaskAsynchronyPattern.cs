@@ -1,9 +1,8 @@
-using AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_13;
+using AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_01;
+using AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Tests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Linq;
-using System.Runtime.ExceptionServices;
-using System.Threading.Tasks;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_02
 {
@@ -15,7 +14,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_02
         static public void ClassInitialize(TestContext _)
         {
             ProgramWrapper = new ProgramWrapper(
-                Program.Main,
+                (string[] args)=> Program.Main(args),
                 (findText, urls, progress) => Program.FindTextInWebUriAsync(findText, urls.First(), progress));
         }
 
