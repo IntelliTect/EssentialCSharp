@@ -5,12 +5,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_02
     using System.Net;
     using System.Linq;
     using System.Threading.Tasks;
-    using System.Runtime.ExceptionServices;
 
     static public class Program
     {
 
-        async static public Task<int> FindTextInWebUriAsync(
+        public async static Task<int> FindTextInWebUriAsync(
             string findText, string url,
             IProgress<DownloadProgressChangedEventArgs>? progressCallback = null)
         {
@@ -84,17 +83,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_02
                 }
             );
 
-            try
-            {
-                int occurances =
-                    await FindTextInWebUriAsync(findText, url, progress);
-                Console.WriteLine(occurances);
-            }
-            catch (AggregateException)
-            {
-                throw new InvalidOperationException(
-                    $"AggregateException not expected for the {nameof(FindTextInWebUriAsync)} async method.");
-            }
+            int occurances =
+                await FindTextInWebUriAsync(findText, url, progress);
+            Console.WriteLine(occurances);
         }
 
         static public string FormatBytes(long bytes)

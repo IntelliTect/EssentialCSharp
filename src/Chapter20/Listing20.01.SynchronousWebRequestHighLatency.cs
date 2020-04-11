@@ -15,7 +15,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_01
 
             using WebClient webClient = new WebClient();
 
-            byte[] downloadData = webClient.DownloadData(url);
+            byte[] downloadData = 
+				webClient.DownloadData(url);
 
             using MemoryStream stream = new MemoryStream(downloadData);
             using StreamReader reader = new StreamReader(stream);
@@ -71,20 +72,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_01
                 FindTextInWebUri(findText, url);
 
             Console.WriteLine(occurances);
-        }
-
-        static public string FormatBytes(long bytes)
-        {
-            string[] magnitudes =
-                new string[] { "GB", "MB", "KB", "Bytes" };
-            long max =
-                (long)Math.Pow(1024, magnitudes.Length);
-
-            return string.Format("{1:##.##} {0}",
-                magnitudes.FirstOrDefault(
-                    magnitude =>
-                        bytes > (max /= 1024)) ?? "0 Bytes",
-                    (decimal)bytes / (decimal)max);
         }
     }
 }

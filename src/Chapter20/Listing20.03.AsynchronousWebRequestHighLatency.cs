@@ -109,7 +109,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_03
                         // Rethrowing rather than using
                         // if condition on the type
                         ExceptionDispatchInfo.Capture(
-                            exception.InnerException!).Throw();
+                            innerException!).Throw();
 
                         return true;
                     });

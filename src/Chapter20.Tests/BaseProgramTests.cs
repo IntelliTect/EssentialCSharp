@@ -113,7 +113,7 @@ http://www.IntelliTect.com";
                 // Rethrowing rather than using
                 // if condition on the type
                 ExceptionDispatchInfo.Capture(
-                    aggregateException.InnerException!).Throw();
+                    innerException!).Throw();
 
                 return true;  // Identifhy whether the exception should report that it is handled or not.
             });
@@ -139,7 +139,7 @@ http://www.IntelliTect.com";
                     // Rethrowing rather than using
                     // if condition on the type
                     ExceptionDispatchInfo.Capture(
-                        exception.InnerException!).Throw();
+                        innerException!).Throw();
 
                     return true;
                 });
@@ -196,7 +196,7 @@ http://www.IntelliTect.com";
                     // Rethrowing rather than using
                     // if condition on the type
                     ExceptionDispatchInfo.Capture(
-                        exception.InnerException!).Throw();
+                        innerException!).Throw();
 
                     return true;
                 });

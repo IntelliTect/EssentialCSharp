@@ -1,32 +1,29 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_05
 {
     using System;
-    using System.IO;
-    using System.Linq;
-    using System.Threading.Tasks;
     using System.Collections.Generic;
     using System.Threading;
-    using System.Runtime.CompilerServices;
-    using AddisonWesley.Michaelis.EssentialCSharp.Shared;
+    using System.Threading.Tasks;
 
-class AsyncEncryptionCollection : IAsyncEnumerable<string?>
-{
-    public async IAsyncEnumerator<string?> GetAsyncEnumerator(
-        CancellationToken cancellationToken = default)
+    class AsyncEncryptionCollection : IAsyncEnumerable<string>
     {
-        yield return await Task<string>.Run(() => (string?)null);
-    }
-
-    static public async void Main()
-    {
-        AsyncEncryptionCollection collection =
-            new AsyncEncryptionCollection();
-        // ...
-
-        await foreach (string? fileName in collection)
+        public async IAsyncEnumerator<string> GetAsyncEnumerator(
+            CancellationToken cancellationToken = default)
         {
-            Console.WriteLine(fileName);
+            // Mock code
+            yield return await Task<string>.Run(() => (string)"<filename>");
+        }
+
+        static public async void Main()
+        {
+            AsyncEncryptionCollection collection =
+                new AsyncEncryptionCollection();
+            // ...
+
+            await foreach (string fileName in collection)
+            {
+                Console.WriteLine(fileName);
+            }
         }
     }
-}
 }

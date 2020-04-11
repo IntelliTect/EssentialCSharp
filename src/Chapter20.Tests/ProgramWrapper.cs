@@ -33,5 +33,4 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Tests
             return await FindTextInWebUriMethod(findText, urls, progressCallback);
         }
     }
-
 }
