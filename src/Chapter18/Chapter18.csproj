@@ -12,7 +12,6 @@
     <EmbeddedResource Remove="4.0\**" />
     <None Remove="4.0\**" />
     <Compile Remove="Listing18.10.AssemblyAttributesWithinAssemblyInfo.cs" />
-    <Compile Remove="Listing18.12.MockFileForResequencingListings.cs" />
     <Compile Include="..\Shared\Program.cs">
       <Link>Program.cs</Link>
     </Compile>
