@@ -11,6 +11,7 @@
     <Compile Remove="4.0\**" />
     <EmbeddedResource Remove="4.0\**" />
     <None Remove="4.0\**" />
+    <Compile Remove="Listing18.10.AssemblyAttributesWithinAssemblyInfo.cs" />
     <Compile Include="..\Shared\Program.cs">
       <Link>Program.cs</Link>
     </Compile>
@@ -23,6 +24,7 @@
     <Compile Include="..\Shared\DoWorkEventArgs.cs">
       <Link>DoWorkEventArgs.cs</Link>
     </Compile>
+    <None Include="Listing18.10.AssemblyAttributesWithinAssemblyInfo.cs" />
     <None Include="Listing18.11B.csproj" />
   </ItemGroup>
 </Project>

@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_30
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_27
 {
     using System;
     using System.Linq;
