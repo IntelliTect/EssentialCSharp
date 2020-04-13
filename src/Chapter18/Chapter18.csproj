@@ -13,6 +13,7 @@
     <None Remove="4.0\**" />
     <Compile Remove="Listing18.10.AssemblyAttributesWithinAssemblyInfo.cs" />
     <Compile Remove="Listing18.12.csprojMockFileForResequencingListings.cs" />
+    <Compile Remove="Listing18.30.OverridableMembersOnSystem.Dynamic.DynamicObject.cs" />
     <Compile Include="..\Shared\Program.cs">
       <Link>Program.cs</Link>
     </Compile>
@@ -27,5 +28,6 @@
     </Compile>
     <None Include="Listing18.10.AssemblyAttributesWithinAssemblyInfo.cs" />
     <None Include="Listing18.12.csproj" />
+    <None Include="Listing18.30.OverridableMembersOnSystem.Dynamic.DynamicObject.cs" />
   </ItemGroup>
 </Project>
