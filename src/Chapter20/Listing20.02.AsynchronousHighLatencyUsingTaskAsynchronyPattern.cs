@@ -8,56 +8,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_02
 
     static public class Program
     {
-
-        public async static Task<int> FindTextInWebUriAsync(
-            string findText, string url,
-            IProgress<DownloadProgressChangedEventArgs>? progressCallback = null)
-        {
-            int textApperanceCount = 0;
-
-            using WebClient webClient = new WebClient();
-            if (progressCallback is object)
-            {
-                webClient.DownloadProgressChanged += (sender, eventArgs) =>
-                {
-                    progressCallback.Report(eventArgs);
-                };
-            }
-
-            byte[] downloadData = 
-                await webClient.DownloadDataTaskAsync(url);
-
-            using MemoryStream stream = new MemoryStream(downloadData);
-            using StreamReader reader = new StreamReader(stream);
-
-            int findIndex = 0;
-            int length = 0;
-            do
-            {
-                char[] data = new char[reader.BaseStream.Length];
-                length = await reader.ReadAsync(data);
-                for (int i = 0; i < length; i++)
-                {
-                    if (findText[findIndex] == data[i])
-                    {
-                        findIndex++;
-                        if (findIndex == findText.Length)
-                        {
-                            // Text was found
-                            textApperanceCount++;
-                            findIndex = 0;
-                        }
-                    }
-                    else
-                    {
-                        findIndex = 0;
-                    }
-                }
-            }
-            while (length != 0);
-            return textApperanceCount;
-        }
-
         async public static Task Main(string[] args)
         {
             if (args.Length == 0)
@@ -83,10 +33,72 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_02
                 }
             );
 
-            int occurances =
-                await FindTextInWebUriAsync(findText, url, progress);
-            Console.WriteLine(occurances);
+            // Using await later to elucidation.
+            Task<int> task =
+                FindTextInWebUriAsync(findText, url, progress);
+
+            Console.WriteLine("Searching...");
+
+            int occurrences = await task;
+
+            Console.WriteLine(occurrences);
         }
+
+        public async static Task<int> FindTextInWebUriAsync(
+            string findText, string url,
+            IProgress<DownloadProgressChangedEventArgs>? progressCallback = null)
+        {
+            using WebClient webClient = new WebClient();
+            if (progressCallback is object)
+            {
+                webClient.DownloadProgressChanged += (sender, eventArgs) =>
+                {
+                    progressCallback.Report(eventArgs);
+                };
+            }
+
+            byte[] downloadData = 
+                await webClient.DownloadDataTaskAsync(url);
+
+            return await CountOccurrencesInContentAsync(
+             downloadData, findText);
+        }
+
+        private static async Task<int> CountOccurrencesInContentAsync(byte[] downloadData, string findText)
+        {
+            int textOccurrenceCount = 0;
+
+            using MemoryStream stream = new MemoryStream(downloadData);
+            using StreamReader reader = new StreamReader(stream);
+
+            int findIndex = 0;
+            int length = 0;
+            do
+            {
+                char[] data = new char[reader.BaseStream.Length];
+                length = await reader.ReadAsync(data);
+                for (int i = 0; i < length; i++)
+                {
+                    if (findText[findIndex] == data[i])
+                    {
+                        findIndex++;
+                        if (findIndex == findText.Length)
+                        {
+                            // Text was found
+                            textOccurrenceCount++;
+                            findIndex = 0;
+                        }
+                    }
+                    else
+                    {
+                        findIndex = 0;
+                    }
+                }
+            }
+            while (length != 0);
+            return textOccurrenceCount;
+        }
+
 
         static public string FormatBytes(long bytes)
         {

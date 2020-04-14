@@ -11,12 +11,20 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_01
         public static int FindTextInWebUri(
             string findText, string url)
         {
-            int textApperanceCount = 0;
 
             using WebClient webClient = new WebClient();
 
-            byte[] downloadData = 
-				webClient.DownloadData(url);
+            byte[] downloadData =
+                webClient.DownloadData(url);
+
+            return CountOccurencesInContent(
+                downloadData, findText);
+
+        }
+
+        private static int CountOccurencesInContent(byte[] downloadData, string findText)
+        {
+            int textOccurrenceCount = 0;
 
             using MemoryStream stream = new MemoryStream(downloadData);
             using StreamReader reader = new StreamReader(stream);
@@ -35,7 +43,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_01
                         if (findIndex == findText.Length)
                         {
                             // Text was found
-                            textApperanceCount++;
+                            textOccurrenceCount++;
                             findIndex = 0;
                         }
                     }
@@ -47,7 +55,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_01
             }
             while (length != 0);
 
-            return textApperanceCount;
+            return textOccurrenceCount;
         }
 
         public static void Main(string[] args)
@@ -68,10 +76,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_01
             }
             Console.Write(url);
 
-            int occurances =
+            int occurences =
                 FindTextInWebUri(findText, url);
 
-            Console.WriteLine(occurances);
+            Console.WriteLine(occurences);
         }
     }
 }

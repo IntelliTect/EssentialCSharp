@@ -50,7 +50,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_07
         static bool EventTriggered { get; set; }
 
         public const string ExpectedExceptionMessage = "Expected Exception";
-        public static async void Main()
+        public static async Task Main()
         {
 
             AsyncSynchronizationContext synchronizationContext = 
@@ -60,13 +60,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_07
             try
             {
 
-                OnEvent(typeof(Program), new EventArgs());
+                await OnEvent(typeof(Program), new EventArgs());
 
-//#if WithOutUsingResetEvent
-                Task.Delay(1000).Wait();  // 
-//#else
+#if WithOutUsingResetEvent
+                await Task.Delay(1000).Wait();  // 
+#else
                 synchronizationContext.ResetEvent.Wait();
-//#endif
+#endif
 
                 if (synchronizationContext.Exception != null)
                 {
@@ -83,7 +83,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_07
             }
         }
 
-        static async void OnEvent(object sender, EventArgs eventArgs)
+        static async Task OnEvent(object sender, EventArgs eventArgs)
         {
             Console.WriteLine($@"Invoking Task.Run...(Thread ID: {
                     Thread.CurrentThread.ManagedThreadId})");

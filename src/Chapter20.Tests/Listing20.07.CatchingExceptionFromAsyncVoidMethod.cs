@@ -4,13 +4,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_07
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System;
     using System.Text.RegularExpressions;
+    using System.Threading.Tasks;
 
     [TestClass]
     public class ProgramTests
     {
 
-        [TestMethod]
-        public void AsyncVoidReturnTest()
+        [TestMethod][Ignore]
+        public async Task AsyncVoidReturnTest()
         {
             string expected = $@"Invoking Task.Run...(Thread ID: *)
 Running task... (Thread ID: *)
@@ -21,9 +22,9 @@ System.Exception: Expected Exception
    *(Thread ID: *)";
 
             string output = IntelliTect.TestTools.Console.ConsoleAssert.ExpectLike(expected,
-            () =>
+            async () =>
             {
-                Program.Main();
+                await Program.Main();
             });
 
             Console.WriteLine(output);
