@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <ProductName>Chapter18.Tests</ProductName>
+    <ChapterNumber>17</ChapterNumber>
   </PropertyGroup>
   <Import Project="..\ChapterTests.props" />
   <ItemGroup>

@@ -1,4 +1,6 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_05
+﻿// Justification: Listing is incomplete for purposes of elucidation.
+#pragma warning disable IDE0060 // Remove unused parameter
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_05
 {
     using System;
 
@@ -36,18 +38,21 @@
         public Longitude Longitude { get; }
         public Latitude Latitude { get; }
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             // STEP 1: Check for null
-            if (obj == null)
+            if (obj is null)
             {
                 return false;
             }
-            // STEP 3: Equivalent data types
+            // STEP 2: Equivalent data types
+            // can be avoided if type is sealed
             if (this.GetType() != obj.GetType())
             {
                 return false;
             }
+
+            // STEP 3: Invoked strongly type helper version of Equals()
             return Equals((Coordinate)obj);
         }
 
@@ -60,13 +65,6 @@
             //     return false;
             // }
 
-            // STEP 2: Check for ReferenceEquals if this 
-            // is a reference type.
-            // if ( ReferenceEquals(this, obj))
-            // {
-            //   return true;
-            // }
-
             // STEP 4: Possibly check for equivalent hash codes.
             // if (this.GetHashCode() != obj.GetHashCode())
             // {
@@ -76,10 +74,10 @@
             // STEP 5: Check base.Equals if base overrides Equals().
             // System.Diagnostics.Debug.Assert(
             //     base.GetType() != typeof(object) );
-            // if ( !base.Equals(obj) )
-            // {
-            //    return false;
-            // } 
+            if (!base.Equals(obj))
+            {
+                return false;
+            }
 
             // STEP 6: Compare identifying fields for equality
             // using an overload of Equals on Longitude
@@ -88,12 +86,10 @@
         }
 
         // STEP 7: Override GetHashCode
-        public override int GetHashCode()
-        {
-            int hashCode = Longitude.GetHashCode();
-            hashCode ^= Latitude.GetHashCode(); // Xor (eXclusive OR)
-            return hashCode;
-        }
+        public override int GetHashCode() =>
+            HashCode.Combine(Longitude.GetHashCode(), Latitude.GetHashCode());
+
+        // STEP 8: Override the ==/!= operators
         public static bool operator ==(
             Coordinate leftHandSide,
             Coordinate rightHandSide)
@@ -101,6 +97,7 @@
             return (leftHandSide.Equals(rightHandSide));
         }
 
+        // STEP 8: Override the ==/!= operators
         public static bool operator !=(
             Coordinate leftHandSide,
             Coordinate rightHandSide)

@@ -1,10 +1,21 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_06
+﻿// Justification: Invalid code commented out resulting in partial implementation
+#pragma warning disable IDE0059 // Unnecessary assignment of a value
+
+using System.Diagnostics.CodeAnalysis;
+
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_06
 {
-// In a properly implemented class we could use our Contact class
-#pragma warning disable CS0169
+
     public class PdaItem
     {
-        private string _Name;
+  private string? _Name;
+  [DisallowNull]
+  public string? Name
+  {
+      get { return _Name; }
+      set { _Name = value; }
+  }
+
         // ...
     }
 
@@ -20,9 +31,7 @@
             Contact contact = new Contact();
 
             // ERROR:  'PdaItem. _Name' is inaccessible
-            // due to its protection level
-            //contact._Name = "Inigo Montoya";  //uncomment this line and it will not compile
+            // contact._Name = "Inigo Montoya";  //uncomment this line and it will not compile
         }
     }
-#pragma warning restore CS0169
 }

@@ -23,9 +23,9 @@
             return hashCode;
         }
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
-            if(obj == null)
+            if(obj is null)
             {
                 return false;
             }
@@ -40,7 +40,7 @@
             return Equals((ProductSerialNumber)obj);
         }
 
-        public bool Equals(ProductSerialNumber obj)
+        public bool Equals(ProductSerialNumber? obj)
         {
             // STEP 3: Possibly check for equivalent hash codes
             // if (this.GetHashCode() != obj.GetHashCode())
@@ -57,7 +57,7 @@
             // } 
 
             // STEP 1: Check for null
-            return ((obj != null)
+            return ((obj is object)
                 // STEP 5: Compare identifying fields for equality.
                 && (ProductSeries == obj.ProductSeries) &&
                 (Model == obj.Model) &&
@@ -71,11 +71,11 @@
 
             // Check if leftHandSide is null
             // (operator== would be recursive)
-            if(ReferenceEquals(leftHandSide, null))
+            if(leftHandSide is null)
             {
                 // Return true if rightHandSide is also null
                 // and false otherwise
-                return ReferenceEquals(rightHandSide, null);
+                return rightHandSide is null;
             }
 
             return (leftHandSide.Equals(rightHandSide));

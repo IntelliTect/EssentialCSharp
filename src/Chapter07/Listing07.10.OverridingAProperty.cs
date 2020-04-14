@@ -1,4 +1,7 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_10
+﻿// Non-nullable field is uninitialized. Consider declaring as nullable.
+#pragma warning disable CS8618 // Disabled pending constructor
+        
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_10
 {
     public class PdaItem
     {

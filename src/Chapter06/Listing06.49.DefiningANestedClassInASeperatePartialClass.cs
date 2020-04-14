@@ -1,4 +1,7 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_49
+﻿// Non-nullable field is uninitialized. Consider declaring as nullable.
+#pragma warning disable CS8618 // Pending a constructors
+
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_49
 {
     using System;
 

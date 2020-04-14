@@ -3,7 +3,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_25
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using System.Text;
 
     public class Program
     {
@@ -48,8 +47,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_25
 
         }
 
-        private static void Print<T>(
-                string format, IEnumerable<T> items) =>
+        private static void Print<T>
+            (
+                string format, IEnumerable<T> items)
+                where T : notnull =>
             Console.WriteLine(format, string.Join(
                 ", ", items.Select(x => x.ToString())));
 

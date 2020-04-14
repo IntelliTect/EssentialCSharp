@@ -1,7 +1,15 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_15
-{
+// Non-nullable field is uninitialized. Consider declaring as nullable.
+#pragma warning disable CS8618
 // Our Main doesn't leverage everything in our Employee implementation - in production it would
 #pragma warning disable CS0649
+// Disabled pending introductin to object initializers
+#pragma warning disable IDE0017 
+// Add readonly modifier ignored pending introduction of the concept
+#pragma warning disable IDE0044
+
+
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_15
+{
     public class Program
     {
         public static void Main()
@@ -21,12 +29,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_15
         // ...
     }
 
-    class Employee
+    public class Employee
     {
         public string FirstName;
         public string LastName;
-        public string Salary;
-        private string Password;
+        public string? Salary;
+        private string Password;  // Uninitialized pending explanation of constructors
         private bool IsAuthenticated;
 
         public bool Logon(string password)
@@ -44,5 +52,4 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_15
         }
         // ...
     }
-#pragma warning restore CS0649
 }

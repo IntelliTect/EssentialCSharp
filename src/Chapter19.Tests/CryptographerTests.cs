@@ -1,4 +1,4 @@
-﻿using AddisonWesley.Michaelis.EssentialCSharp.Shared;
+﻿﻿using AddisonWesley.Michaelis.EssentialCSharp.Shared;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.IO;

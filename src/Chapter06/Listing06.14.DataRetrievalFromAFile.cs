@@ -1,4 +1,7 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_14
+﻿// Non-nullable field is uninitialized. Consider declaring as nullable.
+#pragma warning disable CS8618
+
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_14
 {
     using System;
     using System.IO;
@@ -33,7 +36,7 @@
     {
         public string FirstName;
         public string LastName;
-        public string Salary;
+        public string? Salary;
 
         public string GetName()
         {
@@ -97,8 +100,10 @@
 
             // Read each line from the file and place it into
             // the associated property.
-            employee.FirstName = reader.ReadLine();
-            employee.LastName = reader.ReadLine();
+            employee.FirstName = reader.ReadLine()??
+                throw new InvalidOperationException("FirstName cannot be null");
+            employee.LastName = reader.ReadLine()??
+                throw new InvalidOperationException("LastName cannot be null");
             employee.Salary = reader.ReadLine();
 
             // Dispose the StreamReader and its Stream

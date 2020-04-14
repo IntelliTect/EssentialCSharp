@@ -1,4 +1,6 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_04
+﻿// Justification: Listing is incomplete for purposes of elucidation.
+#pragma warning disable IDE0060 // Remove unused parameter
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_04
 {
     using System;
 

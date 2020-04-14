@@ -7,17 +7,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_01
     {
         public static void Main()
         {
-            List<string> list = new List<string>();
-
-            // Lists automatically expand as elements
-            // are added
-            list.Add("Sneezy");
-            list.Add("Happy");
-            list.Add("Dopey");
-            list.Add("Doc");
-            list.Add("Sleepy");
-            list.Add("Bashful");
-            list.Add("Grumpy");
+            List<string> list = new List<string>
+            { "Sneezy", "Happy", "Dopey",  "Doc", "Sleepy", "Bashful",  "Grumpy"};
 
             list.Sort();
 

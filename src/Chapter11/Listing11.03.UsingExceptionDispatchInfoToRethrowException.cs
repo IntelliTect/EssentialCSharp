@@ -31,7 +31,7 @@
             {
                 exception = exception.Flatten();
                 ExceptionDispatchInfo.Capture(
-                    exception.InnerException).Throw();
+                    exception.InnerException??exception).Throw();
             }
 
         }
@@ -40,7 +40,7 @@
         private static Task WriteWebRequestSizeAsync(
             string url)
         {
-            StreamReader reader = null;
+            StreamReader? reader = null;
             WebRequest webRequest =
                  WebRequest.Create(url);
 

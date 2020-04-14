@@ -1,4 +1,6 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_17
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_17
 {
     public class PdaItem
     {
@@ -8,17 +10,37 @@
         }
 
         // ...
-        public string Name { get; set; }
+
+        public virtual string Name { get; set; }
     }
     public class Contact : PdaItem
     {
-        public Contact(string name) :
-            base(name)
+        public Contact(string name)
+            : base(name)
         {
-            Name = name;
         }
 
-        public new string Name { get; set; }
+        public override string Name
+        {
+            get
+            {
+                return $"{ FirstName } { LastName }";
+            }
+
+            set
+            {
+                string[] names = value.Split(' ');
+                // Error handling not shown
+                FirstName = names[0];
+                LastName = names[1];
+            }
+        }
+
+        [NotNull] [DisallowNull]
+        public string? FirstName { get; set; }
+        [NotNull] [DisallowNull]
+        public string? LastName { get; set; }
+
         // ...
     }
 }

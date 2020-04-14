@@ -25,10 +25,6 @@
                 // Handle Win32Exception where
                 // ErrorCode is 42
             }
-            catch(NullReferenceException exception)
-            {
-                // Handle NullReferenceException
-            }
             catch(ArgumentException exception)
             {
                 // Handle ArgumentException

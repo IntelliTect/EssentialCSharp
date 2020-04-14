@@ -12,7 +12,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_20.Tests
         public void Initialize_NullForFirstName_ThrowsArgumentNullException()
         {
             Employee employee = new Employee();
-            employee.Initialize(null, "Montoya");
+            // Null-forgiving operator used with null for testing.
+            employee.Initialize(null!, "Montoya");
         }
         
         [TestMethod]
@@ -20,7 +21,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_20.Tests
         public void Initialize_NullForLastName_ThrowsArgumentNullException()
         {
             Employee employee = new Employee();
-            employee.Initialize("Inigo", null);
+            // Null-forgiving operator used with null for testing.
+            employee.Initialize("Inigo", null!);
         }
         
         [TestMethod]

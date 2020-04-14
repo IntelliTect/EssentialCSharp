@@ -16,7 +16,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_16
         public static Dictionary<string, PropertyInfo> GetSwitches(
             object commandLine)
         {
-            PropertyInfo[] properties = null;
+            PropertyInfo[] properties;
             Dictionary<string, PropertyInfo> options =
                 new Dictionary<string, PropertyInfo>();
 

@@ -4,12 +4,12 @@
 
     class Program
     {
-        private static TemperatureChangedHandler OnTemperatureChanged;
+        private static readonly TemperatureChangedHandler OnTemperatureChanged = delegate { };
 
         public void Main()
         {
             // Not thread-safe
-            if(OnTemperatureChanged != null)
+            if(OnTemperatureChanged != null) // Warning ignored to demonstrate problem.
             {
                 // Call subscribers
                 OnTemperatureChanged(
@@ -17,12 +17,15 @@
             }
         }
 
-        public object value { get; set; }
+        // Justification: Lowercase to simulate the value keyword form a stetter.
+        #pragma warning disable IDE1006 // Naming Styles
+        public object? value { get; set; }
+        #pragma warning restore IDE1006 // Naming Styles
     }
 
     class TemperatureEventArgs
     {
-        public TemperatureEventArgs(object value)
+        public TemperatureEventArgs(object? _)
         {
             // ...
         }

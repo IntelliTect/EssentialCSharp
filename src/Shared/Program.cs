@@ -50,14 +50,27 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                 {
                     return reg.IsMatch(type.FullName!);
                 });
-                if (target == null)
+                if (target is null)
                 {
                     throw new InvalidOperationException($"There is no listing '{input}'.");
                 }
 
                 MethodInfo method = target.GetMethods().First();
-
                 string[]? arguments;
+                void InvokeMethodUsingReflection()
+                {
+                    // Note: 'arguments' here are the array of commandline args, so they 
+                    // it is the first item in the "parameters" array specified to the 
+                    // Invoke method.
+                    object? result = method.Invoke(null,
+                        parameters: arguments is null ? new object[0] : new object[] { arguments! });
+
+                    if (method.ReturnType != typeof(void))
+                    {
+                        Console.WriteLine($"Result: {result}");
+                    }
+                }
+
                 if (!method.GetParameters().Any())
                 {
                     arguments =
@@ -79,21 +92,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                 {
                     Thread thread = new Thread(() =>
                     {
-                        object? result = method.Invoke(null, arguments);
-                        if (!(method.ReturnType == typeof(void)))
-                        {
-                            Console.WriteLine($"Result: {result}");
-                        }
+                        InvokeMethodUsingReflection();
                     });
                 }
                 else
                 {
-                    object? result = method.Invoke(null, arguments);
-
-                    if (!(method.ReturnType == typeof(void)))
-                    {
-                        Console.WriteLine($"Result: {result}");
-                    }
+                    InvokeMethodUsingReflection();
                 }
             }
             catch (System.IO.FileNotFoundException)
@@ -126,20 +130,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                 }
                 else
                 {
-                    // Invoke ExceptionDispatchInfo using reflection because it doesn't 
-                    // exist in .NET 4.0 or earlier and we want to maintain compatibility
-                    // while still taking advantage of it if it is available.
-                    Type? exceptionDispatchInfoType =
-                        // Don't use nameof here as the type may not exists and, therefore, won't compile.
-                        Type.GetType("System.Runtime.ExceptionServices.ExceptionDispatchInfo");
-                    if (exceptionDispatchInfoType is null)
-                        throw exception.InnerException;
-                    else
-                    {
-                        dynamic exceptionDispatchInfo = exceptionDispatchInfoType.GetMethod("Capture")
-                            !.Invoke(exceptionDispatchInfoType, new object[] { exception.InnerException })!;
-                        exceptionDispatchInfo.Throw();
-                    }
+                    // Use throw exception.InnerException instead for earlier
+                    // versions of the framework.
+                    System.Runtime.ExceptionServices.ExceptionDispatchInfo.Capture(
+                        exception.InnerException).Throw();
                 }
             }
             finally
@@ -193,7 +187,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
 
             int startPosition;
 
-            if (!int.TryParse(chapterListing[0], out startPosition))
+            if (!int.TryParse(chapterListing[0], out _))
             {
                 startPosition = 1;
                 listing += chapterListing[0].ToUpper() + ".";

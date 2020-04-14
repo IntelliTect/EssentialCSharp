@@ -50,15 +50,8 @@
               Coordinate rightHandSide)
         {
 
-            // Check if leftHandSide is null
-            // (operator== would be recursive)
-            if (ReferenceEquals(leftHandSide, null))
-            {
-                // Return true if rightHandSide is also null
-                // but false otherwise
-                return ReferenceEquals(rightHandSide, null);
-            }
-
+            // There is no need to check of null in this 
+            // case because Coordinate is a valye type.
             return (leftHandSide.Equals(rightHandSide));
         }
 
@@ -69,10 +62,10 @@
             return !(leftHandSide == rightHandSide);
         }
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             // STEP 1: Check for null
-            if (obj == null)
+            if (obj is null)
             {
                 return false;
             }

@@ -16,16 +16,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_22
                     // ...
                 }
             }
-            else if (data == null)
-            {
-                throw new ArgumentNullException(nameof(data));
-            }
             // ...
 
             Console.WriteLine(data);
         }
 
-        private static object Encrypt(string data)
+        public static object Encrypt(string data)
         {
             // See Chapter 19 for actual encryption implementation
             return $"ENCRYPTED <{data}> ENCRYPTED";

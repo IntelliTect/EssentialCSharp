@@ -57,8 +57,8 @@
 
     public interface IListable
     {
-        // Return the value of each column in the row
-        string[] ColumnValues
+        // Return the value of each cell in the row
+        string?[] CellValues
         {
             get;
         }
@@ -78,7 +78,7 @@
     {
         public Contact(string firstName, string lastName,
             string address, string phone)
-            : base(null)
+            : base(GetName(firstName, lastName))
         {
             FirstName = firstName;
             LastName = lastName;
@@ -86,12 +86,12 @@
             Phone = phone;
         }
 
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Address { get; set; }
-        public string Phone { get; set; }
+        public string FirstName { get; }
+        public string LastName { get; }
+        public string Address { get; }
+        public string Phone { get; }
 
-        public string[] ColumnValues
+        public string[] CellValues
         {
             get
             {
@@ -110,13 +110,14 @@
             get
             {
                 return new string[] {
-                    "First Name", "Last Name    ", 
+                    "First Name", "Last Name    ",
                     "Phone       ",
                     "Address                       " };
             }
         }
 
-        // ...
+        static public string GetName(string firstName, string lastName)
+            => $"{ firstName } { lastName }";
     }
 
     public class Publication : IListable
@@ -128,15 +129,15 @@
             Year = year;
         }
 
-        public string Title { get; set; }
-        public string Author { get; set; }
-        public int Year { get; set; }
+        public string Title { get; }
+        public string Author { get; }
+        public int Year { get; }
 
-        public string[] ColumnValues
+        public string?[] CellValues
         {
             get
             {
-                return new string[]
+                return new string?[]
                 {
                     Title,
                     Author,
@@ -168,7 +169,7 @@
 
             for(int count = 0; count < items.Length; count++)
             {
-                string[] values = items[count].ColumnValues;
+                string?[] values = items[count].CellValues;
                 DisplayItemRow(columnWidths, values);
             }
         }
@@ -188,7 +189,7 @@
         }
 
         private static void DisplayItemRow(
-            int[] columnWidths, string[] values)
+            int[] columnWidths, string?[] values)
         {
             if(columnWidths.Length != values.Length)
             {
@@ -199,7 +200,7 @@
 
             for(int index = 0; index < values.Length; index++)
             {
-                string itemToPrint = values[index].PadRight(columnWidths[index], ' ');
+                string itemToPrint = (values[index]??"").PadRight(columnWidths[index], ' ');
                 Console.Write(itemToPrint);
             }
             Console.WriteLine();

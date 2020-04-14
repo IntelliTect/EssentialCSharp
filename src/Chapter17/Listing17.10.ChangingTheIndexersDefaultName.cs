@@ -40,18 +40,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_10
         {
             get
             {
-                switch(index)
+                return index switch
                 {
-                    case PairItem.First:
-                        return First;
-                    case PairItem.Second:
-                        return Second;
-                    default:
-                        throw new NotImplementedException(
-                            string.Format(
-                            "The enum {0} has not been implemented",
-                            index.ToString()));
-                }
+                    PairItem.First => First,
+                    PairItem.Second => Second,
+                    _ => throw new NotImplementedException(
+                         $"The enum {index} has not been implemented"),
+                };
             }
         }
     }

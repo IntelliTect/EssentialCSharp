@@ -10,7 +10,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_17
         // ...
         public static bool TryParse(
             string[] args, object commandLine,
-            out string errorMessage)
+            out string? errorMessage)
         {
             bool success = false;
             errorMessage = null;
@@ -21,7 +21,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_17
 
             foreach(string arg in args)
             {
-                PropertyInfo property;
                 string option;
                 if(arg[0] == '/' || arg[0] == '-')
                 {
@@ -29,7 +28,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_17
                         new char[] { ':' }, 2);
                     option = optionParts[0].Remove(0, 1).ToLower();
 
-                    if(options.TryGetValue(option, out property))
+                    if(options.TryGetValue(option, out PropertyInfo? property))
                     {
                         success = SetOption(
                             commandLine, property,
@@ -48,7 +47,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_17
 
         private static bool SetOption(
             object commandLine, PropertyInfo property,
-            string[] optionParts, ref string errorMessage)
+            string[] optionParts, ref string? errorMessage)
         {
             bool success;
 
@@ -96,9 +95,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_17
             return success;
         }
 
-        private static bool TryParseEnumSwitch(object commandLine, string[] optionParts, PropertyInfo property, ref string errorMessage)
+// Justification: Not fully implemented.
+#pragma warning disable IDE0060 // Remove unused parameter
+        private static bool TryParseEnumSwitch(
+            object commandLine, string[] optionParts, PropertyInfo property, ref string? errorMessage)
         {
             throw new NotImplementedException();
         }
+#pragma warning restore IDE0060 // Remove unused parameter
     }
 }

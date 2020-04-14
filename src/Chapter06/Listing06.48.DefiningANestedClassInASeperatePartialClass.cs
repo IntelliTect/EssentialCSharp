@@ -1,8 +1,9 @@
+// Ignored as implementation was removed for elucidation
+#pragma warning disable IDE0060 //Remove unused parameter
+
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_48
 {
     using System;
-// We dont fully implement our switch block here
-#pragma warning disable CS1522
 
 
     // File: Program.cs
@@ -12,10 +13,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_48
         {
             CommandLine commandLine = new CommandLine(args);
 
+            #pragma warning disable CS1522 // Empty switch block
             switch(commandLine.Action)
             {
                 // ...
             }
+            #pragma warning restore CS1522 // Empty switch block
         }
     }
 
@@ -38,5 +41,4 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_48
             }
         }
     }
-#pragma warning restore CS1522
 }

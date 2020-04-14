@@ -14,10 +14,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20
             CalculateAsync(digits, null);
         }
         public void CalculateAsync(
-            int digits, object userState)
+            int digits, object? userState)
         {
             CalculateAsync(
-                digits, default(CancellationToken), userState);
+                digits, default, userState);
         }
         public void CalculateAsync<TState>(
             int digits,
@@ -29,7 +29,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20
                 .ContinueWith<string>(
                     continueTask =>
                     {
-                        CalculateCompleted(typeof(PiCalculator),
+                        CalculateCompleted?.Invoke(typeof(PiCalculator),
                             new CalculateCompletedEventArgs(
                                 continueTask.Result,
                                 continueTask.Exception,
@@ -47,9 +47,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20
         {
             public CalculateCompletedEventArgs(
                 string value,
-                Exception error,
+                Exception? error,
                 bool cancelled,
-                object userState)
+                object? userState)
                 : base(
                     error, cancelled, userState)
             {

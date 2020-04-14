@@ -12,8 +12,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_21
 
         public static void DisplayGreeting(
             string firstName,
-            string middleName = default(string),
-            string lastName = default(string))
+            string? middleName = null,
+            string? lastName = null
+            )
         {
             // ...
         }

@@ -58,12 +58,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_19
         private static int CountLines(string file)
         {
             int lineCount = 0;
-            string line;
+            string? line;
             FileStream stream =
                 new FileStream(file, FileMode.Open);
             StreamReader reader = new StreamReader(stream);
             line = reader.ReadLine();
-            while(line != null)
+            while(line is object)
             {
                 if(line.Trim() != "")
                 {

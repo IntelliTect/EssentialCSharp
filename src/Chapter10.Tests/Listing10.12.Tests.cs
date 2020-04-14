@@ -1,5 +1,7 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
+﻿using System;
+using System.IO;
+using System.Text.RegularExpressions;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_12.Tests
 {
@@ -7,53 +9,50 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_12.Tests
     public class TextNumberParserTests
     {
         [TestMethod]
-        public void Main_InigoMontoya_Success()
+        public void Main_HospitalEmergencyCodes_DisplaysCodes()
         {
             const string expected =
-                @"Hello Inigo Montoya.";
+                @"info: Console[0]
+      Hospital Emergency Codes: = 'black', 'blue', 'brown', 'CBR', 'orange', 'purple', 'red', 'yellow'
+warn: Console[0]
+      This is a test of the emergency...
+";
 
-            IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, (Action<string[]>)(Program.Main), "Inigo Montoya" );
-        }
-        [TestMethod]
-        public void Main_InigoMontoyaWithGreeting_Success()
-        {
-            const string expected =
-                @"Hello Inigo Montoya.  Welcome!";
+            Action act = () => Program.Main(new[] {"black", "blue", "brown", "CBR", 
+                "orange", "purple", "red", "yellow"});
 
-            IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, (Action<string[]>)(Program.Main), "Inigo Montoya", "-g", "Hello {name}.  Welcome!");
-        }
-
-        [TestMethod]
-        public void Main_GreetingWithInigoMontoya_Success()
-        {
-            const string expected =
-                @"Hello Inigo Montoya.  Welcome!";
-
-            IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, (Action<string[]>)(Program.Main), "-g", "Hello {name}.  Welcome!", "Inigo Montoya");
+            var result = Execute(act);
+            
+            Assert.AreEqual(expected, result);
         }
 
-        [TestMethod]
-        public void Main_OptionQuestionMark_Success()
+        private static string Execute(Action action, bool removeVT100 = true)
         {
-            const string expected =
-                @"
+            TextWriter savedOutputStream = Console.Out;
+            try
+            {
+                string output;
+                using (TextWriter writer = new StringWriter())
+                {
+                    Console.SetOut(writer);
+                    action();
 
-Usage:  [arguments] [options]
+                    output = removeVT100 
+                        ? RemoveVT100(writer.ToString())
+                        : writer.ToString();
+                }
 
-Arguments:
-  name  Enter the full name of the person to be greeted.
+                return output;
+            }
+            finally
+            {
+                Console.SetOut(savedOutputStream);
+            }
+        }
 
-Options:
-  -$|-g |--greeting <greeting>  The greeting to display. The greeting supports a format string where '{name}' will be substituted with the name.
-  -? | -h | --help              Show help information
-
-Hello .";
-
-            IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, (Action<string[]>)(Program.Main), "-?");
+        private static string RemoveVT100(string removeFrom)
+        {
+            return Regex.Replace(removeFrom, "\u001b\\[\\d{1,3}m", "");
         }
     }
 }

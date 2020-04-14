@@ -5,7 +5,7 @@
     public class Thermostat
     {
         // Define the event publisher
-        public Action<float> OnTemperatureChange { get; set; }
+        public Action<float>? OnTemperatureChange { get; set; }
 
         public float CurrentTemperature
         {
@@ -16,9 +16,11 @@
                 {
                     _CurrentTemperature = value;
 
-                    // INCOMPLETE:  Check for null needed
                     // Call subscribers
+                    // Justification: Incomplete, check for null needed.
+                    #pragma warning disable CS8602 // Dereference of a possibly null reference.
                     OnTemperatureChange(value);
+                    #pragma warning restore CS8602 // Dereference of a possibly null reference.
                 }
             }
         }

@@ -1,8 +1,8 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_26
-{
-    using System;
-    using System.IO;
+﻿// Disabled pending introductin to object initializers
+#pragma warning disable IDE0017 
 
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_26
+{
     public class Program
     {
         public static void Main()
@@ -30,9 +30,9 @@
 
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string Salary { get; set; } = "Not Enough";
-        public string Title { get; set; }
-        public Employee Manager { get; set; }
+        public string? Salary { get; set; } = "Not Enough";
+        public string? Title { get; set; }
+        public Employee? Manager { get; set; }
 
         // Name property
         public string Name

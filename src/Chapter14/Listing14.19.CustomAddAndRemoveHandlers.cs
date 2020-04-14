@@ -9,12 +9,7 @@
                 NewTemperature = newTemperature;
             }
 
-            public float NewTemperature
-            {
-                get { return _newTemperature; }
-                set { _newTemperature = value; }
-            }
-            private float _newTemperature;
+            public float NewTemperature { get; set; }
         }
 
         // Define the delegate data type
@@ -30,10 +25,11 @@
             }
             remove
             {
-                _OnTemperatureChange = (TemperatureChangeHandler)System.Delegate.Remove(_OnTemperatureChange, value);
+                _OnTemperatureChange = 
+                    (TemperatureChangeHandler?)System.Delegate.Remove(_OnTemperatureChange, value);
             }
         }
-        protected TemperatureChangeHandler _OnTemperatureChange;
+        protected TemperatureChangeHandler? _OnTemperatureChange;
 
         public float CurrentTemperature
         {

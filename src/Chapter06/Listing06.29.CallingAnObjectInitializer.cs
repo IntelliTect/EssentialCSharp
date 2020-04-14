@@ -1,8 +1,5 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_29
 {
-    using System;
-    using System.IO;
-
     public class Program
     {
         public static void Main()
@@ -30,9 +27,9 @@
 
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string Salary { get; set; } = "Not Enough";
-        public string Title { get; set; }
-        public Employee Manager { get; set; }
+        public string? Salary { get; set; } = "Not Enough";
+        public string? Title { get; set; }
+        public Employee? Manager { get; set; }
 
         // Name property
         public string Name

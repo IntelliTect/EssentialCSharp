@@ -1,6 +1,7 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_19
 {
     using System;
+    using System.Diagnostics.CodeAnalysis;
     using static System.Environment;
 
     // Define an abstract class
@@ -37,9 +38,33 @@
             }
         }
 
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Address { get; set; }
+        public string FirstName
+        {
+            get
+            {
+                return _FirstName!;
+            }
+            set
+            {
+                _FirstName = value ?? throw new ArgumentNullException(nameof(value)); ;
+            }
+        }
+        private string? _FirstName;
+
+        public string LastName
+        {
+            get
+            {
+                return _LastName!;
+            }
+            set
+            {
+                _LastName = value ?? throw new ArgumentNullException(nameof(value));
+            }
+        }
+        private string? _LastName;
+
+        public string? Address { get; set; }
 
         public override string GetSummary()
         {
@@ -53,10 +78,13 @@
 
     public class Appointment : PdaItem
     {
-        public Appointment(string name) :
+        public Appointment(string name, 
+            string location, DateTime startDateTime, DateTime endDateTime) :
             base(name)
         {
-            Name = name;
+            Location = location;
+            StartDateTime = startDateTime;
+            EndDateTime = endDateTime;
         }
 
         public DateTime StartDateTime { get; set; }

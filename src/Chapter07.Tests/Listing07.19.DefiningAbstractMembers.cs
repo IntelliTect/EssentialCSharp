@@ -9,8 +9,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_19.Tests
         [TestMethod]
         public void Contact_GetSummaryOverridden()
         {
-            Contact contact = new Contact("Inigo Montoya");
-            contact.Address = "111 W St City, State 11111";
+            Contact contact = new Contact("Inigo Montoya")
+            {
+                Address = "111 W St City, State 11111"
+            };
 
             string expected = "FirstName: Inigo" + Environment.NewLine +
                               "LastName: Montoya" + Environment.NewLine +
@@ -22,12 +24,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_19.Tests
         [TestMethod]
         public void Appointment_GetSummaryOverridden()
         {
-            Appointment appointment = new Appointment("Inigo Montoya");
-            appointment.StartDateTime = DateTime.Now;
-            appointment.EndDateTime = DateTime.Now.AddDays(1);
-            appointment.Location = "111 W St City, State 11111";
+            Appointment appointment = new Appointment(
+                   "Soccer tournament", "111 W St City, State 11111",
+                   new DateTime(2008, 7, 19), new DateTime(2008, 7, 18));
 
-            string expected = "Subject: Inigo Montoya" + Environment.NewLine +
+            string expected = "Subject: Soccer tournament" + Environment.NewLine +
                               $"Start: {appointment.StartDateTime}" + Environment.NewLine +
                               $"End: {appointment.EndDateTime}" + Environment.NewLine +
                               "Location: 111 W St City, State 11111";

@@ -10,7 +10,7 @@
             InternalFileStream??(InternalFileStream = 
                 new TemporaryFileStream());
 
-        private TemporaryFileStream InternalFileStream
+        private TemporaryFileStream? InternalFileStream
             { get; set; } = null;
 
 
@@ -30,14 +30,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23_PreCSha
         {
             get
             {
-                if (_FileStream == null)
+                if (_FileStream is null)
                 {
                     _FileStream = new TemporaryFileStream();
                 }
                 return _FileStream;
             }
         }
-        private TemporaryFileStream _FileStream = null;
+        private TemporaryFileStream? _FileStream = null;
 
         // ...
     }

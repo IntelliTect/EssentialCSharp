@@ -6,8 +6,11 @@
 
     public class Program
     {
+        // Justification: Initialized at the start of Main.
+        #pragma warning disable CS8618 // Non-nullable field is uninitialized. Consider declaring as nullable.
         static ManualResetEventSlim MainSignaledResetEvent;
         static ManualResetEventSlim DoWorkSignaledResetEvent;
+        #pragma warning restore CS8618 // Non-nullable field is uninitialized. Consider declaring as nullable.
 
         public static void DoWork()
         {

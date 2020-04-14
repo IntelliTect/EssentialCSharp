@@ -1,14 +1,38 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_38
 {
-    class Program
+    public class Thermostat
     {
-        public static void Main(string[] args)
+        public event System.EventHandler PropertyChanged = delegate { };
+
+        private int _Temperature;
+        public int Temperature
         {
-            // CAUTION: args?.Length not verified
-            string directoryPath = args?[0];
-            string searchPattern = args?[1];
-            // ...
+            get { return _Temperature; }
+            set 
+            {
+                System.EventHandler propertyChanged =
+                    PropertyChanged;
+                if (propertyChanged != null)
+                {
+                    propertyChanged(this,
+                        new System.EventArgs());
+                }
+
+                _Temperature = value; 
+            }
         }
 
+        int _Humidity;
+        public int Humidity
+        {
+            get { return _Humidity; }
+            set
+            {
+                PropertyChanged?.Invoke(this,
+                    new System.EventArgs());
+
+                _Humidity = value;
+            }
+        }
     }
 }

@@ -30,15 +30,17 @@
                     }
                 }
             }
-            public string Action;
-            public string Id;
-            public string FirstName;
-            public string LastName;
+            public string? Action { get;  }
+            public string? Id { get; }
+            public string? FirstName { get; }
+            public string? LastName { get; }
         }
 
         public static void Main(string[] args)
         {
             CommandLine commandLine = new CommandLine(args);
+
+            // Error handling intentionaly missing for elucidation.
 
             switch(commandLine.Action)
             {

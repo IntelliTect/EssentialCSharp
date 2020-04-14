@@ -4,10 +4,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_19
     {
         public static void Main()
         {
-            string[] languages = new string[9] {
+            string[] languages = new string[] {
                 "C#", "COBOL", "Java",
-                "C++", "Visual Basic", "Pascal",
-                "Fortran", "Lisp", "J#" };
+                "C++", "TypeScript", "Pascal",
+                "Python", "Lisp", "JavaScript" };
             // Save "C++" to variable called language
             string language = languages[3];
             // Assign "Java" to the C++ position

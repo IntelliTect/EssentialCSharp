@@ -1,4 +1,6 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_02
+﻿using System;
+
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_02
 {
     public struct Coordinate
     {
@@ -12,21 +14,11 @@
         public Latitude Latitude { get; }
 
 
-        public override int GetHashCode()
-        {
-            int hashCode = Longitude.GetHashCode();
-            // As long as the hash codes are not equal
-            if(Longitude.GetHashCode() != Latitude.GetHashCode())
-            {
-                hashCode ^= Latitude.GetHashCode();  // eXclusive OR
-            }
-            return hashCode;
-        }
+        public override int GetHashCode() => 
+            HashCode.Combine(Longitude.GetHashCode(), Latitude.GetHashCode());
 
-        public override string ToString()
-        {
-            return string.Format("{0} {1}", Longitude, Latitude);
-        }
+        public override string ToString() =>
+            $"{ Longitude } { Latitude }";
 
     }
 

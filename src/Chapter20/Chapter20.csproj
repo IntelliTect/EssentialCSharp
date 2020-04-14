@@ -1,8 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <ProductName>Chapter20</ProductName>
+    <ChapterNumber>20</ChapterNumber>
     <WarningLevel>2</WarningLevel>
-    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
   </PropertyGroup>
   <Import Project="..\Chapter.props" />
   <ItemGroup>

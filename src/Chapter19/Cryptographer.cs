@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.IO;
 using System.Security.Cryptography;
-using System.Text;
-using System.Diagnostics;
 using System.Threading.Tasks;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Shared

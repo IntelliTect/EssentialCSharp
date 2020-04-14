@@ -8,7 +8,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_08
         public bool Help { get; set; }
 
         [CommandLineSwitchRequired]
-        public string Out { get; set; }
+        public string? Out { get; set; }
 
         public System.Diagnostics.ProcessPriorityClass Priority
         { get; set; } = 
@@ -24,7 +24,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_08
 
     internal class CommandLineSwitchAliasAttribute : Attribute
     {
-        public CommandLineSwitchAliasAttribute(string s)
+        public CommandLineSwitchAliasAttribute(string _)
         {
             //not implimented
         }

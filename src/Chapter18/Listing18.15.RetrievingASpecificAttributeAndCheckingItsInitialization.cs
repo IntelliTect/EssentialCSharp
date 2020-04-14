@@ -10,7 +10,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_15
         public static void Main()
         {
             PropertyInfo property =
-            typeof(CommandLineInfo).GetProperty("Help");
+            typeof(CommandLineInfo).GetProperty("Help")!;
             CommandLineSwitchAliasAttribute attribute =
                 (CommandLineSwitchAliasAttribute)
                     property.GetCustomAttributes(

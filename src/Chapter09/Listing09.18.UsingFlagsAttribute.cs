@@ -4,13 +4,24 @@
     using System.Diagnostics;
     using System.IO;
 
-    class Program
+    public class Program
     {
         public static void Main()
         {
             string fileName = @"enumtest.txt";
+
+            // Cleanup in case the file is left in read-only state
+            // and can't get created.
+            if (File.Exists(fileName))
+            {
+                FileAttributes attrs = File.GetAttributes(fileName);
+                if (attrs.HasFlag(FileAttributes.ReadOnly))
+                    File.SetAttributes(fileName, attrs & ~FileAttributes.ReadOnly);
+            }
+
             FileInfo file = new FileInfo(fileName);
-            file.Open(FileMode.Create).Dispose();
+
+            file.Open(FileMode.OpenOrCreate).Dispose();
 
             FileAttributes startingAttributes =
                 file.Attributes;
@@ -30,6 +41,7 @@
 
             File.SetAttributes(fileName,
                 startingAttributes);
+
             file.Delete();
         }
     }

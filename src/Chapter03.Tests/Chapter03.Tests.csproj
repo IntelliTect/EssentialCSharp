@@ -1,8 +1,15 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <ProductName>Chapter03.Tests</ProductName>
+    <ChapterNumber>03</ChapterNumber>
   </PropertyGroup>
   <Import Project="..\ChapterTests.props" />
+  <ItemGroup>
+    <Compile Include="..\Shared\CompilerAssert.cs" Link="CompilerAssert.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Scripting" Version="3.3.1" />
+    <PackageReference Include="Microsoft.CodeAnalysis.Scripting.Common" Version="3.3.1" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Chapter03\Chapter03.csproj" />
   </ItemGroup>

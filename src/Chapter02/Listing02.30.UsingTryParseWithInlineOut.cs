@@ -20,6 +20,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_30
                 System.Console.WriteLine(
                     "The text entered was not a valid number.");
             }
+
+            System.Console.WriteLine(
+                $"'number' currently has the value: {number}");
         }
     }
 }

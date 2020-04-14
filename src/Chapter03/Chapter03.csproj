@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <ProductName>Chapter03</ProductName>
+    <ChapterNumber>03</ChapterNumber>
   </PropertyGroup>
   <Import Project="..\Chapter.props" />
   <ItemGroup>
@@ -10,5 +10,11 @@
     <Compile Include="..\Shared\Program.cs">
       <Link>Program.cs</Link>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Listing03.01B.DereferencingAnUnassignedVariable.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Listing03.01C.csproj" />
   </ItemGroup>
 </Project>

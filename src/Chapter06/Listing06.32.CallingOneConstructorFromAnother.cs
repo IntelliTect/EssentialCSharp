@@ -15,6 +15,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_32
             Id = id;
         }
 
+        // FirstName&LastName set inside Id property Setter.
+        #pragma warning disable CS8618
         public Employee(int id)
         {
             Id = id;
@@ -26,11 +28,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_32
             // called explicitly inline
             // this(id, firstName, lastName);
         }
+        #pragma warning restore CS8618
 
         public int Id { get; private set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string Salary { get; set; } = "Not Enough";
+        public string? Salary { get; set; } = "Not Enough";
 
         // ...
     }

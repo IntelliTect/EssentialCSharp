@@ -1,8 +1,10 @@
+// Non-nullable field is uninitialized. Consider declaring as nullable.
+#pragma warning disable CS8618
+// Disabled pending introductin to object initializers
+#pragma warning disable IDE0017 
+
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_18
 {
-    using System;
-    using System.IO;
-
     public class Program
     {
         public static void Main()

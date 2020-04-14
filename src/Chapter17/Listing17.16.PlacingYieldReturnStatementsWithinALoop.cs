@@ -18,7 +18,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_16
             yield return Value;
 
             // Iterate through each of the elements in the pair
-            foreach(BinaryTree<T> tree in SubItems)
+            foreach(BinaryTree<T>? tree in SubItems)
             {
                 if(tree != null)
                 {

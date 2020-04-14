@@ -1,10 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <ProductName>Chapter18</ProductName>
+    <ChapterNumber>18</ChapterNumber>
   </PropertyGroup>
   <PropertyGroup>
     <!-- CS0612 is an Obsolete warning demonstrating the Obsolete attribute -->
-    <ExpectedWarnings>0612</ExpectedWarnings>
+    <ExpectedWarnings>$(ExpectedWarnings),CS0612</ExpectedWarnings>
   </PropertyGroup>
   <Import Project="..\Chapter.props" />
   <ItemGroup>

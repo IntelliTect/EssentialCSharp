@@ -7,19 +7,21 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_02
     {
         public static void Main()
         {
-            List<Contact> list = new List<Contact>();
+            List<Contact> list = new List<Contact>
+            {
 
-            // Lists automatically expand as elements
-            // are added
-            list.Add(new Contact("Sneezy", "Dwarf"));
-            list.Add(new Contact("Happy", "Dwarf"));
-            list.Add(new Contact("Dopey", "Dwarf"));
-            list.Add(new Contact("Doc", "Dwarf"));
-            list.Add(new Contact("Sleepy", "Dwarf"));
-            list.Add(new Contact("Bashful", "Dwarf"));
-            list.Add(new Contact("Grumpy", "Dwarf"));
-            list.Add(new Contact("Duplicate", "Dwarf"));
-            list.Add(new Contact("Duplicate", "Scarf"));
+                // Lists automatically expand as elements
+                // are added
+                new Contact("Sneezy", "Dwarf"),
+                new Contact("Happy", "Dwarf"),
+                new Contact("Dopey", "Dwarf"),
+                new Contact("Doc", "Dwarf"),
+                new Contact("Sleepy", "Dwarf"),
+                new Contact("Bashful", "Dwarf"),
+                new Contact("Grumpy", "Dwarf"),
+                new Contact("Duplicate", "Dwarf"),
+                new Contact("Duplicate", "Scarf")
+            };
 
             IComparer<Contact> comparer = new NameComparison();
 
@@ -34,7 +36,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_02
 
     class NameComparison : IComparer<Contact>
     {
-        public int Compare(Contact x, Contact y)
+        public int Compare(Contact? x, Contact? y)
         {
             if(Object.ReferenceEquals(x, y))
                 return 0;
@@ -48,7 +50,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_02
             return result;
         }
 
-        private static int StringCompare(string x, string y)
+        private static int StringCompare(string? x, string? y)
         {
             if(Object.ReferenceEquals(x, y))
                 return 0;
