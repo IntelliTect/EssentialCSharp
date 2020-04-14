@@ -39,9 +39,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_02
 
             Console.WriteLine("Searching...");
 
-            int occurrences = await task;
+            int textOccurrenceCount = await task;
 
-            Console.WriteLine(occurrences);
+            Console.WriteLine(textOccurrenceCount);
         }
 
         public async static Task<int> FindTextInWebUriAsync(
@@ -96,22 +96,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_02
                 }
             }
             while (length != 0);
+
             return textOccurrenceCount;
-        }
-
-
-        static public string FormatBytes(long bytes)
-        {
-            string[] magnitudes =
-                new string[] { "GB", "MB", "KB", "Bytes" };
-            long max =
-                (long)Math.Pow(1024, magnitudes.Length);
-
-            return string.Format("{1:##.##} {0}",
-                magnitudes.FirstOrDefault(
-                    magnitude =>
-                        bytes > (max /= 1024)) ?? "0 Bytes",
-                    (decimal)bytes / (decimal)max);
         }
     }
 }

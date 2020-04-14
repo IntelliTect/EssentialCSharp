@@ -7,6 +7,30 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_01
 
     static  public class Program
     {
+        public static void Main(string[] args)
+        {
+            if (args.Length == 0)
+            {
+                Console.WriteLine("ERROR: No findText argument specified.");
+                return;
+            }
+            string findText = args[0];
+            Console.WriteLine($"Searching for {findText}...");
+
+            string url = "http://www.IntelliTect.com";
+            if (args.Length > 1)
+            {
+                url = args[1];
+                // Ignore additional parameters
+            }
+            Console.Write(url);
+
+            Console.WriteLine("Searching...");
+            int textOccurrenceCount =
+                FindTextInWebUri(findText, url);
+
+            Console.WriteLine(textOccurrenceCount);
+        }
 
         public static int FindTextInWebUri(
             string findText, string url)
@@ -56,30 +80,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_01
             while (length != 0);
 
             return textOccurrenceCount;
-        }
-
-        public static void Main(string[] args)
-        {
-            if (args.Length == 0)
-            {
-                Console.WriteLine("ERROR: No findText argument specified.");
-                return;
-            }
-            string findText = args[0];
-            Console.WriteLine($"Searching for {findText}...");
-
-            string url = "http://www.IntelliTect.com";
-            if (args.Length > 1)
-            {
-                url = args[1];
-                // Ignore additional parameters
-            }
-            Console.Write(url);
-
-            int occurences =
-                FindTextInWebUri(findText, url);
-
-            Console.WriteLine(occurences);
         }
     }
 }
