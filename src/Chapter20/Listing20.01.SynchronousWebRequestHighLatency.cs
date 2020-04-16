@@ -2,10 +2,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_01
 {
     using System;
     using System.IO;
-    using System.Linq;
     using System.Net;
 
-    static  public class Program
+    static public class Program
     {
         public static void Main(string[] args)
         {
@@ -26,27 +25,19 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_01
             Console.Write(url);
 
             Console.WriteLine("Searching...");
-            int textOccurrenceCount =
-                FindTextInWebUri(findText, url);
-
-            Console.WriteLine(textOccurrenceCount);
-        }
-
-        public static int FindTextInWebUri(
-            string findText, string url)
-        {
 
             using WebClient webClient = new WebClient();
 
             byte[] downloadData =
                 webClient.DownloadData(url);
 
-            return CountOccurencesInContent(
+            int textOccurrenceCount = CountOccurrences(
                 downloadData, findText);
 
+            Console.WriteLine(textOccurrenceCount);
         }
 
-        private static int CountOccurencesInContent(byte[] downloadData, string findText)
+        private static int CountOccurrences(byte[] downloadData, string findText)
         {
             int textOccurrenceCount = 0;
 
