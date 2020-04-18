@@ -7,7 +7,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_02
 
     static public class Program
     {
-        async public static Task Main(string[] args)
+        public static async Task Main(string[] args)
         {
             if (args.Length == 0)
             {
@@ -25,14 +25,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_02
             }
             Console.Write(url);
 
+#if IProgress
             IProgress<DownloadProgressChangedEventArgs> progress =
                 new Progress<DownloadProgressChangedEventArgs>((value) =>
                 {
                     Console.Write(".");
                 }
             );
-
-            using WebClient webClient = new WebClient();
 
             if (progress is object)
             {
@@ -41,7 +40,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_02
                     progress.Report(eventArgs);
                 };
             }
+#endif
 
+            using WebClient webClient = new WebClient();
             Task<byte[]> taskDownload =
                 webClient.DownloadDataTaskAsync(url);
 
@@ -59,25 +60,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_02
             Console.WriteLine(textOccurrenceCount);
         }
 
-        public async static Task<int> FindTextInWebUriAsync(
-            string findText, string url,
-            IProgress<DownloadProgressChangedEventArgs>? progressCallback = null)
-        {
-            using WebClient webClient = new WebClient();
-            if (progressCallback is object)
-            {
-                webClient.DownloadProgressChanged += (sender, eventArgs) =>
-                {
-                    progressCallback.Report(eventArgs);
-                };
-            }
-
-            byte[] downloadData = 
-                await webClient.DownloadDataTaskAsync(url);
-
-            return await CountOccurrencesAsync(
-             downloadData, findText);
-        }
 
         private static async Task<int> CountOccurrencesAsync(
             byte[] downloadData, string findText)

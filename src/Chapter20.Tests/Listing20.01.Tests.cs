@@ -14,9 +14,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_01.Tests
         {
             ProgramWrapper = new ProgramWrapper(
                 (args)=>
-                    Task.Run(() => Program.Main(args)), 
-                (findText, url, progress) => 
-                    Task.Run(()=>Program.FindTextInWebUri(findText, url.First())));
+                    Task.Run(() => Program.Main(args)));
         }
     }
 }

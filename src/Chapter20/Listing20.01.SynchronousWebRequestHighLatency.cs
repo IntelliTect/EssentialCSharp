@@ -24,13 +24,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_01
             }
             Console.Write(url);
 
-            Console.WriteLine("Searching...");
-
+            Console.WriteLine("Downloading...");
             using WebClient webClient = new WebClient();
-
             byte[] downloadData =
                 webClient.DownloadData(url);
 
+            Console.WriteLine("Searching...");
             int textOccurrenceCount = CountOccurrences(
                 downloadData, findText);
 
