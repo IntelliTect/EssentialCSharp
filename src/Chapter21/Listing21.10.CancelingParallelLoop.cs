@@ -27,7 +27,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_10
                     }).ToList();
         }
 
-        public static async void Main()
+        public static async Task Main()
         {
             ConsoleColor originalColor = Console.ForegroundColor;
             List<string> data = Utility.GetData(100000).ToList();
@@ -39,7 +39,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_10
 
             // Use Task.Factory.StartNew<string>() for
             // TPL prior to .NET 4.5
-            async Task.Run(() =>
+            Task task = Task.Run(() =>
             {
                 data = ParallelEncrypt(data, cts.Token);
             }, cts.Token);
@@ -76,7 +76,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_10
             }
             else
             {
-                task.Wait();
+                await task;
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.Write("Completed successfully");
             }
