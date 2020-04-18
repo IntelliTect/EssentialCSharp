@@ -2,6 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_10
 {
     using System;
     using System.Collections.Generic;
+    using System.IO;
     using System.Linq;
     using System.Threading;
     using System.Threading.Tasks;
@@ -35,52 +36,59 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_10
             CancellationTokenSource cts =
                 new CancellationTokenSource();
 
-            Console.WriteLine("Push ENTER to Exit.");
-
-            // Use Task.Factory.StartNew<string>() for
-            // TPL prior to .NET 4.5
             Task task = Task.Run(() =>
             {
                 data = ParallelEncrypt(data, cts.Token);
             }, cts.Token);
 
-            // Wait for the user's input
-            Console.Read();
+            Console.WriteLine("Push ENTER to Exit.");
+            Task<int> cancelTask = ConsoleReadAsync(cts.Token);
 
-            if (!task.IsCompleted)
+            try
             {
+                Task.WaitAny(task, cancelTask);
+                // Cancel which ever task has not finished.
                 cts.Cancel();
-                try { task.Wait(); }
-                catch (AggregateException exception)
+                await task;
+                await cancelTask;
+
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("\nCompleted successfully");
+
+            }
+            catch(OperationCanceledException taskCanceledException)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($@"\nCancelled: {
+                    taskCanceledException.Message }");
+            }
+            Console.ForegroundColor = originalColor;
+        }
+
+        private static async Task<int> ConsoleReadAsync(
+            CancellationToken cancellationToken = default)
+        {
+            int result = 0;
+            await Task.Run(async () =>
+            {
+                int maxDelay = 1025;
+                int delay = 0;
+                while (!cancellationToken.IsCancellationRequested)
                 {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    TaskCanceledException taskCanceledException =
-                        (TaskCanceledException)exception.Flatten()
-                        .InnerExceptions.FirstOrDefault(
-                        innerException =>
-                            innerException.GetType() ==
-                            typeof(TaskCanceledException));
-                    if(taskCanceledException != null){
-                        Console.WriteLine($@"Cancelled: { 
-                            taskCanceledException.Message }");
+                    if (Console.KeyAvailable)
+                    {
+                        result = Console.Read();
+                        break;
                     }
                     else
                     {
-                        string message =
-                            string.Join(
-                                Environment.NewLine, exception.Flatten().InnerExceptions.Select(
-                            eachException => $"\t{ eachException.Message }").Distinct());
-                        Console.WriteLine($"ERROR(s): { Environment.NewLine }{ message }");
+                        await Task.Delay(delay);
+                        if (delay < maxDelay) delay *= 2;
                     }
                 }
-            }
-            else
-            {
-                await task;
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.Write("Completed successfully");
-            }
-            Console.ForegroundColor = originalColor;
+            }, cancellationToken);
+            cancellationToken.ThrowIfCancellationRequested();
+            return result;
         }
 
         private static string Encrypt(string item)
