@@ -50,7 +50,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_10
                 // Cancel which ever task has not finished.
                 cts.Cancel();
                 await task;
-                await cancelTask;
 
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("\nCompleted successfully");
@@ -59,8 +58,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_10
             catch(OperationCanceledException taskCanceledException)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine($@"\nCancelled: {
-                    taskCanceledException.Message }");
+                Console.WriteLine(
+                    $"\nCancelled: { taskCanceledException.Message }");
             }
             Console.ForegroundColor = originalColor;
         }
