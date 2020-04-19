@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Net;
 using System.Runtime.ExceptionServices;
 using System.Text.RegularExpressions;
@@ -9,11 +10,22 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Tests
 {
     abstract public class BaseProgramTests
     {
-#pragma warning disable CS8618 // Non-nullable field is uninitialized. Consider declaring as nullable.
-        static public ProgramWrapper ProgramWrapper { get; set; }
-#pragma warning restore CS8618 // Non-nullable field is uninitialized. Consider declaring as nullable.
+        [NotNull]
+        static public ProgramWrapper? ProgramWrapper { get; set; }
 
         protected abstract string DefaultUrl { get; }
+
+        [NotNull]
+        public TestContext? TestContext { get; set; }
+
+        [TestInitializeAttribute]
+        public void TestInitialize()
+        {
+            Assert.IsNotNull(TestContext);
+
+            // Verify ProgramWrapper is initialized by ClassInitialize in derived classes.
+            //Assert.IsNotNull(ProgramWrapper);
+        }
 
         [TestMethod]
         [DataRow("IntelliTect", @"[1-9]\d*")]
@@ -24,7 +36,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Tests
             string expected =
                 @$"Searching for '{Regex.Escape(findText)
                     }' at URL '{
-                    Regex.Escape(DefaultUrl)
+                    Regex.Escape(url)
                     }'\.\s+Downloading\.{{4,}}\s+Searching\.{{3,}}\s+'{
                     Regex.Escape(findText)}' appears {countPattern} times at URL '{
                     Regex.Escape(url)
@@ -50,32 +62,23 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Tests
             });
         }
 
-        [TestMethod]
-        [DataRow("Bad Uri", "Could not find file *")]
-        [DataRow("https://bad uri", "The filename, directory name, or volume label syntax is incorrect. *")]
-        [DataRow("https://thisisanotherbadurlthatpresumablyldoesnotexist.notexist", "No such host is known. No such host is known.")]
-        [ExpectedException(typeof(WebException))]
-        async public ValueTask Main_GivenBadUri_ThrowException(string uri, string messagePrefix)
-        {
-            try
-            {
-                await ProgramWrapper.Main(new string[] { "irrelevant", uri });
-                Assert.Fail("Expected exception was not thrown.");
-            }
-            catch (Exception exception)
-            {
-                AssertMainException(messagePrefix, exception);
-                throw;
-            }
-        }
-
         protected virtual void AssertMainException(string messagePrefix, Exception exception)
         {
             // Default to testing for Web Exception
-            AssertWebExceptionType(messagePrefix, (WebException)exception);
+            AssertWebExceptionType(messagePrefix, (WebException) exception);
         }
 
-        private static void AssertWebExceptionType(string messagePrefix, WebException exception)
+        protected void AssertMainException(string messagePrefix, AggregateException exception)
+        {
+            Assert.AreEqual<Type>(typeof(AggregateException), exception.GetType());
+            if (exception is AggregateException aggregateException)
+            {
+                aggregateException = aggregateException!.Flatten();
+                AssertWebExceptionType(messagePrefix, (WebException)aggregateException.InnerException!);
+            }
+        }
+
+        protected static void AssertWebExceptionType(string messagePrefix, WebException exception)
         {
             Assert.IsTrue(
                 IntelliTect.TestTools.Console.StringExtensions.IsLike(exception.Message, messagePrefix)
@@ -132,34 +135,38 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Tests
             }
         }
 
-
         [TestMethod]
         [DataRow("Bad Uri", "Could not find file *")]
         [DataRow("https://bad uri", "The filename, directory name, or volume label syntax is incorrect. *")]
         [DataRow("https://thisisanotherbadurlthatpresumablyldoesnotexist.notexist", "No such host is known. No such host is known.")]
         [ExpectedException(typeof(WebException))]
-        async public Task FindTextInWebUri_GivenBadUri_ThrowException(string url, string messagePrefix)
+        async public Task Main_GivenBadUri_ThrowException(string uri, string messagePrefix)
         {
             try
             {
-                await ProgramWrapper.Main(new string[] { "irrelevant", url });
+                await ProgramWrapper.Main(new string[] { "irrelevant", uri });
                 Assert.Fail("Expected exception was not thrown.");
-            }
-            catch (AssertFailedException)
-            {
-                throw;
             }
             catch (Exception exception)
             {
-                AssertFindTextInWebUriException(messagePrefix, exception);
-                throw;
+                AssertMainException(messagePrefix, exception);
+                if (exception is AggregateException aggregateException)
+                {
+                    // Innerexception expected to be WebException.
+                    exception = aggregateException.Flatten();
+                    aggregateException.Handle(innerException =>
+                    {
+                        // Rethrowing rather than using
+                        // if condition on the type
+                        ExceptionDispatchInfo.Capture(
+                            innerException)
+                            .Throw();
+                        return true;
+                    });
+                }
+                // WebException expected
+                else throw;
             }
-        }
-
-        virtual protected void AssertFindTextInWebUriException(string messagePrefix, Exception exception)
-        {
-            // Default to asserting a webException
-            AssertWebExceptionType(messagePrefix, (WebException)exception);
         }
     }
 

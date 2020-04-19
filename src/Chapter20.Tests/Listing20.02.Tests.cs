@@ -17,13 +17,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_02.Tests
                     Task.Run(() => Program.Main(args)));
         }
 
-        protected override void AssertMainException(string messagePrefix, Exception exception)
-        {
-            Assert.AreEqual<Type>(typeof(AggregateException), exception.GetType());  // Testing type first (even though the cast will also verify)
-
-            AssertAggregateExceptionType(messagePrefix, (AggregateException)exception);
-        }
-
         protected override string DefaultUrl { get; } = Program.DefaultUrl;
     }
 }
