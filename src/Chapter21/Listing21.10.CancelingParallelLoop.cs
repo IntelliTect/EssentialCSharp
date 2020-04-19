@@ -18,7 +18,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_10
                 cancellationToken).Select(
                     (item) =>
                     {
-                        if (Interlocked.CompareExchange(ref govener, 0, 100) % 100 == 0)
+                        if (Interlocked.CompareExchange(
+                            ref govener, 0, 100) % 100 == 0)
                         {
                             Console.Write('.');
                         }
@@ -87,7 +88,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_10
                 }
                 cancellationToken.ThrowIfCancellationRequested();
                 throw new InvalidOperationException(
-                    "Previous line should throw preventing this fromever executing");
+                    "Previous line should throw preventing this from ever executing");
             }, cancellationToken);
         }
 
