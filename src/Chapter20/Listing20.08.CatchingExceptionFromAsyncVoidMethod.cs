@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_07
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_08
 {
     using System;
     using System.Threading;
@@ -55,7 +55,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_07
 
             AsyncSynchronizationContext synchronizationContext = 
                 new AsyncSynchronizationContext();
-            SynchronizationContext.SetSynchronizationContext(synchronizationContext);
+            SynchronizationContext.SetSynchronizationContext(
+                synchronizationContext);
 
             try
             {

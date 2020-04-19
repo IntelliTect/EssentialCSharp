@@ -1,15 +1,12 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_06B
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_07
 {
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using System.Linq;
-    using System.Text;
-    using System.Threading;
-    using System.Threading.Tasks;
+}
 
-    public class Program
+namespace System.Linq
+{
+    public static class AsyncEnumerable
     {
+        // ...
         public static IAsyncEnumerable<TResult> Select<TSource?, TResult?>(
       this IAsyncEnumerable<TSource> source,
       Func<TSource, TResult> selector);
@@ -20,6 +17,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_06B
           IAsyncEnumerable<TResult> SelectAwaitWithCancellation<TSource?, TResult?>(
               this IAsyncEnumerable<TSource> source,
               Func<TSource, CancellationToken, ValueTask<TResult>> selector);
-
+        // ...
     }
 }

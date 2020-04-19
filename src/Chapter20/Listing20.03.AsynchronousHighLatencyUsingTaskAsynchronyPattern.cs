@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_02
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_03
 {
     using System;
     using System.IO;
@@ -7,6 +7,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_02
 
     static public class Program
     {
+        public const string DefaultUrl = "https://IntelliTect.com";
+
         public static async Task Main(string[] args)
         {
             if (args.Length == 0)
@@ -15,15 +17,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_02
                 return;
             }
             string findText = args[0];
-            Console.WriteLine($"Searching for {findText}...");
 
-            string url = "http://www.IntelliTect.com";
+            string url = DefaultUrl;
             if (args.Length > 1)
             {
                 url = args[1];
                 // Ignore additional parameters
             }
-            Console.Write(url);
+            Console.Write($"Searching for '{findText}' at URL '{url}'.");
 
 #if IProgress
             IProgress<DownloadProgressChangedEventArgs> progress =
@@ -46,18 +47,29 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_02
             Task<byte[]> taskDownload =
                 webClient.DownloadDataTaskAsync(url);
 
-            Console.WriteLine("Downloading...");
+            Console.Write("\nDownloading...");
+            while (!taskDownload.Wait(100))
+            {
+                Console.Write(".");
+            }
 
             byte[] downloadData = await taskDownload;
 
             Task<int> taskSearch = CountOccurrencesAsync(
              downloadData, findText);
 
-            Console.WriteLine("Searching...");
+            Console.Write("\nSearching...");
+
+            while (!taskSearch.Wait(100))
+            {
+                Console.Write(".");
+            }
 
             int textOccurrenceCount = await taskSearch;
 
-            Console.WriteLine(textOccurrenceCount);
+            Console.WriteLine(
+                @$"{Environment.NewLine}'{findText}' appears {
+                    textOccurrenceCount} times at URL '{url}'.");
         }
 
 
@@ -65,7 +77,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_02
             byte[] downloadData, string findText)
         {
             int textOccurrenceCount = 0;
-
             using MemoryStream stream = new MemoryStream(downloadData);
             using StreamReader reader = new StreamReader(stream);
 

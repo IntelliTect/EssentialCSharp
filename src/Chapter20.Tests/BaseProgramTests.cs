@@ -1,10 +1,8 @@
-﻿﻿using AddisonWesley.Michaelis.EssentialCSharp.Shared;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using System.IO;
 using System.Net;
 using System.Runtime.ExceptionServices;
-using System.Security.Cryptography;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Tests
@@ -15,42 +13,30 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Tests
         static public ProgramWrapper ProgramWrapper { get; set; }
 #pragma warning restore CS8618 // Non-nullable field is uninitialized. Consider declaring as nullable.
 
-        [TestMethod]
-        public void Main_ValidFindText_FoundAtLeastOnce()
-        {
-            string findText = "IntelliTect";
-            string expected = @$"Searching for {findText}...
-http://www.IntelliTect.com";
+        protected abstract string DefaultUrl { get; }
 
+        [TestMethod]
+        [DataRow("IntelliTect", @"[1-9]\d*")]
+        [DataRow("Text Snippet That Does Not Exist On The Page", @"0")]
+        public void Main_FindText_VerifyOccuranceCount(string findText, string countPattern)
+        {
+            string url = DefaultUrl;
+            string expected =
+                @$"Searching for '{Regex.Escape(findText)
+                    }' at URL '{
+                    Regex.Escape(DefaultUrl)
+                    }'\.\s+Downloading\.{{4,}}\s+Searching\.{{3,}}\s+'{
+                    Regex.Escape(findText)}' appears {countPattern} times at URL '{
+                    Regex.Escape(url)
+                    }'\.\s+";
             string actual = IntelliTect.TestTools.Console.ConsoleAssert.Execute("",
             () =>
             {
                 ProgramWrapper.Main(new string[] { findText }).Wait();
             });
 
-            IntelliTect.TestTools.Console.StringExtensions.IsLike(
-                $"{expected}...*", actual);
-            IntelliTect.TestTools.Console.StringExtensions.IsLikeRegEx(
-                @$"expected\.+^[1-9]\d*$", actual);
-        }
-
-        [TestMethod]
-        public void Main_FindTextDoesNotExist_NotFound()
-        {
-            string findText = "RANDOM TEXT NOT ON SITE";
-            string expected = @$"Searching for {findText}...
-http://www.IntelliTect.com";
-
-            string actual = IntelliTect.TestTools.Console.ConsoleAssert.Execute("",
-            () =>
-            {
-                ProgramWrapper.Main(new string[] { findText }).Wait();
-            });
-
-            IntelliTect.TestTools.Console.StringExtensions.IsLike(
-                $"{expected}...*0", actual);
-            IntelliTect.TestTools.Console.StringExtensions.IsLikeRegEx(
-                @$"expected\.+0$", actual);
+            Regex regex = new Regex(expected);
+            Assert.IsTrue(regex.Match(actual).Success);
         }
 
         [TestMethod]
@@ -156,7 +142,7 @@ http://www.IntelliTect.com";
         {
             try
             {
-                await ProgramWrapper.FindTextInWebUri("irrelevant", new string[] { url }, null);
+                await ProgramWrapper.Main(new string[] { "irrelevant", url });
                 Assert.Fail("Expected exception was not thrown.");
             }
             catch (AssertFailedException)
@@ -174,33 +160,6 @@ http://www.IntelliTect.com";
         {
             // Default to asserting a webException
             AssertWebExceptionType(messagePrefix, (WebException)exception);
-        }
-
-        [TestMethod]
-        [ExpectedException(typeof(System.ArgumentNullException))]
-        async public Task FindTextInWebUri_GivenNullUri_ThrowException()
-        {
-            try
-            {
-                await ProgramWrapper.FindTextInWebUri("irrelevant", null!, null);
-                Assert.Fail("Expected exception was not thrown.");
-            }
-            catch (AggregateException exception)
-            {
-                if (exception.InnerExceptions.Count != 1)
-                {
-                    throw new InvalidOperationException("Unexpected scenario with there being more than one inner exception.");
-                }
-                exception.Handle(innerException =>
-                {
-                    // Rethrowing rather than using
-                    // if condition on the type
-                    ExceptionDispatchInfo.Capture(
-                        innerException!).Throw();
-
-                    return true;
-                });
-            }
         }
     }
 
