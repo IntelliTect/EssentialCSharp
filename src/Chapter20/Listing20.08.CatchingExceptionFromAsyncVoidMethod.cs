@@ -1,3 +1,6 @@
+// Justification: Catching general exception types to demonstrate control flow.
+#pragma warning disable CA1031 // Do not catch general exception types
+
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_08
 {
     using System;
@@ -45,12 +48,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_08
         }
     }
 
-    public class Program
+    public static class Program
     {
-        static bool EventTriggered { get; set; }
+        public static bool EventTriggered { get; set; }
 
         public const string ExpectedExceptionMessage = "Expected Exception";
-        public static async Task Main()
+
+        public static void Main()
         {
 
             AsyncSynchronizationContext synchronizationContext = 
@@ -61,10 +65,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_08
             try
             {
 
-                await OnEvent(typeof(Program), new EventArgs());
+                OnEvent(typeof(Program), new EventArgs());
 
 #if WithOutUsingResetEvent
-                await Task.Delay(1000).Wait();  // 
+                Task.Delay(1000).Wait();  // 
 #else
                 synchronizationContext.ResetEvent.Wait();
 #endif
@@ -84,12 +88,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_08
             }
         }
 
-        static async Task OnEvent(object sender, EventArgs eventArgs)
+        static async void OnEvent(object sender, EventArgs eventArgs)
         {
             Console.WriteLine($@"Invoking Task.Run...(Thread ID: {
                     Thread.CurrentThread.ManagedThreadId})");
             await Task.Run(() =>
             {
+                EventTriggered = true;
                 Console.WriteLine($@"Running task... (Thread ID: {
                     Thread.CurrentThread.ManagedThreadId})");
                 throw new Exception(ExpectedExceptionMessage);
