@@ -1,33 +1,31 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_11
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_04B
 {
-    using System.Diagnostics;
-    using System.Threading;
     using System.Threading.Tasks;
 
-    class Program
+    public class Program
     {
-        async Task<int> DoStuffAsync()
+        public async Task<int> DoStuffAsync()
         {
             await DoSomethingAsync();
             await DoSomethingElseAsync();
             return await GetAnIntegerAsync() + 1;
         }
 
-        private Task<int> GetAnIntegerAsync()
+        public Task<int> GetAnIntegerAsync()
         {
             // ...
 
             throw new System.NotImplementedException();
         }
 
-        private Task DoSomethingElseAsync()
+        public Task DoSomethingElseAsync()
         {
             // ...
 
             throw new System.NotImplementedException();
         }
 
-        private Task DoSomethingAsync()
+        public Task DoSomethingAsync()
         {
             // ...
 

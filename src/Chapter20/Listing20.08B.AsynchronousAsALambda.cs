@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_08
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_08B
 {
     using System;
     using System.IO;
@@ -29,6 +29,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_08
 
                     WebResponse response =
                         await webRequest.GetResponseAsync();
+                    
+                    // Explicitly counting rather than invoking
+                    // webRequest.ContentLength to retrieve the 
+                    // in order to demonstrate multiple await
+                    // operators.
                     using(StreamReader reader =
                         new StreamReader(
                             response.GetResponseStream()))

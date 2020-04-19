@@ -4,7 +4,7 @@
   </PropertyGroup>
   <Import Project="..\Chapter.props" />
   <ItemGroup>
-    <Compile Remove="Listing20.06B.SignaturesOfAsyncEnumerableSelectMethods.cs" />
+    <Compile Remove="Listing20.07.SignaturesOfAsyncEnumerableSelectMethods.cs" />
     <Compile Remove="Listing20.13.SynchronousHighLatencyInvocationInWPF.cs" />
     <Compile Remove="Listing20.14.SynchronousHighLatencyInvocationInWPFUsingAwait.cs" />
     <Compile Remove="Listing20.15.IteratingOverAwaitOperation.cs" />
@@ -25,7 +25,7 @@
     <Compile Include="..\Shared\PiCalculator.cs">
       <Link>PiCalculator.cs</Link>
     </Compile>
-    <None Include="Listing20.06B.SignaturesOfAsyncEnumerableSelectMethods.cs" />
+    <None Include="Listing20.07.SignaturesOfAsyncEnumerableSelectMethods.cs" />
     <None Include="Listing20.13.SynchronousHighLatencyInvocationInWPF.cs" />
     <None Include="Listing20.14.SynchronousHighLatencyInvocationInWPFUsingAwait.cs" />
     <None Include="Listing20.15.IteratingOverAwaitOperation.cs" />

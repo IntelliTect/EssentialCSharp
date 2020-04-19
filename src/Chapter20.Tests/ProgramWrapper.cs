@@ -11,26 +11,16 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Tests
     public class ProgramWrapper
     {
         Func<string[],Task> MainMethod { get; }
-        private Func<string, IEnumerable<string>, IProgress<DownloadProgressChangedEventArgs>?, Task<int>> FindTextInWebUriMethod { get; }
 
         public ProgramWrapper(
-            Func<string[], Task> mainMethod, 
-            Func<string, IEnumerable<string>, 
-                IProgress<DownloadProgressChangedEventArgs>?, Task<int>> findTextInWebUriMethod)
+            Func<string[], Task> mainMethod)
         {
             MainMethod = mainMethod;
-            FindTextInWebUriMethod = findTextInWebUriMethod;
         }
 
         async public Task Main(string[] args)
         {
             await MainMethod(args);
-        }
-
-        async public Task<int> FindTextInWebUri(
-            string findText, IEnumerable<string> urls, IProgress<DownloadProgressChangedEventArgs>? progressCallback)
-        {
-            return await FindTextInWebUriMethod(findText, urls, progressCallback);
         }
     }
 }

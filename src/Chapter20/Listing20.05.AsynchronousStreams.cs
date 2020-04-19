@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_04
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_05
 {
     using System;
     using System.IO;
@@ -31,12 +31,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_04
             using Cryptographer cryptographer = new Cryptographer();
 
             IEnumerable<string> files = Directory.EnumerateFiles(
-                directoryPath ?? Directory.GetCurrentDirectory(), searchPattern);
+                directoryPath, searchPattern);
 
             // Create a cancellation token source to cancel 
             // if the operation takes more than a minute.
             using CancellationTokenSource cancellationTokenSource =
-                new CancellationTokenSource(1);
+                new CancellationTokenSource(1000*60);
 
             await foreach ((string fileName, string encryptedFileName)
                 in EncryptFilesAsync(files, cryptographer)
