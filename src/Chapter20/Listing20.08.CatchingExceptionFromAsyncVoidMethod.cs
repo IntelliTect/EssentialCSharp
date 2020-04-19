@@ -56,14 +56,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_08
 
         public static void Main()
         {
-
-            AsyncSynchronizationContext synchronizationContext = 
-                new AsyncSynchronizationContext();
-            SynchronizationContext.SetSynchronizationContext(
-                synchronizationContext);
-
+            SynchronizationContext? originalSynchronizationContext =
+                SynchronizationContext.Current;
             try
             {
+                AsyncSynchronizationContext synchronizationContext = 
+                    new AsyncSynchronizationContext();
+                SynchronizationContext.SetSynchronizationContext(
+                    synchronizationContext);
 
                 OnEvent(typeof(Program), new EventArgs());
 
@@ -85,6 +85,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_08
             {
                 Console.WriteLine($@"{exception} thrown as expected.(Thread ID: {
                     Thread.CurrentThread.ManagedThreadId})");
+            }
+            finally
+            {
+                SynchronizationContext.SetSynchronizationContext(
+                    originalSynchronizationContext);
             }
         }
 
