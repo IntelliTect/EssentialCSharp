@@ -46,7 +46,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_10
             try
             {
                 Task.WaitAny(task, cancelTask);
-                // Cancel which ever task has not finished.
+                // Cancel whichever task has not finished.
                 cts.Cancel();
                 await task;
 
@@ -54,13 +54,16 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_10
                 Console.WriteLine("\nCompleted successfully");
 
             }
-            catch(OperationCanceledException taskCanceledException)
+            catch (OperationCanceledException taskCanceledException)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine(
                     $"\nCancelled: { taskCanceledException.Message }");
             }
-            Console.ForegroundColor = originalColor;
+            finally
+            {
+                Console.ForegroundColor = originalColor;
+            }
         }
 
         private static async Task<int> ConsoleReadAsync(
