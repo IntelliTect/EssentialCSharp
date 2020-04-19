@@ -1,5 +1,4 @@
 ﻿using AddisonWesley.Michaelis.EssentialCSharp.Shared;
-using Microsoft.CodeAnalysis;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Threading.Tasks;
 

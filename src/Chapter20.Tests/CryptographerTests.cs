@@ -1,7 +1,5 @@
-﻿﻿using AddisonWesley.Michaelis.EssentialCSharp.Shared;
+﻿using AddisonWesley.Michaelis.EssentialCSharp.Shared;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.IO;
 using System.Security.Cryptography;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_05.Tests

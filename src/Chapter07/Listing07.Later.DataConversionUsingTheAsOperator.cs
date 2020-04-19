@@ -1,7 +1,6 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_25B
 {
     using System;
-    using System.IO;
 
     public class PdaItem
     {

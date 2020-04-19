@@ -1,7 +1,6 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_19
 {
     using System;
-    using System.Diagnostics.CodeAnalysis;
     using static System.Environment;
 
     // Define an abstract class

@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_11
 {

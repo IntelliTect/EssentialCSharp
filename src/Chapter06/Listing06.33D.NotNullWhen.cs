@@ -1,7 +1,6 @@
 ﻿
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_33D
 {
-    using System;
     using System.Diagnostics.CodeAnalysis;
 
     public class NullabilityAttributesExamined

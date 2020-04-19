@@ -1,8 +1,5 @@
 ﻿// Justification: Only snippets of source code shown for elucidation.
 #pragma warning disable CS0168 // Variable is declared but never used
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Table03_02
 {

@@ -1,8 +1,6 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_24
 {
     using AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_21;
-
-    using System.IO;
     using System;
 
     class DataCache
@@ -22,8 +20,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_24_PreCSharp6
 {
     using AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_21;
-
-    using System.IO;
     using System;
 
     class DataCache

@@ -1,9 +1,4 @@
-﻿
-using AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_42;
-using AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_44;
-using AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_46;
-
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter11.Listing11_46
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter11.Listing11_46
 {
     // // ERROR:  Invalid variance: the type parameter 'T' is not
     // //         invariantly valid

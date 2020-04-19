@@ -1,7 +1,6 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_03
 {
     using System;
-    using Listing13_07;
 
     class DelegateSample
     {

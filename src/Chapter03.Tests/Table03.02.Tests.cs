@@ -1,4 +1,3 @@
-using AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Table03_02;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Table03_02.Tests

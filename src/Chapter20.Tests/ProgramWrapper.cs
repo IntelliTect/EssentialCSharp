@@ -1,11 +1,7 @@
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Tests
 {
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System;
-    using System.Collections.Generic;
-    using System.Net;
-    using System.Runtime.ExceptionServices;
     using System.Threading.Tasks;
 
     public class ProgramWrapper

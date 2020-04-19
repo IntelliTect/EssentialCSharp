@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_16
 {
     public class Tuple

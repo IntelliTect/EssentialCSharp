@@ -3,7 +3,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_04
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Threading;
     using System.Threading.Tasks;
 
     public class Program

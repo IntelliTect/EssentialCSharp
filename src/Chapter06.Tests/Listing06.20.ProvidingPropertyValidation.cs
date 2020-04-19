@@ -1,5 +1,4 @@
 using System;
-using AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_14;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_20.Tests

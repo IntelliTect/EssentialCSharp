@@ -1,7 +1,6 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_14
 {
     using System;
-    using System.Diagnostics;
 
     public class Program
     {

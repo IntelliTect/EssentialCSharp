@@ -1,7 +1,5 @@
 using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_01.Tests

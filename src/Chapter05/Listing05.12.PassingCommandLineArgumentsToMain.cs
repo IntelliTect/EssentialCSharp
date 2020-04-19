@@ -1,9 +1,7 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_12
 {
     using System;
-using System.IO;
     using System.Net;
-    using System.Net.Http;
 
     public class Program
     {

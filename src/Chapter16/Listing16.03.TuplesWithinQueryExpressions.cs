@@ -1,7 +1,6 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_03
 {
     using System;
-    using System.Collections.Generic;
     using System.IO;
     using System.Linq;
 

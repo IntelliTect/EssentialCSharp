@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Table03_01
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Table03_01
 {
     public class TupleDeclarationAndAssigment
     {

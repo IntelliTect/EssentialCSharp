@@ -1,6 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using System.ComponentModel;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter11.Listing11_01.Tests
 {

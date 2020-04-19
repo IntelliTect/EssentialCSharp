@@ -1,8 +1,6 @@
-using AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_03;
 using AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Tests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using System.Linq;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_03
 {

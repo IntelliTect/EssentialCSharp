@@ -2,8 +2,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_33B
 {
     using System;
-    using System.Diagnostics.CodeAnalysis;
-    using System.IO;
 
     public class Program
     {

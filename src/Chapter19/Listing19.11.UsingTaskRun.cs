@@ -1,7 +1,5 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_11
 {
-    using System;
-    using System.Threading;
     using System.Threading.Tasks;
 
     public class Program

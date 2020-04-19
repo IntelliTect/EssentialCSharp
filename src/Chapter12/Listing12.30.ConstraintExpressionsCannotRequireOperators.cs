@@ -1,5 +1,3 @@
-using System;
-
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_29
 {
     public abstract class MathEx<T>

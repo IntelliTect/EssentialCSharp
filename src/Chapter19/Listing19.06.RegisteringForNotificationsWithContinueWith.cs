@@ -1,7 +1,6 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_06
 {
     using System;
-    using System.Diagnostics;
     using System.Threading.Tasks;
     using AddisonWesley.Michaelis.EssentialCSharp.Shared;
 

@@ -3,7 +3,6 @@
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_16
 {
-    using System;
     using static System.Environment;
 
     public class Address
