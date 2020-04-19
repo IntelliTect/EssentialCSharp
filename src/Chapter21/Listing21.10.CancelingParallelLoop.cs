@@ -33,7 +33,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_10
             ConsoleColor originalColor = Console.ForegroundColor;
             List<string> data = Utility.GetData(100000).ToList();
 
-            CancellationTokenSource cts =
+            using CancellationTokenSource cts =
                 new CancellationTokenSource();
 
             Task task = Task.Run(() =>
@@ -41,7 +41,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_10
                 data = ParallelEncrypt(data, cts.Token);
             }, cts.Token);
 
-            Console.WriteLine("Push ENTER to Exit.");
+            Console.WriteLine("Push any key to Exit.");
             Task<int> cancelTask = ConsoleReadAsync(cts.Token);
 
             try
@@ -50,6 +50,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_10
                 // Cancel which ever task has not finished.
                 cts.Cancel();
                 await task;
+                await Task.FromCanceled(cts.Token);
 
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("\nCompleted successfully");
@@ -70,8 +71,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_10
             int result = 0;
             await Task.Run(async () =>
             {
-                int maxDelay = 1025;
-                int delay = 0;
+                const int maxDelay = 1025;
+                int delay = 1;
                 while (!cancellationToken.IsCancellationRequested)
                 {
                     if (Console.KeyAvailable)
@@ -81,7 +82,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_10
                     }
                     else
                     {
-                        await Task.Delay(delay);
+                        await Task.Delay(delay,cancellationToken);
                         if (delay < maxDelay) delay *= 2;
                     }
                 }
