@@ -9,8 +9,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_09
         static public Task<Process> RunProcessAsync(
             string fileName,
             string arguments = "",
-            CancellationToken cancellationToken =
-                default(CancellationToken))
+            CancellationToken cancellationToken = default)
         {
             TaskCompletionSource<Process> taskCS =
                           new TaskCompletionSource<Process>();

@@ -3,7 +3,7 @@ using System.Text;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
 {
-    public partial class PiCalculator
+    public static partial class PiCalculator
     {
         const int Digits = 100;
         #region Helper

@@ -1,7 +1,7 @@
 using System;
 using System.Reflection;
 #nullable enable
-public class NetCore
+public static class NetCore
 {
     public static string GetNetCoreVersion()
     {

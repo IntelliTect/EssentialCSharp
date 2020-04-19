@@ -26,23 +26,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_03
             }
             Console.Write($"Searching for '{findText}' at URL '{url}'.");
 
-#if IProgress
-            IProgress<DownloadProgressChangedEventArgs> progress =
-                new Progress<DownloadProgressChangedEventArgs>((value) =>
-                {
-                    Console.Write(".");
-                }
-            );
-
-            if (progress is object)
-            {
-                webClient.DownloadProgressChanged += (sender, eventArgs) =>
-                {
-                    progress.Report(eventArgs);
-                };
-            }
-#endif
-
             using WebClient webClient = new WebClient();
             Task<byte[]> taskDownload =
                 webClient.DownloadDataTaskAsync(url);

@@ -18,7 +18,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Tests
         [TestMethod]
         [DataRow("IntelliTect", @"[1-9]\d*")]
         [DataRow("Text Snippet That Does Not Exist On The Page", @"0")]
-        public void Main_FindText_VerifyOccuranceCount(string findText, string countPattern)
+        public void Main_FindText_VerifyOccurenceCount(string findText, string countPattern)
         {
             string url = DefaultUrl;
             string expected =

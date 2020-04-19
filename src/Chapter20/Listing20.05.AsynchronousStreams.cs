@@ -9,7 +9,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_05
     using System.Runtime.CompilerServices;
     using AddisonWesley.Michaelis.EssentialCSharp.Shared;
 
-    public class Program
+    public static class Program
     {
         static public async void Main(params string[] args)
         {

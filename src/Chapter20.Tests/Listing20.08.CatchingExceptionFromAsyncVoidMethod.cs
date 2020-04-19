@@ -11,7 +11,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_08
     {
 
         [TestMethod][Ignore]
-        public async Task AsyncVoidReturnTest()
+        public void AsyncVoidReturnTest()
         {
             string expected = $@"Invoking Task.Run...(Thread ID: *)
 Running task... (Thread ID: *)
@@ -21,11 +21,13 @@ Throwing expected exception....(Thread ID: *)
 System.Exception: Expected Exception
    *(Thread ID: *)";
 
-            string output = IntelliTect.TestTools.Console.ConsoleAssert.ExpectLike(expected,
-            async () =>
-            {
-                await Program.Main();
-            });
+            string output = IntelliTect.TestTools.Console.ConsoleAssert.ExpectLike(
+                expected,
+                async () =>
+                {
+                    await Program.Main();
+                }
+            );
 
             Console.WriteLine(output);
 

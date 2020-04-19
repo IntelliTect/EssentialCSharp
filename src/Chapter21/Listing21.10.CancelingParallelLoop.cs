@@ -7,7 +7,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_10
     using System.Threading.Tasks;
     using AddisonWesley.Michaelis.EssentialCSharp.Shared;
 
-    public class Program
+    public static class Program
     {
         public static List<string> ParallelEncrypt(
             List<string> data,

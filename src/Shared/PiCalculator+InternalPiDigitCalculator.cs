@@ -4,7 +4,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
 {
     public partial class PiCalculator
     {
-        public class InternalPiDigitCalculator
+        internal static class InternalPiDigitCalculator
         {
             #region Modulus
             private static int MultiplyModulus(long left, long right, int modulus)
@@ -15,12 +15,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
             // return the inverse of x mod y
             private static int InverseModulus(int left, int right)
             {
-                int q = 0;
+                int q;
                 int u = left;
                 int v = right;
                 int a = 0;
                 int c = 1;
-                int t = 0;
+                int t;
 
                 do
                 {
@@ -36,7 +36,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                 }
                 while (u != 0);
 
-                a = a % right;
+                a %= right;
                 if (a < 0) a = right + a;
 
                 return a;
@@ -51,7 +51,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                 while (true)
                 {
                     if ((right & 0x01) != 0) r = MultiplyModulus(r, aa, modulus);
-                    right = right >> 1;
+                    right >>= 1;
                     if (right == 0) break;
                     aa = MultiplyModulus(aa, aa, modulus);
                 }
@@ -91,16 +91,16 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
 
             public static int ComputeSection(int startingDigit)
             {
-                int av = 0;
-                int vmax = 0;
+                int av;
+                int vmax;
                 int N = (int)((startingDigit + 20) * Math.Log(10) / Math.Log(2));
-                int num = 0;
-                int den = 0;
-                int kq = 0;
-                int kq2 = 0;
-                int t = 0;
-                int v = 0;
-                int s = 0;
+                int num;
+                int den;
+                int kq;
+                int kq2;
+                int t;
+                int v;
+                int s;
                 double sum = 0.0;
 
                 for (int a = 3; a <= (2 * N); a = NextPrime(a))
@@ -108,7 +108,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                     vmax = (int)(Math.Log(2 * N) / Math.Log(a));
                     av = 1;
 
-                    for (int i = 0; i < vmax; ++i) av = av * a;
+                    for (int i = 0; i < vmax; ++i) av *= a;
 
                     s = 0;
                     num = 1;
@@ -124,7 +124,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                         {
                             do
                             {
-                                t = t / a;
+                                t /= a;
                                 --v;
                             }
                             while ((t % a) == 0);
@@ -142,7 +142,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                             {
                                 do
                                 {
-                                    t = t / a;
+                                    t /= a;
                                     ++v;
                                 }
                                 while ((t % a) == 0);

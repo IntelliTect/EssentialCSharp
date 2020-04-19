@@ -13,12 +13,12 @@ using System.Runtime.CompilerServices;
 namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
 {
     [ExcludeFromCodeCoverage]
-    public class Program
+    public static class Program
     {
         public static void Main(string[] args)
         {
             string input;
-            IEnumerable<string> stringArguments = new string[0];
+            IEnumerable<string> stringArguments = Array.Empty<string>();
             Assembly assembly = Assembly.GetEntryAssembly()!;
             if (assembly is null)
             {
@@ -103,12 +103,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                     Console.WriteLine($"Result: {output}");
                 }
             }
+#pragma warning disable CA1031 // Do not catch general exception types
             catch (System.IO.FileNotFoundException)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("----Exception----");
                 Console.WriteLine($"There is no chapter corresponding to listing {input}.");
             }
+#pragma warning restore CA1031 // Do not catch general exception types
             catch (TargetParameterCountException exception)
             {
                 throw new InvalidOperationException(
@@ -121,6 +123,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                 Console.WriteLine("----Exception----");
                 Console.WriteLine(exception.Message);
             }
+#pragma warning disable CA1031 // Do not catch general exception types
             catch (Exception exception)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
@@ -139,6 +142,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                         exception.InnerException).Throw();
                 }
             }
+#pragma warning restore CA1031 // Do not catch general exception types
             finally
             {
                 Console.ForegroundColor = originalColor;
@@ -157,7 +161,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
             // it is the first item in the "parameters" array specified to the 
             // Invoke method.
             object? result = method.Invoke(null,
-            parameters: arguments is null ? new object[0] : new object[] { arguments! });
+            parameters: arguments is null ? Array.Empty<object>() : new object[] { arguments! });
 
             if(method.ReturnType == typeof(void))
             {
@@ -169,17 +173,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
             }
             else if(method.GetCustomAttribute(typeof(AsyncIteratorStateMachineAttribute), false) is object)
             {
-                switch(result)
+                return result switch
                 {
-                    case IAsyncEnumerable<int> asyncEnumerable:
-                        return await AggregateToString(asyncEnumerable);
-                    case IAsyncEnumerable<string> asyncEnumerable:
-                        return await AggregateToString(asyncEnumerable);
-                    case null:
-                        throw new InvalidOperationException($"Given an {nameof(IAsyncEnumerable<string>)} method, the result is unexpectedly null.");
-                    default:
-                        throw new NotImplementedException($"This {nameof(IAsyncEnumerable<string>)} type parameter is not implemented.");
-                }
+                    IAsyncEnumerable<int> asyncEnumerable => await AggregateToString(asyncEnumerable),
+                    IAsyncEnumerable<string> asyncEnumerable => await AggregateToString(asyncEnumerable),
+                    null => throw new InvalidOperationException($"Given an {nameof(IAsyncEnumerable<string>)} method, the result is unexpectedly null."),
+                    _ => throw new NotImplementedException($"This {nameof(IAsyncEnumerable<string>)} type parameter is not implemented."),
+                };
             }
             else if (method.GetCustomAttribute(typeof(AsyncStateMachineAttribute), false) is object)
             {
@@ -236,7 +236,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
 
             if (string.IsNullOrWhiteSpace(userArguments))
             {
-                args = new string[0];
+                args = Array.Empty<string>();
             }
             else
             {
