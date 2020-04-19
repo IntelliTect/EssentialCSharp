@@ -50,7 +50,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_10
                 // Cancel which ever task has not finished.
                 cts.Cancel();
                 await task;
-                await Task.FromCanceled(cts.Token);
 
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("\nCompleted successfully");
@@ -68,27 +67,26 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_10
         private static async Task<int> ConsoleReadAsync(
             CancellationToken cancellationToken = default)
         {
-            int result = 0;
-            await Task.Run(async () =>
+            return await Task.Run(async () =>
             {
                 const int maxDelay = 1025;
-                int delay = 1;
+                int delay = 0;
                 while (!cancellationToken.IsCancellationRequested)
                 {
                     if (Console.KeyAvailable)
                     {
-                        result = Console.Read();
-                        break;
+                        return Console.Read();
                     }
                     else
                     {
                         await Task.Delay(delay,cancellationToken);
-                        if (delay < maxDelay) delay *= 2;
+                        if (delay < maxDelay) delay *= 2 + 1;
                     }
                 }
+                cancellationToken.ThrowIfCancellationRequested();
+                throw new InvalidOperationException(
+                    "Previous line should throw preventing this fromever executing");
             }, cancellationToken);
-            cancellationToken.ThrowIfCancellationRequested();
-            return result;
         }
 
         private static string Encrypt(string item)
