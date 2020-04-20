@@ -70,7 +70,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Tests
             AssertWebExceptionType(messagePrefix, (WebException) exception);
         }
 
-        protected void AssertMainException(string messagePrefix, AggregateException exception)
+        protected static void AssertMainException(string messagePrefix, AggregateException exception)
         {
             Assert.AreEqual<Type>(typeof(AggregateException), exception.GetType());
             if (exception is AggregateException aggregateException)
