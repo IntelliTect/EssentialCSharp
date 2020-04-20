@@ -3,6 +3,7 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Net;
 using System.Runtime.ExceptionServices;
+using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
@@ -80,9 +81,18 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Tests
 
         protected static void AssertWebExceptionType(string messagePrefix, WebException exception)
         {
-            Assert.IsTrue(
-                IntelliTect.TestTools.Console.StringExtensions.IsLike(exception.Message, messagePrefix)
-            );
+            bool isLike = IntelliTect.TestTools.Console.StringExtensions.IsLike(
+                exception.Message, messagePrefix);
+            string notLikeMessage = $"Messages are unexpectedly different:\n\texpected: {exception.Message}\n\tActual: {messagePrefix}";
+            
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+            {
+                Assert.IsTrue(isLike, notLikeMessage);
+            }
+            else
+            {
+                Assert.Inconclusive(notLikeMessage);
+            }
         }
 
         protected static void AssertAggregateExceptionType(string messagePrefix, AggregateException aggregateException)
