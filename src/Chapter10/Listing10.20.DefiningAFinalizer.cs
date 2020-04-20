@@ -2,7 +2,7 @@
 {
     using System.IO;
 
-    class TemporaryFileStream
+    public class TemporaryFileStream
     {
         public TemporaryFileStream(string fileName)
         {
