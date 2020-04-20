@@ -1,6 +1,7 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Runtime.InteropServices;
+﻿using System;
+using System.IO;
+using System.Text.RegularExpressions;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_12.Tests
 {
@@ -10,22 +11,51 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_12.Tests
         [TestMethod]
         public void Main_HospitalEmergencyCodes_DisplaysCodes()
         {
-            if (!RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
-            {
-                Assert.Inconclusive("Test currently fails on linux due to ");
-            }
-            else
-            {
-                const string expected =
-                    @"info: Console[0]
+            const string expected =
+                @"info: Console[0]
       Hospital Emergency Codes: = 'black', 'blue', 'brown', 'CBR', 'orange', 'purple', 'red', 'yellow'
 warn: Console[0]
-      This is a test of the emergency...";
+      This is a test of the emergency...
+";
 
-                IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                    expected, (Action<string[]>)(Program.Main),
-                    new string[] { "black", "blue", "brown", "CBR", "orange", "purple", "red", "yellow" });
+            Action act = () => Program.Main(new[]
+            {
+                "black", "blue", "brown", "CBR",
+                "orange", "purple", "red", "yellow"
+            });
+
+            var result = Execute(act);
+
+            Assert.AreEqual(expected, result);
+        }
+
+        private static string Execute(Action action, bool removeVT100 = true)
+        {
+            TextWriter savedOutputStream = Console.Out;
+            try
+            {
+                string output;
+                using (TextWriter writer = new StringWriter())
+                {
+                    Console.SetOut(writer);
+                    action();
+
+                    output = removeVT100
+                        ? RemoveVT100(writer.ToString())
+                        : writer.ToString();
+                }
+
+                return output;
             }
+            finally
+            {
+                Console.SetOut(savedOutputStream);
+            }
+        }
+
+        private static string RemoveVT100(string removeFrom)
+        {
+            return Regex.Replace(removeFrom, "\u001b\\[\\d{1,3}m", "");
         }
     }
 }
