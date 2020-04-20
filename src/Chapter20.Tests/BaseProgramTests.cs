@@ -47,9 +47,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Tests
             {
                 ProgramWrapper.Main(new string[] { findText }).Wait();
             });
-
+            
             Regex regex = new Regex(expected);
-            Assert.IsTrue(regex.Match(actual).Success);
+            Assert.IsTrue(regex.Match(actual).Success,
+                $"Messages are unexpectedly different:\n\tExpected: {expected}\n\t  Actual: {actual}");
         }
 
         [TestMethod]
