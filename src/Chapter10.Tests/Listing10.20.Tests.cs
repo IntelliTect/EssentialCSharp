@@ -46,7 +46,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_20.Tests
         [TestMethod]
         public void Create_GivenNewDocument_FileGetsCreated()
         {
-            TemporaryFileStream fileStream = new TemporaryFileStream("TestFile.tmp");
+            TemporaryFileStream fileStream = new TemporaryFileStream(TempFileName);
             Assert.IsTrue(File.Exists(fileStream.File.FullName));
         }
 
@@ -67,6 +67,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_20.Tests
         {
             try
             {
+                if (!file.Exists) return false;
                 using FileStream stream = file.Open(FileMode.Open, FileAccess.Read, FileShare.None);
                 stream.Close();
 
