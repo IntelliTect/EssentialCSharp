@@ -28,6 +28,8 @@
             Stream = new FileStream(
                 File.FullName, FileMode.OpenOrCreate,
                 FileAccess.ReadWrite);
+            AppDomain.CurrentDomain.ProcessExit +=
+                (object? sender, EventArgs e) => Close();
         }
 
         public TemporaryFileStream()
