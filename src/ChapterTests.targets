@@ -4,5 +4,6 @@
     <ProjectReference Include="..\submodules\TestTools\IntelliTect.TestTools.Console\IntelliTect.TestTools.Console.csproj" Condition="Exists('..\submodules\TestTools\IntelliTect.TestTools.Console\IntelliTect.TestTools.Console.csproj')" />
     -->
     <PackageReference Include="IntelliTect.TestTools.Console" Version="0.6.0-*" />
+    <PackageReference Include="coverlet.msbuild" Version="2.8.1" />
   </ItemGroup>
 </Project>
