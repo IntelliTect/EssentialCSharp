@@ -2,7 +2,7 @@
 param(
     [int]$traceLevel
 )
-if($traceLevel -notin $PSBoundParameters.Keys) {
+if('traceLevel' -notin $PSBoundParameters.Keys) {
     $traceLevel = Read-Host -Prompt @"
     Specifiy the trace level:
     - 0: Turn script tracing off.
@@ -16,17 +16,21 @@ $LibraryProjectName = 'GeoCoordinates'
 $ConsoleProgramProjectName = 'GeoCoordinateProgram'
 
 try {
-    Get-Item .\$LibraryProjectName,.\$ConsoleProgramProjectName -ErrorAction Ignore | Remove-Item  -Recurse
+    Get-Item "$PSScriptRoot\$LibraryProjectName","$PSScriptRoot\$ConsoleProgramProjectName" -ErrorAction Ignore | Remove-Item  -Recurse
     Set-PSDebug -Trace $traceLevel
-    dotnet new console --output $ConsoleProgramProjectName
-    dotnet new Library --output $LibraryProjectName
-    Remove-Item .\$LibraryProjectName\class1.cs 
-    $codeListing = 
-        @('namespace GeoCoordinates') + (
-        Get-Content $PSScriptRoot\Listing09.12.MakingTypesAvailableExternally.cs | 
-        Select-Object -Skip 1)  >> .\$LibraryProjectName\GeoTypes.cs
-    Get-Content .\$LibraryProjectName\GeoTypes.cs
-    dotnet add .\$ConsoleProgramProjectName\$ConsoleProgramProjectName.csproj reference .\$LibraryProjectName\$LibraryProjectName.csproj
+    dotnet new Console --output "$ConsoleProgramProjectName"
+    dotnet new ClassLib  --langversion '8.0' --output "$LibraryProjectName" 
+    Remove-Item "$PSScriptRoot\$LibraryProjectName\class1.cs"
+    $SutCSFile = split-path -leaf $MyInvocation.MyCommand.Definition
+    $SutCSFile = "$PSScriptRoot\$([IO.Path]::GetFileNameWithoutExtension($SutCSFile)).cs"
+    if(-not (Test-Path $SutCSFile)) { throw "Unable to fine the file with the type to export ('$SutCSFile')"}
+    #New-Item -ItemType Directory "$PSScriptRoot\$LibraryProjectName"
+    $codeListing = @('namespace GeoCoordinates') + (
+        Get-Content $SutCSFile | 
+            Select-Object -Skip 1)
+    $codeListing > "$PSScriptRoot\$LibraryProjectName\GeoTypes.cs"
+    Get-Content "$PSScriptRoot\$LibraryProjectName\GeoTypes.cs"  # Display the listing
+    dotnet add "$PSScriptRoot\$ConsoleProgramProjectName\$ConsoleProgramProjectName.csproj" reference "$PSScriptRoot\$LibraryProjectName\$LibraryProjectName.csproj"
     $codeListing = @"
 namespace $ConsoleProgramProjectName
 {
@@ -44,9 +48,10 @@ namespace $ConsoleProgramProjectName
     }
 }
 "@ 
-    $codeListing > .\$ConsoleProgramProjectName\Program.cs
-    Get-Content .\$ConsoleProgramProjectName\Program.cs
-    dotnet run -p .\$ConsoleProgramProjectName\$ConsoleProgramProjectName.csproj
+    $codeListing > "$PSScriptRoot\$ConsoleProgramProjectName\Program.cs"
+    Get-Content "$PSScriptRoot\$ConsoleProgramProjectName\Program.cs" # Display the listing
+    
+    dotnet run -p "$PSScriptRoot\$ConsoleProgramProjectName\$ConsoleProgramProjectName.csproj"
 
 }
 finally {
