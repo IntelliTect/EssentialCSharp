@@ -3,7 +3,7 @@
     using System;
     using System.IO;
 
-    public class Program
+    public static class Program
     {
         // ...
         public static void Search()
@@ -43,7 +43,7 @@
         public FileStream Stream { get; }
         public FileInfo File { get; }
 
-        public void Close()
+        protected void Close()
         {
             Dispose();
         }

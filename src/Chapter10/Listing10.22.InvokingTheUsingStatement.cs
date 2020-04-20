@@ -5,7 +5,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_22
 {
     using AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_21;
 
-    public class Program
+    public static class Program
     {
         public static void Search()
         {
