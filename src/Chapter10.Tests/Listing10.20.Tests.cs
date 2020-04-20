@@ -26,13 +26,19 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_20.Tests
 
         private static void DeleteTempFile()
         {
-            if(IsFileLocked(TempFileName))
+            if (File.Exists(TempFileName))
             {
-                throw new IOException($"The file, '{TempFileName}', is in use can can't be deleted.");
-            }
-            else if (File.Exists(TempFileName))
-            {
-                File.Delete(TempFileName);
+                try
+                {
+                    File.Delete(TempFileName);
+                }
+                catch(IOException exception)
+                {
+                    if (IsFileLocked(TempFileName))
+                    {
+                        throw new IOException($"The file, '{TempFileName}', is in use can can't be deleted.", exception);
+                    }
+                }
             }
         }
 
@@ -61,10 +67,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_20.Tests
         {
             try
             {
-                using (FileStream stream = file.Open(FileMode.Open, FileAccess.Read, FileShare.None))
-                {
-                    stream.Close();
-                }
+                using FileStream stream = file.Open(FileMode.Open, FileAccess.Read, FileShare.None);
+                stream.Close();
+
                 //file is not locked
                 return false;
             }
@@ -87,6 +92,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_20.Tests
                 {
                     return true;
                 }
+            }
+            finally
+            {
+                
             }
         }
     }
