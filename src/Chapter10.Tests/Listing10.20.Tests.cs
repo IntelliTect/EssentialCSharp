@@ -93,10 +93,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_20.Tests
                     return true;
                 }
             }
-            finally
-            {
-                
-            }
         }
     }
 }

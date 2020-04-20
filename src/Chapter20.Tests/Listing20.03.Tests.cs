@@ -24,7 +24,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_03.Tests
 
         protected override void AssertMainException(string messagePrefix,Exception exception)
         {
-            base.AssertMainException(messagePrefix, (AggregateException)exception);
+            BaseProgramTests.AssertMainException(messagePrefix, (AggregateException)exception);
         }
 
         protected override string DefaultUrl { get; } = Program.DefaultUrl;
