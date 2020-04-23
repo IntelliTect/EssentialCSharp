@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_15
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_16
 {
     using System;
     using System.Collections.Generic;
@@ -30,7 +30,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_15
                     return pingReply.Status;
                 };
 
-            StatusLabel.Content = "Pinging…";
+            StatusLabel.Content = "Pingingï¿½";
 
             foreach (string url in urls)
             {

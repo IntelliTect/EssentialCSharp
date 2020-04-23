@@ -1,8 +1,8 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_07
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_08
 {
 }
 
-namespace System.Linq
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_08
 {
     public static class AsyncEnumerable
     {

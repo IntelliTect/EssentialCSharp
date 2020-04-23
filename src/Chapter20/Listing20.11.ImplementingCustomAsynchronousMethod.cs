@@ -1,6 +1,5 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_10
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_11
 {
-    using System;
     using System.Diagnostics;
     using System.Threading;
     using System.Threading.Tasks;
@@ -10,10 +9,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_10
         static public Task<Process> RunProcessAsync(
             string fileName,
             string arguments = "",
-            CancellationToken cancellationToken =
-                default(CancellationToken),
-                IProgress<ProcessProgressEventArgs>? progress = null,
-                object? objectState = null)
+            CancellationToken cancellationToken = default)
         {
             TaskCompletionSource<Process> taskCS =
                           new TaskCompletionSource<Process>();
@@ -23,9 +19,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_10
                 StartInfo = new ProcessStartInfo(fileName)
                 {
                     UseShellExecute = false,
-                    Arguments = arguments,
-                    RedirectStandardOutput =
-                       progress != null
+                    Arguments = arguments
                 },
                 EnableRaisingEvents = true
             };
@@ -50,9 +44,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_10
 
         // ...
     }
-
-    class ProcessProgressEventArgs
-    {
-        // ...
-    }
 }
+
+
+
+
+
+

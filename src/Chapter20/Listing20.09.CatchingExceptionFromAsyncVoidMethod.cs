@@ -1,7 +1,7 @@
 // Justification: Catching general exception types to demonstrate control flow.
 #pragma warning disable CA1031 // Do not catch general exception types
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_08
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_09
 {
     using System;
     using System.Threading;

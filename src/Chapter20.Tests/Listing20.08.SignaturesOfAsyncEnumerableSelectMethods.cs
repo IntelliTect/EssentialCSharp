@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_05.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_08
 {
     [TestClass]
     public class AsyncStreamsTests
