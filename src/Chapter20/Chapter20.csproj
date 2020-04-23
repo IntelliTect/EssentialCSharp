@@ -6,8 +6,11 @@
   <ItemGroup>
     <Compile Remove="Listing20.07.SignaturesOfAsyncEnumerableSelectMethods.cs" />
     <Compile Remove="Listing20.13.SynchronousHighLatencyInvocationInWPF.cs" />
+    <Compile Remove="Listing20.14.SynchronousHighLatencyInvocationInWPF.cs" />
     <Compile Remove="Listing20.14.SynchronousHighLatencyInvocationInWPFUsingAwait.cs" />
     <Compile Remove="Listing20.15.IteratingOverAwaitOperation.cs" />
+    <Compile Remove="Listing20.15.SynchronousHighLatencyInvocationInWPFUsingAwait.cs" />
+    <Compile Remove="Listing20.16.IteratingOverAwaitOperation.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\Shared\Program.cs">
@@ -27,8 +30,11 @@
     </Compile>
     <None Include="Listing20.07.SignaturesOfAsyncEnumerableSelectMethods.cs" />
     <None Include="Listing20.13.SynchronousHighLatencyInvocationInWPF.cs" />
+    <None Include="Listing20.14.SynchronousHighLatencyInvocationInWPF.cs" />
     <None Include="Listing20.14.SynchronousHighLatencyInvocationInWPFUsingAwait.cs" />
     <None Include="Listing20.15.IteratingOverAwaitOperation.cs" />
+    <None Include="Listing20.15.SynchronousHighLatencyInvocationInWPFUsingAwait.cs" />
+    <None Include="Listing20.16.IteratingOverAwaitOperation.cs" />
     <PackageReference Include="System.Linq.Async" Version="4.0.0" />
   </ItemGroup>
 </Project>
