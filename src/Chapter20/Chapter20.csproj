@@ -4,7 +4,7 @@
   </PropertyGroup>
   <Import Project="..\Chapter.props" />
   <ItemGroup>
-    <Compile Remove="Listing20.07.SignaturesOfAsyncEnumerableSelectMethods.cs" />
+    <Compile Remove="Listing20.08.SignaturesOfAsyncEnumerableSelectMethods.cs" />
     <Compile Remove="Listing20.13.SynchronousHighLatencyInvocationInWPF.cs" />
     <Compile Remove="Listing20.14.SynchronousHighLatencyInvocationInWPF.cs" />
     <Compile Remove="Listing20.14.SynchronousHighLatencyInvocationInWPFUsingAwait.cs" />
