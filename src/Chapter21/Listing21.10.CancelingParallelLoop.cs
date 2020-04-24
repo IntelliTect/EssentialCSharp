@@ -82,7 +82,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_10
                     }
                     else
                     {
-                        await Task.Delay(delay,cancellationToken);
+                        await Task.Delay(delay, cancellationToken);
                         if (delay < maxDelay) delay *= 2 + 1;
                     }
                 }

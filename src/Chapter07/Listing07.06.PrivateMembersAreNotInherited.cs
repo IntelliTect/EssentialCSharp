@@ -8,13 +8,16 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_06
 
     public class PdaItem
     {
-  private string? _Name;
-  [DisallowNull]
-  public string? Name
-  {
-      get { return _Name; }
-      set { _Name = value; }
-  }
+// Justification: Disabled pending constructor
+#pragma warning disable CS8618 // Non-nullable field is uninitialized. Consider declaring as nullable.
+        private string _Name;
+#pragma warning restore CS8618 // Non-nullable field is uninitialized. Consider declaring as nullable.
+
+        public string Name
+        {
+            get { return _Name; }
+            set { _Name = value; }
+        }
 
         // ...
     }

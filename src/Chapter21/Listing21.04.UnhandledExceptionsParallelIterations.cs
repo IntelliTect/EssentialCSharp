@@ -5,7 +5,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_04
     using System.IO;
     using System.Threading.Tasks;
 
-    public class Program
+    public static class Program
     {
         public static void Main()
         {
