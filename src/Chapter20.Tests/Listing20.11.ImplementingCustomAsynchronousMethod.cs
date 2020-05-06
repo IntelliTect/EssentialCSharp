@@ -5,6 +5,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_11
     using System;
     using System.Text.RegularExpressions;
     using System.Threading.Tasks;
+    using AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_09;
 
     [TestClass]
     public class ProgramTests
