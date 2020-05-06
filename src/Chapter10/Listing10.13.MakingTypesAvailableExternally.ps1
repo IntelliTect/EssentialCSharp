@@ -19,7 +19,7 @@ try {
     Get-Item "$PSScriptRoot\$LibraryProjectName","$PSScriptRoot\$ConsoleProgramProjectName" -ErrorAction Ignore | Remove-Item  -Recurse
     Set-PSDebug -Trace $traceLevel
     dotnet new Console --output "$ConsoleProgramProjectName"
-    dotnet new ClassLib  --langversion '8.0' --output "$LibraryProjectName" 
+    dotnet new ClassLib  --langVersion '8.0' --output "$LibraryProjectName" 
     Remove-Item "$PSScriptRoot\$LibraryProjectName\class1.cs"
     $SutCSFile = split-path -leaf $MyInvocation.MyCommand.Definition
     $SutCSFile = "$PSScriptRoot\$([IO.Path]::GetFileNameWithoutExtension($SutCSFile)).cs"
