@@ -40,6 +40,5 @@
             Stream = null;
             File = null;
         }
-
     }
 }
