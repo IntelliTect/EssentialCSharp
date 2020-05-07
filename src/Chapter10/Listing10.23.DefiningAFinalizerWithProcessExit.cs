@@ -2,58 +2,81 @@
 {
     using System;
     using System.IO;
+    using System.Linq;
+    using System.Runtime.CompilerServices;
+    using static ConsoleLogger;
 
     public static class Program
     {
-        // ...
-        public static void Search()
+        public static void Main(string[] args)
         {
-            TemporaryFileStream fileStream =
-                new TemporaryFileStream();
+            WriteLine("Starting...");
+            DoStuff();
+            if (args.Any(arg => arg.ToLower() == "-gc"))
+            {
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
+            }
+            WriteLine("Exiting...");
+        }
+
+        // ...
+        public static void DoStuff()
+        {
+            WriteLine("Starting...");
+            SampleUnmanagedResource sampleUnmanagedResource =
+                new SampleUnmanagedResource();
 
             // Use temporary file stream
             // ...
 
-            fileStream.Dispose();
+            if (Environment.GetCommandLineArgs().Any(arg => arg.ToLower() == "-dispose"))
+            {
+                sampleUnmanagedResource.Dispose();
+            }
 
             // ...
+            WriteLine("Exiting...");
         }
     }
 
-    class TemporaryFileStream : IDisposable
+    class SampleUnmanagedResource : IDisposable
     {
-        public TemporaryFileStream(string fileName)
+        public SampleUnmanagedResource(string fileName)
         {
-            File = new FileInfo(fileName);
-            Stream = new FileStream(
-                File.FullName, FileMode.OpenOrCreate,
-                FileAccess.ReadWrite);
+            WriteLine("Starting...", $"{nameof(SampleUnmanagedResource)}.ctor");
+
+            WriteLine("Creating managed stuff...", $"{nameof(SampleUnmanagedResource)}.ctor");
+            WriteLine("Creating unmanaged stuff...", $"{nameof(SampleUnmanagedResource)}.ctor");
 
             var weakReferenceToSelf = new WeakReference<IDisposable>(this);
             ProcessExitHandler = (_, __) =>
             {
+                WriteLine("Starting...", "ProcessExitHandler");
                 if (weakReferenceToSelf.TryGetTarget(out IDisposable? self))
                 {
                     self.Dispose();
                 }
+                WriteLine("Exiting...", "ProcessExitHandler");
             };
             AppDomain.CurrentDomain.ProcessExit
                 += ProcessExitHandler;
+            WriteLine("Exiting...", $"{nameof(SampleUnmanagedResource)}.ctor");
         }
+
         // Stores the process exit delegate so that we can remove it
         // if Dispose() or Finalize() is called already.
-        private EventHandler ProcessExitHandler;
+        private EventHandler ProcessExitHandler { get; }
 
-        public TemporaryFileStream()
+        public SampleUnmanagedResource()
             : this(Path.GetTempFileName()) { }
 
-        ~TemporaryFileStream()
+        ~SampleUnmanagedResource()
         {
+            WriteLine("Starting...");
             Dispose(false);
+            WriteLine("Exiting...");
         }
-
-        public FileStream? Stream { get; private set; }
-        public FileInfo? File { get; private set; }
 
         #region IDisposable Members
         public void Dispose()
@@ -63,6 +86,8 @@
         #endregion
         public void Dispose(bool disposing)
         {
+            WriteLine("Starting...");
+
             // Do not dispose of an owned managed object (one with a 
             // finalizer) if called by member finalize,
             // as the owned managed objects finalize method 
@@ -70,22 +95,24 @@
             // processing already
             if (disposing)
             {
-                Stream?.Dispose();
-                // Turn off calling the finalizer
+                WriteLine("Disposing managed stuff...");
+
+                // Unregister from the finalization queue.
                 System.GC.SuppressFinalize(this);
             }
-            AppDomain.CurrentDomain.ProcessExit -= ProcessExitHandler;
-            try
-            {
-                File?.Delete();
-            }
-            catch (IOException exception)
-            {
-                Console.WriteLine(exception);
-            }
-            Stream = null;
-            File = null;
-        }
 
+            AppDomain.CurrentDomain.ProcessExit -= ProcessExitHandler;
+
+            WriteLine("Disposing unmanaged stuff...");
+
+            WriteLine("Exiting...");
+        }
     }
+
+    public static class ConsoleLogger
+    {
+        public static void WriteLine(string? message = null, [CallerMemberName] string? name = null)
+            => Console.WriteLine($"{$"{name}: " }{ message ?? ": Executing" }");
+    }
+
 }
