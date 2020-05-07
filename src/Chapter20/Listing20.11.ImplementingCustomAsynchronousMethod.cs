@@ -4,7 +4,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_11
     using System.Threading;
     using System.Threading.Tasks;
 
-    class Program
+    public static class Program
     {
         static public Task<Process> RunProcessAsync(
             string fileName,
