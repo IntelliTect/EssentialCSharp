@@ -1,6 +1,5 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_20
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23
 {
-    using System;
     using System.IO;
 
     public class TemporaryFileStream
@@ -23,23 +22,13 @@
             Close();
         }
 
-        public FileStream? Stream { get; private set; }
-        public FileInfo? File { get; private set; }
+        public FileStream Stream { get; }
+        public FileInfo File { get; }
 
         public void Close()
         {
             Stream?.Dispose();
-            try
-            {
-                File?.Delete();
-            }
-            catch (IOException exception)
-            {
-                Console.WriteLine(exception);
-            }
-            Stream = null;
-            File = null;
+            File?.Delete();
         }
-
     }
 }

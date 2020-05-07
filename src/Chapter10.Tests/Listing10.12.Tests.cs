@@ -24,26 +24,24 @@ warn: Console[0]
                 "orange", "purple", "red", "yellow"
             });
 
-            var result = Execute(act);
+            string? result = Execute(act);
 
             Assert.AreEqual(expected, result);
         }
 
-        private static string Execute(Action action, bool removeVT100 = true)
+        private static string? Execute(Action action, bool removeVT100 = true)
         {
             TextWriter savedOutputStream = Console.Out;
             try
             {
-                string output;
-                using (TextWriter writer = new StringWriter())
-                {
+                string? output;
+                using TextWriter writer = new StringWriter();
                     Console.SetOut(writer);
                     action();
 
-                    output = removeVT100
-                        ? RemoveVT100(writer.ToString())
-                        : writer.ToString();
-                }
+                output = removeVT100
+                    ? RemoveVT100(writer.ToString()!)
+                    : writer.ToString();
 
                 return output;
             }
