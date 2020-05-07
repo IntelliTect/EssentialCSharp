@@ -10,7 +10,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_13.Tests
     [TestClass]
     public class TypeTests
     {
-        
+
         [TestMethodWithIgnoreIfSupport]
         [IgnoreIf(nameof(NotWindows))]
         public void MakingTypesAvailableExternallyPS1_ExitCodeIs0()
@@ -104,8 +104,10 @@ public class IgnoreIfAttribute : Attribute
         {
             // Search for the method specified by name in this class or any parent classes.
             var searchFlags = BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.FlattenHierarchy | BindingFlags.Static;
-            var method = testMethod.MethodInfo.DeclaringType.GetMethod(IgnoreCriteriaMethodName, searchFlags);
-            return (bool)method.Invoke(null, null);
+            var method = testMethod.MethodInfo.DeclaringType?.GetMethod(IgnoreCriteriaMethodName, searchFlags);
+#pragma warning disable CS8605 // Unboxing a possibly null value. Null will be caught by exception.
+            return (bool)method?.Invoke(null, null);
+#pragma warning restore CS8605 // Unboxing a possibly null value.
         }
         catch (Exception e)
         {
