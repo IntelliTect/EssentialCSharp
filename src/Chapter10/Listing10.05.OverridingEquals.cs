@@ -66,6 +66,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_05
             // }
 
             // STEP 4: Possibly check for equivalent hash codes.
+            // but not if the identity properties are mutable 
+            // and the hashcode is cached.
             // if (this.GetHashCode() != obj.GetHashCode())
             // {
             //    return false;

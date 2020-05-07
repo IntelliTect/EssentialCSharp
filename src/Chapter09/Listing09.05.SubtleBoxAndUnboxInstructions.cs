@@ -17,7 +17,7 @@
 
             if (totalCount == 7)  // Magic number used for testing
             {
-                // Execution-time error:
+                // Triggers exception when retriving value as double.
                 list.Add(0);  // Cast to double or 'D' suffix required
                               // Whether cast or using 'D' suffix,
                               // CIL is identical
