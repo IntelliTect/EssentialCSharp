@@ -1,22 +1,23 @@
+﻿using System;
+
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter11.Listing11_05
 {
-    using System;
-    using System.Data.OracleClient;
-    using System.Data.SqlClient;
 
-    class DatabaseException : System.Exception
+    class DatabaseException : Exception
     {
         public DatabaseException(
-                                 System.Data.SqlClient.SQLException exception)
+            string message,
+            System.Data.SqlClient.SQLException exception)
+            : base(message, innerException: exception)
         {
-            InnerException = exception;
             // ...
         }
 
         public DatabaseException(
-                                 System.Data.OracleClient.OracleException exception)
+            string message,
+            System.Data.OracleClient.OracleException exception)
+            : base(message, innerException: exception)
         {
-            InnerException = exception;
             // ...
         }
 
@@ -26,15 +27,36 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter11.Listing11_05
         }
 
         public DatabaseException(string message)
+            : base(message)
         {
             // ...
         }
 
         public DatabaseException(
-                                 string message, Exception innerException)
+            string message, Exception exception)
+            : base(message, innerException: exception)
         {
-            InnerException = innerException;
             // ...
         }
     }
+
+    // Create mock versions of the database exception classes rather
+    // than referencing the real libraries.
+    namespace System.Data
+    {
+        namespace SqlClient
+        {
+            class SQLException : Exception
+            {
+            }
+        }
+        namespace OracleClient
+        {
+            class OracleException : Exception
+            {
+            }
+        }
+    }
 }
+
+
