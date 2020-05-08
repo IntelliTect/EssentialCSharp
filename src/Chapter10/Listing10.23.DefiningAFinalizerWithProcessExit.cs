@@ -12,11 +12,6 @@
         {
             WriteLine("Starting...");
             DoStuff();
-            if (args.Any(arg => arg.ToLower() == "-gc"))
-            {
-                GC.Collect();
-                GC.WaitForPendingFinalizers();
-            }
             WriteLine("Exiting...");
         }
 
