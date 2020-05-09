@@ -1,12 +1,14 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter11.Listing11_04
-{
-    using System;
+﻿using System;
+using System.Runtime.Serialization;
 
-    class DatabaseException : System.Exception
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter11.Listing11_03B
+{
+
+    class DatabaseException : Exception
     {
         public DatabaseException(
             string? message,
-            System.Data.SqlClient.SQLException exception)
+            System.Data.SqlClient.SQLException? exception)
             : base(message, innerException: exception)
         {
             // ...
@@ -14,7 +16,7 @@
 
         public DatabaseException(
             string? message,
-            System.Data.OracleClient.OracleException exception)
+            System.Data.OracleClient.OracleException? exception)
             : base(message, innerException: exception)
         {
             // ...
@@ -37,25 +39,33 @@
         {
             // ...
         }
-    }
 
-}
-
-
-// Create mock versions of the database exception classes rather
-// than referencing the real libraries.
-namespace System.Data
-{
-    namespace SqlClient
-    {
-        class SQLException : Exception
+        // Used for deserialization of exceptions
+        public DatabaseException(
+            SerializationInfo serializationInfo,
+            StreamingContext context)
+            : base(serializationInfo, context)
         {
+            //...
         }
     }
-    namespace OracleClient
+
+    // Create mock versions of the database exception classes rather
+    // than referencing the real libraries.
+    namespace System.Data
     {
-        class OracleException : Exception
+        namespace SqlClient
         {
+            class SQLException : Exception
+            {
+            }
+        }
+        namespace OracleClient
+        {
+            class OracleException : Exception
+            {
+            }
         }
     }
 }
+
