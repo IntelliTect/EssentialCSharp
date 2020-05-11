@@ -1,7 +1,7 @@
-﻿using System;
+using System;
 using System.Runtime.Serialization;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter11.Listing11_03B
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter11.Listing11_04
 {
 
     class DatabaseException : Exception
