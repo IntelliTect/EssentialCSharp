@@ -52,6 +52,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter11.Listing11_04
 
     // Create mock versions of the database exception classes rather
     // than referencing the real libraries.
+#pragma warning disable CA1032 // Implement standard exception constructors
     namespace System.Data
     {
         namespace SqlClient
@@ -67,5 +68,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter11.Listing11_04
             }
         }
     }
+#pragma warning restore CA1032 // Implement standard exception constructors
 }
 
