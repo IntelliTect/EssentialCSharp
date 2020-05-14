@@ -1,8 +1,8 @@
 [CmdletBinding()]
 param(
     [int]$traceLevel,
-    [int]$dispose,
-    [int]$gc
+    [string]$dispose,
+    [string]$gc
 )
 if('traceLevel' -notin $PSBoundParameters.Keys) {
     $traceLevel = Read-Host -Prompt @"
@@ -34,7 +34,16 @@ try {
     Get-Content "$PSScriptRoot\$ConsoleProgramProjectName\Program.cs"  # Display the listing
     #dotnet add "$PSScriptRoot\$ConsoleProgramProjectName\$ConsoleProgramProjectName.csproj"
     
-    dotnet run -p "$PSScriptRoot\$ConsoleProgramProjectName.csproj"
+    
+    if('dispose' -in $PSBoundParameters.Keys) {
+    dotnet run -p "$PSScriptRoot\$ConsoleProgramProjectName\$ConsoleProgramProjectName.csproj" -- -dispose
+    }
+    elseif('gc' -in $PSBoundParameters.Keys) {
+    dotnet run -p "$PSScriptRoot\$ConsoleProgramProjectName\$ConsoleProgramProjectName.csproj" -- -gc
+    }
+    else{
+    dotnet run -p "$PSScriptRoot\$ConsoleProgramProjectName\$ConsoleProgramProjectName.csproj"
+    }
 
 }
 finally {
