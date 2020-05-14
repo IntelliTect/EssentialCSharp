@@ -1,10 +1,8 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Chapter10.Tests.CustomTestAttributes;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Reflection;
 using System.Runtime.InteropServices;
-using Chapter10.Tests.CustomTestAttributes;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23.Tests
 {
@@ -17,15 +15,15 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23.Tests
         public void MakingTypesAvailableExternallyPS1_ExitCodeIs0()
         {
             //EssentialCSharp\\src\\Chapter10.Tests\\bin\\Debug\\netcoreapp3.0
-            /* string ps1Path = Path.GetFullPath("../../../../Chapter10/Listing10.13.MakingTypesAvailableExternally.ps1", Environment.CurrentDirectory);
-             string traceValue = "0";
+            string ps1Path = Path.GetFullPath("../../../../Chapter10/Listing10.23.RegisteringAFinalizerWithProcessExit.ps1", Environment.CurrentDirectory);
+            string traceValue = "1";
 
-             System.Diagnostics.Process powerShell = System.Diagnostics.Process.Start("powershell", $"-noprofile -command \"{ps1Path} {traceValue}\"");
-             powerShell.WaitForExit();
+            System.Diagnostics.Process powerShell = System.Diagnostics.Process.Start("powershell", $"-noprofile -command \"{ps1Path} {traceValue}\"");
+            powerShell.WaitForExit();
 
-             Assert.AreEqual(0, powerShell.ExitCode);*/
+            Assert.AreEqual(0, powerShell.ExitCode);
             System.Collections.IDictionary x = Environment.GetEnvironmentVariables();
-           
+
             foreach (object? y in x.Values)
             {
                 Console.WriteLine(y);
