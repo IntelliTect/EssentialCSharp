@@ -30,8 +30,8 @@ try {
     $codeListing = @('namespace ProcessExitTestProgram') + (
         Get-Content $SutCSFile | 
             Select-Object -Skip 1)
-    $codeListing > "$PSScriptRoot\$ConsoleProgramProjectName\GeoTypes.cs"
-    Get-Content "$PSScriptRoot\$ConsoleProgramProjectName\GeoTypes.cs"  # Display the listing
+    $codeListing > "$PSScriptRoot\$ConsoleProgramProjectName\Program.cs"
+    Get-Content "$PSScriptRoot\$ConsoleProgramProjectName\Program.cs"  # Display the listing
     #dotnet add "$PSScriptRoot\$ConsoleProgramProjectName\$ConsoleProgramProjectName.csproj"
     
     dotnet run -p "$PSScriptRoot\$ConsoleProgramProjectName.csproj"
