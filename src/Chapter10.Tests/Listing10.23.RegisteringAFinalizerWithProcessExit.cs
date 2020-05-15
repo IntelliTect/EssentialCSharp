@@ -1,5 +1,4 @@
-﻿using Chapter10.Tests.CustomTestAttributes;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Diagnostics;
 using System.IO;
@@ -9,17 +8,16 @@ using System.Text.RegularExpressions;
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23.Tests
 {
     [TestClass]
-    
+
     public class DisposeTests
     {
 
         static string Ps1Path { get; } = Path.GetFullPath("../../../../Chapter10/Listing10.23.RegisteringAFinalizerWithProcessExit.ps1", Environment.CurrentDirectory);
 
         [ClassInitialize]
-        [TestMethodWithIgnoreIfSupport]
-        [IgnoreIf(nameof(NotWindows))]
         public static void ClassInitialize(TestContext testContext)
         {
+            if (NotWindows()) return;
             string testStatus = "create";
             Process powershell = Process.Start("powershell", $"-noprofile -command \"{Ps1Path} 0 null {testStatus}\"");
             powershell.WaitForExit();
@@ -27,24 +25,22 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23.Tests
 
 
         [ClassCleanup]
-        [TestMethodWithIgnoreIfSupport]
-        [IgnoreIf(nameof(NotWindows))]
         public static void RemoveProcessExitProj()
         {
+            if (NotWindows()) return;
             string testStatus = "cleanup";
             Process powershell = Process.Start("powershell", $"-noprofile -command \"{Ps1Path} 0 null {testStatus}\"");
             powershell.WaitForExit();
         }
 
-        [TestMethod]
-        [TestMethodWithIgnoreIfSupport]
-        [IgnoreIf(nameof(NotWindows))]
-
+        [DataTestMethod]
         [DataRow("processExit", FinalizerRegisteredWithProcessExit, DisplayName = "Finalizer Registered With ProcessExit")]
         [DataRow("dispose", DisposeManuallyCalledExpectedOutput, DisplayName = "Dispose called before ProcessExit does finalizer")]
         [DataRow("gc", GCCalled, DisplayName = "Garbage Collected called")]
         public void FinalizerRunsAsPredicted_ConsoleOutputIsInOrder(string finalizerOrderOption, string expectedOutput)
         {
+            if (NotWindows()) { Assert.Inconclusive("Test only runs on windows"); return; }
+
             string traceValue = "0";
             string testStatus = "run";
 
@@ -130,7 +126,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23.Tests
     }
 
 
-   
+
 
 }
 
