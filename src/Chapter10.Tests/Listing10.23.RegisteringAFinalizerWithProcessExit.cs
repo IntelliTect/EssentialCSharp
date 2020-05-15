@@ -13,11 +13,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23.Tests
     {
 
         static string Ps1Path { get; } = Path.GetFullPath("../../../../Chapter10/Listing10.23.RegisteringAFinalizerWithProcessExit.ps1", Environment.CurrentDirectory);
+        static bool PowerShellIsInstalled = PowerShellInstalled();
 
         [ClassInitialize]
         public static void ClassInitialize(TestContext testContext)
         {
-            if (NotWindows()) return;
+            if (!PowerShellIsInstalled) return;
             string testStatus = "create";
             Process powershell = Process.Start("powershell", $"-noprofile -command \"{Ps1Path} 0 null {testStatus}\"");
             powershell.WaitForExit();
@@ -27,7 +28,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23.Tests
         [ClassCleanup]
         public static void RemoveProcessExitProj()
         {
-            if (NotWindows()) return;
+            if (!PowerShellIsInstalled) return;
             string testStatus = "cleanup";
             Process powershell = Process.Start("powershell", $"-noprofile -command \"{Ps1Path} 0 null {testStatus}\"");
             powershell.WaitForExit();
@@ -39,7 +40,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23.Tests
         [DataRow("gc", GCCalled, DisplayName = "Garbage Collected called")]
         public void FinalizerRunsAsPredicted_ConsoleOutputIsInOrder(string finalizerOrderOption, string expectedOutput)
         {
-            if (NotWindows()) { Assert.Inconclusive("Test only runs on windows"); return; }
+            if (!PowerShellIsInstalled) { Assert.Inconclusive("PowerShell Not Installed"); return; }
 
             string traceValue = "0";
             string testStatus = "run";
@@ -56,14 +57,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23.Tests
 
             Assert.AreEqual<string>(RemoveWhiteSpace(expectedOutput), RemoveWhiteSpace(psOutput));
 
-            //System.Collections.IDictionary x = Environment.GetEnvironmentVariables();
-
-            /*  foreach (object? y in x.Values)
-              {
-                  Console.WriteLine(y);
-              }
-
-              Console.WriteLine();*/
         }
 
 
@@ -116,6 +109,20 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23.Tests
         private static bool NotWindows()
         {
             return !RuntimeInformation.IsOSPlatform(OSPlatform.Windows);
+        }
+
+        public static bool PowerShellInstalled()
+        {
+            var environmentVariables = Environment.GetEnvironmentVariables().Values;
+
+            foreach (string? value in environmentVariables)
+            {
+                if (!string.IsNullOrEmpty(value) && value.ToLower().Contains("powershell"))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         public static string RemoveWhiteSpace(string str)
