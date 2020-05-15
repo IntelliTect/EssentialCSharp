@@ -18,7 +18,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23.Tests
         [ClassInitialize]
         public static void ClassInitialize(TestContext testContext)
         {
-            if (!PowerShellIsInstalled) return;
+            if (NotWindows()) return;
             string testStatus = "create";
             Process powershell = Process.Start("powershell", $"-noprofile -command \"{Ps1Path} 0 null {testStatus}\"");
             powershell.WaitForExit();
@@ -28,7 +28,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23.Tests
         [ClassCleanup]
         public static void RemoveProcessExitProj()
         {
-            if (!PowerShellIsInstalled) return;
+            if (NotWindows()) return;
             string testStatus = "cleanup";
             Process powershell = Process.Start("powershell", $"-noprofile -command \"{Ps1Path} 0 null {testStatus}\"");
             powershell.WaitForExit();
@@ -40,7 +40,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23.Tests
         [DataRow("gc", GCCalled, DisplayName = "Garbage Collected called")]
         public void FinalizerRunsAsPredicted_ConsoleOutputIsInOrder(string finalizerOrderOption, string expectedOutput)
         {
-            if (!PowerShellIsInstalled) { Assert.Inconclusive("PowerShell Not Installed"); return; }
+            if (NotWindows()) { Assert.Inconclusive("PowerShell Not Installed"); return; }
 
             string traceValue = "0";
             string testStatus = "run";
