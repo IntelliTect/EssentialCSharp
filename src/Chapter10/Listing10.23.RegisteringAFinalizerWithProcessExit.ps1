@@ -1,8 +1,9 @@
 [CmdletBinding()]
 param(
     [int]$traceLevel,
-    [string]$dispose,
-    [string]$gc
+    [string]$finalizerOption,
+    [string]$testStatus
+   
 )
 if('traceLevel' -notin $PSBoundParameters.Keys) {
     $traceLevel = Read-Host -Prompt @"
@@ -17,28 +18,39 @@ if('traceLevel' -notin $PSBoundParameters.Keys) {
 #$LibraryProjectName = 'ProcessExit'
 $ConsoleProgramProjectName = 'ProcessExitTestProgram'
 
+if($testStatus -eq "create"){
 try {
     Get-Item "$PSScriptRoot\$ConsoleProgramProjectName" -ErrorAction Ignore | Remove-Item  -Recurse
     Set-PSDebug -Trace $traceLevel
     dotnet new Console --output "$ConsoleProgramProjectName"
-         #dotnet new ClassLib  --langVersion '8.0' --output "$LibraryProjectName" 
-    #Remove-Item "$PSScriptRoot\$LibraryProjectName\class1.cs"
+  
     $SutCSFile = split-path -leaf $MyInvocation.MyCommand.Definition
     $SutCSFile = "$PSScriptRoot\$([IO.Path]::GetFileNameWithoutExtension($SutCSFile)).cs"
     if(-not (Test-Path $SutCSFile)) { throw "Unable to fine the file with the type to export ('$SutCSFile')"}
-    #New-Item -ItemType Directory "$PSScriptRoot\$LibraryProjectName"
+  
     $codeListing = @('namespace ProcessExitTestProgram') + (
         Get-Content $SutCSFile | 
             Select-Object -Skip 1)
     $codeListing > "$PSScriptRoot\$ConsoleProgramProjectName\Program.cs"
     Get-Content "$PSScriptRoot\$ConsoleProgramProjectName\Program.cs"  # Display the listing
-    #dotnet add "$PSScriptRoot\$ConsoleProgramProjectName\$ConsoleProgramProjectName.csproj"
     
     
-    if('dispose' -in $PSBoundParameters.Keys) {
+}catch{
+    Unable to create project
+}
+ 
+}
+
+if($testStatus -eq "cleanup"){ 
+    Get-Item "$PSScriptRoot\$ConsoleProgramProjectName" -ErrorAction Ignore | Remove-Item  -Recurse
+}
+
+if($testStatus -eq "run"){
+  try{ 
+    if($finalizerOption -eq 'dispose'){
     dotnet run -p "$PSScriptRoot\$ConsoleProgramProjectName\$ConsoleProgramProjectName.csproj" -- -dispose
     }
-    elseif('gc' -in $PSBoundParameters.Keys) {
+    elseif($finalizerOption -eq 'gc'){
     dotnet run -p "$PSScriptRoot\$ConsoleProgramProjectName\$ConsoleProgramProjectName.csproj" -- -gc
     }
     else{
@@ -48,4 +60,6 @@ try {
 }
 finally {
     Set-PSDebug -Off
+    
+}
 }
