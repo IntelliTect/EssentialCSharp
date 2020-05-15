@@ -4,6 +4,7 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Runtime.InteropServices;
+using System.Text.RegularExpressions;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23.Tests
 {
@@ -19,7 +20,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23.Tests
             string testStatus = "create";
             Process powershell = Process.Start("powershell", $"-noprofile -command \"{Ps1Path} 0 null {testStatus}\"");
             powershell.WaitForExit();
-            var x= 0;
         }
 
 
@@ -31,44 +31,29 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23.Tests
             powershell.WaitForExit();
         }
 
-
-
         [TestMethod]
         [TestMethodWithIgnoreIfSupport]
         [IgnoreIf(nameof(NotWindows))]
 
-
-        [DataRow("", FinalizerRegisteredWithProcessExit, DisplayName = "Finalizer Registered With ProcessExit")]
+        [DataRow("processExit", FinalizerRegisteredWithProcessExit, DisplayName = "Finalizer Registered With ProcessExit")]
         [DataRow("dispose", DisposeManuallyCalledExpectedOutput, DisplayName = "Dispose called before ProcessExit does finalizer")]
         [DataRow("gc", GCCalled, DisplayName = "Garbage Collected called")]
-        public void MakingTypesAvailableExternallyPS1_ExitCodeIs0(string finalizerOrderOption, string expectedOutput)
+        public void FinalizerRunsAsPredicted_ConsoleOutputIsInOrder(string finalizerOrderOption, string expectedOutput)
         {
-            //EssentialCSharp\\src\\Chapter10.Tests\\bin\\Debug\\netcoreapp3.0
-            //string ps1Path = Path.GetFullPath("../../../../Chapter10/Listing10.23.RegisteringAFinalizerWithProcessExit.ps1", Environment.CurrentDirectory);
             string traceValue = "0";
             string testStatus = "run";
 
             var powershell = new Process();
-
             powershell.StartInfo.RedirectStandardOutput = true;
             powershell.StartInfo.FileName = "powershell";
             powershell.StartInfo.Arguments = $"-noprofile -command \"{Ps1Path} {traceValue} {finalizerOrderOption} {testStatus}\"";
             powershell.Start();
-
-            // Process powershell = Process.Start("powershell", $"-noprofile -command \"{ps1Path} {traceValue} {finalizerOrderOption}\"");
-
             string psOutput = powershell.StandardOutput.ReadToEnd();
             powershell.WaitForExit();
 
-
-
             Assert.AreEqual(0, powershell.ExitCode);
 
-            string programOutput = psOutput.Substring(psOutput.IndexOf("Main:"));
-
-            Console.WriteLine(programOutput);
-
-            Assert.AreEqual<string>(expectedOutput, programOutput);
+            Assert.AreEqual<string>(RemoveWhiteSpace(expectedOutput), RemoveWhiteSpace(psOutput));
 
             //System.Collections.IDictionary x = Environment.GetEnvironmentVariables();
 
@@ -127,19 +112,21 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23.Tests
             Main: Exiting...";
 
 
-
-
-
-
-
-
-
         private static bool NotWindows()
         {
             return !RuntimeInformation.IsOSPlatform(OSPlatform.Windows);
         }
 
+        public static string RemoveWhiteSpace(string str)
+        {
+            return Regex.Replace(str, @"\s+", String.Empty);
+        }
+
     }
+
+
+   
+
 }
 
 

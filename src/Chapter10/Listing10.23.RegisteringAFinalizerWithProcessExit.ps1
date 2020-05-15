@@ -22,7 +22,7 @@ if($testStatus -eq "create"){
 try {
     Get-Item "$PSScriptRoot\$ConsoleProgramProjectName" -ErrorAction Ignore | Remove-Item  -Recurse
     Set-PSDebug -Trace $traceLevel
-    dotnet new Console --output "$ConsoleProgramProjectName"
+    dotnet new Console --output "$PSScriptRoot\$ConsoleProgramProjectName"
   
     $SutCSFile = split-path -leaf $MyInvocation.MyCommand.Definition
     $SutCSFile = "$PSScriptRoot\$([IO.Path]::GetFileNameWithoutExtension($SutCSFile)).cs"
@@ -36,7 +36,7 @@ try {
     
     
 }catch{
-    Unable to create project
+    Write-Error "Unable to create project"
 }
  
 }
@@ -53,8 +53,11 @@ if($testStatus -eq "run"){
     elseif($finalizerOption -eq 'gc'){
     dotnet run -p "$PSScriptRoot\$ConsoleProgramProjectName\$ConsoleProgramProjectName.csproj" -- -gc
     }
-    else{
+    elseif($finalizerOption -eq 'processExit'){
     dotnet run -p "$PSScriptRoot\$ConsoleProgramProjectName\$ConsoleProgramProjectName.csproj"
+    }
+    else{
+        Write-Error "finalizerOption: $finalizerOption not valid with the testStatus: run"
     }
 
 }
