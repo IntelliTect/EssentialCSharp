@@ -9,12 +9,15 @@ using System.Text.RegularExpressions;
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23.Tests
 {
     [TestClass]
+    
     public class DisposeTests
     {
 
         static string Ps1Path { get; } = Path.GetFullPath("../../../../Chapter10/Listing10.23.RegisteringAFinalizerWithProcessExit.ps1", Environment.CurrentDirectory);
 
         [ClassInitialize]
+        [TestMethodWithIgnoreIfSupport]
+        [IgnoreIf(nameof(NotWindows))]
         public static void ClassInitialize(TestContext testContext)
         {
             string testStatus = "create";
@@ -24,6 +27,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23.Tests
 
 
         [ClassCleanup]
+        [TestMethodWithIgnoreIfSupport]
+        [IgnoreIf(nameof(NotWindows))]
         public static void RemoveProcessExitProj()
         {
             string testStatus = "cleanup";
