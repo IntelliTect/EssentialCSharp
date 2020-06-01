@@ -11,7 +11,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_31
         }
 
 #pragma warning disable IDE1006 // Promoted local variables to properties to support testing sample code
-        public static string input { get; set; } = "Let the game beging!";
+        public static string input { get; set; } = "Let the game begin!";
         public static string? currentPlayer { get; set; }
 #pragma warning restore IDE1006 // Naming Styles
     }
