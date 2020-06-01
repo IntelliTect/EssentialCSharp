@@ -1,16 +1,15 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_25
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_23.Tests
 {
     [TestClass]
     public class ProgramTests
     {
         [TestMethod]
-        public void Main_WriteInventions()
+        public void Main_GetCountOnArray_ReturnArrayLength()
         {
             const string expected =
-@"Bifocals (1784)
-Phonograph (1877)";
+                "There are 9 languages in the array.";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
                 expected, Program.Main);

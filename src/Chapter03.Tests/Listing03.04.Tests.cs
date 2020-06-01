@@ -1,6 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_02.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_04.Tests
 {
     [TestClass]
     public class UppercaseTests

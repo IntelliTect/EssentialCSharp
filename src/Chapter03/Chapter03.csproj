@@ -5,6 +5,7 @@
   <Import Project="..\Chapter.props" />
   <ItemGroup>
     <Compile Remove="Listing03.01B.DereferencingAnUnassignedVariable.cs" />
+    <Compile Remove="Listing03.02.DereferencingAnUnassignedVariable.cs" />
     <Compile Remove="Listing03.03.EnablingNullableProjectWide-PlaceHolderFile.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -13,7 +14,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Listing03.01B.DereferencingAnUnassignedVariable.cs">
+    <None Include="Listing03.02.DereferencingAnUnassignedVariable.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Listing03.03.EnablingNullableProjectWide-PlaceHolderFile.cs" />
