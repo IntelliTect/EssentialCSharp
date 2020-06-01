@@ -1,6 +1,4 @@
-﻿using System;
-using System.IO;
-using System.Text.RegularExpressions;
+﻿using IntelliTect.TestTools.Console;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_12.Tests
@@ -18,44 +16,11 @@ warn: Console[0]
       This is a test of the emergency...
 ";
 
-            Action act = () => Program.Main(new[]
+            ConsoleAssert.Expect(expected, () => Program.Main(new[]
             {
                 "black", "blue", "brown", "CBR",
                 "orange", "purple", "red", "yellow"
-            });
-
-            var result = Execute(act);
-
-            Assert.AreEqual(expected, result);
-        }
-
-        private static string Execute(Action action, bool removeVT100 = true)
-        {
-            TextWriter savedOutputStream = Console.Out;
-            try
-            {
-                string output;
-                using (TextWriter writer = new StringWriter())
-                {
-                    Console.SetOut(writer);
-                    action();
-
-                    output = removeVT100
-                        ? RemoveVT100(writer.ToString())
-                        : writer.ToString();
-                }
-
-                return output;
-            }
-            finally
-            {
-                Console.SetOut(savedOutputStream);
-            }
-        }
-
-        private static string RemoveVT100(string removeFrom)
-        {
-            return Regex.Replace(removeFrom, "\u001b\\[\\d{1,3}m", "");
+            }));
         }
     }
 }
