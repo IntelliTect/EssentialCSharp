@@ -2,7 +2,7 @@
 using System;
 using System.Diagnostics;
 using System.IO;
-using System.Runtime.InteropServices;
+using Chapter10.Tests.PowerShellTestsUtilities;
 using System.Text.RegularExpressions;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23.Tests
@@ -13,14 +13,19 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23.Tests
     {
 
         static string Ps1Path { get; } = Path.GetFullPath("../../../../Chapter10/Listing10.23.RegisteringAFinalizerWithProcessExit.ps1", Environment.CurrentDirectory);
-        static bool PowerShellIsInstalled = PowerShellInstalled();
+        static bool PowerShellNotAvailable = PowerShellTestsUtilities.PowerShellNotInstalled();
+        static string PowershellEnvironmentVariableName { get; set; } = "powershell";
 
         [ClassInitialize]
         public static void ClassInitialize(TestContext testContext)
         {
-            if (NotWindows()) return;
+            if (PowerShellNotAvailable) { Assert.Inconclusive("Powershell not installed"); return; }
+            
+            if (PowerShellTestsUtilities.WindowsEnvironment()) PowershellEnvironmentVariableName = "powershell";
+            else PowershellEnvironmentVariableName = "pwsh";
+            
             string testStatus = "create";
-            Process powershell = Process.Start("powershell", $"-noprofile -command \"{Ps1Path} 0 null {testStatus}\"");
+            Process powershell = Process.Start(PowershellEnvironmentVariableName, $"-noprofile -command \"{Ps1Path} 0 null {testStatus}\"");
             powershell.WaitForExit();
         }
 
@@ -28,9 +33,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23.Tests
         [ClassCleanup]
         public static void RemoveProcessExitProj()
         {
-            if (NotWindows()) return;
+            if (PowerShellNotAvailable) { return; }
             string testStatus = "cleanup";
-            Process powershell = Process.Start("powershell", $"-noprofile -command \"{Ps1Path} 0 null {testStatus}\"");
+            Process powershell = Process.Start(PowershellEnvironmentVariableName, $"-noprofile -command \"{Ps1Path} 0 null {testStatus}\"");
             powershell.WaitForExit();
         }
 
@@ -40,14 +45,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23.Tests
         [DataRow("gc", GCCalled, DisplayName = "Garbage Collected called")]
         public void FinalizerRunsAsPredicted_ConsoleOutputIsInOrder(string finalizerOrderOption, string expectedOutput)
         {
-            if (NotWindows()) { Assert.Inconclusive("PowerShell Not Installed"); return; }
+            if (PowerShellNotAvailable) { Assert.Inconclusive("Powershell not installed"); return; }
 
             string traceValue = "0";
             string testStatus = "run";
 
             var powershell = new Process();
             powershell.StartInfo.RedirectStandardOutput = true;
-            powershell.StartInfo.FileName = "powershell";
+            powershell.StartInfo.FileName = PowershellEnvironmentVariableName;
             powershell.StartInfo.Arguments = $"-noprofile -command \"{Ps1Path} {traceValue} {finalizerOrderOption} {testStatus}\"";
             powershell.Start();
             string psOutput = powershell.StandardOutput.ReadToEnd();
@@ -106,24 +111,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23.Tests
             Main: Exiting...";
 
 
-        private static bool NotWindows()
-        {
-            return !RuntimeInformation.IsOSPlatform(OSPlatform.Windows);
-        }
-
-        public static bool PowerShellInstalled()
-        {
-            var environmentVariables = Environment.GetEnvironmentVariables().Values;
-
-            foreach (string? value in environmentVariables)
-            {
-                if (!string.IsNullOrEmpty(value) && value.ToLower().Contains("powershell"))
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
+      
 
         public static string RemoveWhiteSpace(string str)
         {
