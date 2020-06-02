@@ -81,6 +81,8 @@
         }
 
         // 8.
+// Justification: Demonstrating the fact that the name is an alias to ItemX.
+#pragma warning disable IDE0033 // Use explicitly provided tuple name
         public void AssignANamedItemTupleToASingleImplicitlyTypedVariableAndThenAccessTheTupleItemsByTheirItemNumberProperty()
         {
             var countryInfo =
@@ -90,6 +92,7 @@
               countryInfo.Item1}, {countryInfo.Item2}: {
               countryInfo.Item3}");
         }
+#pragma warning restore IDE0033 // Use explicitly provided tuple name
 
         // 9.
         public void DiscardPortionsOfTheTupleWithUnderscores()
