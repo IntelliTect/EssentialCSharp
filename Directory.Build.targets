@@ -1,12 +1,10 @@
 <Project>
   <PropertyGroup>
+    <IgnoreExpectedWarnings>true</IgnoreExpectedWarnings>
     <NoWarn Condition="'$(IgnoreExpectedWarnings)'!=''">$(ExpectedWarnings)</NoWarn>
     <WarningsNotAsErrors>$(ExpectedWarnings)</WarningsNotAsErrors>
   </PropertyGroup>
   <Target Name="VSTestIfTestProject">
     <CallTarget Targets="VSTest" Condition="'$(IsTestProject)' == 'true'" />
   </Target>
-  <PropertyGroup>
-    <!--<Nullable Condition="'$(ChapterNumber)'!=''">enable</Nullable>-->
-  </PropertyGroup>
 </Project>
