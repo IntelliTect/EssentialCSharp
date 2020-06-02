@@ -2,17 +2,15 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_31
 {
     public class Program
     {
-        public static void Main()
+        public static void Main(params string[] args)
         {
-            if(input == "" || input == "quit")
+            string input = args[0];
+            string currentPlayer = args[1];
+
+            if (input.Length == 0 || input == "quit")
             {
                 System.Console.WriteLine($"Player {currentPlayer} quit!!");
             }
         }
-
-#pragma warning disable IDE1006 // Promoted local variables to properties to support testing sample code
-        public static string input { get; set; } = "Let the game begin!";
-        public static string? currentPlayer { get; set; }
-#pragma warning restore IDE1006 // Naming Styles
     }
 }

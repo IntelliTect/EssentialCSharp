@@ -1,4 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_37.Tests
 {
@@ -11,9 +12,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_37.Tests
             const string expected =
                 @"There were no segments to combine.";
 
-            Program.Segments = null;
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, Program.Main);
+                expected, ()=>Program.Main(null!));
         }
 
         [TestMethod]
@@ -22,9 +22,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_37.Tests
             const string expected =
                 @"There were no segments to combine.";
 
-            Program.Segments = new string[0];
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, Program.Main);
+                expected, () => Program.Main(Array.Empty<string>()));
         }
 
         [TestMethod]
@@ -33,9 +32,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_37.Tests
             const string expected =
                 @"Uri: first/second/third";
 
-            Program.Segments = new string[] { "first", "second", "third" };
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, Program.Main);
+                expected, () => Program.Main(new[] { "first", "second", "third" }));
         }
 
         [TestMethod]

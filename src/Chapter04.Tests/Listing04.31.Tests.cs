@@ -8,27 +8,21 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_31.Tests
         [TestMethod]
         public void Main_InputIsEmpty_PlayerQuitConditionHit()
         {
-            Program.input = "";
-            Program.currentPlayer = "Inigo";
-            
             const string expected =
                 @"Player Inigo quit!!";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, Program.Main);
+                expected, ()=>Program.Main("","Inigo"));
         }
         
         [TestMethod]
         public void Main_InputIsQuit_PlayerQuitConditionHit()
         {
-            Program.input = "quit";
-            Program.currentPlayer = "Inigo";
-            
             const string expected =
                 @"Player Inigo quit!!";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, Program.Main);
+                expected, () => Program.Main("quit", "Inigo"));
         }
     }
 }

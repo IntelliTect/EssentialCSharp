@@ -8,25 +8,21 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_32.Tests
         [TestMethod]
         public void Main_Enter33ForHourOfDay_TimeInvalid()
         {
-            Program.hourOfTheDay = 33;
-            
             const string expected =
                 @"The time you entered is invalid.";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, Program.Main);
+                expected, ()=>Program.Main("33"));
         }
         
         [TestMethod]
         public void Main_EnterNegative1ForHourOfDay_TimeInvalid()
         {
-            Program.hourOfTheDay = -1;
-            
             const string expected =
                 @"The time you entered is invalid.";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, Program.Main);
+                expected, () => Program.Main("-1"));
         }
     }
 }

@@ -2,8 +2,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_22
 {
     public class Program
     {
-        public static void Main()
+        public static void Main(params string[] args)
         {
+            int input = int.Parse(args[0]);
+
             if(input < 0)
                 System.Console.WriteLine("Exiting...");
             else if(input < 9)
@@ -20,7 +22,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_22
                     "Correct, tic-tac-toe has a maximum" +
                     " of 9 turns.");
         }
-
-        public static int input { get; set; }
     }
 }

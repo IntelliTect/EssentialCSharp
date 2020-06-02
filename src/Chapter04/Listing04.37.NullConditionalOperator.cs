@@ -2,15 +2,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_37
 {
     public class Program
     {
-        public static string[]? Segments { get; set; }
-
-        static public void Main(string[] args)
+        public static void Main(params string[] args)
         {
 
             string[]? segments = null;
 
-            // ...
-            segments = Segments;  // Included to support unit testing.
+            // Not shown in manuscript since args won't be null in a normal Main method.
+            segments = args;
 
             string? uri = null;
 

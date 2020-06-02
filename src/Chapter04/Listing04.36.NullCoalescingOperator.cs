@@ -18,7 +18,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_36
                 GetApplicationDirectory() ??
                 System.Environment.CurrentDirectory;
 
-            // Null-coalescing assignmet operator
+            // Null-coalescing assignment operator
             fullname ??= $"{ directory }/{ fileName }";
 
             // ...

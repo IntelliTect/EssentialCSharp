@@ -1,3 +1,5 @@
+// Justification: Intentionally demonstrating legacy syntax.
+#pragma warning disable IDE1005 // Delegate invocation can be simplified.
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_38
 {
     public class Thermostat

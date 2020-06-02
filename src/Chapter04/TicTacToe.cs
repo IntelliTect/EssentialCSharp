@@ -83,7 +83,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.TicTacToe
                 System.Console.WriteLine("\nThe game was a tie!");
                 endGame = true;
             }
-            else if(input == "" || input == "quit")
+            else if(input.Length == 0 || input == "quit")
             {
                 // Check if user quit by hitting Enter without 
                 // any characters or by typing "quit".

@@ -3,11 +3,9 @@
     <ChapterNumber>03</ChapterNumber>
     <!-- CA1052: Suggest Program is static which hasn't been explained yet. -->
     <!-- IDE0059: Unnecessary assignment of a value ignored since listing is not complete. -->
-    <!-- IDE0060: Remove unused parameter suggestion ignored since listing is not complete -->
-    <!-- IDE0054: Use compound assignment because '+=" is not yet explained-->
     <!-- CA1822: Member does not access instance data and can be marked as static but the concept hasn't been defined yet. -->
     <!-- IDE0042: Variable declaration can be deconstructed but the concept is not covered yet. -->
-    <ExpectedWarnings>$(ExpectedWarnings),CA1052,IDE0059,CA1822,IDE0042</ExpectedWarnings>    
+    <ExpectedWarnings>$(ExpectedWarnings),CA1052,IDE0059,CA1822,IDE0042</ExpectedWarnings>
   </PropertyGroup>
   <Import Project="..\Chapter.props" />
   <ItemGroup>
