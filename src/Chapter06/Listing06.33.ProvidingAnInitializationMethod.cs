@@ -10,8 +10,8 @@
 
     public class Employee
     {
-        // FirstName&LastName set inside Initizlize() method.
-        #pragma warning disable CS8618
+        // FirstName&LastName set inside Initialize() method.
+#pragma warning disable CS8618
         public Employee(string firstName, string lastName)
         {
             int id;
