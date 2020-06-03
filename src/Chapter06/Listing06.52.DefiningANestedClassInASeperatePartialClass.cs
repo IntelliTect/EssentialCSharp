@@ -1,7 +1,7 @@
 // Ignored as implementation was removed for elucidation
 #pragma warning disable IDE0060 //Remove unused parameter
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_48
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_52
 {
     using System;
 

@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_36
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_40
 {
     class Employee
     {

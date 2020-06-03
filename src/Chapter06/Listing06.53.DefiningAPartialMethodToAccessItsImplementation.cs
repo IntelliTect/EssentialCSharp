@@ -1,7 +1,7 @@
-﻿// Non-nullable field is uninitialized. Consider declaring as nullable.
+// Non-nullable field is uninitialized. Consider declaring as nullable.
 #pragma warning disable CS8618 // Pending a constructors
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_49
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_53
 {
     using System;
 

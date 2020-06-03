@@ -1,5 +1,5 @@
-﻿
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_33B
+
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_34
 {
     using System;
 

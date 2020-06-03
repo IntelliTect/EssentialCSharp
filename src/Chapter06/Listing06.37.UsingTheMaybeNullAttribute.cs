@@ -1,5 +1,5 @@
-﻿
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_33E
+
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_37
 {
     using System;
     using System.Diagnostics.CodeAnalysis;

@@ -1,4 +1,4 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_41
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_45
 {
     using System;
     using static SimpleMath;
