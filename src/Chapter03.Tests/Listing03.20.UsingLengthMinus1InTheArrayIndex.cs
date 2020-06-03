@@ -1,15 +1,16 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_23.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_20
 {
     [TestClass]
     public class ProgramTests
     {
         [TestMethod]
-        public void Main_GetCountOnArray_ReturnArrayLength()
+        public void Main_WriteInventions()
         {
             const string expected =
-                "There are 9 languages in the array.";
+@"TypeScript
+Python";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
                 expected, Program.Main);

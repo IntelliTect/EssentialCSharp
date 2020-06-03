@@ -1,6 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_31.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_32.Tests
 {
     [TestClass]
     public class PalindromeTests
