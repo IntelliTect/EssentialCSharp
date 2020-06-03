@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_22
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_23
 {
     public class Program
     {

@@ -5,12 +5,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_07
     {
         public static void Main()
         {
-            //    |   | 
-            // ---+---+--- 
-            //    |   | 
-            // ---+---+---
-            //    |   | 
-            int[,] cells;
+            string[] languages;
         }
     }
 }

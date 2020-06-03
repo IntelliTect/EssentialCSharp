@@ -1,11 +1,12 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_29
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_31
 {
     public class Program
     {
         public static void Main(string[] args)
         {
             // ...
-            if(args[0][0] == '-')
+            string arg = args[0];
+            if(arg[0] == '-')
             {
                 // This parameter is an option
             }

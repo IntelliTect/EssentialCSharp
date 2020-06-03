@@ -3,17 +3,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_44
     class Employee
     {
         // ...
-        
-        public static int NextId { get; private set; } = 42;
-        // ...
-    }
-}
-
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_44
-{
-    class Employee
-    {
-        // ...
         public static int NextId
         {
             get

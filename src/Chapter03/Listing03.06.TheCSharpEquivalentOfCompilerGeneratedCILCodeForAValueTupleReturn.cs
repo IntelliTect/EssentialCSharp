@@ -1,4 +1,4 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_05B
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_06
 {
     namespace Chapter03
     {

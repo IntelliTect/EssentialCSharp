@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_31
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_32
 {
     public class Palindrome
     {
