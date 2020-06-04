@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_14
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_14z
 
 {
     public interface ISample
