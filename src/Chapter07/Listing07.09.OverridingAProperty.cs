@@ -1,25 +1,16 @@
-﻿using System.Diagnostics.CodeAnalysis;
-
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_17
+// Non-nullable field is uninitialized. Consider declaring as nullable.
+#pragma warning disable CS8618 // Disabled pending constructor
+        
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_09
 {
     public class PdaItem
     {
-        public PdaItem(string name)
-        {
-            Name = name;
-        }
-
-        // ...
-
         public virtual string Name { get; set; }
+        // ...
     }
+
     public class Contact : PdaItem
     {
-        public Contact(string name)
-            : base(name)
-        {
-        }
-
         public override string Name
         {
             get
@@ -36,10 +27,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_17
             }
         }
 
-        [NotNull] [DisallowNull]
-        public string? FirstName { get; set; }
-        [NotNull] [DisallowNull]
-        public string? LastName { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
 
         // ...
     }

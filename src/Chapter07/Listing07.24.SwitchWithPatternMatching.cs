@@ -1,6 +1,6 @@
-﻿using System;
+using System;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_27
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_24
 {
     public class Program
     {

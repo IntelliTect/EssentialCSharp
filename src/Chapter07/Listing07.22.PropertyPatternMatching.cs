@@ -1,13 +1,15 @@
-﻿using System;
+using System;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_24
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_22
 {
     public class Person
     {
         public Person(string firstName, string lastName)
         {
-            FirstName = firstName ?? throw new ArgumentNullException(nameof(firstName));
-            LastName = lastName ?? throw new ArgumentNullException(nameof(lastName));
+            FirstName = firstName ??
+                throw new ArgumentNullException(nameof(firstName));
+            LastName = lastName ??
+                throw new ArgumentNullException(nameof(lastName));
         }
         public string FirstName { get; }
         public string LastName { get; }
@@ -21,8 +23,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_24
         {
             Person person = new Person("Inigo", "Montoya");
 
-            // Positional Pattern Matching
-            if(person is (string firstName, string lastName))
+            // Positional pattern matching
+            if(person is {FirstName: string firstName, LastName: string lastName })
             {
                 Console.WriteLine($"{firstName} {lastName}");
             }

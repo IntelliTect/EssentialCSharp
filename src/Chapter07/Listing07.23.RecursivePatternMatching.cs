@@ -1,6 +1,6 @@
-﻿using System;
+using System;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_26
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_23
 {
     public class Person
     {

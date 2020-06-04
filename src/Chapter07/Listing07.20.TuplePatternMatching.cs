@@ -1,6 +1,6 @@
-﻿using System;
+using System;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_23
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_20
 {
     using System.IO;
 

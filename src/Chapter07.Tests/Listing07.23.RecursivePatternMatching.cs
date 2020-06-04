@@ -1,6 +1,6 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_24.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_23
 {
     [TestClass]
     public class ProgramTests
@@ -10,7 +10,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_24.Tests
         public void Main_EncryptFile_Success()
         {
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                "Inigo Montoya", () => Program.Main());
+                "(5, Princess)", () => Program.Main());
         }
     }
 }

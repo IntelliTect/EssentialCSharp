@@ -1,4 +1,4 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_15
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_12
 {
     class A
     {
