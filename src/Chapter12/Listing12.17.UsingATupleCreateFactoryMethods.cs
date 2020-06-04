@@ -2,7 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_17
 {
 #pragma warning disable 0219 // Disabled warning for assigned but never 
     // used variables for elucidation
-    using Chapter08.Listing08_11;
+    using Contact = Chapter12.Contact;
 
     public class Program
     {
