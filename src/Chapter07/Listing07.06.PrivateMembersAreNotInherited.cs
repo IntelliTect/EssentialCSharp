@@ -33,7 +33,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_06
         {
             Contact contact = new Contact();
 
-            // ERROR:  'PdaItem. _Name' is inaccessible
+            // ERROR:  'PdaItem._Name' is inaccessible
             // contact._Name = "Inigo Montoya";  //uncomment this line and it will not compile
         }
     }

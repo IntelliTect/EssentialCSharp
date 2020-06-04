@@ -23,7 +23,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_25
         {
             Person person = new Person("Inigo", "Montoya");
 
-            // Positional Pattern Matching
+            // Positional pattern matching
             if(person is {FirstName: string firstName, LastName: string lastName })
             {
                 Console.WriteLine($"{firstName} {lastName}");
