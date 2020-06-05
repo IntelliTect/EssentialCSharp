@@ -1,7 +1,6 @@
 <Project>
   <PropertyGroup>
-    <IgnoreExpectedWarnings>true</IgnoreExpectedWarnings>
-    <NoWarn Condition="'$(IgnoreExpectedWarnings)'!=''">$(ExpectedWarnings)</NoWarn>
+    <NoWarn Condition="'$(IgnoreExpectedWarnings)'=='true'">$(ExpectedWarnings)</NoWarn>
     <WarningsNotAsErrors>$(ExpectedWarnings)</WarningsNotAsErrors>
   </PropertyGroup>
   <Target Name="VSTestIfTestProject">
