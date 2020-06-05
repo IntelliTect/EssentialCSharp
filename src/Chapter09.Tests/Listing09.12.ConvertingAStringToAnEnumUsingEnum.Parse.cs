@@ -1,14 +1,14 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_08.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_12
 {
     [TestClass]
     public class ProgramTests
     {
         [TestMethod]
-        public void Main_AvoidingUnboxingAndCopying()
+        public void Main_CastThreadLevelPriorityEnumToString()
         {
-            const string expected = @"2A";
+            const string expected = "Idle";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
                 expected, Program.Main);
