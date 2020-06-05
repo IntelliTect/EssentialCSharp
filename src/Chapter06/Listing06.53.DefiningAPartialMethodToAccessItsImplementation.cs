@@ -58,15 +58,17 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_53
         {
             if(value == null)
             {
-                // In C# 6.0 replace "value" with nameof(value)
-                throw new ArgumentNullException("value");
+                // Use "value" rather than nameof(value)
+                // prior to C# 6.0.
+                throw new ArgumentNullException(nameof(value));
             }
             if(value.Trim().Length == 0)
             {
-                // In C# 6.0 replace "value" with nameof(value)
                 throw new ArgumentException(
                 "LastName cannot be empty.",
-                    "value");
+                    // Use "value" rather than nameof(value)
+                    // prior to C# 6.0.
+                    nameof(value));
             }
         }
 
@@ -74,15 +76,17 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_53
         {
             if(value == null)
             {
-                // In C# 6.0 replace "value" with nameof(value)
-                throw new ArgumentNullException("value");
+                // Use "value" rather than nameof(value)
+                // prior to C# 6.0.
+                throw new ArgumentNullException(nameof(value));
             }
             if (value.Trim().Length == 0)
             {
-                // In C# 6.0 replace "value" with nameof(value)
                 throw new ArgumentException(
                     "FirstName cannot be empty.",
-                    "value");
+                    // Use "value" rather than nameof(value)
+                    // prior to C# 6.0.
+                    nameof(value));
 
             }
         }

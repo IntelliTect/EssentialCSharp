@@ -61,6 +61,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_20
                 if(value == null)
                 {
                     // Report error
+                    // In C# 6.0 replace "value" with nameof(value)
                     throw new ArgumentNullException("value");
                 }
                 else
@@ -71,7 +72,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_20
                     if(value == "")
                     {
                         throw new ArgumentException(
-                            "FirstName cannot be blank.", "value");
+                            // Use "value" rather than nameof(value)
+                            // prior to C# 6.0.
+                            "FirstName cannot be blank.", nameof(value));
                     }
                     else
                     {
