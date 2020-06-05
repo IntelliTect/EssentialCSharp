@@ -34,6 +34,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_15
         public string FirstName;
         public string LastName;
         public string? Salary;
+        // Working de-crypted passwords for elucidation 
+        // only – this is no recommended.
         private string Password;  // Uninitialized pending explanation of constructors
         private bool IsAuthenticated;
 
