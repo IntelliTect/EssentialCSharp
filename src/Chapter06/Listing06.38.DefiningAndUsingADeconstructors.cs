@@ -40,7 +40,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_38
 
     class Employee
     {
-        // FirstName&LastName set inside Initizlize() method.
+        // FirstName&LastName set inside Initialize() method.
         #pragma warning disable CS8618
         public Employee(string firstName, string lastName)
         {

@@ -20,7 +20,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_31
             LastName = lastName;
         }
 
-// FirstName&LastName set inside Id property Setter.
+// FirstName&LastName set inside Id property setter.
 #pragma warning disable CS8618
         public Employee(int id) => Id = id;
 #pragma warning restore CS8618
