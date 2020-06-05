@@ -1,9 +1,9 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.IO;
 using System.Runtime.InteropServices;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_16.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_15
 {
     [TestClass]
     public class ProgramTests

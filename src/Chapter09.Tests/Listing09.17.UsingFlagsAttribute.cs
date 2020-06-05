@@ -1,7 +1,7 @@
 using System.Runtime.InteropServices;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_18.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_17
 {
     [TestClass]
     public class ProgramTests

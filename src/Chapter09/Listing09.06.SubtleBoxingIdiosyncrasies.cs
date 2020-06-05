@@ -1,4 +1,4 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_07
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_06
 {
     using System;
     public class Program

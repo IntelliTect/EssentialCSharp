@@ -1,12 +1,12 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_13.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_13
 {
     [TestClass]
     public class ProgramTests
     {
         [TestMethod]
-        public void Main_CastThreadLevelPriorityEnumToString()
+        public void Main_TryParseThreadLevelPriorityEnumToStringUsing()
         {
             const string expected = "Idle";
 
