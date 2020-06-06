@@ -50,7 +50,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_42
             // the out type parameter modifier
             //Pair<Contact> contacts =
             //    new Pair<Contact>(
-            //        new Contact("Princess Buttercupt"),
+            //        new Contact("Princess Buttercup"),
             //        new Contact("Inigo Montoya"));
             //IReadOnlyPair<PdaItem> pair = contacts;
             //PdaItem pdaItem1 = pair.First;

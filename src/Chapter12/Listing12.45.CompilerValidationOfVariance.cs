@@ -14,7 +14,7 @@
 
     // class FruitPairInitializer : IPairInitializer<Fruit>
     // {
-    //     // Let’s initiaize our pair of fruit with an 
+    //     // Let’s initialize our pair of fruits with an 
     //     // apple and an orange:
 
     //     public void Initialize(IPair<Fruit> pair)
