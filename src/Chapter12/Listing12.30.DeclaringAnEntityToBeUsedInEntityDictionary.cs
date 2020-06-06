@@ -1,7 +1,7 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_30
 {
     using System;
-    using Listing12_33;
+    using Listing12_29;
 
     public class Order : EntityBase<Guid>
     {
