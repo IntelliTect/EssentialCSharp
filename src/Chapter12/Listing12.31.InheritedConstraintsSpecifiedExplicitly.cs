@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_27
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_31
 {
     using System;
 
@@ -8,10 +8,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_27
     }
 
     // ERROR: 
-    // The type 'T' must be convertible to 'System.IComparable<T>' 
+    // The type 'U' must be convertible to 'System.IComparable<U>' 
     // to use it as parameter 'T' in the generic type or 
     // method
-    // class Entity<T> : EntityBase<T>
+    // class Entity<U> : EntityBase<U>
     // {
     //     ...
     // }

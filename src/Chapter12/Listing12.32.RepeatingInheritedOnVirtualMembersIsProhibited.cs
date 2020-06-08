@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_28
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_32
 {
     using System;
 
@@ -10,7 +10,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_28
             // ...
         }
     }
-
     class Order : EntityBase
     {
         public override void Method<T>(T t)
@@ -21,4 +20,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_28
             // ...
         }
     }
+
 }
