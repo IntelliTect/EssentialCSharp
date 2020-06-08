@@ -18,9 +18,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_04
             if (totalCount == 7)  // Magic number used for testing
             {
                 // Execution-time error:
-                list.Add(0);  // Cast to double or 'D' suffix required
+                // Triggers exception when retrieving  value as double.
+                list.Add(0);  // Cast to double or 'D' suffix required.
                               // Whether cast or using 'D' suffix,
-                              // CIL is identical
+                              // CIL is identical.
+
             }
             else
             {

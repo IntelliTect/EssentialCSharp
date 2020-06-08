@@ -68,7 +68,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_12
             get
             {
                 var result = new ConsoleColor[CellValues.Length];
-                // Using generic Array method to populate array (see Chapter 12)
+                // Using generic Array method to populate array
+                // (see Chapter 12)
                 Array.Fill(result, DefaultColumnColor);
                 return result;
             }

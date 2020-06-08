@@ -4,9 +4,15 @@
   </PropertyGroup>
   <Import Project="..\Chapter.props" />
   <ItemGroup>
+    <Compile Remove="Listing12.45.CompilerValidationOfVariance.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="..\Shared\Program.cs">
       <Link>Program.cs</Link>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Listing12.45.CompilerValidationOfVariance.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Chapter08\Chapter08.csproj" />

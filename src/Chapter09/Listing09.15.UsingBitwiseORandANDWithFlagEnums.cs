@@ -30,7 +30,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_15
                 // Only the ReadOnly attribute works on Linux  (The Hidden attribute does not work on Linux)
                 if (!System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
                 {
-                    // Added in C# 4.0/.NET 4.0
+                    // Added in C# 4.0/Microsoft .NET Framework  4.0
                     if (!file.Attributes.HasFlag(FileAttributes.Hidden))
                     {
                         throw new Exception("File is not hidden.");

@@ -34,7 +34,7 @@
                   "333-345-6789")
             };
 
-            // Classes are cast implicitly to
+            // Classes are cast implicitly convertible to
             // their supported interfaces
             ConsoleListControl.List(Contact.Headers, contacts);
 
