@@ -32,7 +32,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_05
             cts.Token.Register(
                 () => Console.WriteLine("Canceling..."));
 
-            Console.WriteLine("Push ENTER to exit.");
+            Console.WriteLine("Press ENTER to exit.");
 
             // Use Task.Factory.StartNew<string>() for
             // TPL prior to .NET 4.5

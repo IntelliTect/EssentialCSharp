@@ -8,7 +8,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_07
 
         public void Main()
         {
-            // Not thread-safe
+            // Not thread safe
             if(OnTemperatureChanged != null) // Warning ignored to demonstrate problem.
             {
                 // Call subscribers

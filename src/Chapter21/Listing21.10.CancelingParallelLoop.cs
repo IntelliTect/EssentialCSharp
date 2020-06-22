@@ -41,7 +41,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_10
                 data = ParallelEncrypt(data, cts.Token);
             }, cts.Token);
 
-            Console.WriteLine("Push any key to Exit.");
+            Console.WriteLine("Press any key to Exit.");
             Task<int> cancelTask = ConsoleReadAsync(cts.Token);
 
             try
