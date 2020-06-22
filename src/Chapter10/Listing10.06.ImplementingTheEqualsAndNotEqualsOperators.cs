@@ -70,7 +70,7 @@
         {
 
             // Check if leftHandSide is null
-            // (operator== would be recursive)
+            // (operator == would be recursive)
             if(leftHandSide is null)
             {
                 // Return true if rightHandSide is also null

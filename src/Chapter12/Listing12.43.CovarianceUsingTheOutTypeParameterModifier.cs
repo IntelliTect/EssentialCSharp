@@ -1,7 +1,7 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_43
 {
     using Chapter08.Listing08_02;
-    using Contact = Chapter08.Listing08_11.Contact;
+    using Contact = Chapter12.Contact;
 
     interface IReadOnlyPair<out T>
     {
@@ -86,4 +86,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_43
             PdaItem pdaItem2 = pair.Second;
         }
     }
+
 }
+

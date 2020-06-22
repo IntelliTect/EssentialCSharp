@@ -67,7 +67,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_22
                     // name was not assigned
                     throw new System.ArgumentException(
                         $"Assigned value '{ value }' is invalid",
-                        "value");
+                        // Use "value" rather than nameof(value)
+                        // prior to C# 6.0.
+                        nameof(value));
                 }
             }
         }

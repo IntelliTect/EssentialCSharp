@@ -13,7 +13,7 @@
 #if !PRECSHARP7
             int result = Array.IndexOf(
                 digitTexts,
-                // Leveraging C# 2.0’s null coelesce operator
+                // Leveraging C# 2.0’s null-coalescing operator
                 (textDigit ??
                   // Leveraging C# 7.0’s throw expression
                   throw new ArgumentNullException(nameof(textDigit))

@@ -19,8 +19,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Table08_01
     {
         public interface IPerson
         {
+            // Standard abstract property definnitions
             string FirstName { get; set; }
             string LastName { get; set; }
+
+            // Implemented instance properties and methods
             public string Name { get => GetName(); }
             public string GetName() => $"{FirstName} {LastName}";
         }
@@ -70,6 +73,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Table08_01
     {
         public interface IPerson
         {
+            // All members are public by default
             string FirstName { get; set; }
             public string LastName { get; set; }
             string Initials => $"{FirstName[0]}{LastName[0]}";
@@ -164,7 +168,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Table08_01
         // private protected interface members
         // are not accessible in derived classes.
        
-        // public int PersonTitle => GetName().ToUpper();
+        // public int PersonTitle => 
+        //      GetName().ToUpper();
     }
     }
 

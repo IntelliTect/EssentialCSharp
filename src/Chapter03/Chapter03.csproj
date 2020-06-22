@@ -9,9 +9,9 @@
   </PropertyGroup>
   <Import Project="..\Chapter.props" />
   <ItemGroup>
-    <Compile Remove="Listing03.01B.DereferencingAnUnassignedVariable.cs" />
     <Compile Remove="Listing03.02.DereferencingAnUnassignedVariable.cs" />
     <Compile Remove="Listing03.03.EnablingNullableProjectWide-PlaceHolderFile.cs" />
+    <Compile Remove="Listing03.06.TheCSharpEquivalentOfCompilerGeneratedCILCodeForAValueTupleReturn.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\Shared\Program.cs">
@@ -24,5 +24,6 @@
     </None>
     <None Include="Listing03.03.EnablingNullableProjectWide-PlaceHolderFile.cs" />
     <None Include="Listing03.03.EnablingNullableProjectWide.csproj" />
+    <None Include="Listing03.06.TheCSharpEquivalentOfCompilerGeneratedCILCodeForAValueTupleReturn.cs" />
   </ItemGroup>
 </Project>
