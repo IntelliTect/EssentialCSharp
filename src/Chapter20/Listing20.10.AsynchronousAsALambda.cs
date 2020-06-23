@@ -22,19 +22,18 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_10
             Func<string, Task> writeWebRequestSizeAsync =
                 async (string webRequestUrl) =>
                 {
-                    // Error handling ommitted for 
+                    // Error handling omitted for 
                     // elucidation
                     WebRequest webRequest =
                        WebRequest.Create(url);
 
                     WebResponse response =
                         await webRequest.GetResponseAsync();
-                    
+
                     // Explicitly counting rather than invoking
-                    // webRequest.ContentLength to retrieve the 
-                    // in order to demonstrate multiple await
-                    // operators.
-                    using(StreamReader reader =
+                    // webRequest.ContentLength to demonstrate
+                    //  multiple await operators
+                    using (StreamReader reader =
                         new StreamReader(
                             response.GetResponseStream()))
                     {
