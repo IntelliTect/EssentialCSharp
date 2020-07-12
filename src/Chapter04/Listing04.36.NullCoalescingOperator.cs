@@ -9,7 +9,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_36
     {
         public static void Main()
         {
-            string? fullname = GetDefaultDirectory();
+            string? fullName = GetDefaultDirectory();
             // ...
 
             // Null-coalescing operator
@@ -19,7 +19,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_36
                 System.Environment.CurrentDirectory;
 
             // Null-coalescing assignment operator
-            fullname ??= $"{ directory }/{ fileName }";
+            fullName ??= $"{ directory }/{ fileName }";
 
             // ...
 
