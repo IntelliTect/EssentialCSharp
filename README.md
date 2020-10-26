@@ -9,7 +9,7 @@ Ensure one of the following frameworks is installed at the latest version.
 * [.NET Framework](https://www.microsoft.com/net/targeting) (Windows)
 * [.NET Core](https://www.microsoft.com/net/core) (All)
 
-[Visual Studio 2017](https://www.visualstudio.com) contains the .NET Framework runtime as well as gives options to install .NET Core.  Not to mention, it's a great IDE that makes it easy to get started.
+[Visual Studio 2019](https://www.visualstudio.com) contains the .NET Framework runtime as well as gives options to install .NET Core.  Not to mention, it's a great IDE that makes it easy to get started.
 
 ### Download the Code
 
