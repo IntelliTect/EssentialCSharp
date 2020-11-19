@@ -11,22 +11,33 @@ The following corrections will be made in the second printing. (To determine whi
 
 | Found by       | Chapter | Page       | Correction                                                                                                                                                        |
 | -------------- | ------- | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Rob Mantel     | 1       | 30         | Change Listing1.18 reference to Listing1.19                                                                                                                       |
 | Rob Mantel     | 1       | 16         | Changed 'HelloWorld.exe' to 'dotnet run'                                                                                                                          |
-| Rob Mantel     | 1       | 29         | Change class name from 'Comment Samples' to CommentSamples                                                                                                        |
+ Rob Mantel     | 1       | 29         | Change class name from 'Comment Samples' to CommentSamples
+ | Rob Mantel     | 1       | 30         | Change Listing1.18 reference to Listing1.19                                                                                                                       |                                                                                                        
+| Pieter Le Roux  | 1       | 38         | Change "(lowercase) to refers to" -> "(lowercase) refers to" 
+| Pieter Le Roux  | 1       | 39         | Change "C# 5.0 compiler" -> "C# 6.0 compiler" 
+| Pieter Le Roux  | 1       | 39         | Change "version 4.6" -> "version 4.5"
+| Pieter Le Roux  | 3       | 93         | Change "Listing 3.6" -> "Listing 3.7" 
+| Pieter Le Roux  | 4       | 111         | Change "The subtraction example" -> "The division and remainder examples" 
+| Pieter Le Roux  | 4       | 116         | Change "16 bits of a float" -> "32 bits of a float"
+| Pieter Le Roux  | 4       | 122         | Change "In this example, notice that the increment operator" -> "In this example, notice that the decrement operator" 
+| Pieter Le Roux  | 4       | 132         | Change operator in first else if in 4.22: `else if(input<9)` -> `else if(input>9)` 
+| Pieter Le Roux  | 4       | 140         | Change "logical operators are of higher precedence than the relational" -> "relation operators are of higher precedence than the logical" 
 | Zhou Jing      | 2       | 75         | "The result is that the number variable is available from both the true and false consequence of the if statement ~~but not~~ and even outside the if statement.. |
 | Kyle Amonson   | 5       | 190        | Output 5.1 corrected Hello Inigo Montoya! Your initials are I. M.                                                                                                 |
 | Kyle Amonson   | 5       | 200        | “and the optional second argument is…” corrected to “and the second argument is”.  The second argument is not optional in the code example.                       |
 | Cameron Osborn | 5       | 236        | Listing 5.26 typo on Console.WriteLine "FormateException" changed to "FormatException"                                                                            |
 | Kyle Amonson   | 6       | 251        | “what you learned in Chapter 4” corrected to “what you learned in Chapter 5”.  Introduced in Listing 5.06                                                         |
-| Cameron Osborn | 6       | 264 && 266 | Listing 6.18 && Listing 6.19 FirstName property gets and sets _LastName backing field                                                                             |
+| Cameron Osborn | 6       | 264 && 266 | Listing 6.18 && Listing 6.19 FirstName property gets and sets _LastName backing field
+| Pieter Le Roux  | 6       | 290         | Change "When another Employee class is created" -> "When another instance of the Employee class is created"                                                                              |
 | Rob Mantel     | 6       | 294 && 299 | Replace reference to Copy() to CopyTo() and update Listing Name                                                                                                   |
 | Kyle Amonson   | 7       | 327        | “Overloading a member” corrected to “Overriding a member”                                                                                                         |
 | Zhou Jing      | 7       | 329        | Listing 7.13: The `Run()` method should be public, `private void Run()`.                                                                                          |
 | Rob Mantel     | 7       | 334        | Change 'therefore no overload' to 'therefore no override'                                                                                                         |
 | Kyle Amonson   | 9       | 390        | “DO overload” corrected to “DO override”                                                                                                                          |
 | Kyle Amonson   | 9       | 396        | “updates the `_Hours` value” corrected to “updates the `_Degrees` value”                                                                                          |
-| Kyle Amonson   | 9       | 395        | “calls `MoveTo()` to change `Hours`” corrected: “calls `MoveTo()` to change `_Degrees`”                                                                           |
+| Kyle Amonson   | 9       | 395        | “calls `MoveTo()` to change `Hours`” corrected: “calls `MoveTo()` to change `_Degrees`”
+| Pieter Le Roux  | 10       | 446         | Change xml comment attribute in 10.17: `<data>January 1, 2000</date>` -> `<date>January 1, 2000</date>`                                                                              |
 | Brian Bos      | 11      | 467        | 'ArgumentNullException' is listed twice                                                                                                                           |
 | Brian Bos      | 11      | 472        | 'ExeptionDispatchInfo.Throw' added missing c to Exception                                                                                                         |
 | Brian Bos      | 11      | 473        | C does not support exception throwing as described. Removed claim                                                                                                 |
