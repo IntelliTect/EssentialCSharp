@@ -13,6 +13,7 @@ The following corrections will be made in the second printing. (To determine whi
 | -------------- | ------- | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Rob Mantel     | 1       | 16         | Changed 'HelloWorld.exe' to 'dotnet run'                                                                                                                          |
  Rob Mantel     | 1       | 29         | Change class name from 'Comment Samples' to CommentSamples
+Pieter Le Roux | 1           | 29          | Last Line: Table 1.2 shows four different C# comment types. The program in <s>Listing 1.18</s> Listing 1.19 includes two of these.
  | Rob Mantel     | 1       | 30         | Change Listing1.18 reference to Listing1.19                                                                                                                       |                                                                                                        
 | Pieter Le Roux  | 1       | 38         | Change "(lowercase) to refers to" -> "(lowercase) refers to" 
 | Pieter Le Roux  | 1       | 39         | Change "C# 5.0 compiler" -> "C# 6.0 compiler" 
