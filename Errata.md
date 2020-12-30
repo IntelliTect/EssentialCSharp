@@ -12,3 +12,4 @@ The following corrections will be made in the second printing. (To determine whi
 Found by     |Chapter     | Page         | Correction
 ------------ |----------- | ------------ | ----------
 Pieter Le Roux | 1           | 31          | Last Line: Table 1.2 shows four different C# comment types. The program in <s>Listing 1.18</s> Listing 1.19 includes two of these.
+Benjamin Michaelis | 1           | 31          | Last Line: Table 1.2 shows four different C# comment types. The program in Listing 1.19 includes <s>two</s>three of these.
