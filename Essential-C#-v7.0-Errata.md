@@ -12,18 +12,17 @@ The following corrections will be made in the second printing. (To determine whi
 | Found by       | Chapter | Page       | Correction                                                                                                                                                        |
 | -------------- | ------- | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Rob Mantel     | 1       | 16         | Changed 'HelloWorld.exe' to 'dotnet run'                                                                                                                          |
- Rob Mantel     | 1       | 29         | Change class name from 'Comment Samples' to CommentSamples
-Pieter Le Roux | 1           | 29          | Last Line: Table 1.2 shows four different C# comment types. The program in <s>Listing 1.18</s> Listing 1.19 includes two of these.
- | Rob Mantel     | 1       | 30         | Change Listing1.18 reference to Listing1.19                                                                                                                       |                                                                                                        
-| Pieter Le Roux  | 1       | 38         | Change "(lowercase) to refers to" -> "(lowercase) refers to" 
-| Pieter Le Roux  | 1       | 39         | Change "C# 5.0 compiler" -> "C# 6.0 compiler" 
-| Pieter Le Roux  | 1       | 39         | Change "version 4.6" -> "version 4.5"
-| Pieter Le Roux  | 3       | 93         | Change "Listing 3.6" -> "Listing 3.7" 
-| Pieter Le Roux  | 4       | 111         | Change "The subtraction example" -> "The division and remainder examples" 
-| Pieter Le Roux  | 4       | 116         | Change "16 bits of a float" -> "32 bits of a float"
-| Pieter Le Roux  | 4       | 122         | Change "In this example, notice that the increment operator" -> "In this example, notice that the decrement operator" 
-| Pieter Le Roux  | 4       | 132         | Change operator in first else if in 4.22: `else if(input<9)` -> `else if(input>9)` 
-| Pieter Le Roux  | 4       | 140         | Change "logical operators are of higher precedence than the relational" -> "relation operators are of higher precedence than the logical" 
+| Rob Mantel     | 1       | 29         | Change class name from 'Comment Samples' to CommentSamples
+| Pieter Le Roux | 1           | 29          | Last Line: Table 1.2 shows four different C# comment types. The program in <s>Listing 1.18</s> Listing 1.19 includes two of these.
+| Rob Mantel     | 1       | 30         | Change Listing1.18 reference to Listing1.19                                                                                           
+| Pieter Le Roux | 1       | 38         | Change "(lowercase) to refers to" -> "(lowercase) refers to" 
+| Pieter Le Roux | 1       | 39         | Change "C# 5.0 compiler" -> "C# 6.0 compiler" 
+| Pieter Le Roux | 3       | 93         | Change "Listing 3.6" -> "Listing 3.7" 
+| Pieter Le Roux | 4       | 111         | Change "The subtraction example" -> "The division and remainder examples" 
+| Pieter Le Roux | 4       | 116         | Change "16 bits of a float" -> "32 bits of a float"
+| Pieter Le Roux | 4       | 122         | Change "In this example, notice that the increment operator" -> "In this example, notice that the decrement operator" 
+| Pieter Le Roux | 4       | 132         | Change operator in first else if in 4.22: `else if(input<9)` -> `else if(input>9)` 
+| Pieter Le Roux | 4       | 140         | Change "logical operators are of higher precedence than the relational" -> "relation operators are of higher precedence than the logical" 
 | Zhou Jing      | 2       | 75         | "The result is that the number variable is available from both the true and false consequence of the if statement ~~but not~~ and even outside the if statement.. |
 | Kyle Amonson   | 5       | 190        | Output 5.1 corrected Hello Inigo Montoya! Your initials are I. M.                                                                                                 |
 | Kyle Amonson   | 5       | 200        | “and the optional second argument is…” corrected to “and the second argument is”.  The second argument is not optional in the code example.                       |
