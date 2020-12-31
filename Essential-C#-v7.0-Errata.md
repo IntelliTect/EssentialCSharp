@@ -24,8 +24,9 @@ The following corrections will be made in the second printing. (To determine whi
 | Pieter Le Roux | 4       | 132         | Change operator in first else if in 4.22: `else if(input<9)` -> `else if(input>9)` 
 | Pieter Le Roux | 4       | 140         | Change "logical operators are of higher precedence than the relational" -> "relation operators are of higher precedence than the logical" 
 | Zhou Jing      | 2       | 75         | "The result is that the number variable is available from both the true and false consequence of the if statement ~~but not~~ and even outside the if statement.. |
-| Kyle Amonson   | 5       | 190        | Output 5.1 corrected Hello Inigo Montoya! Your initials are I. M.                                                                                                 |
-| Kyle Amonson   | 5       | 200        | “and the optional second argument is…” corrected to “and the second argument is”.  The second argument is not optional in the code example.                       |
+| Kyle Amonson   | 5       | 190        | Output 5.1 corrected Hello Inigo Montoya! Your initials are I. M.
+| Kyle Amonson   | 5       | 200        | “and the optional second argument is…” corrected to “and the second argument is”.  The second argument is not optional in the code example.
+Pieter Le Roux | 5           | 201          | Output 5.4: ERROR:  You must specify the URL <s>to be downloaded</s> and the file name **Usage:** Downloader.exe <URL> <TargetFileName> 
 | Cameron Osborn | 5       | 236        | Listing 5.26 typo on Console.WriteLine "FormateException" changed to "FormatException"                                                                            |
 | Kyle Amonson   | 6       | 251        | “what you learned in Chapter 4” corrected to “what you learned in Chapter 5”.  Introduced in Listing 5.06                                                         |
 | Cameron Osborn | 6       | 264 && 266 | Listing 6.18 && Listing 6.19 FirstName property gets and sets _LastName backing field
