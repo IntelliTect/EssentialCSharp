@@ -50,5 +50,6 @@ Pieter Le Roux | 11      | 467        | Last Sentence, first paragraph: <s>null 
 Brian Bos      | 11      | 467        | 'ArgumentNullException' is listed twice 
 Brian Bos      | 11      | 472        | 'ExeptionDispatchInfo.Throw' added missing c to Exception
 Brian Bos      | 11      | 473        | C does not support exception throwing as described. Removed claim
+Pieter Le Roux | 12      | 496        | "you can see that the type parameter will be used for the <s>internal Items</s>InternalItems array, the type for the parameter to the"
 Kevin Bost     | 13      | 544        | `Predicate<int T>` should be `Predicate<in T>`
 Kyle Amonson   | 13      | 550        | "In Listings 13.7 and 13.10" changed to "In Listings 13.7 and 13.11"
