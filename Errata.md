@@ -21,3 +21,4 @@ Pieter Le Roux      | 10          | 452         | Last paragraph: "so <s>overloa
 Pieter Le Roux      | 10          | 458         | Output 10.2: "serialNumber1 reference equals serialNumber2 **serialNumber1 equals serialNumber2** serialNumber1 equals serialNumber3"
 Pieter Le Roux      | 10          | 460         | Note: "The implementation of object.Equals(), the default implementation on all objects before <s>overloading</s>overriding, relies on ReferenceEquals() alone."
 Pieter Le Roux      | 10          | 464         | "To correct this flaw, it is important to <s>overload</s>override the equals (==) and not equals (!=) operators as well
+Pieter Le Roux      | 12          | 542         |  "you can see that the type parameter will be used for the <s>internal Items</s>InternalItems array, the type for the parameter to the"
