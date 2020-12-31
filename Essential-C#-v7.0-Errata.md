@@ -29,20 +29,19 @@ The following corrections will be made in the second printing. (To determine whi
 | Cameron Osborn | 5       | 236        | Listing 5.26 typo on Console.WriteLine "FormateException" changed to "FormatException"                                                                            |
 | Kyle Amonson   | 6       | 251        | “what you learned in Chapter 4” corrected to “what you learned in Chapter 5”.  Introduced in Listing 5.06                                                         |
 | Cameron Osborn | 6       | 264 && 266 | Listing 6.18 && Listing 6.19 FirstName property gets and sets _LastName backing field
-Pieter Le Roux | 6           | 271          | Last Line in second paragraph: "DO use nameof for the paramName argument passed into exceptions like Argument<s>Null</s>Exception and ArgumentNullException that take such a parameter. For more information, see Chapter 18."
-| Pieter Le Roux  | 6       | 290         | Change "When another Employee class is created" -> "When another instance of the Employee class is created"                                                                              |
-| Rob Mantel     | 6       | 294 && 299 | Replace reference to Copy() to CopyTo() and update Listing Name                                                                                                   |
-| Kyle Amonson   | 7       | 327        | “Overloading a member” corrected to “Overriding a member”                                                                                                         |
-| Zhou Jing      | 7       | 329        | Listing 7.13: The `Run()` method should be public, `private void Run()`.                                                                                          |
+| Pieter Le Roux | 6           | 271          | Last Line in second paragraph: "DO use nameof for the paramName argument passed into exceptions like Argument<s>Null</s>Exception and ArgumentNullException that take such a parameter. For more information, see Chapter 18."
+| Pieter Le Roux  | 6       | 290         | Change "When another Employee class is created" -> "When another instance of the Employee class is created"                                                   
+| Rob Mantel     | 6       | 294 && 299 | Replace reference to Copy() to CopyTo() and update Listing Name                                                                                                 
+| Kyle Amonson   | 7       | 327        | “Overloading a member” corrected to “Overriding a member”   
+| Zhou Jing      | 7       | 329        | Listing 7.13: The `Run()` method should be public, `private void Run()`.                                                                                         
 | Rob Mantel     | 7       | 334        | Change 'therefore no overload' to 'therefore no override'   
 | Pieter Le Roux | 7           | 340          | return <s>@</s>$"FirstName: { FirstName + NewLine }" + $"LastName: { LastName + NewLine }"+ $"Address: { Address + NewLine }";
-
-| Kyle Amonson   | 9       | 390        | “DO overload” corrected to “DO override”                                                                                                                          |
-| Kyle Amonson   | 9       | 396        | “updates the `_Hours` value” corrected to “updates the `_Degrees` value”                                                                                          |
+| Kyle Amonson   | 9       | 390        | “DO overload” corrected to “DO override”
+| Kyle Amonson   | 9       | 396        | “updates the `_Hours` value” corrected to “updates the `_Degrees` value”
 | Kyle Amonson   | 9       | 395        | “calls `MoveTo()` to change `Hours`” corrected: “calls `MoveTo()` to change `_Degrees`”
-| Pieter Le Roux  | 10       | 446         | Change xml comment attribute in 10.17: `<data>January 1, 2000</date>` -> `<date>January 1, 2000</date>`                                                                              |
-| Brian Bos      | 11      | 467        | 'ArgumentNullException' is listed twice                                                                                                                           |
-| Brian Bos      | 11      | 472        | 'ExeptionDispatchInfo.Throw' added missing c to Exception                                                                                                         |
-| Brian Bos      | 11      | 473        | C does not support exception throwing as described. Removed claim                                                                                                 |
-| Kevin Bost     | 13      | 544        | `Predicate<int T>` should be `Predicate<in T>`                                                                                                                    |
-| Kyle Amonson   | 13      | 550        | "In Listings 13.7 and 13.10" changed to "In Listings 13.7 and 13.11"                                                                                              |
+| Pieter Le Roux  | 10       | 446         | Change xml comment attribute in 10.17: `<data>January 1, 2000</date>` -> `<date>January 1, 2000</date>`
+| Brian Bos      | 11      | 467        | 'ArgumentNullException' is listed twice 
+| Brian Bos      | 11      | 472        | 'ExeptionDispatchInfo.Throw' added missing c to Exception
+| Brian Bos      | 11      | 473        | C does not support exception throwing as described. Removed claim
+| Kevin Bost     | 13      | 544        | `Predicate<int T>` should be `Predicate<in T>`
+| Kyle Amonson   | 13      | 550        | "In Listings 13.7 and 13.10" changed to "In Listings 13.7 and 13.11"
