@@ -40,7 +40,13 @@ Pieter Le Roux | 7       | 340        | return <s>@</s>$"FirstName: { FirstName 
 Kyle Amonson   | 9       | 390        | “DO overload” corrected to “DO override”
 Kyle Amonson   | 9       | 396        | “updates the `_Hours` value” corrected to “updates the `_Degrees` value”
 Kyle Amonson   | 9       | 395        | “calls `MoveTo()` to change `Hours`” corrected: “calls `MoveTo()` to change `_Degrees`”
+Pieter Le Roux | 10      | 412        | Last paragraph: "so <s>overloading</s> overriding the method" "Consider <s>overloading</s>overriding the ToString() method "
 Pieter Le Roux | 10      | 446        | Change xml comment attribute in 10.17: `<data>January 1, 2000</date>` -> `<date>January 1, 2000</date>`
+Pieter Le Roux | 10      | 418        | Output 10.2: "serialNumber1 reference equals serialNumber2 **serialNumber1 equals serialNumber2** serialNumber1 equals serialNumber3"
+Pieter Le Roux | 10      | 420        | Note: "The implementation of object.Equals(), the default implementation on all objects before <s>overloading</s>overriding, relies on ReferenceEquals() alone."
+Pieter Le Roux | 10      | 425        | Second sentence: "To correct this flaw, it is important to <s>overload</s>override the equals (==) and not equals (!=) operators as well
+Pieter Le Roux | 11      | 466        | Listing 11.1: // Leveraging C# 2.0's <s>null coelesce operator</s>null-coalescing operator
+Pieter Le Roux | 11      | 467        | Last Sentence, first paragraph: <s>null propagation operator</s>null-conditional operator
 Brian Bos      | 11      | 467        | 'ArgumentNullException' is listed twice 
 Brian Bos      | 11      | 472        | 'ExeptionDispatchInfo.Throw' added missing c to Exception
 Brian Bos      | 11      | 473        | C does not support exception throwing as described. Removed claim
