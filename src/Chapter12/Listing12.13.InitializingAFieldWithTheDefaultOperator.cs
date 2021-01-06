@@ -1,3 +1,6 @@
+// Justification: Only showing partial implementaiton.
+#pragma warning disable CS8618 // Non-nullable field is uninitialized. Consider declaring as nullable.
+
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_13
 {
     using Listing12_08;
