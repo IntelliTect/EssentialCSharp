@@ -46,17 +46,23 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                 input = ParseListingName(input);
 
                 Regex reg = new Regex($"{input}\\.+");
-                Type? target = assembly.GetTypes().FirstOrDefault(type =>
+
+                IEnumerable<Type?> targets = assembly.GetTypes().Where(type =>
                 {
                     return reg.IsMatch(type.FullName!);
                 });
+                Type? target = targets.FirstOrDefault(item => item?.Name == "Program") ??
+                    targets.FirstOrDefault();
+
                 if (target is null)
                 {
                     throw new InvalidOperationException($"There is no listing '{input}'.");
                 }
 
                 MethodInfo method = target.GetMethod("Main") ??
-                    target.GetMethods().First();
+                    // Item doesn't contain an '_' such as set_ or get_ - but really any name with an underscore 
+                    // would be enough to indicate it wasn't the intended start method.
+                    target.GetMethods().First(item => !item.Name.Contains("_"));
                 
                 string[]? arguments;
 
