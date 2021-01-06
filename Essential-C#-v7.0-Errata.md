@@ -59,4 +59,4 @@ Pieter Le Roux     | 12      | 530        | "  // Let’s initia**l**ize our pai
 Pieter Le Roux     | 13      | 542        | "The Fun**c**<...> delegate in Listing 13.3, for example, is declared as"
 Kevin Bost         | 13      | 544        | `Predicate<int T>` should be `Predicate<in T>`
 Kyle Amonson       | 13      | 550        | "In Listings 13.7 and 13.10" changed to "In Listings 13.7 and 13.11"
-Benjamin Michaelis | 14      | 588        | "public Action<float>**?** OnTemperatureChange { get; set; }"
+Benjamin Michaelis | 14      | 588        | "'public Action<float>**?** OnTemperatureChange { get; set; }'"
