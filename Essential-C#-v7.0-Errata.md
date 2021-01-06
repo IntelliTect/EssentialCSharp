@@ -56,7 +56,32 @@ Pieter Le Roux     | 12      | 504        | "// Use System.ValueTup**l**e<string
 Pieter Le Roux     | 12      | 522        | "The constraints are specified between the <s>argument</s>parameter list and the method body, as shown" 
 Pieter Le Roux     | 12      | 530        | "Consider the **I**PairInitializer<in T> interface in Listing 12.45." 
 Pieter Le Roux     | 12      | 530        | "  `// Let’s initia`**l**`ize our pair of fruits with an` " 
+Pieter Le Roux     | 12      | 532        | Listing 12.47: .class private auto ansi beforefieldinit 
+
+    Stack'1<([mscorlib]System.IComparable)T> 
+
+    extends [mscorlib]System.Object 
+
+{ 
+
+  ... 
+
+} 
+Benjamin Michaelis | 12      | 532        | Listing 12.48: .class public auto ansi beforefieldinit 
+
+     'Stack'1'<([mscorlib]System.IComparable) T> 
+
+     extends [mscorlib]System.Object 
+
+{ 
+
+    .field private !0[ ] _Items 
+
+    ... 
+
+} 
 Pieter Le Roux     | 13      | 542        | "The Fun**c**<...> delegate in Listing 13.3, for example, is declared as"
 Kevin Bost         | 13      | 544        | `Predicate<int T>` should be `Predicate<in T>`
 Kyle Amonson       | 13      | 550        | "In Listings 13.7 and 13.10" changed to "In Listings 13.7 and 13.11"
-Benjamin Michaelis | 14      | 588        | `public Action<float>`**?** `OnTemperatureChange { get; set; }`
+Benjamin Michaelis | 14      | 578        | `public Action<float>`**?** `OnTemperatureChange { get; set; }`
+Pieter Le Roux     | 14      | 589        | Output 14.2: "<s>Enter temperature: 45 Heater: On Error in the application Cooler: Off</s> Enter temperature: 45 Heater: On Cooler: Off There were exceptions thrown by OnTemperatureChange Event subscribers. (Operation is not valid due to the current state of the object.)"
