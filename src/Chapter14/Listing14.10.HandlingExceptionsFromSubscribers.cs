@@ -81,10 +81,16 @@
             catch(AggregateException exception)
             {
                 Console.WriteLine(exception.Message);
-                foreach(Exception item in exception.InnerExceptions)
+                if (exception.InnerExceptions.Count < 1)
                 {
-                    Console.WriteLine("\t{0}: {1}",
-                        item.GetType(), item.Message);
+                    // Enumerate the exceptions only if there is more than
+                    // one because with one the message gets merged into the 
+                    // Aggregate exception message.
+                    foreach (Exception item in exception.InnerExceptions)
+                    {
+                        Console.WriteLine("\t{0}: {1}",
+                            item.GetType(), item.Message);
+                    }
                 }
             }
         }
