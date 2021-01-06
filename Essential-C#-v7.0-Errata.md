@@ -51,5 +51,11 @@ Brian Bos      | 11      | 467        | 'ArgumentNullException' is listed twice
 Brian Bos      | 11      | 472        | 'ExeptionDispatchInfo.Throw' added missing c to Exception
 Brian Bos      | 11      | 473        | C does not support exception throwing as described. Removed claim
 Pieter Le Roux | 12      | 496        | "you can see that the type parameter will be used for the <s>internal Items</s>InternalItems array, the type for the parameter to the"
+Pieter Le Roux | 12      | 501        | "constructor that takes the initial values for both <s>First and Second</s>first and second and assigns them to First and Second."
+Pieter Le Roux | 12      | 504        | "// Use System.ValueTup**l**e<string,Contact> prior to C# 7.0 "
+Pieter Le Roux | 12      | 522        | "The constraints are specified between the <s>argument</s>parameter list and the method body, as shown" 
+Pieter Le Roux | 12      | 530        | "Consider the **I**PairInitializer<in T> interface in Listing 12.45." 
+Pieter Le Roux | 12      | 530        | "  // Let’s initia**l**ize our pair of fruits with an " 
+Pieter Le Roux | 13      | 542        | "The Fun**c**<...> delegate in Listing 13.3, for example, is declared as"
 Kevin Bost     | 13      | 544        | `Predicate<int T>` should be `Predicate<in T>`
 Kyle Amonson   | 13      | 550        | "In Listings 13.7 and 13.10" changed to "In Listings 13.7 and 13.11"
