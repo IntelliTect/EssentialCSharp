@@ -32,6 +32,6 @@
     <None Include="Listing20.14.SynchronousHighLatencyInvocationInWPF.cs" />
     <None Include="Listing20.15.SynchronousHighLatencyInvocationInWPFUsingAwait.cs" />
     <None Include="Listing20.16.IteratingOverAwaitOperation.cs" />
-    <PackageReference Include="System.Linq.Async" Version="4.0.0" />
+    <PackageReference Include="System.Linq.Async" Version="5.0.0" />
   </ItemGroup>
 </Project>
