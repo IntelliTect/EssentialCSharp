@@ -56,30 +56,8 @@ Pieter Le Roux     | 12      | 504        | "// Use System.ValueTup**l**e<string
 Pieter Le Roux     | 12      | 522        | "The constraints are specified between the <s>argument</s>parameter list and the method body, as shown" 
 Pieter Le Roux     | 12      | 530        | "Consider the **I**PairInitializer<in T> interface in Listing 12.45." 
 Pieter Le Roux     | 12      | 530        | "  `// Let’s initia`**l**`ize our pair of fruits with an` " 
-Pieter Le Roux     | 12      | 532        | Listing 12.47: .class private auto ansi beforefieldinit 
-
-    Stack'1<([mscorlib]System.IComparable)T> 
-
-    extends [mscorlib]System.Object 
-
-{ 
-
-  ... 
-
-} 
-Benjamin Michaelis | 12      | 532        | Listing 12.48: .class public auto ansi beforefieldinit 
-
-     'Stack'1'<([mscorlib]System.IComparable) T> 
-
-     extends [mscorlib]System.Object 
-
-{ 
-
-    .field private !0[ ] _Items 
-
-    ... 
-
-} 
+Pieter Le Roux     | 12      | 532        | Listing 12.47: .class <s>private</s>public auto ansi beforefieldinit Stack'1<([<s>mscorlib</s>System.Runtime]System.IComparable)** **T> extends [<s>mscorlib</s>System.Runtime]System.Object { ... } 
+Benjamin Michaelis | 12      | 533        | Listing 12.48: .class public auto ansi beforefieldinit <s>'</s>Stack'1<s>'</s><([<s>mscorlib</s>System.Runtime]System.IComparable) T> extends [<s>mscorlib</s>System.Runtime]System.Object { .field private !<s>0</s>**T**[ ] **_I**<s>i</s>tems ... }
 Pieter Le Roux     | 13      | 542        | "The Fun**c**<...> delegate in Listing 13.3, for example, is declared as"
 Kevin Bost         | 13      | 544        | `Predicate<int T>` should be `Predicate<in T>`
 Kyle Amonson       | 13      | 550        | "In Listings 13.7 and 13.10" changed to "In Listings 13.7 and 13.11"
