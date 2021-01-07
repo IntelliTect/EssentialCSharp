@@ -11,6 +11,7 @@ The following corrections will be made in the second printing. (To determine whi
 
 Found by            | Chapter     | Page        | Correction                                                                                                                                                       
 ------------------- | ----------- | ----------- | -----------------------------------------------------------------------------------------------------------------------------------------------------------------
+Salim Gangji        | 1           | 12          | First paragraph: For a single executable, append <s>`/p:PublishSingleFile=true`</s> `-p:PublishSingleFile=true` to the command
 Pieter Le Roux      | 1           | 31          | Last Line: Table 1.2 shows four different C# comment types. The program in <s>Listing 1.18</s> Listing 1.19 includes two of these.
 Benjamin Michaelis  | 1           | 31          | Last Line: Table 1.2 shows four different C# comment types. The program in Listing 1.19 includes <s>two</s>three of these.
 Pieter Le Roux      | 5           | 215         | Output 5.4: ERROR:  You must specify the URL <s>to be downloaded</s> and the file name **Usage:** Downloader.exe <URL> <TargetFileName> 
