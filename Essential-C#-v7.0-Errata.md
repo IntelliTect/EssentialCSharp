@@ -63,3 +63,4 @@ Kevin Bost         | 13      | 544        | `Predicate<int T>` should be `Predic
 Kyle Amonson       | 13      | 550        | "In Listings 13.7 and 13.10" changed to "In Listings 13.7 and 13.11"
 Benjamin Michaelis | 14      | 578        | `public Action<float>`**?** `OnTemperatureChange { get; set; }`
 Pieter Le Roux     | 14      | 589        | Output 14.2: "<s>Enter temperature: 45 Heater: On Error in the application Cooler: Off</s> Enter temperature: 45 Heater: On Cooler: Off There were exceptions thrown by OnTemperatureChange Event subscribers. (Operation is not valid due to the current state of the object.)"
+Pieter Le Roux     | 16      | 675        | "a,c,t,a,d,d,*,a,,<s> </s>,l,i,a, .... " (removing space)
