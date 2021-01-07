@@ -68,3 +68,4 @@ Benjamin Michaelis | 16      | 658        | Reorder keywords to alphabetical ord
 Pieter Le Roux     | 16      | 659        | "private static void Show<s>Contextual</s>Keywords1()"
 Pieter Le Roux     | 16      | 667        | "File.GetLastWriteTime(file**Name**)"
 Pieter Le Roux     | 16      | 675        | "a,c,t,a,d,d,*,a,,<s> </s>,l,i,a, .... " (removing space)
+Pieter Le Roux     | 19      | 807        | "<s>(c)</s>(3)"
