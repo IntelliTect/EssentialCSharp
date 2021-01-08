@@ -34,3 +34,7 @@ Pieter Le Roux      | 16          | 706         | Reorder keywords to alphabetic
 Pieter Le Roux      | 16          | 707         | "private static void Show<s>Contextual</s>Keywords1()"
 Pieter Le Roux      | 16          | 715         | "File.GetLastWriteTime(file**Name**)"
 Pieter Le Roux      | 19          | 840         | "<s>(c)</s>(3)"
+Pieter Le Roux      | 19          | 792      |  lambda expression) prints out hyphens to the console repeatedly.
+for 7.0
+
+after 19.1 for 8.0
