@@ -28,5 +28,13 @@ Pieter Le Roux      | 12          | 542         | "you can see that the type par
 Pieter Le Roux      | 12          | 547         | "constructor that takes the initial values for both <s>First and Second</s>first and second and assigns them to First and Second."
 Pieter Le Roux      | 12          | 551         | "// Use System.ValueTup**l**e<string,Contact> prior to C# 7.0 "
 Pieter Le Roux      | 12          | 579         | "Consider the **I**PairInitializer<in T> interface in Listing 12.45." 
+Pieter Le Roux      | 13          | 602         | "the compiler can <s>see</s>infer that the lambda"
 Pieter Le Roux      | 14          | 639         | Output 14.2: "<s>Enter temperature: 45 Heater: On Error in the application Cooler: Off</s> Enter temperature: 45 Heater: On Cooler: Off There were exceptions thrown by OnTemperatureChange Event subscribers. (Operation is not valid due to the current state of the object.)"
+Pieter Le Roux      | 16          | 706         | Reorder keywords to alphabetical order in Listing 16.1, and add missing keywords
+Pieter Le Roux      | 16          | 707         | "private static void Show<s>Contextual</s>Keywords1()"
 Pieter Le Roux      | 16          | 715         | "File.GetLastWriteTime(file**Name**)"
+Pieter Le Roux      | 19          | 840         | "<s>(c)</s>(3)"
+Pieter Le Roux      | 19          | 792      |  lambda expression) prints out hyphens to the console repeatedly.
+for 7.0
+
+after 19.1 for 8.0
