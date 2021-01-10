@@ -14,6 +14,7 @@ Found by            | Chapter     | Page        | Correction
 Salim Gangji        | 1           | 12          | First paragraph: For a single executable, append <s>`/p:PublishSingleFile=true`</s> `-p:PublishSingleFile=true` to the command
 Pieter Le Roux      | 1           | 31          | Last Line: Table 1.2 shows four different C# comment types. The program in <s>Listing 1.18</s> Listing 1.19 includes two of these.
 Benjamin Michaelis  | 1           | 31          | Last Line: Table 1.2 shows four different C# comment types. The program in Listing 1.19 includes <s>two</s>three of these.
+Salim Gangji        | 2           | 51          | Output 2.3: <s>1.61803398874985</s> 1.618033988749895
 Pieter Le Roux      | 5           | 215         | Output 5.4: ERROR:  You must specify the URL <s>to be downloaded</s> and the file name **Usage:** Downloader.exe <URL> <TargetFileName> 
 Pieter Le Roux      | 6           | 285         | Last Line in second paragraph: "DO use nameof for the paramName argument passed into exceptions like Argument<s>Null</s>Exception and ArgumentNullException that take such a parameter. For more information, see Chapter 18."
 Pieter Le Roux      | 7           | 359         | return <s>@</s>$"FirstName: { FirstName + NewLine }" + $"LastName: { LastName + NewLine }"+ $"Address: { Address + NewLine }";
