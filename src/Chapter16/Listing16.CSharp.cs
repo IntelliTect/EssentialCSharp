@@ -25,7 +25,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16
                 "typeof","uint","ulong","unchecked","unsafe","ushort",
                 "using","value*","var*","virtual","void","volatile",
                 "where*","when*","while","yield*"
-
             });
     }
 }
