@@ -77,6 +77,7 @@ Pieter Le Roux     | 16      | 677        | in Listing 16.16 and Listing 16.17, 
 Pieter Le Roux     | 16      | 685        | Saw List[6] could throw error. Changed to "{ List[<s>6</s>^1] }
 Pieter Le Roux     | 17      | 712        | "as you did in both CSharp<s>PrimitiveTypes</s>BuiltInTypes"
 Pieter Le Roux     | 18      | 728        | errorMessage listed twice in listing 18.3
+Pieter Le Roux     | 18      | 762        | two times in same bullet "<s>person</s>data.nonExistentMethodCallStillCompiles()" in accordance to listing 18.29
 Pieter Le Roux     | 18      | 765        | "let's reexamine Listing <s>18.31</s>18.30. Notice the call to retrieve the "FirstName" element:"
 Pieter Le Roux     | 19      | 791        | "The worker thread will write <s>periods</s>plus signs to the console
 Pieter Le Roux     | 19      | 792        |  lambda expression prints out <s>dashes</s>hyphens to the console repeatedly.
