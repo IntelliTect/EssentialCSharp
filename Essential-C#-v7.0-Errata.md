@@ -64,9 +64,20 @@ Kyle Amonson       | 13      | 550        | "In Listings 13.7 and 13.10" changed
 Pieter Le Roux     | 13      | 552        | "the compiler can <s>see</s>infer that the lambda"
 Benjamin Michaelis | 14      | 578        | `public Action<float>`**?** `OnTemperatureChange { get; set; }`
 Pieter Le Roux     | 14      | 589        | Output 14.2: "<s>Enter temperature: 45 Heater: On Error in the application Cooler: Off</s> Enter temperature: 45 Heater: On Cooler: Off There were exceptions thrown by OnTemperatureChange Event subscribers. (Operation is not valid due to the current state of the object.)"
+Pieter Le Roux     | 16      | 636        | tabs in Output 15.9 doesn't reflect Listing 15.21. Fixed by updating source code
+Pieter Le Roux     | 16      | 651        | // ERROR: Cannot implicitly convert type // 'AnonymousType<s>#3</s>#1' to 'AnonymousType<s>#2</s>#3'
 Benjamin Michaelis | 16      | 658        | Reorder keywords to alphabetical order in Listing 16.1, and add missing keywords ("when")
 Pieter Le Roux     | 16      | 659        | "private static void Show<s>Contextual</s>Keywords1()"
+Pieter Le Roux     | 16      | 664        | Output 16.3 is missing "when"
 Pieter Le Roux     | 16      | 667        | "File.GetLastWriteTime(file**Name**)"
+Pieter Le Roux     | 16      | 671        | Add "when" to Output 16.6 ("when*" was missing from source code)
+Pieter Le Roux     | 16      | 673        | Add "when" to Output 16.7 ("when*" was missing from source code)
 Pieter Le Roux     | 16      | 675        | "a,c,t,a,d,d,*,a,,<s> </s>,l,i,a, .... " (removing space)
+Pieter Le Roux     | 16      | 677        | in Listing 16.16 and Listing 16.17, add "!" prior to "word. Contains('*')" to match Listing 16.01
+Pieter Le Roux     | 16      | 685        | Saw List[6] could throw error. Changed to "{ List[<s>6</s>^1] }
+Pieter Le Roux     | 17      | 712        | "as you did in both CSharp<s>PrimitiveTypes</s>BuiltInTypes"
+Pieter Le Roux     | 18      | 728        | errorMessage listed twice in listing 18.3
+Pieter Le Roux     | 18      | 765        | "let's reexamine Listing <s>18.31</s>18.30. Notice the call to retrieve the "FirstName" element:"
+Pieter Le Roux     | 19      | 791        | "The worker thread will write <s>periods</s>plus signs to the console
 Pieter Le Roux     | 19      | 792        |  lambda expression prints out <s>dashes</s>hyphens to the console repeatedly.
 Pieter Le Roux     | 19      | 807        | "<s>(c)</s>(3)"
