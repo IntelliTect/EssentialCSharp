@@ -9,7 +9,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_17
     {
         public static void Main()
         {
-            ShowContextualKeywords3();
+            ShowContextualKeywords2();
         }
 
         private static void ShowContextualKeywords2()
