@@ -33,6 +33,7 @@ Pieter Le Roux      | 13          | 602         | "the compiler can <s>see</s>in
 Pieter Le Roux      | 14          | 639         | Output 14.2: "<s>Enter temperature: 45 Heater: On Error in the application Cooler: Off</s> Enter temperature: 45 Heater: On Cooler: Off There were exceptions thrown by OnTemperatureChange Event subscribers. (Operation is not valid due to the current state of the object.)"
 Pieter Le Roux      | 16          | 706         | Reorder keywords to alphabetical order in Listing 16.1, and add missing keywords
 Pieter Le Roux      | 16          | 707         | "private static void Show<s>Contextual</s>Keywords1()"
+Pieter Le Roux      | 16          | 712         | Output 16.3 is missing "when"
 Pieter Le Roux      | 16          | 715         | "File.GetLastWriteTime(file**Name**)"
 Pieter Le Roux      | 18          | 776         | errorMessage listed twice in listing 18.3
 Pieter Le Roux      | 18          | 807         | "let's reexamine Listing <s>18.28</s>18.27. Notice the call to retrieve the "FirstName" element:"
