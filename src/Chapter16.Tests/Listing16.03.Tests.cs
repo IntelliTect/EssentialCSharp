@@ -17,12 +17,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_03.Tests
             ProjectionWithLinqsSelect(Listing16_03.Program.Main);
         }
 
-        [TestMethod]
-        public void AnonymousTypesWithinQueryExpressions_TuplesWithinQueryExpressions()
-        {
-            ProjectionWithLinqsSelect(Listing16_03A.Program.Main);
-        }
-
         public void ProjectionWithLinqsSelect(Action mainAction)
         {
             // Required due to defect in MSTest that has the current directory
