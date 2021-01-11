@@ -8,9 +8,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16
             new string[]
             {
                 "abstract", "add*", "alias*", "as", "ascending*", 
-                "async*", "await*", 
-                
-                , "break", 
+                "async*", "await*", "base","bool", "break", 
                 "by*", "byte", "case", "catch", "char", "checked",
                 "class", "const", "continue", "decimal", "default",
                 "delegate", "descending*", "do", "double",
