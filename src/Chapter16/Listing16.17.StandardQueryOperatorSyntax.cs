@@ -12,10 +12,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_17
             ShowContextualKeywords3();
         }
 
-        private static void ShowContextualKeywords3()
+        private static void ShowContextualKeywords2()
         {
             IEnumerable<string> selection =
-                CSharp.Keywords.Where(word => word.Contains('*'));
+                CSharp.Keywords.Where(word => !word.Contains('*'));
 
             foreach(var selectionWord in selection)
             {
