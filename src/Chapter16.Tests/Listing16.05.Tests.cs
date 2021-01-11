@@ -10,13 +10,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_05.Tests
         public void InvokingDelegateWithoutCheckingForNull()
         {
             string expected = @"1. delegateInvocations=0
-2. Contextual keyword count=28
-3. delegateInvocations=28
-4. Contextual keyword count=28
-5. delegateInvocations=56
-6. delegateInvocations=84
-7. selectionCache count=28
-8. delegateInvocations=84";
+2. Contextual keyword count=29
+3. delegateInvocations=29
+4. Contextual keyword count=29
+5. delegateInvocations=58
+6. delegateInvocations=87
+7. selectionCache count=29
+8. delegateInvocations=87";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected,
             () =>

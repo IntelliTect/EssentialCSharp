@@ -29,7 +29,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_28
             //        'AnonymousType#1' to 'AnonymousType#2'
             //patent1 = patent2; //won't compile if uncommented
             // ERROR: Cannot implicitly convert type 
-            //        'AnonymousType#3' to 'AnonymousType#2'
+            //        'AnonymousType#1' to 'AnonymousType#3'
             //patent1 = patent3; //won't compile if uncommented
 
             // ERROR: Property or indexer 'AnonymousType#1.Title' 

@@ -13,14 +13,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_11.Tests
         {
             SelectingFollowingGroupClause(Listing16_11.Program.Main);
         }
-
-        [TestMethod]
-        public void SelectingFollowingTheGroupbyClause_UsingAnonymous()
-        {
-            SelectingFollowingGroupClause(Listing16_11A.Program.Main);
-        }
-
-
         public void SelectingFollowingGroupClause(Action _)
         {
             string expected = $@"

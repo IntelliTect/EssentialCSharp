@@ -16,7 +16,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_16
         {
             IEnumerable<string> selection =
                 from word in CSharp.Keywords
-                where word.Contains('*')
+                where !word.Contains('*')
                 select word;
 
             foreach(var selectionWord in selection)
