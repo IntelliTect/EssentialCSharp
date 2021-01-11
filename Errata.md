@@ -34,6 +34,7 @@ Pieter Le Roux      | 14          | 639         | Output 14.2: "<s>Enter tempera
 Pieter Le Roux      | 16          | 706         | Reorder keywords to alphabetical order in Listing 16.1, and add missing keywords
 Pieter Le Roux      | 16          | 707         | "private static void Show<s>Contextual</s>Keywords1()"
 Pieter Le Roux      | 16          | 715         | "File.GetLastWriteTime(file**Name**)"
+Pieter Le Roux      | 18          | 776         | errorMessage listed twice in listing 18.3
 Pieter Le Roux      | 18          | 807         | "let's reexamine Listing <s>18.28</s>18.27. Notice the call to retrieve the "FirstName" element:"
 Pieter Le Roux      | 19          | 825         | lambda expression prints out <s>dashes</s>hyphens to the console repeatedly.
 Pieter Le Roux      | 19          | 840         | "<s>(c)</s>(3)"
