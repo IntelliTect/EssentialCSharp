@@ -8,7 +8,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16
             new string[]
             {
                 "abstract", "add*", "alias*", "as", "ascending*", 
-                "async*", "await*", "base","bool", "break", 
+                "async*", "await*", 
+                
+                , "break", 
                 "by*", "byte", "case", "catch", "char", "checked",
                 "class", "const", "continue", "decimal", "default",
                 "delegate", "descending*", "do", "double",
@@ -25,7 +27,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16
                 "stackalloc", "static", "string", "struct", "switch",
                 "this", "throw", "true", "try", "typeof", "uint", "ulong",
                 "unchecked", "unsafe", "ushort", "using", "value*", "var*",
-                "virtual", "void", "volatile", "where*", "while", "yield*"
+                "virtual", "void", "volatile", "where*", "when*", "while", "yield*"
             });
     }
 }
