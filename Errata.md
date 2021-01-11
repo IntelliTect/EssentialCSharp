@@ -40,7 +40,7 @@ Pieter Le Roux      | 16          | 715         | "File.GetLastWriteTime(file**N
 Pieter Le Roux      | 16          | 719         | Add "when" to Output 16.6 ("when*" was missing from source code)
 Pieter Le Roux      | 16          | 721         | Add "when" to Output 16.7 ("when*" was missing from source code)
 Pieter Le Roux      | 16          | 725         | in Listing 16.16 and Listing 16.17, add "!" prior to "word. Contains('*')" to match Listing 16.01
-Pieter Le Roux      | 16          | 733         | Saw List[6] could throw error. Changed to "{ List[<s>6</s>^1] }
+Pieter Le Roux      | 17          | 733         | Saw List[6] could throw error. Changed to "{ List[<s>6</s>^1] }
 Pieter Le Roux      | 18          | 776         | errorMessage listed twice in listing 18.3
 Pieter Le Roux      | 18          | 807         | "let's reexamine Listing <s>18.28</s>18.27. Notice the call to retrieve the "FirstName" element:"
 Pieter Le Roux      | 19          | 825         | lambda expression prints out <s>dashes</s>hyphens to the console repeatedly.
