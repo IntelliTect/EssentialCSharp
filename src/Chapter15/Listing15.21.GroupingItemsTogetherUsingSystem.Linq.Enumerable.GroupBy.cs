@@ -20,7 +20,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_21
                 Console.WriteLine();
                 foreach(Employee employee in employeeGroup)
                 {
-                    Console.WriteLine("\t" + employee);
+                    Console.WriteLine(employee);
                 }
                 Console.WriteLine(
                   "\tCount: " + employeeGroup.Count());
