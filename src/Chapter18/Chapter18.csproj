@@ -22,5 +22,6 @@
     <Compile Include="..\Shared\DoWorkEventArgs.cs">
       <Link>DoWorkEventArgs.cs</Link>
     </Compile>
+    <None Include="Listing18.10.AssemblyAttributesWithinAssemblyInfo.cs" />
   </ItemGroup>
 </Project>
