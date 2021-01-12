@@ -8,9 +8,16 @@
   </PropertyGroup>
   <Import Project="..\Chapter.props" />
   <ItemGroup>
+    <Compile Remove="Listing01.02.PLACEHOLDER.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="System.ValueTuple" Version="4.5.0" />
     <Compile Include="..\Shared\Program.cs">
       <Link>Program.cs</Link>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Listing01.02.SampleNETCoreConsoleProjectFile.csproj" />
+    <None Include="Listing01.02.Placeholder.cs" />
   </ItemGroup>
 </Project>
