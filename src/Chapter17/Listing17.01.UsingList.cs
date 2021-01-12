@@ -23,7 +23,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_01
 
             Console.WriteLine(
                 $"In alphabetical order { list[0] } is the "
-                + $"first dwarf while { list[6] } is the last.");
+                + $"first dwarf while { list[list.Count - 1] } is the last.");
 
 
             list.Remove("Grumpy");
