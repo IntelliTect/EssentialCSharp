@@ -74,7 +74,7 @@ Pieter Le Roux     | 16      | 671        | Add "when" to Output 16.6 ("when*" w
 Pieter Le Roux     | 16      | 673        | Add "when" to Output 16.7 ("when*" was missing from source code)
 Pieter Le Roux     | 16      | 675        | "a,c,t,a,d,d,*,a,,<s> </s>,l,i,a, .... " (removing space)
 Pieter Le Roux     | 16      | 677        | in Listing 16.16 and Listing 16.17, add "!" prior to "word. Contains('*')" to match Listing 16.01
-Pieter Le Roux     | 16      | 685        | Saw List[6] could throw error. Changed to "{ List[<s>6</s>^1] }
+Pieter Le Roux     | 17      | 685        | Saw List[6] could throw error. Changed to "{ List[<s>6</s>list.Count - 1] }
 Pieter Le Roux     | 17      | 712        | "as you did in both CSharp<s>PrimitiveTypes</s>BuiltInTypes"
 Pieter Le Roux     | 18      | 728        | errorMessage listed twice in listing 18.3
 Pieter Le Roux     | 18      | 762        | two times in same bullet "<s>person</s>data.nonExistentMethodCallStillCompiles()" in accordance to listing 18.29
