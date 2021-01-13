@@ -10,7 +10,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_01
             List<string> sevenWorldBlunders;
             sevenWorldBlunders = new List<string>()
             {
-                // Quotes from Ghandi
+                // Quotes from Gandhi
                 "Wealth without work",
                 "Pleasure without conscience",
                 "Knowledge without character",

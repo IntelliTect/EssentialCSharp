@@ -12,7 +12,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_19
             Department[] departments = CorporateData.Departments;
             Employee[] employees = CorporateData.Employees;
 
-            IEnumerable<(int Id, string Name, string Title, Department Department)> items =
+            IEnumerable<(int Id, string Name, string Title, 
+                Department Department)> items =
                 employees.Join(
                     departments,
                     employee => employee.DepartmentId,

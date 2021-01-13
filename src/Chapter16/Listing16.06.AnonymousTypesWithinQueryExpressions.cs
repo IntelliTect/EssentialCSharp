@@ -24,7 +24,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_06
 
             foreach(FileInfo file in files)
             {
-                //  As simplification, current directory is
+                //  As a simplification, the current directory is
                 //  assumed to be a subdirectory of
                 //  rootDirectory
                 string relativePath = file.FullName.Substring(
