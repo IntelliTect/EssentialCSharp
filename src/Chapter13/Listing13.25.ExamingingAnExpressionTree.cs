@@ -2,6 +2,7 @@
 {
     using System;
     using System.Linq.Expressions;
+    using static System.Linq.Expressions.ExpressionType;
 
     public class Program
     {
@@ -45,12 +46,13 @@
         private static string NodeToString(Expression expression) =>
             expression.NodeType switch
             {
-                ExpressionType.Multiply => "*",
-                ExpressionType.Add => "+",
-                ExpressionType.Divide => "/",
-                ExpressionType.Subtract => "-",
-                ExpressionType.GreaterThan => ">",
-                ExpressionType.LessThan => "<",
+                // using static ExpressionType
+                Multiply => "*",
+                Add => "+",
+                Divide => "/",
+                Subtract => "-",
+                GreaterThan => ">",
+                LessThan => "<",
                 _ => expression.ToString() +
                     " (" + expression.NodeType.ToString() + ")",
             };

@@ -24,12 +24,12 @@
                         List<Exception> exceptionCollection =
                             new List<Exception>();
                         foreach(
-                            Action<float> handler in
+                            Delegate handler in
                             onTemperatureChange.GetInvocationList())
                         {
                             try
                             {
-                                handler(value);
+                                ((Action<float>)handler)(value);
                             }
                             catch(Exception exception)
                             {
