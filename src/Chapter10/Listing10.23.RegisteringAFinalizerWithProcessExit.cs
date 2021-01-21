@@ -20,36 +20,49 @@
             WriteLine("Exiting...");
         }
 
-        // ...
         public static void DoStuff()
         {
+            // ...
+            
             WriteLine("Starting...");
-            SampleUnmanagedResource sampleUnmanagedResource =
-                new SampleUnmanagedResource();
+            SampleUnmanagedResource? sampleUnmanagedResource = null;
 
-            // Use temporary file stream
-            // ...
-
-            if (Environment.GetCommandLineArgs().Any(arg => arg.ToLower() == "-dispose"))
+            try
             {
-                sampleUnmanagedResource.Dispose();
+                sampleUnmanagedResource =
+                    new SampleUnmanagedResource();
+                // Use unmanaged Resource
+                // ...
             }
+            finally
+            {
+                if (Environment.GetCommandLineArgs().Any(
+                arg => arg.ToLower() == "-dispose"))
+                {
+                    sampleUnmanagedResource?.Dispose();
+                }
+            }
+            WriteLine("Exiting...");
 
             // ...
-            WriteLine("Exiting...");
         }
     }
+
 
     class SampleUnmanagedResource : IDisposable
     {
         public SampleUnmanagedResource(string fileName)
         {
-            WriteLine("Starting...", $"{nameof(SampleUnmanagedResource)}.ctor");
+            WriteLine("Starting...",
+                $"{nameof(SampleUnmanagedResource)}.ctor");
 
-            WriteLine("Creating managed stuff...", $"{nameof(SampleUnmanagedResource)}.ctor");
-            WriteLine("Creating unmanaged stuff...", $"{nameof(SampleUnmanagedResource)}.ctor");
+            WriteLine("Creating managed stuff...",
+                $"{nameof(SampleUnmanagedResource)}.ctor");
+            WriteLine("Creating unmanaged stuff...",
+                $"{nameof(SampleUnmanagedResource)}.ctor");
 
-            var weakReferenceToSelf = new WeakReference<IDisposable>(this);
+            WeakReference<IDisposable> weakReferenceToSelf =
+                 new WeakReference<IDisposable>(this);
             ProcessExitHandler = (_, __) =>
             {
                 WriteLine("Starting...", "ProcessExitHandler");
