@@ -66,7 +66,8 @@
             ProcessExitHandler = (_, __) =>
             {
                 WriteLine("Starting...", "ProcessExitHandler");
-                if (weakReferenceToSelf.TryGetTarget(out IDisposable? self))
+                if (weakReferenceToSelf.TryGetTarget(
+                    out IDisposable? self))
                 {
                     self.Dispose();
                 }
@@ -74,7 +75,8 @@
             };
             AppDomain.CurrentDomain.ProcessExit
                 += ProcessExitHandler;
-            WriteLine("Exiting...", $"{nameof(SampleUnmanagedResource)}.ctor");
+            WriteLine("Exiting...",
+                $"{nameof(SampleUnmanagedResource)}.ctor");
         }
 
         // Stores the process exit delegate so that we can remove it
@@ -114,7 +116,8 @@
                 System.GC.SuppressFinalize(this);
             }
 
-            AppDomain.CurrentDomain.ProcessExit -= ProcessExitHandler;
+            AppDomain.CurrentDomain.ProcessExit -=
+                ProcessExitHandler;
 
             WriteLine("Disposing unmanaged stuff...");
 
