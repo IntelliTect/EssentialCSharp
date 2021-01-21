@@ -34,13 +34,22 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_20
             }
         }
 
-        public FileStream Stream { get; }
-        public FileInfo File { get; }
+        public FileStream Stream { get; private set; }
+        public FileInfo File { get; private set; }
 
         public void Close()
         {
             Stream?.Dispose();
-            File?.Delete();
+            try
+            {
+                File?.Delete();
+            }
+            catch(IOException exception)
+            {
+                Console.WriteLine(exception);
+            }
+            Stream = null;
+            File = null;
         }
     }
 }

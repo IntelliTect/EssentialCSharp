@@ -47,7 +47,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_20.Tests
         public void Create_GivenNewDocument_FileGetsCreated()
         {
             TemporaryFileStream fileStream = new TemporaryFileStream(TempFileName);
-            Assert.IsTrue(File.Exists(fileStream.File.FullName));
+            Assert.IsTrue(File.Exists(fileStream.File?.FullName!));
         }
 
         [TestMethod]
