@@ -1,21 +1,21 @@
-﻿using System;
+﻿#nullable enable
+using System;
 using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+using System.Threading;
+using System.Diagnostics.CodeAnalysis;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
 {
     [ExcludeFromCodeCoverage]
-    public static class Program
+    public class Program
     {
         public static void Main(string[] args)
         {
             string input;
-            IEnumerable<string> stringArguments = Array.Empty<string>();
+            IEnumerable<string> stringArguments = new string[0];
             Assembly assembly = Assembly.GetEntryAssembly()!;
             if (assembly is null)
             {
@@ -46,26 +46,18 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                 input = ParseListingName(input);
 
                 Regex reg = new Regex($"{input}\\.+");
-
-                IEnumerable<Type?> targets = assembly.GetTypes().Where(type =>
+                Type? target = assembly.GetTypes().FirstOrDefault(type =>
                 {
                     return reg.IsMatch(type.FullName!);
                 });
-                Type? target = targets.FirstOrDefault(item => item?.Name == "Program") ??
-                    targets.FirstOrDefault();
-
-                if (target is null)
+                if (target == null)
                 {
                     throw new InvalidOperationException($"There is no listing '{input}'.");
                 }
 
-                MethodInfo method = target.GetMethod("Main") ??
-                    // Item doesn't contain an '_' such as set_ or get_ - but really any name with an underscore 
-                    // would be enough to indicate it wasn't the intended start method.
-                    target.GetMethods().First(item => !item.Name.Contains("_"));
-                
-                string[]? arguments;
+                MethodInfo method = target.GetMethods().First();
 
+                string[]? arguments;
                 if (!method.GetParameters().Any())
                 {
                     arguments =
@@ -73,7 +65,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                 }
                 else
                 {
-                    if (stringArguments.Count() == 0)
+                    if (!stringArguments.Any())
                     {
                         arguments = GetArguments();
                     }
@@ -83,37 +75,33 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                     }
                 }
 
-                string? output = null;
-                
-                // TODO: Remove STA check now that the methods are async anyway.
-                // TODO: Test... this seems backwards/opposite
-                if (method.GetCustomAttribute(typeof(STAThreadAttribute), false) is object)
+                if (method.GetCustomAttributes(typeof(STAThreadAttribute), false).Any())
                 {
-                    Task task = new Task(() =>
+                    Thread thread = new Thread(() =>
                     {
-                        // TODO: Change to use async/await.
-                        output = InvokeMethodUsingReflection(method,arguments).GetAwaiter().GetResult();
+                        object? result = method.Invoke(null, new object?[] { arguments });
+                        if (!(method.ReturnType == typeof(void)))
+                        {
+                            Console.WriteLine($"Result: {result}");
+                        }
                     });
-                    task.Wait();
                 }
                 else
                 {
-                    // TODO: Change to use async/await.
-                    output = InvokeMethodUsingReflection(method, arguments).GetAwaiter().GetResult();
-                }
-                if(output is { })
-                {
-                    Console.WriteLine($"Result: {output}");
+                    object? result = method.Invoke(null, new object?[] { arguments });
+
+                    if (!(method.ReturnType == typeof(void)))
+                    {
+                        Console.WriteLine($"Result: {result}");
+                    }
                 }
             }
-#pragma warning disable CA1031 // Do not catch general exception types
             catch (System.IO.FileNotFoundException)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("----Exception----");
                 Console.WriteLine($"There is no chapter corresponding to listing {input}.");
             }
-#pragma warning restore CA1031 // Do not catch general exception types
             catch (TargetParameterCountException exception)
             {
                 throw new InvalidOperationException(
@@ -126,7 +114,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                 Console.WriteLine("----Exception----");
                 Console.WriteLine(exception.Message);
             }
-#pragma warning disable CA1031 // Do not catch general exception types
             catch (Exception exception)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
@@ -134,18 +121,26 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                 if (exception.InnerException is null)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine(string.Format("Listing {0} threw an exception of type {1}.", input,
-                        exception.GetType()));
+                    Console.WriteLine($"Listing {input} threw an exception of type {exception.GetType()}.");
                 }
                 else
                 {
-                    // Use throw exception.InnerException instead for earlier
-                    // versions of the framework.
-                    System.Runtime.ExceptionServices.ExceptionDispatchInfo.Capture(
-                        exception.InnerException).Throw();
+                    // Invoke ExceptionDispatchInfo using reflection because it doesn't 
+                    // exist in .NET 4.0 or earlier and we want to maintain compatibility
+                    // while still taking advantage of it if it is available.
+                    Type? exceptionDispatchInfoType =
+                        // Don't use nameof here as the type may not exists and, therefore, won't compile.
+                        Type.GetType("System.Runtime.ExceptionServices.ExceptionDispatchInfo");
+                    if (exceptionDispatchInfoType is null)
+                        throw exception.InnerException;
+                    else
+                    {
+                        dynamic exceptionDispatchInfo = exceptionDispatchInfoType.GetMethod("Capture")
+                            !.Invoke(exceptionDispatchInfoType, new object[] { exception.InnerException })!;
+                        exceptionDispatchInfo.Throw();
+                    }
                 }
             }
-#pragma warning restore CA1031 // Do not catch general exception types
             finally
             {
                 Console.ForegroundColor = originalColor;
@@ -156,69 +151,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                 Console.Write("Press any key to exit.");
                 Console.ReadKey();
             }
-        }
-
-        public static async ValueTask<string?> InvokeMethodUsingReflection(MethodInfo method, string[]? arguments)
-        {
-            // Note: 'arguments' here are the array of commandline args, so 
-            // it is the first item in the "parameters" array specified to the 
-            // Invoke method.
-            object? result = method.Invoke(null,
-            parameters: arguments is null ? Array.Empty<object>() : new object[] { arguments! });
-
-            if(method.ReturnType == typeof(void))
-            {
-                return null;
-            }
-            else if(result is null)
-            {
-                return "<null>";
-            }
-            else if(method.GetCustomAttribute(typeof(AsyncIteratorStateMachineAttribute), false) is object)
-            {
-                return result switch
-                {
-                    IAsyncEnumerable<int> asyncEnumerable => await AggregateToString(asyncEnumerable),
-                    IAsyncEnumerable<string> asyncEnumerable => await AggregateToString(asyncEnumerable),
-                    null => throw new InvalidOperationException($"Given an {nameof(IAsyncEnumerable<string>)} method, the result is unexpectedly null."),
-                    _ => throw new NotImplementedException($"This {nameof(IAsyncEnumerable<string>)} type parameter is not implemented."),
-                };
-            }
-            else if (method.GetCustomAttribute(typeof(AsyncStateMachineAttribute), false) is object)
-            {
-                switch(result)
-                {
-                    case Task task when method.ReturnType == typeof(Task):
-                        await task;
-                        return null;
-                    case Task<int> task:
-                        return $"{await task}";
-                    case Task<string> task:
-                        return await task;
-                    case ValueTask<int> task:
-                        return $"{await task}";
-                    case ValueTask<string> task:
-                        return await task;
-                    default:
-                        dynamic awaitable = result!;
-                        await awaitable;
-                        return awaitable.GetAwaiter().GetResult();
-                }
-            }
-            else
-            {
-                return $"{result}";
-            }
-        }
-
-        private static async Task<string?> AggregateToString<T>(IAsyncEnumerable<T> asyncEnumerable)
-        {
-            List<string> list = new List<string>();
-            await foreach (T item in asyncEnumerable)
-            {
-                list.Add($"{item}");
-            }
-            return string.Join(", ", list);
         }
 
         private static string[] GetArguments()
@@ -239,7 +171,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
 
             if (string.IsNullOrWhiteSpace(userArguments))
             {
-                args = Array.Empty<string>();
+                args = new string[0];
             }
             else
             {
@@ -260,7 +192,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
 
             int startPosition;
 
-            if (!int.TryParse(chapterListing[0], out _))
+            if (!int.TryParse(chapterListing[0], out startPosition))
             {
                 startPosition = 1;
                 listing += chapterListing[0].ToUpper() + ".";
