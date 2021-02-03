@@ -33,27 +33,20 @@
         public TemporaryFileStream()
             : this(Path.GetTempFileName()) { }
 
-
-
         ~TemporaryFileStream()
         {
             Dispose(false);
         }
 
-        public FileStream Stream { get; }
-        public FileInfo File { get; }
-
-        protected void Close()
-        {
-            Dispose();
-        }
+        public FileStream? Stream { get; private set; }
+        public FileInfo? File { get; private set; }
 
         #region IDisposable Members
         public void Dispose()
         {
             Dispose(true);
 
-            // Turn off calling the finalizer
+            //unregister from the finalization queue.
             System.GC.SuppressFinalize(this);
         }
         #endregion
@@ -68,7 +61,16 @@
             {
                 Stream?.Dispose();
             }
-            File?.Delete();
+            try
+            {
+                File?.Delete();
+            }
+            catch (IOException exception)
+            {
+                Console.WriteLine(exception);
+            }
+            Stream = null;
+            File = null;
         }
 
     }
