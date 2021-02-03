@@ -34,8 +34,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_20
             }
         }
 
-        public FileStream Stream { get; private set; }
-        public FileInfo File { get; private set; }
+        public FileStream? Stream { get; private set; }
+        public FileInfo? File { get; private set; }
 
         public void Close()
         {
@@ -48,8 +48,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_20
             {
                 Console.WriteLine(exception);
             }
-            Stream = null;
-            File = null;
         }
     }
 }
