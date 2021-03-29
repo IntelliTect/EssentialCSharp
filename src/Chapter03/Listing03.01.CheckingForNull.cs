@@ -7,7 +7,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_01
             int? number = null;
 
             // ...
-            if(args.Length>0)
+            if (args.Length > 0)
             {
                 number = args[0].Length;
             }
