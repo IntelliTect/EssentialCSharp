@@ -17,8 +17,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_14
     {
         // Disable warning since FirstName&LastName set via Name property 
         #pragma warning disable CS8618 // Non-nullable field is uninitialized. 
-        public Contact(string name)
-            : base(name)
+        public Contact(string name) :
+            base(name)
         {
         }
         #pragma warning restore CS8618
