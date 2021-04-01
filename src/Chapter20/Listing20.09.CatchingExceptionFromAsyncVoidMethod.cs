@@ -10,25 +10,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_09
     public class AsyncSynchronizationContext : SynchronizationContext
     {
         public Exception? Exception { get; set; }
-        public ManualResetEventSlim ResetEvent { get; } = 
+        public ManualResetEventSlim ExpectedExceptionThrownFromOnEventMethodResetEvent { get; } = 
+            new ManualResetEventSlim();
+        public ManualResetEventSlim ExpectedExceptionThrownFromProgramMethodResetEvent { get; } =
             new ManualResetEventSlim();
 
-        public override void Send(SendOrPostCallback callback, object? state)
-        {
-            try
-            {
-                Console.WriteLine($@"Send notification invoked...(Thread ID: {
-                    Thread.CurrentThread.ManagedThreadId})");
-                callback(state);
-            }
-            catch (Exception exception)
-            {
-                Exception = exception;
-#if !WithOutUsingResetEvent
-                ResetEvent.Set();
-#endif
-            }
-        }
 
         public override void Post(SendOrPostCallback callback, object? state)
         {
@@ -42,7 +28,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_09
             {
                 Exception = exception;
 #if !WithOutUsingResetEvent
-                ResetEvent.Set();
+                if (!ExpectedExceptionThrownFromOnEventMethodResetEvent.IsSet)
+                {
+                    ExpectedExceptionThrownFromOnEventMethodResetEvent.Set();
+                }
+                else
+                {
+                    ExpectedExceptionThrownFromProgramMethodResetEvent.Set();
+                }
 #endif
             }
         }
@@ -70,7 +63,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_09
 #if WithOutUsingResetEvent
                 Task.Delay(1000).Wait();  // 
 #else
-                synchronizationContext.ResetEvent.Wait();
+                synchronizationContext.ExpectedExceptionThrownFromOnEventMethodResetEvent.Wait();
 #endif
 
                 if (synchronizationContext.Exception != null)
@@ -79,6 +72,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_09
                     Thread.CurrentThread.ManagedThreadId})");
                     System.Runtime.ExceptionServices.ExceptionDispatchInfo.Capture(
                         synchronizationContext.Exception).Throw();
+
+                    synchronizationContext.ExpectedExceptionThrownFromProgramMethodResetEvent.Wait();
                 }
             }
             catch (Exception exception)

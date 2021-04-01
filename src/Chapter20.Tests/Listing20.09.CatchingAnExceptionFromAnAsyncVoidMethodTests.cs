@@ -1,5 +1,5 @@
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_11
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_9
 {
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System;
@@ -8,7 +8,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_11
     using AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_09;
 
     [TestClass]
-    public class ProgramTests
+    public class CatchingAnExceptionFromAnAsyncVoidMethodProgramTests
     {
 
         [TestMethod]
