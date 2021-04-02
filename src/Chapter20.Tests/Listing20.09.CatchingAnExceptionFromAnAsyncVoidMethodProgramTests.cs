@@ -1,14 +1,12 @@
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_11
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_09
 {
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System;
     using System.Text.RegularExpressions;
-    using System.Threading.Tasks;
-    using AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_09;
 
     [TestClass]
-    public class ProgramTests
+    public class CatchingAnExceptionFromAnAsyncVoidMethodProgramTests
     {
 
         [TestMethod]
