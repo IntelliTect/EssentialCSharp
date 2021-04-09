@@ -6,4 +6,9 @@
   <ItemGroup>
     <ProjectReference Include="..\Chapter16\Chapter16.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Update="Microsoft.NET.Test.Sdk" Version="16.9.1" />
+    <PackageReference Update="MSTest.TestAdapter" Version="2.2.3" />
+    <PackageReference Update="MSTest.TestFramework" Version="2.2.3" />
+  </ItemGroup>
 </Project>
