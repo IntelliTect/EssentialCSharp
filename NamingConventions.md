@@ -1,5 +1,7 @@
+# C# naming convention quick reference table
+
 | Kind                                 | Naming Convention |  Examples          |
-|--------------------------------------|------------------ |--------------------|
+|--------------------------------------|-------------------|--------------------|
 | Types and namespaces                 | UpperCamelCase    |                    |
 | Interfaces                           | IUpperCamelCase   |                    |
 | Methods                              | UpperCamelCase    |                    |
