@@ -1,14 +1,15 @@
 <Project>
   <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <LangVersion>9.0</LangVersion>
     <Nullable>enable</Nullable>
     <ProductName Condition="'$(ProductName)'==''">Chapter$(ChapterNumber)</ProductName>
     <TreatWarningsAsErrors Condition="'$(TreatWarningsAsErrors)'==''">false</TreatWarningsAsErrors>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
     <Authors>Mark Michaelis</Authors>
     <Company>Addison Wesley</Company>
     <Copyright>Copyright © Addison Wesley 2020</Copyright>
-    <Product>Essential C# 8.0</Product>
-    <Title>Essential C# 8.0</Title>
+    <Product>Essential C# 9.0</Product>
+    <Title>Essential C# 9.0</Title>
     <Version>8.0</Version>
     <OutputPath Condition="'$(WSL_DISTRO_NAME)'!=''">.\bin\Linux\$(Configuration)\</OutputPath>
     <NullableWarnings>CS8600,CS8601,CS8602,CS8603,CS8604,CS8610,CS8614,CS8618,CS8622,CS8625,CS8653,CS8714</NullableWarnings>
