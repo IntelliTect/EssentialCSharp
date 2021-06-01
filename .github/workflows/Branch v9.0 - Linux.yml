@@ -1,0 +1,29 @@
+name: Branch v8.0 - Linux - EssentialCSharp
+
+on:
+  push:
+    branches: [ v8.0 ]
+  pull_request:
+    branches: [ v8.0 ]
+  schedule:
+    - cron: 0 6 * * 1
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: v8.0
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.x
+    - name: Get Directory
+      run: pwd
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --no-restore
+    - name: Test
+      run: dotnet test --no-build --verbosity normal
