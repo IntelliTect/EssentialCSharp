@@ -75,8 +75,8 @@ $ ./RunTests.sh
 
 ## Build Status
 * *Windows*: [![Build status](https://intellitect.visualstudio.com/EssentialCSharp/_apis/build/status/v9.0%20Builds/Branch%20v9.0%20-%20EssentialCSharp-Windows)](https://intellitect.visualstudio.com/EssentialCSharp/_build/latest?definitionId=102)
-![Azure DevOps tests (branch)](https://img.shields.io/azure-devops/tests/intelliTect/EssentialCSharp/46/v8.0.svg)
-![Azure DevOps coverage (branch)](https://img.shields.io/azure-devops/coverage/IntelliTect/EssentialCSharp/46/v8.0)
+![Azure DevOps tests (branch)](https://img.shields.io/azure-devops/tests/intellitect/EssentialCSharp/102/v9.0)
+![Azure DevOps coverage (branch)](https://img.shields.io/azure-devops/coverage/IntelliTect/EssentialCSharp/102/v9.0)
 * *Linux*: [![Build status](https://dev.azure.com/intelliTect/EssentialCSharp/_apis/build/status/Branch%20v8.0%20-%20EssentialCSharp-Linux)](https://dev.azure.com/intelliTect/EssentialCSharp/_build/latest?definitionId=45)
 ![Azure DevOps tests (branch)](https://img.shields.io/azure-devops/tests/intelliTect/EssentialCSharp/45/v8.0.svg)
 ![Azure DevOps coverage (branch)](https://img.shields.io/azure-devops/coverage/IntelliTect/EssentialCSharp/45/v8.0)
