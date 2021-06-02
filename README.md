@@ -61,18 +61,10 @@ Documentation for .NET CLI tools can be found here:
 https://docs.microsoft.com/en-us/dotnet/core/tools/
 
 
-## Batch Testing
-Use one of the following scripts to execute a batch test on all the projects.
 
-* /EssentialCSharp/RunTests.ps1 **(Windows)**
-* /EssentialCSharp/RunTests.sh **(Linux/Mac)**
-
-If running on Linux you may need to give the script execution permission.  From the /EssentialCSharp/ directory:
-```
-$ chmod +x ./RunTests.sh
-$ ./RunTests.sh
-```
+## Testing
+To run all the tests, run `dotnet test` on the command prompt in the EssentialCSharp solution directory on your local computer.
 
 ## Build Status
-* [![Build status](https://github.com/IntelliTect/EssentialCSharp/actions/workflows/Branch%20v9.0%20-%20Windows.yml/badge.svg?branch=v9.0)](https://github.com/IntelliTect/EssentialCSharp/actions/workflows/Branch%20v9.0%20-%20Windows.yml)
-* [![Build status](https://github.com/IntelliTect/EssentialCSharp/actions/workflows/Branch%20v9.0%20-%20Linux.yml/badge.svg?branch=v9.0)](https://github.com/IntelliTect/EssentialCSharp/actions/workflows/Branch%20v9.0%20-%20Linux.yml)
+[![Build status](https://github.com/IntelliTect/EssentialCSharp/actions/workflows/Branch%20v9.0%20-%20Windows.yml/badge.svg?branch=v9.0)](https://github.com/IntelliTect/EssentialCSharp/actions/workflows/Branch%20v9.0%20-%20Windows.yml)<br>
+[![Build status](https://github.com/IntelliTect/EssentialCSharp/actions/workflows/Branch%20v9.0%20-%20Linux.yml/badge.svg?branch=v9.0)](https://github.com/IntelliTect/EssentialCSharp/actions/workflows/Branch%20v9.0%20-%20Linux.yml)
