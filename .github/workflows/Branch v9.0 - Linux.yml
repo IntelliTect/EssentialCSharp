@@ -21,9 +21,5 @@ jobs:
         dotnet-version: 3.1.x
     - name: Get Directory
       run: pwd
-    - name: Restore dependencies
-      run: dotnet restore
-    - name: Build
-      run: dotnet build --no-restore
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test --verbosity normal
