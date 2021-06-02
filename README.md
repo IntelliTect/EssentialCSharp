@@ -60,23 +60,9 @@ Documentation for .NET CLI tools can be found here:
 
 https://docs.microsoft.com/en-us/dotnet/core/tools/
 
-
-## Batch Testing
-Use one of the following scripts to execute a batch test on all the projects.
-
-* /EssentialCSharp/RunTests.ps1 **(Windows)**
-* /EssentialCSharp/RunTests.sh **(Linux/Mac)**
-
-If running on Linux you may need to give the script execution permission.  From the /EssentialCSharp/ directory:
-```
-$ chmod +x ./RunTests.sh
-$ ./RunTests.sh
-```
+## Testing
+To run all the tests, run `dotnet test` on the command prompt in the EssentialCSharp solution directory on your local computer.
 
 ## Build Status
-* *Windows*: [![Build Status](https://dev.azure.com/intelliTect/EssentialCSharp/_apis/build/status/Branch%20Master%20-%20EssentialCSharp-Windows?branchName=v8.0)](https://dev.azure.com/intelliTect/EssentialCSharp/_build/latest?definitionId=46&branchName=v8.0)
-![Azure DevOps tests (branch)](https://img.shields.io/azure-devops/tests/intelliTect/EssentialCSharp/46/v8.0.svg)
-![Azure DevOps coverage (branch)](https://img.shields.io/azure-devops/coverage/IntelliTect/EssentialCSharp/46/v8.0)
-* *Linux*: [![Build status](https://dev.azure.com/intelliTect/EssentialCSharp/_apis/build/status/Branch%20v8.0%20-%20EssentialCSharp-Linux)](https://dev.azure.com/intelliTect/EssentialCSharp/_build/latest?definitionId=45)
-![Azure DevOps tests (branch)](https://img.shields.io/azure-devops/tests/intelliTect/EssentialCSharp/45/v8.0.svg)
-![Azure DevOps coverage (branch)](https://img.shields.io/azure-devops/coverage/IntelliTect/EssentialCSharp/45/v8.0)
+[![Branch v8.0 - Windows - EssentialCSharp](https://github.com/IntelliTect/EssentialCSharp/actions/workflows/Branch%20v8.0%20-%20Windows.yml/badge.svg?branch=v8.0)](https://github.com/IntelliTect/EssentialCSharp/actions/workflows/Branch%20v8.0%20-%20Windows.yml)<br>
+[![Branch v8.0 - Linux - EssentialCSharp](https://github.com/IntelliTect/EssentialCSharp/actions/workflows/Branch%20v8.0%20-%20Linux.yml/badge.svg?branch=v8.0)](https://github.com/IntelliTect/EssentialCSharp/actions/workflows/Branch%20v8.0%20-%20Linux.yml)
