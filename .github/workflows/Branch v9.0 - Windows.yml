@@ -24,9 +24,13 @@ jobs:
           dotnet-version: ${{ matrix.dotnet-version }}
     - name: Get Directory
       run: pwd
+    - name: Get Dotnet Version
+      run: dotnet --version
+    - name: Get Dotnet info
+      run: dotnet --info
     - name: Install dependencies
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore
     - name: Test
-      run: dotnet test --no-restore --verbosity normal
+      run: dotnet test --no-build --verbosity normal
