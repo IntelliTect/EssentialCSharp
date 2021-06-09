@@ -15,6 +15,12 @@ Salim Gangji        | 1           | 12          | First paragraph: For a single 
 Pieter Le Roux      | 1           | 31          | Last Line: Table 1.2 shows four different C# comment types. The program in <s>Listing 1.18</s> Listing 1.19 includes two of these.
 Benjamin Michaelis  | 1           | 31          | Last Line: Table 1.2 shows four different C# comment types. The program in Listing 1.19 includes <s>two</s>three of these.
 Salim Gangji        | 2           | 51          | Output 2.3: <s>1.61803398874985</s> 1.618033988749895
+Alden Bansemer      | 2           | 55          | Listing 2.9: <s>`result == number`</s> `{result} == {number}`. Output 2.7: <s>`result == number`</s> `1.61803398874989 == 1.61803398874989`.
+Alden Bansemer      | 3           | 89          | Listing 3.4: Changed <s>`class 3.2->3.Uppercase`</s> to match source `class Uppercase`.
+Alden Bansemer      | 3           | 113         | Output 3.2: `TypeScript` replaced with `Visual Basic` as last element in sorted array and first element in the reversed, sorted array.
+Alden Bansemer      | 3           | 114         | Output 3.3: Added missing second line of output: `3`.
+Alden Bansemer      | 4           | 129         | Listing 4.7: Removed Trace.Assert to match codebase. Removed example #4, float converted to double now matches the double.
+Alden Bansemer      | 4           | 130         | Output 4.6: Updated results of Listing 4.7 to remove <s>`4.20000006258488 != 4.20000028610229`</s>.
 Pieter Le Roux      | 5           | 215         | Output 5.4: ERROR:  You must specify the URL <s>to be downloaded</s> and the file name **Usage:** Downloader.exe <URL> <TargetFileName> 
 Pieter Le Roux      | 6           | 285         | Last Line in second paragraph: "DO use nameof for the paramName argument passed into exceptions like Argument<s>Null</s>Exception and ArgumentNullException that take such a parameter. For more information, see Chapter 18."
 Pieter Le Roux      | 7           | 359         | return <s>@</s>$"FirstName: { FirstName + NewLine }" + $"LastName: { LastName + NewLine }"+ $"Address: { Address + NewLine }";

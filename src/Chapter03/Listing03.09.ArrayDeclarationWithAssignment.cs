@@ -5,7 +5,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_09
         public static void Main()
         {
             string[] languages = { "C#", "COBOL", "Java",
-                "C++", "TypeScript", "Pascal",
+                "C++", "TypeScript", "Visual Basic",
                 "Python", "Lisp", "JavaScript" };
         }
     }
