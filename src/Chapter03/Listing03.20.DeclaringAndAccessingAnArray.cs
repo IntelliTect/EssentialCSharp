@@ -6,7 +6,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_20
         {
             string[] languages = new string[] {
                 "C#", "COBOL", "Java",
-                "C++", "TypeScript", "Pascal",
+                "C++", "TypeScript", "Visual Basic",
                 "Python", "Lisp", "JavaScript"};
                 // Retrieve fifth item in languages array (TypeScript)
                 string language = languages[4];
