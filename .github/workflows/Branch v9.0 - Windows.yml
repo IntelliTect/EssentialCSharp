@@ -14,10 +14,9 @@ jobs:
     strategy:
       matrix:
         dotnet-version: ['3.1.x', '5.0.x' ]
-    name: Dotnet ${{ matrix.dotnet }}
     steps:
       - uses: actions/checkout@v2
-      - name: Setup dotnet
+      - name: Setup dotnet SDK ${{ matrix.dotnet-version }}
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: ${{ matrix.dotnet }}
