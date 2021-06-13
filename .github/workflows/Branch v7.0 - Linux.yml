@@ -23,9 +23,6 @@ jobs:
         dotnet --info
         dotnet --version
         lsb_release -a
-    - run: |
-        sudo apt-get update -y
-        sudo apt-get install -y libssl-dev
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
