@@ -13,14 +13,15 @@ jobs:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v2
-      with:
-        ref: v9.0
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 3.1.x
-    - name: Get Directory
-      run: pwd
+    - name: Get Build Information
+      run: |
+        pwd
+        dotnet --info
+        dotnet --version
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
