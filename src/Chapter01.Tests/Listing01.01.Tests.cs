@@ -9,7 +9,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_01.Tests
         public void Main_InigoHello()
         {
             const string expected = 
-                @"Hello. My name is Inigo Montoya.";
+                @"Hello. My name is Not Inigo Montoya.";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
                 expected, HelloWorld.Main);
