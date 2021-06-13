@@ -17,8 +17,11 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 3.1.x
-    - name: Get Directory
-      run: pwd
+    - name: Get Build Information
+      run: |
+        pwd
+        dotnet --info
+        dotnet --version
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
