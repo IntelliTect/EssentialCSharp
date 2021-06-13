@@ -16,13 +16,16 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 2.0.x
+        dotnet-version: 2.1.x
     - name: Get Build Information
       run: |
         pwd
         dotnet --info
         dotnet --version
         lsb_release -a
+    - run: |
+        sudo apt-get update -y
+        sudo apt-get install -y libssl-dev
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
