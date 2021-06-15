@@ -1,9 +1,10 @@
 <Project>
   <PropertyGroup>
+    <TargetFrameworks>net5.0;netcoreapp3.1</TargetFrameworks>
+    <LangVersion>9.0</LangVersion>
     <Nullable>enable</Nullable>
     <ProductName Condition="'$(ProductName)'==''">Chapter$(ChapterNumber)</ProductName>
     <TreatWarningsAsErrors Condition="'$(TreatWarningsAsErrors)'==''">false</TreatWarningsAsErrors>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
     <Authors>Mark Michaelis</Authors>
     <Company>Addison Wesley</Company>
     <Copyright>Copyright © Addison Wesley 2020</Copyright>
