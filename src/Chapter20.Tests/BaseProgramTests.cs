@@ -84,7 +84,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Tests
         {
             bool isLike = IntelliTect.TestTools.Console.StringExtensions.IsLike(
                 exception.Message, messagePrefix);
-            string notLikeMessage = $"Messages are unexpectedly different:\n\texpected: {exception.Message}\n\tActual: {messagePrefix}";
+            string notLikeMessage = $"Messages are unexpectedly different:\n\texpected: {messagePrefix}\n\tActual: {exception.Message}";
             
             if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
             {
@@ -149,7 +149,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Tests
         [TestMethod]
         [DataRow("Bad Uri", "Could not find file *")]
         [DataRow("https://bad uri", "The filename, directory name, or volume label syntax is incorrect. *")]
-        [DataRow("https://thisisanotherbadurlthatpresumablyldoesnotexist.notexist", "No such host is known. No such host is known.")]
+        [DataRow("https://thisisanotherbadurlthatpresumablyldoesnotexist.notexist", "No such host is known.*")]
         [ExpectedException(typeof(WebException))]
         async public Task Main_GivenBadUri_ThrowException(string uri, string messagePrefix)
         {
