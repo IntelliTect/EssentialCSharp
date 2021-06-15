@@ -22,25 +22,19 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_07
             System.Console.WriteLine(
                 $"(float){(float)decimalNumber}M != {floatNumber}F");
 
-            // Removing - float converted to double now matches the double
-            //Trace.Assert(doubleNumber1 != (double)floatNumber);
-            //// 4. Displays: 4.20000028610229 != 4.20000028610229
-            //System.Console.WriteLine(
-            //    $"{doubleNumber1} != {(double)floatNumber}");
-
-            // 5. Displays: 4.200000286102295 != 4.2
+            // 4. Displays: 4.200000286102295 != 4.2
             System.Console.WriteLine(
                 $"{doubleNumber1} != {doubleNumber2}");
 
-            // 6. Displays: 4.2000003F != 4.2D
+            // 5. Displays: 4.2000003F != 4.2D
             System.Console.WriteLine(
                 $"{floatNumber}F != {doubleNumber2}D");
 
-            // 7. Displays: 4.199999809265137 != 4.2
+            // 6. Displays: 4.199999809265137 != 4.2
             System.Console.WriteLine(
                 $"{(double)4.2F} != {4.2D}");
 
-            // 8. Displays: 4.2F != 4.2D
+            // 7. Displays: 4.2F != 4.2D
             System.Console.WriteLine(
                 $"{4.2F}F != {4.2D}D");
         }

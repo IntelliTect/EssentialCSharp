@@ -9,7 +9,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_17
             System.Console.Write("Enter text: ");
             text = System.Console.ReadLine();
 
-            //UNEXPECTED: Does not convert text to uppercase
+            // UNEXPECTED: Does not convert text to uppercase
             text.ToUpper();
 
             System.Console.WriteLine(text);

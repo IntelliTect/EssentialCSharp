@@ -45,7 +45,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
             {
                 input = ParseListingName(input);
 
-                Regex reg = new Regex($"{input}\\.+");
+                Regex reg = new Regex($"Listing{input}\\.+");
 
                 IEnumerable<Type?> targets = assembly.GetTypes().Where(type =>
                 {
