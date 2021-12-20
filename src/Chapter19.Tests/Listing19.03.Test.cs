@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Text.RegularExpressions;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_03.Tests
 {
@@ -11,15 +12,19 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_03.Tests
             string expected = @"Before
 Starting...
 Continuing A...
-Continuing C...
-Continuing B...
+Continuing {0}...
+Continuing {1}...
 Finished!";
-
-            IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected,
+            string actual = IntelliTect.TestTools.Console.ConsoleAssert.Execute(expected,
             () =>
             {
                 Program.Main();
             });
+
+            Assert.IsTrue( 
+                (string.Format(expected, 'B', 'C') == actual.TrimEnd()) || 
+                (string.Format(expected, 'C', 'B') == actual.TrimEnd())
+                );
         }
     }
 }
