@@ -1,15 +1,14 @@
-﻿
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_08.Tests
-{
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_04.Tests
+{
     [TestClass]
     public class ProgramTests
     {
         [TestMethod]
         public void ObservingUnhandledExceptionsWithContinueWith()
         {
-            string expected = "ERROR: Operation is not valid due to the current state of the object.";
+            string expected = "Task State: Completed";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected,
             () =>

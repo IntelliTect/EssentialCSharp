@@ -18,10 +18,10 @@
 
             // Use Task.Factory.StartNew<string>() for
             // TPL prior to .NET 4.5
-            Task task = Task.Run(
+            Task task = Task.Factory.StartNew(
                 () =>
                     WritePi(cancellationTokenSource.Token),
-                        cancellationTokenSource.Token);
+                        TaskCreationOptions.LongRunning);
 
             // Wait for the user's input
             Console.ReadLine();

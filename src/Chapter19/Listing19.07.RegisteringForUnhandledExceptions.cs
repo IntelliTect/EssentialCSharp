@@ -1,4 +1,4 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_09
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_07
 {
     using System;
     using System.Diagnostics;
@@ -6,14 +6,13 @@
 
     public class Program
     {
-        public static Stopwatch clock = new Stopwatch();
+        public static Stopwatch _Clock = new Stopwatch();
         public static void Main()
         {
-            ManualResetEventSlim resetEvent = new ManualResetEventSlim();
             try
             {
-                clock.Start();
-
+                ManualResetEventSlim resetEvent = new ManualResetEventSlim();
+                _Clock.Start();
                 // Register a callback to receive notifications
                 // of any unhandled exception
 #if NETCOREAPP1_1
@@ -38,13 +37,12 @@
                 GC.WaitForPendingFinalizers();
                 GC.Collect();
 
-
-#else
                 Action<object, EventArgs> unhandledExcpetionHandler = (s, e) =>
                 {
                     Message("Event handler starting");
                     Delay(4000);
                 };
+#else
                 AppDomain.CurrentDomain.UnhandledException +=
                   (s, e) =>
                   {
@@ -57,18 +55,16 @@
                     throw new Exception();
                 });
                 thread.Start();
-
 #endif
 #if DEBUG1   
                 resetEvent.Wait();
                 {
-#else
                 if (!resetEvent.Wait(5000))
                 {
                     throw new Exception("Timed out waiting for unhandled exception.");
-#endif // DEBUG
                 }
-                //Delay(2000)
+#endif // DEBUG
+                Delay(2000);
             }
             finally
             {
@@ -85,8 +81,7 @@
 
         static void Message(string text)
         {
-            Console.WriteLine(
-                $"{Thread.CurrentThread.ManagedThreadId}:{text}");
+            Console.WriteLine("{0}:{1:0000}:{2}",Thread.CurrentThread.ManagedThreadId,_Clock.ElapsedMilliseconds, text);
         }
     }
 }

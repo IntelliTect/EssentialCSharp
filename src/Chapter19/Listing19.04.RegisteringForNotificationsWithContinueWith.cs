@@ -1,4 +1,4 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_06
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_04
 {
     using System;
     using System.Threading.Tasks;
@@ -50,9 +50,7 @@
                         OnlyOnRanToCompletion);
 
             completedTask.Wait();
-
         }
-
     }
 }
 

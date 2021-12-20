@@ -1,4 +1,4 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_12
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_08
 {
     using System;
     using System.Threading;
@@ -15,13 +15,12 @@
 
             CancellationTokenSource cancellationTokenSource =
                 new CancellationTokenSource();
-
             // Use Task.Factory.StartNew<string>() for
             // TPL prior to .NET 4.5
-            Task task = Task.Factory.StartNew(
+            Task task = Task.Run(
                 () =>
                     WritePi(cancellationTokenSource.Token),
-                        TaskCreationOptions.LongRunning);
+                        cancellationTokenSource.Token);
 
             // Wait for the user's input
             Console.ReadLine();

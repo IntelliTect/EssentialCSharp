@@ -1,4 +1,4 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_05
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_03
 {
     using System;
     using System.Threading.Tasks;
@@ -17,9 +17,9 @@
                      Console.WriteLine("Continuing A..."));
             Task taskB = taskA.ContinueWith(antecedent =>
                 Console.WriteLine("Continuing B..."));
-            Task taskC = taskB.ContinueWith(antecedent =>
+            Task taskC = taskA.ContinueWith(antecedent =>
                 Console.WriteLine("Continuing C..."));
-            Task.WaitAll(taskC);
+            Task.WaitAll(taskB, taskC);
             Console.WriteLine("Finished!");
         }
     }
