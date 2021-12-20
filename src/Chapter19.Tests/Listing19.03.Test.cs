@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_05.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_03.Tests
 {
     [TestClass]
     public class ProgramTests
@@ -11,8 +11,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_05.Tests
             string expected = @"Before
 Starting...
 Continuing A...
-Continuing B...
 Continuing C...
+Continuing B...
 Finished!";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected,
