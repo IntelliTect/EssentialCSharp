@@ -6,7 +6,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_28
         {
             string[] languages = new string[]{
                 "C#", "COBOL", "Java",
-                "C++", "TypeScript", "Pascal",
+                "C++", "TypeScript", "Swift",
                 "Python", "Lisp", "JavaScript"};
 
             System.Array.Sort(languages);
