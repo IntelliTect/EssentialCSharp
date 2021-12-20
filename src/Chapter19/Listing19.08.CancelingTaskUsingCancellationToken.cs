@@ -1,4 +1,4 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_10
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_08
 {
     using System;
     using System.Threading;
@@ -15,7 +15,6 @@
 
             CancellationTokenSource cancellationTokenSource =
                 new CancellationTokenSource();
-
             // Use Task.Factory.StartNew<string>() for
             // TPL prior to .NET 4.5
             Task task = Task.Run(
