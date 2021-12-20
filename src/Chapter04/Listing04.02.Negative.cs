@@ -5,7 +5,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_02
         public static void Main()
         {
             //National Debt to the Penny
-            decimal debt = -18125876697430.99M;
+            decimal debt = -26457079712930.80M;
 
             System.Console.WriteLine(debt);
         }

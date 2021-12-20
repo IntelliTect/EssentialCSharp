@@ -8,7 +8,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_02.Tests
         [TestMethod]
         public void MainTest()
         {
-            const string expected = @"-18125876697430.99";
+            const string expected = @"-26457079712930.80";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
                 expected, Program.Main);
