@@ -48,13 +48,13 @@ if($testStatus -eq "cleanup"){
 if($testStatus -eq "run"){
   try{ 
     if($finalizerOption -eq 'dispose'){
-    dotnet run -p "$PSScriptRoot\$ConsoleProgramProjectName\$ConsoleProgramProjectName.csproj" -- -dispose
+    dotnet run --project "$PSScriptRoot\$ConsoleProgramProjectName\$ConsoleProgramProjectName.csproj" -- -dispose
     }
     elseif($finalizerOption -eq 'gc'){
-    dotnet run -p "$PSScriptRoot\$ConsoleProgramProjectName\$ConsoleProgramProjectName.csproj" -- -gc
+    dotnet run --project "$PSScriptRoot\$ConsoleProgramProjectName\$ConsoleProgramProjectName.csproj" -- -gc
     }
     elseif($finalizerOption -eq 'processExit'){
-    dotnet run -p "$PSScriptRoot\$ConsoleProgramProjectName\$ConsoleProgramProjectName.csproj"
+    dotnet run --project "$PSScriptRoot\$ConsoleProgramProjectName\$ConsoleProgramProjectName.csproj"
     }
     else{
         Write-Error "finalizerOption: $finalizerOption not valid with the testStatus: run"

@@ -4,7 +4,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_03
     {
         public static void Main()
         {
-            System.Console.WriteLine(1.618033988749895M);
+            System.Console.WriteLine(1.6180339887498948M);
         }
     }
 }

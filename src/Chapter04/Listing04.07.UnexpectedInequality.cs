@@ -9,8 +9,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_07
             double doubleNumber2 = 0.1D * 42D;
             float floatNumber = 0.1F * 42F;
 
-            
-            // 1. Displays: 4.2 != 4.4.2000002861023
+            // 1. Displays: 4.2 != 4.2000002861023
             System.Console.WriteLine(
                 $"{decimalNumber} != {(decimal)doubleNumber1}");
 

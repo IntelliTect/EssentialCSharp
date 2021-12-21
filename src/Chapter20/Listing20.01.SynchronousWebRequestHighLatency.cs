@@ -25,12 +25,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_01
             }
             Console.Write($"Searching for '{findText}' at URL '{url}'.");
 
-            Console.Write("\nDownloading....");
+            Console.Write("\nDownloading...");
             using WebClient webClient = new WebClient();
             byte[] downloadData =
                 webClient.DownloadData(url);
 
-            Console.Write("\nSearching....");
+            Console.Write("\nSearching...");
             int textOccurrenceCount = CountOccurrences(
                 downloadData, findText);
 

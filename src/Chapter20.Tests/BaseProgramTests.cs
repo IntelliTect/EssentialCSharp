@@ -38,7 +38,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Tests
                 @$"Searching for '{Regex.Escape(findText)
                     }' at URL '{
                     Regex.Escape(url)
-                    }'\.\s+Downloading\.{{4,}}\s+Searching\.{{3,}}\s+'{
+                    }'\.\s+Downloading\.{{3,}}\s+Searching\.{{3,}}\s+'{
                     Regex.Escape(findText)}' appears {countPattern} times at URL '{
                     Regex.Escape(url)
                     }'\.\s+";

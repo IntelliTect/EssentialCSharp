@@ -8,7 +8,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_03.Tests
         [TestMethod]
         public void Main_WriteNumbers()
         {
-            const string expected = @"1.618033988749895";
+            const string expected = @"1.6180339887498948";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
                 expected, Program.Main);
