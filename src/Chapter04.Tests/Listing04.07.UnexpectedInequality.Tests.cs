@@ -8,7 +8,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_07.Tests
         [TestMethod]
         public void MainTest()
         {
-            const string netCoreApp2expected =
+            const string netCoreApp3expected =
 @"4.2 != 4.2000002861023
 4.2 != 4.20000028610229
 (float)4.2M != 4.2F
@@ -29,7 +29,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_07.Tests
             string netCoreVersion = NetCore.GetNetCoreVersion();
             if (string.Compare(netCoreVersion, "3") < 0)
             {
-                expected = netCoreApp2expected;
+                expected = netCoreApp3expected;
             }
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
