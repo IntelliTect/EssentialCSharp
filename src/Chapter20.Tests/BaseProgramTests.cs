@@ -142,10 +142,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Tests
         [TestMethod]
         [DataRow("Bad Uri", "Could not find file *")]
         [DataRow("https://bad uri", "The filename, directory name, or volume label syntax is incorrect. *", "Could not find a part of the path*")]
-        [DataRow("https://thisisanotherbadurlthatpresumablyldoesnotexist.notexist", "No such host is known.*", "nodename nor servname provided, or not known*")]
+        [DataRow("https://thisisanotherbadurlthatpresumablyldoesnotexist.notexist", "No such host is known.*", "nodename nor servname provided, or not known*", "Name or service not known*")]
         [ExpectedException(typeof(WebException))]
-        async public Task Main_GivenBadUri_ThrowException(string uri, string defaultMessagePrefix, string? messagePrefixLinux = null)
+        async public Task Main_GivenBadUri_ThrowException(string uri, string defaultMessagePrefix, string? messagePrefixOSX = null, string? messagePrefixLinux = null)
         {
+            messagePrefixOSX ??= defaultMessagePrefix;
             messagePrefixLinux ??= defaultMessagePrefix;
 
             try
@@ -159,7 +160,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Tests
                 {
                     AssertMainException(defaultMessagePrefix, exception);
                 }
-                else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX) || RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+                else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
+                {
+                    AssertMainException(messagePrefixOSX, exception);
+                }
+                else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
                 {
                     AssertMainException(messagePrefixLinux, exception);
                 }
