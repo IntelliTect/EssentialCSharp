@@ -1,5 +1,6 @@
-﻿using System;
+using System;
 using System.Runtime.InteropServices;
+using System.Diagnostics;
 
 namespace Chapter10.Tests.PowerShellTestsUtilities
 {
@@ -13,17 +14,34 @@ namespace Chapter10.Tests.PowerShellTestsUtilities
         public static bool PowerShellNotInstalled()
         {
             var environmentVariables = Environment.GetEnvironmentVariables().Values;
-
+            bool result = true;
             foreach (string? value in environmentVariables)
             {
                 if (!string.IsNullOrEmpty(value) && (value.ToLowerInvariant().Contains("powershell") || value.ToLowerInvariant().Contains("pwsh")))
                 {
-                    return false;
+                    result = false;
                 }
             }
-            return true;
+            if (result == true)
+            {
+                string PowershellEnvironmentVariableName  = "powershell";
+                if (!PowerShellTestsUtilities.WindowsEnvironment()) PowershellEnvironmentVariableName = "pwsh";
+                try
+                {
+                    Process powershell = Process.Start(PowershellEnvironmentVariableName, "--version");
+                    powershell.WaitForExit();
+                    var exitCode = powershell.ExitCode;
+                    if(exitCode == 0)
+                    {
+                        result = false;
+                    }
+                }
+                catch(System.ComponentModel.Win32Exception e)
+                {
+                    result = true;
+                }
+            }
+            return result;
         }
-
-  
     }
 }
