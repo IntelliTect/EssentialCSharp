@@ -1,4 +1,4 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Diagnostics;
 using System.IO;
@@ -28,7 +28,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23.Tests
             Process powershell = Process.Start(PowershellEnvironmentVariableName, $"-noprofile -command \"{Ps1Path} 0 null {testStatus}\"");
             powershell.WaitForExit();
         }
-
 
         [ClassCleanup]
         public static void RemoveProcessExitProj()
@@ -61,9 +60,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23.Tests
             Assert.AreEqual(0, powershell.ExitCode);
 
             Assert.AreEqual<string>(RemoveWhiteSpace(expectedOutput), RemoveWhiteSpace(psOutput));
-
         }
-
 
         public const string DisposeManuallyCalledExpectedOutput =
             @"Main: Starting...
@@ -110,19 +107,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23.Tests
             Finalize: Exiting...
             Main: Exiting...";
 
-
-      
-
         public static string RemoveWhiteSpace(string str)
         {
             return Regex.Replace(str, @"\s+", String.Empty);
         }
 
     }
-
-
-
-
 }
-
-
