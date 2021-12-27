@@ -84,16 +84,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Tests
         {
             bool isLike = IntelliTect.TestTools.Console.StringExtensions.IsLike(
                 exception.Message, messagePrefix);
-            string notLikeMessage = $"Messages are unexpectedly different:\n\texpected: {messagePrefix}\n\tActual: {exception.Message}";
+            string notLikeMessage = $"Messages are unexpectedly different on {Environment.OSVersion}:\n\texpected: {messagePrefix}\n\tActual: {exception.Message}\n\t OSInformation: {RuntimeInformation.OSDescription}";
             
-            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
-            {
-                Assert.IsTrue(isLike, notLikeMessage);
-            }
-            else
-            {
-                Assert.Inconclusive(notLikeMessage);
-            }
+            Assert.IsTrue(isLike, notLikeMessage);
         }
 
         protected static void AssertAggregateExceptionType(string messagePrefix, AggregateException aggregateException)
@@ -148,11 +141,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Tests
 
         [TestMethod]
         [DataRow("Bad Uri", "Could not find file *")]
-        [DataRow("https://bad uri", "The filename, directory name, or volume label syntax is incorrect. *")]
-        [DataRow("https://thisisanotherbadurlthatpresumablyldoesnotexist.notexist", "No such host is known.*")]
+        [DataRow("https://bad uri", "The filename, directory name, or volume label syntax is incorrect. *", "Could not find a part of the path*", "Could not find a part of the path*")]
+        [DataRow("https://thisisanotherbadurlthatpresumablyldoesnotexist.notexist", "No such host is known.*", "nodename nor servname provided, or not known*", "Name or service not known*")]
         [ExpectedException(typeof(WebException))]
-        async public Task Main_GivenBadUri_ThrowException(string uri, string messagePrefix)
+        async public Task Main_GivenBadUri_ThrowException(string uri, string defaultMessagePrefix, string? messagePrefixOSX = null, string? messagePrefixLinux = null)
         {
+            messagePrefixOSX ??= defaultMessagePrefix;
+            messagePrefixLinux ??= defaultMessagePrefix;
+
             try
             {
                 await ProgramWrapper.Main(new string[] { "irrelevant", uri });
@@ -160,7 +156,18 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Tests
             }
             catch (Exception exception)
             {
-                AssertMainException(messagePrefix, exception);
+                if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+                {
+                    AssertMainException(defaultMessagePrefix, exception);
+                }
+                else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
+                {
+                    AssertMainException(messagePrefixOSX, exception);
+                }
+                else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+                {
+                    AssertMainException(messagePrefixLinux, exception);
+                }
                 if (exception is AggregateException aggregateException)
                 {
                     // Innerexception expected to be WebException.
@@ -180,5 +187,4 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Tests
             }
         }
     }
-
 }
