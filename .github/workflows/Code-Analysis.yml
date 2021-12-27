@@ -1,0 +1,41 @@
+# sample-workflow-windows-latest
+# docs are in the repo
+
+name: .NET Code Analysis windows-latest
+on:
+  push:
+    branches: [ v9.0 ]
+  pull_request:
+    branches: [ v9.0 ]
+    
+jobs:
+  .NET-Code-Analysis:
+    name: .NET Code Analysis runner
+    strategy:
+      fail-fast: false
+      matrix:
+        dotnet-version: [ '3.1.x', '5.0.x' ]
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup dotnet SDK ${{ matrix.dotnet-version }}
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: ${{ matrix.dotnet }}
+      # Run NuGet restore for the solution at repo root
+      - name: Run NuGet restore
+        run: dotnet restore
+      # Run code analysis for the solution at repo root
+      - name: Run .NET Code Analysis
+        uses: dotnet/code-analysis@v1
+        id: code-analysis
+        with:
+          solution: EssentialCSharp.sln
+          build-breaking: true
+          all-categories: latest
+      # Upload the analysis results file
+      - name: Upload analysis results
+        uses: actions/upload-artifact@v2
+        with:
+          name: analysis_results.sarif
+          path: ${{ steps.code-analysis.outputs.sarifFile }}
