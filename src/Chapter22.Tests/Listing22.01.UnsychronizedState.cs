@@ -14,7 +14,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_01.Tests
             return func(args) == 0;
         }
 
-
         /// <summary>
         /// Returns true if the increment/decrement operations are not atomic.
         /// 
@@ -52,7 +51,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_01.Tests
             Assert.IsTrue(matches[0].Success);
             Assert.AreEqual(result.ToString(), matches[0].Groups["Count"].Value);
         }
-
 
         [TestMethod]
         public void MainVerifyOutputIncrementAndDecrement()
