@@ -14,5 +14,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_37
         static public T GetObject<T>(
                 System.Collections.Generic.IEnumerable<T> sequence, Func<T, bool> match)
                     => sequence.FirstOrDefault(match);
-            }
+    }
 }

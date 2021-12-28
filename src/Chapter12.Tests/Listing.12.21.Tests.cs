@@ -9,7 +9,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_21.Tests
         [TestMethod]
         public void Create_BinaryTree_Success()
         {
-            new BinaryTree<string?>(null)
+            _ = new BinaryTree<string?>(null)
             {
                 SubItems = new Pair<BinaryTree<string?>?>(
                 new BinaryTree<string?>("b"),
@@ -20,7 +20,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_21.Tests
         [TestMethod]
         public void Create_BinaryTreeWithNullSubItems_Success()
         {
-            new BinaryTree<string?>(null)
+            _ = new BinaryTree<string?>(null)
             {
                 SubItems = new Pair<BinaryTree<string?>?>(
                null, null)

@@ -17,7 +17,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_07
             }
         }
 
-        // Justification: Lowercase to simulate the value keyword form a stetter.
+        // Justification: Lowercase to simulate the value keyword from a setter.
         #pragma warning disable IDE1006 // Naming Styles
         public object? value { get; set; }
         #pragma warning restore IDE1006 // Naming Styles
