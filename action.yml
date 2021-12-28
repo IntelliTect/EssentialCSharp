@@ -1,0 +1,73 @@
+name: 'code-analysis'
+description: 'Run .NET code quality analysis and code style analysis shipping with the .NET SDK'
+author: 'GitHub'
+inputs:
+  build-breaking:
+    description: 'Boolean value indicating if code analysis violations should break the build'
+    required: true
+  solution:
+    description: 'Solution to analyze'
+    required: false
+  solutions:
+    description: 'Semi-colon separated list of solutions to analyze'
+    required: false
+  project:
+    description: 'Project to analyze'
+    required: false
+  projects:
+    description: 'Semi-colon separated list of projects to analyze'
+    required: false
+  all-categories:  # AnalysisLevel: https://docs.microsoft.com/dotnet/core/project-sdk/msbuild-props#analysislevel
+    description: 'Default analysis level and analysis mode for all rules'
+    required: false
+    default: 'latest-minimum'
+  style:  # AnalysisLevelStyle: https://docs.microsoft.com/dotnet/core/project-sdk/msbuild-props#analysislevel
+    description: 'Overridden analysis level and analysis mode for code style rules: https://docs.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/'
+    required: false
+    default: ''
+  design:  # AnalysisLevelDesign: https://docs.microsoft.com/dotnet/core/project-sdk/msbuild-props#analysislevel
+    description: 'Overridden analysis level and analysis mode for design rules: https://docs.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/design-warnings'
+    required: false
+    default: ''
+  documentation:  # AnalysisLevelDocumentation: https://docs.microsoft.com/dotnet/core/project-sdk/msbuild-props#analysislevel
+    description: 'Overridden analysis level and analysis mode for documentation rules: https://docs.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/documentation-warnings'
+    required: false
+    default: ''
+  globalization:  # AnalysisLevelGlobalization: https://docs.microsoft.com/dotnet/core/project-sdk/msbuild-props#analysislevel
+    description: 'Overridden analysis level and analysis mode for globalization rules: https://docs.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/globalization-warnings'
+    required: false
+    default: ''
+  interoperability:  # AnalysisLevelInteroperability: https://docs.microsoft.com/dotnet/core/project-sdk/msbuild-props#analysislevel
+    description: 'Overridden analysis level and analysis mode for portability and interoperability rules: https://docs.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/interoperability-warnings'
+    required: false
+    default: ''
+  maintainability:  # AnalysisLevelMaintainability: https://docs.microsoft.com/dotnet/core/project-sdk/msbuild-props#analysislevel
+    description: 'Overridden analysis level and analysis mode for maintainability rules: https://docs.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/maintainability-warnings'
+    required: false
+    default: ''
+  naming:  # AnalysisLevelNaming: https://docs.microsoft.com/dotnet/core/project-sdk/msbuild-props#analysislevel
+    description: 'Overridden analysis level and analysis mode for naming rules: https://docs.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/naming-warnings'
+    required: false
+    default: ''
+  performance:  # AnalysisLevelPerformance: https://docs.microsoft.com/dotnet/core/project-sdk/msbuild-props#analysislevel
+    description: 'Overridden analysis level and analysis mode for performance rules: https://docs.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/performance-warnings'
+    required: false
+    default: ''
+  reliability:  # AnalysisLevelReliability: https://docs.microsoft.com/dotnet/core/project-sdk/msbuild-props#analysislevel
+    description: 'Overridden analysis level and analysis mode for reliability rules: https://docs.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/reliability-warnings'
+    required: false
+    default: ''
+  security:  # AnalysisLevelSecurity: https://docs.microsoft.com/dotnet/core/project-sdk/msbuild-props#analysislevel
+    description: 'Overridden analysis level and analysis mode for security rules https://docs.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/security-warnings'
+    required: false
+    default: ''
+  usage:  # AnalysisLevelPerformance: https://docs.microsoft.com/dotnet/core/project-sdk/msbuild-props#analysislevel
+    description: 'Overridden analysis level and analysis mode for usage rules: https://docs.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/usage-warnings'
+    required: false
+    default: ''
+outputs:
+  sarifFile:
+    description: A file path to a '.sarif' file with analysis results.
+runs:
+  using: 'node12'
+  main: 'lib/action.js'

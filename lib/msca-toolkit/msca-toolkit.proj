@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework Condition=" '$(TargetFramework)' == '' ">netcoreapp3.1</TargetFramework>
+    <MscaPackageName Condition=" '$(MscaPackageName)' == '' ">Microsoft.Security.CodeAnalysis.Cli</MscaPackageName>
+    <MscaPackageVersion Condition=" '$(MscaPackageVersion)' == '' ">0.*</MscaPackageVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="$(MscaPackageName)" Version="$(MscaPackageVersion)" />
+  </ItemGroup>
+
+</Project>
