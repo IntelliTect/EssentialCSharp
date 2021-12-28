@@ -1,6 +1,3 @@
-# sample-workflow-windows-latest
-# docs are in the repo
-
 name: .NET Code Analysis windows-latest
 on:
   push:
@@ -25,9 +22,9 @@ jobs:
       # Run NuGet restore for the solution at repo root
       - name: Run NuGet restore
         run: dotnet restore
-      # Run code analysis for the solution at repo root
+      # Run .NET Code Analysis
       - name: Run .NET Code Analysis
-        uses: dotnet/code-analysis@v1
+        uses: ./
         id: code-analysis
         with:
           solution: EssentialCSharp.sln
