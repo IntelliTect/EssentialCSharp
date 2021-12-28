@@ -28,7 +28,7 @@ jobs:
         uses: dotnet/code-analysis@main
         id: code-analysis
         with:
-          build-breaking: false
+          build-breaking: true
 
       # Upload the analysis results file
       - name: Upload analysis results
