@@ -4,7 +4,10 @@
     <!-- CA1052: Suggest Program is static which hasn't been explained yet. -->
     <!-- IDE0059: Unnecessary assignment of a value ignored since listing is not complete. -->
     <!-- IDE0060: Remove unused parameter suggestion ignored since listing is not complete -->
-    <ExpectedWarnings>$(ExpectedWarnings),CS8600,CS8602,CA1052,IDE0059,IDE0060</ExpectedWarnings>
+    <!-- CS8600: Trust that null assignment doesn't cause 
+    unexpected exception as concept to check for null hasn't been explained yet-->
+    <ExpectedWarnings>$(ExpectedWarnings),CS8600,CA1052,IDE0059,IDE0060</ExpectedWarnings>
+    <IgnoreExpectedWarnings>true</IgnoreExpectedWarnings>
   </PropertyGroup>
   <Import Project="..\Chapter.props" />
   <ItemGroup>
