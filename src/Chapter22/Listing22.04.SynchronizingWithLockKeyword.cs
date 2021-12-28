@@ -11,7 +11,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_04
 
         public static int Main(string[] args)
         {
-            if (args?.Length > 0) { int.TryParse(args[0], out _Total); }
+            if (args?.Length > 0) { _ = int.TryParse(args[0], out _Total); }
             Console.WriteLine($"Increment and decrementing {_Total} times...");
 
             // Use Task.Factory.StartNew for .NET 4.0

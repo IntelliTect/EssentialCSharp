@@ -12,7 +12,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_02
         {
             int total = int.MaxValue;
             int x = 0;
-            if (args?.Length > 0) { int.TryParse(args[0], out total); }
+            if (args?.Length > 0) { _ = int.TryParse(args[0], out total); }
             Console.WriteLine($"Increment and decrementing {total} times...");
 
             Parallel.For(0, total, 
