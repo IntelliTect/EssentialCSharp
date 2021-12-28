@@ -4,43 +4,35 @@ on:
     branches: [ v9.0 ]
   pull_request:
     branches: [ v9.0 ]
-    
-jobs:
-  sample:
+  
+jobs:  
+  NET-Code-Analysis:
     name: .NET Code Analysis runner
-
-    # .NET Code Analysis runs on windows-latest.
-    # ubuntu-latest and macos-latest supporting coming soon
+    strategy:
+      fail-fast: false
+      matrix:
+        dotnet-version: [ '3.1.x', '5.0.x' ]
     runs-on: windows-latest
-
     steps:
+      - uses: actions/checkout@v2
+      - name: Setup dotnet SDK ${{ matrix.dotnet-version }}
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: ${{ matrix.dotnet }}
+      # Run NuGet restore for the solution at repo root
+      - name: Run NuGet restore
+        run: dotnet restore
 
-      # Checkout your code repository to scan
-    - uses: actions/checkout@v2
+      # Run code analysis for the solution at repo root
+      - name: Run .NET Code Analysis
+        uses: dotnet/code-analysis@main
+        id: code-analysis
+        with:
+          build-breaking: false
 
-    # Ensure compatible versions of dotnet are installed.
-    # The [Microsoft Code Analysis CLI](https://aka.ms/mscadocs) is built with dotnet v3.1.201.
-    # A version greater than or equal to v3.1.201 of dotnet must be installed on the agent in order to run this action.
-    # Remote agents already have a compatible version of dotnet installed and this step may be skipped.
-    # For local agents, ensure dotnet version 3.1.201 or later is installed by including this action:
-    # - uses: actions/setup-dotnet@v1
-    #   with:
-    #     dotnet-version: '3.1.x'
-
-    # Run NuGet restore for the solution at repo root
-    - name: Run NuGet restore
-      run: dotnet restore
-
-    # Run code analysis for the solution at repo root
-    - name: Run .NET Code Analysis
-      uses: dotnet/code-analysis@main
-      id: code-analysis
-      with:
-        build-breaking: false
-
-    # Upload the analysis results file
-    - name: Upload analysis results
-      uses: actions/upload-artifact@v2
-      with:
-        name: analysis_results.sarif
-        path: ${{ steps.code-analysis.outputs.sarifFile }}
+      # Upload the analysis results file
+      - name: Upload analysis results
+        uses: actions/upload-artifact@v2
+        with:
+          name: analysis_results.sarif
+          path: ${{ steps.code-analysis.outputs.sarifFile }}
