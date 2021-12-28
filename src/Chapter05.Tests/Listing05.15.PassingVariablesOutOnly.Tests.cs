@@ -8,7 +8,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_15.Tests
         [TestMethod]
         public void Main_InputNoPhrase_ExpectHelp()
         {
-            string[] args = new string[0];
+            string[] args = System.Array.Empty<string>();
             string view =
 @"ConvertToPhoneNumber.exe <phrase>
 '_' indicates no standard phone button";

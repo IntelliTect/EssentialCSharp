@@ -13,7 +13,7 @@ Compress.exe /Out:< file name > /Help /Priority:RealTime | High | AboveNormal | 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected,
             () =>
             {
-                Program.Main(new string[]{ });
+                Program.Main(System.Array.Empty<string>());
             });
         }
 
