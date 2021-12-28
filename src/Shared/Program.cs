@@ -21,14 +21,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
             {
                 throw new InvalidOperationException("Unable to retrieve the EntryAssembly.");
             }
-            string regexMatch = Regex.Match(assembly.GetName().Name, "\\d{1,2}").Value;
+            string regexMatch = Regex.Match(assembly.GetName().Name!, "\\d{1,2}").Value;
 
             int chapterNumber = int.Parse(regexMatch);
             if (args.Length == 0)
             {
                 Console.Write(
                     $"Enter the listing number to execute (e.g. For Listing {chapterNumber}.1 enter \"{chapterNumber}.1\"): ");
-                input = Console.ReadLine();
+                input = Console.ReadLine() ?? string.Empty;
             }
             else
             {
@@ -228,7 +228,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
             Console.WriteLine();
             Console.WriteLine(
                 "Listing uses arguments for main method provided by user. Please see the listing and enter arguments or hit enter to pass in null: ");
-            string userArguments = Console.ReadLine();
+            string? userArguments = Console.ReadLine();
             Console.WriteLine();
             Console.WriteLine();
 
