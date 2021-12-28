@@ -10,7 +10,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_45.Tests
         public void MainTest_ArgsHasZeroElements_ThrowException()
         {
             Assert.ThrowsException<ArgumentException>(
-                () => Program.Main(new string[] { }));
+                () => Program.Main(Array.Empty<string>()));
         }
 
         [TestMethod]

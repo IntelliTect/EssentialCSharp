@@ -19,7 +19,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_01.Tests
         [TestMethod]
         public void Main_GivenValidString_MakeUppercase()
         {
-            string[] args = { };
+            string[] args = System.Array.Empty<string>();
             const string expected =
                 "\'number\' requires a value and cannot be null";
 

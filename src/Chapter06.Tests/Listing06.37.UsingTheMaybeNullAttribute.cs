@@ -16,7 +16,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_37
         public void GetObject_GivenEmptyCollection_ReturnNull()
         {
             Assert.IsNull(NullabilityAttributesExamined.GetObject(
-                new string[] { }, item => item is object));
+                System.Array.Empty<string>(), item => item is object));
         }
 
         [TestMethod]
