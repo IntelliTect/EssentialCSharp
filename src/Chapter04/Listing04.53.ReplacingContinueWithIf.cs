@@ -8,7 +8,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_53
             bool insideDomain = false;
 
             System.Console.WriteLine("Enter an email address: ");
-            email = System.Console.ReadLine();
+            email = System.Console.ReadLine() ?? string.Empty;
 
             System.Console.Write("The email domain is: ");
 

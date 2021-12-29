@@ -63,7 +63,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                     // Item doesn't contain an '_' such as set_ or get_ - but really any name with an underscore 
                     // would be enough to indicate it wasn't the intended start method.
                     target.GetMethods().First(item => !item.Name.Contains("_"));
-                
+
                 string[]? arguments;
 
                 if (!method.GetParameters().Any())
@@ -84,7 +84,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                 }
 
                 string? output = null;
-                
+
                 // TODO: Remove STA check now that the methods are async anyway.
                 // TODO: Test... this seems backwards/opposite
                 if (method.GetCustomAttribute(typeof(STAThreadAttribute), false) is object)
@@ -92,7 +92,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                     Task task = new Task(() =>
                     {
                         // TODO: Change to use async/await.
-                        output = InvokeMethodUsingReflection(method,arguments).GetAwaiter().GetResult();
+                        output = InvokeMethodUsingReflection(method, arguments).GetAwaiter().GetResult();
                     });
                     task.Wait();
                 }
@@ -101,7 +101,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                     // TODO: Change to use async/await.
                     output = InvokeMethodUsingReflection(method, arguments).GetAwaiter().GetResult();
                 }
-                if(output is { })
+                if (output is { })
                 {
                     Console.WriteLine($"Result: {output}");
                 }
@@ -166,15 +166,15 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
             object? result = method.Invoke(null,
             parameters: arguments is null ? Array.Empty<object>() : new object[] { arguments! });
 
-            if(method.ReturnType == typeof(void))
+            if (method.ReturnType == typeof(void))
             {
                 return null;
             }
-            else if(result is null)
+            else if (result is null)
             {
                 return "<null>";
             }
-            else if(method.GetCustomAttribute(typeof(AsyncIteratorStateMachineAttribute), false) is object)
+            else if (method.GetCustomAttribute(typeof(AsyncIteratorStateMachineAttribute), false) is object)
             {
                 return result switch
                 {
@@ -186,7 +186,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
             }
             else if (method.GetCustomAttribute(typeof(AsyncStateMachineAttribute), false) is object)
             {
-                switch(result)
+                switch (result)
                 {
                     case Task task when method.ReturnType == typeof(Task):
                         await task;

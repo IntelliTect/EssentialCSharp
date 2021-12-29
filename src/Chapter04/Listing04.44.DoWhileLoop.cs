@@ -16,7 +16,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_44
                 // Request a move from the current player
                 System.Console.Write(
                     $"\nPlayer {currentPlayer}: Enter move:");
-                string input = System.Console.ReadLine();
+                string input = System.Console.ReadLine() ?? string.Empty;
 
                 // Check the current player's input
                 // ...

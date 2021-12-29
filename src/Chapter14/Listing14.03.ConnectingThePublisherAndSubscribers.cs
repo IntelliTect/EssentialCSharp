@@ -11,7 +11,7 @@
             Thermostat thermostat = new Thermostat();
             Heater heater = new Heater(60);
             Cooler cooler = new Cooler(80);
-            string temperature;
+            string? temperature;
 
             // Using C# 2.0 or later syntax
             thermostat.OnTemperatureChange +=
@@ -21,7 +21,12 @@
 
             Console.Write("Enter temperature: ");
             temperature = Console.ReadLine();
-            thermostat.CurrentTemperature = int.Parse(temperature);
+            if (!int.TryParse(temperature, out int currentTemperature))
+            {
+                Console.WriteLine($"'{temperature}' is not a valid integer.");
+                return;
+            }
+            thermostat.CurrentTemperature = currentTemperature;
         }
     }
 }

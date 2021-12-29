@@ -18,7 +18,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_12.Tests
             // set to the MSTest executable directory, rather than the 
             // assembly directory.
             Directory.SetCurrentDirectory(Path.GetDirectoryName(
-                typeof(Program).GetTypeInfo().Assembly.Location));
+                typeof(Program).GetTypeInfo().Assembly.Location)!);
 
             //string expectedPattern = $@"{ Directory.GetCurrentDirectory() }{Path.DirectorySeparatorChar}*";
             string expectedPattern = $@"{ Directory.GetCurrentDirectory() }{ 

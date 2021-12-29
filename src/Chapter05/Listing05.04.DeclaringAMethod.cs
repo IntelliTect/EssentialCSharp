@@ -22,7 +22,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_04
         static string GetUserInput(string prompt)
         {
             System.Console.Write(prompt);
-            return System.Console.ReadLine();
+            return System.Console.ReadLine() ?? string.Empty;
         }
 
         static string GetFullName(  // C# 6.0 expression-bodied method
