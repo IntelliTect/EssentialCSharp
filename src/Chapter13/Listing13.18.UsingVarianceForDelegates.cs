@@ -17,9 +17,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_18
 
             Action<string> narrowAction = broadAction;
 
+            // TODO: Update Manuscript
             // Covariance
             Func<string> narrowFunction =
-                () => Console.ReadLine();
+                () => 911.ToString();
 
             Func<object> broadFunction = narrowFunction;
 
