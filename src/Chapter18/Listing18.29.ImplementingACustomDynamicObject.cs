@@ -40,21 +40,22 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_29
             return success;
         }
 
+        // TODO: Update listing in Manuscript
         public override bool TrySetMember(
-            SetMemberBinder binder, object value)
+            SetMemberBinder binder, object? value)
         {
             bool success = false;
             XElement firstDescendant =
                 Element.Descendants(binder.Name).First();
             if(firstDescendant != null)
             {
-                if(value.GetType() == typeof(XElement))
+                if(value?.GetType() == typeof(XElement))
                 {
                     firstDescendant.ReplaceWith(value);
                 }
                 else
                 {
-                    firstDescendant.Value = value.ToString();
+                    firstDescendant.Value = value?.ToString() ?? string.Empty;
                 }
                 success = true;
             }

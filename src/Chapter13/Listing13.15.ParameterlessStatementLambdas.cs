@@ -1,4 +1,5 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_15
+﻿// TODO: Update listing in Manuscript
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_15
 {
     using System;
 
@@ -9,14 +10,15 @@
             Func<string> getUserInput =
                 () =>
                 {
-                    string input;
+                    string? input;
                     do
                     {
                         input = Console.ReadLine();
                     }
-                    while(input.Trim().Length == 0);
-                    return input;
+                    while(!string.IsNullOrEmpty(input));
+                    return input!;
                 };
+            getUserInput();
         }
     }
 }
