@@ -24,11 +24,17 @@
                 new __LocalsDisplayClass_00000001();
             locals.comparisonCount = 0;
             int[] items = new int[5];
+            string? text;
 
-            for(i = 0; i < items.Length; i++)
+            for (i = 0; i < items.Length; i++)
             {
                 Console.Write("Enter an integer:");
-                items[i] = int.Parse(Console.ReadLine());
+                text = Console.ReadLine();
+                if (!int.TryParse(text, out items[i]))
+                {
+                    Console.WriteLine($"'{text}' is not a valid integer.");
+                    return;
+                }
             }
 
             DelegateSample.BubbleSort(items, locals.__AnonymousMethod_00000000);

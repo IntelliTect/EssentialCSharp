@@ -24,7 +24,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_29
             bool success = false;
             result = null;
             XElement firstDescendant =
-                Element.Descendants(binder.Name).FirstOrDefault();
+                Element.Descendants(binder.Name).First();
             if(firstDescendant != null)
             {
                 if(firstDescendant.Descendants().Count() > 0)
@@ -45,7 +45,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_29
         {
             bool success = false;
             XElement firstDescendant =
-                Element.Descendants(binder.Name).FirstOrDefault();
+                Element.Descendants(binder.Name).First();
             if(firstDescendant != null)
             {
                 if(value.GetType() == typeof(XElement))

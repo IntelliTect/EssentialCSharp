@@ -1,3 +1,5 @@
+// Justification: Checking for null isn't discussed yet.
+#pragma warning disable CS8604 // Possible null reference argument
 using System;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_24
@@ -30,3 +32,4 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_24
         }
     }
 }
+#pragma warning restore CS8604

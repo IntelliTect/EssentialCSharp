@@ -1,3 +1,5 @@
+// Justification: Checking for null isn't discussed yet.
+#pragma warning disable CS8604 // Possible null reference argument
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_03
 {
     public class Division
@@ -23,3 +25,4 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_03
         }
     }
 }
+#pragma warning restore CS8604

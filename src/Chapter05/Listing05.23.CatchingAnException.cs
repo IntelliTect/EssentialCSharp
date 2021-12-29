@@ -12,10 +12,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_23
             int result = 0;
 
             Console.Write("Enter your first name: ");
-            firstName = Console.ReadLine();
+            firstName = Console.ReadLine() ?? string.Empty;
 
             Console.Write("Enter your age: ");
-            ageText = Console.ReadLine();
+            ageText = Console.ReadLine() ?? string.Empty;
 
             try
             {
@@ -32,7 +32,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_23
             catch(Exception exception)
             {
                 Console.WriteLine(
-                    $"Unexpected error:  { exception.Message }");
+                    $"Unexpected error: { exception.Message }");
                 result = 1;
             }
             finally

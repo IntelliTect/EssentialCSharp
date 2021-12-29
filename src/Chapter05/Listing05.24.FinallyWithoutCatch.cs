@@ -12,10 +12,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_24
             int result = 0;
 
             Console.Write("Enter your first name: ");
-            firstName = Console.ReadLine();
+            firstName = Console.ReadLine() ?? string.Empty;
 
             Console.Write("Enter your age: ");
-            ageText = Console.ReadLine();
+            ageText = Console.ReadLine() ?? string.Empty;
 
             try
             {

@@ -59,7 +59,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.TicTacToe
             {
                 // Request a move from the current player.
                 System.Console.Write($"\nPlayer {currentPlayer} - Enter move:");
-                input = System.Console.ReadLine();
+                input = System.Console.ReadLine() ?? string.Empty;
                 validMove = ValidateAndMove(playerPositions,
                               currentPlayer, input);
             } while(!validMove);

@@ -1,3 +1,5 @@
+// Justification: Checking for null isn't discussed yet.
+#pragma warning disable CS8604 // Possible null reference argument
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_21
 {
     public class TicTacToeTrivia
@@ -39,3 +41,4 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_21
        } 
     }
 }
+#pragma warning restore CS8604

@@ -46,12 +46,18 @@
         public static void Main()
         {
             int i;
+            string? text;
             int[] items = new int[5];
 
             for(i = 0; i < items.Length; i++)
             {
                 Console.Write("Enter an integer: ");
-                items[i] = int.Parse(Console.ReadLine());
+                text = Console.ReadLine();
+                if (!int.TryParse(text, out items[i]))
+                {
+                    Console.WriteLine($"'{text}' is not a valid integer.");
+                    return;
+                }
             }
 
             BubbleSort(items,

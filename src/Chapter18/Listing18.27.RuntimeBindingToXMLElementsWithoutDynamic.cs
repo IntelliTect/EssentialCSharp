@@ -14,9 +14,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_27
                     <LastName>Montoya</LastName>
                   </Person>");
 
-            Console.WriteLine("{0} {1}",
-              person.Descendants("FirstName").FirstOrDefault().Value,
-              person.Descendants("LastName").FirstOrDefault().Value);
+            Console.WriteLine($"{ person.Descendants("FirstName").First().Value }" +
+            $"{ person.Descendants("LastName").First().Value }");
         }
     }
 }

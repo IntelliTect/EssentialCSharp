@@ -10,10 +10,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_02
             System.Console.WriteLine("Hey you!");
 
             System.Console.Write("Enter your first name: ");
-            firstName = System.Console.ReadLine();
+            firstName = System.Console.ReadLine() ?? string.Empty;
 
             System.Console.Write("Enter your last name: ");
-            lastName = System.Console.ReadLine();
+            lastName = System.Console.ReadLine() ?? string.Empty;
 
             System.Console.WriteLine(
                 $"Your full name is { firstName } { lastName }.");

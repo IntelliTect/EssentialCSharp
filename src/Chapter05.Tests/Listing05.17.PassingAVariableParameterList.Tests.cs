@@ -12,12 +12,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_17.Tests
         {
             string view = Path.Combine(Directory.GetCurrentDirectory(), "bin", "config", "index.html");
             view += Environment.NewLine;
-            view += Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).FullName, "Temp", "index.html");
+            view += Path.Combine(Environment.SystemDirectory, "Temp", "index.html");
             view += Environment.NewLine;
             view += $"C:{Path.DirectorySeparatorChar}{Path.Combine("Data", "HomeDir", "index.html")}";
-
-
-
 
 //            string view =
 //Directory.GetCurrentDirectory() + @"\bin\config\index.html

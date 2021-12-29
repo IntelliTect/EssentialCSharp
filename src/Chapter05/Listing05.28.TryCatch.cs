@@ -8,10 +8,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_28
             string ageText;
 
             System.Console.Write("Enter your first name: ");
-            firstName = System.Console.ReadLine();
+            firstName = System.Console.ReadLine() ?? string.Empty;
 
             System.Console.Write("Enter your age: ");
-            ageText = System.Console.ReadLine();
+            ageText = System.Console.ReadLine() ?? string.Empty;
 
 #if !PRECSHARP7
             if (int.TryParse(ageText, out int age))
