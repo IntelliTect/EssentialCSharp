@@ -3,11 +3,12 @@
     <ChapterNumber>07</ChapterNumber>
   </PropertyGroup>
   <PropertyGroup>
+	<ExpectedWarnings>$(ExpectedWarnings)</ExpectedWarnings>
     <!-- 
     CS0108 hides inherited member warning where 'new' is advised.
     Listing the warning here causes it to be a warning rather than an error.
     -->
-    <ExpectedWarnings>$(ExpectedWarnings),CS0108</ExpectedWarnings>
+    <IgnoredWarnings>$(IgnoredWarnings),CS0108</IgnoredWarnings>
   </PropertyGroup>
   <Import Project="..\Chapter.props" />
   <ItemGroup>
