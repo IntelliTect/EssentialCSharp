@@ -34,3 +34,9 @@ jobs:
         run: dotnet build --no-restore
       - name: Test
         run: dotnet test --no-build --no-restore --verbosity normal
+      - name: ReportGenerator
+        task: reportgenerator@4
+        with: 
+            reports: $(System.DefaultWorkingDirectory)/EssentialCSharp.sln
+            targetdir: $(System.DefaultWorkingDirectory)/CoverageReport
+            verbosity: Verbose
