@@ -1,14 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <ChapterNumber>03</ChapterNumber>
+	<ExpectedWarnings>$(ExpectedWarnings)</ExpectedWarnings>
     <!-- CA1052: Suggest Program is static which hasn't been explained yet. -->
     <!-- IDE0059: Unnecessary assignment of a value ignored since listing is not complete. -->
     <!-- CA1822: Member does not access instance data and can be marked as static but the concept hasn't been defined yet. -->
     <!-- IDE0042: Variable declaration can be deconstructed but the concept is not covered yet. -->
     <!-- CS8600, CS8602, CS8604: Trust that null assignment doesn't cause 
     unexpected exception as concept to check for null hasn't been explained yet-->
-    <ExpectedWarnings>$(ExpectedWarnings),CS8600,CS8602,CS8604,CA1052,IDE0059,CA1822,IDE0042</ExpectedWarnings>
-    <IgnoreExpectedWarnings>true</IgnoreExpectedWarnings>
+    <IgnoredWarnings>$(IgnoredWarnings),CS8600,CS8602,CS8604,CA1052,IDE0059,CA1822,IDE0042</IgnoredWarnings>
   </PropertyGroup>
   <Import Project="..\Chapter.props" />
   <ItemGroup>

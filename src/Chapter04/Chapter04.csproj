@@ -1,10 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <ChapterNumber>04</ChapterNumber>
+	<ExpectedWarnings>$(ExpectedWarnings),CS1030</ExpectedWarnings>
     <!-- CA1052: Suggest Program is static which hasn't been explained yet. -->
     <!-- IDE0059: Unnecessary assignment of a value ignored since listing is not complete. -->
     <!-- IDE0060: Remove unused parameter suggestion ignored since listing is not complete -->
-    <ExpectedWarnings>$(ExpectedWarnings),CA1052,IDE0059,IDE0060,CS1030</ExpectedWarnings>
+    <IgnoredWarnings>$(IgnoredWarnings),CA1052,IDE0059,IDE0060</IgnoredWarnings>
+	<IgnoreExpectedWarnings>false</IgnoreExpectedWarnings>
   </PropertyGroup>
   <Import Project="..\Chapter.props" />
   <ItemGroup>
