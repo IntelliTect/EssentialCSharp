@@ -10,11 +10,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_09
 
             text = $"{number}";
             result = double.Parse(text);
-            System.Console.WriteLine($"{result == number}: result == number");
+            System.Console.WriteLine($"{result == number}: {result} == {number}");
 
             text = string.Format("{0:R}", number);
             result = double.Parse(text);
-            System.Console.WriteLine($"{result == number}: result == number");
+            System.Console.WriteLine($"{result == number}: {result} == {number}");
         }
     }
 }
