@@ -1,6 +1,9 @@
 <Project>
   <PropertyGroup>
-    <NoWarn Condition="'$(IgnoreExpectedWarnings)'=='true'">$(ExpectedWarnings)</NoWarn>
+	<!-- The following warnings are intentionally ignored because the code is incomplete or a concept hasn't been described yet.-->
+    <NoWarn>$(IgnoredWarnings)</NoWarn>
+	<!-- The following warnings are shown as they are expected and intentionally triggered to demonstrate a concept. There are marked as
+	"WarningsNotAsErrors" so they don't trigger a failure in the build. -->
     <WarningsNotAsErrors>$(ExpectedWarnings)</WarningsNotAsErrors>
   </PropertyGroup>
   <Target Name="VSTestIfTestProject">
