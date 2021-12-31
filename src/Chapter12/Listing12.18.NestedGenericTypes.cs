@@ -9,7 +9,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_18
         // a warning
         class Nested<U>
         {
-            void Method(T param0, U param1)
+            static void Method(T param0, U param1)
             {
             }
         }

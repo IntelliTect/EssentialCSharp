@@ -22,6 +22,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_13.Tests
                 (null, null), (pair.First, pair.Second));
         }
 
+        [TestMethod]
         public void CreatePair_GivenNonNullableStrings_Success()
         {
             Pair<string, string> pair = new Pair<string, string>("Inigo", "Montoya");

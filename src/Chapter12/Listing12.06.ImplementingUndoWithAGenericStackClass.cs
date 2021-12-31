@@ -7,13 +7,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_06
     {
         public static void Main()
         {
-            Program p;
-
-            p = new Program();
-            p.Sketch();
+            Sketch();
         }
 
-        public void Sketch()
+        public static void Sketch()
         {
             Stack<Cell> path = new Stack<Cell>();
             Cell currentPosition;
