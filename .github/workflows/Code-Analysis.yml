@@ -19,6 +19,7 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: ${{ matrix.dotnet }}
+
       # Run NuGet restore for the solution at repo root
       - name: Run NuGet restore
         run: dotnet restore
@@ -28,7 +29,7 @@ jobs:
         uses: dotnet/code-analysis@main
         id: code-analysis
         with:
-          build-breaking: false
+          build-breaking: true
           all-categories: latest
 
       # Upload the analysis results file
