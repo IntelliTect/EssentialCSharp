@@ -5,8 +5,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_28.Tests
     [TestClass]
     public class LeveragingTryParseTests
     {
-        public static int OutValue = 0;
-        
         [TestMethod]
         public void Main_InputNameAndAge35_AgeProperlyParsed()
         {

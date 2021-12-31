@@ -11,9 +11,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_45
             // Check that there is at least one item in numbers
             if(numbers.Length == 0)
             {
-                // In C# 6.0 replace "numbers" with nameof(numbers)
                 throw new ArgumentException(
-                    "numbers cannot be empty", "numbers");
+                    "numbers cannot be empty", nameof(numbers));
             }
 
             int result;
@@ -34,9 +33,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_45
             // Check that there is at least one item in numbers
             if(numbers.Length == 0)
             {
-                // In C# 6.0 replace "numbers" with nameof(numbers)
                 throw new ArgumentException(
-                    "numbers cannot be empty", "numbers");
+                    "numbers cannot be empty", nameof(numbers));
             }
 
             int result;

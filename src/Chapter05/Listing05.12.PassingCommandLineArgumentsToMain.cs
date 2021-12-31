@@ -8,7 +8,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_12
         public static int Main(string[] args)
         {
             int result;
-
             switch(args.Length)
             {
                 default:
