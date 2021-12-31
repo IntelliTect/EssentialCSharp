@@ -11,7 +11,6 @@
         {
             try
             {
-                ManualResetEventSlim resetEvent = new ManualResetEventSlim();
                 _Clock.Start();
                 // Register a callback to receive notifications
                 // of any unhandled exception
@@ -81,7 +80,9 @@
 
         static void Message(string text)
         {
-            Console.WriteLine("{0}:{1:0000}:{2}",Thread.CurrentThread.ManagedThreadId,_Clock.ElapsedMilliseconds, text);
+            Console.WriteLine("{0}:{1:0000}:{2}",
+                Thread.CurrentThread.ManagedThreadId,
+                _Clock.ElapsedMilliseconds, text);
         }
     }
 }
