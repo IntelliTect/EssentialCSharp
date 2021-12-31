@@ -12,10 +12,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_12.Tests
         [TestMethod]
         public void SelectingFollowingGroupClause_UsingTuple()
         {
-            SelectingFollowingGroupClause(Listing16_12.Program.Main);
+            ProgramTests.SelectingFollowingGroupClause(Listing16_12.Program.Main);
         }
 
-        public void SelectingFollowingGroupClause(Action _)
+        public static void SelectingFollowingGroupClause(Action _)
         {
             string expected = $@"
 Keywords:

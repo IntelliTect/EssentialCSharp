@@ -55,7 +55,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_05
 
             // Retrieve the count from the cached collection
             Console.WriteLine(
-                $"7. selectionCache count={ selectionCache.Count() }");
+                $"7. selectionCache count={ selectionCache.Count }");
 
             Console.WriteLine(
                 $"8. delegateInvocations={ delegateInvocations }");
