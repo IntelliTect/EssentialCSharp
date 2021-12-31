@@ -1,3 +1,5 @@
+using System;
+
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_04
 {
     using System.IO;
@@ -17,7 +19,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_04
                 new System.IO.Compression.GZipStream(
                     memoryStream, System.IO.Compression.CompressionMode.Compress);
 
-            await gZipStream.WriteAsync(buffer, 0, buffer.Length);
+            await gZipStream.WriteAsync(buffer.AsMemory(0, buffer.Length));
 
             return memoryStream.ToArray();
         }

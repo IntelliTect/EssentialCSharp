@@ -10,10 +10,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_12
         static public Task<Process> RunProcessAsync(
             string fileName,
             string arguments = "",
+            IProgress<ProcessProgressEventArgs>? progress = null,
+                object? objectState = null,
             CancellationToken cancellationToken =
-                default(CancellationToken),
-                IProgress<ProcessProgressEventArgs>? progress = null,
-                object? objectState = null)
+                default(CancellationToken))
         {
             TaskCompletionSource<Process> taskCS =
                           new TaskCompletionSource<Process>();
