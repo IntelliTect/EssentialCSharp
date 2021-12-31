@@ -93,12 +93,14 @@
             WriteLine("Exiting...");
         }
 
+        #pragma warning disable CA1816
         #region IDisposable Members
         public void Dispose()
         {
             Dispose(true);
         }
         #endregion
+        #pragma warning restore CA1816
         public void Dispose(bool disposing)
         {
             WriteLine("Starting...");
@@ -113,7 +115,7 @@
                 WriteLine("Disposing managed stuff...");
 
                 // Unregister from the finalization queue.
-                System.GC.SuppressFinalize(this);
+                GC.SuppressFinalize(this);
             }
 
             AppDomain.CurrentDomain.ProcessExit -=

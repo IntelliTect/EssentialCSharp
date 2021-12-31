@@ -13,17 +13,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_05
             Coordinate coordinate1 =
                 new Coordinate(new Longitude(48, 52),
                                 new Latitude(-2, -20));
-
-            // Value types will never be reference equal
-            if(Coordinate.ReferenceEquals(coordinate1,
-                coordinate1))
-            {
-                throw new Exception(
-                    "coordinate1 reference equals coordinate1");
-            }
-
-            Console.WriteLine(
-                "coordinate1 does NOT reference equal itself");
         }
     }
 
@@ -60,7 +49,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_05
         {
             // STEP 1: Check for null if a reference type
             // (e.g., a reference type)
-            // if (obj == null)
+            // if (ReferenceEquals(obj, null)
             // {
             //     return false;
             // }
@@ -68,14 +57,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_05
             // STEP 4: Possibly check for equivalent hash codes
             // but not if the identity properties are mutable 
             // and the hash code is cached.
-            // if (this.GetHashCode() != obj.GetHashCode())
+            // if (GetHashCode() != obj.GetHashCode())
             // {
             //    return false;
             // } 
 
             // STEP 5: Check base.Equals if base overrides Equals().
-            // System.Diagnostics.Debug.Assert(
-            //     base.GetType() != typeof(object) );
             if (!base.Equals(obj))
             {
                 return false;
