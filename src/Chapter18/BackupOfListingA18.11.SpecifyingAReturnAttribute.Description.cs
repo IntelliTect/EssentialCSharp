@@ -4,8 +4,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_11
 {
     public class DescriptionAttribute : Attribute
     {
-        private string description;
-		public string Description { get { return Description; } }
+        private readonly string description;
+		public string Description { get { return description; } }
 
         public DescriptionAttribute(string description)
         {

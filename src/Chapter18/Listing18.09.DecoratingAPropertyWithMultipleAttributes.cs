@@ -19,6 +19,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_09
                 System.Diagnostics.ProcessPriorityClass.Normal;
     }
 
+    // Disabling warning since it is not implemented or shown in manuscript
+    #pragma warning disable CA1018 // Mark attributes with AttributeUsageAttribute
     internal class CommandLineSwitchRequiredAttribute : Attribute
     {
         //not implimented
@@ -31,5 +33,4 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_09
             //not implimented
         }
     }
-
 }
