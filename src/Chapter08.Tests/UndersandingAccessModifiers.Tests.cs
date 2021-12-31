@@ -14,7 +14,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.UndersatndingAccessM
         string InterfaceMethod1();
         string InterfaceMethod2();
         public string InterfaceMethod3();
-        private string PrivateConcreteInterfaceMethod() => Thing.GetStackTrace();
+        private static string PrivateConcreteInterfaceMethod() => Thing.GetStackTrace();
         protected string ProtectedConcreteInterfaceMethod() => Thing.GetStackTrace();
         protected string ProtectedInterfaceMethod();
 
@@ -64,7 +64,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.UndersatndingAccessM
     }
     public class SubClass : Information
     {
-        new public string PublicConcreteInterfaceMethod() => Thing.GetStackTrace();
+        public new static string PublicConcreteInterfaceMethod() => Thing.GetStackTrace();
     }
 #pragma warning restore IDE0051 // Remove unused private members
 
@@ -150,7 +150,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.UndersatndingAccessM
                 SubClass information = new SubClass();
                 Assert.AreEqual(
                     $"{nameof(SubClass)}.{nameof(SubClass.PublicConcreteInterfaceMethod)}",
-                    information.PublicConcreteInterfaceMethod());
+                    SubClass.PublicConcreteInterfaceMethod());
             }
 
             [TestMethod]

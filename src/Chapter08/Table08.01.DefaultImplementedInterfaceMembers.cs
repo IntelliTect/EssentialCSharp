@@ -7,9 +7,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Table08_01
     {
         public interface ISampleInterface
         {
-            static string? _Field;
-            public static string? Field { get => _Field; private set => _Field = value; }
-            static ISampleInterface() => Field = "Nelson Mandela";
+            private static string? _Field;
+            public static string? Field
+            {
+                get => _Field;
+                private set => _Field = value;
+            }
+            static ISampleInterface() => 
+                Field = "Nelson Mandela";
             public static string? GetField() => Field;
         }
     }
@@ -194,7 +199,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Table08_01
         public interface IWorkflowActivity
         {
             // Private and, therefore, not virtual
-            private void Start() =>
+            private static void Start() =>
                 Console.WriteLine(
                     "IWorkflowActivity.Start()...");
 
@@ -203,19 +208,19 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Table08_01
             {
                 try
                 {
-                    Start();
+                    IWorkflowActivity.Start();
                     InternalRun();
                 }
                 finally
                 {
-                    Stop();
+                    IWorkflowActivity.Stop();
                 }
             }
 
             protected void InternalRun();
 
             // Private and, therefore, not virtual
-            private void Stop() =>
+            private static void Stop() =>
                 Console.WriteLine(
                     "IWorkflowActivity.Stop()..");
         }
@@ -250,12 +255,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Table08_01
                 Value = value;
             }
 
-            partial void AssertValueIsValid(string value);
+            static partial void AssertValueIsValid(string value);
         }
 
         public partial interface IThing
         {
-            partial void AssertValueIsValid(string value)
+            static partial void AssertValueIsValid(string value)
             {
                 // Throw if value is invalid.
                 switch (value)

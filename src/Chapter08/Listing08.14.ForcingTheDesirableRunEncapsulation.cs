@@ -5,7 +5,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_14
     public interface IWorkflowActivity
     {
         // Private and, therefore, not virtual
-        private void Start() =>
+        private static void Start() =>
             Console.WriteLine(
                 "IWorkflowActivity.Start()...");
 
@@ -14,19 +14,19 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_14
         {
             try
             {
-                Start();
+                IWorkflowActivity.Start();
                 InternalRun();
             }
             finally
             {
-                Stop();
+                IWorkflowActivity.Stop();
             }
         }
 
         protected void InternalRun();
 
         // Private and, therefore, not virtual
-        private void Stop() =>
+        private static void Stop() =>
             Console.WriteLine(
                 "IWorkflowActivity.Stop()...");
     }
@@ -67,7 +67,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_14
             Console.WriteLine(
                 $"ExecuteProcessActivity.IExecuteProcessActivity.ExecuteProcess()...");
 
-        public void Run()
+        public static void Run()
         {
             ExecuteProcessActivity activity
                 = new ExecuteProcessActivity("dotnet");
@@ -107,7 +107,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_14
             Console.WriteLine();
             Console.WriteLine(
                 "Invoking activity.Run()...");
-            activity.Run();
+            ExecuteProcessActivity.Run();
         }
     }
 }
