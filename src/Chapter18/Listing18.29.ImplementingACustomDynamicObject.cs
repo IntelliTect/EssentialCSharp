@@ -27,7 +27,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_29
                 Element.Descendants(binder.Name).First();
             if(firstDescendant != null)
             {
-                if(firstDescendant.Descendants().Count() > 0)
+                if(firstDescendant.Descendants().Any())
                 {
                     result = new DynamicXml(firstDescendant);
                 }

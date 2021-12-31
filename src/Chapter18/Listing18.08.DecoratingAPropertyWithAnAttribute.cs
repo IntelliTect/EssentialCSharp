@@ -16,17 +16,18 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_08
 
 
     }
-
+    // Disabling warning since it is not implemented or shown in manuscript
+    #pragma warning disable CA1018 // Mark attributes with AttributeUsageAttribute
     internal class CommandLineSwitchRequiredAttribute : Attribute
     {
-        //not implimented
+        //not implemented
     }
 
     internal class CommandLineSwitchAliasAttribute : Attribute
     {
         public CommandLineSwitchAliasAttribute(string _)
         {
-            //not implimented
+            //not implemented
         }
     }
 }

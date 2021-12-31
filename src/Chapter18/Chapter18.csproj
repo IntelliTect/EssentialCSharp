@@ -5,6 +5,8 @@
   <PropertyGroup>
     <!-- CS0612 is an Obsolete warning demonstrating the Obsolete attribute -->
     <ExpectedWarnings>$(ExpectedWarnings),CS0612</ExpectedWarnings>
+    <!--CS0612 Mark attributes with AttributeUsageAttribute, isn't shown until 18.19-->
+    <IgnoredWarnings>$(IgnoredWarnings),CA1018</IgnoredWarnings>
   </PropertyGroup>
   <Import Project="..\Chapter.props" />
   <ItemGroup>
@@ -12,6 +14,7 @@
     <EmbeddedResource Remove="4.0\**" />
     <None Remove="4.0\**" />
     <Compile Remove="Listing18.10.AssemblyAttributesWithinAssemblyInfo.cs" />
+    <Compile Remove="Listing18.11.SpecifyingAReturnAttribute.cs" />
     <Compile Remove="Listing18.12.csprojMockFileForResequencingListings.cs" />
     <Compile Remove="Listing18.30.OverridableMembersOnSystem.Dynamic.DynamicObject.cs" />
     <Compile Include="..\Shared\Program.cs">
@@ -27,7 +30,7 @@
       <Link>DoWorkEventArgs.cs</Link>
     </Compile>
     <None Include="Listing18.10.AssemblyAttributesWithinAssemblyInfo.cs" />
-    <None Include="Listing18.12.csproj" />
+    <None Include="Listing18.11.SpecifyingAReturnAttribute.cs" />
     <None Include="Listing18.30.OverridableMembersOnSystem.Dynamic.DynamicObject.cs" />
   </ItemGroup>
 </Project>
