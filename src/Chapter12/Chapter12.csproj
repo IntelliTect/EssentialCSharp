@@ -2,6 +2,11 @@
   <PropertyGroup>
     <ChapterNumber>12</ChapterNumber>
   </PropertyGroup>
+  <PropertyGroup>
+      <!--Listing the warning here causes it to be a warning rather than an error.-->
+      <ExpectedWarnings>$(ExpectedWarnings)</ExpectedWarnings>
+      <IgnoredWarnings>$(IgnoredWarnings),IDE0051</IgnoredWarnings>
+  </PropertyGroup>
   <Import Project="..\Chapter.props" />
   <ItemGroup>
     <Compile Remove="Listing12.45.CompilerValidationOfVariance.cs" />
