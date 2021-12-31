@@ -49,7 +49,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
         public async Task InvokeMethodUsingReflection(string methodName, string[]? args, string? expected)
         {
             Assert.AreEqual<string?>(expected,
-                await Program.InvokeMethodUsingReflection(
+                await Program.InvokeMethodUsingReflectionAsync(
                     typeof(SampleClass).GetMethod(methodName)!, args));
         }
     }

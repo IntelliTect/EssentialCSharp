@@ -8,7 +8,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_08
     class Program
     {
         // ...
-        public List<string>
+        public static List<string>
           Encrypt(IEnumerable<string> data)
         {
 
@@ -18,19 +18,19 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_08
             // Show the total count of items still
             // matches the original count
             if (data.Count() != parallelGroups.Sum(
-                    item => item.Count()))
+                    item => item.Length))
             {
                 throw new Exception("data.Count() != parallelGroups.Sum(item => item.Count()");
             }
             // ...
 
             return data.AsParallel().Select(
-                item => Encrypt(item)).ToList();
+                item => Program.Encrypt(item)).ToList();
         }
 
         // ...
 
-        private string Encrypt(string item)
+        private static string Encrypt(string item)
         {
             Console.WriteLine($">>>>>Encrypting '{ item }'.");
             Cryptographer cryptographer = new Cryptographer();
