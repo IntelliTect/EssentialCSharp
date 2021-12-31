@@ -9,8 +9,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_53
     public partial class Person
     {
         #region Extensibility Method Definitions
-        partial void OnLastNameChanging(string value);
-        partial void OnFirstNameChanging(string value);
+        static partial void OnLastNameChanging(string value);
+        static partial void OnFirstNameChanging(string value);
         #endregion
 
         // ...
@@ -54,38 +54,30 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_53
     // File: Person.cs
     partial class Person
     {
-        partial void OnLastNameChanging(string value)
+        static partial void OnLastNameChanging(string value)
         {
             if(value == null)
             {
-                // Use "value" rather than nameof(value)
-                // prior to C# 6.0.
                 throw new ArgumentNullException(nameof(value));
             }
             if(value.Trim().Length == 0)
             {
                 throw new ArgumentException(
                 "LastName cannot be empty.",
-                    // Use "value" rather than nameof(value)
-                    // prior to C# 6.0.
                     nameof(value));
             }
         }
 
-        partial void OnFirstNameChanging(string value)
+        static partial void OnFirstNameChanging(string value)
         {
             if(value == null)
             {
-                // Use "value" rather than nameof(value)
-                // prior to C# 6.0.
                 throw new ArgumentNullException(nameof(value));
             }
             if (value.Trim().Length == 0)
             {
                 throw new ArgumentException(
                     "FirstName cannot be empty.",
-                    // Use "value" rather than nameof(value)
-                    // prior to C# 6.0.
                     nameof(value));
 
             }

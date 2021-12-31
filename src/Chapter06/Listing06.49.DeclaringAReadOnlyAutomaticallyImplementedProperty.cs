@@ -17,7 +17,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_49
 
     class Program
     {
-        public void Main()
+        public static void Main()
         {
             // Note: board.Cells does not require initialization
             TicTacToeBoard board = new TicTacToeBoard();
