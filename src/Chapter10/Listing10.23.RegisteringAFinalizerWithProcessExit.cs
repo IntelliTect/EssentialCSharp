@@ -98,6 +98,8 @@
         public void Dispose()
         {
             Dispose(true);
+            // Unregister from the finalization queue.
+            GC.SuppressFinalize(this);
         }
         #endregion
         #pragma warning restore CA1816
@@ -113,9 +115,6 @@
             if (disposing)
             {
                 WriteLine("Disposing managed stuff...");
-
-                // Unregister from the finalization queue.
-                GC.SuppressFinalize(this);
             }
 
             AppDomain.CurrentDomain.ProcessExit -=
