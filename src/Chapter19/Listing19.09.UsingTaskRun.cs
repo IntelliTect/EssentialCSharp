@@ -4,13 +4,13 @@
 
     public class Program
     {
-        public Task<string> CalculatePiAsync(int digits)
+        public static Task<string> CalculatePiAsync(int digits)
         {
             return Task.Factory.StartNew<string>(
-                () => CalculatePi(digits));
+                () => Program.CalculatePi(digits));
         }
 
-        private string CalculatePi(int digits)
+        private static string CalculatePi(int digits)
         {
             // ...
 
