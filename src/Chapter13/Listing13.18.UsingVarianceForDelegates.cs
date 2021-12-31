@@ -1,4 +1,4 @@
-﻿// Justification: Left as lamda to elucidate generic types.
+// Justification: Left as lamda to elucidate generic types.
 #pragma warning disable IDE0039 // Use local function
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_18
 {
@@ -20,7 +20,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_18
             // TODO: Update Manuscript
             // Covariance
             Func<string> narrowFunction =
-                () => 911.ToString();
+                () => 8654091021.ToString();
 
             Func<object> broadFunction = narrowFunction;
 
