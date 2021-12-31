@@ -14,10 +14,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_03.Tests
         [TestMethod]
         public void ProjectionWithLinqsSelect_TuplesWithinQueryExpressions()
         {
-            ProjectionWithLinqsSelect(Listing16_03.Program.Main);
+            ProgramTests.ProjectionWithLinqsSelect(Listing16_03.Program.Main);
         }
 
-        public void ProjectionWithLinqsSelect(Action mainAction)
+        public static void ProjectionWithLinqsSelect(Action mainAction)
         {
             int expectedItemCount = Directory.EnumerateFiles(
                 Directory.GetCurrentDirectory(), "*").Count();
