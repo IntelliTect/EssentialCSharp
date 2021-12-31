@@ -31,6 +31,7 @@ jobs:
         with:
           build-breaking: true
           all-categories: latest
+          style: none
 
       # Upload the analysis results file
       - name: Upload analysis results
