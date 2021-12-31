@@ -6,8 +6,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_02
 
     public class Program
     {
-        static public CancellationToken CancellationToken;
-
         public static int Main(string[] args)
         {
             int total = int.MaxValue;
@@ -15,9 +13,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_02
             if (args?.Length > 0) { _ = int.TryParse(args[0], out total); }
             Console.WriteLine($"Increment and decrementing {total} times...");
 
-            Parallel.For(0, total, 
-                new ParallelOptions() { CancellationToken = CancellationToken}
-                , i =>
+            Parallel.For(0, total, i =>
             {
                 x++;
                 x--;

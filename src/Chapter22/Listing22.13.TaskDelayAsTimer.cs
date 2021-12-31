@@ -15,7 +15,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_13
                 DisplayMinuteTicker(minute);
                 for(int second = 0; second < 60; second++)
                 {
-                    await Task.Delay(1000);
+                    await Task.Delay(1000, token);
                     if(token.IsCancellationRequested)
                         break;
                     DisplaySecondTicker();

@@ -17,12 +17,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22
             int digits, object? userState)
         {
             CalculateAsync(
-                digits, default, userState);
+                digits, userState, default);
         }
         public void CalculateAsync<TState>(
             int digits,
-            CancellationToken cancelToken,
-            TState userState)
+            TState userState,
+            CancellationToken cancelToken)
         {
             Task<string>.Factory.StartNew(
                 () => PiCalculator.Calculate(digits), cancelToken)

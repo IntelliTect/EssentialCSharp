@@ -8,7 +8,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_09
     class Program
     {
         // ...
-        public List<string>
+        public static List<string>
           Encrypt(IEnumerable<string> data)
         {
 
@@ -28,12 +28,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_09
              // ...
 
             return data.AsParallel().Select(
-                item => Encrypt(item)).ToList();
+                item => Program.Encrypt(item)).ToList();
         }
 
         // ...
 
-        private string Encrypt(string item)
+        private static string Encrypt(string item)
         {
             Console.WriteLine($">>>>>Encrypting '{ item }'.");
             Cryptographer cryptographer = new Cryptographer();
