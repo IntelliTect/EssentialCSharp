@@ -12,7 +12,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
     [ExcludeFromCodeCoverage]
     public static class Program
     {
-        public static void Main(string[] args)
+        public static async Task Main(string[] args)
         {
             string input;
             IEnumerable<string> stringArguments = Array.Empty<string>();
@@ -73,7 +73,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                 }
                 else
                 {
-                    if (stringArguments.Count() == 0)
+                    if (!stringArguments.Any())
                     {
                         arguments = GetArguments();
                     }
@@ -89,17 +89,17 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                 // TODO: Test... this seems backwards/opposite
                 if (method.GetCustomAttribute(typeof(STAThreadAttribute), false) is object)
                 {
-                    Task task = new Task(() =>
+                    Task task = new Task(async () =>
                     {
                         // TODO: Change to use async/await.
-                        output = InvokeMethodUsingReflection(method, arguments).GetAwaiter().GetResult();
+                        output = await InvokeMethodUsingReflectionAsync(method, arguments);
                     });
                     task.Wait();
                 }
                 else
                 {
                     // TODO: Change to use async/await.
-                    output = InvokeMethodUsingReflection(method, arguments).GetAwaiter().GetResult();
+                    output = await InvokeMethodUsingReflectionAsync(method, arguments);
                 }
                 if (output is { })
                 {
@@ -158,7 +158,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
             }
         }
 
-        public static async ValueTask<string?> InvokeMethodUsingReflection(MethodInfo method, string[]? arguments)
+        public static async ValueTask<string?> InvokeMethodUsingReflectionAsync(MethodInfo method, string[]? arguments)
         {
             // Note: 'arguments' here are the array of commandline args, so 
             // it is the first item in the "parameters" array specified to the 
