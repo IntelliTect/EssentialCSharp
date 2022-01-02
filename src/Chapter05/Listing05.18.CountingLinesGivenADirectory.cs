@@ -1,5 +1,3 @@
-#nullable enable
-
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_18
 {
     using System.IO;
