@@ -1,5 +1,6 @@
 // Non-nullable field is uninitialized. Consider declaring as nullable.
 #pragma warning disable CS8618 // Pending a constructors
+// TODO: Update listing in Manuscript
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_53
 {

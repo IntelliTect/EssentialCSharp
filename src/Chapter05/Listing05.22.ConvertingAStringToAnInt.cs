@@ -13,9 +13,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_22
             Console.WriteLine("Hey you!");
 
             Console.Write("Enter your first name: ");
+            // TODO: Update listing in Manuscript
             firstName = Console.ReadLine() ?? string.Empty;
 
             Console.Write("Enter your age: ");
+            // TODO: Update listing in Manuscript
             ageText = Console.ReadLine() ?? string.Empty;
             age = int.Parse(ageText);
 

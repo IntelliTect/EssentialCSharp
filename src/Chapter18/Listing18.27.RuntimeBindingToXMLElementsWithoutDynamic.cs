@@ -14,6 +14,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_27
                     <LastName>Montoya</LastName>
                   </Person>");
 
+            // TODO: Update listing in Manuscript
             Console.WriteLine($"{ person.Descendants("FirstName").First().Value }" +
             $"{ person.Descendants("LastName").First().Value }");
         }

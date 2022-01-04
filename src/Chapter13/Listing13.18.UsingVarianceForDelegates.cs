@@ -17,7 +17,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_18
 
             Action<string> narrowAction = broadAction;
 
-            // TODO: Update Manuscript
+            // TODO: Update listing in Manuscript
             // Covariance
             Func<string> narrowFunction =
                 () => 8654091021.ToString();

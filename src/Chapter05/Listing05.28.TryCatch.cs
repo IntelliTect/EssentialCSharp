@@ -8,9 +8,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_28
             string ageText;
 
             System.Console.Write("Enter your first name: ");
+            // TODO: Update listing in Manuscript
             firstName = System.Console.ReadLine() ?? string.Empty;
 
             System.Console.Write("Enter your age: ");
+            // TODO: Update listing in Manuscript
             ageText = System.Console.ReadLine() ?? string.Empty;
 
 #if !PRECSHARP7

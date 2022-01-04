@@ -1,5 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_18
 {
+    // TODO: Update listing in Manuscript
     using System.IO;
 
     public static class LineCounter

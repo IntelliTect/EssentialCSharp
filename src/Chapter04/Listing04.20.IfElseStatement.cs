@@ -26,6 +26,4 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_20
                     "Play against another player.");
         }
     }
-
 }
-#pragma warning restore CS8600

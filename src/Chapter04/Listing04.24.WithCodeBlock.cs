@@ -32,4 +32,3 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_24
         }
     }
 }
-#pragma warning restore CS8604

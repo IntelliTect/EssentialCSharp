@@ -1,3 +1,4 @@
+// TODO: Update listing in Manuscript
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_13
 {
     public class WorkflowActivity
@@ -8,9 +9,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_13
         }
         public virtual void Run()
         {
-            WorkflowActivity.Start();
+            Start();
             // Do something...
-            WorkflowActivity.Stop();
+            Stop();
         }
         private static void Stop()
         {

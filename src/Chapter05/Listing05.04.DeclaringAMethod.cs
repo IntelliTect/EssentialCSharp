@@ -22,6 +22,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_04
         static string GetUserInput(string prompt)
         {
             System.Console.Write(prompt);
+            // TODO: Update listing in Manuscript
             return System.Console.ReadLine() ?? string.Empty;
         }
 

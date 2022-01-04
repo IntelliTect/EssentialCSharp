@@ -12,6 +12,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_43
             System.Console.Write("Enter a positive integer:");
 
             // decimal.Parse convert the ReadLine to a decimal
+            // TODO: Update listing in Manuscript
             // If ReadLine returns null, use "42" as default input
             input = decimal.Parse(System.Console.ReadLine() ?? "42");
 

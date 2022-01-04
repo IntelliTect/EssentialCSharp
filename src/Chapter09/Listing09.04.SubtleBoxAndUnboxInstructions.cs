@@ -11,7 +11,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_04
             // Intentionally using ArrayList to demonstrate boxing
             System.Collections.ArrayList list =
                 new System.Collections.ArrayList();
-
+            // TODO: Update listing in Manuscript
             Console.Write("Enter an integer between 2 and 1000: ");
             string? text = Console.ReadLine();
             if (!int.TryParse(text, out totalCount))

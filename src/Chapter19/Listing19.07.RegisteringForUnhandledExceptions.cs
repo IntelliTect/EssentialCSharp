@@ -6,13 +6,13 @@
 
     public class Program
     {
-        private static Stopwatch Clock { get;  } = new Stopwatch();
+        private static Stopwatch _Clock { get;  } = new Stopwatch();
 
         public static void Main()
         {
             try
             {
-                Clock.Start();
+                _Clock.Start();
                 // Register a callback to receive notifications
                 // of any unhandled exception
 #if NETCOREAPP1_1
@@ -83,7 +83,7 @@
         {
             Console.WriteLine("{0}:{1:0000}:{2}",
                 Thread.CurrentThread.ManagedThreadId,
-                Clock.ElapsedMilliseconds, text);
+                _Clock.ElapsedMilliseconds, text);
         }
     }
 }

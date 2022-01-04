@@ -1,5 +1,5 @@
+// TODO: Update listing in Manuscript
 using System;
-
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_14
 {
     public interface IWorkflowActivity
@@ -14,12 +14,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_14
         {
             try
             {
-                IWorkflowActivity.Start();
+                Start();
                 InternalRun();
             }
             finally
             {
-                IWorkflowActivity.Stop();
+                Stop();
             }
         }
 

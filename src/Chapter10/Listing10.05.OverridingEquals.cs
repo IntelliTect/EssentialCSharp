@@ -16,6 +16,16 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_05
         }
     }
 
+    public struct Longitude
+    {
+        public Longitude(int x, int y) { }
+    }
+
+    public struct Latitude
+    {
+        public Latitude(int x, int y) { }
+    }
+
     public struct Coordinate : IEquatable<Coordinate>
     {
         public Coordinate(Longitude longitude, Latitude latitude)
@@ -93,15 +103,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_05
         {
             return !(leftHandSide.Equals(rightHandSide));
         }
-    }
-
-    public struct Longitude
-    {
-        public Longitude(int x, int y) { }
-    }
-
-    public struct Latitude
-    {
-        public Latitude(int x, int y) { }
     }
 }

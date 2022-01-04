@@ -1,4 +1,5 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23
+﻿// TODO: Update listing in Manuscript
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23
 {
     using System;
     using System.IO;
@@ -42,12 +43,12 @@
                     sampleUnmanagedResource?.Dispose();
                 }
             }
+
             WriteLine("Exiting...");
 
             // ...
         }
     }
-
 
     class SampleUnmanagedResource : IDisposable
     {
@@ -93,16 +94,14 @@
             WriteLine("Exiting...");
         }
 
-        #pragma warning disable CA1816
-        #region IDisposable Members
         public void Dispose()
         {
             Dispose(true);
+            
             // Unregister from the finalization queue.
             GC.SuppressFinalize(this);
         }
-        #endregion
-        #pragma warning restore CA1816
+
         public void Dispose(bool disposing)
         {
             WriteLine("Starting...");

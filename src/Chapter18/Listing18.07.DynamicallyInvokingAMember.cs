@@ -4,6 +4,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_07
 
     public class Person : INotifyPropertyChanged
     {
+        // TODO: Update listing in Manuscript
         public event PropertyChangedEventHandler? PropertyChanged;
         public Person(string name)
         {

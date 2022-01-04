@@ -1,3 +1,4 @@
+// TODO: Update listing in Manuscript
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_09
 {
     using AddisonWesley.Michaelis.EssentialCSharp.Shared;
@@ -28,7 +29,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_09
              // ...
 
             return data.AsParallel().Select(
-                item => Program.Encrypt(item)).ToList();
+                item => Encrypt(item)).ToList();
         }
 
         // ...

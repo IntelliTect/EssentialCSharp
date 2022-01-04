@@ -30,4 +30,3 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_27
         }
     }
 }
-#pragma warning restore CS8600

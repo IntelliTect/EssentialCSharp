@@ -18,7 +18,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_04
             using System.IO.Compression.GZipStream gZipStream =
                 new System.IO.Compression.GZipStream(
                     memoryStream, System.IO.Compression.CompressionMode.Compress);
-
+            // TODO: Update listing in Manuscript
             await gZipStream.WriteAsync(buffer.AsMemory(0, buffer.Length));
 
             return memoryStream.ToArray();

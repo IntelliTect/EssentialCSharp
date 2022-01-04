@@ -17,4 +17,3 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_17
         }
     }
 }
-#pragma warning restore CA1806
