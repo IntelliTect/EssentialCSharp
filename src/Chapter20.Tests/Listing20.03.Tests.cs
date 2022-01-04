@@ -8,11 +8,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_03.Tests
     [TestClass]
     public class ProgramTests : BaseProgramTests
     {
-        //public ProgramTests()
-        //{
-        //    ClassInitialize(TestContext);
-        //}
-
         [ClassInitialize]
         public static void ClassInitialize(TestContext _)
         {
@@ -26,6 +21,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_03.Tests
             BaseProgramTests.AssertMainException(messagePrefix, (AggregateException)exception);
         }
 
-        protected override string DefaultUrl { get; } = Program.DefaultUrl;
+        protected override string DefaultUrl => Program.DefaultUrl;
     }
 }
