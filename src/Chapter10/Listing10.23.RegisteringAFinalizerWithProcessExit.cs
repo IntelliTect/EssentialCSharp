@@ -1,5 +1,4 @@
-﻿// TODO: Update listing in Manuscript
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23
 {
     using System;
     using System.IO;
