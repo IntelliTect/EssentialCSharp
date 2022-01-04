@@ -1,15 +1,17 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_34.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_41.Tests
 {
     [TestClass]
     public class ProgramTests
     {
         [TestMethod]
-        public void Main_LogicalNotOnFalseBool_WriteTrue()
+        public void Main_AccessStaticField_EmployeeIdIncrements()
         {
             const string expected =
-                @"result = True";
+@"Inigo Montoya (1000000)
+Princess Buttercup (1000001)
+NextId = 1000002";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
                 expected, Program.Main);

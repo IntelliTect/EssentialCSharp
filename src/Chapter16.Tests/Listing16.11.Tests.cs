@@ -4,7 +4,6 @@ using System;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_11.Tests
 {
-
     [TestClass]
     public class ProgramTests
     {

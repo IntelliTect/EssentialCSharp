@@ -1,6 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_53
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_53.Tests
 {
     [TestClass]
     public class EmailDomainTests

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.UndersatndingAccessModifiers.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.UnderstandingAccessModifiers.Tests
 {
     // Justification: Use for example only.
 #pragma warning disable IDE0051 // Remove unused private members
@@ -68,8 +68,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.UndersatndingAccessM
     }
 #pragma warning restore IDE0051 // Remove unused private members
 
-
-
     static public class Thing
     {
         [MethodImpl(MethodImplOptions.NoInlining)]
@@ -86,7 +84,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.UndersatndingAccessM
                     item => $"{item!.GetMethod()!.ReflectedType!.Name}.{item.GetMethod()!.Name.Replace($"{item!.GetMethod()!.ReflectedType!.Namespace}.", "")}").Reverse().ToArray();
             return string.Join("=>", frames);
         }
-
 
         [TestClass]
         public class AccessibilityModifierTests
@@ -112,6 +109,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.UndersatndingAccessM
                         }),
                     information.CallConcreteInterfaceMethod2());
             }
+
             [TestMethod]
             public void InterfaceMethod3()
             {

@@ -2,7 +2,6 @@
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_04.Tests
 {
-
     [TestClass]
     public class ProgramTests
     {

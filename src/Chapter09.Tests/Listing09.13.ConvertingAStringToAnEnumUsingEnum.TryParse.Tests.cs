@@ -1,15 +1,14 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_34.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_13.Tests
 {
     [TestClass]
     public class ProgramTests
     {
         [TestMethod]
-        public void Main_LogicalNotOnFalseBool_WriteTrue()
+        public void Main_TryParseThreadLevelPriorityEnumToStringUsing()
         {
-            const string expected =
-                @"result = True";
+            const string expected = "Idle";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
                 expected, Program.Main);

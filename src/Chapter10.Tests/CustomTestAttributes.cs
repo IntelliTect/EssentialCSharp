@@ -5,7 +5,6 @@ using System.Reflection;
 
 namespace Chapter10.Tests.CustomTestAttributes
 {
-
     //Attributes from Matt Kotsenas. See https://matt.kotsenas.com/posts/ignoreif-mstest
 
     /// <summary>
@@ -89,8 +88,4 @@ namespace Chapter10.Tests.CustomTestAttributes
             }
         }
     }
-
-
-
 }
-

@@ -1,15 +1,14 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_34.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_07.Tests
 {
     [TestClass]
     public class ProgramTests
     {
         [TestMethod]
-        public void Main_LogicalNotOnFalseBool_WriteTrue()
+        public void Main_AvoidingUnboxingAndCopying()
         {
-            const string expected =
-                @"result = True";
+            const string expected = @"2A";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
                 expected, Program.Main);

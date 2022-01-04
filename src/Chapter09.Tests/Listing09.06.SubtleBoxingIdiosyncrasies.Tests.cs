@@ -1,15 +1,14 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_34.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_06.Tests
 {
     [TestClass]
     public class ProgramTests
     {
         [TestMethod]
-        public void Main_LogicalNotOnFalseBool_WriteTrue()
+        public void Main_BoxIdiosyncrasies()
         {
-            const string expected =
-                @"result = True";
+            const string expected = @"25, 25, 25, 26";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
                 expected, Program.Main);
