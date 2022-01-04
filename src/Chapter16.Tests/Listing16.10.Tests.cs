@@ -3,7 +3,6 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_10.Tests
 {
-
     [TestClass]
     public class ProgramTests
     {

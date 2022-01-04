@@ -1,11 +1,10 @@
-using AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Tests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Tests;
 using System;
 using System.Threading.Tasks;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_03.Tests
 {
-
     [TestClass]
     public class ProgramTests : BaseProgramTests
     {

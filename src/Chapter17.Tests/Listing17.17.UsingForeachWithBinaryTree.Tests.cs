@@ -6,7 +6,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_17.Tests
     public class ProgramTests
     {
         [TestMethod]
-        public void IteratingAbinaryTree()
+        public void IteratingABinaryTree()
         {
             const string expected =
                 @"John Fitzgerald Kennedy

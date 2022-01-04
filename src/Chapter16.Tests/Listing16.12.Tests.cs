@@ -4,11 +4,9 @@ using System;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_12.Tests
 {
-
     [TestClass]
     public class ProgramTests
     {
-
         [TestMethod]
         public void SelectingFollowingGroupClause_UsingTuple()
         {

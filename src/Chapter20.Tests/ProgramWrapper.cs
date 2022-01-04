@@ -1,9 +1,8 @@
+using System;
+using System.Threading.Tasks;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Tests
 {
-    using System;
-    using System.Threading.Tasks;
-
     public class ProgramWrapper
     {
         Func<string[],Task> MainMethod { get; }

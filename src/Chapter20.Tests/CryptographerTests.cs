@@ -1,5 +1,5 @@
-﻿using AddisonWesley.Michaelis.EssentialCSharp.Shared;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using AddisonWesley.Michaelis.EssentialCSharp.Shared;
 using System.Security.Cryptography;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_05.Tests
@@ -7,7 +7,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_05.Tests
     [TestClass]
     public class CryptographerTests
     {
-
         [TestMethod]
         public void EncryptAesManaged()
         {
