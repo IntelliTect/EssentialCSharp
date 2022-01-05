@@ -26,11 +26,10 @@ try {
   
     $SutCSFile = split-path -leaf $MyInvocation.MyCommand.Definition
     $SutCSFile = "$PSScriptRoot/$([IO.Path]::GetFileNameWithoutExtension($SutCSFile)).cs"
-    if(-not (Test-Path $SutCSFile)) { throw "Unable to fine the file with the type to export ('$SutCSFile')"}
+    if(-not (Test-Path $SutCSFile)) { throw "Unable to find the file with the type to export ('$SutCSFile')"}
   
     $codeListing = @('namespace ProcessExitTestProgram') + (
-        Get-Content $SutCSFile | 
-            Select-Object -Skip 1)
+        Get-Content $SutCSFile | Where-Object { $_ -notlike 'namespace *'})
     $codeListing > "$PSScriptRoot/$ConsoleProgramProjectName/Program.cs"
     Get-Content "$PSScriptRoot/$ConsoleProgramProjectName/Program.cs"  # Display the listing
     
