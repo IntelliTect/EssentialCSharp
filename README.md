@@ -1,4 +1,5 @@
 # EssentialCSharp
+[![Build and Test v9.0](https://github.com/IntelliTect/EssentialCSharp/actions/workflows/Branch%20v9.0.yml/badge.svg)](https://github.com/IntelliTect/EssentialCSharp/actions/workflows/Branch%20v9.0.yml)
 
 This project contains the source code for the book **Essential C#** by Mark Michaelis (Addison-Wesley).
 
@@ -68,8 +69,3 @@ Documentation for .NET CLI tools can be found here:
 ## Testing
 
 To run all the tests, run `dotnet test` on the command prompt in the EssentialCSharp solution directory on your local computer.
-
-## Build Status
-
-[![Build status](https://github.com/IntelliTect/EssentialCSharp/actions/workflows/Branch%20v9.0%20-%20Windows.yml/badge.svg?branch=v9.0)](https://github.com/IntelliTect/EssentialCSharp/actions/workflows/Branch%20v9.0%20-%20Windows.yml)<br>
-[![Build status](https://github.com/IntelliTect/EssentialCSharp/actions/workflows/Branch%20v9.0%20-%20Linux.yml/badge.svg?branch=v9.0)](https://github.com/IntelliTect/EssentialCSharp/actions/workflows/Branch%20v9.0%20-%20Linux.yml)
