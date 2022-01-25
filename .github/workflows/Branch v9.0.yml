@@ -1,4 +1,4 @@
-name: Branch v9.0 - EssentialCSharp
+name: Build and Test v9.0
 
 on:
   push:
