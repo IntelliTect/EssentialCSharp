@@ -7,8 +7,7 @@ This project contains the source code for the book **Essential C#** by Mark Mich
 
 Ensure one of the following frameworks is installed at the latest version.
 
-* [.NET Framework](https://www.microsoft.com/net/targeting) (Windows)
-* [.NET Core](https://www.microsoft.com/net/core) (All)
+* [.NET](https://www.microsoft.com/net/core) (All) - This project is currently tested against .NET 5.0 and .NET Core 3.1
 
 [Visual Studio 2019](https://www.visualstudio.com) contains the .NET Framework runtime as well as gives options to install .NET Core.  Not to mention, it's a great IDE that makes it easy to get started.
 
@@ -23,10 +22,10 @@ git clone https://github.com/IntelliTect/EssentialCSharp.git
 cd ./EssentialCSharp/
 ```
 
-The source code is the most recently published edition of the book and this is the default branch following the clone command.  However, you can switch to a different branch, v6.0 for example, with the command:
+The source code is the most recently published edition of the book and this is the default branch following the clone command.  However, you can switch to a different branch, v9.0 for example, with the command:
 
 ```
-git checkout v6.0
+git checkout v9.0
 ```
 
 ### Build
