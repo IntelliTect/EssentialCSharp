@@ -15,10 +15,12 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Setup dotnet SDK ${{ matrix.dotnet-version }}
+      - name: Setup dotnet SDK
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: ${{ matrix.dotnet }}
+          dotnet-version: | 
+            3.1.x
+            5.0.x
       # Run NuGet restore for the solution at repo root
       - name: Run NuGet restore
         run: dotnet restore
