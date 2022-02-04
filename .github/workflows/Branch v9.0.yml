@@ -22,7 +22,7 @@ jobs:
       - name: Setup dotnet SDK ${{ matrix.dotnet-version }}
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: ${{ matrix.dotnet }}
+          dotnet-version: ${{ matrix.dotnet-version }}
       - name: Get Build Information
         run: |
           pwd
