@@ -10,19 +10,20 @@ on:
 
 jobs:
   build-and-test:
-    name: build-and-test-(${{matrix.dotnet-version}}) on ${{matrix.os}}
+    name: build-and-test- on ${{matrix.os}}
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
         os: [ubuntu-latest, windows-latest, macOS-latest]
-        dotnet-version: [ '3.1.x', '5.0.x' ]
     steps:
       - uses: actions/checkout@v2
-      - name: Setup dotnet SDK ${{ matrix.dotnet-version }}
+      - name: Setup dotnet SDK
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: ${{ matrix.dotnet }}
+          dotnet-version: | 
+            3.1.x
+            5.0.x
       - name: Get Build Information
         run: |
           pwd
