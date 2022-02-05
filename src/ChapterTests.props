@@ -14,7 +14,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
-    <PackageReference Update="coverlet.msbuild" Version="3.0.0" />
+    <PackageReference Update="coverlet.msbuild" Version="3.1.1" />
     <!--<PackageReference Update="Microsoft.NET.Test.Sdk" Version="16.8.3" />-->
     <!--<PackageReference Update="MSTest.TestAdapter" Version="2.1.2" />-->
     <!--<PackageReference Update="MSTest.TestFramework" Version="2.1.2" />-->    
