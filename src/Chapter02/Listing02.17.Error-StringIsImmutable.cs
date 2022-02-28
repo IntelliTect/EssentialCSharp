@@ -1,4 +1,3 @@
-#pragma warning disable CA1806 // Calls ToUpper but does not use the new string instance that the method returns.
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_17
 {
     public class Uppercase

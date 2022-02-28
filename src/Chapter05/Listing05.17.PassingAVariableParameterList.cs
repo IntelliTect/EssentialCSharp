@@ -41,7 +41,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_17
             string result = string.Empty;
             foreach(string path in paths)
             {
-                result = System.IO.Path.Combine(result, path);
+                result = Path.Combine(result, path);
             }
             return result;
         }
