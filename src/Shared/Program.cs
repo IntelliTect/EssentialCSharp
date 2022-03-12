@@ -85,22 +85,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
 
                 string? output = null;
 
-                // TODO: Remove STA check now that the methods are async anyway.
-                // TODO: Test... this seems backwards/opposite
-                if (method.GetCustomAttribute(typeof(STAThreadAttribute), false) is object)
-                {
-                    Task task = new Task(async () =>
-                    {
-                        // TODO: Change to use async/await.
-                        output = await InvokeMethodUsingReflectionAsync(method, arguments);
-                    });
-                    task.Wait();
-                }
-                else
-                {
-                    // TODO: Change to use async/await.
-                    output = await InvokeMethodUsingReflectionAsync(method, arguments);
-                }
+                output = await InvokeMethodUsingReflectionAsync(method, arguments);
+
                 if (output is { })
                 {
                     Console.WriteLine($"Result: {output}");

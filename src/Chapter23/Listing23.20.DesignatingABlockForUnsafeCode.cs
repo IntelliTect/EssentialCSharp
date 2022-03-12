@@ -54,7 +54,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter23.Listing23_20
         }
     }
 
-    public class VirtualMemoryPtr : System.Runtime.InteropServices.SafeHandle, IDisposable
+    public class VirtualMemoryPtr : SafeHandle, IDisposable
     {
         public VirtualMemoryPtr(int memorySize) :
             base(IntPtr.Zero, true)
@@ -91,23 +91,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter23.Listing23_20
         // SafeHandle abstract member
         protected override bool ReleaseHandle()
         {
-            Dispose(disposing: false);
-            return true;
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (!Disposed)
-            {
-                base.Dispose(disposing);
-                if (!disposing)
-                {
-                    Disposed = true;
-                    VirtualMemoryManager.VirtualFreeEx(ProcessHandle,
-                        AllocatedPointer, MemorySize);
-                }
-                Disposed = true;
-            }
+            return Disposed = VirtualMemoryManager.VirtualFreeEx(ProcessHandle, AllocatedPointer, MemorySize);
         }
 
         ~VirtualMemoryPtr()

@@ -17,7 +17,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_44
                 System.Console.Write(
                     $"\nPlayer {currentPlayer}: Enter move:");
                 // TODO: Update listing in Manuscript
-                string input = System.Console.ReadLine() ?? string.Empty;
+                string? input = System.Console.ReadLine();
 
                 // Check the current player's input
                 // ...
