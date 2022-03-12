@@ -15,7 +15,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_03
                 new ProductSerialNumber("PV", 1000, 09187234);
 
             // These serial numbers ARE the same object identity
-            if(!ProductSerialNumber.ReferenceEquals(serialNumber1,
+            if(!object.ReferenceEquals(serialNumber1,
                 serialNumber2))
             {
                 throw new Exception(
@@ -38,7 +38,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_03
 
 
             // These serial numbers are NOT the same object identity
-            if(ProductSerialNumber.ReferenceEquals(serialNumber1,
+            if(object.ReferenceEquals(serialNumber1,
                     serialNumber3))
             {
                 throw new Exception(
