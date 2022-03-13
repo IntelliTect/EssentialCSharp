@@ -6,18 +6,19 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_23
     {
         public static int Main(string[] args)
         {
-            string firstName;
+            string? firstName;
             string ageText;
             int age;
             int result = 0;
 
             Console.Write("Enter your first name: ");
             // TODO: Update listing in Manuscript
-            firstName = Console.ReadLine() ?? string.Empty;
+            firstName = Console.ReadLine();
 
             Console.Write("Enter your age: ");
             // TODO: Update listing in Manuscript
-            ageText = Console.ReadLine() ?? string.Empty;
+            // Assume not null for clarity
+            ageText = Console.ReadLine()!;
 
             try
             {

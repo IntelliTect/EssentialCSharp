@@ -1,4 +1,4 @@
-﻿// TODO: Update listing in Manuscript
+// TODO: Update listing in Manuscript
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23
 {
     using System;
@@ -97,8 +97,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23
         public void Dispose()
         {
             Dispose(true);
-            
-            // Unregister from the finalization queue.
+
+            // TODO: Update listing in Manuscript
+            // Request that the finalizer not be called for this object.
             GC.SuppressFinalize(this);
         }
 

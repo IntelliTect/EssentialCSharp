@@ -60,7 +60,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_10
                 Thermostat thermostat = new Thermostat();
                 Heater heater = new Heater(60);
                 Cooler cooler = new Cooler(80);
-                string? temperature;
 
                 // Using C# 2.0 or later syntax
                 thermostat.OnTemperatureChange +=
@@ -76,7 +75,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_10
                     cooler.OnTemperatureChanged;
 
                 Console.Write("Enter temperature: ");
-                temperature = Console.ReadLine();
+                string? temperature = Console.ReadLine();
                 if (!int.TryParse(temperature, out int currentTemperature))
                 {
                     Console.WriteLine($"'{temperature}' is not a valid integer.");

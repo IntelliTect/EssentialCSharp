@@ -57,9 +57,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_05
 
         public bool Equals(Coordinate obj)
         {
+            // TODO: Update listing in Manuscript
             // STEP 1: Check for null if a reference type
             // (e.g., a reference type)
-            // if (ReferenceEquals(obj, null)
+            // if (obj is null)
             // {
             //     return false;
             // }

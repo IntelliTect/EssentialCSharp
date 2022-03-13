@@ -38,7 +38,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Table07_03
 
 
 
-    // Was existent in the source code already
+    // Was existing in the source code already
     public static void Save(object data)
         {
             if (data is string text && text.Length > 0)

@@ -1,3 +1,4 @@
+// TODO: Update listing in Manuscript
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter23.Listing23_20
 {
     using System;
@@ -54,7 +55,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter23.Listing23_20
         }
     }
 
-    public class VirtualMemoryPtr : SafeHandle, IDisposable
+    public class VirtualMemoryPtr : SafeHandle
     {
         public VirtualMemoryPtr(int memorySize) :
             base(IntPtr.Zero, true)
@@ -92,19 +93,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter23.Listing23_20
         protected override bool ReleaseHandle()
         {
             return Disposed = VirtualMemoryManager.VirtualFreeEx(ProcessHandle, AllocatedPointer, MemorySize);
-        }
-
-        ~VirtualMemoryPtr()
-        {
-            // Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method
-            Dispose(disposing: false);
-        }
-
-        void IDisposable.Dispose()
-        {
-            // Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method
-            Dispose(disposing: true);
-            GC.SuppressFinalize(this);
         }
     }
 

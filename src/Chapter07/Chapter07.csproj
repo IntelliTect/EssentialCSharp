@@ -16,8 +16,6 @@
     <Compile Include="..\Shared\Program.cs">
       <Link>Program.cs</Link>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Table07.03.TypePatternMatchingWithIsOperator.cs" />
   </ItemGroup>
 </Project>

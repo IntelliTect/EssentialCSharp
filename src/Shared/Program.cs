@@ -83,9 +83,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                     }
                 }
 
-                string? output = null;
-
-                output = await InvokeMethodUsingReflectionAsync(method, arguments);
+                string? output = await InvokeMethodUsingReflectionAsync(method, arguments);
 
                 if (output is { })
                 {

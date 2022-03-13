@@ -15,7 +15,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_15
                     {
                         input = Console.ReadLine();
                     }
-                    while(!string.IsNullOrEmpty(input));
+                    while(!string.IsNullOrWhiteSpace(input));
                     return input!;
                 };
             getUserInput();

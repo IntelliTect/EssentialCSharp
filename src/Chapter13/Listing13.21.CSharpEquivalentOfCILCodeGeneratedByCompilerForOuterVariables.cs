@@ -20,17 +20,15 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_21
 
         public static void Main()
         {
-            int i;
             __LocalsDisplayClass_00000001 locals =
                 new __LocalsDisplayClass_00000001();
             locals.comparisonCount = 0;
             int[] items = new int[5];
-            string? text;
 
-            for (i = 0; i < items.Length; i++)
+            for (int i = 0; i < items.Length; i++)
             {
                 Console.Write("Enter an integer:");
-                text = Console.ReadLine();
+                string? text = Console.ReadLine();
                 if (!int.TryParse(text, out items[i]))
                 {
                     Console.WriteLine($"'{text}' is not a valid integer.");
@@ -40,7 +38,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_21
 
             DelegateSample.BubbleSort(items, locals.__AnonymousMethod_00000000);
 
-            for(i = 0; i < items.Length; i++)
+            for(int i = 0; i < items.Length; i++)
             {
                 Console.WriteLine(items[i]);
             }

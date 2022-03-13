@@ -20,7 +20,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_18
             // TODO: Update listing in Manuscript
             // Covariance
             Func<string> narrowFunction =
-                () => 8654091021.ToString();
+                () => "8654091021";
 
             Func<object> broadFunction = narrowFunction;
 
