@@ -12,7 +12,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
     [ExcludeFromCodeCoverage]
     public static class Program
     {
-        public static void Main(string[] args)
+        public static async Task Main(string[] args)
         {
             string input;
             IEnumerable<string> stringArguments = Array.Empty<string>();
@@ -21,14 +21,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
             {
                 throw new InvalidOperationException("Unable to retrieve the EntryAssembly.");
             }
-            string regexMatch = Regex.Match(assembly.GetName().Name, "\\d{1,2}").Value;
+            string regexMatch = Regex.Match(assembly.GetName().Name!, "\\d{1,2}").Value;
 
             int chapterNumber = int.Parse(regexMatch);
             if (args.Length == 0)
             {
                 Console.Write(
                     $"Enter the listing number to execute (e.g. For Listing {chapterNumber}.1 enter \"{chapterNumber}.1\"): ");
-                input = Console.ReadLine();
+                input = Console.ReadLine() ?? string.Empty;
             }
             else
             {
@@ -63,7 +63,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                     // Item doesn't contain an '_' such as set_ or get_ - but really any name with an underscore 
                     // would be enough to indicate it wasn't the intended start method.
                     target.GetMethods().First(item => !item.Name.Contains("_"));
-                
+
                 string[]? arguments;
 
                 if (!method.GetParameters().Any())
@@ -73,7 +73,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                 }
                 else
                 {
-                    if (stringArguments.Count() == 0)
+                    if (!stringArguments.Any())
                     {
                         arguments = GetArguments();
                     }
@@ -83,25 +83,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                     }
                 }
 
-                string? output = null;
-                
-                // TODO: Remove STA check now that the methods are async anyway.
-                // TODO: Test... this seems backwards/opposite
-                if (method.GetCustomAttribute(typeof(STAThreadAttribute), false) is object)
-                {
-                    Task task = new Task(() =>
-                    {
-                        // TODO: Change to use async/await.
-                        output = InvokeMethodUsingReflection(method,arguments).GetAwaiter().GetResult();
-                    });
-                    task.Wait();
-                }
-                else
-                {
-                    // TODO: Change to use async/await.
-                    output = InvokeMethodUsingReflection(method, arguments).GetAwaiter().GetResult();
-                }
-                if(output is { })
+                string? output = await InvokeMethodUsingReflectionAsync(method, arguments);
+
+                if (output is { })
                 {
                     Console.WriteLine($"Result: {output}");
                 }
@@ -158,7 +142,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
             }
         }
 
-        public static async ValueTask<string?> InvokeMethodUsingReflection(MethodInfo method, string[]? arguments)
+        public static async ValueTask<string?> InvokeMethodUsingReflectionAsync(MethodInfo method, string[]? arguments)
         {
             // Note: 'arguments' here are the array of commandline args, so 
             // it is the first item in the "parameters" array specified to the 
@@ -166,15 +150,15 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
             object? result = method.Invoke(null,
             parameters: arguments is null ? Array.Empty<object>() : new object[] { arguments! });
 
-            if(method.ReturnType == typeof(void))
+            if (method.ReturnType == typeof(void))
             {
                 return null;
             }
-            else if(result is null)
+            else if (result is null)
             {
                 return "<null>";
             }
-            else if(method.GetCustomAttribute(typeof(AsyncIteratorStateMachineAttribute), false) is object)
+            else if (method.GetCustomAttribute(typeof(AsyncIteratorStateMachineAttribute), false) is object)
             {
                 return result switch
                 {
@@ -186,7 +170,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
             }
             else if (method.GetCustomAttribute(typeof(AsyncStateMachineAttribute), false) is object)
             {
-                switch(result)
+                switch (result)
                 {
                     case Task task when method.ReturnType == typeof(Task):
                         await task;
@@ -228,7 +212,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
             Console.WriteLine();
             Console.WriteLine(
                 "Listing uses arguments for main method provided by user. Please see the listing and enter arguments or hit enter to pass in null: ");
-            string userArguments = Console.ReadLine();
+            string? userArguments = Console.ReadLine();
             Console.WriteLine();
             Console.WriteLine();
 

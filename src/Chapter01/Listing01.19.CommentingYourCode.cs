@@ -4,8 +4,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_19
     {
         public static void Main()
         {
-            string firstName; //Variable for storing the first name
-            string lastName; //Variable for storing the last name
+            string firstName; // Variable for storing the first name
+            string lastName; // Variable for storing the last name
 
             System.Console.WriteLine("Hey you!");
 

@@ -18,7 +18,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_27.Tests
             // set to the MSTest executable directory, rather than the 
             // assembly directory.
             Directory.SetCurrentDirectory(Path.GetDirectoryName(
-                typeof(Program).GetTypeInfo().Assembly.Location));
+                typeof(Program).GetTypeInfo().Assembly.Location)!);
 
             string expectedPattern = "{ FileName = *, Size = * }";
             int expectedItemCount = Directory.EnumerateFiles(

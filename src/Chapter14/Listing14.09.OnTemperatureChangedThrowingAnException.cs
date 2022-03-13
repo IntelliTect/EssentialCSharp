@@ -1,4 +1,5 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_09
+﻿// TODO: Update listing in Manuscript
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_09
 {
     using System;
     using Listing14_01;
@@ -11,7 +12,6 @@
             Thermostat thermostat = new Thermostat();
             Heater heater = new Heater(60);
             Cooler cooler = new Cooler(80);
-            string temperature;
 
             // Using C# 2.0 or later syntax
             thermostat.OnTemperatureChange +=
@@ -27,8 +27,13 @@
                 cooler.OnTemperatureChanged;
 
             Console.Write("Enter temperature: ");
-            temperature = Console.ReadLine();
-            thermostat.CurrentTemperature = int.Parse(temperature);
+            string? temperature = Console.ReadLine();
+            if (!int.TryParse(temperature, out int currentTemperature))
+            {
+                Console.WriteLine($"'{temperature}' is not a valid integer.");
+                return;
+            }
+            thermostat.CurrentTemperature = currentTemperature;
         }
     }
 }

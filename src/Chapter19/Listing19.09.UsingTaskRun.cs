@@ -1,16 +1,17 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_09
+﻿// TODO: Update listing in Manuscript
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_09
 {
     using System.Threading.Tasks;
 
     public class Program
     {
-        public Task<string> CalculatePiAsync(int digits)
+        public static Task<string> CalculatePiAsync(int digits)
         {
             return Task.Factory.StartNew<string>(
-                () => CalculatePi(digits));
+                () => Program.CalculatePi(digits));
         }
 
-        private string CalculatePi(int digits)
+        private static string CalculatePi(int digits)
         {
             // ...
 

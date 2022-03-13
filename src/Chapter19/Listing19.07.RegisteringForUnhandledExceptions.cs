@@ -6,13 +6,14 @@
 
     public class Program
     {
-        public static Stopwatch _Clock = new Stopwatch();
+        // TODO: Update listing in Manuscript
+        private static Stopwatch Clock { get;  } = new Stopwatch();
+
         public static void Main()
         {
             try
             {
-                ManualResetEventSlim resetEvent = new ManualResetEventSlim();
-                _Clock.Start();
+                Clock.Start();
                 // Register a callback to receive notifications
                 // of any unhandled exception
 #if NETCOREAPP1_1
@@ -81,7 +82,9 @@
 
         static void Message(string text)
         {
-            Console.WriteLine("{0}:{1:0000}:{2}",Thread.CurrentThread.ManagedThreadId,_Clock.ElapsedMilliseconds, text);
+            Console.WriteLine("{0}:{1:0000}:{2}",
+                Thread.CurrentThread.ManagedThreadId,
+                Clock.ElapsedMilliseconds, text);
         }
     }
 }

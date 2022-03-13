@@ -6,7 +6,6 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
-#nullable enable
 namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
 {
     readonly public struct CompileError

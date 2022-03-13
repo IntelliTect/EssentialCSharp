@@ -50,7 +50,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.TicTacToe
         private static string NextMove(int[] playerPositions,
                        int currentPlayer)
         {
-            string input;
+            string? input;
 
             // Repeatedly prompt the player for a move
             // until a valid move is entered.
@@ -59,12 +59,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.TicTacToe
             {
                 // Request a move from the current player.
                 System.Console.Write($"\nPlayer {currentPlayer} - Enter move:");
+                // TODO: Update listing in Manuscript
                 input = System.Console.ReadLine();
                 validMove = ValidateAndMove(playerPositions,
                               currentPlayer, input);
             } while(!validMove);
 
-            return input;
+            return input!;
         }
 
         static bool EndGame(int winner, int turn, string input)
@@ -118,7 +119,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.TicTacToe
         }
 
         static bool ValidateAndMove(
-          int[] playerPositions, int currentPlayer, string input)
+          int[] playerPositions, int currentPlayer, string? input)
         {
             bool valid = false;
 
@@ -158,11 +159,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.TicTacToe
                     valid = true;
                     break;
 
-                case "":
+                case null:
                 case "quit":
                     valid = true;
                     break;
 
+                case "":
                 default:
                     // If none of the other case statements
                     // is encountered, then the text is invalid.

@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_05.Tests
 {
@@ -9,7 +10,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_05.Tests
         public void Main_GiveNone_GetZero()
         {
             int expected = 0;
-            int value = Program.Main(new string[0]);
+            int value = Program.Main(Array.Empty<string>());
 
             Assert.AreEqual(expected, value);
         }

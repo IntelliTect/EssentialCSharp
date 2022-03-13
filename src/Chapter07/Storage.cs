@@ -30,7 +30,7 @@
         }
         public bool IsInserted { get; set; }
 
-        internal void Eject()
+        internal static void Eject()
         {
             Console.WriteLine("Ejecting the DVD...");
         }
@@ -53,7 +53,7 @@
         public UsbKey(long capacity) : base(capacity) { }
         public bool IsPluggedIn { get; set; }
 
-        internal void Unload()
+        internal static void Unload()
         {
             Console.WriteLine("Unloading the UsbKey...");
         }

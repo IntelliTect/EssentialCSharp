@@ -1,4 +1,5 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23
+// TODO: Update listing in Manuscript
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23
 {
     using System;
     using System.IO;
@@ -42,12 +43,12 @@
                     sampleUnmanagedResource?.Dispose();
                 }
             }
+
             WriteLine("Exiting...");
 
             // ...
         }
     }
-
 
     class SampleUnmanagedResource : IDisposable
     {
@@ -93,12 +94,15 @@
             WriteLine("Exiting...");
         }
 
-        #region IDisposable Members
         public void Dispose()
         {
             Dispose(true);
+
+            // TODO: Update listing in Manuscript
+            // Request that the finalizer not be called for this object.
+            GC.SuppressFinalize(this);
         }
-        #endregion
+
         public void Dispose(bool disposing)
         {
             WriteLine("Starting...");
@@ -111,9 +115,6 @@
             if (disposing)
             {
                 WriteLine("Disposing managed stuff...");
-
-                // Unregister from the finalization queue.
-                System.GC.SuppressFinalize(this);
             }
 
             AppDomain.CurrentDomain.ProcessExit -=
@@ -130,5 +131,4 @@
         public static void WriteLine(string? message = null, [CallerMemberName] string? name = null)
             => Console.WriteLine($"{$"{name}: " }{ message ?? ": Executing" }");
     }
-
 }

@@ -1,4 +1,5 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_20
+﻿// TODO: Update listing in Manuscript
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_20
 {
     using System;
     using Listing13_11;
@@ -7,14 +8,18 @@
     {
         public static void Main()
         {
-            int i;
             int[] items = new int[5];
             int comparisonCount = 0;
 
-            for(i = 0; i < items.Length; i++)
+            for(int i = 0; i < items.Length; i++)
             {
                 Console.Write("Enter an integer:");
-                items[i] = int.Parse(Console.ReadLine());
+                string? text = Console.ReadLine();
+                if (!int.TryParse(text, out items[i]))
+                {
+                    Console.WriteLine($"'{text}' is not a valid integer.");
+                    return;
+                }
             }
 
             DelegateSample.BubbleSort(items,
@@ -25,7 +30,7 @@
                 }
             );
 
-            for(i = 0; i < items.Length; i++)
+            for(int i = 0; i < items.Length; i++)
             {
                 Console.WriteLine(items[i]);
             }

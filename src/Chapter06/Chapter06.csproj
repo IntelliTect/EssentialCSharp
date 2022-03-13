@@ -2,6 +2,13 @@
   <PropertyGroup>
     <ChapterNumber>06</ChapterNumber>
   </PropertyGroup>
+  <PropertyGroup>
+    <ExpectedWarnings>$(ExpectedWarnings),CA1507</ExpectedWarnings>
+    <!-- 
+    CA1507 Use nameof to express symbol names: Use nameof in place of string literal
+    -->
+    <IgnoredWarnings>$(IgnoredWarnings),IDE0079</IgnoredWarnings>
+  </PropertyGroup>
   <Import Project="..\Chapter.props" />
   <ItemGroup>
     <Compile Remove="Listing06.24.CILCodeResultingFromProperties.cs" />

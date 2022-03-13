@@ -11,9 +11,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_04
             // Intentionally using ArrayList to demonstrate boxing
             System.Collections.ArrayList list =
                 new System.Collections.ArrayList();
-
-            Console.Write("Enter a number between 2 and 1000: ");
-            totalCount = int.Parse(Console.ReadLine());
+            // TODO: Update listing in Manuscript
+            Console.Write("Enter an integer between 2 and 1000: ");
+            string? text = Console.ReadLine();
+            if (!int.TryParse(text, out totalCount))
+            {
+                Console.WriteLine($"'{text}' is not a valid integer.");
+                return;
+            }
 
             if (totalCount == 7)  // Magic number used for testing
             {

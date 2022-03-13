@@ -16,7 +16,7 @@ namespace Chapter10.Tests.CustomTestAttributes
     {
         public override TestResult[] Execute(ITestMethod testMethod)
         {
-            var ignoreAttributes = FindAttributes(testMethod);
+            var ignoreAttributes = TestMethodWithIgnoreIfSupportAttribute.FindAttributes(testMethod);
 
             // Evaluate each attribute, and skip if one returns `true`
             foreach (var ignoreAttribute in ignoreAttributes)
@@ -37,7 +37,7 @@ namespace Chapter10.Tests.CustomTestAttributes
             return base.Execute(testMethod);
         }
 
-        private IEnumerable<IgnoreIfAttribute> FindAttributes(ITestMethod testMethod)
+        private static IEnumerable<IgnoreIfAttribute> FindAttributes(ITestMethod testMethod)
         {
             // Look for an [IgnoreIf] on the method, including any virtuals this method overrides
             var ignoreAttributes = new List<IgnoreIfAttribute>();

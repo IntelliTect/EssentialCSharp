@@ -3,16 +3,19 @@
     <ChapterNumber>07</ChapterNumber>
   </PropertyGroup>
   <PropertyGroup>
-    <!-- 
-    CS0108 hides inherited member warning where 'new' is advised.
-    Listing the warning here causes it to be a warning rather than an error.
-    -->
-    <ExpectedWarnings>$(ExpectedWarnings),CS0108</ExpectedWarnings>
+    <!--Listing the warning here causes it to be a warning rather than an error.-->
+    <!--CS0108 hides inherited member warning where 'new' is advised.-->
+    <ExpectedWarnings>$(ExpectedWarnings)CS0108,</ExpectedWarnings>
+    <IgnoredWarnings>$(IgnoredWarnings)</IgnoredWarnings>
   </PropertyGroup>
   <Import Project="..\Chapter.props" />
+  <ItemGroup>
+    <Compile Remove="Table07.03.TypePatternMatchingWithIsOperator.cs" />
+  </ItemGroup>
   <ItemGroup>
     <Compile Include="..\Shared\Program.cs">
       <Link>Program.cs</Link>
     </Compile>
+    <None Include="Table07.03.TypePatternMatchingWithIsOperator.cs" />
   </ItemGroup>
 </Project>

@@ -1,5 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_12
 {
+    // TODO: Update listing in Manuscript
     using System;
     using System.Net;
 
@@ -8,7 +9,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_12
         public static int Main(string[] args)
         {
             int result;
-
             switch(args.Length)
             {
                 default:

@@ -1,3 +1,4 @@
+// TODO: Update listing in Manuscript
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_11
 {
     using System;
@@ -6,7 +7,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_11
     {
         public class BaseClass
         {
-            public void DisplayName()
+            public static void DisplayName()
             {
                 Console.WriteLine("BaseClass");
             }
@@ -32,7 +33,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_11
 
         public class SuperSubDerivedClass : SubDerivedClass
         {
-            public new void DisplayName()
+            public new static void DisplayName()
             {
                 Console.WriteLine("SuperSubDerivedClass");
             }
@@ -47,10 +48,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_11
             DerivedClass derivedClass = superSubDerivedClass;
             BaseClass baseClass = superSubDerivedClass;
 
-            superSubDerivedClass.DisplayName();
+            SuperSubDerivedClass.DisplayName();
             subDerivedClass.DisplayName();
             derivedClass.DisplayName();
-            baseClass.DisplayName();
+            BaseClass.DisplayName();
         }
     }
 }

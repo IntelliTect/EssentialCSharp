@@ -2,47 +2,53 @@
 #pragma warning disable CS0168 // Variable is declared but never used
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_25
 {
+    // TODO: Update listing in Manuscript
+    using System;
+
     public class ExceptionHandling
     {
         public static int Main()
         {
-            string firstName;
+            string? firstName;
             string ageText;
             int age;
             int result = 0;
 
-            System.Console.Write("Enter your first name: ");
-            firstName = System.Console.ReadLine();
+            Console.Write("Enter your first name: ");
+            // TODO: Update listing in Manuscript
+            firstName = Console.ReadLine();
 
-            System.Console.Write("Enter your age: ");
-            ageText = System.Console.ReadLine();
+            Console.Write("Enter your age: ");
+            // TODO: Update listing in Manuscript
+            // Assume not null for clarity
+            ageText = Console.ReadLine()!;
 
             try
             {
                 age = int.Parse(ageText);
-                System.Console.WriteLine(
+                Console.WriteLine(
                     $"Hi { firstName }!  You are { age * 12 } months old.");
             }
-            catch(System.FormatException exception)
+            catch(FormatException exception)
             {
-                System.Console.WriteLine(
+                Console.WriteLine(
                     $"The age entered ,{ageText}, is not valid.");
                 result = 1;
             }
-            catch(System.Exception exception)
+            catch(Exception exception)
             {
-                System.Console.WriteLine(
-                    $"Unexpected error:  { exception.Message }");
+                Console.WriteLine(
+                    $"Unexpected error: { exception.Message }");
                 result = 1;
             }
             catch
             {
-                System.Console.WriteLine("Unexpected error!");
+                Console.WriteLine("Unexpected error!");
                 result = 1;
             }
             finally
             {
-                System.Console.WriteLine($"Goodbye { firstName }");
+                Console.WriteLine($"Goodbye { firstName }");
             }
 
             return result;

@@ -52,7 +52,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_01.Tests
             Assert.AreEqual(result.ToString(), matches[0].Groups["Count"].Value);
         }
 
-
         [TestMethod]
         public void MainVerifyOutputIncrementAndDecrement()
         {

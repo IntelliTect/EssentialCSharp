@@ -39,7 +39,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_41
             NextId++;
         }
 
+        // Field wrapped into property later in chapter
+        #pragma warning disable CA2211 //Non-constant fields should not be visible
         public static int NextId = 42;
+        #pragma warning disable CA2211
 
         public int Id { get; private set; }
         public string FirstName { get; set; }

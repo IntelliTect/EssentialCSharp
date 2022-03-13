@@ -2,6 +2,12 @@
   <PropertyGroup>
     <ProductName>Chapter10</ProductName>
   </PropertyGroup>
+  <PropertyGroup>
+      <!--Listing the warning here causes it to be a warning rather than an error.-->
+      <!--CA2013 Do not use ReferenceEquals with value types, and will always return false.-->
+      <ExpectedWarnings>$(ExpectedWarnings)CA2013,</ExpectedWarnings>
+      <IgnoredWarnings>$(IgnoredWarnings)</IgnoredWarnings>
+  </PropertyGroup>
   <Import Project="..\Chapter.props" />
   <ItemGroup>
     <Compile Include="..\Shared\Program.cs">

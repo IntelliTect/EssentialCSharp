@@ -1,3 +1,4 @@
+// TODO: Update listing in Manuscript
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter23.Listing23_20
 {
     using System;
@@ -54,7 +55,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter23.Listing23_20
         }
     }
 
-    public class VirtualMemoryPtr : System.Runtime.InteropServices.SafeHandle
+    public class VirtualMemoryPtr : SafeHandle
     {
         public VirtualMemoryPtr(int memorySize) :
             base(IntPtr.Zero, true)
@@ -91,14 +92,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter23.Listing23_20
         // SafeHandle abstract member
         protected override bool ReleaseHandle()
         {
-            if (!Disposed)
-            {
-                Disposed = true;
-                GC.SuppressFinalize(this);
-                VirtualMemoryManager.VirtualFreeEx(ProcessHandle,
-                    AllocatedPointer, MemorySize);
-            }
-            return true;
+            return Disposed = VirtualMemoryManager.VirtualFreeEx(ProcessHandle, AllocatedPointer, MemorySize);
         }
     }
 
@@ -146,8 +140,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter23.Listing23_20
             return VirtualFreeEx(
                 GetCurrentProcessHandle(), lpAddress, dwSize);
         }
-
-
 
         /// <summary>
         /// The type of memory allocation. This parameter must

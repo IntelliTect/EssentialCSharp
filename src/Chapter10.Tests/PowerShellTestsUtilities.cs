@@ -36,7 +36,7 @@ namespace Chapter10.Tests.PowerShellTestsUtilities
                         result = false;
                     }
                 }
-                catch(System.ComponentModel.Win32Exception e)
+                catch(System.ComponentModel.Win32Exception)
                 {
                     result = true;
                 }

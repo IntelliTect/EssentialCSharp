@@ -6,7 +6,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_38.Tests
     public class ProgramTests
     {
         [TestMethod]
-        public void ChangeTemperatureWithoutConditionalOperature()
+        public void ChangeTemperatureWithoutConditionalOperator()
         {
             bool eventFired = false;
             Thermostat thermostat = new Thermostat();
@@ -18,7 +18,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_38.Tests
             Assert.IsTrue(eventFired);
         }
 
-        public void ChangeHumidityWithConditionalOperature()
+        public static void ChangeHumidityWithConditionalOperator()
         {
             bool eventFired = false;
             Thermostat thermostat = new Thermostat();

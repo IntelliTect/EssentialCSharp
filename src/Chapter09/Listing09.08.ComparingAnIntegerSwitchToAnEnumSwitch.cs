@@ -4,7 +4,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_08
 
     public class Program
     {
-        public void SwitchInt()
+        public static void SwitchInt()
         {
             int connectionState;
             // ...
@@ -29,7 +29,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_08
 
         }
 
-        public void SwitchEnum()
+        public static void SwitchEnum()
         {
             ConnectionState connectionState;
             // ...

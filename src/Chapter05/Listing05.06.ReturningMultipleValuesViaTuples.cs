@@ -5,7 +5,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_06
         static string GetUserInput(string prompt)
         {
             System.Console.Write(prompt);
-            return System.Console.ReadLine();
+            // TODO: Update listing in Manuscript
+            return System.Console.ReadLine() ?? string.Empty;
         }
         static (string First, string Last) GetName()
         {
