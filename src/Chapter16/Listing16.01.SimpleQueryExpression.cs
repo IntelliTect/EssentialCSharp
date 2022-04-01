@@ -1,7 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 
 #region INCLUDE
-#region EXCLUDE
+    #region EXCLUDE
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16
 {
     #endregion
@@ -11,16 +11,16 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16
             new string[]
             {
                 "abstract","add*","alias*","as","ascending*",
-                "async*","await*","base","bool","break","by*","byte",
-                "case","catch","char","checked","class","const",
-                "continue","decimal","default","delegate",
-                "descending*","do","double","dynamic*","else","enum",
-                "equals*","event","explicit","extern","false","get*",
-                "finally","fixed","float","for","foreach","from*",
-                "global*","goto","group*","if","implicit","in","int",
-                "interface","internal","into*","is","join*","let*","lock",
-                "long", "nameof*", "namespace","new","nonnull*","null",
-                "object","on*","operator","orderby*","out","override",
+                "async*","await*","base","bool","break",
+                "by*","byte","case","catch","char","checked",
+                "class","const","continue","decimal","default",
+                "delegate","descending*","do","double","dynamic*",
+                "else","enum","equals*","event","explicit","extern",
+                "false","finally","fixed","float","for","foreach",
+                "from*","get*","global*","goto","group*","if","implicit",
+                "in","int","interface","internal","into*","is","join*",
+                "let*","lock","long", "nameof*", "namespace","new","nonnull*",
+                "null","object","on*","operator","orderby*","out","override",
                 "params","partial*","private","protected","public",
                 "readonly","ref","remove*","return","sbyte","sealed",
                 "select*","set*","short","sizeof","stackalloc","static",
@@ -66,5 +66,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_01
     }
     #region EXCLUDE
 }
-#endregion
+    #endregion
 #endregion
