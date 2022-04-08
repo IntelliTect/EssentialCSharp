@@ -18,15 +18,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_29
                 // Converted correctly, now use number
                 // ...
             }
-            #endregion
-            #region EXCLUDE
-            #pragma warning restore IDE0018 // Inline variable declaration
             else
+            #endregion
             {
                 System.Console.WriteLine(
                     "The text entered was not a valid number.");
             }
-            #endregion
             #endregion
         }
     }

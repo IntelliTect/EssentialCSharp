@@ -1,6 +1,7 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_15
 {
     #region INCLUDE
+    // The using directives allow you to drop the namespace
     #region HIGHLIGHT
     using static System.Console;
     #endregion

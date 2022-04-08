@@ -13,7 +13,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_30
             if (double.TryParse(input, out double number))
             {
                 System.Console.WriteLine(
+                #region HIGHLIGHT
                     $"input was parsed successfully to {number}.");
+                #endregion
             }
             else
             {
