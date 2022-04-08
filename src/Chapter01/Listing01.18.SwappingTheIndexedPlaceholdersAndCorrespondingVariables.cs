@@ -14,8 +14,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_18
 
             System.Console.Write("Enter your last name: ");
             lastName = System.Console.ReadLine();
-
+            #region INCLUDE
             System.Console.WriteLine("Your full name is {1}, {0}.", firstName, lastName);
+            #endregion
         }
     }
 }

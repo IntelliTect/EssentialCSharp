@@ -1,5 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_01
 {
+    #region INCLUDE
     public class HelloWorld
     {
         public static void Main()
@@ -7,4 +8,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_01
             System.Console.WriteLine("Hello. My name is Inigo Montoya.");
         }
     }
+    #endregion
 }

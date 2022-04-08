@@ -12,7 +12,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_13.Tests
 @"It would take a miracle.";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, MiracleMax.Main);
+                expected, StormingTheCastle.Main);
         }
     }
 }
