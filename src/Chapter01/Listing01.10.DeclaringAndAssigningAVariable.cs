@@ -8,7 +8,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_10
             string max;
 
             max = "Have fun storming the castle!";
-
             System.Console.WriteLine(max);
         }
     }

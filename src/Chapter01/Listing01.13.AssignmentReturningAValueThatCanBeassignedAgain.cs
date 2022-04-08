@@ -8,7 +8,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_13
             // ...
             string requirements, miracleMax;
             requirements = miracleMax = "It would take a miracle.";
-            // ...
             #region EXCLUDE
             System.Console.WriteLine(miracleMax);
             #endregion
