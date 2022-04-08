@@ -1,5 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_18
 {
+    #region INCLUDE
     public class Uppercase
     {
         public static void Main()
@@ -10,9 +11,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_18
             text = System.Console.ReadLine();
 
             // Return a new string in uppercase
+            #region HIGHLIGHT
             uppercase = text.ToUpper();
+            #endregion
 
             System.Console.WriteLine(uppercase);
         }
     }
+    #endregion
 }

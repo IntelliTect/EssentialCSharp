@@ -1,5 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_16
 {
+    #region INCLUDE
     public class PalindromeLength
     {
         public static void Main()
@@ -11,7 +12,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_16
 
             System.Console.WriteLine(
                 $"The palindrome \"{palindrome}\" is"
+            #region HIGHLIGHT
                 + $" {palindrome.Length} characters.");
+            #endregion
         }
     }
+    #endregion
 }

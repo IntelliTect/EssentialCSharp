@@ -4,9 +4,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_10
     {
         public static void Main()
         {
+            #region INCLUDE
             string option = "help";
 
             int comparison = string.Compare(option, "/Help", true);
+            #endregion
 
             System.Console.WriteLine($"{comparison}");
         }

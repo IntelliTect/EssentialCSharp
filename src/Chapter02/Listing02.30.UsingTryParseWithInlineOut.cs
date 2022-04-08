@@ -4,6 +4,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_30
     {
         public static void Main()
         {
+            #region INCLUDE
             // double number;
             string input;
 
@@ -23,6 +24,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_30
 
             System.Console.WriteLine(
                 $"'number' currently has the value: {number}");
+            #endregion
         }
     }
 }

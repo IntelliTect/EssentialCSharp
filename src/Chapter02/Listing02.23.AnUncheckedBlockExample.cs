@@ -1,5 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_23
 {
+    #region INCLUDE
     public class Program
     {
         public static void Main()
@@ -13,4 +14,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_23
             }
         }
     }
+    #endregion
 }
