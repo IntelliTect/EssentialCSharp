@@ -1,6 +1,7 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_17
 {
-    public class Program
+    #region INCLUDE
+    public class HeyYou
     {
         public static void Main()
         {
@@ -12,11 +13,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_17
             System.Console.Write("Enter your first name: ");
             firstName = System.Console.ReadLine();
 
+            #region HIGHLIGHT
             System.Console.Write("Enter your last name: ");
             lastName = System.Console.ReadLine();
+            #endregion
 
             System.Console.WriteLine(
                 "Your full name is {0} {1}.", firstName, lastName);
         }
     }
+    #endregion
 }

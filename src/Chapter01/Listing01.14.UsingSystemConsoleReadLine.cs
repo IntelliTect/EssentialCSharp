@@ -1,5 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_14
 {
+    #region INCLUDE
     public class HeyYou
     {
         public static void Main()
@@ -16,4 +17,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_14
             lastName = System.Console.ReadLine();
         }
     }
+    #endregion
 }

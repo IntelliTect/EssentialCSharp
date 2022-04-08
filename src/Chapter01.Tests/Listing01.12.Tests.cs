@@ -14,7 +14,7 @@ Think it will work?
 It would take a miracle.";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, MiracleMax.Main);
+                expected, StormingTheCastle.Main);
         }
     }
 }

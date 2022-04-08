@@ -1,6 +1,7 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_19
 {
-    public class Program
+    #region INCLUDE
+    public class CommentSamples
     {
         public static void Main()
         {
@@ -26,4 +27,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_19
             // of the program listing
         }
     }
+    #endregion
 }

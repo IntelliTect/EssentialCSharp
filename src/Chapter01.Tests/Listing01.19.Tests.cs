@@ -15,7 +15,7 @@ Enter your first name: <<Inigo
 >>Your full name is Montoya, Inigo.";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, Program.Main);
+                expected, CommentSamples.Main);
         }
     }
 }
