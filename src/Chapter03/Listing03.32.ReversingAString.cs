@@ -20,7 +20,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_32
             temp = reverse.ToCharArray();
             #endregion
 
-            #region INCLUDE
+            #region HIGHLIGHT
             // Reverse the array
             System.Array.Reverse(temp);
             #endregion

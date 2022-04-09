@@ -3,7 +3,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_01
     public class Program
     {
         #region INCLUDE
-        public static void Main(string[] args)
+        public static void Main()
         {
             int? number = null;
             #region EXCLUDE

@@ -30,14 +30,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_28
                 $"{ "-------------",-20 }\t{ "------------",-20 }");
             System.Console.WriteLine(
                     $"{ languages[0],-20 }\t{ languages[^1],-20 }");
-            #region INCLUDE
+            #region HIGHLIGHT
             System.Array.Reverse(languages);
             #endregion
             System.Console.WriteLine(
                     $"{ languages[0],-20 }\t{ languages[^1],-20 }");
             // Note this does not remove all items from the array
             // Rather it sets each item to the type's default value
-            #region INCLUDE
+            #region HIGHLIGHT
             System.Array.Clear(languages, 0, languages.Length);
             #endregion
             System.Console.WriteLine(

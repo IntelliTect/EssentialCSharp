@@ -5,7 +5,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_11
         public static void Main()
         {
             #region INCLUDE
-            string[] languages = new string[] {
+            string[] languages = new string[]{
                 "C#", "COBOL", "Java",
                 "C++", "TypeScript", "Visual Basic",
                 "Python", "Lisp", "JavaScript" };
