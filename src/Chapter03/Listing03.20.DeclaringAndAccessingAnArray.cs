@@ -4,6 +4,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_20
     {
         public static void Main()
         {
+            #region INCLUDE
             string[] languages = new string[] {
                 "C#", "COBOL", "Java",
                 "C++", "TypeScript", "Visual Basic",
@@ -16,6 +17,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_20
                 language = languages[^3];
                 // Write �Python�
                 System.Console.WriteLine(language);
+            #endregion
         }
     }
 }

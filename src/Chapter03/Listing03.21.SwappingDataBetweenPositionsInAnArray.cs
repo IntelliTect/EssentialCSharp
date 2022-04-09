@@ -4,6 +4,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_21
     {
         public static void Main()
         {
+            #region INCLUDE
             string[] languages = new string[] {
                 "C#", "COBOL", "Java",
                 "C++", "TypeScript", "Visual Basic",
@@ -14,6 +15,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_21
             languages[3] = languages[2];
             // Assign language to location of "Java"
             languages[2] = language;
+            #endregion
         }
     }
 }

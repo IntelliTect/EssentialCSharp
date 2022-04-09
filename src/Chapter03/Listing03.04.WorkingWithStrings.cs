@@ -1,5 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_04
 {
+    #region INCLUDE
     public class Uppercase
     {
         public static void Main()
@@ -13,4 +14,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_04
             System.Console.WriteLine(uppercase);
         }
     }
+    #endregion
 }

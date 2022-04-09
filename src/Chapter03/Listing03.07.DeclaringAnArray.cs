@@ -5,7 +5,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_07
     {
         public static void Main()
         {
+            #region INCLUDE
             string[] languages;
+            #endregion
         }
     }
 }

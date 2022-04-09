@@ -1,5 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_32
 {
+    #region INCLUDE
     public class Palindrome
     {
         public static void Main()
@@ -14,11 +15,15 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_32
             reverse = palindrome.Replace(" ", "");
             reverse = reverse.ToLower();
 
+            #region HIGHLIGHT
             // Convert to an array
             temp = reverse.ToCharArray();
+            #endregion
 
+            #region INCLUDE
             // Reverse the array
             System.Array.Reverse(temp);
+            #endregion
 
             // Convert the array back to a string and
             // check if reverse string is the same
@@ -34,4 +39,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_32
             }
         }
     }
+    #endregion
 }

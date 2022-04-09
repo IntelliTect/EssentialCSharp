@@ -4,6 +4,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_17
     {
         public static void Main()
         {
+            #region INCLUDE
             // ERROR: Each dimension must be consistently sized
             /*
             int[,] cells = {
@@ -13,6 +14,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_17
                 {1}
             };
             */
+            #endregion
         }
     }
 }

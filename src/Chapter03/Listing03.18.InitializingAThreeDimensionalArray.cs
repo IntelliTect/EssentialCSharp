@@ -4,6 +4,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_18
     {
         public static void Main()
         {
+            #region INCLUDE
             bool[, ,] cells;
             cells = new bool[2, 3, 3] 
             {
@@ -20,6 +21,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_18
                     {false, true, true}    // ---+---+---
                 }                          //    | O | 
             };
+            #endregion
         }
     }
 }

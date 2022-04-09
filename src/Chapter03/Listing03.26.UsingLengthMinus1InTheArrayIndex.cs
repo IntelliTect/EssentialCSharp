@@ -6,9 +6,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_26
     {
         public static void Main()
         {
+            #region INCLUDE
             string[] languages = new string[9];
             // ...
             languages[4] = languages[languages.Length - 1];
+            #endregion
         }
     }
 }

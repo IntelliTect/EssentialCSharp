@@ -1,5 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_05
 {
+    #region INCLUDE
     public class Program
     {
         public static void Main()
@@ -17,4 +18,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_05
                 $"{patent2.Title} ({patent2.YearOfPublication})");
         }
     }
+    #endregion
 }
