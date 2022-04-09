@@ -4,6 +4,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_09
     {
         public static void Main()
         {
+            #region INCLUDE
+            // ...
             const double number = 1.618033988749895;
             double result;
             string text;
@@ -15,6 +17,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_09
             text = string.Format("{0:R}", number);
             result = double.Parse(text);
             System.Console.WriteLine($"{result == number}: {result} == {number}");
+
+            // ...
+            #endregion
         }
     }
 }

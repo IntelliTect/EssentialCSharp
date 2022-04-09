@@ -1,5 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_21
 {
+    #region INCLUDE
     public class Program
     {
         public static void Main()
@@ -10,4 +11,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_21
             System.Console.WriteLine(n);
         }
     }
+    #endregion
 }

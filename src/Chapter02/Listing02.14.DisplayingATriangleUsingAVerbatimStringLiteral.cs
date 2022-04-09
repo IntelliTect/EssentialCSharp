@@ -1,5 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_14
 {
+    #region INCLUDE
     public class Triangle
     {
         public static void Main()
@@ -10,7 +11,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_14
                  /    \
                 /      \
                /________\
-end");
+    end");
         }
     }
+    #endregion
 }

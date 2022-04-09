@@ -4,7 +4,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_04
     {
         public static void Main()
         {
+            #region INCLUDE
             System.Console.WriteLine(9_814_072_356M);
+            #endregion
         }
     }
 }
