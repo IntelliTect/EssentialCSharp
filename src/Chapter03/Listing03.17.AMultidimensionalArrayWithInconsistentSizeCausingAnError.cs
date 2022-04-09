@@ -6,16 +6,18 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_17
         {
             #region INCLUDE
             // ERROR: Each dimension must be consistently sized
-            /*
             #region EXCLUDE
+            /*
+            #endregion
             int[,] cells = {
                 {1, 0, 2, 0},
                 {1, 2, 0},
                 {1, 2},
                 {1}
             };
-            #endregion
+            #region EXCLUDE
             */
+            #endregion
             #endregion
         }
     }
