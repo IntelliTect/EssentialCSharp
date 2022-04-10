@@ -13,7 +13,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_45
             // Use long.Parse() to support negative numbers
             // Assumes unchecked assignment to ulong
             // If ReadLine returns null, use "42" as default input
-            value = (ulong)long.Parse(System.Console.ReadLine() ?? "-42");
+            value = (ulong)long.Parse(System.Console.ReadLine() ?? "42");
 
             // Set initial mask to 100....
             ulong mask = 1UL << size - 1;

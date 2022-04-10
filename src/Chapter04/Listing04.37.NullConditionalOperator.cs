@@ -12,6 +12,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_37
 
             string? uri = null;
             #endregion
+
             int? length = segments?.Length;
             if (length is { } && length != 0)
             {

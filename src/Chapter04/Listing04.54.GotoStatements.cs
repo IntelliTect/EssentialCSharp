@@ -20,11 +20,15 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_54
                     case "/out":
                         isOutputSet = true;
                         isFiltered = false;
+                        #region HIGHLIGHT
                         goto default;
+                        #endregion
                     case "/f":
                         isFiltered = true;
                         isRecursive = false;
+                        #region HIGHLIGHT
                         goto default;
+                        #endregion
                     default:
                         if(isRecursive)
                         {

@@ -20,7 +20,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_62
             #region Display Tic-tac-toe Board
 
             #if CSHARP2PLUS
-            System.Console.Clear();
+                System.Console.Clear();
             #endif
 
             // Display the current board

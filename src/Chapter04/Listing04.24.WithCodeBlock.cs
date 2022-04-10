@@ -17,14 +17,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_24
             // double.Parse converts the ReadLine() 
             // return to a double
             radius = double.Parse(System.Console.ReadLine());
-
             if(radius >= 0)
             #region HIGHLIGHT
             {
                 // Calculate the area of the circle
                 area = Math.PI * radius * radius;
                 System.Console.WriteLine(
-                    $"The area of the circle is: { area :0.00}");
+                    $"The area of the circle is: {area:0.00}");
             }
             #endregion
             else

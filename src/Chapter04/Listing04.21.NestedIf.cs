@@ -37,8 +37,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_21
             else
                 // Input equals 9
                 System.Console.WriteLine(  // line 33
-                            "Correct, tic-tac-toe " +
-                            "has a maximum of 9 turns.");
+                    "Correct, tic-tac-toe " +
+                    "has a maximum of 9 turns.");
        } 
     }
     #endregion
