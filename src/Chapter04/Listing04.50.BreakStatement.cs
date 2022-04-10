@@ -1,8 +1,9 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_50
 {
-    public class TicTacToe      // Declares the TicTacToe class
+    #region INCLUDE
+    public class TicTacToe // Declares the TicTacToe class
     {
-        public static void Main()
+        public static void Main() // Declares the entry point of the program
         {
             int winner = 0;
             // Stores locations each player has moved
@@ -23,22 +24,31 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_50
 
             // Iterate through each winning mask to determine
             // if there is a winner
-            foreach(int mask in winningMasks)
+            #region HIGHLIGHT
+            foreach (int mask in winningMasks)
             {
+            #endregion
                 if((mask & playerPositions[0]) == mask)
                 {
                     winner = 1;
+                    #region HIGHLIGHT
                     break;
+                    #endregion
                 }
                 else if((mask & playerPositions[1]) == mask)
                 {
                     winner = 2;
+                    #region HIGHLIGHT
                     break;
+                    #endregion
                 }
+            #region HIGHLIGHT
             }
+            #endregion
 
             System.Console.WriteLine(
                 $"Player { winner } was the winner");
         }
     }
+    #endregion
 }

@@ -1,5 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_52
 {
+    #region INCLUDE
     public class EmailDomain
     {
         public static void Main()
@@ -29,4 +30,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_52
             }
         }
     }
+    #endregion
 }

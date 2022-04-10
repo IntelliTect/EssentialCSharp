@@ -2,6 +2,7 @@
 #pragma warning disable CS8604 // Possible null reference argument
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_21
 {
+    #region INCLUDE
     public class TicTacToeTrivia
     {
         public static void Main()
@@ -27,11 +28,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_21
                         $"Tic-tac-toe has more than {input}" +
                         " maximum turns.");
             else
-                    if (input > 9) // line 26
-                        // Input is greater than 9
-                        System.Console.WriteLine(
-                            $"Tic-tac-toe has fewer than {input}" +
-                            " maximum turns.");
+                if (input > 9) // line 26
+                    // Input is greater than 9
+                    System.Console.WriteLine(
+                        $"Tic-tac-toe has fewer than {input}" +
+                        " maximum turns.");
 
             else
                 // Input equals 9
@@ -40,4 +41,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_21
                             "has a maximum of 9 turns.");
        } 
     }
+    #endregion
 }

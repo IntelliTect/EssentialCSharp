@@ -12,6 +12,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_38
             get { return _Temperature; }
             set 
             {
+                #region INCLUDE
                 System.EventHandler propertyChanged =
                     PropertyChanged;
                 if (propertyChanged != null)
@@ -19,6 +20,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_38
                     propertyChanged(this,
                         new System.EventArgs());
                 }
+                #endregion
 
                 _Temperature = value; 
             }

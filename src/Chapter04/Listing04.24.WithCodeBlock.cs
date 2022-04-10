@@ -4,6 +4,7 @@ using System;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_24
 {
+    #region INCLUDE
     public class CircleAreaCalculator
     {
         public static void Main()
@@ -18,12 +19,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_24
             radius = double.Parse(System.Console.ReadLine());
 
             if(radius >= 0)
+            #region HIGHLIGHT
             {
                 // Calculate the area of the circle
                 area = Math.PI * radius * radius;
                 System.Console.WriteLine(
                     $"The area of the circle is: { area :0.00}");
             }
+            #endregion
             else
             {
                 System.Console.WriteLine(
@@ -31,4 +34,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_24
             }
         }
     }
+    #endregion
 }

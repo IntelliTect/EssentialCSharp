@@ -5,6 +5,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_54
 {
     public class Program
     {
+        #region INCLUDE
+        // ...
         public static void Main(string[] args)
         {
             bool isOutputSet = false;
@@ -36,11 +38,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_54
                         }
                         break;
                 }
-
             }
 
             // ...
-
         }
+        #endregion
     }
 }

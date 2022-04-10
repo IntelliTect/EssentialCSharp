@@ -5,6 +5,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_48
         public static void Main(params string[] args)
         {
             string input = args[0];
+            #region INCLUDE
             // ...
 
             // Check the current player's input
@@ -36,6 +37,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_48
             }
 
             // ...
+            #endregion
         }
     }
 }

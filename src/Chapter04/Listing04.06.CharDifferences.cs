@@ -4,8 +4,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_06
     {
         public static void Main()
         {
+            #region INCLUDE
             int distance = 'f' - 'c';
             System.Console.WriteLine(distance);
+            #endregion
         }
     }
 }

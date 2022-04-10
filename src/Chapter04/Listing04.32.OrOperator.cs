@@ -6,8 +6,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_32
         {
             int hourOfTheDay = int.Parse(args[0]);
 
+            #region INCLUDE
             if ((hourOfTheDay > 23) || (hourOfTheDay < 0))
                 System.Console.WriteLine("The time you entered is invalid.");
+            #endregion
         }
     }
 }

@@ -7,6 +7,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_49
             // ...
         }
 
+        #region INCLUDE
         public static bool ValidateAndMove(
             int[] playerPositions, int currentPlayer, string input)
         {
@@ -43,5 +44,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_49
 
             return valid;
         }
+        #endregion
     }
 }

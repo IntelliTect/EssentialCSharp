@@ -15,12 +15,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_62
                 '1', '2', '3', '4', '5', '6', '7', '8', '9'
             };
 
+            #region INCLUDE
+            // ...
+            #region Display Tic-tac-toe Board
 
-        #region Display Tic-tac-toe Board
-
-#if CSHARP2PLUS
+            #if CSHARP2PLUS
             System.Console.Clear();
-#endif
+            #endif
 
             // Display the current board
             border = 0;   //  set the first border (border[0] = "|")
@@ -46,6 +47,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_62
             #endregion Display Tic-tac-toe Board
 
             // ...
+            #endregion
         }
     }
 }

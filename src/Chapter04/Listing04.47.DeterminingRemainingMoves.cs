@@ -1,5 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_47
 {
+    #region INCLUDE
     public class TicTacToe // Declares the TicTacToe class
     {
         public static void Main() // Declares the entry point of the program
@@ -29,4 +30,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_47
             }
         }
     }
+    #endregion
 }

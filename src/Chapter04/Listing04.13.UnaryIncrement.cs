@@ -8,9 +8,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_13
         {
             int spaceCount = 0;
 
+            #region INCLUDE
             spaceCount = spaceCount + 1;
             spaceCount += 1;
             spaceCount++;
+            #endregion
         }
     }
 }

@@ -1,5 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_45
 {
+    #region INCLUDE
     public class BinaryConverter
     {
         public static void Main()
@@ -11,7 +12,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_45
             System.Console.Write("Enter an integer: ");
             // Use long.Parse() to support negative numbers
             // Assumes unchecked assignment to ulong
-            // TODO: Update listing in Manuscript
             // If ReadLine returns null, use "42" as default input
             value = (ulong)long.Parse(System.Console.ReadLine() ?? "-42");
 
@@ -26,4 +26,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_45
             }
         }
     }
+    #endregion
 }

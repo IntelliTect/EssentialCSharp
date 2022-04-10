@@ -2,6 +2,7 @@
 #pragma warning disable CS8604 // Possible null reference argument
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_03
 {
+    #region INCLUDE
     public class Division
     {
         public static void Main()
@@ -17,11 +18,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_03
             System.Console.Write("Enter the denominator: ");
             denominator = int.Parse(System.Console.ReadLine());
 
+            #region HIGHLIGHT
             quotient = numerator / denominator;
             remainder = numerator % denominator;
+            #endregion
 
             System.Console.WriteLine(
                 $"{numerator} / {denominator} = {quotient} with remainder {remainder}");
         }
     }
+    #endregion
 }

@@ -9,6 +9,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_51
             int currentPlayer = 1;
             string input = "";
 
+            #region INCLUDE
             int shifter;  // The number of places to shift 
                           // over to set a bit
             int position; // The bit that is to be set
@@ -28,6 +29,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_51
             // subtract 1 to use currentPlayer as an
             // index in a zero based array.
             playerPositions[currentPlayer - 1] |= position;
+            #endregion
         }
     }
 }
