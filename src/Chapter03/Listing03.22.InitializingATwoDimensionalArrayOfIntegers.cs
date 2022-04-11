@@ -4,6 +4,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_22
     {
         public static void Main()
         {
+            #region INCLUDE
             int[,] cells = {
                 {1, 0, 2},
                 {0, 2, 0},
@@ -11,6 +12,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_22
             };
             // Set the winning tic-tac-toe move to be player 1
             cells[1, 0] = 1;
+            #endregion
         }
     }
 }

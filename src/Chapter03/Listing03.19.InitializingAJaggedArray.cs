@@ -4,12 +4,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_19
     {
         public static void Main()
         {
+            #region INCLUDE
             int[][] cells = {
                 new int[] {1, 0, 2, 0},
                 new int[] {1, 2, 0},
                 new int[] {1, 2},
                 new int[] {1}
             };
+            #endregion
         }
     }
 }

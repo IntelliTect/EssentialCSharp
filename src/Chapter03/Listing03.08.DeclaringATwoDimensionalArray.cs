@@ -5,12 +5,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_08
     {
         public static void Main()
         {
+            #region INCLUDE
             //    |   | 
             // ---+---+--- 
             //    |   | 
             // ---+---+---
             //    |   | 
             int[,] cells;
+            #endregion
         }
     }
 }

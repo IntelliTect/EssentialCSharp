@@ -4,18 +4,20 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_20
     {
         public static void Main()
         {
-            string[] languages = new string[] {
+            #region INCLUDE
+            string[] languages = new string[9]{
                 "C#", "COBOL", "Java",
                 "C++", "TypeScript", "Visual Basic",
                 "Python", "Lisp", "JavaScript"};
                 // Retrieve fifth item in languages array (TypeScript)
                 string language = languages[4];
-                // Write �TypeScript�
+                // Write "TypeScript"
                 System.Console.WriteLine(language);
                 // Retrieve second item from the end (Python)
                 language = languages[^3];
-                // Write �Python�
+                // Write "Python"
                 System.Console.WriteLine(language);
+            #endregion
         }
     }
 }
