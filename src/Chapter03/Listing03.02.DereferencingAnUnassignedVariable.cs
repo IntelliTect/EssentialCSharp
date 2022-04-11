@@ -2,15 +2,15 @@
 //{
     public class Program
     {
-    #region INCLUDE
-    #nullable enable
-    public static void Main()
+        #region INCLUDE
+        #nullable enable
+        public static void Main()
         {
             string? text;
             // ...
             // Compile Error: Use of unassigned local variable 'text'
             System.Console.WriteLine(text.Length);
         }
+        #endregion
     }
-    #endregion
 //}
