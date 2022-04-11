@@ -11,11 +11,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_20
                 "Python", "Lisp", "JavaScript"};
                 // Retrieve fifth item in languages array (TypeScript)
                 string language = languages[4];
-                // Write �TypeScript�
+                // Write "TypeScript"
                 System.Console.WriteLine(language);
                 // Retrieve second item from the end (Python)
                 language = languages[^3];
-                // Write �Python�
+                // Write "Python"
                 System.Console.WriteLine(language);
             #endregion
         }
