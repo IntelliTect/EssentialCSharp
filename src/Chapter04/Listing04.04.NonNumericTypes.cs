@@ -1,5 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_04
 {
+    #region INCLUDE
     public class FortyTwo
     {
         public static void Main()
@@ -11,4 +12,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_04
                 + windSpeed + " mile/hour wind.");
         }
     }
+    #endregion
 }

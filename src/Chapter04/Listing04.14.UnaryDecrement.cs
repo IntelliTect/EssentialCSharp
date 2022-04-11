@@ -8,9 +8,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_14
         {
             int lines = 0;
 
+            #region INCLUDE
             lines = lines - 1;
             lines -= 1;
             lines--;
+            #endregion
         }
     }
 }

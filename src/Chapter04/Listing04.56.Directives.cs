@@ -4,11 +4,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_56
     {
         public static void Main()
         {
-#if LINUX
+            #region INCLUDE
+            #if LINUX
             // ...
-#elif WINDOWS
+            #elif WINDOWS
             // ...
-#endif
+            #endif
+            #endregion
         }
     }
 }

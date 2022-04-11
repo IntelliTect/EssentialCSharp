@@ -5,11 +5,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_55
         public static void Main()
         {
             // ...
-
-#if CSHARP2PLUS
+            #region INCLUDE
+            #if CSHARP2PLUS
             System.Console.Clear();
-#endif
-
+            #endif
+            #endregion
             // ...
         }
     }

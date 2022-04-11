@@ -6,8 +6,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_23
         {
             int input = int.Parse(args[0]);
 
-            if(input < 9)
+            #region INCLUDE
+            if (input < 9)
+                #region HIGHLIGHT
                 System.Console.WriteLine("Exiting");
+                #endregion
+            #endregion
         }
     }
 }

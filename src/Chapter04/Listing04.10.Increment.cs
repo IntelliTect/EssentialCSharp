@@ -6,8 +6,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_10
     {
         public static void Main()
         {
+            #region INCLUDE
             int x = 123;
             x = x + 2;
+            #endregion
         }
     }
 }

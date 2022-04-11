@@ -6,11 +6,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_31
         {
             string input = args[0];
             string currentPlayer = args[1];
-
+            #region INCLUDE
             if (input.Length == 0 || input == "quit")
             {
                 System.Console.WriteLine($"Player {currentPlayer} quit!!");
             }
+            #endregion
         }
     }
 }

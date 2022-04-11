@@ -5,6 +5,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_54
 {
     public class Program
     {
+        #region INCLUDE
+        // ...
         public static void Main(string[] args)
         {
             bool isOutputSet = false;
@@ -18,11 +20,15 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_54
                     case "/out":
                         isOutputSet = true;
                         isFiltered = false;
+                        #region HIGHLIGHT
                         goto default;
+                        #endregion
                     case "/f":
                         isFiltered = true;
                         isRecursive = false;
+                        #region HIGHLIGHT
                         goto default;
+                        #endregion
                     default:
                         if(isRecursive)
                         {
@@ -36,11 +42,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_54
                         }
                         break;
                 }
-
             }
 
             // ...
-
         }
+        #endregion
     }
 }

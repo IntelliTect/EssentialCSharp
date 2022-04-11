@@ -7,6 +7,7 @@
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_27
 {
+    #region INCLUDE
     public class Program
     {
         public static void Main(string[] args)
@@ -17,16 +18,20 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_27
             playerCount = System.Console.ReadLine();
             if (playerCount != "1" && playerCount != "2")
             {
+                #region HIGHLIGHT
                 string message =
                     "You entered an invalid number of players.";
+                #endregion
             }
             else
             {
                 // ...
             }
-
+            #region HIGHLIGHT
             // ERROR: message is not in scope:
             // System.Console.WriteLine(message);
+            #endregion
         }
     }
+    #endregion
 }

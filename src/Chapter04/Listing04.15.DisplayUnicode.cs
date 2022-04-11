@@ -4,6 +4,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_15
     {
         public static void Main()
         {
+            #region INCLUDE
             char current;
             int unicodeValue;
 
@@ -20,6 +21,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_15
                 current--;
             }
             while(current >= 'a');
+            #endregion
         }
     }
 }

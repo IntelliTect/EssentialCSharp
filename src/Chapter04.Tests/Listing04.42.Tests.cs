@@ -10,7 +10,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_42.Tests
         {
             const string expected =
 @"and = 4 
-or = 15
+or = 15 
 xor = 11";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(

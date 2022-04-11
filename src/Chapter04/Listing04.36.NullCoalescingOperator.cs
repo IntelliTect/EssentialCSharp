@@ -9,6 +9,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_36
     {
         public static void Main()
         {
+            #region INCLUDE
             string? fullName = GetDefaultDirectory();
             // ...
 
@@ -22,7 +23,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_36
             fullName ??= $"{ directory }/{ fileName }";
 
             // ...
-
+            #endregion
 
         }
 

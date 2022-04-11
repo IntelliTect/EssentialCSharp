@@ -1,5 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_18
 {
+    #region INCLUDE
     public class IncrementExample
     {
         public static void Main()
@@ -13,4 +14,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_18
             // x now contains the value 127
         }
     }
+    #endregion
 }

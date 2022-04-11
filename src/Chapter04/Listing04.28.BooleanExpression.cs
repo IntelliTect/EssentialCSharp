@@ -6,13 +6,18 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_28
         {
             int input = 5;
 
+            #region INCLUDE
+            #region HIGHLIGHT
             if (input < 9)
+            #endregion
             {
                 // Input is less than 9
                 System.Console.WriteLine(
                     $"Tic-tac-toe has more than {input}" +
                      " maximum turns.");
             }
+            // ...
+            #endregion
         }
     }
 }

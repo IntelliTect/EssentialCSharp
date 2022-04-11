@@ -4,6 +4,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_07
     {
         public static void Main()
         {
+            #region INCLUDE
             decimal decimalNumber = 4.2M;
             double doubleNumber1 = 0.1F * 42F;
             double doubleNumber2 = 0.1D * 42D;
@@ -36,6 +37,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_07
             // 7. Displays: 4.2F != 4.2D
             System.Console.WriteLine(
                 $"{4.2F}F != {4.2D}D");
+            #endregion
         }
     }
 }

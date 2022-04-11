@@ -7,6 +7,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_60
         {
 #warning "Sample warning suppressed by #pragma warning disable."
         }
-#pragma warning restore CS1030
+        #region INCLUDE
+        #pragma warning restore CS1030
+        #endregion
     }
 }

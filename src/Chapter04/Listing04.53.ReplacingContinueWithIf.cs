@@ -12,8 +12,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_53
 
             System.Console.Write("The email domain is: ");
 
+            #region INCLUDE
             // Iterate through each letter in the email address
-            foreach(char letter in email)
+            foreach (char letter in email)
             {
                 if(insideDomain)
                 {
@@ -27,6 +28,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_53
                     }
                 }
             }
+            #endregion
         }
     }
 }

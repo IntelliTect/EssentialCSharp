@@ -4,7 +4,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_59
     {
         public static void Main()
         {
-#pragma warning disable CS1030
+            #region INCLUDE
+            #pragma warning disable CS1030
+            #endregion
         }
     }
 }
