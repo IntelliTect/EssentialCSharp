@@ -1,6 +1,9 @@
+#region INCLUDE
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_08
 {
+    #region HIGHLIGHT
     using System;
+    #endregion
 
     public class HelloWorld
     {
@@ -8,7 +11,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_08
         {
             // No need to qualify Console with System
             // because of the using directive above
+            #region HIGHLIGHT
             Console.WriteLine("Hello, my name is Inigo Montoya");
+            #endregion
         }
     }
 }
+#endregion

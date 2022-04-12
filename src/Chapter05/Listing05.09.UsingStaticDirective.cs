@@ -1,5 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_09
 {
+    #region INCLUDE
     using static System.Console;
 
     public class HeyYou
@@ -12,15 +13,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_09
             WriteLine("Hey you!");
 
             Write("Enter your first name: ");
-            // TODO: Update listing in Manuscript
             firstName = ReadLine() ?? string.Empty;
 
             Write("Enter your last name: ");
-            // TODO: Update listing in Manuscript
             lastName = ReadLine() ?? string.Empty;
+
             WriteLine(
                 $"Your full name is { firstName } { lastName }.");
         }
     }
-
+    #endregion
 }

@@ -4,6 +4,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_16
 
     public class Program
     {
+        #region INCLUDE
         // Returning a reference
         public static ref byte FindFirstRedEyePixel(byte[] image)
         {
@@ -28,13 +29,15 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_16
                 $"image[{index}]={(ConsoleColor)image[index]}");
             // ...
 
+            #region HIGHLIGHT
             // Obtain a reference to the first red pixel
             ref byte redPixel = ref FindFirstRedEyePixel(image);
             // Update it to be Black
             redPixel = (byte)ConsoleColor.Black;
+            #endregion
             System.Console.WriteLine(
                 $"image[{index}]={(ConsoleColor)image[redPixel]}");
         }
-
+        #endregion
     }
 }

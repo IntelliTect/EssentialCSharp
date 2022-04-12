@@ -1,7 +1,7 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_15
 {
     using System;
-
+    #region INCLUDE
     public class ConvertToPhoneNumber
     {
         public static int Main(string[] args)
@@ -18,12 +18,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_15
             {
                 foreach(char character in word)
                 {
-#if !PRECSHARP7
-                    if(TryGetPhoneButton(character, out char button))
-#else
-                    char button;
-                    if(TryGetPhoneButton(character, out button))
-#endif // PRECSHARP7
+                    #region HIGHLIGHT
+                    if (TryGetPhoneButton(character, out char button))
+                    #endregion
                     {
                         Console.Write(button);
                     }
@@ -37,7 +34,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_15
             return 0;
         }
 
+        #region HIGHLIGHT
         static bool TryGetPhoneButton(char character, out char button)
+        #endregion
         {
             bool success = true;
             switch(char.ToLower(character))
@@ -46,8 +45,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_15
                     button = '1';
                     break;
                 case '2':
+                case 'a':
+                case 'b':
+                case 'c':
                     button = '2';
                     break;
+
+                #region EXCLUDE
                 case '3':
                     button = '3';
                     break;
@@ -73,11 +77,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_15
                     button = '0';
                     break;
 
-                case 'a':
-                case 'b':
-                case 'c':
-                    button = '2';
-                    break;
+
                 case 'd':
                 case 'e':
                 case 'f':
@@ -118,6 +118,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_15
                 case '+':
                     button = '0';
                     break;
+                #endregion
+
                 case '-':
                     button = '-';
                     break;
@@ -130,4 +132,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_15
             return success;
         }
     }
+    #endregion
 }
