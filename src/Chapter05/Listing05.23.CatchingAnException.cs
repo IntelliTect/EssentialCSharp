@@ -1,5 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_23
 {
+    #region INCLUDE
     using System;
 
     public class ExceptionHandling
@@ -12,11 +13,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_23
             int result = 0;
 
             Console.Write("Enter your first name: ");
-            // TODO: Update listing in Manuscript
             firstName = Console.ReadLine();
 
             Console.Write("Enter your age: ");
-            // TODO: Update listing in Manuscript
             // Assume not null for clarity
             ageText = Console.ReadLine()!;
 
@@ -46,4 +45,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_23
             return result;
         }
     }
+    #endregion
 }

@@ -1,8 +1,10 @@
-#pragma warning disable CS1058 // A previous catch clause already catches all exceptions
 #pragma warning disable CS0168 // Variable is declared but never used
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_25
 {
-    // TODO: Update listing in Manuscript
+    #region INCLUDE
+    // A previous catch clause already catches all exceptions
+    #pragma warning disable CS1058
+    #region EXCLUDE
     using System;
 
     public class ExceptionHandling
@@ -15,14 +17,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_25
             int result = 0;
 
             Console.Write("Enter your first name: ");
-            // TODO: Update listing in Manuscript
             firstName = Console.ReadLine();
 
             Console.Write("Enter your age: ");
-            // TODO: Update listing in Manuscript
             // Assume not null for clarity
             ageText = Console.ReadLine()!;
 
+    #endregion
             try
             {
                 age = int.Parse(ageText);
@@ -50,7 +51,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_25
             {
                 Console.WriteLine($"Goodbye { firstName }");
             }
-
+    #endregion
             return result;
         }
     }

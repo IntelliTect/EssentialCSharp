@@ -1,5 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_22
 {
+    #region INCLUDE
     using System;
 
     public class ExceptionHandling
@@ -13,17 +14,18 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_22
             Console.WriteLine("Hey you!");
 
             Console.Write("Enter your first name: ");
-            // TODO: Update listing in Manuscript
             firstName = Console.ReadLine();
 
+            #region HIGHLIGHT
             Console.Write("Enter your age: ");
-            // TODO: Update listing in Manuscript
             // Assume not null for clarity
             ageText = Console.ReadLine()!;
             age = int.Parse(ageText);
 
             Console.WriteLine(
                 $"Hi { firstName }!  You are { age * 12 } months old.");
+            #endregion
         }
     }
+    #endregion
 }
