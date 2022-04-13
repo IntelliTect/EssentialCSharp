@@ -8,10 +8,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_16.Tests
         [TestMethod]
         public void Main_InputInigoMontoya_WriteFullName()
         {
-            string view = @"image\[*\]=Red
+            string expected = @"image\[*\]=Red
 image\[*\]=Black";
 
-            IntelliTect.TestTools.Console.ConsoleAssert.ExpectLike(view,
+            IntelliTect.TestTools.Console.ConsoleAssert.ExpectLike(expected,
             () =>
             {
                 Program.Main();

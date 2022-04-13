@@ -1,5 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_17
 {
+    #region INCLUDE
     using System;
     using System.IO;
 
@@ -11,32 +12,40 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_17
 
             // ...
 
+            #region HIGHLIGHT
             // Call Combine() with four parameters
             fullName = Combine(
                 Directory.GetCurrentDirectory(),
                 "bin", "config", "index.html");
+            #endregion
             Console.WriteLine(fullName);
 
             // ...
 
+            #region HIGHLIGHT
             // Call Combine() with only three parameters
             fullName = Combine(
                 Environment.SystemDirectory,
                 "Temp", "index.html");
+            #endregion
             Console.WriteLine(fullName);
 
             // ...
 
+            #region HIGHLIGHT
             // Call Combine() with an array
             fullName = Combine(
                 new string[] {
                     $"C:{Path.DirectorySeparatorChar}", "Data",
                     "HomeDir", "index.html" });
+            #endregion
             Console.WriteLine(fullName);
             // ...
         }
 
+        #region HIGHLIGHT
         static string Combine(params string[] paths)
+        #endregion
         {
             string result = string.Empty;
             foreach(string path in paths)
@@ -46,4 +55,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_17
             return result;
         }
     }
+    #endregion
 }

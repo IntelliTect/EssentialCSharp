@@ -17,7 +17,7 @@ Enter your first name: <<Inigo
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(view,
             () =>
             {
-                Program.Main();
+                IntroducingMethods.Main();
             });
         }
     }

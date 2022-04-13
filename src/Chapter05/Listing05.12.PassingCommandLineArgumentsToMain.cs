@@ -1,15 +1,19 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_12
 {
-    // TODO: Update listing in Manuscript
+    #region INCLUDE
     using System;
     using System.Net;
 
     public class Program
     {
+        #region HIGHLIGHT
         public static int Main(string[] args)
+        #endregion
         {
+            #region HIGHLIGHT
             int result;
             switch(args.Length)
+            #endregion
             {
                 default:
                     // Exactly two arguments must be specified; give an error
@@ -22,12 +26,18 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_12
                     break;
                 case 2:
                     WebClient webClient = new WebClient();
+                    #region HIGHLIGHT
                     webClient.DownloadFile(args[0], args[1]);
+                    #endregion
                     result = 0;
+                    #region HIGHLIGHT
                     break;
+                    #endregion
             }
-
+            #region HIGHLIGHT
             return result;
+            #endregion
         }
     }
+    #endregion
 }

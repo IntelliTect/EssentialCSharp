@@ -1,6 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_18
 {
-    // TODO: Update listing in Manuscript
+    #region INCLUDE
     using System.IO;
 
     public static class LineCounter
@@ -23,7 +23,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_18
             System.Console.WriteLine(totalLineCount);
         }
 
+        #region HIGHLIGHT
         static int DirectoryCountLines(string directory)
+        #endregion
         {
             int lineCount = 0;
             foreach(string file in
@@ -35,7 +37,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_18
             foreach(string subdirectory in
                 Directory.GetDirectories(directory))
             {
+                #region HIGHLIGHT
                 lineCount += DirectoryCountLines(subdirectory);
+                #endregion
             }
 
             return lineCount;
@@ -63,4 +67,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_18
             return lineCount;
         }
     }
+    #endregion
 }

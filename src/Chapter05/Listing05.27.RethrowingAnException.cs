@@ -21,7 +21,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_27
                 Console.WriteLine(
                     "A FormateException was thrown");
             }
-            catch(Exception exception)
+            #region INCLUDE
+            // ...
+            catch (Exception exception)
             {
                 Console.WriteLine(
                     "Rethrowing unexpected error:  "
@@ -29,6 +31,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_27
 
                 throw;
             }
+            // ...
+            #endregion
             catch
             {
                 Console.WriteLine("Unexpected error!");

@@ -1,5 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_19
 {
+    #region INCLUDE
     using System.IO;
 
     public static class LineCounter
@@ -10,33 +11,45 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_19
 
             if(args.Length > 1)
             {
+                #region HIGHLIGHT
                 totalLineCount =
                     DirectoryCountLines(args[0], args[1]);
+                #endregion
             }
             else if(args.Length > 0)
             {
+                #region HIGHLIGHT
                 totalLineCount = DirectoryCountLines(args[0]);
+                #endregion
             }
             else
             {
+                #region HIGHLIGHT
                 totalLineCount = DirectoryCountLines();
+                #endregion
             }
 
             System.Console.WriteLine(totalLineCount);
         }
 
+        #region HIGHLIGHT
         static int DirectoryCountLines()
+        #endregion
         {
             return DirectoryCountLines(
                 Directory.GetCurrentDirectory());
         }
 
+        #region HIGHLIGHT
         static int DirectoryCountLines(string directory)
+        #endregion
         {
             return DirectoryCountLines(directory, "*.cs");
         }
 
+        #region HIGHLIGHT
         static int DirectoryCountLines(
+        #endregion
             string directory, string extension)
         {
             int lineCount = 0;
@@ -76,4 +89,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_19
             return lineCount;
         }
     }
+    #endregion
 }

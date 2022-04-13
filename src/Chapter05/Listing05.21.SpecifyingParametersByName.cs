@@ -1,11 +1,14 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_21
 {
+    #region INCLUDE
     public class Program
     {
         public static void Main()
         {
+            #region HIGHLIGHT
             DisplayGreeting(
                 firstName: "Inigo", lastName: "Montoya");
+            #endregion
         }
 
         public static void DisplayGreeting(
@@ -17,4 +20,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_21
             // ...
         }
     }
+    #endregion
 }

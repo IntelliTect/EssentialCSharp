@@ -2,6 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_13
 {
     using System;
 
+    #region INCLUDE
     public class Program
     {
         public static void Main()
@@ -28,4 +29,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_13
             return path;
         }
     }
+    #endregion
 }
