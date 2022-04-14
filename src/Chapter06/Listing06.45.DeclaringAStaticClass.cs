@@ -3,7 +3,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_45
     using System;
     using static SimpleMath;
 
+    #region INCLUDE
+    #region HIGHLIGHT
     public static class SimpleMath
+    #endregion
     {
         // params allows the number of parameters to vary
         public static int Max(params int[] numbers)
@@ -34,7 +37,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_45
             // Check that there is at least one item in numbers
             if(numbers.Length == 0)
             {
-                // TODO: Update listing in Manuscript
                 throw new ArgumentException(
                     "numbers cannot be empty", nameof(numbers));
             }
@@ -63,12 +65,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_45
             }
 
             Console.WriteLine(
-                $@"Longest argument length = { Max(numbers) }");
+                $@"Longest argument length = {
+                    Max(numbers) }");
 
             Console.WriteLine(
                 $@"Shortest argument length = {
-                    SimpleMath.Min(numbers) }");
+                    Min(numbers) }");
         }
     }
-
+    #endregion
 }

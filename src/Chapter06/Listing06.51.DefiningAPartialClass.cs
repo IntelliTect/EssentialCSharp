@@ -1,5 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_51
 {
+    #region INCLUDE
     // File: Program1.cs
     partial class Program
     {
@@ -9,4 +10,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_51
     partial class Program
     {
     }
+    #endregion
 }

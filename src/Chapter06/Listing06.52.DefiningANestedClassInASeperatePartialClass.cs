@@ -5,7 +5,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_52
 {
     using System;
 
-
+    #region INCLUDE
     // File: Program.cs
     partial class Program
     {
@@ -13,12 +13,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_52
         {
             CommandLine commandLine = new CommandLine(args);
 
-            #pragma warning disable CS1522 // Empty switch block
             switch(commandLine.Action)
             {
-                // ...
+                #region EXCLUDE
+                default:
+                    break;
+                #endregion
             }
-            #pragma warning restore CS1522 // Empty switch block
         }
     }
 
@@ -28,6 +29,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_52
         // Define a nested class for processing the command line
         private class CommandLine
         {
+            #region EXCLUDE
             public CommandLine(string[] args)
             {
                 //not implemented
@@ -39,6 +41,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_52
                 get { throw new NotImplementedException(); }
                 set { throw new NotImplementedException(); }
             }
+            #endregion
         }
     }
+    #endregion
 }

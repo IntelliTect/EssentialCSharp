@@ -6,12 +6,15 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_53
 {
     using System;
 
+    #region INCLUDE
     // File: Person.Designer.cs
     public partial class Person
     {
         #region Extensibility Method Definitions
+        #region HIGHLIGHT
         static partial void OnLastNameChanging(string value);
         static partial void OnFirstNameChanging(string value);
+        #endregion
         #endregion
 
         // ...
@@ -25,7 +28,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_53
             {
                 if((_LastName != value))
                 {
+                    #region HIGHLIGHT
                     OnLastNameChanging(value);
+                    #endregion
                     _LastName = value;
                 }
             }
@@ -43,7 +48,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_53
             {
                 if(_FirstName != value)
                 {
+                    #region HIGHLIGHT
                     OnFirstNameChanging(value);
+                    #endregion
                     _FirstName = value;
                 }
             }
@@ -57,7 +64,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_53
     {
         static partial void OnLastNameChanging(string value)
         {
-            if(value == null)
+            if(value is null)
             {
                 throw new ArgumentNullException(nameof(value));
             }
@@ -69,6 +76,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_53
             }
         }
 
+        #region EXCLUDE
         static partial void OnFirstNameChanging(string value)
         {
             if(value == null)
@@ -83,5 +91,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_53
 
             }
         }
+        #endregion
     }
+    #endregion
 }

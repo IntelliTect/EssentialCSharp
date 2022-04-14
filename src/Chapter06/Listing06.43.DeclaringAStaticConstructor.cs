@@ -2,7 +2,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_43
 {
     using System;
 
-    class Employee
+    #region INCLUDE
+    public class Employee
     {
         static Employee()
         {
@@ -14,4 +15,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_43
         public static int NextId = 42;
         // ...
     }
+    #endregion
 }
