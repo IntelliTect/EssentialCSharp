@@ -21,11 +21,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_23
     {
         public static void Main()
         {
+            #region INCLUDE
+            // ...
             Person inigo = new Person("Inigo", "Montoya");
             var buttercup = 
                 (FirstName: "Princess", LastName: "Buttercup");
 
-            (Person, (string FirstName, string LastName)) couple = (inigo, buttercup);
+            (Person inigo, (string FirstName, string LastName) buttercup) couple =
+                (inigo, buttercup);
 
             if (couple is 
                 ( // Tuple
@@ -39,6 +42,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_23
             {
                 Console.WriteLine($"({inigoLength1}, {buttercupFirstName})");
             }
+            else
+            {
+                // ...
+            }
+            // ...
+            #endregion
         }
     }
 }

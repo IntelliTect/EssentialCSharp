@@ -21,6 +21,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_22
     {
         public static void Main()
         {
+            #region INCLUDE
+            // ...
             Person person = new Person("Inigo", "Montoya");
 
             // Positional pattern matching
@@ -28,6 +30,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_22
             {
                 Console.WriteLine($"{firstName} {lastName}");
             }
+            // ...
+            #endregion
         }
     }
 }

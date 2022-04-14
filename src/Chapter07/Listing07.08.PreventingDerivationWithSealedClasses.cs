@@ -1,5 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_08
 {
+    #region INCLUDE
     public sealed class CommandLineParser
     {
         // ...
@@ -10,4 +11,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_08
     {
         // ...
     }
+    #endregion
 }

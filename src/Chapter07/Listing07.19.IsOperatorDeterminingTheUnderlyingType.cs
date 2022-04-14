@@ -4,6 +4,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_19
 {
     public class Program
     {
+        #region INCLUDE
         public static void Save(object data)
         {
 
@@ -16,10 +17,15 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_19
                     // ...
                 }
             }
-            // ...
-
+            else if (data is null)
+            {
+                // ...
+            }
+            #region EXCLUDE
             Console.WriteLine(data);
+            #endregion
         }
+        #endregion
 
         public static object Encrypt(string data)
         {

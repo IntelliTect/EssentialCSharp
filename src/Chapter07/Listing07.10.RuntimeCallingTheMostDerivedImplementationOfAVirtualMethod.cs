@@ -3,6 +3,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_10
     using System;
     using Listing07_09;
 
+    #region INCLUDE
     public class Program
     {
         public static void Main()
@@ -22,4 +23,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_10
                 $"{ contact.FirstName } { contact.LastName}");
         }
     }
+    #endregion
 }

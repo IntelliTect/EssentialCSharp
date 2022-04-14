@@ -1,6 +1,8 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_16
 {
     using System;
+
+    #region INCLUDE
     using static System.Environment;
 
     // Define an abstract class
@@ -12,14 +14,18 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_16
         }
 
         public virtual string Name { get; set; }
+        #region HIGHLIGHT
         public abstract string GetSummary();
+        #endregion
     }
     public class Contact : PdaItem
     {
+        #region EXCLUDE
         public Contact(string name)
             : base(name)
         {
         }
+        #endregion
 
         public override string Name
         {
@@ -37,6 +43,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_16
             }
         }
 
+        #region HIGHLIGHT
         public string FirstName
         {
             get
@@ -45,11 +52,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_16
             }
             set
             {
-                _FirstName = value ?? throw new ArgumentNullException(nameof(value)); ;
+                _FirstName = value ??
+                    throw new ArgumentNullException(nameof(value)); ;
             }
         }
         private string? _FirstName;
+        #endregion
 
+        #region HIGHLIGHT
         public string LastName
         {
             get
@@ -62,15 +72,17 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_16
             }
         }
         private string? _LastName;
-
+        #endregion
         public string? Address { get; set; }
 
+        #region HIGHLIGHT
         public override string GetSummary()
         {
             return $"FirstName: { FirstName + NewLine }"
             + $"LastName: { LastName + NewLine }"
             + $"Address: { Address + NewLine }";
         }
+        #endregion
 
         // ...
     }
@@ -99,4 +111,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_16
                 + $"Location: { Location }";
         }
     }
+    #endregion
 }
