@@ -14,7 +14,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_45
             // Check that there is at least one item in numbers
             if(numbers.Length == 0)
             {
-                // TODO: Update listing in Manuscript
                 throw new ArgumentException(
                     "numbers cannot be empty", nameof(numbers));
             }

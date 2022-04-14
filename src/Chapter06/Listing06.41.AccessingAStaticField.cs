@@ -32,8 +32,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_41
                 $"NextId = {Employee.NextId}");
             #endregion
         }
+        // ...
     }
-    #region EXCLUDE
+    #endregion
     public class Employee
     {
         public Employee(string firstName, string lastName)
@@ -54,6 +55,4 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_41
         public string LastName { get; set; }
         public string? Salary { get; set; } = "Not Enough";
     }
-    #endregion
-    #endregion
 }

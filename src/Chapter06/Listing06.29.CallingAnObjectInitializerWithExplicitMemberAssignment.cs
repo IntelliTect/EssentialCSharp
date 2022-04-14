@@ -7,7 +7,6 @@
         {
             Employee employee = new Employee("Inigo", "Montoya") 
                 { Title = "Computer Nerd", Salary = "Not enough" };
-
             #region EXCLUDE
             System.Console.WriteLine(
                 "{0} {1} ({2}): {3}",

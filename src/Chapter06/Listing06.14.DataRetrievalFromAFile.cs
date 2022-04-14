@@ -8,34 +8,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_14
     // IO namespace
     using System.IO;
 
-    public class Program
-    {
-        public static void Main()
-        {
-            Employee employee1;
-
-            Employee employee2 = new Employee();
-            employee2.SetName("Inigo", "Montoya");
-            employee2.Save();
-
-            // Modify employee2 after saving
-            IncreaseSalary(employee2);
-
-            // Load employee1 from the saved version of employee2
-            employee1 = DataStorage.Load("Inigo", "Montoya");
-
-            Console.WriteLine(
-                $"{ employee1.GetName() }: { employee1.Salary }");
-        }
-
-        #region EXCLUDE
-        public static void IncreaseSalary(Employee employee)
-        {
-            employee.Salary = "Enough to survive on";
-        }
-        #endregion
-    }
-
     public class Employee
     {
         #region EXCLUDE
@@ -119,6 +91,34 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_14
 
             return employee;
         }
+    }
+
+    public class Program
+    {
+        public static void Main()
+        {
+            Employee employee1;
+
+            Employee employee2 = new Employee();
+            employee2.SetName("Inigo", "Montoya");
+            employee2.Save();
+
+            // Modify employee2 after saving
+            IncreaseSalary(employee2);
+
+            // Load employee1 from the saved version of employee2
+            employee1 = DataStorage.Load("Inigo", "Montoya");
+
+            Console.WriteLine(
+                $"{ employee1.GetName() }: { employee1.Salary }");
+        }
+
+        #region EXCLUDE
+        public static void IncreaseSalary(Employee employee)
+        {
+            employee.Salary = "Enough to survive on";
+        }
+        #endregion
     }
     #endregion
 }

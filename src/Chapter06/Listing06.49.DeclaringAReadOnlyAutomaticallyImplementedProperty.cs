@@ -70,7 +70,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_49
         // Error: A readonly field cannot be assigned to(except 
         // in a constructor or a variable initializer)
         // public void SetCells(bool[,,] value) =>
-        //         _Cells = new bool[2, 3, 3];
+        // Cells = new bool[2, 3, 3];
 
         // ...
     }

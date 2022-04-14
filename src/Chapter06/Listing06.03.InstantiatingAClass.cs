@@ -21,7 +21,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_03
             IncreaseSalary(employee1);
             IncreaseSalary(employee2);
         }
-
         #region EXCLUDE
         public static void IncreaseSalary(Employee employee)
         {

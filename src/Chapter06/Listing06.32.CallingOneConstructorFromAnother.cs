@@ -26,6 +26,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_32
 
             // Look up employee name...
             // ...
+
             #region HIGHLIGHT
             // NOTE: Member constructors cannot be 
             // called explicitly inline

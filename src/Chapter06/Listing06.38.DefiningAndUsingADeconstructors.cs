@@ -1,44 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_38
 {
     #region INCLUDE
-    public class Program
-    {
-        public static void Main()
-        {
-            Employee employee;
-            employee = new Employee("Inigo", "Montoya")
-            {
-                // Leveraging object initializer syntax
-                Salary = "Too Little"
-            };
-
-            #region EXCLUDE
-            System.Console.WriteLine(
-                "{0} {1}: {2}",
-                employee.FirstName,
-                employee.LastName,
-                employee.Salary);
-            #endregion
-
-            #region HIGHLIGHT
-            employee.Deconstruct(out _, out string firstName, 
-                out string lastName, out string? salary);
-            #endregion
-            
-            System.Console.WriteLine(
-                "{0} {1}: {2}",
-                firstName, lastName, salary);
-
-            #region EXCLUDE
-            (_, firstName, lastName, salary) = employee;
-
-            System.Console.WriteLine(
-                "{0} {1}: {2}",
-                firstName, lastName, salary);
-            #endregion
-        }
-    }
-
     public class Employee
     {
         #region EXCLUDE
@@ -126,6 +88,44 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_38
             }
         }
         #endregion
+    }
+
+    public class Program
+    {
+        public static void Main()
+        {
+            Employee employee;
+            employee = new Employee("Inigo", "Montoya")
+            {
+                // Leveraging object initializer syntax
+                Salary = "Too Little"
+            };
+
+            #region EXCLUDE
+            System.Console.WriteLine(
+                "{0} {1}: {2}",
+                employee.FirstName,
+                employee.LastName,
+                employee.Salary);
+            #endregion
+
+            #region HIGHLIGHT
+            employee.Deconstruct(out _, out string firstName,
+                out string lastName, out string? salary);
+            #endregion
+
+            System.Console.WriteLine(
+                "{0} {1}: {2}",
+                firstName, lastName, salary);
+
+            #region EXCLUDE
+            (_, firstName, lastName, salary) = employee;
+
+            System.Console.WriteLine(
+                "{0} {1}: {2}",
+                firstName, lastName, salary);
+            #endregion
+        }
     }
     #endregion
 }

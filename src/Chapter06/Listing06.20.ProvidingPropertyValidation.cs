@@ -29,7 +29,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_20
                 if (value is null)
                 {
                     // Report error
-                    // Use "value" rather than nameof(value) prior to C# 6.0.
+                    // Use "value" rather than
+                    // nameof(value) prior to C# 6.0.
                     throw new ArgumentNullException(nameof(value));
                 }
                 else
@@ -40,7 +41,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_20
                     if(value == "")
                     {
                         // Report error
-                        // Use "value" rather than nameof(value) prior to C# 6.0.
+                        // Use "value" rather than
+                        // nameof(value) prior to C# 6.0.
                         throw new ArgumentException(
                             "LastName cannot be blank.", nameof(value));
                     }

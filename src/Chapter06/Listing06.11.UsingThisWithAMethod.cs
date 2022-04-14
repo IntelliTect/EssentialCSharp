@@ -6,18 +6,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_11
     using System;
 
     #region INCLUDE
-    public class Program
-    {
-        public static void Main()
-        {
-            Employee employee = new Employee();
-
-            employee.SetName("Inigo", "Montoya");
-            // ...
-        }
-        // ...
-    }
-
     public class Employee
     {
         #region EXCLUDE
@@ -40,6 +28,18 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_11
                 $"Name changed to '{ this.GetName() }'");
             #endregion
         }
+    }
+
+    public class Program
+    {
+        public static void Main()
+        {
+            Employee employee = new Employee();
+
+            employee.SetName("Inigo", "Montoya");
+            // ...
+        }
+        // ...
     }
     #endregion
 }

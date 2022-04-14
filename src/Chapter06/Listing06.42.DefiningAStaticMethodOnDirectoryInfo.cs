@@ -48,10 +48,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_42
                     }
                 }
             }
+            #region EXCLUDE
             private static void Copy(string element, string fileName, string searchPattern)
             {
                 Console.WriteLine("Copying " + fileName);
             }
+            #endregion
         }
 
         #region EXCLUDE

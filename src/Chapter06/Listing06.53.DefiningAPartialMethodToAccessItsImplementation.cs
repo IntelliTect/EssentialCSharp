@@ -75,7 +75,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_53
                     nameof(value));
             }
         }
-
         #region EXCLUDE
         static partial void OnFirstNameChanging(string value)
         {

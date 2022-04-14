@@ -11,34 +11,13 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_15
 {
     #region INCLUDE
-    public class Program
-    {
-        public static void Main()
-        {
-            Employee employee = new Employee();
-
-            employee.FirstName = "Inigo";
-            employee.LastName = "Montoya";
-
-            // ...
-
-            #region HIGHLIGHT
-            // Password is private, so it cannot be
-            // accessed from outside the class
-            // Console.WriteLine(
-            //    ("Password = {0}", employee.Password);
-            #endregion
-        }
-        // ...
-    }
-
     public class Employee
     {
         public string FirstName;
         public string LastName;
         public string? Salary;
-        // Working de-crypted passwords for elucidation 
-        // only – this is no recommended.
+        // Working de-crypted passwords for elucidation only
+        // this is not recommended.
         #region HIGHLIGHT
         private string Password;  // Uninitialized pending explanation of constructors
         private bool IsAuthenticated;
@@ -59,6 +38,27 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_15
             return IsAuthenticated;
         }
         #endregion
+        // ...
+    }
+
+    public class Program
+    {
+        public static void Main()
+        {
+            Employee employee = new Employee();
+
+            employee.FirstName = "Inigo";
+            employee.LastName = "Montoya";
+
+            // ...
+
+            #region HIGHLIGHT
+            // Password is private, so it cannot be
+            // accessed from outside the class
+            // Console.WriteLine(
+            //    ("Password = {0}", employee.Password);
+            #endregion
+        }
         // ...
     }
     #endregion
