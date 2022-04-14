@@ -43,7 +43,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_38
             LastName = lastName;
         }
         #endregion
-
         public void Deconstruct(
             out int id, out string firstName, 
             out string lastName, out string? salary)
@@ -51,7 +50,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_38
            (id, firstName, lastName, salary) = 
                 (Id, FirstName, LastName, Salary);
         }
-
         #region EXCLUDE
         public int Id { get; private set; }
         public string FirstName { get; set; }
@@ -100,7 +98,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_38
                 // Leveraging object initializer syntax
                 Salary = "Too Little"
             };
-
             #region EXCLUDE
             System.Console.WriteLine(
                 "{0} {1}: {2}",

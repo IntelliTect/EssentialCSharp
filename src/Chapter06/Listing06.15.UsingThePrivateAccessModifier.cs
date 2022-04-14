@@ -18,8 +18,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_15
         public string? Salary;
         // Working de-crypted passwords for elucidation only
         // this is not recommended.
+        // Uninitialized; pending explanation of constructors
         #region HIGHLIGHT
-        private string Password;  // Uninitialized pending explanation of constructors
+        private string Password;  
         private bool IsAuthenticated;
         #endregion
 

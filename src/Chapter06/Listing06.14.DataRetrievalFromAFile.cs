@@ -81,9 +81,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_14
             // Read each line from the file and place it into
             // the associated property.
             employee.FirstName = reader.ReadLine()??
-                throw new InvalidOperationException("FirstName cannot be null");
+                throw new InvalidOperationException(
+                    "FirstName cannot be null");
             employee.LastName = reader.ReadLine()??
-                throw new InvalidOperationException("LastName cannot be null");
+                throw new InvalidOperationException(
+                    "LastName cannot be null");
             employee.Salary = reader.ReadLine();
 
             // Dispose the StreamReader and its Stream
@@ -112,7 +114,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_14
             Console.WriteLine(
                 $"{ employee1.GetName() }: { employee1.Salary }");
         }
-
         #region EXCLUDE
         public static void IncreaseSalary(Employee employee)
         {
