@@ -21,8 +21,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_20
                 Console.WriteLine(File.ReadAllText(DataFile));
             }
             #region HIGHLIGHT
-            else if ((args.Length, args[Action].ToLower(), args[FileName]) is 
-                (2, "encrypt", string fileName))
+            else if ((args.Length, args[Action].ToLower(), args[FileName]) 
+                is (2, "encrypt", string fileName))
             #endregion
             {
                 string data = File.ReadAllText(DataFile);
@@ -30,7 +30,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_20
             }
             // ...
         }
-
         #region EXCLUDE
         public static string Encrypt(string data)
         {

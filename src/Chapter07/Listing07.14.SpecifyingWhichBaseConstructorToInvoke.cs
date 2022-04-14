@@ -51,8 +51,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_14
 
     public class Appointment : PdaItem
     {
-        public Appointment(string name,
-            string location, DateTime startDateTime, DateTime endDateTime) :
+        public Appointment(string name, string location,
+            DateTime startDateTime, DateTime endDateTime) :
             base(name)
         {
             Location = location;

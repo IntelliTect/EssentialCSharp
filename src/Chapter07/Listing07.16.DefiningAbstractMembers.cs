@@ -18,6 +18,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_16
         public abstract string GetSummary();
         #endregion
     }
+
     public class Contact : PdaItem
     {
         #region EXCLUDE
@@ -26,14 +27,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_16
         {
         }
         #endregion
-
         public override string Name
         {
             get
             {
                 return $"{ FirstName } { LastName }";
             }
-
             set
             {
                 string[] names = value.Split(' ');
@@ -89,8 +88,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_16
 
     public class Appointment : PdaItem
     {
-        public Appointment(string name, 
-            string location, DateTime startDateTime, DateTime endDateTime) :
+        public Appointment(string name, string location,
+            DateTime startDateTime, DateTime endDateTime) :
             base(name)
         {
             Location = location;

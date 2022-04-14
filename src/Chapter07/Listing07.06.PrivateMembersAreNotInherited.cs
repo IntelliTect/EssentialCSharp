@@ -19,7 +19,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_06
             get { return _Name; }
             set { _Name = value; }
         }
-
         #region EXCLUDE
         #pragma warning restore CS8618 // Non-nullable field is uninitialized. Consider declaring as nullable.
         #endregion

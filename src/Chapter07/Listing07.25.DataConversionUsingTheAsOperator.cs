@@ -2,23 +2,23 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_25
 {
     using System;
 
+    #region INCLUDE
     public class PdaItem
     {
         protected Guid ObjectKey { get; }
-
         // ...
     }
 
     public class Contact : PdaItem
     {
-
+        // ...
         public Contact(string name) => Name = name;
 
         static public Contact Load(PdaItem pdaItem)
         {
-#pragma warning disable IDE0019 // Use pattern matching
+            #pragma warning disable IDE0019 // Use pattern matching
             Contact? contact = pdaItem as Contact;
-#pragma warning restore IDE0019 // Use pattern matching
+            #pragma warning restore IDE0019 // Use pattern matching
             if (contact != null)
             {
                 System.Diagnostics.Trace.WriteLine(
@@ -31,8 +31,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_25
                     $"{nameof(pdaItem)} was not of type {nameof(Contact)}");
             }
         }
-
-        // ...
+        #region EXCLUDE
         public string Name { get; set; }
+        #endregion
     }
+    #endregion
 }
