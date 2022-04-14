@@ -3,7 +3,9 @@
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_14
 {
+    #region INCLUDE
     using System;
+    // IO namespace
     using System.IO;
 
     public class Program
@@ -26,14 +28,17 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_14
                 $"{ employee1.GetName() }: { employee1.Salary }");
         }
 
-        static void IncreaseSalary(Employee employee)
+        #region EXCLUDE
+        public static void IncreaseSalary(Employee employee)
         {
             employee.Salary = "Enough to survive on";
         }
+        #endregion
     }
 
-    class Employee
+    public class Employee
     {
+        #region EXCLUDE
         public string FirstName;
         public string LastName;
         public string? Salary;
@@ -55,10 +60,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_14
         {
             DataStorage.Store(this);
         }
+        #endregion
     }
 
-    class DataStorage
+    public class DataStorage
     {
+        #region EXCLUDE
         // Save an employee object to a file 
         // named with the Employee name
         // Error handling not shown
@@ -84,6 +91,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_14
             // Dispose the StreamWriter and its stream
             writer.Dispose();  // Automatically closes the stream
         }
+        #endregion
 
         public static Employee Load(string firstName, string lastName)
         {
@@ -112,5 +120,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_14
             return employee;
         }
     }
-
+    #endregion
 }

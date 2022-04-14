@@ -10,6 +10,7 @@
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_15
 {
+    #region INCLUDE
     public class Program
     {
         public static void Main()
@@ -21,10 +22,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_15
 
             // ...
 
+            #region HIGHLIGHT
             // Password is private, so it cannot be
             // accessed from outside the class
             // Console.WriteLine(
             //    ("Password = {0}", employee.Password);
+            #endregion
         }
         // ...
     }
@@ -36,9 +39,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_15
         public string? Salary;
         // Working de-crypted passwords for elucidation 
         // only – this is no recommended.
+        #region HIGHLIGHT
         private string Password;  // Uninitialized pending explanation of constructors
         private bool IsAuthenticated;
+        #endregion
 
+        #region HIGHLIGHT
         public bool Logon(string password)
         {
             if(Password == password)
@@ -52,6 +58,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_15
         {
             return IsAuthenticated;
         }
+        #endregion
         // ...
     }
+    #endregion
 }

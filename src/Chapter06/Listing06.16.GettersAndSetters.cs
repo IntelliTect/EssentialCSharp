@@ -3,6 +3,7 @@
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_16
 {
+    #region INCLUDE
     public class Employee
     {
         private string FirstName;
@@ -36,4 +37,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_16
         }
         // ...
     }
+    #endregion
 }

@@ -3,7 +3,7 @@
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_09
 {
-    
+    #region INCLUDE
     public class Employee
     {
         public string FirstName;
@@ -15,11 +15,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_09
             return $"{ FirstName }  { LastName }";
         }
 
+        #region HIGHLIGHT
         public void SetName(
             string newFirstName, string newLastName)
         {
             this.FirstName = newFirstName;
             this.LastName = newLastName;
         }
+        #endregion
     }
+    #endregion
 }

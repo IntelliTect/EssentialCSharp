@@ -1,5 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_38
 {
+    #region INCLUDE
     public class Program
     {
         public static void Main()
@@ -11,35 +12,36 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_38
                 Salary = "Too Little"
             };
 
+            #region EXCLUDE
             System.Console.WriteLine(
                 "{0} {1}: {2}",
                 employee.FirstName,
                 employee.LastName,
                 employee.Salary);
-#if !PRECSHARP7
+            #endregion
+
+            #region HIGHLIGHT
             employee.Deconstruct(out _, out string firstName, 
                 out string lastName, out string? salary);
-#else
-            int id;
-            string firstName, lastName, salary;
-            employee.Deconstruct(out id, out firstName, 
-                out lastName, out salary);
-#endif
+            #endregion
+            
             System.Console.WriteLine(
                 "{0} {1}: {2}",
                 firstName, lastName, salary);
 
+            #region EXCLUDE
             (_, firstName, lastName, salary) = employee;
 
             System.Console.WriteLine(
                 "{0} {1}: {2}",
                 firstName, lastName, salary);
-
+            #endregion
         }
     }
 
-    class Employee
+    public class Employee
     {
+        #region EXCLUDE
         // FirstName&LastName set inside Initialize() method.
         #pragma warning disable CS8618
         public Employee(string firstName, string lastName)
@@ -78,6 +80,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_38
             FirstName = firstName;
             LastName = lastName;
         }
+        #endregion
 
         public void Deconstruct(
             out int id, out string firstName, 
@@ -86,9 +89,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_38
            (id, firstName, lastName, salary) = 
                 (Id, FirstName, LastName, Salary);
         }
-        // ...
 
-
+        #region EXCLUDE
         public int Id { get; private set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -123,5 +125,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_38
                 }
             }
         }
+        #endregion
     }
+    #endregion
 }

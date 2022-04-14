@@ -3,9 +3,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_30
     using System.Collections.Generic;
     using Listing06_26;
 
-    class Program
+    #region INCLUDE
+    public class Program
     {
-        static void Main()
+        public static void Main()
         {
             List<Employee> employees = new List<Employee>()
                 {
@@ -15,4 +16,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_30
             // ...
         }
     }
+    #endregion
 }

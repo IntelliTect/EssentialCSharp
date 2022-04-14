@@ -4,6 +4,7 @@
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_31
 {
+    #region INCLUDE
     public class Employee
     {
         public Employee(string firstName, string lastName)
@@ -12,6 +13,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_31
             LastName = lastName;
         }
 
+        #region HIGHLIGHT
         public Employee(
             int id, string firstName, string lastName)
         {
@@ -20,10 +22,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_31
             LastName = lastName;
         }
 
-// FirstName&LastName set inside Id property setter.
-#pragma warning disable CS8618
+        // FirstName&LastName set inside Id property setter.
+        #pragma warning disable CS8618
         public Employee(int id) => Id = id;
-#pragma warning restore CS8618
+        #pragma warning restore CS8618
 
         private int _Id;
         public int Id
@@ -35,15 +37,21 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_31
                 // ...
             }
         }
+        #endregion
+        #region EXCLUDE
         [System.Diagnostics.CodeAnalysis.NotNull]
         [System.Diagnostics.CodeAnalysis.DisallowNull]
+        #endregion
         public string FirstName { get; set; }
+        #region EXCLUDE
         [System.Diagnostics.CodeAnalysis.DisallowNull]
         [System.Diagnostics.CodeAnalysis.NotNull]
+        #endregion
         public string LastName { get; set; }
         public string? Salary { get; set; } = "Not Enough";
 
 
         // ...
     }
+    #endregion
 }

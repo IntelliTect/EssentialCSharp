@@ -1,5 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_32
 {
+    #region INCLUDE
     public class Employee
     {
         public Employee(string firstName, string lastName)
@@ -8,9 +9,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_32
             LastName = lastName;
         }
 
+        #region HIGHLIGHT
         public Employee(
             int id, string firstName, string lastName)
             : this(firstName, lastName)
+        #endregion
         {
             Id = id;
         }
@@ -23,10 +26,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_32
 
             // Look up employee name...
             // ...
-
+            #region HIGHLIGHT
             // NOTE: Member constructors cannot be 
             // called explicitly inline
             // this(id, firstName, lastName);
+            #endregion
         }
         #pragma warning restore CS8618
 
@@ -37,4 +41,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_32
 
         // ...
     }
+    #endregion
 }

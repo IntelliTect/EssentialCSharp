@@ -3,26 +3,31 @@
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_21
 {
-    class Program
+    #region INCLUDE
+    public class Program
     {
-        static void Main()
+        public static void Main()
         {
             Employee employee1 = new Employee();
             employee1.Initialize(42);
 
+            #region HIGHLIGHT
             // ERROR:  Property or indexer 'Employee.Id' 
             // cannot be assigned to; it is read-only
             // employee1.Id = "490";
+            #endregion
         }
     }
 
-    class Employee
+    public class Employee
     {
         public void Initialize(int id)
         {
+            #region HIGHLIGHT
             // Use field because Id property has no setter;
             // it is read-only
             _Id = id.ToString();
+            #endregion
         }
 
         // ...
@@ -30,11 +35,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_21
         public string Id
         {
             get => _Id;
+            #region HIGHLIGHT
             // No setter provided
+            #endregion
         }
         private string _Id;
-
-        public string ID => Id;
-
     }
+    #endregion
 }

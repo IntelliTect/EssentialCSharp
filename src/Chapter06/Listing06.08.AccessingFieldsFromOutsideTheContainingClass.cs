@@ -7,6 +7,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_08
 {
     using System;
 
+    #region INCLUDE
     public class Program
     {
         public static void Main()
@@ -19,18 +20,20 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_08
             employee1.LastName = "Montoya";
             employee1.Salary = "Too Little";
             IncreaseSalary(employee1);
+            #region HIGHLIGHT
             Console.WriteLine(
                 $"{ employee1.GetName() }: { employee1.Salary }");
-
+            #endregion
+            // ...
         }
-
-        static void IncreaseSalary(Employee employee)
+        #region EXCLUDE
+        public static void IncreaseSalary(Employee employee)
         {
             employee.Salary = "Enough to survive on";
         }
     }
 
-    class Employee
+    public class Employee
     {
         public string FirstName;
         public string LastName;
@@ -40,5 +43,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_08
         {
             return FirstName + " " + LastName;
         }
+        #endregion
     }
+    #endregion
 }

@@ -2,12 +2,15 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_27
 {
     using Listing06_26;
 
+    #region INCLUDE
     public class Program
     {
         public static void Main()
         {
             Employee employee;
+            #region HIGHLIGHT
             employee = new Employee("Inigo", "Montoya");
+            #endregion
             employee.Salary = "Too Little";
 
             System.Console.WriteLine(
@@ -18,4 +21,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_27
         }
         // ...
     }
+    #endregion
 }

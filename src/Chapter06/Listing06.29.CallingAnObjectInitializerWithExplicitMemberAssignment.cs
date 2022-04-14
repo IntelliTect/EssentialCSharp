@@ -1,5 +1,6 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_29
 {
+    #region INCLUDE
     public class Program
     {
         public static void Main()
@@ -7,16 +8,19 @@
             Employee employee = new Employee("Inigo", "Montoya") 
                 { Title = "Computer Nerd", Salary = "Not enough" };
 
+            #region EXCLUDE
             System.Console.WriteLine(
                 "{0} {1} ({2}): {3}",
                 employee.FirstName,
                 employee.LastName,
                 employee.Title,
                 employee.Salary);
+            #endregion
         }
     }
+    #endregion
 
-    class Employee
+    public class Employee
     {
         // Employee constructor
         public Employee(string firstName, string lastName)
