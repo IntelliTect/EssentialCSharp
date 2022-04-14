@@ -5,22 +5,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_42
 
     public class Program
     {
-        public static void Main()
-        {
-            // ...
-            DirectoryInfo directory = new DirectoryInfo(".\\Source");
-            directory.MoveTo(".\\Root");
-            DirectoryInfoExtension.CopyTo(
-                directory, ".\\Target",
-                SearchOption.AllDirectories, "*");
-            // ...
-        }
-
+        #region INCLUDE
         public static class DirectoryInfoExtension
         {
+            #region HIGHLIGHT
             public static void CopyTo(
                 DirectoryInfo sourceDirectory, string target,
                 SearchOption option, string searchPattern)
+            #endregion
             {
                 if(target[target.Length - 1] !=
                     Path.DirectorySeparatorChar)
@@ -43,7 +35,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_42
                     }
                 }
 
-                //Copy subdirectories (recursively)
+                // Copy subdirectories (recursively)
                 if(option == SearchOption.AllDirectories)
                 {
                     foreach(string element in
@@ -56,10 +48,28 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_42
                     }
                 }
             }
+            #region EXCLUDE
             private static void Copy(string element, string fileName, string searchPattern)
             {
                 Console.WriteLine("Copying " + fileName);
             }
+            #endregion
         }
+
+        #region EXCLUDE
+        public static void Main()
+        {
+        #endregion
+            DirectoryInfo directory = new DirectoryInfo(".\\Source");
+            directory.MoveTo(".\\Root");
+            #region HIGHLIGHT
+            DirectoryInfoExtension.CopyTo(
+                directory, ".\\Target",
+                SearchOption.AllDirectories, "*");
+        #endregion
+        #region EXCLUDE
+        }
+        #endregion
+        #endregion
     }
 }

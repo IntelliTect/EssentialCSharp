@@ -5,6 +5,7 @@ using System;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_20
 {
+    #region INCLUDE
     public class Employee
     {
         // ...
@@ -23,10 +24,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_20
             get => _LastName;
             set
             {
+                #region HIGHLIGHT
                 // Validate LastName assignment
-                if(value == null)
+                if (value is null)
                 {
                     // Report error
+                    // Use "value" rather than
+                    // nameof(value) prior to C# 6.0.
                     throw new ArgumentNullException(nameof(value));
                 }
                 else
@@ -36,6 +40,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_20
                     value = value.Trim();
                     if(value == "")
                     {
+                        // Report error
+                        // Use "value" rather than
+                        // nameof(value) prior to C# 6.0.
                         throw new ArgumentException(
                             "LastName cannot be blank.", nameof(value));
                     }
@@ -44,10 +51,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_20
                         _LastName = value;
                     }
                 }
+                #endregion
             }
         }
         private string _LastName;
-
+        #region EXCLUDE
         // FirstName property
         public string FirstName
         {
@@ -61,8 +69,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_20
                 if(value == null)
                 {
                     // Report error
-                    // In C# 6.0 replace "value" with nameof(value)
-                    throw new ArgumentNullException("value");
+                    // Use "value" rather than nameof(value) prior to C# 6.0.
+                    throw new ArgumentNullException(nameof(value));
                 }
                 else
                 {
@@ -72,8 +80,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_20
                     if(value == "")
                     {
                         throw new ArgumentException(
-                            // Use "value" rather than nameof(value)
-                            // prior to C# 6.0.
+                            // Use "value" rather than nameof(value) prior to C# 6.0.
                             "FirstName cannot be blank.", nameof(value));
                     }
                     else
@@ -84,5 +91,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_20
             }
         }
         private string _FirstName;
+        #endregion
     }
+    #endregion
 }

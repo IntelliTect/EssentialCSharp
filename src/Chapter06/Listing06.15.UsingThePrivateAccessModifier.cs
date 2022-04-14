@@ -10,35 +10,21 @@
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_15
 {
-    public class Program
-    {
-        public static void Main()
-        {
-            Employee employee = new Employee();
-
-            employee.FirstName = "Inigo";
-            employee.LastName = "Montoya";
-
-            // ...
-
-            // Password is private, so it cannot be
-            // accessed from outside the class
-            // Console.WriteLine(
-            //    ("Password = {0}", employee.Password);
-        }
-        // ...
-    }
-
+    #region INCLUDE
     public class Employee
     {
         public string FirstName;
         public string LastName;
         public string? Salary;
-        // Working de-crypted passwords for elucidation 
-        // only – this is no recommended.
-        private string Password;  // Uninitialized pending explanation of constructors
+        // Working de-crypted passwords for elucidation only
+        // this is not recommended.
+        // Uninitialized; pending explanation of constructors
+        #region HIGHLIGHT
+        private string Password;  
         private bool IsAuthenticated;
+        #endregion
 
+        #region HIGHLIGHT
         public bool Logon(string password)
         {
             if(Password == password)
@@ -52,6 +38,29 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_15
         {
             return IsAuthenticated;
         }
+        #endregion
         // ...
     }
+
+    public class Program
+    {
+        public static void Main()
+        {
+            Employee employee = new Employee();
+
+            employee.FirstName = "Inigo";
+            employee.LastName = "Montoya";
+
+            // ...
+
+            #region HIGHLIGHT
+            // Password is private, so it cannot be
+            // accessed from outside the class
+            // Console.WriteLine(
+            //    ("Password = {0}", employee.Password);
+            #endregion
+        }
+        // ...
+    }
+    #endregion
 }

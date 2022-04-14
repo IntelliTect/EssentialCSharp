@@ -3,25 +3,30 @@
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_23
 {
-    class Program
+    #region INCLUDE
+    public class Program
     {
-        static void Main()
+        public static void Main()
         {
             Employee employee1 = new Employee();
             employee1.Initialize(42);
+            #region HIGHLIGHT
             // ERROR: The property or indexer 'Employee.Id' 
             // cannot be used in this context because the set 
             // accessor is inaccessible
-            // employee1.Id = "490";                     //will not compile if you uncomment this line
+            // employee1.Id = "490";
+            #endregion
         }
     }
 
-    class Employee
+    public class Employee
     {
         public void Initialize(int id)
         {
+            #region HIGHLIGHT
             // Set Id property
             Id = id.ToString();
+            #endregion
         }
 
         // ...
@@ -29,8 +34,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_23
         public string Id
         {
             get => _Id;
+            #region HIGHLIGHT
             private set => _Id = value;
+            #endregion
         }
         private string _Id;
     }
+    #endregion
 }

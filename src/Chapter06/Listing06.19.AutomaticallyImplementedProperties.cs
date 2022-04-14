@@ -3,6 +3,7 @@
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_19
 {
+    #region INCLUDE
     public class Program
     {
         public static void Main()
@@ -25,10 +26,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_19
             // Print employee1's manager's title
             System.Console.WriteLine(employee1.Manager.Title);
         }
-
     }
 
-    class Employee
+    public class Employee
     {
         // FirstName property
         public string FirstName
@@ -52,13 +52,20 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_19
         }
         private string _LastName;
 
+        #region HIGHLIGHT
         // Title property
         public string? Title { get; set; }
+        #endregion
 
+        #region HIGHLIGHT
         // Manager property
         public Employee? Manager { get; set; }
+        #endregion
 
+        #region HIGHLIGHT
         public string? Salary { get; set; } = "Not Enough";
-
+        #endregion
+        // ...
     }
+    #endregion
 }

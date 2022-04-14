@@ -1,12 +1,15 @@
-// Non-nullable field is uninitialized. Consider declaring as nullable.
-#pragma warning disable CS8618
-
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_05
 {
-    class Employee
+    #region INCLUDE
+    // Non-nullable field uninitialized warning disabled while code is incomplete
+    #pragma warning disable CS8618
+    public class Employee
     {
         public string FirstName;
         public string LastName;
+        #region HIGHLIGHT
         public string? Salary = "Not enough";
+        #endregion
     }
+    #endregion
 }

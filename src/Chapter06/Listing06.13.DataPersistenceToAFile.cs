@@ -1,8 +1,9 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_13
 {
+    using Listing06_12;
+    #region INCLUDE
     // IO namespace
     using System.IO;
-    using Listing06_12;
 
     public class DataStorage
     {
@@ -33,4 +34,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_13
         }
         // ...
     }
+    #endregion
 }

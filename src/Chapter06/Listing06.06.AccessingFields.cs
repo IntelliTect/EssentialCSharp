@@ -3,6 +3,7 @@
     using Listing06_05;
     using System;
 
+    #region INCLUDE
     public class Program
     {
         public static void Main()
@@ -11,6 +12,7 @@
             Employee employee2;
             employee2 = new Employee();
 
+            #region HIGHLIGHT
             employee1.FirstName = "Inigo";
             employee1.LastName = "Montoya";
             employee1.Salary = "Too Little";
@@ -20,11 +22,16 @@
                 employee1.FirstName,
                 employee1.LastName,
                 employee1.Salary);
+            #endregion
+            // ...
         }
 
-        static void IncreaseSalary(Employee employee)
+        public static void IncreaseSalary(Employee employee)
         {
+            #region HIGHLIGHT
             employee.Salary = "Enough to survive on";
+            #endregion
         }
     }
+    #endregion
 }

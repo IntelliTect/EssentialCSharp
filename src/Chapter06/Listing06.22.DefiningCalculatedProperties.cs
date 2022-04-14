@@ -5,21 +5,26 @@
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_22
 {
+    #region INCLUDE
     public class Program
     {
         public static void Main()
         {
             Employee employee1 = new Employee();
 
+            #region HIGHLIGHT
             employee1.Name = "Inigo Montoya";
             System.Console.WriteLine(employee1.Name);
+            #endregion
 
             // ...
         }
     }
 
-    class Employee
+    public class Employee
     {
+        // ...
+
         // FirstName property
         public string FirstName
         {
@@ -43,6 +48,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_22
         private string _LastName;
         // ...
 
+        #region HIGHLIGHT
         // Name property
         public string Name
         {
@@ -73,13 +79,16 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_22
                 }
             }
         }
+        #endregion
 
         public string Initials => $"{ FirstName[0] } { LastName[0] }";
-
+        #region EXCLUDE
         // Title property
         public string? Title { get; set; }
 
         // Manager property
         public Employee? Manager { get; set; }
+        #endregion
     }
+    #endregion
 }

@@ -2,11 +2,15 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_50
 {
     using System;
 
+    #region INCLUDE
+    // CommandLine is nested within program
+    #region HIGHLIGHT
     public class Program
     {
         // Define a nested class for processing the command line
         private class CommandLine
         {
+    #endregion
             public CommandLine(string[] arguments)
             {
                 for(int argumentCounter = 0;
@@ -38,7 +42,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_50
 
         public static void Main(string[] args)
         {
+            #region HIGHLIGHT
             CommandLine commandLine = new CommandLine(args);
+            #endregion
 
             // Error handling intentionaly missing for elucidation.
 
@@ -46,22 +52,30 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_50
             {
                 case "new":
                     // Create a new employee
+                    #region EXCLUDE
                     Console.WriteLine("'Creating' a new Employee.");
+                    #endregion
                     break;
                 case "update":
                     // Update an existing employee's data
+                    #region EXCLUDE
                     Console.WriteLine("'Updating' a new Employee.");
+                    #endregion
                     break;
                 case "delete":
                     // Remove an existing employee's file
+                    #region EXCLUDE
                     Console.WriteLine("'Removing' a new Employee.");
+                    #endregion
                     break;
                 default:
                     Console.WriteLine(
-                        "Employee.exe new|update|delete " +
+                        "Employee.exe " +
+                        "new|update|delete " +
                         "<id> [firstname] [lastname]");
                     break;
             }
         }
     }
+    #endregion
 }

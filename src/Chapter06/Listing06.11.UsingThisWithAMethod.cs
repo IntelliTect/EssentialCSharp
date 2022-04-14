@@ -5,21 +5,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_11
 {
     using System;
 
-    public class Program
+    #region INCLUDE
+    public class Employee
     {
-        public static void Main()
-        {
-            Employee employee = new Employee();
-
-            employee.SetName("Inigo", "Montoya");
-        }
-    }
-
-    class Employee
-    {
+        #region EXCLUDE
         public string FirstName;
         public string LastName;
         public string? Salary = "Not enough";
+        #endregion
 
         public string GetName()
         {
@@ -30,8 +23,23 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_11
         {
             this.FirstName = newFirstName;
             this.LastName = newLastName;
+            #region HIGHLIGHT
             Console.WriteLine(
                 $"Name changed to '{ this.GetName() }'");
+            #endregion
         }
     }
+
+    public class Program
+    {
+        public static void Main()
+        {
+            Employee employee = new Employee();
+
+            employee.SetName("Inigo", "Montoya");
+            // ...
+        }
+        // ...
+    }
+    #endregion
 }

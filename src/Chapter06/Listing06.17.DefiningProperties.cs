@@ -5,6 +5,7 @@
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_17
 {
+    #region INCLUDE
     public class Program
     {
         public static void Main()
@@ -19,8 +20,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_17
         }
     }
 
-    class Employee
+    public class Employee
     {
+        #region HIGHLIGHT
         // FirstName property
         public string FirstName
         {
@@ -33,8 +35,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_17
                 _FirstName = value;
             }
         }
-
         private string _FirstName;
+        #endregion
 
+        // ...
     }
+    #endregion
 }

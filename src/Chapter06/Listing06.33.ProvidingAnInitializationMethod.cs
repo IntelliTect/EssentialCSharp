@@ -8,22 +8,28 @@
         }
     }
 
+    #region INCLUDE
     public class Employee
     {
         // FirstName&LastName set inside Initialize() method.
-#pragma warning disable CS8618
+        #pragma warning disable CS8618
         public Employee(string firstName, string lastName)
         {
             int id;
             // Generate an employee ID...
+            #region EXCLUDE
             id = 0; // id needs to be initialized for this example
-            // ...
+            #endregion
+            #region HIGHLIGHT
             Initialize(id, firstName, lastName);
+            #endregion
         }
 
         public Employee(int id, string firstName, string lastName)
         {
+            #region HIGHLIGHT
             Initialize(id, firstName, lastName);
+            #endregion
         }
 
         public Employee(int id)
@@ -33,14 +39,18 @@
             Id = id;
 
             // Look up employee data
+            #region EXCLUDE
             firstName = string.Empty;
             lastName = string.Empty;
-            // ...
+            #endregion
 
+            #region HIGHLIGHT
             Initialize(id, firstName, lastName);
+            #endregion
         }
         #pragma warning restore CS8618
 
+        #region HIGHLIGHT
         private void Initialize(
             int id, string firstName, string lastName)
         {
@@ -48,8 +58,8 @@
             FirstName = firstName;
             LastName = lastName;
         }
-        // ...
-
+        #endregion
+        #region EXCLUDE
 
         public int Id { get; private set; }
         public string FirstName { get; set; }
@@ -85,5 +95,7 @@
                 }
             }
         }
+        #endregion
     }
+    #endregion
 }

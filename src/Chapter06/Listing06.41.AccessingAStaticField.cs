@@ -1,12 +1,15 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_41
 {
+    #region INCLUDE
     using System;
 
     public class Program
     {
         public static void Main()
         {
+            #region HIGHLIGHT
             Employee.NextId = 1000000;
+            #endregion
 
             Employee employee1 = new Employee(
                 "Inigo", "Montoya");
@@ -24,11 +27,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_41
                 employee2.LastName,
                 employee2.Id);
 
+            #region HIGHLIGHT
             Console.WriteLine(
                 $"NextId = {Employee.NextId}");
+            #endregion
         }
+        // ...
     }
-
+    #endregion
     public class Employee
     {
         public Employee(string firstName, string lastName)

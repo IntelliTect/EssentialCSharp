@@ -1,4 +1,3 @@
-
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_34
 {
     using System;
@@ -14,19 +13,28 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_34
             // ...
         }
     }
-
-    class Employee
+    #region INCLUDE
+    public class Employee
     {
         public Employee(string name)
         {
+            #region HIGHLIGHT
             Name = name;
+            #endregion
         }
 
         public string Name
         {
+            #region HIGHLIGHT
             get => _Name!;
-            set => _Name = value ?? throw new ArgumentNullException(nameof(value));
+            #endregion
+            set => _Name =
+                #region HIGHLIGHT
+                value ?? throw new ArgumentNullException(nameof(value));
+                #endregion
         }
         private string? _Name;
+        // ...
     }
+    #endregion
 }

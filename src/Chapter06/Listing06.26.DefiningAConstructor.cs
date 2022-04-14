@@ -19,18 +19,23 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_26
         }
     }
 
-    class Employee
+    #region INCLUDE
+    public class Employee
     {
+        #region HIGHLIGHT
         // Employee constructor
         public Employee(string firstName, string lastName)
         {
             FirstName = firstName;
             LastName = lastName;
         }
+        #endregion
 
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string? Salary { get; set; } = "Not Enough";
+
+        #region EXCLUDE
         public string? Title { get; set; }
         public Employee? Manager { get; set; }
 
@@ -63,5 +68,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_26
                 }
             }
         }
+        #endregion
     }
+    #endregion
 }

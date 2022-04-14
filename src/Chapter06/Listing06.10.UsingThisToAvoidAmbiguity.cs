@@ -3,7 +3,7 @@
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_10
 {
-    
+    #region INCLUDE
     public class Employee
     {
         public string FirstName;
@@ -22,4 +22,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_10
             this.LastName = LastName;
         }
     }
+    #endregion
 }

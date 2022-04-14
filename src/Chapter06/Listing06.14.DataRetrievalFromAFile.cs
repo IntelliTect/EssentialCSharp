@@ -3,37 +3,14 @@
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_14
 {
+    #region INCLUDE
     using System;
+    // IO namespace
     using System.IO;
 
-    public class Program
+    public class Employee
     {
-        public static void Main()
-        {
-            Employee employee1;
-
-            Employee employee2 = new Employee();
-            employee2.SetName("Inigo", "Montoya");
-            employee2.Save();
-
-            // Modify employee2 after saving
-            IncreaseSalary(employee2);
-
-            // Load employee1 from the saved version of employee2
-            employee1 = DataStorage.Load("Inigo", "Montoya");
-
-            Console.WriteLine(
-                $"{ employee1.GetName() }: { employee1.Salary }");
-        }
-
-        static void IncreaseSalary(Employee employee)
-        {
-            employee.Salary = "Enough to survive on";
-        }
-    }
-
-    class Employee
-    {
+        #region EXCLUDE
         public string FirstName;
         public string LastName;
         public string? Salary;
@@ -55,10 +32,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_14
         {
             DataStorage.Store(this);
         }
+        #endregion
     }
 
-    class DataStorage
+    public class DataStorage
     {
+        #region EXCLUDE
         // Save an employee object to a file 
         // named with the Employee name
         // Error handling not shown
@@ -84,6 +63,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_14
             // Dispose the StreamWriter and its stream
             writer.Dispose();  // Automatically closes the stream
         }
+        #endregion
 
         public static Employee Load(string firstName, string lastName)
         {
@@ -101,9 +81,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_14
             // Read each line from the file and place it into
             // the associated property.
             employee.FirstName = reader.ReadLine()??
-                throw new InvalidOperationException("FirstName cannot be null");
+                throw new InvalidOperationException(
+                    "FirstName cannot be null");
             employee.LastName = reader.ReadLine()??
-                throw new InvalidOperationException("LastName cannot be null");
+                throw new InvalidOperationException(
+                    "LastName cannot be null");
             employee.Salary = reader.ReadLine();
 
             // Dispose the StreamReader and its Stream
@@ -113,4 +95,31 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_14
         }
     }
 
+    public class Program
+    {
+        public static void Main()
+        {
+            Employee employee1;
+
+            Employee employee2 = new Employee();
+            employee2.SetName("Inigo", "Montoya");
+            employee2.Save();
+
+            // Modify employee2 after saving
+            IncreaseSalary(employee2);
+
+            // Load employee1 from the saved version of employee2
+            employee1 = DataStorage.Load("Inigo", "Montoya");
+
+            Console.WriteLine(
+                $"{ employee1.GetName() }: { employee1.Salary }");
+        }
+        #region EXCLUDE
+        public static void IncreaseSalary(Employee employee)
+        {
+            employee.Salary = "Enough to survive on";
+        }
+        #endregion
+    }
+    #endregion
 }

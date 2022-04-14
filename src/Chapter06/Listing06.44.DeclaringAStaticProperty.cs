@@ -1,8 +1,10 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_44
 {
-    class Employee
+    #region INCLUDE
+    public class Employee
     {
         // ...
+        #region HIGHLIGHT
         public static int NextId
         {
             get
@@ -15,6 +17,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_44
             }
         }
         public static int _NextId = 42;
+        #endregion
         // ...
     }
+    #endregion
 }

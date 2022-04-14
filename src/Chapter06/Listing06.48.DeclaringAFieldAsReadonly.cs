@@ -1,6 +1,7 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_48
 {
-    class Employee
+    #region INCLUDE
+    public class Employee
     {
         public Employee(int id)
         {
@@ -9,7 +10,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_48
 
         // ...
 
+        #region HIGHLIGHT
         private readonly int _Id;
+        #endregion
         public int Id
         {
           get { return _Id; }
@@ -23,4 +26,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_48
 
         // ...
     }
+    #endregion
 }

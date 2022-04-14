@@ -25,7 +25,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_49
         }
     }
 
-
+    #region INCLUDE
     class TicTacToeBoard
     {
         // Set both player's initial board to all false (blank)
@@ -35,8 +35,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_49
         // ---+---+---    ---+---+---
         //    |   |          |   |   
         // Player 1 - X   Player 2 - O
+        #region HIGHLIGHT
         public bool[,,] Cells { get; } = new bool[2, 3, 3];
-
+        #endregion
         // Error: The property Cells cannot 
         // be assigned to because it is read-only
         // public void SetCells(bool[,,] value) =>
@@ -44,6 +45,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_49
 
         // ...
     }
+    #endregion
 
     class TicTacToeBoardPreCSharp5
     {
@@ -68,7 +70,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_49
         // Error: A readonly field cannot be assigned to(except 
         // in a constructor or a variable initializer)
         // public void SetCells(bool[,,] value) =>
-        //         _Cells = new bool[2, 3, 3];
+        // Cells = new bool[2, 3, 3];
 
         // ...
     }

@@ -8,8 +8,9 @@
         }
     }
 
-    class Employee
+    #region INCLUDE
+    public class Employee
     {
     }
-
+    #endregion
 }

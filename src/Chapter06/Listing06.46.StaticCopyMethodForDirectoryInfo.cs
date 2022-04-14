@@ -3,22 +3,17 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_46
     using System;
     using System.IO;
 
-    public class Program
-    {
-        public static void Main()
-        {
-            DirectoryInfo directory = new DirectoryInfo(".\\Source");
-            directory.CopyTo(".\\Target",
-                SearchOption.TopDirectoryOnly, "*");//Extension method. Is Defined below but appears to be a member of the DirectoryInfo object, directory, defined aboves       
-        }
-    }
+    #region INCLUDE
     public static class DirectoryInfoExtension
     {
         public static void CopyTo(
+        #region HIGHLIGHT
             this DirectoryInfo sourceDirectory, string target,
+        #endregion
             SearchOption option, string searchPattern)
         {
-            if(target[target.Length - 1] != Path.DirectorySeparatorChar)
+            #region EXCLUDE
+            if (target[target.Length - 1] != Path.DirectorySeparatorChar)
             {
                 target += Path.DirectorySeparatorChar;
             }
@@ -50,12 +45,30 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_46
                         searchPattern);
                 }
             }
-
         }
 
         private static void Copy(string element, string fileName, string searchPattern)
         {
             Console.WriteLine("Copying " + fileName);
+            #endregion
         }
     }
+
+    #region EXCLUDE
+    public class Program
+    {
+        public static void Main()
+        {
+    #endregion
+            DirectoryInfo directory = new DirectoryInfo(".\\Source");
+            #region HIGHLIGHT
+            directory.CopyTo(".\\Target",
+                SearchOption.TopDirectoryOnly, "*");
+            #endregion
+    #region EXCLUDE
+            //Extension method. Is Defined above but appears to be a member of the DirectoryInfo object, directory, defined aboves
+        }
+    }
+    #endregion
+    #endregion
 }

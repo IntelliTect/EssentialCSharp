@@ -3,6 +3,7 @@
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_12
 {
+    #region INCLUDE
     public class Employee
     {
         public string FirstName;
@@ -11,21 +12,25 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_12
 
         public void Save()
         {
+            #region HIGHLIGHT
             DataStorage.Store(this);
+            #endregion
         }
     }
 
-    class DataStorage
+    public class DataStorage
     {
         // Save an employee object to a file 
         // named with the Employee name
         public static void Store(Employee employee)
         {
+            #region EXCLUDE
             System.Diagnostics.Trace.WriteLine(
                 $@"Writing employee ({
                     employee.FirstName} {employee.LastName
                     }) information to file.");
-            // ...
+            #endregion
         }
     }
+    #endregion
 }

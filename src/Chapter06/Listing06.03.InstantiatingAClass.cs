@@ -5,21 +5,28 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_03
 {
     using Listing06_01;
 
-    class Program
+    #region INCLUDE
+    public class Program
     {
-        static void Main()
+        public static void Main()
         {
+            #region HIGHLIGHT
             Employee employee1 = new Employee();
+            #endregion
             Employee employee2;
+            #region HIGHLIGHT
             employee2 = new Employee();
+            #endregion
 
             IncreaseSalary(employee1);
             IncreaseSalary(employee2);
         }
-
-        static void IncreaseSalary(Employee employee)
+        #region EXCLUDE
+        public static void IncreaseSalary(Employee employee)
         {
             // ...
         }
+        #endregion
     }
+    #endregion
 }
