@@ -1,8 +1,8 @@
-// TODO: Update listing in Manuscript
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_11
 {
     using System;
 
+    #region INCLUDE
     public class Program
     {
         public class BaseClass
@@ -54,4 +54,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_11
             BaseClass.DisplayName();
         }
     }
+    #endregion
 }

@@ -3,19 +3,11 @@
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_13
 {
+    #region INCLUDE
     using static System.Environment;
 
     public class Address
     {
-        //public Address(string streetAddress, string city,
-        //    string state, string zip)
-        //{
-        //    StreetAddress = streetAddress;
-        //    City = city;
-        //    State = state;
-        //    Zip = zip;
-        //}
-
         public string StreetAddress;
         public string City;
         public string State;
@@ -34,8 +26,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_13
 
         public override string ToString()
         {
+            #region HIGHLIGHT
             return base.ToString() +
+            #endregion
                 NewLine + Country;
         }
     }
+    #endregion
 }

@@ -3,15 +3,20 @@
         
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_09
 {
+    #region INCLUDE
     public class PdaItem
     {
+        #region HIGHLIGHT
         public virtual string Name { get; set; }
+        #endregion
         // ...
     }
 
     public class Contact : PdaItem
     {
+        #region HIGHLIGHT
         public override string Name
+        #endregion
         {
             get
             {
@@ -32,4 +37,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_09
 
         // ...
     }
+    #endregion
 }

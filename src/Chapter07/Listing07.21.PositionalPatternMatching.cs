@@ -2,8 +2,10 @@ using System;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_21
 {
+    #region INCLUDE
     public class Person
     {
+        #region EXCLUDE
         public Person(string firstName, string lastName)
         {
             FirstName = firstName ?? throw new ArgumentNullException(nameof(firstName));
@@ -11,10 +13,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_21
         }
         public string FirstName { get; }
         public string LastName { get; }
+        #endregion
 
+        #region HIGHLIGHT
         public void Deconstruct(out string firstName, out string lastName) =>
             (firstName, lastName) = (FirstName, LastName);
+        #endregion
     }
+
     public class Program
     {
         public static void Main()
@@ -22,10 +28,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_21
             Person person = new Person("Inigo", "Montoya");
 
             // Positional Pattern Matching
-            if(person is (string firstName, string lastName))
+            #region HIGHLIGHT
+            if (person is (string firstName, string lastName))
+            #endregion
             {
                 Console.WriteLine($"{firstName} {lastName}");
             }
         }
     }
+    #endregion
 }

@@ -4,12 +4,15 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_07
 {
     using System;
+    #region INCLUDE
     using System.IO;
 
     public class PdaItem
     {
         public PdaItem(Guid objectKey) => ObjectKey = objectKey;
+        #region HIGHLIGHT
         protected Guid ObjectKey { get; }
+        #endregion
     }
 
     public class Contact : PdaItem
@@ -21,17 +24,23 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_07
         {
             // Instantiate a FileStream using <ObjectKey>.dat
             // for the filename
+            #region HIGHLIGHT
             using FileStream stream = File.OpenWrite(
                 ObjectKey + ".dat");
+            #endregion
             // ...
             stream.Dispose();
         }
         static public Contact Copy(Contact contact)
+        #region HIGHLIGHT
             => new Contact(contact.ObjectKey);
+        #endregion
 
-         // static public Contact Copy(PdaItem pdaItem) =>
-            // Error: Cannot access protected member PdaItem.ObjectKey.
-            // new Contact(((Contact)pdaItem).ObjectKey);
+        // static public Contact Copy(PdaItem pdaItem) =>
+        #region HIGHLIGHT
+        // Error: Cannot access protected member PdaItem.ObjectKey.
+        // new Contact(((Contact)pdaItem).ObjectKey);
+        #endregion
     }
 
     public class Program
@@ -40,8 +49,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_07
         {
             Contact contact = new Contact(Guid.NewGuid());
 
+            #region HIGHLIGHT
             // ERROR:  'PdaItem.ObjectKey' is inaccessible
             // Console.WriteLine(contact.ObjectKey);
+            #endregion
         }
     }
+    #endregion
 }

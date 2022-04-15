@@ -1,5 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_12
 {
+    #region INCLUDE
     class A
     {
         public virtual void Method()
@@ -21,4 +22,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_12
         //{
         //}
     }
+    #endregion
 }

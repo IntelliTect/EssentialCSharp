@@ -21,13 +21,19 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_22
     {
         public static void Main()
         {
+            #region INCLUDE
+            // ...
             Person person = new Person("Inigo", "Montoya");
 
             // Positional pattern matching
-            if(person is {FirstName: string firstName, LastName: string lastName })
+            #region HIGHLIGHT
+            if (person is {FirstName: string firstName, LastName: string lastName })
+            #endregion
             {
                 Console.WriteLine($"{firstName} {lastName}");
             }
+            // ...
+            #endregion
         }
     }
 }

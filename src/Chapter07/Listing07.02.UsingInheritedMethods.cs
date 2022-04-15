@@ -2,13 +2,18 @@
 {
     using Listing07_01;
 
+    #region INCLUDE
     public class Program
     {
         public static void Main()
         {
             Contact contact = new Contact();
+            #region HIGHLIGHT
             contact.Name = "Inigo Montoya";
+            #endregion
+
             // ...
         }
     }
+    #endregion
 }
