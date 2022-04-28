@@ -2,6 +2,7 @@
 using System;
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_14
 {
+    #region INCLUDE
     public interface IWorkflowActivity
     {
         // Private and, therefore, not virtual
@@ -51,7 +52,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_14
                 "IExecuteProcessActivity.RestoreStandardInOut()...");
     }
 
-    class ExecuteProcessActivity : IExecuteProcessActivity
+    public class ExecuteProcessActivity : IExecuteProcessActivity
     {
         public ExecuteProcessActivity(string executablePath) =>
             ExecutableName = executablePath
@@ -110,4 +111,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_14
             ExecuteProcessActivity.Run();
         }
     }
+    #endregion
 }

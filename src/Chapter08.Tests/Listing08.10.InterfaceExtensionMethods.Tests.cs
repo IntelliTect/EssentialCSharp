@@ -15,7 +15,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_10.Tests
 Dick      Traci        123-123-1234123 Main St., Spokane, WA  99037
 
 Title                                                    Author             Year
-Celebration of Discipline                                Richard Foster     1978
+The End of Poverty: Economic Possibilities for Our Time  Jeffrey Sachs      2006
 Orthodoxy                                                G.K. Chesterton    1908
 The Hitchhiker's Guide to the Galaxy                     Douglas Adams      1979
 ";

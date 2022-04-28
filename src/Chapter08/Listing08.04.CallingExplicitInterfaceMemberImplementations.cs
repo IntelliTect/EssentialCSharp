@@ -10,6 +10,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_04
     {
         public static void Main()
         {
+            #region INCLUDE
             string?[] values;
             Contact contact = new Contact("Inigo Montoya");
 
@@ -20,9 +21,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_04
             // values = contact.CellValues;
 
             // First cast to IListable
+            #region HIGHLIGHT
             values = ((IListable)contact).CellValues;
+            #endregion
 
             // ...
+            #endregion
         }
     }
 

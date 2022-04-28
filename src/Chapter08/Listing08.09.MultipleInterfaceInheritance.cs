@@ -1,5 +1,6 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_09
 {
+    #region INCLUDE
     interface IReadableSettingsProvider
     {
         string GetSetting(string name, string defaultValue);
@@ -11,7 +12,10 @@
     }
 
     interface ISettingsProvider : IReadableSettingsProvider,
+    #region HIGHLIGHT
         IWriteableSettingsProvider
+    #endregion
     {
     }
+    #endregion
 }
