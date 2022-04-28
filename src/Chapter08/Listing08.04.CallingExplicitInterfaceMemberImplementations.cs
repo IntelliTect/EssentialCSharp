@@ -23,10 +23,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_04
             // First cast to IListable
             #region HIGHLIGHT
             values = ((IListable)contact).CellValues;
-            #endregion
+            #endregion HIGHLIGHT
 
             // ...
-            #endregion
+            #endregion INCLUDE
         }
     }
 
