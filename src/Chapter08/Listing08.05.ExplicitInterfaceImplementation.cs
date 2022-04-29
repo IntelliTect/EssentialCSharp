@@ -29,7 +29,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_05
     #region INCLUDE
     #region HIGHLIGHT
     public class Contact : PdaItem, IListable, IComparable
-    #endregion
+    #endregion HIGHLIGHT
     {
         #region EXCLUDE
         public Contact(string name)
@@ -63,13 +63,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_05
                 nameof(obj))
         };
         #endregion
-        #endregion
+        #endregion EXCLUDE
 
         #region IListable Members
 
         #region HIGHLIGHT
         string?[] IListable.CellValues
-        #endregion
+        #endregion HIGHLIGHT
         {
             get
             {
@@ -102,7 +102,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_05
         protected string? Address { get; set; }
         static public string GetName(string firstName, string lastName)
             => $"{ firstName } { lastName }";
-        #endregion
+        #endregion EXCLUDE
     }
-    #endregion
+    #endregion INCLUDE
 }

@@ -68,7 +68,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_12
         ConsoleColor[] CellColors
         {
             get
-            #endregion
+        #endregion HIGHLIGHT
             {
                 var result = new ConsoleColor[CellValues.Length];
                 // Using generic Array method to populate array
@@ -79,7 +79,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_12
         }
         #region HIGHLIGHT
         static public ConsoleColor DefaultColumnColor { get; set; }
-        #endregion
+        #endregion HIGHLIGHT
     }
 
     #region EXCLUDE
@@ -92,7 +92,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_12
 
         public virtual string Name { get; set; }
     }
-    #endregion
+    #endregion EXCLUDE
 
     public class Contact : PdaItem, IListable
     {
@@ -111,7 +111,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_12
         public string LastName { get; set; }
         public string Address { get; set; }
         public string Phone { get; set; }
-        #endregion
+        #endregion EXCLUDE
 
         #region IListable
         string[] IListable.CellValues
@@ -129,7 +129,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_12
         }
         #region HIGHLIGHT
         // *** No CellColors implementation *** //
-        #endregion
+        #endregion HIGHLIGHT
         #endregion IListable
 
         #region EXCLUDE
@@ -146,7 +146,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_12
 
         static public string GetName(string firstName, string lastName)
             => $"{ firstName } { lastName }";
-        #endregion
+        #endregion EXCLUDE
     }
 
     public class Publication : IListable
@@ -174,7 +174,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_12
                     "Year" };
             }
         }
-        #endregion
+        #endregion EXCLUDE
 
         #region IListable
         string?[] IListable.CellValues
@@ -204,12 +204,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_12
                 return result;
             }
         }
-        #endregion
+        #endregion HIGHLIGHT
         #endregion IListable
 
         // ...
     }
-    #endregion
+    #endregion INCLUDE
 
 
     public class ConsoleListControl

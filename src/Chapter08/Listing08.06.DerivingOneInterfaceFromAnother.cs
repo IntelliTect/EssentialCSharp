@@ -25,9 +25,9 @@
         {
             #region EXCLUDE
             return name + defaultValue; // just returning this for the example
-            #endregion
+            #endregion EXCLUDE
         }
         #endregion
     }
-    #endregion
+    #endregion INCLUDE
 }

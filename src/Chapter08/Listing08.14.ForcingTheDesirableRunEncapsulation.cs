@@ -111,5 +111,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_14
             ExecuteProcessActivity.Run();
         }
     }
-    #endregion
+    #endregion INCLUDE
 }

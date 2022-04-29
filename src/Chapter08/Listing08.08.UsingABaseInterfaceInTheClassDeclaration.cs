@@ -14,7 +14,7 @@
     public class FileSettingsProvider : ISettingsProvider,
     #region HIGHLIGHT
         IReadableSettingsProvider
-    #endregion
+    #endregion HIGHLIGHT
     {
         #region ISettingsProvider Members
         public void SetSetting(string name, string value)
@@ -28,9 +28,9 @@
         {
             #region EXCLUDE
             return name + defaultValue; //just returning this for the example
-            #endregion
+            #endregion EXCLUDE
         }
         #endregion
     }
-    #endregion
+    #endregion INCLUDE
 }

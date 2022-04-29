@@ -6,7 +6,7 @@
     #region INCLUDE
     #region HIGHLIGHT
     public class Contact : PdaItem, IListable, IComparable
-    #endregion
+    #endregion HIGHLIGHT
     {
         #region EXCLUDE
         public Contact(string name)
@@ -14,7 +14,7 @@
         {
             Name = name;
         }
-        #endregion
+        #endregion EXCLUDE
 
         #region IComparable Members
         /// <summary>
@@ -46,7 +46,7 @@
         #region IListable Members
         #region HIGHLIGHT
         string?[] IListable.CellValues
-        #endregion
+        #endregion HIGHLIGHT
         {
             get
             {
@@ -106,7 +106,7 @@
         protected string? Address { get; set; }
         static public string GetName(string firstName, string lastName)
             => $"{ firstName } { lastName }";
-        #endregion
+        #endregion EXCLUDE
     }
-    #endregion
+    #endregion INCLUDE
 }

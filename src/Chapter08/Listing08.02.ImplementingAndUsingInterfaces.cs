@@ -8,7 +8,7 @@
         // Return the value of each cell in the row
         #region HIGHLIGHT
         string?[] CellValues { get; }
-        #endregion
+        #endregion HIGHLIGHT
     }
 
     public abstract class PdaItem
@@ -23,7 +23,7 @@
 
     #region HIGHLIGHT
     public class Contact : PdaItem, IListable
-    #endregion
+    #endregion HIGHLIGHT
     {
         public Contact(string firstName, string lastName,
             string address, string phone)
@@ -56,7 +56,7 @@
                 };
             }
         }
-        #endregion
+        #endregion HIGHLIGHT
 
         public static string[] Headers
         {
@@ -73,7 +73,7 @@
 
     #region HIGHLIGHT
     public class Publication : IListable
-    #endregion
+    #endregion HIGHLIGHT
     {
         public Publication(string title, string author, int year)
         {
@@ -99,7 +99,7 @@
                 };
             }
         }
-        #endregion
+        #endregion HIGHLIGHT
 
         public static string[] Headers
         {
@@ -172,7 +172,7 @@
     {
         #region HIGHLIGHT
         public static void List(string[] headers, IListable[] items)
-        #endregion
+        #endregion HIGHLIGHT
         {
             int[] columnWidths = DisplayHeaders(headers);
 
@@ -180,7 +180,7 @@
             {
                 #region HIGHLIGHT
                 string?[] values = items[count].CellValues;
-                #endregion
+                #endregion HIGHLIGHT
                 DisplayItemRow(columnWidths, values);
             }
         }
@@ -198,7 +198,7 @@
             }
             Console.WriteLine();
             return columnWidths;
-            #endregion
+            #endregion EXCLUDE
         }
 
         private static void DisplayItemRow(
@@ -218,8 +218,8 @@
                 Console.Write(itemToPrint);
             }
             Console.WriteLine();
-            #endregion
+            #endregion EXCLUDE
         }
     }
-    #endregion
+    #endregion INCLUDE
 }

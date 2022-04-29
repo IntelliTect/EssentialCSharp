@@ -7,5 +7,5 @@
         void Uncompress(
             string compressedFileName, string expandDirectoryName);
     }
-    #endregion
+    #endregion INCLUDE
 }

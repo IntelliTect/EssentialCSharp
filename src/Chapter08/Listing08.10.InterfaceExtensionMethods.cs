@@ -20,7 +20,7 @@
             // Classes are implicitly converted to
             // their supported interfaces
             contacts.List(Contact.Headers);
-            #endregion
+            #endregion HIGHLIGHT
 
             Console.WriteLine();
 
@@ -35,7 +35,7 @@
                 };
             #region HIGHLIGHT
             publications.List(Publication.Headers);
-            #endregion
+            #endregion HIGHLIGHT
         }
     }
 
@@ -44,7 +44,7 @@
         #region HIGHLIGHT
         public static void List(
             this IListable[] items, string[] headers)
-        #endregion
+        #endregion HIGHLIGHT
         {
             int[] columnWidths = DisplayHeaders(headers);
 
@@ -91,7 +91,7 @@
             }
             Console.WriteLine();
         }
-        #endregion
+        #endregion EXCLUDE
     }
-    #endregion
+    #endregion INCLUDE
 }

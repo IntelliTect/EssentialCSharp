@@ -14,8 +14,8 @@
     interface ISettingsProvider : IReadableSettingsProvider,
     #region HIGHLIGHT
         IWriteableSettingsProvider
-    #endregion
+    #endregion HIGHLIGHT
     {
     }
-    #endregion
+    #endregion INCLUDE
 }

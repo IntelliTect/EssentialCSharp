@@ -15,7 +15,7 @@
         {
             // ...
         }
-        #endregion
+        #endregion INCLUDE
         */
 
         void SetSetting(string name, string value);

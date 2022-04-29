@@ -19,5 +19,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_13
             // Critical code
         }
     }
-    #endregion
+    #endregion INCLUDE
 }
