@@ -26,9 +26,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_05
         }
     }
 
+    #region INCLUDE
+    #region HIGHLIGHT
     public class Contact : PdaItem, IListable, IComparable
+    #endregion HIGHLIGHT
     {
-        // ...
+        #region EXCLUDE
         public Contact(string name)
             : base(name)
         {
@@ -60,9 +63,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_05
                 nameof(obj))
         };
         #endregion
+        #endregion EXCLUDE
 
         #region IListable Members
+
+        #region HIGHLIGHT
         string?[] IListable.CellValues
+        #endregion HIGHLIGHT
         {
             get
             {
@@ -77,6 +84,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_05
         }
         #endregion
 
+        #region EXCLUDE
         private string? _LastName;
         protected string LastName
         {
@@ -94,5 +102,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_05
         protected string? Address { get; set; }
         static public string GetName(string firstName, string lastName)
             => $"{ firstName } { lastName }";
+        #endregion EXCLUDE
     }
+    #endregion INCLUDE
 }

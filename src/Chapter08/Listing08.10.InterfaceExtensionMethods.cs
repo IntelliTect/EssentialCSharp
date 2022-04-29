@@ -3,6 +3,7 @@
     using System;
     using Listing08_02;
 
+    #region INCLUDE
     public class Program
     {
         public static void Main()
@@ -15,30 +16,35 @@
                 // ...
             };
 
-
-        // Classes are implicitly converted to
-        // their supported interfaces
-        contacts.List(Contact.Headers);
+            #region HIGHLIGHT
+            // Classes are implicitly converted to
+            // their supported interfaces
+            contacts.List(Contact.Headers);
+            #endregion HIGHLIGHT
 
             Console.WriteLine();
 
             Publication[] publications = new Publication[3] {
-                new Publication("Celebration of Discipline",
-                    "Richard Foster", 1978),
+                new Publication("The End of Poverty: Economic Possibilities for Our Time",
+                    "Jeffrey Sachs", 2006),
                 new Publication("Orthodoxy", 
                     "G.K. Chesterton", 1908),
                 new Publication(
                     "The Hitchhiker's Guide to the Galaxy",
                     "Douglas Adams", 1979)
                 };
+            #region HIGHLIGHT
             publications.List(Publication.Headers);
+            #endregion HIGHLIGHT
         }
     }
 
-    static class Listable
+    public static class Listable
     {
+        #region HIGHLIGHT
         public static void List(
             this IListable[] items, string[] headers)
+        #endregion HIGHLIGHT
         {
             int[] columnWidths = DisplayHeaders(headers);
 
@@ -53,6 +59,7 @@
             }
         }
 
+        #region EXCLUDE
         /// <summary>Displays the column headers</summary>
         /// <returns>Returns an array of column widths</returns>
         private static int[] DisplayHeaders(string[] headers)
@@ -84,5 +91,7 @@
             }
             Console.WriteLine();
         }
+        #endregion EXCLUDE
     }
+    #endregion INCLUDE
 }

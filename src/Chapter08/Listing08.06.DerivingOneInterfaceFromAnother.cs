@@ -1,5 +1,6 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_06
 {
+    #region INCLUDE
     interface IReadableSettingsProvider
     {
         string GetSetting(string name, string defaultValue);
@@ -10,7 +11,7 @@
         void SetSetting(string name, string value);
     }
 
-    class FileSettingsProvider : ISettingsProvider
+    public class FileSettingsProvider : ISettingsProvider
     {
         #region ISettingsProvider Members
         public void SetSetting(string name, string value)
@@ -22,9 +23,11 @@
         #region IReadableSettingsProvider Members
         public string GetSetting(string name, string defaultValue)
         {
+            #region EXCLUDE
             return name + defaultValue; // just returning this for the example
+            #endregion EXCLUDE
         }
         #endregion
     }
-
+    #endregion INCLUDE
 }

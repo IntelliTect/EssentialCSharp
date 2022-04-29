@@ -1,6 +1,7 @@
 // TODO: Update listing in Manuscript
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_13
 {
+    #region INCLUDE
     public class WorkflowActivity
     {
         private static void Start()
@@ -18,4 +19,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_13
             // Critical code
         }
     }
+    #endregion INCLUDE
 }

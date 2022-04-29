@@ -3,14 +3,18 @@
     using System;
     using Listing08_02;
 
+    #region INCLUDE
+    #region HIGHLIGHT
     public class Contact : PdaItem, IListable, IComparable
+    #endregion HIGHLIGHT
     {
-        // ...
+        #region EXCLUDE
         public Contact(string name)
             : base(name)
         {
             Name = name;
         }
+        #endregion EXCLUDE
 
         #region IComparable Members
         /// <summary>
@@ -40,7 +44,9 @@
         #endregion
 
         #region IListable Members
+        #region HIGHLIGHT
         string?[] IListable.CellValues
+        #endregion HIGHLIGHT
         {
             get
             {
@@ -55,6 +61,7 @@
         }
         #endregion
 
+        #region EXCLUDE
         public override string Name
         {
             get
@@ -99,5 +106,7 @@
         protected string? Address { get; set; }
         static public string GetName(string firstName, string lastName)
             => $"{ firstName } { lastName }";
+        #endregion EXCLUDE
     }
+    #endregion INCLUDE
 }

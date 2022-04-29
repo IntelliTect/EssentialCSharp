@@ -2,6 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_11
 {
     using Listing08_09;
 
+    #region INCLUDE
     interface IDistributedSettingsProvider : ISettingsProvider
     {
         /// <summary>
@@ -27,4 +28,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_11
         void SetSetting(
             string uri, string name, string value);
     }
+    #endregion INCLUDE
 }

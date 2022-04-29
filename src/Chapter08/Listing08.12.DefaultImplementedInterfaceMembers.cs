@@ -55,6 +55,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_12
         }
     }
 
+    #region INCLUDE
     public interface IListable
     {
         // Return the value of each cell in the row
@@ -63,9 +64,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_12
             get;
         }
 
+        #region HIGHLIGHT
         ConsoleColor[] CellColors
         {
             get
+        #endregion HIGHLIGHT
             {
                 var result = new ConsoleColor[CellValues.Length];
                 // Using generic Array method to populate array
@@ -74,10 +77,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_12
                 return result;
             }
         }
+        #region HIGHLIGHT
         static public ConsoleColor DefaultColumnColor { get; set; }
+        #endregion HIGHLIGHT
     }
 
-
+    #region EXCLUDE
     public abstract class PdaItem
     {
         public PdaItem(string name)
@@ -87,9 +92,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_12
 
         public virtual string Name { get; set; }
     }
+    #endregion EXCLUDE
 
     public class Contact : PdaItem, IListable
     {
+        #region EXCLUDE
         public Contact(string firstName, string lastName,
             string address, string phone)
             : base(GetName(firstName, lastName))
@@ -104,6 +111,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_12
         public string LastName { get; set; }
         public string Address { get; set; }
         public string Phone { get; set; }
+        #endregion EXCLUDE
 
         #region IListable
         string[] IListable.CellValues
@@ -119,8 +127,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_12
                 };
             }
         }
+        #region HIGHLIGHT
+        // *** No CellColors implementation *** //
+        #endregion HIGHLIGHT
         #endregion IListable
 
+        #region EXCLUDE
         public static string[] Headers
         {
             get
@@ -134,10 +146,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_12
 
         static public string GetName(string firstName, string lastName)
             => $"{ firstName } { lastName }";
+        #endregion EXCLUDE
     }
 
     public class Publication : IListable
     {
+        #region EXCLUDE
         public Publication(string title, string author, int year)
         {
             Title = title;
@@ -160,6 +174,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_12
                     "Year" };
             }
         }
+        #endregion EXCLUDE
 
         #region IListable
         string?[] IListable.CellValues
@@ -175,6 +190,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_12
             }
         }
 
+        #region HIGHLIGHT
         ConsoleColor[] IListable.CellColors
         {
             get
@@ -187,12 +203,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_12
                 }
                 return result;
             }
-
         }
+        #endregion HIGHLIGHT
         #endregion IListable
 
         // ...
     }
+    #endregion INCLUDE
 
 
     public class ConsoleListControl

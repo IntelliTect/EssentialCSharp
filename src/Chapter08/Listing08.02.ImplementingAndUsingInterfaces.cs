@@ -2,6 +2,119 @@
 {
     using System;
 
+    #region INCLUDE
+    public interface IListable
+    {
+        // Return the value of each cell in the row
+        #region HIGHLIGHT
+        string?[] CellValues { get; }
+        #endregion HIGHLIGHT
+    }
+
+    public abstract class PdaItem
+    {
+        public PdaItem(string name)
+        {
+            Name = name;
+        }
+
+        public virtual string Name { get; set; }
+    }
+
+    #region HIGHLIGHT
+    public class Contact : PdaItem, IListable
+    #endregion HIGHLIGHT
+    {
+        public Contact(string firstName, string lastName,
+            string address, string phone)
+            : base(GetName(firstName, lastName))
+        {
+            FirstName = firstName;
+            LastName = lastName;
+            Address = address;
+            Phone = phone;
+        }
+
+        public string FirstName { get; }
+        public string LastName { get; }
+        public string Address { get; }
+        public string Phone { get; }
+        static public string GetName(string firstName, string lastName)
+            => $"{ firstName } { lastName }";
+
+        #region HIGHLIGHT
+        public string[] CellValues
+        {
+            get
+            {
+                return new string[]
+                {
+                    FirstName,
+                    LastName,
+                    Phone,
+                    Address
+                };
+            }
+        }
+        #endregion HIGHLIGHT
+
+        public static string[] Headers
+        {
+            get
+            {
+                return new string[] {
+                    "First Name", "Last Name    ",
+                    "Phone       ",
+                    "Address                       " };
+            }
+        }
+        // ...
+    }
+
+    #region HIGHLIGHT
+    public class Publication : IListable
+    #endregion HIGHLIGHT
+    {
+        public Publication(string title, string author, int year)
+        {
+            Title = title;
+            Author = author;
+            Year = year;
+        }
+
+        public string Title { get; }
+        public string Author { get; }
+        public int Year { get; }
+
+        #region HIGHLIGHT
+        public string?[] CellValues
+        {
+            get
+            {
+                return new string?[]
+                {
+                    Title,
+                    Author,
+                    Year.ToString()
+                };
+            }
+        }
+        #endregion HIGHLIGHT
+
+        public static string[] Headers
+        {
+            get
+            {
+                return new string[] {
+                    "Title                                                    ", 
+                    "Author             ", 
+                    "Year" };
+            }
+        }
+
+        // ...
+    }
+
     public class Program
     {
         public static void Main()
@@ -44,7 +157,7 @@
                 new Publication(
                     "The End of Poverty: Economic Possibilities for Our Time",
                     "Jeffrey Sachs", 2006),
-                new Publication("Orthodoxy", 
+                new Publication("Orthodoxy",
                     "G.K. Chesterton", 1908),
                 new Publication(
                     "The Hitchhiker's Guide to the Galaxy",
@@ -55,121 +168,19 @@
         }
     }
 
-    public interface IListable
-    {
-        // Return the value of each cell in the row
-        string?[] CellValues
-        {
-            get;
-        }
-    }
-
-    public abstract class PdaItem
-    {
-        public PdaItem(string name)
-        {
-            Name = name;
-        }
-
-        public virtual string Name { get; set; }
-    }
-
-    public class Contact : PdaItem, IListable
-    {
-        public Contact(string firstName, string lastName,
-            string address, string phone)
-            : base(GetName(firstName, lastName))
-        {
-            FirstName = firstName;
-            LastName = lastName;
-            Address = address;
-            Phone = phone;
-        }
-
-        public string FirstName { get; }
-        public string LastName { get; }
-        public string Address { get; }
-        public string Phone { get; }
-
-        public string[] CellValues
-        {
-            get
-            {
-                return new string[]
-                {
-                    FirstName,
-                    LastName,
-                    Phone,
-                    Address
-                };
-            }
-        }
-
-        public static string[] Headers
-        {
-            get
-            {
-                return new string[] {
-                    "First Name", "Last Name    ",
-                    "Phone       ",
-                    "Address                       " };
-            }
-        }
-
-        static public string GetName(string firstName, string lastName)
-            => $"{ firstName } { lastName }";
-    }
-
-    public class Publication : IListable
-    {
-        public Publication(string title, string author, int year)
-        {
-            Title = title;
-            Author = author;
-            Year = year;
-        }
-
-        public string Title { get; }
-        public string Author { get; }
-        public int Year { get; }
-
-        public string?[] CellValues
-        {
-            get
-            {
-                return new string?[]
-                {
-                    Title,
-                    Author,
-                    Year.ToString()
-                };
-            }
-        }
-
-        public static string[] Headers
-        {
-            get
-            {
-                return new string[] {
-                    "Title                                                    ", 
-                    "Author             ", 
-                    "Year" };
-            }
-        }
-
-        // ...
-    }
-
-
     public class ConsoleListControl
     {
+        #region HIGHLIGHT
         public static void List(string[] headers, IListable[] items)
+        #endregion HIGHLIGHT
         {
             int[] columnWidths = DisplayHeaders(headers);
 
             for(int count = 0; count < items.Length; count++)
             {
+                #region HIGHLIGHT
                 string?[] values = items[count].CellValues;
+                #endregion HIGHLIGHT
                 DisplayItemRow(columnWidths, values);
             }
         }
@@ -178,6 +189,7 @@
         /// <returns>Returns an array of column widths</returns>
         private static int[] DisplayHeaders(string[] headers)
         {
+            #region EXCLUDE
             var columnWidths = new int[headers.Length];
             for(int index = 0; index < headers.Length; index++)
             {
@@ -186,12 +198,14 @@
             }
             Console.WriteLine();
             return columnWidths;
+            #endregion EXCLUDE
         }
 
         private static void DisplayItemRow(
             int[] columnWidths, string?[] values)
         {
-            if(columnWidths.Length != values.Length)
+            #region EXCLUDE
+            if (columnWidths.Length != values.Length)
             {
                 throw new ArgumentOutOfRangeException(
                     $"{ nameof(columnWidths) },{ nameof(values) }",
@@ -204,6 +218,8 @@
                 Console.Write(itemToPrint);
             }
             Console.WriteLine();
+            #endregion EXCLUDE
         }
     }
+    #endregion INCLUDE
 }
