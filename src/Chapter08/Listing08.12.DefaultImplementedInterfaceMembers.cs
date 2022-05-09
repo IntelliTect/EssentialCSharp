@@ -206,7 +206,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_12
         }
         #endregion HIGHLIGHT
         #endregion IListable
-
         // ...
     }
     #endregion INCLUDE

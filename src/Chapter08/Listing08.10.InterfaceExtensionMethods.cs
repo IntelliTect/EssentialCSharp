@@ -58,7 +58,6 @@
                 }
             }
         }
-
         #region EXCLUDE
         /// <summary>Displays the column headers</summary>
         /// <returns>Returns an array of column widths</returns>
