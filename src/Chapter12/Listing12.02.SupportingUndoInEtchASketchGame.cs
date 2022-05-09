@@ -1,15 +1,17 @@
-// TODO: Update listing in Manuscript
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_02
 {
     using System;
+    #region INCLUDE
     using System.Collections.Generic;
 
     public class Program
     {
+        #region EXCLUDE
         public static void Main()
         {
             Sketch();
         }
+        #endregion EXCLUDE
 
         public static void Sketch()
         {
@@ -18,6 +20,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_02
             Cell currentPosition;
             ConsoleKeyInfo key; // Added in C# 2.0
 
+            #region EXCLUDE
             Console.WriteLine("Use arrow keys to draw. X to exit.");
             for(int i = 2; i < Console.WindowHeight; i++)
             {
@@ -27,6 +30,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_02
             currentPosition = new Cell(Console.WindowWidth / 2, Console.WindowHeight / 2);
             path.Push(currentPosition);
             FillCell(currentPosition);
+            #endregion EXCLUDE
 
             do
             {
@@ -40,7 +44,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_02
                         // Undo the previous Move
                         if(path.Count >= 1)
                         {
+                            #region HIGHLIGHT
                             currentPosition = (Cell)path.Pop();
+                            #endregion HIGHLIGHT
                             Console.SetCursorPosition(
                                 currentPosition.X, currentPosition.Y);
                             FillCell(currentPosition, ConsoleColor.Black);
@@ -48,7 +54,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_02
                         }
                         break;
                     case ConsoleKey.DownArrow:
-                        if(Console.CursorTop < Console.WindowHeight - 2)
+                        #region EXCLUDE
+                        if (Console.CursorTop < Console.WindowHeight - 2)
                         {
                             currentPosition = new Cell(
                                 Console.CursorLeft, Console.CursorTop + 1);
@@ -56,8 +63,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_02
                         path.Push(currentPosition);
                         FillCell(currentPosition);
                         break;
+                        #endregion EXCLUDE
                     case ConsoleKey.UpArrow:
-                        if(Console.CursorTop > 1)
+                        #region EXCLUDE
+                        if (Console.CursorTop > 1)
                         {
                             currentPosition = new Cell(
                                 Console.CursorLeft, Console.CursorTop - 1);
@@ -65,8 +74,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_02
                         path.Push(currentPosition);
                         FillCell(currentPosition);
                         break;
+                        #endregion EXCLUDE
                     case ConsoleKey.LeftArrow:
-                        if(Console.CursorLeft > 1)
+                        #region EXCLUDE
+                        if (Console.CursorLeft > 1)
                         {
                             currentPosition = new Cell(
                                 Console.CursorLeft - 1, Console.CursorTop);
@@ -74,6 +85,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_02
                         path.Push(currentPosition);
                         FillCell(currentPosition);
                         break;
+                        #endregion EXCLUDE
                     case ConsoleKey.RightArrow:
                         // SaveState()
                         if(Console.CursorLeft < Console.WindowWidth - 2)
@@ -81,7 +93,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_02
                             currentPosition = new Cell(
                                 Console.CursorLeft + 1, Console.CursorTop);
                         }
+                        #region HIGHLIGHT
                         path.Push(currentPosition);
+                        #endregion HIGHLIGHT
                         FillCell(currentPosition);
                         break;
 
@@ -89,11 +103,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_02
                         Console.Beep();  // Added in C# 2.0
                         break;
                 }
-
             }
             while(key.Key != ConsoleKey.X);  // Use X to quit.
         }
-
+        #region EXCLUDE
         private static ConsoleKeyInfo Move()
         {
             return Console.ReadKey(true);
@@ -117,6 +130,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_02
             Console.SetCursorPosition(cell.X, cell.Y);
             Console.BackgroundColor = ConsoleColor.Black;
         }
+        #endregion EXCLUDE
     }
 
     public struct Cell
@@ -131,4 +145,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_02
             Y = y;
         }
     }
+    #endregion INCLUDE
 }
