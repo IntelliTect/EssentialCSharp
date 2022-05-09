@@ -1,15 +1,18 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_15
 {
+    #region INCLUDE
     using System;
     using System.IO;
-    using System.Runtime.InteropServices;
 
     public class Program
     {
         public static void Main()
         {
             // ...
+
             string fileName = @"enumtest.txt";
+
+            #region EXCLUDE
             System.IO.FileInfo enumFile =
                 new System.IO.FileInfo(fileName);
             if (!enumFile.Exists)
@@ -19,6 +22,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_15
 
             try
             {
+            #endregion EXCLUDE
                 System.IO.FileInfo file =
                     new System.IO.FileInfo(fileName);
 
@@ -28,7 +32,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_15
                 Console.WriteLine($"{file.Attributes} = {(int)file.Attributes}");
 
                 // Only the ReadOnly attribute works on Linux  (The Hidden attribute does not work on Linux)
-                if (!System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+                if (!System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform(System.Runtime.InteropServices.OSPlatform.Linux))
                 {
                     // Added in C# 4.0/Microsoft .NET Framework  4.0
                     if (!file.Attributes.HasFlag(FileAttributes.Hidden))
@@ -43,6 +47,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_15
                 {
                     throw new Exception("File is not read-only.");
                 }
+            #region EXCLUDE
             }
             finally
             {
@@ -52,7 +57,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_15
                     enumFile.Delete();
                 }
             }
-            // ...
+            #endregion EXCLUDE
         }
     }
+    #endregion INCLUDE
 }

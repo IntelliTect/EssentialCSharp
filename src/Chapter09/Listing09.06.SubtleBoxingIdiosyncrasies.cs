@@ -1,6 +1,52 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_06
 {
     using System;
+
+    #region INCLUDE
+    interface IAngle
+    {
+        void MoveTo(int degrees, int minutes, int seconds);
+    }
+
+    struct Angle : IAngle
+    {
+        #region EXCLUDE
+        public Angle(int degrees, int minutes, int seconds)
+        {
+            _Degrees = degrees;
+            _Minutes = minutes;
+            _Seconds = seconds;
+        }
+        #endregion EXCLUDE
+
+        // NOTE:  This makes Angle mutable, against the general
+        //        guideline
+        public void MoveTo(int degrees, int minutes, int seconds)
+        {
+            _Degrees = degrees;
+            _Minutes = minutes;
+            _Seconds = seconds;
+        }
+        #region EXCLUDE
+        public int Degrees
+        {
+            get { return _Degrees; }
+        }
+        private int _Degrees;
+
+        public int Minutes
+        {
+            get { return _Minutes; }
+        }
+        private int _Minutes;
+
+        public int Seconds
+        {
+            get { return _Seconds; }
+        }
+        private int _Seconds;
+        #endregion EXCLUDE
+    }
     public class Program
     {
         public static void Main()
@@ -27,46 +73,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_06
             // ...
         }
     }
-
-    interface IAngle
-    {
-        void MoveTo(int degrees, int minutes, int seconds);
-    }
-
-    struct Angle : IAngle
-    {
-        public Angle(int degrees, int minutes, int seconds)
-        {
-            _Degrees = degrees;
-            _Minutes = minutes;
-            _Seconds = seconds;
-        }
-
-        // NOTE:  This makes Angle mutable, against the general
-        //        guideline
-        public void MoveTo(int degrees, int minutes, int seconds)
-        {
-            _Degrees = degrees;
-            _Minutes = minutes;
-            _Seconds = seconds;
-        }
-
-        public int Degrees
-        {
-            get { return _Degrees; }
-        }
-        private int _Degrees;
-
-        public int Minutes
-        {
-            get { return _Minutes; }
-        }
-        private int _Minutes;
-
-        public int Seconds
-        {
-            get { return _Seconds; }
-        }
-        private int _Seconds;
-    }
+    #endregion INCLUDE
 }

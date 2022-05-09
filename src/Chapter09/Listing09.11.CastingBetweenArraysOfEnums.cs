@@ -1,16 +1,7 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_11
 {
     using System;
-
-    public class Program
-    {
-        public static void Main()
-        {
-            ConnectionState1[] states =
-                (ConnectionState1[])(Array)new ConnectionState2[42];
-        }
-    }
-
+    #region INCLUDE
     enum ConnectionState1
     {
         Disconnected,
@@ -26,4 +17,15 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_11
         Connected,
         Disconnecting
     }
+    public class Program
+    {
+        public static void Main()
+        {
+            ConnectionState1[] states =
+            #region HIGHLIGHT
+                (ConnectionState1[])(Array)new ConnectionState2[42];
+            #endregion HIGHLIGHT
+        }
+    }
+    #endregion INCLUDE
 }

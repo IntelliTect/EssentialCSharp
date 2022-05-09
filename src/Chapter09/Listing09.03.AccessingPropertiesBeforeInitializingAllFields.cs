@@ -1,15 +1,18 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_03
 {
     // Use keyword struct to declare a value type
+    #region INCLUDE
     struct Angle
     {
         // ERROR:  The 'this' object cannot be used before
         //         all of its fields are assigned to
         // public Angle(int degrees, int minutes, int seconds)
         // {
+        #region HIGHLIGHT
         //     Degrees = degrees;    // Shorthand for this.Hours = hours;
         //     Minutes = minutes; // Shorthand for this.Minutes = ...;
         //     Seconds = seconds; // Shorthand for this.Seconds = ...;
+        #endregion HIGHLIGHT
         // }
 
         public Angle(int degrees, int minutes, int seconds)
@@ -28,6 +31,7 @@
         public int Seconds { get { return _Seconds; } }
         readonly private int _Seconds;
 
+        #region EXCLUDE
         public Angle Move(int degrees, int minutes, int seconds)
         {
             return new Angle(
@@ -35,7 +39,9 @@
                 Minutes + minutes,
                 Seconds + seconds);
         }
+        #endregion EXCLUDE
     }
+    #endregion INCLUDE
 
     // Declaring a class as a reference type
     // (declaring it as a struct would create a value type

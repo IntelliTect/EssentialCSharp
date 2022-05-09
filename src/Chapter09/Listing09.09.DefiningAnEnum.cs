@@ -1,5 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_09
 {
+    #region INCLUDE
     enum ConnectionState
     {
         Disconnected,
@@ -7,4 +8,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_09
         Connected,
         Disconnecting
     }
+    #endregion INCLUDE
 }
