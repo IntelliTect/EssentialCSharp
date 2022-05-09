@@ -46,8 +46,8 @@
         public FileStream? Stream { get; private set; }
         public FileInfo? File { get; private set; }
 
-        #region HIGHLIGHT
         #region IDisposable Members
+        #region HIGHLIGHT
         public void Dispose()
         {
             Dispose(true);
@@ -55,7 +55,9 @@
             //unregister from the finalization queue.
             System.GC.SuppressFinalize(this);
         }
+        #endregion HIGHLIGHT
         #endregion
+        #region HIGHLIGHT
         public void Dispose(bool disposing)
         {
             // Do not dispose of an owned managed object (one with a 

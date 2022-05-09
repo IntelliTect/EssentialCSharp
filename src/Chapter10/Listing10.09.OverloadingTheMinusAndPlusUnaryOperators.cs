@@ -208,6 +208,7 @@
 
         // UNARY
         #endregion EXCLUDE
+        #region HIGHLIGHT
         public static Longitude operator -(Longitude longitude)
         {
             return new Longitude(-longitude.Degrees);
@@ -217,6 +218,7 @@
         {
             return longitude;
         }
+        #endregion HIGHLIGHT
         #region EXCLUDE
         // ----
 
@@ -264,8 +266,10 @@
         {
             // Uses unary – operator defined on 
             // Longitude and Latitude
+            #region HIGHLIGHT
             return new Arc(-arc.LongitudeDifference,
                 -arc.LatitudeDifference);
+            #endregion HIGHLIGHT
         }
 
         public static Arc operator +(Arc arc)

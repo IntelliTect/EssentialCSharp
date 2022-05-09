@@ -44,8 +44,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_17
          * <date>January 1, 2000</date> **/
         public static Employee Load(string firstName, string lastName)
         {
-            // ...
+            #region EXCLUDE
             return new Employee();
+            #endregion EXCLUDE
         }
     }
 
