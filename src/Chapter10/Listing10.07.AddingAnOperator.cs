@@ -1,5 +1,6 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_07
 {
+    #region INCLUDE
     public struct Arc
     {
         public Arc(
@@ -17,12 +18,13 @@
 
     public struct Coordinate
     {
+        #region EXCLUDE
         public Coordinate(Longitude longitude, Latitude latitude)
         {
             Longitude = longitude;
             Latitude = latitude;
         }
-
+        #endregion EXCLUDE
         public static Coordinate operator +(
             Coordinate source, Arc arc)
         {
@@ -33,6 +35,7 @@
                     source.Latitude + arc.LatitudeDifference));
             return result;
         }
+        #region EXCLUDE
 
         public static Coordinate operator -(
             Coordinate source, Arc arc)
@@ -131,7 +134,9 @@
         {
             return string.Format("{0}° {1}' 0 E {2}° {3}' 0 N", Longitude.Degrees, Longitude.Minutes, Latitude.Degrees, Latitude.Minutes);
         }
+        #endregion EXCLUDE
     }
+    #endregion INCLUDE
 
     public struct Longitude
     {

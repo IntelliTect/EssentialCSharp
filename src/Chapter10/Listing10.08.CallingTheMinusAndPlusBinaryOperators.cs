@@ -2,7 +2,7 @@
 {
     using System;
     using Listing10_07;
-
+    #region INCLUDE
     public class Program
     {
         public static void Main()
@@ -22,4 +22,5 @@
             Console.WriteLine(coordinate2);
         }
     }
+    #endregion INCLUDE
 }

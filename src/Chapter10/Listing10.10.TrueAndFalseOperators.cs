@@ -2,15 +2,21 @@
 {
     public struct Example
     {
-        //public static bool operator false(object item)
-        //{
-        //    return true;
-        //    // ...
-        //}
-        //public static bool operator true(object item)
-        //{
-        //    return true;
-        //    // ...
-        //}
+        /*
+        #region INCLUDE
+        public static bool operator false(object item)
+        {
+            #region EXCLUDE
+            return true;
+            #endregion EXCLUDE
+        }
+        public static bool operator true(object item)
+        {
+            #region EXCLUDE
+            return true;
+            #endregion EXCLUDE
+        }
+        #endregion INCLUDE
+        */
     }
 }

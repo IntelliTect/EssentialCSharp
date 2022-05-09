@@ -3,6 +3,7 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_20
 {
     using System;
+    #region INCLUDE
     using System.IO;
 
     public class TemporaryFileStream
@@ -20,6 +21,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_20
             : this(Path.GetTempFileName())
         { }
 
+        #region HIGHLIGHT
         // Finalizer
         ~TemporaryFileStream()
         {
@@ -33,6 +35,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_20
                 // ...
             }
         }
+        #endregion HIGHLIGHT
 
         public FileStream? Stream { get; private set; }
         public FileInfo? File { get; private set; }
@@ -48,6 +51,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_20
             {
                 Console.WriteLine(exception);
             }
+            Stream = null;
+            File = null;
         }
     }
+    #endregion INCLUDE
 }

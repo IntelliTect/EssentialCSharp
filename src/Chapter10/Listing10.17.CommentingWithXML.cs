@@ -2,6 +2,7 @@
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_17
 {
+    #region INCLUDE
     /// <summary>
     /// DataStorage is used to persist and retrieve
     /// employee data from the files.
@@ -52,4 +53,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_17
     {
         // ...
     }
+    #endregion INCLUDE
 }

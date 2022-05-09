@@ -2,7 +2,7 @@
 {
     using AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_21;
     using System;
-
+    #region INCLUDE
     class DataCache
     {
         // ...
@@ -15,6 +15,7 @@
 
         // ...
     }
+    #endregion INCLUDE
 }
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_24_PreCSharp6

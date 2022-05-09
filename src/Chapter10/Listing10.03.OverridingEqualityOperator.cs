@@ -3,6 +3,11 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_03
 {
     using AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_06;
+    #region INCLUDE
+    // This ProductSerialNumber class is shown and implemented in 10.6
+    // public sealed class ProductSerialNumber
+    // {
+    // }
 
     public class Program
     {
@@ -56,4 +61,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_03
             Console.WriteLine("serialNumber1 equals serialNumber3");
         }
     }
+    #endregion INCLUDE
 }
