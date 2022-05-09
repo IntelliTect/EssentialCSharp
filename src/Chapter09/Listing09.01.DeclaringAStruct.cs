@@ -1,10 +1,10 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_01
 {
     #region INCLUDE
-    #region HIGHLIGHT
     // Use keyword struct to declare a value type
-    #endregion HIGHLIGHT
+    #region HIGHLIGHT
     readonly public struct Angle
+    #endregion HIGHLIGHT
     {
         public Angle(int degrees, int minutes, int seconds)
         {

@@ -7,7 +7,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_04
         public static void Main()
         {
             int totalCount;
-
             // Intentionally using ArrayList to demonstrate boxing
             System.Collections.ArrayList list =
                 new System.Collections.ArrayList();
