@@ -2,6 +2,7 @@
 {
     using System;
 
+    #region INCLUDE
     public sealed class TextNumberParser
     {
         public static int Parse(string textDigit)
@@ -10,7 +11,7 @@
                 { "zero", "one", "two", "three", "four", 
                   "five", "six", "seven", "eight", "nine" };
 
-#if !PRECSHARP7
+    #if !PRECSHARP7
             int result = Array.IndexOf(
                 digitTexts,
                 // Leveraging C# 2.0’s null-coalescing operator
@@ -18,23 +19,23 @@
                   // Leveraging C# 7.0’s throw expression
                   throw new ArgumentNullException(nameof(textDigit))
                 ).ToLower());
-
-#else
+    #else
             if(textDigit == null) throw new ArgumentNullException(nameof(textDigit))
             int result = Array.IndexOf(
                 digitTexts, textDigit?.ToLower());
-#endif
+    #endif
 
             if (result < 0)
             {
-#if !PRECSHARP6
+    #if !PRECSHARP6
+                // Leveraging C# 6.0's nameof operator
                 throw new ArgumentException(
                     "The argument did not represent a digit", nameof(textDigit));
-#else
+    #else
                 throw new ArgumentException(
                     "The argument did not represent a digit",
                     "textDigit");
-#endif
+    #endif
             }
 
             return result;

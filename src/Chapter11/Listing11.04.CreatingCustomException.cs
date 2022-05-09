@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter11.Listing11_04
 {
-
+    #region INCLUDE
     class DatabaseException : Exception
     {
         public DatabaseException(
@@ -39,7 +39,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter11.Listing11_04
         {
             // ...
         }
-
+        #region EXCLUDE
         // Used for deserialization of exceptions
         public DatabaseException(
             SerializationInfo serializationInfo,
@@ -48,7 +48,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter11.Listing11_04
         {
             //...
         }
+        #endregion EXCLUDE
     }
+    #endregion INCLUDE
 
     // Create mock versions of the database exception classes rather
     // than referencing the real libraries.

@@ -1,5 +1,7 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter11.Listing11_06
 {
+    #region INCLUDE
+    using System;
     public class Program
     {
         public static void Main()
@@ -7,8 +9,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter11.Listing11_06
             // int.MaxValue equals 2147483647
             int n = int.MaxValue;
             n = n + 1;
-            System.Console.WriteLine(n);
+            Console.WriteLine(n);
         }
     }
-
+    #endregion INCLUDE
 }

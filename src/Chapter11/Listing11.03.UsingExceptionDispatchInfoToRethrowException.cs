@@ -1,13 +1,14 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter11.Listing11_03
 {
 #pragma warning disable 0168 // Disabled warning for unused variables for elucidation
+    #region INCLUDE
     using System;
-    using System.IO;
-    using System.Linq;
-    using System.Net;
     using System.Runtime.ExceptionServices;
     using System.Threading.Tasks;
-
+    using System.Net;
+    using System.Linq;
+    using System.IO;
+    #region EXCLUDE
     public sealed class Program
     {
         public static void Main(string[] args)
@@ -19,6 +20,7 @@
             }
 
             Console.Write(url);
+    #endregion EXCLUDE
             Task task = WriteWebRequestSizeAsync(url);
             try
             {
@@ -30,10 +32,12 @@
             catch (AggregateException exception)
             {
                 exception = exception.Flatten();
+                #region HIGHLIGHT
                 ExceptionDispatchInfo.Capture(
                     exception.InnerException??exception).Throw();
+                #endregion HIGHLIGHT
             }
-
+    #endregion INCLUDE
         }
 
 
