@@ -6,12 +6,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_08
     {
         public static void SwitchInt()
         {
+            #region INCLUDE
             int connectionState;
-            // ...
+            #region EXCLUDE
             // initialize connectionState for example
             connectionState = 2;
-
-            switch(connectionState)
+            #endregion EXCLUDE
+            switch (connectionState)
             {
                 case 0:
                     // ...
@@ -26,18 +27,18 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_08
                     // ...
                     break;
             }
-
+            #region EXCLUDE
         }
 
         public static void SwitchEnum()
         {
+            #endregion EXCLUDE
             ConnectionState connectionState;
-            // ...
-
+            #region EXCLUDE
             // initialize connectionState for example
             connectionState = ConnectionState.Connecting;
-
-            switch(connectionState)
+            #endregion EXCLUDE
+            switch (connectionState)
             {
                 case ConnectionState.Connected:
                     // ...
@@ -52,6 +53,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_08
                     // ...
                     break;
             }
+            #endregion INCLUDE
         }
     }
 }

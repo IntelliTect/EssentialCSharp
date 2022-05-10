@@ -1,7 +1,10 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_01
 {
-    // Use keyword struct to declare a value type 
+    #region INCLUDE
+    // Use keyword struct to declare a value type
+    #region HIGHLIGHT
     readonly public struct Angle
+    #endregion HIGHLIGHT
     {
         public Angle(int degrees, int minutes, int seconds)
         {
@@ -9,6 +12,7 @@
             Minutes = minutes;
             Seconds = seconds;
         }
+
         // Using C# 6.0 read-only, automatically implemented properties
         public int Degrees { get; }
         public int Minutes { get; }
@@ -29,6 +33,8 @@
     class Coordinate
     {
         public Angle Longitude { get; set; }
+
         public Angle Latitude { get; set; }
     }
+    #endregion INCLUDE
 }

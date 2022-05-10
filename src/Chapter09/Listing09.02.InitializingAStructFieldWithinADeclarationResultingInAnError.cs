@@ -1,18 +1,20 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_02
 {
-    // Use keyword struct to declare a value type 
+    // Use keyword struct to declare a value type
+    #region INCLUDE
     struct Angle
     {
+        #region EXCLUDE
         public Angle(int degrees, int minutes, int seconds)
         {
             Degrees = degrees;
             Minutes = minutes;
             Seconds = seconds;
         }
-
+        #endregion EXCLUDE
         // ERROR:  Fields cannot be initialized at declaration time
         // private int _Degrees = 42;
-
+        #region EXCLUDE
         public int Degrees { get; }
 
         public int Minutes { get; }
@@ -25,7 +27,9 @@
                 Minutes + minutes,
                 Seconds + seconds);
         }
+        #endregion EXCLUDE
     }
+    #endregion INCLUDE
 
     // Declaring a class as a reference type
     // (declaring it as a struct would create a value type

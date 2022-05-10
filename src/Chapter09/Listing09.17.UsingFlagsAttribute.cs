@@ -1,5 +1,8 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_17
 {
+    #region INCLUDE
+    //FileAttributes are defined in System.IO
+
     using System;
     using System.IO;
 
@@ -8,7 +11,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_17
         public static void Main()
         {
             string fileName = @"enumtest.txt";
-
+            #region EXCLUDE
             // Cleanup in case the file is left in read-only state
             // and can't get created.
             if (File.Exists(fileName))
@@ -17,9 +20,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_17
                 if (attrs.HasFlag(FileAttributes.ReadOnly))
                     File.SetAttributes(fileName, attrs & ~FileAttributes.ReadOnly);
             }
-
+            #endregion EXCLUDE
             FileInfo file = new FileInfo(fileName);
-
             file.Open(FileMode.OpenOrCreate).Dispose();
 
             FileAttributes startingAttributes =
@@ -40,8 +42,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_17
 
             File.SetAttributes(fileName,
                 startingAttributes);
-
             file.Delete();
         }
     }
+    #endregion INCLUDE
 }

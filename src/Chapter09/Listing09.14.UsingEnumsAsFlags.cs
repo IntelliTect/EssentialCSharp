@@ -2,6 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_14
 {
     using System;
 
+    #region INCLUDE
     [Flags]
     public enum FileAttributes
     {
@@ -21,4 +22,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_14
         NotContentIndexed = 1 << 13,    // 010000000000000
         Encrypted = 1 << 14,            // 100000000000000
     }
+    #endregion INCLUDE
 }

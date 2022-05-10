@@ -1,22 +1,21 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_04
 {
     using System;
-
-    public class Program
+    #region INCLUDE
+    public class DisplayFibonacci
     {
         public static void Main()
         {
             int totalCount;
-
             // Intentionally using ArrayList to demonstrate boxing
             System.Collections.ArrayList list =
                 new System.Collections.ArrayList();
-            // TODO: Update listing in Manuscript
+
             Console.Write("Enter an integer between 2 and 1000: ");
-            string? text = Console.ReadLine();
-            if (!int.TryParse(text, out totalCount))
+            string? inputText = Console.ReadLine();
+            if (!int.TryParse(inputText, out totalCount))
             {
-                Console.WriteLine($"'{text}' is not a valid integer.");
+                Console.WriteLine($"'{inputText}' is not a valid integer.");
                 return;
             }
 
@@ -50,4 +49,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_04
             }
         }
     }
+    #endregion INCLUDE
 }

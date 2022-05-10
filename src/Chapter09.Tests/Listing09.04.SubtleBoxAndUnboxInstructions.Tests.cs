@@ -13,7 +13,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_04.Tests
             string expected = "<<7>>";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, Program.Main);
+                expected, DisplayFibonacci.Main);
         }
 
         [TestMethod]
@@ -24,7 +24,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_04.Tests
             string expected = string.Format(OutputFormatString, 42);
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, Program.Main);
+                expected, DisplayFibonacci.Main);
         }
     }
 }

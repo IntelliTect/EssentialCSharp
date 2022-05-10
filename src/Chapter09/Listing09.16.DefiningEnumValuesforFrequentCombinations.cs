@@ -1,7 +1,7 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_16
 {
     using System;
-
+    #region INCLUDE
     [Flags]
     enum DistributedChannel
     {
@@ -10,7 +10,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_16
         Queued = 2,
         Encrypted = 4,
         Persisted = 16,
+        #region HIGHLIGHT
         FaultTolerant =
             Transacted | Queued | Persisted
+        #endregion HIGHLIGHT
     }
+    #endregion INCLUDE
 }

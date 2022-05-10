@@ -4,6 +4,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_05
     {
         static void Main()
         {
+            #region INCLUDE
             // ...
 
             int number;
@@ -15,8 +16,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_05
             // ERROR: InvalidCastException
             // bigNumber = (double)thing;
             bigNumber = (double)(int)thing;
-
             // ...
+            #endregion INCLUDE
         }
     }
 }
