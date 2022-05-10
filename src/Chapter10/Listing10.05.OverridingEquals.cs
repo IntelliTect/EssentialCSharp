@@ -16,14 +16,19 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_05
         }
     }
 
+    #region INCLUDE
     public struct Longitude
     {
+        #region EXCLUDE
         public Longitude(int x, int y) { }
+        #endregion EXCLUDE
     }
 
     public struct Latitude
     {
+        #region EXCLUDE
         public Latitude(int x, int y) { }
+        #endregion EXCLUDE
     }
 
     public struct Coordinate : IEquatable<Coordinate>
@@ -57,7 +62,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_05
 
         public bool Equals(Coordinate obj)
         {
-            // TODO: Update listing in Manuscript
             // STEP 1: Check for null if a reference type
             // (e.g., a reference type)
             // if (obj is null)
@@ -87,6 +91,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_05
 
         // STEP 7: Override GetHashCode
         public override int GetHashCode() =>
+        #region EXCLUDE
             HashCode.Combine(Longitude.GetHashCode(), Latitude.GetHashCode());
 
         // STEP 8: Override the ==/!= operators
@@ -104,5 +109,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_05
         {
             return !(leftHandSide.Equals(rightHandSide));
         }
+        #endregion EXCLUDE
     }
+    #endregion INCLUDE
 }

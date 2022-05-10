@@ -1,7 +1,9 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_06
 {
+    #region INCLUDE
     public sealed class ProductSerialNumber
     {
+        #region EXCLUDE
         public ProductSerialNumber(
             string productSeries, int model, long id)
         {
@@ -63,6 +65,7 @@
                 (Model == obj.Model) &&
                 (Id == obj.Id));
         }
+        #endregion EXCLUDE
 
         public static bool operator ==(
             ProductSerialNumber leftHandSide,
@@ -88,5 +91,5 @@
             return !(leftHandSide == rightHandSide);
         }
     }
-
+    #endregion INCLUDE
 }

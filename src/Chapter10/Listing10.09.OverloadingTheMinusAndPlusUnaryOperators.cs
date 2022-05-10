@@ -1,47 +1,5 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_09
 {
-    public struct Arc
-    {
-        public Arc(
-            Longitude longitudeDifference,
-            Latitude latitudeDifference)
-        {
-            _LongitudeDifference = longitudeDifference;
-            _LatitudeDifference = latitudeDifference;
-        }
-
-        public Longitude LongitudeDifference
-        {
-            get
-            {
-                return _LongitudeDifference;
-            }
-        }
-        private readonly Longitude _LongitudeDifference;
-
-        public Latitude LatitudeDifference
-        {
-            get
-            {
-                return _LatitudeDifference;
-            }
-        }
-        private readonly Latitude _LatitudeDifference;
-
-        public static Arc operator -(Arc arc)
-        {
-            // Uses unary – operator defined on 
-            // Longitude and Latitude
-            return new Arc(-arc.LongitudeDifference,
-                -arc.LatitudeDifference);
-        }
-
-        public static Arc operator +(Arc arc)
-        {
-            return arc;
-        }
-    }
-
     public struct Coordinate
     {
         public Coordinate(Longitude longitude, Latitude latitude)
@@ -161,8 +119,66 @@
 
     }
 
+    #region INCLUDE
+    public struct Latitude
+    {
+        #region EXCLUDE
+        public Latitude(int degrees, int minutes)
+        {
+            _Degrees = degrees;
+            _Minutes = minutes;
+        }
+
+        public Latitude(int degrees)
+            : this(degrees, 0) { }
+
+        public Latitude(Latitude Latitude)
+            : this(Latitude.Degrees, Latitude.Minutes) { }
+
+        public int Degrees
+        {
+            get { return _Degrees; }
+            set { _Degrees = value; }
+        }
+        private int _Degrees;
+
+        public int Minutes
+        {
+            get { return _Minutes; }
+            set { _Minutes = value; }
+        }
+        private int _Minutes;
+
+        // UNARY
+        #endregion EXCLUDE
+        #region HIGHLIGHT
+        public static Latitude operator -(Latitude latitude)
+        {
+            return new Latitude(-latitude.Degrees);
+        }
+
+        public static Latitude operator +(Latitude latitude)
+        {
+            return latitude;
+        }
+        #endregion HIGHLIGHT
+
+        #region EXCLUDE
+        public static Latitude operator +(Latitude leftHandSide, Latitude rightHandSide)
+        {
+            return new Latitude(leftHandSide.Degrees + rightHandSide.Degrees, leftHandSide.Minutes + rightHandSide.Minutes);
+        }
+
+        public static Latitude operator -(Latitude leftHandSide, Latitude rightHandSide)
+        {
+            return new Latitude(leftHandSide.Degrees - rightHandSide.Degrees, leftHandSide.Minutes - rightHandSide.Minutes);
+        }
+        #endregion EXCLUDE
+    }
+
     public struct Longitude
     {
+        #region EXCLUDE
         public Longitude(int degrees, int minutes)
         {
             _Degrees = degrees;
@@ -191,6 +207,8 @@
         private int _Minutes;
 
         // UNARY
+        #endregion EXCLUDE
+        #region HIGHLIGHT
         public static Longitude operator -(Longitude longitude)
         {
             return new Longitude(-longitude.Degrees);
@@ -200,6 +218,8 @@
         {
             return longitude;
         }
+        #endregion HIGHLIGHT
+        #region EXCLUDE
         // ----
 
         public static Longitude operator +(Longitude leftHandSide, Longitude rightHandSide)
@@ -211,56 +231,51 @@
         {
             return new Longitude(leftHandSide.Degrees - rightHandSide.Degrees, leftHandSide.Minutes - rightHandSide.Minutes);
         }
+        #endregion EXCLUDE
     }
-
-    public struct Latitude
+    public struct Arc
     {
-        public Latitude(int degrees, int minutes)
+        #region EXCLUDE
+        public Arc(
+            Longitude longitudeDifference,
+            Latitude latitudeDifference)
         {
-            _Degrees = degrees;
-            _Minutes = minutes;
+            _LongitudeDifference = longitudeDifference;
+            _LatitudeDifference = latitudeDifference;
         }
 
-        public Latitude(int degrees)
-            : this(degrees, 0) { }
-
-        public Latitude(Latitude Latitude)
-            : this(Latitude.Degrees, Latitude.Minutes) { }
-
-        public int Degrees
+        public Longitude LongitudeDifference
         {
-            get { return _Degrees; }
-            set { _Degrees = value; }
+            get
+            {
+                return _LongitudeDifference;
+            }
         }
-        private int _Degrees;
+        private readonly Longitude _LongitudeDifference;
 
-        public int Minutes
+        public Latitude LatitudeDifference
         {
-            get { return _Minutes; }
-            set { _Minutes = value; }
+            get
+            {
+                return _LatitudeDifference;
+            }
         }
-        private int _Minutes;
-
-        // UNARY
-        public static Latitude operator -(Latitude latitude)
+        private readonly Latitude _LatitudeDifference;
+        #endregion EXCLUDE
+        public static Arc operator -(Arc arc)
         {
-            return new Latitude(-latitude.Degrees);
-        }
-
-        public static Latitude operator +(Latitude latitude)
-        {
-            return latitude;
-        }
-        // ----
-
-        public static Latitude operator +(Latitude leftHandSide, Latitude rightHandSide)
-        {
-            return new Latitude(leftHandSide.Degrees + rightHandSide.Degrees, leftHandSide.Minutes + rightHandSide.Minutes);
+            // Uses unary – operator defined on 
+            // Longitude and Latitude
+            #region HIGHLIGHT
+            return new Arc(-arc.LongitudeDifference,
+                -arc.LatitudeDifference);
+            #endregion HIGHLIGHT
         }
 
-        public static Latitude operator -(Latitude leftHandSide, Latitude rightHandSide)
+        public static Arc operator +(Arc arc)
         {
-            return new Latitude(leftHandSide.Degrees - rightHandSide.Degrees, leftHandSide.Minutes - rightHandSide.Minutes);
+            return arc;
         }
     }
+    #endregion INCLUDE
 }

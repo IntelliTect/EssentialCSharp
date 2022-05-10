@@ -1,7 +1,7 @@
-// TODO: Update listing in Manuscript
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23
 {
     using System;
+    #region INCLUDE
     using System.IO;
     using System.Linq;
     using System.Runtime.CompilerServices;
@@ -97,10 +97,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23
         public void Dispose()
         {
             Dispose(true);
-
-            // TODO: Update listing in Manuscript
+            #region EXCLUDE
             // Request that the finalizer not be called for this object.
             GC.SuppressFinalize(this);
+            #endregion EXCLUDE
         }
 
         public void Dispose(bool disposing)
@@ -125,6 +125,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23
             WriteLine("Exiting...");
         }
     }
+    #endregion INCLUDE
 
     public static class ConsoleLogger
     {

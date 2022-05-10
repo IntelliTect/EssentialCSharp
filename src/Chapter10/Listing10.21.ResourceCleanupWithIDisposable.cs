@@ -1,5 +1,6 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_21
 {
+    #region INCLUDE
     using System;
     using System.IO;
 
@@ -14,7 +15,9 @@
             // Use temporary file stream
             // ...
 
+            #region HIGHLIGHT
             fileStream.Dispose();
+            #endregion HIGHLIGHT
 
             // ...
         }
@@ -35,13 +38,16 @@
 
         ~TemporaryFileStream()
         {
+            #region HIGHLIGHT
             Dispose(false);
+            #endregion HIGHLIGHT
         }
 
         public FileStream? Stream { get; private set; }
         public FileInfo? File { get; private set; }
 
         #region IDisposable Members
+        #region HIGHLIGHT
         public void Dispose()
         {
             Dispose(true);
@@ -49,7 +55,9 @@
             //unregister from the finalization queue.
             System.GC.SuppressFinalize(this);
         }
+        #endregion HIGHLIGHT
         #endregion
+        #region HIGHLIGHT
         public void Dispose(bool disposing)
         {
             // Do not dispose of an owned managed object (one with a 
@@ -61,17 +69,22 @@
             {
                 Stream?.Dispose();
             }
+        #endregion HIGHLIGHT
             try
+            #region HIGHLIGHT
             {
                 File?.Delete();
             }
+            #endregion HIGHLIGHT
             catch (IOException exception)
+            #region HIGHLIGHT
             {
                 Console.WriteLine(exception);
             }
+            #endregion HIGHLIGHT
             Stream = null;
             File = null;
         }
-
     }
+    #endregion INCLUDE
 }

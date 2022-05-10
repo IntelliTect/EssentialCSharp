@@ -33,6 +33,7 @@
         }
     }
 
+    #region INCLUDE
     public static class ByteArrayDataSource
     {
         static private byte[] LoadData()
@@ -61,8 +62,9 @@
             }
             else
             {
-                // Reload the data and save it before
-                // returning it.
+                // Reload the data and assign it (creating a strong
+                // reference) before setting WeakReference's Target
+                // and returning it.
                 target = LoadData();
                 Data.SetTarget(target);
                 return target;
@@ -70,6 +72,8 @@
         }
     }
 
+    // ...
+    #endregion INCLUDE
 
     public class ObjectDataSource
     {

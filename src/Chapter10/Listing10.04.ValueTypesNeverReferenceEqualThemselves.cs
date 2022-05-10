@@ -3,6 +3,19 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_04
 {
     using System;
+    #region INCLUDE
+    public struct Coordinate
+    {
+        public Coordinate(Longitude longitude, Latitude latitude)
+        {
+            Longitude = longitude;
+            Latitude = latitude;
+        }
+
+        public Longitude Longitude { get; }
+        public Latitude Latitude { get; }
+        // ...
+    }
 
     public class Program
     {
@@ -26,22 +39,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_04
                 "coordinate1 does NOT reference equal itself");
         }
     }
-
-    public struct Coordinate
-    {
-        public Coordinate(Longitude longitude, Latitude latitude)
-        {
-            Longitude = longitude;
-            Latitude = latitude;
-        }
-
-        public Longitude Longitude { get; }
-        public Latitude Latitude { get; }
-
-
-        // ...
-    }
-
+    #endregion INCLUDE
     public struct Longitude
     {
         public Longitude(int x, int y) { }

@@ -1,5 +1,6 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_13
 {
+    #region INCLUDE
     public struct Coordinate
     {
         // ...
@@ -19,4 +20,5 @@
     {
         // ...
     }
+    #endregion INCLUDE
 }
