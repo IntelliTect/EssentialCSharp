@@ -1,6 +1,5 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter11.Listing11_03
 {
-#pragma warning disable 0168 // Disabled warning for unused variables for elucidation
     #region INCLUDE
     using System;
     using System.Runtime.ExceptionServices;
