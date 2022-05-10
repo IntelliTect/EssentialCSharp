@@ -19,8 +19,7 @@
             //      throw new ArgumentNullException(nameof(textDigit))
             //    ).ToLower());
             #endregion EXCLUDE
-
-            if (textDigit == null) throw new ArgumentNullException(nameof(textDigit))
+            if (textDigit == null) throw new ArgumentNullException(nameof(textDigit));
             int result = Array.IndexOf(
                 digitTexts, textDigit?.ToLower());
 
@@ -32,7 +31,6 @@
                     "textDigit");
                 #endregion HIGHLIGHT
             }
-
             return result;
         }
     }
