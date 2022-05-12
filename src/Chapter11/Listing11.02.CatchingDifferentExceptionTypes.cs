@@ -1,8 +1,9 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter11.Listing11_02
 {
 #pragma warning disable 0168 // Disabled warning for unused variables for elucidation
-    using System;
     using System.ComponentModel;
+    #region INCLUDE
+    using System;
 
     public sealed class Program
     {
@@ -10,10 +11,11 @@
         {
             try
             {
+                #region EXCLUDE
                 //throw new Win32Exception(42);
                 // ...
                 //TextNumberParser.Parse("negative forty-two");
-                // ...
+                #endregion EXCLUDE
                 throw new InvalidOperationException(
                     "Arbitrary exception");
                 // ...
@@ -30,7 +32,13 @@
             }
             catch(InvalidOperationException exception)
             {
+                bool exceptionHandled = false;
                 // Handle InvalidOperationException
+                // ...
+                if(!exceptionHandled)
+                {
+                    throw;
+                }
             }
             catch(Exception exception)
             {
@@ -43,4 +51,5 @@
             }
         }
     }
+    #endregion INCLUDE
 }
