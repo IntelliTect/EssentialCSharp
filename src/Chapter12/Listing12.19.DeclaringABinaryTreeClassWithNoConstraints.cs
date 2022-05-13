@@ -1,7 +1,7 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_19
 {
     using Listing12_13;
-
+    #region INCLUDE
     public class BinaryTree<T>
     {
         public BinaryTree(T item)
@@ -12,4 +12,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_19
         public T Item { get; set; }
         public Pair<BinaryTree<T>> SubItems { get; set; }
     }
+    #endregion INCLUDE
 }

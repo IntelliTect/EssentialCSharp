@@ -1,5 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_14
 {
+    #region INCLUDE
     interface IPair<TFirst, TSecond>
     {
         TFirst First { get; set; }
@@ -16,6 +17,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_14
 
         public TFirst First { get; set; }
         public TSecond Second { get; set; }
-
     }
+    #endregion INCLUDE
 }
