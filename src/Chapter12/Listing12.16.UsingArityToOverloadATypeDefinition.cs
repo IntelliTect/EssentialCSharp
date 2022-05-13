@@ -1,5 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_16
 {
+    #region INCLUDE
     public class Tuple
     {
         // ...
@@ -36,4 +37,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_16
     {
         // ...
     }
+    #endregion INCLUDE
 }
