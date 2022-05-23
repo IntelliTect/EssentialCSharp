@@ -3,11 +3,15 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_43
     using Chapter08.Listing08_02;
     using Contact = Chapter12.Contact;
 
+    #region INCLUDE
+    #region HIGHLIGHT
     interface IReadOnlyPair<out T>
+    #endregion HIGHLIGHT
     {
         T First { get; }
         T Second { get; }
     }
+    #endregion INCLUDE
 
     interface IPair<T>
     {

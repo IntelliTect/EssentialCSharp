@@ -15,7 +15,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_22
         }
 
         public T Item { get; set; }
-        public Pair<BinaryTree<T>?>? SubItems
+        public Pair<BinaryTree<T>?> SubItems
         {
             get { return _SubItems; }
             set
@@ -60,7 +60,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_22
                 _SubItems = value;
             }
         }
-        private Pair<BinaryTree<T>?>? _SubItems;
+        private Pair<BinaryTree<T>?> _SubItems;
     }
     #endregion INCLUDE
 }

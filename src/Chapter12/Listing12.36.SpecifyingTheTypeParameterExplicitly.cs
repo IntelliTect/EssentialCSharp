@@ -7,10 +7,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_36
     {
         public static void Main()
         {
+            #region INCLUDE
             Console.WriteLine(
                 MathEx.Max<int>(7, 490));
             Console.WriteLine(
                 MathEx.Min<string>("R.O.U.S.", "Fireswamp"));
+            #endregion INCLUDE
         }
     }
 }

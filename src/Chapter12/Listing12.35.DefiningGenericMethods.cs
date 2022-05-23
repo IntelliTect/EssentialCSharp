@@ -2,6 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_35
 {
     using System;
 
+    #region INCLUDE
     public static class MathEx
     {
         public static T Max<T>(T first, params T[] values)
@@ -33,4 +34,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_35
             return minimum;
         }
     }
+    #endregion INCLUDE
 }
