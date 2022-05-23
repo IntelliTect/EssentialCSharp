@@ -1,5 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_42
 {
+    #region INCLUDE
     interface IReadOnlyPair<T>
     {
         T First { get; }
@@ -14,7 +15,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_42
 
     public struct Pair<T> : IPair<T>, IReadOnlyPair<T>
     {
-        // ...
+        #region EXCLUDE
         #region Generated Interface Stub
         public T First
         {
@@ -40,14 +41,16 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_42
             }
         }
         #endregion Generated Interface Stub
+        #endregion EXCLUDE
     }
 
-    class Program
+    public class Program
     {
         static void Main()
         {
             // Error: Only theoretically possible without 
             // the out type parameter modifier
+            #region HIGHLIGHT
             //Pair<Contact> contacts =
             //    new Pair<Contact>(
             //        new Contact("Princess Buttercup"),
@@ -55,6 +58,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_42
             //IReadOnlyPair<PdaItem> pair = contacts;
             //PdaItem pdaItem1 = pair.First;
             //PdaItem pdaItem2 = pair.Second;
+            #endregion HIGHLIGHT
         }
     }
+    #endregion INCLUDE
 }

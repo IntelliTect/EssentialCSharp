@@ -1,29 +1,30 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_44
 {
+    #region INCLUDE
     class Fruit { }
-
     class Apple : Fruit { }
-
     class Orange : Fruit { }
 
-
+    #region HIGHLIGHT
     interface ICompareThings<in T>
     {
         bool FirstIsBetter(T t1, T t2);
     }
+    #endregion HIGHLIGHT
 
-    class Program
+    public class Program
     {
 
-        class FruitComparer : ICompareThings<Fruit>
+        private class FruitComparer : ICompareThings<Fruit>
         {
-            // ...
+            #region EXCLUDE
             #region Generated Interface Stub
             public bool FirstIsBetter(Fruit t1, Fruit t2)
             {
                 throw new System.NotImplementedException();
             }
             #endregion Generated Interface Stub
+            #endregion EXCLUDE
         }
         static void Main()
         {
@@ -50,4 +51,5 @@
             bool b3 = ac.FirstIsBetter(apple1, apple2);
         }
     }
+    #endregion INCLUDE
 }

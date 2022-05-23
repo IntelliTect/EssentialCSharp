@@ -1,8 +1,8 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_31
 {
     using System;
-
-    class EntityBase<T> where T : IComparable<T>
+    #region INCLUDE
+    public class EntityBase<T> where T : IComparable<T>
     {
         // ...
     }
@@ -15,4 +15,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_31
     // {
     //     ...
     // }
+    #endregion INCLUDE
 }
