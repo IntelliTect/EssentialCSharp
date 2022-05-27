@@ -18,7 +18,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_02
             Stack<Cell> path = new Stack<Cell>();
             Cell currentPosition;
             ConsoleKeyInfo key; // Added in C# 2.0
-
             #region EXCLUDE
             Console.WriteLine("Use arrow keys to draw. X to exit.");
             for(int i = 2; i < Console.WindowHeight; i++)
@@ -97,6 +96,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_02
                         #region HIGHLIGHT
                         path.Push(currentPosition);
                         #endregion HIGHLIGHT
+                        #region EXCLUDE
                         FillCell(currentPosition);
                         #endregion EXCLUDE
                         break;
