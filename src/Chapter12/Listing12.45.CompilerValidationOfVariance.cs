@@ -40,4 +40,3 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_45
     #endregion EXCLUDE
     #endregion INCLUDE
 }
-#endregion EXCLUDE
