@@ -18,7 +18,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_20
             get { return _SubItems; }
             set
             {
-                #region INCLUDE
                 #region HIGHLIGHT
                 IComparable<T> first;
                 // ERROR: Cannot implicitly convert type...
@@ -37,7 +36,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_20
                 //}
                 _SubItems = value;
                 #endregion HIGHLIGHT
-                #endregion INCLUDE
             }
         }
         private Pair<BinaryTree<T>> _SubItems;

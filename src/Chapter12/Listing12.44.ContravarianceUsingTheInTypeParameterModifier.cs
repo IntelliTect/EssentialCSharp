@@ -32,7 +32,6 @@
             ICompareThings<Fruit> fc = new FruitComparer();
 
             Apple apple1 = new Apple();
-
             Apple apple2 = new Apple();
             Orange orange = new Orange();
 
