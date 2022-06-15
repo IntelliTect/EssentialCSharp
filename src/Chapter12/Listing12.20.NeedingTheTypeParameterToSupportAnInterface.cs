@@ -19,6 +19,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_20
             set
             {
                 #region INCLUDE
+                #region HIGHLIGHT
                 IComparable<T> first;
                 // ERROR: Cannot implicitly convert type...
                 //first = value.First;  // Explicit cast required
@@ -35,6 +36,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_20
                 //    //...
                 //}
                 _SubItems = value;
+                #endregion HIGHLIGHT
                 #endregion INCLUDE
             }
         }

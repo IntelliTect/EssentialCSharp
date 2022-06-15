@@ -7,7 +7,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_48
      'Stack'1'<([mscorlib]System.IComparable) T>
      extends [mscorlib]System.Object
     {
+    #region HIGHLIGHT
         .field private !0[ ] items
+    #endregion HIGHLIGHT
         ...
     }
     #endregion INCLUDE
