@@ -8,7 +8,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_48
      extends [mscorlib]System.Object
     {
     #region HIGHLIGHT
-        .field private !0[ ] items
+        .field private !0[ ] _Items
     #endregion HIGHLIGHT
         ...
     }
