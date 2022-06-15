@@ -1,5 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_05
 {
+    #region INCLUDE
     struct Nullable
     {
         /// <summary>
@@ -15,4 +16,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_05
 
         // ...
     }
+    #endregion INCLUDE
 }

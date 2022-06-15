@@ -4,6 +4,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_31
 {
     public class Publisher
     {
+        #region INCLUDE
         static public object? InvokeAll<TDelegate>(
             object?[]? args, params TDelegate[] delegates)
             // Constraint of type Action/Func not allowed
@@ -20,6 +21,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_31
                   return null;
           };
         }
+        #endregion INCLUDE
 
         static public void InvokeAll(params Action?[] actions)
         {

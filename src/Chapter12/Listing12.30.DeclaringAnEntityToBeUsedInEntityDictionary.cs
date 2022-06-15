@@ -2,7 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_30
 {
     using System;
     using Listing12_29;
-
+    #region INCLUDE
     public class Order : EntityBase<Guid>
     {
         public Order(Guid key) :
@@ -19,4 +19,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_30
             return new Order(key);
         }
     }
+    #endregion INCLUDE
 }

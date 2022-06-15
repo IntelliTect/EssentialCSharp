@@ -1,8 +1,8 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_32
 {
     using System;
-
-    class EntityBase
+    #region INCLUDE
+    public class EntityBase
     {
         public virtual void Method<T>(T t)
             where T : IComparable<T>
@@ -10,7 +10,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_32
             // ...
         }
     }
-    class Order : EntityBase
+    public class Order : EntityBase
     {
         public override void Method<T>(T t)
         //    Constraints may not be repeated on overriding
@@ -20,5 +20,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_32
             // ...
         }
     }
-
+    #endregion INCLUDE
 }
