@@ -13,16 +13,20 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_17
             (string, Contact) keyValuePair;
             keyValuePair =
                 ("555-55-5555", new Contact("Inigo Montoya"));
-        #elif CSHARP6
+#else // Use System.ValueTupe<string,Contact> prior to C# 7.0
             ValueTuple<string, Contact> keyValuePair;
             keyValuePair =
-                new ValueTuple<string, Contact>(
+            #region HIGHLIGHT
+                ValueTuple.Create(
+            #endregion HIGHLIGHT
                     "555-55-5555", new Contact("Inigo Montoya"));
             keyValuePair =
-                ValueTuple.Create(
+            #region HIGHLIGHT
+             new ValueTuple<string, Contact>(
+            #endregion HIGHLIGHT
                     "555-55-5555", new Contact("Inigo Montoya"));
-        #endif // !PRECSHARP7
-        #endregion INCLUDE
+#endif // !PRECSHARP7
+            #endregion INCLUDE
         }
     }
 }
