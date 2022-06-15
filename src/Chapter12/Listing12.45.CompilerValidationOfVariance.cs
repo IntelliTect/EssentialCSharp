@@ -37,6 +37,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_45
             #region EXCLUDE
         }
     }
+    #endregion EXCLUDE
     #endregion INCLUDE
 }
-#endregion EXCLUDE
