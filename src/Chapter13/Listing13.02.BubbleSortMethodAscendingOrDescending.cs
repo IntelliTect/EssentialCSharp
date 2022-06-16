@@ -1,6 +1,7 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_02
 {
-    class SimpleSort2
+    #region INCLUDE
+    public class SimpleSort2
     {
         public enum SortType
         {
@@ -8,7 +9,9 @@
             Descending
         }
 
+        #region HIGHLIGHT
         public static void BubbleSort(int[] items, SortType sortOrder)
+        #endregion HIGHLIGHT
         {
             int i;
             int j;
@@ -27,12 +30,16 @@
                     bool swap = false;
                     switch(sortOrder)
                     {
+                        #region HIGHLIGHT
                         case SortType.Ascending:
                             swap = items[j - 1] > items[j];
+                            #endregion HIGHLIGHT
                             break;
 
+                        #region HIGHLIGHT
                         case SortType.Descending:
                             swap = items[j - 1] < items[j];
+                            #endregion HIGHLIGHT
                             break;
                     }
 
@@ -47,4 +54,5 @@
         }
         // ...
     }
+    #endregion INCLUDE
 }

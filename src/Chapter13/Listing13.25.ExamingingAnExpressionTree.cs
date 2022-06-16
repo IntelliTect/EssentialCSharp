@@ -1,5 +1,6 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_25
 {
+    #region INCLUDE
     using System;
     using System.Linq.Expressions;
     using static System.Linq.Expressions.ExpressionType;
@@ -56,5 +57,5 @@
                 _ => expression.ToString() +
                     " (" + expression.NodeType.ToString() + ")",
             };
+        #endregion INCLUDE
     }
-}

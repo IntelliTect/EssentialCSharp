@@ -2,7 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
-
+    #region INCLUDE
     class DoNotCaptureLoop
     {
         static void Main()
@@ -11,7 +11,9 @@
             var actions = new List<Action>();
             foreach(string item in items)
             {
+                #region HIGHLIGHT
                 string _item = item;
+                #endregion HIGHLIGHT
                 actions.Add(
                     () => { Console.WriteLine(_item); });
             }
@@ -21,4 +23,5 @@
             }
         }
     }
+    #endregion INCLUDE
 }

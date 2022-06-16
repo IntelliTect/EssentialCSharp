@@ -8,6 +8,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_18
     {
         public static void Main()
         {
+            #region INCLUDE
             // Contravariance
             Action<object> broadAction =
                 (object data) =>
@@ -17,7 +18,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_18
 
             Action<string> narrowAction = broadAction;
 
-            // TODO: Update listing in Manuscript
             // Covariance
             Func<string> narrowFunction =
                 () => "8654091021";
@@ -29,6 +29,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_18
                 (object data) => data.ToString();
 
             Func<string, object?> func2 = func1;
+            #endregion INCLUDE
         }
     }
 }

@@ -1,11 +1,12 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_07
 {
     using System;
-
-     class DelegateSample
+    #region INCLUDE
+    public class DelegateSample
     {
         public static void BubbleSort(
             int[] items, Func<int, int, bool> compare)
+        #region EXCLUDE
         {
             int i;
             int j;
@@ -33,12 +34,15 @@
                 }
             }
         }
-
+        #endregion EXCLUDE
+        #region HIGHLIGHT
         public static bool GreaterThan(int first, int second)
         {
             return first > second;
         }
+        #endregion HIGHLIGHT
 
         // ...
     }
+    #endregion INCLUDE
 }

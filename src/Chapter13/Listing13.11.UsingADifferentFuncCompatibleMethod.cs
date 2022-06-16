@@ -1,6 +1,6 @@
-﻿// TODO: Update listing in Manuscript
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_11
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_11
 {
+    #region INCLUDE
     using System;
 
     public class DelegateSample
@@ -31,7 +31,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_11
             return first > second;
         }
 
-        // New method
+        #region HIGHLIGHT
         public static bool AlphabeticalGreaterThan(
             int first, int second)
         {
@@ -41,6 +41,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_11
 
             return comparison > 0;
         }
+        #endregion HIGHLIGHT
 
         public static void Main()
         {
@@ -57,12 +58,15 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_11
                 }
             }
 
+            #region HIGHLIGHT
             BubbleSort(items, AlphabeticalGreaterThan);
+            #endregion HIGHLIGHT
 
-            for(int i = 0; i < items.Length; i++)
+            for (int i = 0; i < items.Length; i++)
             {
                 Console.WriteLine(items[i]);
             }
         }
     }
+    #endregion INCLUDE
 }

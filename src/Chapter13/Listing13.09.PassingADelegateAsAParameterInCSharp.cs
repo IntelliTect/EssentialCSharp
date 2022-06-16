@@ -50,11 +50,11 @@
             {
                 items[i] = random.Next(int.MinValue, int.MaxValue);
             }
-
+            #region INCLUDE
             BubbleSort(items,
                 new Comparer(GreaterThan));
-
-            for(i = 0; i < items.Length; i++)
+            #endregion INCLUDE
+            for (i = 0; i < items.Length; i++)
             {
                 Console.WriteLine(items[i]);
             }

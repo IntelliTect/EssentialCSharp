@@ -1,5 +1,4 @@
-﻿// TODO: Update listing in Manuscript
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_15
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_15
 {
     using System;
 
@@ -7,8 +6,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_15
     {
         public static void Main()
         {
+            #region INCLUDE
             Func<string> getUserInput =
+            #region HIGHLIGHT
                 () =>
+                #endregion HIGHLIGHT
                 {
                     string? input;
                     do
@@ -18,6 +20,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_15
                     while(!string.IsNullOrWhiteSpace(input));
                     return input!;
                 };
+            #endregion INCLUDE
             getUserInput();
         }
     }

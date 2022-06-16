@@ -1,6 +1,7 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_01
 {
-    static class SimpleSort1
+    #region INCLUDE
+    public static class SimpleSort1
     {
         public static void BubbleSort(int[] items)
         {
@@ -28,4 +29,5 @@
         }
         // ...
     }
+    #endregion INCLUDE
 }

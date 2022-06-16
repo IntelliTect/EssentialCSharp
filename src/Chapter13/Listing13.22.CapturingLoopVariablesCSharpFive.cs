@@ -2,7 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
-
+    #region INCLUDE
     class CaptureLoop
     {
         static void Main()
@@ -19,4 +19,5 @@
             }
         }
     }
+    #endregion INCLUDE
 }
