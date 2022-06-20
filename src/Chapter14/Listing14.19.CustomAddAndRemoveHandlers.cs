@@ -15,24 +15,24 @@
         }
      
         // Define the delegate data type
-        public delegate void TemperatureChangeHandler(
+        public delegate void EventHandler<TemperatureArgs>(
             object sender, TemperatureArgs newTemperature);
-        #region EXCLUDE
+        #endregion EXCLUDE
         #region HIGHLIGHT
         // Define the event publisher
-        public event TemperatureChangeHandler OnTemperatureChange
+        public event EventHandler<TemperatureArgs> OnTemperatureChange
         {
             add
             {
-                _OnTemperatureChange = (TemperatureChangeHandler)System.Delegate.Combine(value, _OnTemperatureChange);
+                _OnTemperatureChange = (EventHandler<TemperatureArgs>)System.Delegate.Combine(value, _OnTemperatureChange);
             }
             remove
             {
                 _OnTemperatureChange = 
-                    (TemperatureChangeHandler?)System.Delegate.Remove(_OnTemperatureChange, value);
+                    (EventHandler<TemperatureArgs>?)System.Delegate.Remove(_OnTemperatureChange, value);
             }
         }
-        protected TemperatureChangeHandler? _OnTemperatureChange;
+        protected EventHandler<TemperatureArgs>? _OnTemperatureChange;
         #endregion HIGHLIGHT
 
         public float CurrentTemperature

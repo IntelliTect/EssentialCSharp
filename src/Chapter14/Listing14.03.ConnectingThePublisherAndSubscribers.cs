@@ -13,7 +13,6 @@
             Cooler cooler = new Cooler(80);
 
             #region HIGHLIGHT
-            // Using C# 2.0 or later syntax
             thermostat.OnTemperatureChange +=
                 heater.OnTemperatureChanged;
             thermostat.OnTemperatureChange +=

@@ -19,7 +19,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_18
 
         // ...
         #endregion EXCLUDE
-        #region HIGHLIGHT
         // Declaring the delegate field to save the 
         // list of subscribers
         private EventHandler<TemperatureArgs>? _OnTemperatureChange;
@@ -36,20 +35,21 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_18
             System.Delegate.Remove(_OnTemperatureChange, handler);
         }
 
-        //public event EventHandler<TemperatureArgs> OnTemperatureChange
-        //{
-        //    //Would cause a compiler error
-        //    add
-        //    {
-        //        add_OnTemperatureChange(value);
-        //    }
-        //    //Would cause a compiler error
-        //    remove
-        //    {
-        //        remove_OnTemperatureChange(value);
-        //    }
-        //}
-        #endregion HIGHLIGHT
+        #if ConceptulEquivalendCode
+        public event EventHandler<TemperatureArgs> OnTemperatureChange
+        {
+            //Would cause a compiler error
+            add
+            {
+                add_OnTemperatureChange(value);
+            }
+            //Would cause a compiler error
+            remove
+            {
+                remove_OnTemperatureChange(value);
+            }
+        } 
+        #endif // ConceptulEquivalendCode
         #endregion INCLUDE
 
         public class TemperatureArgs : System.EventArgs

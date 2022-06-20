@@ -10,12 +10,7 @@
                 NewTemperature = newTemperature;
             }
 
-            public float NewTemperature
-            {
-                get { return _NewTemperature; }
-                set { _NewTemperature = value; }
-            }
-            private float _NewTemperature;
+            public float NewTemperature { get; set; }
         }
 
         #region HIGHLIGHT

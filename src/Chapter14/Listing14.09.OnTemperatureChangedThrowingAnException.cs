@@ -12,11 +12,8 @@
             Heater heater = new Heater(60);
             Cooler cooler = new Cooler(80);
 
-            // Using C# 2.0 or later syntax
             thermostat.OnTemperatureChange +=
                 heater.OnTemperatureChanged;
-            // Using C# 3.0.  Change to anonymous method
-            // if using C# 2.0
             #region HIGHLIGHT
             thermostat.OnTemperatureChange +=
                 (newTemperature) =>

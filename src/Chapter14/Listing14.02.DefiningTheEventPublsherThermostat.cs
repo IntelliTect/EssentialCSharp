@@ -4,22 +4,11 @@
     #region INCLUDE
     public class Thermostat
     {
-        // Using C# 3.0 or later syntax.
         // Define the event publisher (initially without the sender)
         public Action<float>? OnTemperatureChange { get; set; }
 
-        public float CurrentTemperature
+        public float CurrentTemperature { get; set; }
         #endregion INCLUDE
-        {
-            get { return _CurrentTemperature; }
-            set
-            {
-                if(value != CurrentTemperature)
-                {
-                    _CurrentTemperature = value;
-                }
-            }
-        }
         private float _CurrentTemperature;
     }
 }

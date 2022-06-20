@@ -18,7 +18,9 @@
                     // If there are any subscribers,
                     // notify them of changes in 
                     // temperature
-#pragma warning disable IDE1005 // Delegate invocation can be simplified.
+                    #region EXCLUDE
+                    #pragma warning disable IDE1005 // Delegate invocation can be simplified.
+                    #endregion EXCLUDE
                     #region HIGHLIGHT
                     Action<float>? localOnChange =
                         OnTemperatureChange;
@@ -28,7 +30,9 @@
                         localOnChange(value);
                     }
                     #endregion HIGHLIGHT
-#pragma warning restore IDE1005 // Delegate invocation can be simplified.
+                    #region EXCLUDE
+                    #pragma warning restore IDE1005 // Delegate invocation can be simplified.
+                    #endregion EXCLUDE
                 }
             }
         }

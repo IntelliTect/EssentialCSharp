@@ -22,10 +22,14 @@
                     #endregion HIGHLIGHT
 
                     // Call subscribers
-                    // Justification: Incomplete, check for null needed.
-#pragma warning disable CS8602 // Dereference of a possibly null reference.
+                    // Incomplete, check for null needed
+                    #region EXCLUDE
+                    #pragma warning disable CS8602 // Dereference of a possibly null reference.
+                    #endregion EXCLUDE
                     OnTemperatureChange(value);
+                    #region EXCLUDE
                     #pragma warning restore CS8602 // Dereference of a possibly null reference.
+                    #endregion EXCLUDE
                 }
             }
         }

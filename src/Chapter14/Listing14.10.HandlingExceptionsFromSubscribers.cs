@@ -6,7 +6,6 @@
     #region INCLUDE
     public class Thermostat
     {
-        // Using C# 3.0 or later syntax
         // Define the event publisher
         public Action<float>? OnTemperatureChange;
 

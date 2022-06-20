@@ -13,8 +13,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_11
             Heater heater = new Heater(60);
             Cooler cooler = new Cooler(80);
 
-            // Note: Use new Action(cooler.OnTemperatureChanged)
-            // for C# 1.0 syntax
             thermostat.OnTemperatureChange =
                 heater.OnTemperatureChanged;
 
@@ -23,6 +21,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_11
             #region HIGHLIGHT
             thermostat.OnTemperatureChange = 
                 cooler.OnTemperatureChanged;
+            #endregion HIGHLIGHT
 
             Console.Write("Enter temperature: ");
             string? temperature = Console.ReadLine();
