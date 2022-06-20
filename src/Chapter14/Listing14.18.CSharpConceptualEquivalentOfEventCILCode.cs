@@ -6,8 +6,9 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_18
 {
     using System;
-
+    #region INCLUDE
     public class Thermostat
+    #region EXCLUDE
     {
         // Used to suppress warning CS0469: field never assigned to, and 
         // will always have its default value null.
@@ -17,6 +18,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_18
         }
 
         // ...
+        #endregion EXCLUDE
+        #region HIGHLIGHT
         // Declaring the delegate field to save the 
         // list of subscribers
         private EventHandler<TemperatureArgs>? _OnTemperatureChange;
@@ -46,6 +49,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_18
         //        remove_OnTemperatureChange(value);
         //    }
         //}
+        #endregion HIGHLIGHT
+        #endregion INCLUDE
 
         public class TemperatureArgs : System.EventArgs
         {

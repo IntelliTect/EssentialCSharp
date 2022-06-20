@@ -1,10 +1,9 @@
-﻿// TODO: Update listing in Manuscript
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_10
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_10
 {
     using System;
     using System.Collections.Generic;
     using Listing14_01;
-
+    #region INCLUDE
     public class Thermostat
     {
         // Using C# 3.0 or later syntax
@@ -22,6 +21,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_10
                     Action<float>? onTemperatureChange = OnTemperatureChange;
                     if (onTemperatureChange != null)
                     {
+                        #region HIGHLIGHT
                         List<Exception> exceptionCollection =
                             new List<Exception>();
                         foreach(
@@ -44,12 +44,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_10
                                 "OnTemperatureChange Event subscribers.",
                                 exceptionCollection);
                         }
+                        #endregion HIGHLIGHT
                     }
                 }
             }
         }
         private float _CurrentTemperature;
     }
+    #endregion INCLUDE
 
     public class Program
     {

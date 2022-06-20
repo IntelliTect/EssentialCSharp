@@ -8,6 +8,7 @@
     {
         public static void Main()
         {
+            #region INCLUDE
             Thermostat thermostat = new Thermostat();
             Heater heater = new Heater(60);
             Cooler cooler = new Cooler(80);
@@ -22,12 +23,17 @@
             delegate2 = cooler.OnTemperatureChanged;
 
             Console.WriteLine("Combine delegates using + operator:");
+            #region HIGHLIGHT
             delegate3 = delegate1 + delegate2;
+            #endregion HIGHLIGHT
             delegate3(60);
 
             Console.WriteLine("Uncombine delegates using - operator:");
+            #region HIGHLIGHT
             delegate3 = (delegate3 - delegate2)!;
+            #endregion HIGHLIGHT
             delegate3(60);
+            #endregion INCLUDE
         }
     }
 }

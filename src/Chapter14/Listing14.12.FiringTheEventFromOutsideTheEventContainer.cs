@@ -2,7 +2,7 @@
 {
     using Listing14_01;
     using Listing14_10;
-
+    #region INCLUDE
     public class Program
     {
         public static void Main()
@@ -20,7 +20,10 @@
                 cooler.OnTemperatureChanged;
 
             // Bug: Should not be allowed
+            #region HIGHLIGHT
             thermostat.OnTemperatureChange(42);
+            #endregion HIGHLIGHT
         }
     }
+    #endregion INCLUDE
 }

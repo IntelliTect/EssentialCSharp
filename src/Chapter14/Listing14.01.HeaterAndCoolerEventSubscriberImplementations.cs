@@ -1,6 +1,7 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_01
 {
-    class Cooler
+    #region INCLUDE
+    public class Cooler
     {
         public Cooler(float temperature)
         {
@@ -24,7 +25,7 @@
         }
     }
 
-    class Heater
+    public class Heater
     {
         public Heater(float temperature)
         {
@@ -47,4 +48,5 @@
             }
         }
     }
+    #endregion INCLUDE
 }

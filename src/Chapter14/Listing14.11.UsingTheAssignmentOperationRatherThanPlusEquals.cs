@@ -1,11 +1,10 @@
-﻿// TODO: Update listing in Manuscript
-using AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_02;
+﻿using AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_02;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_11
 {
     using System;
     using Listing14_01;
-
+    #region INCLUDE
     public class Program
     {
         public static void Main()
@@ -21,6 +20,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_11
 
             // Bug: Assignment operator overrides 
             // previous assignment
+            #region HIGHLIGHT
             thermostat.OnTemperatureChange = 
                 cooler.OnTemperatureChanged;
 
@@ -34,4 +34,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_11
             thermostat.CurrentTemperature = currentTemperature;
         }
     }
+    #endregion INCLUDE
 }

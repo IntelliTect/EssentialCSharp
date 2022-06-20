@@ -5,9 +5,10 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_17
 {
     using System;
-// In an actual implementation we would utilize this event
-
+    // In an actual implementation we would utilize this event
+    #region INCLUDE
     public class Thermostat
+    #region EXCLUDE
     {
         public class TemperatureArgs : System.EventArgs
         {
@@ -18,7 +19,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_17
 
             public float NewTemperature { get; set; }
         }
-
+        #endregion EXCLUDE
         public event EventHandler<TemperatureArgs>? OnTemperatureChange;
     }
+    #endregion INCLUDE
 }
