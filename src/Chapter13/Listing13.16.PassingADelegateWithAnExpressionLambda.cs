@@ -21,7 +21,8 @@
             }
             #region INCLUDE
             #region HIGHLIGHT
-            DelegateSample.BubbleSort(items, (first, second) => first < second);
+            DelegateSample.BubbleSort
+                (items, (first, second) => first < second);
             #endregion HIGHLIGHT
             #endregion INCLUDE
 

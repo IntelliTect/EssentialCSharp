@@ -19,10 +19,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_18
             Action<string> narrowAction = broadAction;
 
             // Covariance
-            Func<string> narrowFunction =
-                () => "8654091021";
-
-            Func<object> broadFunction = narrowFunction;
+            Func<string?> narrowFunction =
+                () => Console.ReadLine();
+            Func<object?> broadFunction = narrowFunction;
 
             // Contravariance and covariance combined
             Func<object, string?> func1 =

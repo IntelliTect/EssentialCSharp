@@ -41,7 +41,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_21
             }
 
             #region HIGHLIGHT
-            DelegateSample.BubbleSort(items, locals.__AnonymousMethod_00000000);
+            DelegateSample.BubbleSort
+                (items, locals.__AnonymousMethod_00000000);
             #endregion HIGHLIGHT
             for (int i = 0; i < items.Length; i++)
             {

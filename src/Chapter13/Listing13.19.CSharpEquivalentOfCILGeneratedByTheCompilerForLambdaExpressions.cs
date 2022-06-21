@@ -4,7 +4,6 @@
     #region INCLUDE
     public class DelegateSample
     {
-        #region Members
         #region EXCLUDE
         public delegate bool ComparisonHandler(int first, int second);
 
@@ -29,7 +28,6 @@
             }
         }
         #endregion EXCLUDE
-        #endregion Members
 
         public static void Main()
         {
