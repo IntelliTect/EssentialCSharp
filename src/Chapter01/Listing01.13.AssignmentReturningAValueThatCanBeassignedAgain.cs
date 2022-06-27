@@ -11,7 +11,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_13
             #region EXCLUDE
             System.Console.WriteLine(miracleMax);
             #endregion
-
         }
     }
     #endregion
