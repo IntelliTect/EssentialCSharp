@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_20
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_20
 {
 /*
 #region INCLUDE
@@ -53,7 +53,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_20
     IL_0000: nop
     IL_0001: ldstr "Hello. My name is Inigo Montoya."
     IL_0006: call void
-� System.Console]System.Console::WriteLine(string)
+↪ System.Console]System.Console::WriteLine(string)
     IL_000b: nop
     IL_000c: ret
     } // End of method System.Void HelloWorld.Program::Main(System.String[])
