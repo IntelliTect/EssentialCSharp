@@ -1,5 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_01
 {
+    #region INCLUDE
     using System;
     using System.Collections.Generic;
 
@@ -19,4 +20,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_01
             list.Remove("Grumpy");
         }
     }
+    #endregion INCLUDE
 }
