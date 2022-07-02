@@ -21,7 +21,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_19
             /* Display a greeting to the console 
               using composite fomatting. */
 
-            System.Console.WriteLine("Your full name is {1}, {0}.", 
+            System.Console.WriteLine("Your full name is {1}, {0}.",
                 firstName, lastName);
             // This is the end
             // of the program listing

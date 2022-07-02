@@ -7,7 +7,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_01
         {
             int? number = null;
             #region EXCLUDE
-            if (args.Length>0)
+            if (args.Length > 0)
             {
                 number = args[0].Length;
             }
@@ -20,7 +20,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_01
             else
             {
                 System.Console.WriteLine(
-                    $"'number' doubled is { number * 2 }.");
+                    $"'number' doubled is {number * 2}.");
             }
         }
         #endregion

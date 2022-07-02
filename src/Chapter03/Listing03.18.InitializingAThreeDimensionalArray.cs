@@ -5,7 +5,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_18
         public static void Main()
         {
             #region INCLUDE
-            bool[, ,] cells;
+            bool[,,] cells;
             cells = new bool[2, 3, 3]
             {
                 // Player 1 moves

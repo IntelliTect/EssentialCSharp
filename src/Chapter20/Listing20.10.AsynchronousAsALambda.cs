@@ -2,8 +2,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_10
 {
     using System;
     using System.IO;
-    using System.Net;
     using System.Linq;
+    using System.Net;
     using System.Threading.Tasks;
 
     public class Program
@@ -12,7 +12,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_10
         public static void Main(string[] args)
         {
             string url = "http://www.IntelliTect.com";
-            if(args.Length > 0)
+            if (args.Length > 0)
             {
                 url = args[0];
             }
@@ -46,7 +46,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_10
 
             Task task = writeWebRequestSizeAsync(url);
 
-            while(!task.Wait(100))
+            while (!task.Wait(100))
             {
                 Console.Write(".");
             }

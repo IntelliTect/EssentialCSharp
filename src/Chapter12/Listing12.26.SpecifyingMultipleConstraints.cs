@@ -1,8 +1,8 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_25
 {
+    using Listing12_23;
     using System;
     using System.Collections.Generic;
-    using Listing12_23;
     #region INCLUDE
     public class EntityDictionary<TKey, TValue>
         : Dictionary<TKey, TValue>

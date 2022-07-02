@@ -19,16 +19,16 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_26
                 throw new Exception("Arbitrary exception");
                 #endregion
                 Console.WriteLine("End executing");
-                }
-            catch(FormatException exception)
+            }
+            catch (FormatException exception)
             {
                 Console.WriteLine(
                     "A FormatException was thrown");
             }
-            catch(Exception exception)
+            catch (Exception exception)
             {
                 Console.WriteLine(
-                    $"Unexpected error: { exception.Message }");
+                    $"Unexpected error: {exception.Message}");
             }
             catch
             {

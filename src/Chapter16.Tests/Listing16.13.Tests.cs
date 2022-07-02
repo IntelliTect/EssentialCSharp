@@ -1,7 +1,7 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Linq;
+﻿using AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16;
+using System.Linq;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_13.Tests
 {
@@ -14,12 +14,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_13.Tests
             // Intentionally use something other than select to 
             // determine the result.
             string expected = CSharp.Keywords.Aggregate("",
-                (string result, string word) => {
+                (string result, string word) =>
+                {
                     var splitCharactersOntoEachLine = word.Aggregate("",
                 (string wordResult, char character) =>
                     wordResult + character + Environment.NewLine);
                     return result + splitCharactersOntoEachLine;
-            });
+                });
 
             string nl = Environment.NewLine;
             Assert.IsTrue(

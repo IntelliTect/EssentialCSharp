@@ -1,7 +1,7 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_20
 {
-    using System;
     using Listing12_13;
+    using System;
     // In an actual implementation Item would be used to hold some value
 #pragma warning disable CS0168
     #region INCLUDE

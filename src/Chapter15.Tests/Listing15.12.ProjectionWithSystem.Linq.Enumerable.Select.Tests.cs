@@ -1,10 +1,10 @@
 using IntelliTect.TestTools.Console;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_12.Tests
 {
@@ -21,8 +21,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_12.Tests
                 typeof(Program).GetTypeInfo().Assembly.Location)!);
 
             //string expectedPattern = $@"{ Directory.GetCurrentDirectory() }{Path.DirectorySeparatorChar}*";
-            string expectedPattern = $@"{ Directory.GetCurrentDirectory() }{ 
-                $"{Path.DirectorySeparatorChar}"}*";
+            string expectedPattern = $@"{Directory.GetCurrentDirectory()}{$"{Path.DirectorySeparatorChar}"}*";
             int expectedItemCount = Directory.EnumerateFiles(
                     Directory.GetCurrentDirectory(), "*").Count();
             string output = ConsoleAssert.Execute(null, () =>

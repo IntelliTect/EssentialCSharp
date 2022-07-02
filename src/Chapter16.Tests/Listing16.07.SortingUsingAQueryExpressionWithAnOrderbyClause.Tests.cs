@@ -4,7 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Reflection;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_07.Tests
 {
@@ -17,7 +16,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_07.Tests
         {
             int expectedItemCount = Directory.EnumerateFiles(
                 Directory.GetCurrentDirectory(), "*").Count();
-            string expectedPattern = $@"{ Directory.GetCurrentDirectory() }{Path.DirectorySeparatorChar}*";
+            string expectedPattern = $@"{Directory.GetCurrentDirectory()}{Path.DirectorySeparatorChar}*";
 
             string output = IntelliTect.TestTools.Console.ConsoleAssert.Execute(null, () =>
             {

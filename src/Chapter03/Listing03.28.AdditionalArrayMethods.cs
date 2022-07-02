@@ -21,29 +21,29 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_28
             #endregion
             System.Console.WriteLine(
                 "The wave of the future, "
-                + $"{ searchString }, is at index { index }.");
+                + $"{searchString}, is at index {index}.");
 
             System.Console.WriteLine();
             System.Console.WriteLine(
-                $"{ "First Element",-20 }\t{ "Last Element",-20 }");
+                $"{"First Element",-20}\t{"Last Element",-20}");
             System.Console.WriteLine(
-                $"{ "-------------",-20 }\t{ "------------",-20 }");
+                $"{"-------------",-20}\t{"------------",-20}");
             System.Console.WriteLine(
-                    $"{ languages[0],-20 }\t{ languages[^1],-20 }");
+                    $"{languages[0],-20}\t{languages[^1],-20}");
             #region HIGHLIGHT
             System.Array.Reverse(languages);
             #endregion
             System.Console.WriteLine(
-                    $"{ languages[0],-20 }\t{ languages[^1],-20 }");
+                    $"{languages[0],-20}\t{languages[^1],-20}");
             // Note this does not remove all items from the array
             // Rather it sets each item to the type's default value
             #region HIGHLIGHT
             System.Array.Clear(languages, 0, languages.Length);
             #endregion
             System.Console.WriteLine(
-                    $"{ languages[0],-20 }\t{ languages[^1],-20 }");
+                    $"{languages[0],-20}\t{languages[^1],-20}");
             System.Console.WriteLine(
-                $"After clearing, the array size is: { languages.Length }");
+                $"After clearing, the array size is: {languages.Length}");
         }
     }
     #endregion

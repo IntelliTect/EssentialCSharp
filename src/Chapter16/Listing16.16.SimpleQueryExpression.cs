@@ -19,7 +19,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_16
                 where !word.Contains('*')
                 select word;
 
-            foreach(var selectionWord in selection)
+            foreach (var selectionWord in selection)
             {
                 Console.WriteLine(Environment.NewLine + selectionWord);
             }

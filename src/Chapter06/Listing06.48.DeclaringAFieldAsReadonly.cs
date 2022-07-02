@@ -5,7 +5,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_48
     {
         public Employee(int id)
         {
-          _Id = id;
+            _Id = id;
         }
 
         // ...
@@ -15,7 +15,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_48
         #endregion
         public int Id
         {
-          get { return _Id; }
+            get { return _Id; }
         }
 
         // Error: A readonly field cannot be assigned to (except

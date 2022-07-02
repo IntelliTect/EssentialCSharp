@@ -25,7 +25,7 @@
             }
             remove
             {
-                _OnTemperatureChange = 
+                _OnTemperatureChange =
                     (TemperatureChangeHandler?)System.Delegate.Remove(_OnTemperatureChange, value);
             }
         }

@@ -1,7 +1,7 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_17
 {
-    using System;
     using Listing07_16;
+    using System;
 
     #region INCLUDE
     public class Program
@@ -18,7 +18,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_17
 
             Appointment appointment =
                 new Appointment(
-                   "Soccer tournament", "Estádio da Machava", 
+                   "Soccer tournament", "Estádio da Machava",
                    new DateTime(2008, 7, 18), new DateTime(2008, 7, 19));
             pda[1] = appointment;
 
@@ -36,7 +36,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_17
             // Implemented using polymorphism. The derived
             // type knows the specifics of implementing 
             // GetSummary().
-            foreach(PdaItem item in items)
+            foreach (PdaItem item in items)
             {
                 Console.WriteLine("________");
                 Console.WriteLine(item.GetSummary());

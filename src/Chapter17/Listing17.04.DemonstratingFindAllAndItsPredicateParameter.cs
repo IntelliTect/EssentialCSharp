@@ -15,7 +15,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_04
 
             List<int> results = list.FindAll(Even);
 
-            foreach(int number in results)
+            foreach (int number in results)
             {
                 Console.WriteLine(number);
             }

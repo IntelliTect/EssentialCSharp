@@ -28,38 +28,38 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_05
 
 
             Console.WriteLine(
-                $"1. delegateInvocations={ delegateInvocations }");
+                $"1. delegateInvocations={delegateInvocations}");
 
             // Executing count should invoke func once for 
             // each item selected
             Console.WriteLine(
-                $"2. Contextual keyword count={ selection.Count() }");
+                $"2. Contextual keyword count={selection.Count()}");
 
             Console.WriteLine(
-                $"3. delegateInvocations={ delegateInvocations }");
+                $"3. delegateInvocations={delegateInvocations}");
 
             // Executing count should invoke func once for 
             // each item selected
             Console.WriteLine(
-                $"4. Contextual keyword count={ selection.Count() }");
+                $"4. Contextual keyword count={selection.Count()}");
 
             Console.WriteLine(
-                $"5. delegateInvocations={ delegateInvocations }");
+                $"5. delegateInvocations={delegateInvocations}");
 
             // Cache the value so future counts will not trigger
             // another invocation of the query
             List<string> selectionCache = selection.ToList();
 
             Console.WriteLine(
-                $"6. delegateInvocations={ delegateInvocations }");
+                $"6. delegateInvocations={delegateInvocations}");
 
             // Retrieve the count from the cached collection
             Console.WriteLine(
                 // TODO: Update listing in Manuscript
-                $"7. selectionCache count={ selectionCache.Count }");
+                $"7. selectionCache count={selectionCache.Count}");
 
             Console.WriteLine(
-                $"8. delegateInvocations={ delegateInvocations }");
+                $"8. delegateInvocations={delegateInvocations}");
         }
     }
 }

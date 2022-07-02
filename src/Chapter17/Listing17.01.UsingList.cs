@@ -13,8 +13,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_01
             list.Sort();
 
             Console.WriteLine(
-                $"In alphabetical order { list[0] } is the "
-                + $"first dwarf while { list[^1] } is the last.");
+                $"In alphabetical order {list[0]} is the "
+                + $"first dwarf while {list[^1]} is the last.");
 
             list.Remove("Grumpy");
         }

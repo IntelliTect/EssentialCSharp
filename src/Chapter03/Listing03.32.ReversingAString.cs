@@ -27,7 +27,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_32
 
             // Convert the array back to a string and
             // check if reverse string is the same
-            if(reverse == new string(temp))
+            if (reverse == new string(temp))
             {
                 System.Console.WriteLine(
                     $"\"{palindrome}\" is a palindrome.");

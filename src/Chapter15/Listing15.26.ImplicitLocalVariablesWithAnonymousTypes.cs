@@ -27,9 +27,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_26
                 };
 
             Console.WriteLine(
-                $"{ patent1.Title } ({ patent1.YearOfPublication })");
+                $"{patent1.Title} ({patent1.YearOfPublication})");
             Console.WriteLine(
-                $"{ patent2.Title } ({ patent2.YearOfPublication })");
+                $"{patent2.Title} ({patent2.YearOfPublication})");
 
 
             Console.WriteLine();

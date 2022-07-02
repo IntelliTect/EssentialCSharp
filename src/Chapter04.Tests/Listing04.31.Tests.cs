@@ -12,9 +12,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_31.Tests
                 @"Player Inigo quit!!";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, ()=>Program.Main("","Inigo"));
+                expected, () => Program.Main("", "Inigo"));
         }
-        
+
         [TestMethod]
         public void Main_InputIsQuit_PlayerQuitConditionHit()
         {

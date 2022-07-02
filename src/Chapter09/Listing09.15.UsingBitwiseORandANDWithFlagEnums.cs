@@ -22,7 +22,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_15
 
             try
             {
-            #endregion EXCLUDE
+                #endregion EXCLUDE
                 System.IO.FileInfo file =
                     new System.IO.FileInfo(fileName);
 
@@ -47,7 +47,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_15
                 {
                     throw new Exception("File is not read-only.");
                 }
-            #region EXCLUDE
+                #region EXCLUDE
             }
             finally
             {

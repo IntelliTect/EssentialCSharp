@@ -10,7 +10,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_38
         public int Temperature
         {
             get { return _Temperature; }
-            set 
+            set
             {
                 #region INCLUDE
                 System.EventHandler propertyChanged =
@@ -22,7 +22,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_38
                 }
                 #endregion
 
-                _Temperature = value; 
+                _Temperature = value;
             }
         }
 

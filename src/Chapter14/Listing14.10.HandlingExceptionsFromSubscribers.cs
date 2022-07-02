@@ -1,9 +1,9 @@
 ﻿// TODO: Update listing in Manuscript
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_10
 {
+    using Listing14_01;
     using System;
     using System.Collections.Generic;
-    using Listing14_01;
 
     public class Thermostat
     {
@@ -16,7 +16,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_10
             get { return _CurrentTemperature; }
             set
             {
-                if(value != CurrentTemperature)
+                if (value != CurrentTemperature)
                 {
                     _CurrentTemperature = value;
                     Action<float>? onTemperatureChange = OnTemperatureChange;
@@ -24,7 +24,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_10
                     {
                         List<Exception> exceptionCollection =
                             new List<Exception>();
-                        foreach(
+                        foreach (
                             Delegate handler in
                             onTemperatureChange.GetInvocationList())
                         {
@@ -32,12 +32,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_10
                             {
                                 ((Action<float>)handler)(value);
                             }
-                            catch(Exception exception)
+                            catch (Exception exception)
                             {
                                 exceptionCollection.Add(exception);
                             }
                         }
-                        if(exceptionCollection.Count > 0)
+                        if (exceptionCollection.Count > 0)
                         {
                             throw new AggregateException(
                                 "There were exceptions thrown by " +
@@ -83,7 +83,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_10
                 }
                 thermostat.CurrentTemperature = currentTemperature;
             }
-            catch(AggregateException exception)
+            catch (AggregateException exception)
             {
                 Console.WriteLine(exception.Message);
                 if (exception.InnerExceptions.Count < 1)

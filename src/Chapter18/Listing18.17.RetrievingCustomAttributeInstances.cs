@@ -1,8 +1,8 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_17
 {
     using System;
-    using System.Reflection;
     using System.Collections.Generic;
+    using System.Reflection;
 
     public class CommandLineSwitchAliasAttribute : Attribute
     {
@@ -22,10 +22,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_17
 
             properties = commandLine.GetType().GetProperties(
                 BindingFlags.Public | BindingFlags.Instance);
-            foreach(PropertyInfo property in properties)
+            foreach (PropertyInfo property in properties)
             {
                 options.Add(property.Name, property);
-                foreach(CommandLineSwitchAliasAttribute attribute in
+                foreach (CommandLineSwitchAliasAttribute attribute in
                     property.GetCustomAttributes(
                     typeof(CommandLineSwitchAliasAttribute), false))
                 {

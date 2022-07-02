@@ -31,7 +31,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_20.Tests
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
                 data,
-                ()=>Program.Main("show"));
+                () => Program.Main("show"));
         }
     }
 }

@@ -24,7 +24,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23
         public static void DoStuff()
         {
             // ...
-            
+
             WriteLine("Starting...");
             SampleUnmanagedResource? sampleUnmanagedResource = null;
 
@@ -130,6 +130,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23
     public static class ConsoleLogger
     {
         public static void WriteLine(string? message = null, [CallerMemberName] string? name = null)
-            => Console.WriteLine($"{$"{name}: " }{ message ?? ": Executing" }");
+            => Console.WriteLine($"{$"{name}: "}{message ?? ": Executing"}");
     }
 }

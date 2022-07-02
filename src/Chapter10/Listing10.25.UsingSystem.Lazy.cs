@@ -7,11 +7,11 @@
     {
         // ...
 
-        public TemporaryFileStream FileStream => 
+        public TemporaryFileStream FileStream =>
             InternalFileStream.Value;
         private Lazy<TemporaryFileStream> InternalFileStream { get; }
-            = new Lazy<TemporaryFileStream>( 
-                () => new TemporaryFileStream() );
+            = new Lazy<TemporaryFileStream>(
+                () => new TemporaryFileStream());
 
         // ...
     }

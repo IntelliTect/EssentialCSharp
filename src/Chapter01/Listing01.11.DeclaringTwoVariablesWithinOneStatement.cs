@@ -8,7 +8,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_11
             string message1, message2;
             #endregion
 
-            message1 = "My name is Inigo Montoya.";;
+            message1 = "My name is Inigo Montoya."; ;
             message2 = "You killed my father....";
 
             System.Console.WriteLine(message1);

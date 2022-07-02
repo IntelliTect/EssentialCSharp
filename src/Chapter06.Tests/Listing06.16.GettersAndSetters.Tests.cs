@@ -13,10 +13,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_16.Tests
         {
             Employee employee = new Employee();
             employee.SetFirstName(firstName);
-            
+
             Assert.AreEqual(firstName == "" ? null : firstName, employee.GetFirstName());
         }
-        
+
         [TestMethod]
         [DataRow("Montoya")]
         [DataRow(null)]
@@ -25,7 +25,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_16.Tests
         {
             Employee employee = new Employee();
             employee.SetLastName(lastName);
-            
+
             Assert.AreEqual(lastName == "" ? null : lastName, employee.GetLastName());
         }
     }

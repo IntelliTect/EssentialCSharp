@@ -9,12 +9,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter11.Listing11_08
             #region HIGHLIGHT
             unchecked
             {
-            #endregion HIGHLIGHT
+                #endregion HIGHLIGHT
                 // int.MaxValue equals 2147483647
                 int n = int.MaxValue;
                 n = n + 1;
                 Console.WriteLine(n);
-            #region HIGHLIGHT
+                #region HIGHLIGHT
             }
             #endregion HIGHLIGHT
         }

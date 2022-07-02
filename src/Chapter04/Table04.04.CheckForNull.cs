@@ -7,7 +7,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Table04_04
             if (uri != null)
             {
                 System.Console.WriteLine(
-                    $"Uri is: { uri }");
+                    $"Uri is: {uri}");
             }
             else // (uri == null)
             {
@@ -20,7 +20,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Table04_04
             if (uri != null)
             {
                 System.Console.WriteLine(
-                    $"Uri is: { uri }");
+                    $"Uri is: {uri}");
             }
             else // (uri == null)
             {
@@ -33,7 +33,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Table04_04
             if (uri != null)
             {
                 System.Console.WriteLine(
-                    $"Uri is: { uri }");
+                    $"Uri is: {uri}");
             }
             else // (uri == null)
             {

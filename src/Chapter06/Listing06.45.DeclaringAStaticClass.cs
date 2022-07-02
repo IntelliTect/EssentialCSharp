@@ -12,7 +12,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_45
         public static int Max(params int[] numbers)
         {
             // Check that there is at least one item in numbers
-            if(numbers.Length == 0)
+            if (numbers.Length == 0)
             {
                 throw new ArgumentException(
                     "numbers cannot be empty", nameof(numbers));
@@ -20,9 +20,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_45
 
             int result;
             result = numbers[0];
-            foreach(int number in numbers)
+            foreach (int number in numbers)
             {
-                if(number > result)
+                if (number > result)
                 {
                     result = number;
                 }
@@ -34,7 +34,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_45
         public static int Min(params int[] numbers)
         {
             // Check that there is at least one item in numbers
-            if(numbers.Length == 0)
+            if (numbers.Length == 0)
             {
                 throw new ArgumentException(
                     "numbers cannot be empty", nameof(numbers));
@@ -42,9 +42,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_45
 
             int result;
             result = numbers[0];
-            foreach(int number in numbers)
+            foreach (int number in numbers)
             {
-                if(number < result)
+                if (number < result)
                 {
                     result = number;
                 }
@@ -64,12 +64,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_45
             }
 
             Console.WriteLine(
-                $@"Longest argument length = {
-                    Max(numbers) }");
+                $@"Longest argument length = {Max(numbers)}");
 
             Console.WriteLine(
-                $@"Shortest argument length = {
-                    Min(numbers) }");
+                $@"Shortest argument length = {Min(numbers)}");
         }
     }
     #endregion

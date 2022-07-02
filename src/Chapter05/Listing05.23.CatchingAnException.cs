@@ -23,23 +23,23 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_23
             {
                 age = int.Parse(ageText);
                 Console.WriteLine(
-                    $"Hi { firstName }! You are { age * 12 } months old.");
+                    $"Hi {firstName}! You are {age * 12} months old.");
             }
-            catch(FormatException)
+            catch (FormatException)
             {
                 Console.WriteLine(
-                    $"The age entered, { ageText }, is not valid."); 
+                    $"The age entered, {ageText}, is not valid.");
                 result = 1;
             }
-            catch(Exception exception)
+            catch (Exception exception)
             {
                 Console.WriteLine(
-                    $"Unexpected error: { exception.Message }");
+                    $"Unexpected error: {exception.Message}");
                 result = 1;
             }
             finally
             {
-                Console.WriteLine($"Goodbye { firstName }");
+                Console.WriteLine($"Goodbye {firstName}");
             }
 
             return result;

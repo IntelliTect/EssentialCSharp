@@ -20,14 +20,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_15
         // this is not recommended.
         // Uninitialized; pending explanation of constructors
         #region HIGHLIGHT
-        private string Password;  
+        private string Password;
         private bool IsAuthenticated;
         #endregion
 
         #region HIGHLIGHT
         public bool Logon(string password)
         {
-            if(Password == password)
+            if (Password == password)
             {
                 IsAuthenticated = true;
             }

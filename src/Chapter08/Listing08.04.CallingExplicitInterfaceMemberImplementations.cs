@@ -3,8 +3,8 @@
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_04
 {
-    using System;
     using Listing08_02;
+    using System;
 
     public class Program
     {
@@ -43,7 +43,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_04
         {
             get
             {
-                return new string?[] 
+                return new string?[]
           {
               FirstName,
               LastName,
@@ -70,6 +70,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_04
         protected string? Phone { get; set; }
         protected string? Address { get; set; }
         static public string GetName(string firstName, string lastName)
-            => $"{ firstName } { lastName }";
+            => $"{firstName} {lastName}";
     }
 }

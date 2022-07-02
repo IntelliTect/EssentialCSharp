@@ -16,13 +16,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_53
             // Iterate through each letter in the email address
             foreach (char letter in email)
             {
-                if(insideDomain)
+                if (insideDomain)
                 {
                     System.Console.Write(letter);
                 }
                 else
                 {
-                    if(letter == '@')
+                    if (letter == '@')
                     {
                         insideDomain = true;
                     }

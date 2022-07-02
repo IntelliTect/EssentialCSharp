@@ -19,7 +19,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_11
             thread.Start();
 
             // Increment
-            for(double i = 0; i < short.MaxValue; i++)
+            for (double i = 0; i < short.MaxValue; i++)
             {
                 Count++;
             }
@@ -30,7 +30,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_11
         static void Decrement()
         {
             Count = -Count;
-            for(double i = 0; i < short.MaxValue; i++)
+            for (double i = 0; i < short.MaxValue; i++)
             {
                 Count--;
             }

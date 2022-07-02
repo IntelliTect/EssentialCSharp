@@ -1,5 +1,5 @@
-using System.Runtime.InteropServices;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Runtime.InteropServices;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_17.Tests
 {

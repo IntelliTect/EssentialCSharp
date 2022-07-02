@@ -12,7 +12,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_42
             xor ^= 7;   // xor = 11
             #endregion
             System.Console.WriteLine(
-                $"and = { and } \nor = { or } \nxor = { xor }");
+                $"and = {and} \nor = {or} \nxor = {xor}");
             #endregion
         }
     }

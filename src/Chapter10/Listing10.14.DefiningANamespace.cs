@@ -5,12 +5,12 @@
     #region HIGHLIGHT
     namespace AddisonWesley
     {
-    #endregion HIGHLIGHT
+        #endregion HIGHLIGHT
         class Program
         {
             // ...
         }
-    #region HIGHLIGHT
+        #region HIGHLIGHT
     }
     #endregion HIGHLIGHT
     // End of AddisonWesley namespace declaration

@@ -39,23 +39,23 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_03
 
         public static void Encrypt(string inputFileName, string outputFileName)
         {
-            Console.WriteLine($">>>>>Encrypting '{ inputFileName }'.");
+            Console.WriteLine($">>>>>Encrypting '{inputFileName}'.");
             using (FileStream outputFileStream = new FileStream($"{inputFileName}.encrypt", FileMode.Create))
             {
                 byte[] encryptedText = Cryptographer.EncryptAsync(File.ReadAllText(inputFileName), outputFileStream).Result;
             }
-            Console.WriteLine($"<<<<<Finished encrypting '{ inputFileName}'.");
+            Console.WriteLine($"<<<<<Finished encrypting '{inputFileName}'.");
         }
 
         public static void Decrypt(string inputFileName, string outputFileName)
         {
-            Console.WriteLine($">>>>>Decrypting '{ inputFileName }'.");
+            Console.WriteLine($">>>>>Decrypting '{inputFileName}'.");
             byte[] bytes = File.ReadAllBytes(inputFileName);
             using (FileStream outputFileStream = new FileStream(outputFileName, FileMode.Create))
             {
                 Cryptographer.DecryptAsync(bytes, outputFileStream).Wait();
             }
-            Console.WriteLine($"<<<<<Finished decrypting '{ inputFileName}'.");
+            Console.WriteLine($"<<<<<Finished decrypting '{inputFileName}'.");
         }
 
     }

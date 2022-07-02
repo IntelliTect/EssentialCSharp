@@ -1,10 +1,17 @@
 ﻿using IntelliTect.TestTools.Console;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+/* Unmerged change from project 'Chapter16.Tests (netcoreapp3.1)'
+Before:
 using System;
 using System.Reflection;
+After:
+using System.Reflection;
+*/
+
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_03.Tests
 {
@@ -21,7 +28,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_03.Tests
         {
             int expectedItemCount = Directory.EnumerateFiles(
                 Directory.GetCurrentDirectory(), "*").Count();
-            string expectedPattern = $@"{ Directory.GetCurrentDirectory() }{Path.DirectorySeparatorChar}*(*)";
+            string expectedPattern = $@"{Directory.GetCurrentDirectory()}{Path.DirectorySeparatorChar}*(*)";
 
             string output = IntelliTect.TestTools.Console.ConsoleAssert.Execute(null, () =>
             {

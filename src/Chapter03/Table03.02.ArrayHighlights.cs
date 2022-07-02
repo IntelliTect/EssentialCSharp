@@ -58,20 +58,16 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Table03_02
 
             System.Console.WriteLine($@"^3..^0: {
                 // Python, Lisp, JavaScript
-                string.Join(", ", languages[^3..^0])
-            }");
+                string.Join(", ", languages[^3..^0])}");
             System.Console.WriteLine($@"^3..: {
                 // Python, Lisp, JavaScript
-                string.Join(", ", languages[^3..])
-            }");
+                string.Join(", ", languages[^3..])}");
             System.Console.WriteLine($@" 3..^3: {
                 // C++, TypeScript, Visual Basic
-                string.Join(", ", languages[3..^3])
-            }");
+                string.Join(", ", languages[3..^3])}");
             System.Console.WriteLine($@"  ..^6: {
                 // C#, COBOL, Java
-                string.Join(", ", languages[..^6])
-            }");
+                string.Join(", ", languages[..^6])}");
         }
     }
 }

@@ -1,7 +1,7 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_01
 {
-    using System;
     using AddisonWesley.Michaelis.EssentialCSharp.Shared;
+    using System;
 
     class Program
     {
@@ -12,7 +12,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_01
         {
             string pi = "";
             const int iterations = TotalDigits / BatchSize;
-            for(int i = 0; i < iterations; i++)
+            for (int i = 0; i < iterations; i++)
             {
                 pi += PiCalculator.Calculate(
                     BatchSize, i * BatchSize);

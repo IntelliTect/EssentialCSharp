@@ -8,7 +8,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_04.Tests
         [TestMethod]
         public void Main_AdditionOperatorWithNonNumericType_StringConcatenated()
         {
-            const string expected = 
+            const string expected =
 @"The original Tacoma Bridge in Washington
 was brought down by a 42 mile/hour wind.";
 

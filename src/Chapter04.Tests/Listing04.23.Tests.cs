@@ -13,7 +13,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_23.Tests
                 @"Exiting";
 
             ConsoleAssert.Expect(
-                expected, ()=>Program.Main("8"));
+                expected, () => Program.Main("8"));
         }
 
         [TestMethod]
@@ -23,7 +23,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_23.Tests
                 "";
 
             ConsoleAssert.Expect(
-                expected, ()=>Program.Main("10"));
+                expected, () => Program.Main("10"));
         }
     }
 }

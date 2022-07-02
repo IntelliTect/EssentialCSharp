@@ -10,14 +10,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_50
         // Define a nested class for processing the command line
         private class CommandLine
         {
-    #endregion
+            #endregion
             public CommandLine(string[] arguments)
             {
-                for(int argumentCounter = 0;
+                for (int argumentCounter = 0;
                     argumentCounter < arguments.Length;
                     argumentCounter++)
                 {
-                    switch(argumentCounter)
+                    switch (argumentCounter)
                     {
                         case 0:
                             Action = arguments[0].ToLower();
@@ -34,7 +34,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_50
                     }
                 }
             }
-            public string? Action { get;  }
+            public string? Action { get; }
             public string? Id { get; }
             public string? FirstName { get; }
             public string? LastName { get; }
@@ -48,7 +48,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_50
 
             // Error handling intentionaly missing for elucidation.
 
-            switch(commandLine.Action)
+            switch (commandLine.Action)
             {
                 case "new":
                     // Create a new employee

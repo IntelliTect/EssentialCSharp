@@ -15,11 +15,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_19
             int j;
             int temp;
 
-            for(i = items.Length - 1; i >= 0; i--)
+            for (i = items.Length - 1; i >= 0; i--)
             {
-                for(j = 1; j <= i; j++)
+                for (j = 1; j <= i; j++)
                 {
-                    if(comparisonMethod(items[j - 1], items[j]))
+                    if (comparisonMethod(items[j - 1], items[j]))
                     {
                         temp = items[j - 1];
                         items[j - 1] = items[j];
@@ -34,7 +34,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_19
         {
             int[] items = new int[5];
 
-            for(int i = 0; i < items.Length; i++)
+            for (int i = 0; i < items.Length; i++)
             {
                 Console.Write("Enter an integer:");
                 string? text = Console.ReadLine();
@@ -49,7 +49,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_19
                 DelegateSample.__AnonymousMethod_00000000);
 
 
-            for(int i = 0; i < items.Length; i++)
+            for (int i = 0; i < items.Length; i++)
             {
                 Console.WriteLine(items[i]);
             }

@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.IO;
 using System;
+using System.IO;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_12.Tests
 {

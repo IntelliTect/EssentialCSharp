@@ -10,11 +10,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_08
                 new System.Collections.Generic.Stack<int>();
             int number;
 
-            using(
+            using (
                 System.Collections.Generic.Stack<int>.Enumerator
                     enumerator = stack.GetEnumerator())
             {
-                while(enumerator.MoveNext())
+                while (enumerator.MoveNext())
                 {
                     number = enumerator.Current;
                     Console.WriteLine(number);

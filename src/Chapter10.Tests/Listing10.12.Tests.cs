@@ -1,5 +1,4 @@
-﻿using IntelliTect.TestTools.Console;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using System;
 using System.IO;

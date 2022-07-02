@@ -1,5 +1,5 @@
-using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_11.Tests
 {
@@ -11,8 +11,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_11.Tests
         {
             Latitude latitude = new Latitude(12);
 
-            double castTo = (Double) latitude;
-            
+            double castTo = (Double)latitude;
+
             Assert.AreEqual(12.00, castTo);
         }
 
@@ -21,8 +21,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_11.Tests
         {
             double d = 12.00;
 
-            Latitude castTo = (Latitude) d;
-            
+            Latitude castTo = (Latitude)d;
+
             Assert.AreEqual(12.00, castTo.DecimalDegrees);
         }
     }

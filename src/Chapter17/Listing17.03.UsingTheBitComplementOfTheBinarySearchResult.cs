@@ -17,12 +17,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_03
             list.Sort();
 
             search = list.BinarySearch("protected internal");
-            if(search < 0)
+            if (search < 0)
             {
                 list.Insert(~search, "protected internal");
             }
 
-            foreach(string accessModifier in list)
+            foreach (string accessModifier in list)
             {
                 Console.WriteLine(accessModifier);
             }

@@ -27,12 +27,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.TicTacToe
             // Display the board and 
             // prompt the current player
             // for his next move.
-            for(int turn = 1; turn <= 10; ++turn)
+            for (int turn = 1; turn <= 10; ++turn)
             {
                 DisplayBoard(playerPositions);
 
                 #region Check for End Game
-                if(EndGame(winner, turn, input))
+                if (EndGame(winner, turn, input))
                 {
                     break;
                 }
@@ -63,7 +63,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.TicTacToe
                 input = System.Console.ReadLine();
                 validMove = ValidateAndMove(playerPositions,
                               currentPlayer, input);
-            } while(!validMove);
+            } while (!validMove);
 
             return input!;
         }
@@ -71,12 +71,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.TicTacToe
         static bool EndGame(int winner, int turn, string input)
         {
             bool endGame = false;
-            if(winner > 0)
+            if (winner > 0)
             {
                 System.Console.WriteLine($"\nPlayer {winner} has won!!!!");
                 endGame = true;
             }
-            else if(turn == 10)
+            else if (turn == 10)
             {
                 // After completing the 10th display of the
                 // board, exit rather than prompting the
@@ -84,7 +84,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.TicTacToe
                 System.Console.WriteLine("\nThe game was a tie!");
                 endGame = true;
             }
-            else if(input.Length == 0 || input == "quit")
+            else if (input.Length == 0 || input == "quit")
             {
                 // Check if user quit by hitting Enter without 
                 // any characters or by typing "quit".
@@ -102,14 +102,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.TicTacToe
             int[] winningMasks = {
           7, 56, 448, 73, 146, 292, 84, 273};
 
-            foreach(int mask in winningMasks)
+            foreach (int mask in winningMasks)
             {
-                if((mask & playerPositions[0]) == mask)
+                if ((mask & playerPositions[0]) == mask)
                 {
                     winner = 1;
                     break;
                 }
-                else if((mask & playerPositions[1]) == mask)
+                else if ((mask & playerPositions[1]) == mask)
                 {
                     winner = 2;
                     break;
@@ -124,7 +124,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.TicTacToe
             bool valid = false;
 
             // Check the current player’s input.
-            switch(input)
+            switch (input)
             {
                 case "1":
                 case "2":
@@ -193,7 +193,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.TicTacToe
             System.Console.Clear();
 #endif
 
-            for(int position = 1;
+            for (int position = 1;
                  position <= 256;
                  position <<= 1, border++)
             {
@@ -215,12 +215,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.TicTacToe
             char token;
             // If player has the position set, 
             // then set the token to that player.
-            if((position & playerPositions[0]) == position)
+            if ((position & playerPositions[0]) == position)
             {
                 // Player 1 has that position marked.
                 token = players[0];
             }
-            else if((position & playerPositions[1]) == position)
+            else if ((position & playerPositions[1]) == position)
             {
                 // Player 2 has that position marked.
                 token = players[1];

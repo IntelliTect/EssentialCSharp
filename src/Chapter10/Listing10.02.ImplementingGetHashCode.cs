@@ -15,14 +15,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_02
         public Latitude Latitude { get; }
 
         #region HIGHLIGHT
-        public override int GetHashCode() => 
+        public override int GetHashCode() =>
             HashCode.Combine(
                 Longitude.GetHashCode(), Latitude.GetHashCode());
         #endregion HIGHLIGHT
 
         #region EXCLUDE
         public override string ToString() =>
-            $"{ Longitude } { Latitude }";
+            $"{Longitude} {Latitude}";
         #endregion EXCLUDE
     }
     #endregion INCLUDE

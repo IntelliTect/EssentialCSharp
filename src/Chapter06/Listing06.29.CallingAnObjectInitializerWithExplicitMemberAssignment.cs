@@ -5,8 +5,8 @@
     {
         public static void Main()
         {
-            Employee employee = new Employee("Inigo", "Montoya") 
-                { Title = "Computer Nerd", Salary = "Not enough" };
+            Employee employee = new Employee("Inigo", "Montoya")
+            { Title = "Computer Nerd", Salary = "Not enough" };
             #region EXCLUDE
             System.Console.WriteLine(
                 "{0} {1} ({2}): {3}",
@@ -47,7 +47,7 @@
                 // first and last names
                 string[] names;
                 names = value.Split(new char[] { ' ' });
-                if(names.Length == 2)
+                if (names.Length == 2)
                 {
                     FirstName = names[0];
                     LastName = names[1];

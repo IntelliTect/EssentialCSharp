@@ -20,27 +20,27 @@
                     "Arbitrary exception");
                 // ...
             }
-            catch(Win32Exception exception) 
-                when(exception.NativeErrorCode  == 42)
+            catch (Win32Exception exception)
+                when (exception.NativeErrorCode == 42)
             {
                 // Handle Win32Exception where
                 // ErrorCode is 42
             }
-            catch(ArgumentException exception)
+            catch (ArgumentException exception)
             {
                 // Handle ArgumentException
             }
-            catch(InvalidOperationException exception)
+            catch (InvalidOperationException exception)
             {
                 bool exceptionHandled = false;
                 // Handle InvalidOperationException
                 // ...
-                if(!exceptionHandled)
+                if (!exceptionHandled)
                 {
                     throw;
                 }
             }
-            catch(Exception exception)
+            catch (Exception exception)
             {
                 // Handle Exception
             }

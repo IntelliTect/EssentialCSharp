@@ -76,7 +76,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter23.Listing23_06
             return AllocExecutionBlock(
                 size, GetCurrentProcessHandle());
         }
-        
+
         #region EXCLUDE
         public static IntPtr GetCurrentProcessHandle()
         {

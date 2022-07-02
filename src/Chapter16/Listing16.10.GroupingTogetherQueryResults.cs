@@ -18,13 +18,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_10
                 from word in CSharp.Keywords
                 group word by word.Contains('*');
 
-            foreach(IGrouping<bool, string> wordGroup
+            foreach (IGrouping<bool, string> wordGroup
                 in selection)
             {
                 Console.WriteLine(Environment.NewLine + "{0}:",
                     wordGroup.Key ?
                         "Contextual Keywords" : "Keywords");
-                foreach(string keyword in wordGroup)
+                foreach (string keyword in wordGroup)
                 {
                     Console.Write(" " +
                         (wordGroup.Key ?

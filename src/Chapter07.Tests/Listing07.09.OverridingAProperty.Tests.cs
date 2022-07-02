@@ -11,7 +11,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_09.Tests
             Contact contact = new Contact();
 
             contact.Name = "Inigo Montoya";
-            
+
             Assert.AreEqual("Inigo", contact.FirstName);
             Assert.AreEqual("Montoya", contact.LastName);
         }

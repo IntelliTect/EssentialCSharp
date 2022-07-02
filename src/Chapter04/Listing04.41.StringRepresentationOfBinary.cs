@@ -17,7 +17,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_41
 
             // Set initial mask to 100....
             ulong mask = 1UL << size - 1;
-            for(int count = 0; count < size; count++)
+            for (int count = 0; count < size; count++)
             {
                 bit = ((mask & value) != 0) ? '1' : '0';
                 System.Console.Write(bit);

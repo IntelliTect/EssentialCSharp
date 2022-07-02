@@ -13,7 +13,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_37.Tests
                 @"There were no segments to combine.";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, ()=>Program.Main(null!));
+                expected, () => Program.Main(null!));
         }
 
         [TestMethod]
@@ -44,7 +44,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_37.Tests
             if (uri is object thing)
             {
                 System.Console.WriteLine(
-                    $"Uri is: { thing }");
+                    $"Uri is: {thing}");
             }
             else // (uri is null)
             {

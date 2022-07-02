@@ -3,7 +3,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_25
 {
     #region INCLUDE
     // A previous catch clause already catches all exceptions
-    #pragma warning disable CS1058
+#pragma warning disable CS1058
     #region EXCLUDE
     using System;
 
@@ -23,23 +23,23 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_25
             // Assume not null for clarity
             ageText = Console.ReadLine()!;
 
-    #endregion
+            #endregion
             try
             {
                 age = int.Parse(ageText);
                 Console.WriteLine(
-                    $"Hi { firstName }!  You are { age * 12 } months old.");
+                    $"Hi {firstName}!  You are {age * 12} months old.");
             }
-            catch(FormatException exception)
+            catch (FormatException exception)
             {
                 Console.WriteLine(
                     $"The age entered ,{ageText}, is not valid.");
                 result = 1;
             }
-            catch(Exception exception)
+            catch (Exception exception)
             {
                 Console.WriteLine(
-                    $"Unexpected error: { exception.Message }");
+                    $"Unexpected error: {exception.Message}");
                 result = 1;
             }
             catch
@@ -49,9 +49,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_25
             }
             finally
             {
-                Console.WriteLine($"Goodbye { firstName }");
+                Console.WriteLine($"Goodbye {firstName}");
             }
-    #endregion
+            #endregion
             return result;
         }
     }

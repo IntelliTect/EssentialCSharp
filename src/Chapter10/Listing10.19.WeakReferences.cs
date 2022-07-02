@@ -3,13 +3,13 @@
     using System;
 
     public class LazyWeakReference<T>
-        where T: class
+        where T : class
     {
         private Lazy<WeakReference<T>> WeakReference { get; }
-        private Func<T> ValueFactory { get;  }
+        private Func<T> ValueFactory { get; }
         public LazyWeakReference(Func<T> valueFactory)
         {
-            WeakReference = 
+            WeakReference =
                 new Lazy<WeakReference<T>>(() => new WeakReference<T>(valueFactory()));
             ValueFactory = valueFactory;
         }
@@ -19,7 +19,7 @@
             get
             {
                 T value;
-                if(WeakReference.Value.TryGetTarget(out T? target))
+                if (WeakReference.Value.TryGetTarget(out T? target))
                 {
                     value = target;
                 }

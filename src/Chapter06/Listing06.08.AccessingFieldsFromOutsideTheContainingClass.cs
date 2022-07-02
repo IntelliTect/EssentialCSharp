@@ -22,7 +22,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_08
             IncreaseSalary(employee1);
             #region HIGHLIGHT
             Console.WriteLine(
-                $"{ employee1.GetName() }: { employee1.Salary }");
+                $"{employee1.GetName()}: {employee1.Salary}");
             #endregion
             // ...
         }

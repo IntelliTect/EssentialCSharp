@@ -7,7 +7,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_31
         {
             // ...
             string arg = args[0];
-            if(arg[0] == '-')
+            if (arg[0] == '-')
             {
                 // This parameter is an option
             }

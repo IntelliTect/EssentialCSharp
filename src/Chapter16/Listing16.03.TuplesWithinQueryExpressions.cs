@@ -26,8 +26,7 @@
             foreach (var fileResult in fileResults)
             {
                 Console.WriteLine(
-                    $@"{ fileResult.Name } ({ 
-                        fileResult.LastWriteTime })");
+                    $@"{fileResult.Name} ({fileResult.LastWriteTime})");
             }
         }
     }

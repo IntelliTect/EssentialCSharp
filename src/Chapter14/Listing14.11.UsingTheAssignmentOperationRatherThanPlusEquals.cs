@@ -3,8 +3,8 @@ using AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_02;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_11
 {
-    using System;
     using Listing14_01;
+    using System;
 
     public class Program
     {
@@ -21,7 +21,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_11
 
             // Bug: Assignment operator overrides 
             // previous assignment
-            thermostat.OnTemperatureChange = 
+            thermostat.OnTemperatureChange =
                 cooler.OnTemperatureChanged;
 
             Console.Write("Enter temperature: ");

@@ -1,9 +1,9 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_18
 {
-    using System;
-    using System.Reflection;
-    using System.Collections.Generic;
     using Listing18_17;
+    using System;
+    using System.Collections.Generic;
+    using System.Reflection;
 
     public class CommandLineHandler
     {
@@ -19,16 +19,16 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_18
                 CommandLineSwitchAliasAttribute.GetSwitches(
                     commandLine);
 
-            foreach(string arg in args)
+            foreach (string arg in args)
             {
                 string option;
-                if(arg[0] == '/' || arg[0] == '-')
+                if (arg[0] == '/' || arg[0] == '-')
                 {
                     string[] optionParts = arg.Split(
                         new char[] { ':' }, 2);
                     option = optionParts[0].Remove(0, 1).ToLower();
 
-                    if(options.TryGetValue(option, out PropertyInfo? property))
+                    if (options.TryGetValue(option, out PropertyInfo? property))
                     {
                         success = SetOption(
                             commandLine, property,
@@ -37,7 +37,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_18
                     else
                     {
                         success = false;
-                        errorMessage = 
+                        errorMessage =
                             $"Option '{option}' is not supported.";
                     }
                 }
@@ -51,7 +51,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_18
         {
             bool success;
 
-            if(property.PropertyType == typeof(bool))
+            if (property.PropertyType == typeof(bool))
             {
                 // Last parameters for handling indexers
                 property.SetValue(
@@ -61,22 +61,22 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_18
             else
             {
 
-                if((optionParts.Length < 2)
+                if ((optionParts.Length < 2)
                     || optionParts[1] == "")
                 {
                     // No setting was provided for the switch.
                     success = false;
                     errorMessage =
-                         $"You must specify the value for the { property.Name } option.";
+                         $"You must specify the value for the {property.Name} option.";
                 }
-                else if(
+                else if (
                     property.PropertyType == typeof(string))
                 {
                     property.SetValue(
                         commandLine, optionParts[1], null);
                     success = true;
                 }
-                else if(property.PropertyType.GetTypeInfo().IsEnum)
+                else if (property.PropertyType.GetTypeInfo().IsEnum)
                 {
                     success = TryParseEnumSwitch(
                         commandLine, optionParts,
@@ -94,7 +94,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_18
             return success;
         }
 
-// Justification: Not fully implemented.
+        // Justification: Not fully implemented.
 #pragma warning disable IDE0060 // Remove unused parameter
         private static bool TryParseEnumSwitch(
             object commandLine, string[] optionParts, PropertyInfo property, ref string? errorMessage)

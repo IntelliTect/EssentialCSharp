@@ -23,7 +23,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_48
                 // ...
 
             }
-            else if((input.Length == 0) || (input == "quit"))
+            else if ((input.Length == 0) || (input == "quit"))
             {
                 // Retry or quite
                 // ...

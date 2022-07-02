@@ -1,8 +1,8 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_02
 {
+    using AddisonWesley.Michaelis.EssentialCSharp.Shared;
     using System;
     using System.Threading.Tasks;
-    using AddisonWesley.Michaelis.EssentialCSharp.Shared;
 
     class Program
     {

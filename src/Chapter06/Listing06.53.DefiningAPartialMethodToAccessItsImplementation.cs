@@ -26,7 +26,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_53
             }
             set
             {
-                if((_LastName != value))
+                if ((_LastName != value))
                 {
                     #region HIGHLIGHT
                     OnLastNameChanging(value);
@@ -46,7 +46,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_53
             }
             set
             {
-                if(_FirstName != value)
+                if (_FirstName != value)
                 {
                     #region HIGHLIGHT
                     OnFirstNameChanging(value);
@@ -64,11 +64,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_53
     {
         static partial void OnLastNameChanging(string value)
         {
-            if(value is null)
+            if (value is null)
             {
                 throw new ArgumentNullException(nameof(value));
             }
-            if(value.Trim().Length == 0)
+            if (value.Trim().Length == 0)
             {
                 throw new ArgumentException(
                 "LastName cannot be empty.",
@@ -78,7 +78,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_53
         #region EXCLUDE
         static partial void OnFirstNameChanging(string value)
         {
-            if(value == null)
+            if (value == null)
             {
                 throw new ArgumentNullException(nameof(value));
             }

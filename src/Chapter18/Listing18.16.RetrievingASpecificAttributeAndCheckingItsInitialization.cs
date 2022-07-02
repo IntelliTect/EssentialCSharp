@@ -1,9 +1,9 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_16
 {
-    using System;
-    using System.Reflection;
-    using System.Linq;
     using AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_15;
+    using System;
+    using System.Linq;
+    using System.Reflection;
 
     public class Program
     {
@@ -15,7 +15,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_16
                 (CommandLineSwitchAliasAttribute)
                     property.GetCustomAttributes(
                     typeof(CommandLineSwitchAliasAttribute), false).ElementAt(0);
-            if(attribute.Alias == "?")
+            if (attribute.Alias == "?")
             {
                 Console.WriteLine("Help(?)");
             };

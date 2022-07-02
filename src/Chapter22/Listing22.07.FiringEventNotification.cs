@@ -9,7 +9,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_07
         public void Main()
         {
             // Not thread safe
-            if(OnTemperatureChanged != null) // Warning ignored to demonstrate problem.
+            if (OnTemperatureChanged != null) // Warning ignored to demonstrate problem.
             {
                 // Call subscribers
                 OnTemperatureChanged(
@@ -18,9 +18,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_07
         }
 
         // Justification: Lowercase to simulate the value keyword from a setter.
-        #pragma warning disable IDE1006 // Naming Styles
+#pragma warning disable IDE1006 // Naming Styles
         public object? value { get; set; }
-        #pragma warning restore IDE1006 // Naming Styles
+#pragma warning restore IDE1006 // Naming Styles
     }
 
     class TemperatureEventArgs

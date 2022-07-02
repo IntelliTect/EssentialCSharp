@@ -16,7 +16,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
         public CompileError(string fullMessage)
         {
             string[] parts = fullMessage.Split(": ");
-            if(parts.Length != 2)
+            if (parts.Length != 2)
             {
                 throw new ArgumentException(
                     "Message is not of the form Id: Message", nameof(fullMessage));
@@ -68,28 +68,28 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
     }
     static public class CompilerAssert
     {
-            async static public Task<CompileError[]> ExpectErrorsInFileAsync(
-                string fileName, params CompileError[] diagnostics)
-            {
-                string sourceCode =
-                    (await File.ReadAllLinesAsync(fileName))
-                    // Namespace is not supported so we need to remove 
-                    // it's declaration (and curlys) or take a different approach than C# Scripting.
-                    .Aggregate(
-                        (string result, string item) =>
-                            result += $"\n{item}");
+        async static public Task<CompileError[]> ExpectErrorsInFileAsync(
+            string fileName, params CompileError[] diagnostics)
+        {
+            string sourceCode =
+                (await File.ReadAllLinesAsync(fileName))
+                // Namespace is not supported so we need to remove 
+                // it's declaration (and curlys) or take a different approach than C# Scripting.
+                .Aggregate(
+                    (string result, string item) =>
+                        result += $"\n{item}");
 
             return await ExpectErrorsAsync(sourceCode, diagnostics);
-            }
+        }
 
-            async static public Task<CompileError[]> ExpectErrorsAsync(
-            string sourceCode, params CompileError[] diagnostics)
+        async static public Task<CompileError[]> ExpectErrorsAsync(
+        string sourceCode, params CompileError[] diagnostics)
         {
             try
             {
                 await CSharpScript.EvaluateAsync(sourceCode);
             }
-            catch(CompilationErrorException exception)
+            catch (CompilationErrorException exception)
             {
                 Assert.IsTrue(exception.Diagnostics.Length > 0);
 

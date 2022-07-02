@@ -16,20 +16,20 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_14
     public class Contact : PdaItem
     {
         // Disable warning since FirstName&LastName set via Name property 
-        #pragma warning disable CS8618 // Non-nullable field is uninitialized. 
+#pragma warning disable CS8618 // Non-nullable field is uninitialized. 
         #region HIGHLIGHT
         public Contact(string name) :
             base(name)
         #endregion
         {
         }
-        #pragma warning restore CS8618
+#pragma warning restore CS8618
 
         public override string Name
         {
             get
             {
-                return $"{ FirstName } { LastName }";
+                return $"{FirstName} {LastName}";
             }
 
             set
@@ -41,9 +41,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_14
             }
         }
 
-        [NotNull] [DisallowNull]
+        [NotNull]
+        [DisallowNull]
         public string FirstName { get; set; }
-        [NotNull] [DisallowNull]
+        [NotNull]
+        [DisallowNull]
         public string LastName { get; set; }
 
         // ...

@@ -15,12 +15,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_09
         public string? Out { get; set; }
 
         public System.Diagnostics.ProcessPriorityClass Priority
-            { get; set; } = 
+        { get; set; } =
                 System.Diagnostics.ProcessPriorityClass.Normal;
     }
 
     // Disabling warning since it is not implemented or shown in manuscript
-    #pragma warning disable CA1018 // Mark attributes with AttributeUsageAttribute
+#pragma warning disable CA1018 // Mark attributes with AttributeUsageAttribute
     internal class CommandLineSwitchRequiredAttribute : Attribute
     {
         //not implimented

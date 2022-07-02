@@ -9,9 +9,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_35
             where T : IComparable<T>
         {
             T maximum = first;
-            foreach(T item in values)
+            foreach (T item in values)
             {
-                if(item.CompareTo(maximum) > 0)
+                if (item.CompareTo(maximum) > 0)
                 {
                     maximum = item;
                 }
@@ -24,9 +24,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_35
         {
             T minimum = first;
 
-            foreach(T item in values)
+            foreach (T item in values)
             {
-                if(item.CompareTo(minimum) < 0)
+                if (item.CompareTo(minimum) < 0)
                 {
                     minimum = item;
                 }

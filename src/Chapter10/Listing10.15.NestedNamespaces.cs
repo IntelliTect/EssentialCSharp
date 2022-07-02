@@ -14,12 +14,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_15
             {
                 // Declare the class
                 // AddisonWesley.Michaelis.EssentialCSharp.Program
-        #endregion HIGHLIGHT
+                #endregion HIGHLIGHT
                 class Program
                 {
                     // ...
                 }
-        #region HIGHLIGHT
+                #region HIGHLIGHT
             }
         }
         #endregion HIGHLIGHT

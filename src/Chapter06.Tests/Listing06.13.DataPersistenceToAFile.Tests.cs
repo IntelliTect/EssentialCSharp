@@ -1,7 +1,7 @@
-using System;
-using System.IO;
 using AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_12;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.IO;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_13.Tests
 {
@@ -24,9 +24,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_13.Tests
             string fileName = employee.FirstName + employee.LastName + ".dat";
 
             var contents = File.ReadAllText(fileName);
-            
+
             Assert.AreEqual(expected, contents);
-            
+
             //Cleanup file
             File.Delete(employee.FirstName + employee.LastName + ".dat");
         }

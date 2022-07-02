@@ -47,7 +47,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_05
                                 Encrypt(fileName);
                             });
                     }
-                    catch(OperationCanceledException) { }
+                    catch (OperationCanceledException) { }
                 });
 
             // Wait for the user's input
@@ -62,12 +62,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_05
         private static void Encrypt(string fileName)
         {
             if (Path.GetExtension(fileName) == ".encrypt") return;
-            Console.WriteLine($">>>>>Encrypting '{ fileName }'.");
+            Console.WriteLine($">>>>>Encrypting '{fileName}'.");
             Cryptographer cryptographer = new Cryptographer();
             File.Delete($"{fileName}.encrypt");
             byte[] encryptedText = cryptographer.Encrypt(File.ReadAllText(fileName));
             File.WriteAllBytes($"{fileName}.encrypt", encryptedText);
-            Console.WriteLine($"<<<<<Finished encrypting '{ fileName}'.");
+            Console.WriteLine($"<<<<<Finished encrypting '{fileName}'.");
         }
     }
 }

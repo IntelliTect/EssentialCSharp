@@ -13,7 +13,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_14
             #endregion
 
             System.Console.WriteLine(
-                $@"first = ""{ first }"", second = ""{ second }""");
+                $@"first = ""{first}"", second = ""{second}""");
             // ...
         }
 

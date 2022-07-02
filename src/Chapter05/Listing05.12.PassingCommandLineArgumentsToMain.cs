@@ -12,7 +12,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_12
         {
             #region HIGHLIGHT
             int result;
-            switch(args.Length)
+            switch (args.Length)
             #endregion
             {
                 default:

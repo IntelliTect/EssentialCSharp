@@ -24,9 +24,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_13
 
         private static void DisplayStatus(string message)
         {
-            string text = 
-                    $@"{ Thread.CurrentThread.ManagedThreadId 
-                        }: { message }";
+            string text =
+                    $@"{Thread.CurrentThread.ManagedThreadId}: {message}";
 
 
             Console.WriteLine(text);

@@ -1,7 +1,7 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_21
 {
-    using System;
     using Listing12_13;
+    using System;
     #region INCLUDE
     public class BinaryTree<T>
     {
@@ -23,7 +23,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_21
                     // Using C# 8.0 Pattern Matching. Switch to
                     // checking for null prior to C# 8.0
                     #region EXCLUDE
-                    case { First: null}:
+                    case { First: null }:
                         // First is null
                         break;
                     case { Second: null }:
@@ -32,10 +32,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_21
                     #endregion EXCLUDE
                     case
                     {
-                            #region HIGHLIGHT
-                            First: {Item: IComparable<T> first },
-                            #endregion HIGHLIGHT
-                            Second: {Item: T second } }:
+                        #region HIGHLIGHT
+                        First: { Item: IComparable<T> first },
+                        #endregion HIGHLIGHT
+                        Second: { Item: T second }
+                    }:
                         #region HIGHLIGHT
                         if (first.CompareTo(second) < 0)
                         #endregion HIGHLIGHT
@@ -49,13 +50,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_21
                         break;
                     default:
                         throw new InvalidCastException(
-                            @$"Unable to sort the items as { 
-                                typeof(T) } does not support IComparable<T>.");
+                            @$"Unable to sort the items as {typeof(T)} does not support IComparable<T>.");
                 };
                 _SubItems = value;
             }
         }
-    private Pair<BinaryTree<T>?>? _SubItems;
+        private Pair<BinaryTree<T>?>? _SubItems;
     }
     #endregion INCLUDE
 }

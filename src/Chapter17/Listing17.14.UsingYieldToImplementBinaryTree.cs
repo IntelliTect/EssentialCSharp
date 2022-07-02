@@ -1,8 +1,7 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_14
 {
-    using System;
     using Listing17_10;
-
+    using System;
     using System.Collections.Generic;
 
     public struct Pair<T> : IPair<T>,
@@ -22,7 +21,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_14
         {
             get
             {
-                switch(index)
+                switch (index)
                 {
                     case PairItem.First:
                         return First;
@@ -35,7 +34,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_14
                             index.ToString()));
                 }
             }
-        #endregion Indexer
+            #endregion Indexer
         }
 
         #region IEnumerable<T>

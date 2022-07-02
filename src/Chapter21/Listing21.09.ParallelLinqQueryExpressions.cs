@@ -26,7 +26,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_09
             {
                 throw new Exception("data.Count() != parallelGroups.Sum(item => item.Count()");
             }
-             // ...
+            // ...
 
             return data.AsParallel().Select(
                 item => Encrypt(item)).ToList();
@@ -36,10 +36,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_09
 
         private static string Encrypt(string item)
         {
-            Console.WriteLine($">>>>>Encrypting '{ item }'.");
+            Console.WriteLine($">>>>>Encrypting '{item}'.");
             Cryptographer cryptographer = new Cryptographer();
             string itemEncrypted = System.Text.Encoding.UTF8.GetString(cryptographer.Encrypt(item));
-            Console.WriteLine($"<<<<<Finished encrypting '{ itemEncrypted }'.");
+            Console.WriteLine($"<<<<<Finished encrypting '{itemEncrypted}'.");
             return itemEncrypted;
         }
 

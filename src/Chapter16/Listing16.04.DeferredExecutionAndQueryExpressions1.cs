@@ -18,7 +18,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_04
                                             where IsKeyword(word)
                                             select word;
             Console.WriteLine("Query created.");
-            foreach(string keyword in selection)
+            foreach (string keyword in selection)
             {
                 // No space output here
                 Console.Write(keyword);
@@ -31,7 +31,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_04
         // production code
         private static bool IsKeyword(string word)
         {
-            if(word.Contains('*'))
+            if (word.Contains('*'))
             {
                 Console.Write(" ");
                 return true;

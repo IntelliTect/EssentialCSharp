@@ -7,10 +7,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_10
     public class Program
     {
         // Justification: Initialized at the start of Main.
-        #pragma warning disable CS8618 // Non-nullable field is uninitialized. Consider declaring as nullable.
+#pragma warning disable CS8618 // Non-nullable field is uninitialized. Consider declaring as nullable.
         static ManualResetEventSlim MainSignaledResetEvent;
         static ManualResetEventSlim DoWorkSignaledResetEvent;
-        #pragma warning restore CS8618 // Non-nullable field is uninitialized. Consider declaring as nullable.
+#pragma warning restore CS8618 // Non-nullable field is uninitialized. Consider declaring as nullable.
 
         public static void DoWork()
         {
@@ -22,9 +22,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_10
 
         public static void Main()
         {
-            using(MainSignaledResetEvent =
+            using (MainSignaledResetEvent =
                 new ManualResetEventSlim())
-            using(DoWorkSignaledResetEvent =
+            using (DoWorkSignaledResetEvent =
                 new ManualResetEventSlim())
             {
                 Console.WriteLine(

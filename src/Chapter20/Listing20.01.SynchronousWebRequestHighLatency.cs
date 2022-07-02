@@ -35,8 +35,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_01
                 downloadData, findText);
 
             Console.WriteLine(
-                @$"{Environment.NewLine}'{findText}' appears {
-                    textOccurrenceCount} times at URL '{url}'.");
+                @$"{Environment.NewLine}'{findText}' appears {textOccurrenceCount} times at URL '{url}'.");
         }
 
         private static int CountOccurrences(byte[] downloadData, string findText)

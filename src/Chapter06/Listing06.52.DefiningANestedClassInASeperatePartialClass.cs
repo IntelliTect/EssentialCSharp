@@ -13,12 +13,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_52
         {
             CommandLine commandLine = new CommandLine(args);
 
-            switch(commandLine.Action)
+            switch (commandLine.Action)
             {
                 #region EXCLUDE
                 default:
                     break;
-                #endregion
+                    #endregion
             }
         }
     }

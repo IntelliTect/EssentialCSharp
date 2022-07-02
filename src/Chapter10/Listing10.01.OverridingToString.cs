@@ -14,7 +14,7 @@
 
         #region HIGHLIGHT
         public override string ToString() =>
-            $"{ Longitude } { Latitude }";
+            $"{Longitude} {Latitude}";
         #endregion HIGHLIGHT
 
         // ...

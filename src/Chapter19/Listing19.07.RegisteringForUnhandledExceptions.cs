@@ -7,7 +7,7 @@
     public class Program
     {
         // TODO: Update listing in Manuscript
-        private static Stopwatch Clock { get;  } = new Stopwatch();
+        private static Stopwatch Clock { get; } = new Stopwatch();
 
         public static void Main()
         {

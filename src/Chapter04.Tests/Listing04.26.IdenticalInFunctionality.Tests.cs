@@ -8,7 +8,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_26.Tests
         [TestMethod]
         public void MainTest()
         {
-            const string expected = 
+            const string expected =
 @"The area of the circle is: 0.00";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(

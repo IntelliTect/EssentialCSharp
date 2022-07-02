@@ -9,12 +9,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_07a
         {
 #if !PRECSHARP5
             var colorMap = new SortedDictionary<string, ConsoleColor>
-                {
-                    ["Error"] = ConsoleColor.Red,
-                    ["Warning"] = ConsoleColor.Yellow,
-                    ["Information"] = ConsoleColor.Green,
-                    ["Verbose"] = ConsoleColor.White
-                };
+            {
+                ["Error"] = ConsoleColor.Red,
+                ["Warning"] = ConsoleColor.Yellow,
+                ["Information"] = ConsoleColor.Green,
+                ["Verbose"] = ConsoleColor.White
+            };
 #else
             Dictionary<string, ConsoleColor> colorMap =
                 new Dictionary<string, ConsoleColor>
@@ -27,16 +27,16 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_07a
 #endif
 
             Print(colorMap);
-      }
+        }
 
-      private static void Print(
-          IEnumerable<KeyValuePair<string, ConsoleColor>> items)
-      {
-          foreach (KeyValuePair<string, ConsoleColor> item in items)
-          {
-              Console.ForegroundColor = item.Value;
-              Console.WriteLine(item.Key);
-          }
+        private static void Print(
+            IEnumerable<KeyValuePair<string, ConsoleColor>> items)
+        {
+            foreach (KeyValuePair<string, ConsoleColor> item in items)
+            {
+                Console.ForegroundColor = item.Value;
+                Console.WriteLine(item.Key);
+            }
         }
     }
 }

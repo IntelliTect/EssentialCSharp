@@ -15,7 +15,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_16
         // FirstName setter
         public void SetFirstName(string newFirstName)
         {
-            if(newFirstName != null && newFirstName != "")
+            if (newFirstName != null && newFirstName != "")
             {
                 FirstName = newFirstName;
             }
@@ -30,7 +30,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_16
         // LastName setter
         public void SetLastName(string newLastName)
         {
-            if(newLastName != null && newLastName != "")
+            if (newLastName != null && newLastName != "")
             {
                 LastName = newLastName;
             }

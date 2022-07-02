@@ -5,7 +5,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_38
     {
         #region EXCLUDE
         // FirstName&LastName set inside Initialize() method.
-        #pragma warning disable CS8618
+#pragma warning disable CS8618
         public Employee(string firstName, string lastName)
         {
             int id;
@@ -33,7 +33,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_38
 
             Initialize(id, firstName, lastName);
         }
-        #pragma warning disable CS8618
+#pragma warning disable CS8618
 
         private void Initialize(
             int id, string firstName, string lastName)
@@ -44,11 +44,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_38
         }
         #endregion
         public void Deconstruct(
-            out int id, out string firstName, 
+            out int id, out string firstName,
             out string lastName, out string? salary)
         {
-           (id, firstName, lastName, salary) = 
-                (Id, FirstName, LastName, Salary);
+            (id, firstName, lastName, salary) =
+                 (Id, FirstName, LastName, Salary);
         }
         #region EXCLUDE
         public int Id { get; private set; }
@@ -71,7 +71,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_38
                 // first and last names.
                 string[] names;
                 names = value.Split(new char[] { ' ' });
-                if(names.Length == 2)
+                if (names.Length == 2)
                 {
                     FirstName = names[0];
                     LastName = names[1];

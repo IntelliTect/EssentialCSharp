@@ -17,14 +17,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_46
             {
                 target += Path.DirectorySeparatorChar;
             }
-            if(!Directory.Exists(target))
+            if (!Directory.Exists(target))
             {
                 Directory.CreateDirectory(target);
             }
 
-            for(int i = 0; i < searchPattern.Length; i++)
+            for (int i = 0; i < searchPattern.Length; i++)
             {
-                foreach(string file in
+                foreach (string file in
                     Directory.GetFiles(
                         sourceDirectory.FullName, searchPattern))
                 {
@@ -34,9 +34,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_46
             }
 
             //Copy SubDirectories (recursively)
-            if(option == SearchOption.AllDirectories)
+            if (option == SearchOption.AllDirectories)
             {
-                foreach(string element in
+                foreach (string element in
                     Directory.GetDirectories(
                         sourceDirectory.FullName))
                 {
@@ -59,13 +59,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_46
     {
         public static void Main()
         {
-    #endregion
+            #endregion
             DirectoryInfo directory = new DirectoryInfo(".\\Source");
             #region HIGHLIGHT
             directory.CopyTo(".\\Target",
                 SearchOption.TopDirectoryOnly, "*");
             #endregion
-    #region EXCLUDE
+            #region EXCLUDE
             //Extension method. Is Defined above but appears to be a member of the DirectoryInfo object, directory, defined aboves
         }
     }

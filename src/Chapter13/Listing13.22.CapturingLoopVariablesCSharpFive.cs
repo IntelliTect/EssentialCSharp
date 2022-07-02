@@ -9,11 +9,11 @@
         {
             var items = new string[] { "Moe", "Larry", "Curly" };
             var actions = new List<Action>();
-            foreach(string item in items)
+            foreach (string item in items)
             {
                 actions.Add(() => { Console.WriteLine(item); });
             }
-            foreach(Action action in actions)
+            foreach (Action action in actions)
             {
                 action();
             }

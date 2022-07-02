@@ -5,7 +5,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_32.Tests
     [TestClass]
     public class PalindromeTests
     {
-        [TestMethod]    
+        [TestMethod]
         public void Main_InputValidPalindrome_IdentifiedAsPalindrome()
         {
             const string expected =
@@ -15,7 +15,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_32.Tests
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
                 expected, Palindrome.Main);
         }
-        
+
         [TestMethod]
         public void Main_InputInvalidPalindrome_NotIdentifiedAsPalindrome()
         {

@@ -8,8 +8,7 @@
             (string country, string capital, double gdpPerCapita) =
                 ("South Sudan", "Juba", 275.18);
             System.Console.WriteLine(
-                $@"The poorest country in the world in 2017 was {
-                    country}, {capital}: {gdpPerCapita}");
+                $@"The poorest country in the world in 2017 was {country}, {capital}: {gdpPerCapita}");
         }
 
         // 2.
@@ -22,8 +21,7 @@
             (country, capital, gdpPerCapita) =
                 ("South Sudan", "Juba", 275.18);
             System.Console.WriteLine(
-                $@"The poorest country in the world in 2017 was {
-                    country}, {capital}: {gdpPerCapita}");
+                $@"The poorest country in the world in 2017 was {country}, {capital}: {gdpPerCapita}");
         }
 
         // 3.
@@ -32,8 +30,7 @@
             (var country, var capital, var gdpPerCapita) =
                 ("South Sudan", "Juba", 275.18);
             System.Console.WriteLine(
-                $@"The poorest country in the world in 2017 was {
-                    country}, {capital}: {gdpPerCapita}");
+                $@"The poorest country in the world in 2017 was {country}, {capital}: {gdpPerCapita}");
         }
 
         // 4.
@@ -42,8 +39,7 @@
             var (country, capital, gdpPerCapita) =
                 ("South Sudan", "Juba", 275.18);
             System.Console.WriteLine(
-                $@"The poorest country in the world in 2017 was {
-                    country}, {capital}: {gdpPerCapita}");
+                $@"The poorest country in the world in 2017 was {country}, {capital}: {gdpPerCapita}");
         }
 
         // 5.
@@ -52,9 +48,7 @@
             (string Name, string Capital, double GdpPerCapita) countryInfo =
                 ("South Sudan", "Juba", 275.18);
             System.Console.WriteLine(
-                $@"The poorest country in the world in 2017 was {
-                    countryInfo.Name}, {countryInfo.Capital}: {
-                    countryInfo.GdpPerCapita}");
+                $@"The poorest country in the world in 2017 was {countryInfo.Name}, {countryInfo.Capital}: {countryInfo.GdpPerCapita}");
         }
 
         // 6.
@@ -63,9 +57,7 @@
             var countryInfo =
                 (Name: "South Sudan", Capital: "Juba", GdpPerCapita: 275.18);
             System.Console.WriteLine(
-              $@"The poorest country in the world in 2017 was {
-              countryInfo.Name}, {countryInfo.Capital}: {
-              countryInfo.GdpPerCapita}");
+              $@"The poorest country in the world in 2017 was {countryInfo.Name}, {countryInfo.Capital}: {countryInfo.GdpPerCapita}");
 
         }
 
@@ -75,22 +67,18 @@
             var countryInfo =
                 ("South Sudan", "Juba", 275.18);
             System.Console.WriteLine(
-              $@"The poorest country in the world in 2017 was {
-              countryInfo.Item1}, {countryInfo.Item2}: {
-              countryInfo.Item3}");
+              $@"The poorest country in the world in 2017 was {countryInfo.Item1}, {countryInfo.Item2}: {countryInfo.Item3}");
         }
 
         // 8.
-// Justification: Demonstrating the fact that the name is an alias to ItemX.
+        // Justification: Demonstrating the fact that the name is an alias to ItemX.
 #pragma warning disable IDE0033 // Use explicitly provided tuple name
         public void AssignANamedItemTupleToASingleImplicitlyTypedVariableAndThenAccessTheTupleItemsByTheirItemNumberProperty()
         {
             var countryInfo =
                 (Name: "South Sudan", Capital: "Juba", GdpPerCapita: 275.18);
             System.Console.WriteLine(
-              $@"The poorest country in the world in 2017 was {
-              countryInfo.Item1}, {countryInfo.Item2}: {
-              countryInfo.Item3}");
+              $@"The poorest country in the world in 2017 was {countryInfo.Item1}, {countryInfo.Item2}: {countryInfo.Item3}");
         }
 #pragma warning restore IDE0033 // Use explicitly provided tuple name
 
@@ -111,9 +99,7 @@
             var countryInfo =
                 (country, capital, gdpPerCapita);
             System.Console.WriteLine(
-                $@"The poorest country in the world in 2017 was {
-                    countryInfo.country}, {countryInfo.capital}: {
-                    countryInfo.gdpPerCapita}");
+                $@"The poorest country in the world in 2017 was {countryInfo.country}, {countryInfo.capital}: {countryInfo.gdpPerCapita}");
         }
     }
 }

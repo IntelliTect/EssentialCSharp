@@ -20,7 +20,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_15
                 // Proceed to the previous letter in the alphabet
                 current--;
             }
-            while(current >= 'a');
+            while (current >= 'a');
             #endregion
         }
     }

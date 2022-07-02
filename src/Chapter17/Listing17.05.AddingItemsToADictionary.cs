@@ -8,14 +8,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_05
         public static void Main()
         {
 #if !PRECSHARP5
-        // C# 6.0
-        Dictionary<string, ConsoleColor> colorMap =
-            new Dictionary<string, ConsoleColor>
-            {
-                ["Error"] = ConsoleColor.Red,
-                ["Warning"] = ConsoleColor.Yellow,
-                ["Information"] = ConsoleColor.Green
-            };
+            // C# 6.0
+            Dictionary<string, ConsoleColor> colorMap =
+                new Dictionary<string, ConsoleColor>
+                {
+                    ["Error"] = ConsoleColor.Red,
+                    ["Warning"] = ConsoleColor.Yellow,
+                    ["Information"] = ConsoleColor.Green
+                };
 #else
         // Pre-C# 6.0
         Dictionary<string, ConsoleColor> colorMap =

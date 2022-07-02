@@ -3,8 +3,8 @@
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_05
 {
-    using System;
     using Listing08_02;
+    using System;
 
     public class Program
     {
@@ -59,7 +59,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_05
                     FirstName.CompareTo(firstName),
             Contact _ => 0,
             _ => throw new ArgumentException(
-                $"The parameter is not a value of type { nameof(Contact) }",
+                $"The parameter is not a value of type {nameof(Contact)}",
                 nameof(obj))
         };
         #endregion
@@ -72,7 +72,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_05
         {
             get
             {
-                return new string?[] 
+                return new string?[]
                 {
                     FirstName,
                     LastName,
@@ -100,7 +100,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_05
         protected string? Phone { get; set; }
         protected string? Address { get; set; }
         static public string GetName(string firstName, string lastName)
-            => $"{ firstName } { lastName }";
+            => $"{firstName} {lastName}";
         #endregion EXCLUDE
     }
     #endregion INCLUDE

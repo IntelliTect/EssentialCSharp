@@ -13,7 +13,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_28.Tests
 >>Enter your age: <<36
 >>Hi Inigo! You are 432 months old.";
 
-            IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected, 
+            IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected,
                 LeveragingTryParse.Main);
         }
 

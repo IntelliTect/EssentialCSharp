@@ -13,7 +13,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Table08_01
                 get => _Field;
                 private set => _Field = value;
             }
-            static ISampleInterface() => 
+            static ISampleInterface() =>
                 Field = "Nelson Mandela";
             public static string? GetField() => Field;
         }
@@ -90,7 +90,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Table08_01
     // 4.
     namespace ProtectedAccessModifiers
     {
-        
+
     }
 
     // 5. 
@@ -135,47 +135,47 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Table08_01
     // 8. 
     namespace PrivateProtectedAccessModifiers
     {
-    class Program
-    {
-        static void Main()
+        class Program
         {
-            IPerson? person = null;
-            // Non-deriving classes cannot call
-            // private protected member.
-            // person?.GetName();
-            Console.WriteLine(person);
+            static void Main()
+            {
+                IPerson? person = null;
+                // Non-deriving classes cannot call
+                // private protected member.
+                // person?.GetName();
+                Console.WriteLine(person);
+            }
         }
-    }
-    public interface IPerson
-    {
-        string FirstName { get; }
-        string LastName { get; }
-        string Name => GetName();
-        private protected string GetName() =>
-            $"{FirstName} {LastName}";
-    }
-    public interface IEmployee: IPerson
-    {
-        int EmpoyeeId => GetName().GetHashCode();
-    }
-    public class Person : IPerson
-    {
-        public Person(string firstName, string lastName)
+        public interface IPerson
         {
-            FirstName = firstName ??
-                throw new ArgumentNullException(nameof(firstName));
-            LastName = lastName ?? 
-                throw new ArgumentNullException(nameof(lastName));
+            string FirstName { get; }
+            string LastName { get; }
+            string Name => GetName();
+            private protected string GetName() =>
+                $"{FirstName} {LastName}";
         }
-        public string FirstName { get; }
-        public string LastName { get; }
+        public interface IEmployee : IPerson
+        {
+            int EmpoyeeId => GetName().GetHashCode();
+        }
+        public class Person : IPerson
+        {
+            public Person(string firstName, string lastName)
+            {
+                FirstName = firstName ??
+                    throw new ArgumentNullException(nameof(firstName));
+                LastName = lastName ??
+                    throw new ArgumentNullException(nameof(lastName));
+            }
+            public string FirstName { get; }
+            public string LastName { get; }
 
-        // private protected interface members
-        // are not accessible in derived classes.
-       
-        // public int PersonTitle => 
-        //      GetName().ToUpper();
-    }
+            // private protected interface members
+            // are not accessible in derived classes.
+
+            // public int PersonTitle => 
+            //      GetName().ToUpper();
+        }
     }
 
     // 9. 
@@ -185,7 +185,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Table08_01
         {
             // virtual is not allowed on members
             // without implementation
-            /* virtual */ string FirstName { get; set; }
+            /* virtual */
+            string FirstName { get; set; }
             string LastName { get; set; }
             virtual string Name => GetName();
             private string GetName() =>
@@ -233,11 +234,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Table08_01
         {
             // abstract is not allowed on members
             // with implementation
-            /* virtual */ abstract string FirstName { get; set; }
+            /* virtual */
+            abstract string FirstName { get; set; }
             string LastName { get; set; }
             // abstract is not allowed on members
             // with implementation
-            /* abstract */ string Name => GetName();
+            /* abstract */
+            string Name => GetName();
             private string GetName() =>
                 $"{FirstName} {LastName}";
         }

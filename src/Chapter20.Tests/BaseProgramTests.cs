@@ -35,19 +35,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Tests
         {
             string url = DefaultUrl;
             string expected =
-                @$"Searching for '{Regex.Escape(findText)
-                    }' at URL '{
-                    Regex.Escape(url)
-                    }'\.\s+Downloading\.{{3,}}\s+Searching\.{{3,}}\s+'{
-                    Regex.Escape(findText)}' appears {countPattern} times at URL '{
-                    Regex.Escape(url)
-                    }'\.\s+";
+                @$"Searching for '{Regex.Escape(findText)}' at URL '{Regex.Escape(url)}'\.\s+Downloading\.{{3,}}\s+Searching\.{{3,}}\s+'{Regex.Escape(findText)}' appears {countPattern} times at URL '{Regex.Escape(url)}'\.\s+";
             string actual = IntelliTect.TestTools.Console.ConsoleAssert.Execute("",
             () =>
             {
                 ProgramWrapper.Main(new string[] { findText }).Wait();
             });
-            
+
             Regex regex = new Regex(expected);
             Assert.IsTrue(regex.Match(actual).Success,
                 $"Messages are unexpectedly different:\n\tExpected: {expected}\n\t  Actual: {actual}");
@@ -67,7 +61,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Tests
         protected virtual void AssertMainException(string messagePrefix, Exception exception)
         {
             // Default to testing for Web Exception
-            AssertWebExceptionType(messagePrefix, (WebException) exception);
+            AssertWebExceptionType(messagePrefix, (WebException)exception);
         }
 
         protected static void AssertMainException(string messagePrefix, AggregateException exception)
@@ -85,7 +79,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Tests
             bool isLike = IntelliTect.TestTools.Console.StringExtensions.IsLike(
                 exception.Message, messagePrefix);
             string notLikeMessage = $"Messages are unexpectedly different on {Environment.OSVersion}:\n\texpected: {messagePrefix}\n\tActual: {exception.Message}\n\t OSInformation: {RuntimeInformation.OSDescription}";
-            
+
             Assert.IsTrue(isLike, notLikeMessage);
         }
 

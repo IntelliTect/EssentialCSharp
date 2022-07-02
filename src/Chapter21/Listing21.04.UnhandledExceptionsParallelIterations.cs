@@ -25,12 +25,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_04
                     Encrypt(fileName);
                 });
             }
-            catch(AggregateException exception)
+            catch (AggregateException exception)
             {
                 Console.WriteLine(
                     "ERROR: {0}:",
                     exception.GetType().Name);
-                foreach(Exception item in
+                foreach (Exception item in
                     exception.InnerExceptions)
                 {
                     Console.WriteLine("  {0} - {1}",

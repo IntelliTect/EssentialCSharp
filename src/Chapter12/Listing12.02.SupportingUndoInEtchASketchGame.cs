@@ -20,7 +20,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_02
             ConsoleKeyInfo key; // Added in C# 2.0
             #region EXCLUDE
             Console.WriteLine("Use arrow keys to draw. X to exit.");
-            for(int i = 2; i < Console.WindowHeight; i++)
+            for (int i = 2; i < Console.WindowHeight; i++)
             {
                 Console.WriteLine();
             }
@@ -36,11 +36,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_02
                 // arrow keys that the user enters
                 key = Move();
 
-                switch(key.Key)
+                switch (key.Key)
                 {
                     case ConsoleKey.Z:
                         // Undo the previous Move
-                        if(path.Count >= 1)
+                        if (path.Count >= 1)
                         {
                             #region HIGHLIGHT
                             currentPosition = (Cell)path.Pop();
@@ -63,7 +63,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_02
                         path.Push(currentPosition);
                         FillCell(currentPosition);
                         break;
-                        #endregion EXCLUDE
+                    #endregion EXCLUDE
                     case ConsoleKey.UpArrow:
                         #region EXCLUDE
                         if (Console.CursorTop > 1)
@@ -74,7 +74,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_02
                         path.Push(currentPosition);
                         FillCell(currentPosition);
                         break;
-                        #endregion EXCLUDE
+                    #endregion EXCLUDE
                     case ConsoleKey.LeftArrow:
                         #region EXCLUDE
                         if (Console.CursorLeft > 1)
@@ -85,10 +85,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_02
                         path.Push(currentPosition);
                         FillCell(currentPosition);
                         break;
-                        #endregion EXCLUDE
+                    #endregion EXCLUDE
                     case ConsoleKey.RightArrow:
                         // SaveState()
-                        if(Console.CursorLeft < Console.WindowWidth - 2)
+                        if (Console.CursorLeft < Console.WindowWidth - 2)
                         {
                             currentPosition = new Cell(
                                 Console.CursorLeft + 1, Console.CursorTop);
@@ -106,7 +106,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_02
                         break;
                 }
             }
-            while(key.Key != ConsoleKey.X);  // Use X to quit.
+            while (key.Key != ConsoleKey.X);  // Use X to quit.
         }
         #region EXCLUDE
         private static ConsoleKeyInfo Move()

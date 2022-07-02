@@ -37,7 +37,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
             int digits = (int)eventArgs.Argument;
 
             StringBuilder pi;
-            if(startingAt == 0)
+            if (startingAt == 0)
             {
                 pi = new StringBuilder("3.", digits + 2);
             }
@@ -50,9 +50,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
 #endif
 
             // Calculate rest of pi, if required
-            if(digits > 0)
+            if (digits > 0)
             {
-                for(int i = 0; i < digits; i += 9)
+                for (int i = 0; i < digits; i += 9)
                 {
 
                     // Calculate next i decimal places

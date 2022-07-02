@@ -10,7 +10,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_07.Tests
         {
             string expected = string.Join(
                 System.Environment.NewLine,
-                "Error","Warning", "Information", "Verbose");
+                "Error", "Warning", "Information", "Verbose");
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected,
             () =>

@@ -13,13 +13,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_13
             #region EXCLUDE
             // Justifiction: Ignore warning pending struct/class constraints, later on in the chapter, 
             //               so that Second can be declared as T?.
-    #pragma warning disable CS8601 // Possible null reference assignment.
+#pragma warning disable CS8601 // Possible null reference assignment.
             #endregion EXCLUDE
             #region HIGHLIGHT
             Second = default;
             #endregion HIGHLIGHT
             #region EXCLUDE
-    #pragma warning restore CS8601 // Possible null reference assignment.
+#pragma warning restore CS8601 // Possible null reference assignment.
             #endregion EXCLUDE
         }
         #region EXCLUDE

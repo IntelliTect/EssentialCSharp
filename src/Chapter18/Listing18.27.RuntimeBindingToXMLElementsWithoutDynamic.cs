@@ -15,8 +15,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_27
                   </Person>");
 
             // TODO: Update listing in Manuscript
-            Console.WriteLine($"{ person.Descendants("FirstName").First().Value }" +
-            $"{ person.Descendants("LastName").First().Value }");
+            Console.WriteLine($"{person.Descendants("FirstName").First().Value}" +
+            $"{person.Descendants("LastName").First().Value}");
         }
     }
 }

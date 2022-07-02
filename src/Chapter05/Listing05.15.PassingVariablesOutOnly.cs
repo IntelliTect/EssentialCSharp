@@ -6,7 +6,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_15
     {
         public static int Main(string[] args)
         {
-            if(args.Length == 0)
+            if (args.Length == 0)
             {
                 Console.WriteLine(
                     "ConvertToPhoneNumber.exe <phrase>");
@@ -14,9 +14,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_15
                     "'_' indicates no standard phone button");
                 return 1;
             }
-            foreach(string word in args)
+            foreach (string word in args)
             {
-                foreach(char character in word)
+                foreach (char character in word)
                 {
                     #region HIGHLIGHT
                     if (TryGetPhoneButton(character, out char button))
@@ -39,7 +39,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_15
         #endregion
         {
             bool success = true;
-            switch(char.ToLower(character))
+            switch (char.ToLower(character))
             {
                 case '1':
                     button = '1';

@@ -27,7 +27,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_27
             {
                 Console.WriteLine(
                     "Rethrowing unexpected error:  "
-                    + $"{ exception.Message }");
+                    + $"{exception.Message}");
 
                 throw;
             }

@@ -23,9 +23,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
         {
             foreach (string item in args)
             {
-                yield return await Task.Run(()=>item);
+                yield return await Task.Run(() => item);
             }
-            
+
         }
     }
 
@@ -43,8 +43,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
         [DataRow(nameof(SampleClass.ReturnValueTaskOfIntArgsArrayParameter), new string[] { "One" }, "42")]
         [DataRow(nameof(SampleClass.ReturnValueTaskOfStringArgsArrayParameter), new string[] { "One" }, "forty-two")]
         [DataRow(nameof(SampleClass.ReturnValueTaskOfNullableObjectArgsArrayParameter), new string[] { "One" }, (object)"42")]
-        [DataRow(nameof(SampleClass.ReturnIAsyncEnumerableOfStringArgsArrayParameter), 
-            new string[] { "1","2","3" }, "1, 2, 3")]
+        [DataRow(nameof(SampleClass.ReturnIAsyncEnumerableOfStringArgsArrayParameter),
+            new string[] { "1", "2", "3" }, "1, 2, 3")]
         [TestMethod]
         public async Task InvokeMethodUsingReflection(string methodName, string[]? args, string? expected)
         {

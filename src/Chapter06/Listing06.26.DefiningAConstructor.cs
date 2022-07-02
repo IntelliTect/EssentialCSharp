@@ -52,7 +52,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_26
                 // first and last names
                 string[] names;
                 names = value.Split(new char[] { ' ' });
-                if(names.Length == 2)
+                if (names.Length == 2)
                 {
                     FirstName = names[0];
                     LastName = names[1];
@@ -63,7 +63,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_26
                     // name was not assigned
                     throw new System.ArgumentException(
                         string.Format(
-                        $"Assigned value '{ value }' is invalid", 
+                        $"Assigned value '{value}' is invalid",
                         nameof(value)));
                 }
             }

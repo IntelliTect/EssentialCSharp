@@ -19,15 +19,15 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15
             string title, string yearOfPublication, long[] inventorIds)
         {
             Title = title ?? throw new ArgumentNullException(nameof(title));
-            YearOfPublication = yearOfPublication ?? 
+            YearOfPublication = yearOfPublication ??
                 throw new ArgumentNullException(nameof(yearOfPublication));
-            InventorIds = inventorIds ?? 
+            InventorIds = inventorIds ??
                 throw new ArgumentNullException(nameof(inventorIds));
         }
 
         public override string ToString()
         {
-            return $"{ Title } ({ YearOfPublication })";
+            return $"{Title} ({YearOfPublication})";
         }
 
     }
@@ -52,7 +52,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15
 
         public override string ToString()
         {
-            return $"{ Name } ({ City }, { State })";
+            return $"{Name} ({City}, {State})";
         }
 
     }

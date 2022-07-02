@@ -15,11 +15,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter23.Listing23_20.Tests
                 expected = "This sample is only valid for Windows";
             }
 
-                IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected,
-            () =>
-            {
-                Program.Main();
-            });
+            IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected,
+        () =>
+        {
+            Program.Main();
+        });
         }
     }
 }

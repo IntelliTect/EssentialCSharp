@@ -1,7 +1,7 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_18
 {
-    using System;
     using Listing17_10;
+    using System;
     using System.Collections.Generic;
 
     public struct Pair<T> : IPair<T>, IEnumerable<T>
@@ -19,7 +19,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_18
         {
             get
             {
-                switch(index)
+                switch (index)
                 {
                     case PairItem.First:
                         return First;
@@ -38,7 +38,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_18
         //Listing 17.18 Escaping Iteration via yield break
         public System.Collections.Generic.IEnumerable<T> GetNotNullEnumerator()
         {
-            if((First == null) || (Second == null))
+            if ((First == null) || (Second == null))
             {
                 yield break;
             }

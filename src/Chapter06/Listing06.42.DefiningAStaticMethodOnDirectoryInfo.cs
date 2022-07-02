@@ -14,19 +14,19 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_42
                 SearchOption option, string searchPattern)
             #endregion
             {
-                if(target[target.Length - 1] !=
+                if (target[target.Length - 1] !=
                     Path.DirectorySeparatorChar)
                 {
                     target += Path.DirectorySeparatorChar;
                 }
-                if(!Directory.Exists(target))
+                if (!Directory.Exists(target))
                 {
                     Directory.CreateDirectory(target);
                 }
 
-                for(int i = 0; i < searchPattern.Length; i++)
+                for (int i = 0; i < searchPattern.Length; i++)
                 {
-                    foreach(string file in
+                    foreach (string file in
                         Directory.GetFiles(
                             sourceDirectory.FullName, searchPattern))
                     {
@@ -36,9 +36,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_42
                 }
 
                 // Copy subdirectories (recursively)
-                if(option == SearchOption.AllDirectories)
+                if (option == SearchOption.AllDirectories)
                 {
-                    foreach(string element in
+                    foreach (string element in
                         Directory.GetDirectories(
                             sourceDirectory.FullName))
                     {
@@ -59,15 +59,15 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_42
         #region EXCLUDE
         public static void Main()
         {
-        #endregion
+            #endregion
             DirectoryInfo directory = new DirectoryInfo(".\\Source");
             directory.MoveTo(".\\Root");
             #region HIGHLIGHT
             DirectoryInfoExtension.CopyTo(
                 directory, ".\\Target",
                 SearchOption.AllDirectories, "*");
-        #endregion
-        #region EXCLUDE
+            #endregion
+            #region EXCLUDE
         }
         #endregion
         #endregion

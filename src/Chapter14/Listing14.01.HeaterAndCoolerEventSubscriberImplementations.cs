@@ -13,7 +13,7 @@
         // Notifies that the temperature changed on this instance
         public void OnTemperatureChanged(float newTemperature)
         {
-            if(newTemperature > Temperature)
+            if (newTemperature > Temperature)
             {
                 System.Console.WriteLine("Cooler: On");
             }
@@ -37,7 +37,7 @@
         // Notifies that the temperature changed on this instance
         public void OnTemperatureChanged(float newTemperature)
         {
-            if(newTemperature < Temperature)
+            if (newTemperature < Temperature)
             {
                 System.Console.WriteLine("Heater: On");
             }

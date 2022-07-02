@@ -1,5 +1,5 @@
-using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using System.Text.RegularExpressions;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_01.Tests
@@ -26,7 +26,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_01.Tests
             Func<string[], int> func)
         {
             bool unsynchronized = false;
-            
+
             string[] count = { "10000000" };
 
             if (func(count) != 0)

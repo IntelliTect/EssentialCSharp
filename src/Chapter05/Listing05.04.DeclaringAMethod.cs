@@ -28,19 +28,19 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_04
 
         static string GetFullName(  // C# 6.0 expression-bodied method
               string firstName, string lastName) =>
-                  $"{ firstName } { lastName }";
+                  $"{firstName} {lastName}";
 
 
         static void DisplayGreeting(string fullName, string initials)
         {
             System.Console.WriteLine(
-                $"Hello { fullName }! Your initials are { initials }");
+                $"Hello {fullName}! Your initials are {initials}");
             return;
         }
 
         static string GetInitials(string firstName, string lastName)
         {
-            return $"{ firstName[0] }. { lastName[0] }.";
+            return $"{firstName[0]}. {lastName[0]}.";
         }
     }
     #endregion

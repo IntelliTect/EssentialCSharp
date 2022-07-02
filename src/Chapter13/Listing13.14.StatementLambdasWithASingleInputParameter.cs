@@ -10,11 +10,11 @@
     {
         public static void Main()
         {
-    #endregion EXCLUDE
-        IEnumerable<Process> processes = Process.GetProcesses().Where(
-            process => { return process.WorkingSet64 > 1000000000; });
-        // ...
-    #endregion INCLUDE
+            #endregion EXCLUDE
+            IEnumerable<Process> processes = Process.GetProcesses().Where(
+                process => { return process.WorkingSet64 > 1000000000; });
+            // ...
+            #endregion INCLUDE
         }
     }
 }

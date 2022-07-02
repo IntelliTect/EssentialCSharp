@@ -13,7 +13,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_07
         #region HIGHLIGHT
         public string GetName()
         {
-            return $"{ FirstName }  { LastName }";
+            return $"{FirstName}  {LastName}";
         }
         #endregion
     }

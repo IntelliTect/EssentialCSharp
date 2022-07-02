@@ -13,7 +13,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_05
         public static bool MyMethod()
         {
             string command = ObtainCommand();
-            switch(command)
+            switch (command)
             {
                 case "quit":
                     return false;

@@ -4,7 +4,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_11
 {
     using System;
 
-    public class BinaryTree<T> 
+    public class BinaryTree<T>
     {
 
         public BinaryTree(T value)
@@ -34,7 +34,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_11
                 while (currentLevel < totalLevels)
                 {
                     System.Diagnostics.Debug.Assert(branches != null,
-                        $"{ nameof(branches) } != null");
+                        $"{nameof(branches)} != null");
 
                     currentNode = currentNode.SubItems[
                         branches[currentLevel]];
@@ -51,7 +51,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_11
 
         public T Value { get; set; }
 
-        public Pair<BinaryTree<T>> SubItems {get;set;}
+        public Pair<BinaryTree<T>> SubItems { get; set; }
 
     }
 
@@ -72,7 +72,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_11
                             new BinaryTree<string>("Mary Augusta Hickey"))
                     },
                     new BinaryTree<string>("Rose Elizabeth Fitzgerald")
-                    { 
+                    {
                         // Grandparents (Mother's side)
                         SubItems = new Pair<BinaryTree<string>>(
                             new BinaryTree<string>("John Francis Fitzgerald"),

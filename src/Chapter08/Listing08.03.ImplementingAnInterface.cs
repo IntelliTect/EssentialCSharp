@@ -1,7 +1,7 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_03
 {
-    using System;
     using Listing08_02;
+    using System;
 
     #region INCLUDE
     #region HIGHLIGHT
@@ -30,15 +30,15 @@
         {
             null => 1,
             Contact contact when ReferenceEquals(this, obj) => 0,
-            Contact { LastName: string lastName } 
+            Contact { LastName: string lastName }
                 when LastName.CompareTo(lastName) != 0 =>
                     LastName.CompareTo(lastName),
-            Contact { FirstName: string firstName } 
+            Contact { FirstName: string firstName }
                 when FirstName.CompareTo(firstName) != 0 =>
                     FirstName.CompareTo(firstName),
             Contact _ => 0,
             _ => throw new ArgumentException(
-                $"The parameter is not a value of type { nameof(Contact) }",
+                $"The parameter is not a value of type {nameof(Contact)}",
                 nameof(obj))
         };
         #endregion
@@ -90,22 +90,22 @@
         }
 
         private string? _LastName;
-        protected string LastName 
-        { 
-            get => _LastName!; 
-            set => _LastName = value ?? throw new ArgumentNullException(nameof(value)); 
+        protected string LastName
+        {
+            get => _LastName!;
+            set => _LastName = value ?? throw new ArgumentNullException(nameof(value));
         }
 
         private string? _FirstName;
-        protected string FirstName 
-        { 
-            get => _FirstName!; 
-            set => _FirstName = value??throw new ArgumentNullException( nameof(value)); 
+        protected string FirstName
+        {
+            get => _FirstName!;
+            set => _FirstName = value ?? throw new ArgumentNullException(nameof(value));
         }
         protected string? Phone { get; set; }
         protected string? Address { get; set; }
         static public string GetName(string firstName, string lastName)
-            => $"{ firstName } { lastName }";
+            => $"{firstName} {lastName}";
         #endregion EXCLUDE
     }
     #endregion INCLUDE

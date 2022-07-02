@@ -31,9 +31,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_13
 
         private static void Print(IEnumerable<(string FileName, long Size)> items)
         {
-            foreach((string FileName, long Size) item in items)
+            foreach ((string FileName, long Size) item in items)
             {
-                Console.WriteLine($"FileName = { item.FileName }, Size = { item.Size }");
+                Console.WriteLine($"FileName = {item.FileName}, Size = {item.Size}");
             }
         }
     }

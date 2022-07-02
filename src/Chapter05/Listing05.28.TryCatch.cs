@@ -19,13 +19,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_28
             if (int.TryParse(ageText, out int age))
             {
                 Console.WriteLine(
-                    $"Hi { firstName }! " +
-                    $"You are { age * 12 } months old.");
+                    $"Hi {firstName}! " +
+                    $"You are {age * 12} months old.");
             }
             else
             {
                 Console.WriteLine(
-                    $"The age entered ,{ ageText }, is not valid.");
+                    $"The age entered ,{ageText}, is not valid.");
             }
             #endregion
         }

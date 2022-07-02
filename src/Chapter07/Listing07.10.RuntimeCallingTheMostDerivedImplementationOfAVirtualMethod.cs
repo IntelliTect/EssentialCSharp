@@ -1,7 +1,7 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_10
 {
-    using System;
     using Listing07_09;
+    using System;
 
     #region INCLUDE
     public class Program
@@ -20,7 +20,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_10
             // Display that FirstName & LastName
             // properties were set
             Console.WriteLine(
-                $"{ contact.FirstName } { contact.LastName}");
+                $"{contact.FirstName} {contact.LastName}");
         }
     }
     #endregion

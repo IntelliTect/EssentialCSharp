@@ -10,7 +10,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_23
             if (input < 9)
                 #region HIGHLIGHT
                 System.Console.WriteLine("Exiting");
-                #endregion
+            #endregion
             #endregion
         }
     }

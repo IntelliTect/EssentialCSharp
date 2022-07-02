@@ -22,7 +22,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_06
                     DateTime.Now.AddMonths(-1)
                 select new FileInfo(fileName);
 
-            foreach(FileInfo file in files)
+            foreach (FileInfo file in files)
             {
                 //  As a simplification, the current directory is
                 //  assumed to be a subdirectory of
@@ -30,7 +30,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_06
                 string relativePath = file.FullName.Substring(
                     Directory.GetCurrentDirectory().Length);
                 Console.WriteLine(
-                    $".{ relativePath } ({ file.LastWriteTime })");
+                    $".{relativePath} ({file.LastWriteTime})");
             }
         }
     }

@@ -40,7 +40,7 @@
         public string Address { get; }
         public string Phone { get; }
         static public string GetName(string firstName, string lastName)
-            => $"{ firstName } { lastName }";
+            => $"{firstName} {lastName}";
 
         #region HIGHLIGHT
         public string[] CellValues
@@ -106,8 +106,8 @@
             get
             {
                 return new string[] {
-                    "Title                                                    ", 
-                    "Author             ", 
+                    "Title                                                    ",
+                    "Author             ",
                     "Year" };
             }
         }
@@ -176,7 +176,7 @@
         {
             int[] columnWidths = DisplayHeaders(headers);
 
-            for(int count = 0; count < items.Length; count++)
+            for (int count = 0; count < items.Length; count++)
             {
                 #region HIGHLIGHT
                 string?[] values = items[count].CellValues;
@@ -191,7 +191,7 @@
         {
             #region EXCLUDE
             var columnWidths = new int[headers.Length];
-            for(int index = 0; index < headers.Length; index++)
+            for (int index = 0; index < headers.Length; index++)
             {
                 Console.Write(headers[index]);
                 columnWidths[index] = headers[index].Length;
@@ -208,13 +208,13 @@
             if (columnWidths.Length != values.Length)
             {
                 throw new ArgumentOutOfRangeException(
-                    $"{ nameof(columnWidths) },{ nameof(values) }",
+                    $"{nameof(columnWidths)},{nameof(values)}",
                     "The number of column widths must match the number of values to print");
             }
 
-            for(int index = 0; index < values.Length; index++)
+            for (int index = 0; index < values.Length; index++)
             {
-                string itemToPrint = (values[index]??"").PadRight(columnWidths[index], ' ');
+                string itemToPrint = (values[index] ?? "").PadRight(columnWidths[index], ' ');
                 Console.Write(itemToPrint);
             }
             Console.WriteLine();

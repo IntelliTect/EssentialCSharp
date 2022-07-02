@@ -50,12 +50,12 @@
         public override bool Equals(object? obj)
         {
             // STEP 1: Check for null
-            if(obj is null)
+            if (obj is null)
             {
                 return false;
             }
             // STEP 3: equivalent data types
-            if(this.GetType() != obj.GetType())
+            if (this.GetType() != obj.GetType())
             {
                 return false;
             }

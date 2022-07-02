@@ -3,8 +3,8 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_15
 {
     using System;
-    using System.Linq;
     using System.Collections.Generic;
+    using System.Linq;
 
     public class Program
     {
@@ -19,11 +19,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_15
                 from method in typeof(Enumerable).GetMembers(
                     System.Reflection.BindingFlags.Static |
                     System.Reflection.BindingFlags.Public)
-                    orderby method.Name
-                    select method.Name).Distinct();
-            foreach(string method in enumerableMethodNames)
+                orderby method.Name
+                select method.Name).Distinct();
+            foreach (string method in enumerableMethodNames)
             {
-                Console.Write($"{ method }, ");
+                Console.Write($"{method}, ");
             }
         }
     }

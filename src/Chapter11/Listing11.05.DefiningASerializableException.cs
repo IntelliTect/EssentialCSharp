@@ -46,12 +46,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter11.Listing11_05
         }
         #endregion EXCLUDE
 
-       // Used for deserialization of exceptions
-       public DatabaseException(
+        // Used for deserialization of exceptions
+        public DatabaseException(
         #region HIGHLIGHT
-           SerializationInfo serializationInfo,
-           StreamingContext context)
-           : base(serializationInfo, context)
+            SerializationInfo serializationInfo,
+            StreamingContext context)
+            : base(serializationInfo, context)
         #endregion HIGHLIGHT
         {
             //...

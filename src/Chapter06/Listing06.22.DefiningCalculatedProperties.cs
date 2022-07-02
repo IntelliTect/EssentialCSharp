@@ -54,7 +54,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_22
         {
             get
             {
-                return $"{ FirstName } { LastName }";
+                return $"{FirstName} {LastName}";
             }
             set
             {
@@ -62,7 +62,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_22
                 // first and last names
                 string[] names;
                 names = value.Split(new char[] { ' ' });
-                if(names.Length == 2)
+                if (names.Length == 2)
                 {
                     FirstName = names[0];
                     LastName = names[1];
@@ -72,7 +72,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_22
                     // Throw an exception if the full 
                     // name was not assigned
                     throw new System.ArgumentException(
-                        $"Assigned value '{ value }' is invalid",
+                        $"Assigned value '{value}' is invalid",
                         // Use "value" rather than nameof(value)
                         // prior to C# 6.0.
                         nameof(value));
@@ -81,7 +81,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_22
         }
         #endregion
 
-        public string Initials => $"{ FirstName[0] } { LastName[0] }";
+        public string Initials => $"{FirstName[0]} {LastName[0]}";
         #region EXCLUDE
         // Title property
         public string? Title { get; set; }

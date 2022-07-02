@@ -1,13 +1,13 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_06
 {
+    using AddisonWesley.Michaelis.EssentialCSharp.Shared;
     using System;
+    using System.Collections.Generic;
     using System.IO;
     using System.Linq;
-    using System.Threading.Tasks;
-    using System.Collections.Generic;
-    using System.Threading;
     using System.Runtime.CompilerServices;
-    using AddisonWesley.Michaelis.EssentialCSharp.Shared;
+    using System.Threading;
+    using System.Threading.Tasks;
 
     public static class Program
     {
@@ -36,7 +36,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_06
             // Create a cancellation token source to cancel 
             // if the operation takes more than a minute.
             using CancellationTokenSource cancellationTokenSource =
-                new CancellationTokenSource(1000*60);
+                new CancellationTokenSource(1000 * 60);
 
             await foreach ((string fileName, string encryptedFileName)
                 in EncryptFilesAsync(files, cryptographer)

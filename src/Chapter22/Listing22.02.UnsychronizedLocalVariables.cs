@@ -2,7 +2,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_02
 {
     using System;
-    using System.Threading;
     using System.Threading.Tasks;
 
     public class Program

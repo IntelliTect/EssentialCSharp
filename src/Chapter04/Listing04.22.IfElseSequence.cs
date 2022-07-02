@@ -8,7 +8,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_22
             #region INCLUDE
             if (input < 0)
                 System.Console.WriteLine("Exiting...");
-            else if(input < 9)
+            else if (input < 9)
                 System.Console.WriteLine(
                     $"Tic-tac-toe has more than {input}" +
                     " maximum turns.");

@@ -1,6 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_18
 {
-    #pragma warning disable 0693 // Disabled warning due to nested type parameter
+#pragma warning disable 0693 // Disabled warning due to nested type parameter
     // with overlapping name
     #region INCLUDE
     public class Container<T, U>

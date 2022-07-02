@@ -1,7 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 
 #region INCLUDE
-    #region EXCLUDE
+#region EXCLUDE
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16
 {
     #endregion
@@ -66,5 +66,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_01
     }
     #region EXCLUDE
 }
-    #endregion
+#endregion
 #endregion

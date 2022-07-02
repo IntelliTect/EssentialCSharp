@@ -16,7 +16,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_52.Tests
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
                 expected, EmailDomain.Main);
         }
-        
+
         [TestMethod]
         public void Main_EnterInvalidEmailWithoutDomain_WriteBlank()
         {

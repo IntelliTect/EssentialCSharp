@@ -10,7 +10,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter23.Listing23_17
             Console.Write("{0} = ", text);
             unsafe // Requires /unsafe switch
             {
-                fixed(char* pText = text)
+                fixed (char* pText = text)
                 {
                     char* p = pText;
                     *++p = 'm';

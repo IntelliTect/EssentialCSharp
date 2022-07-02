@@ -9,7 +9,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Table04_04.Tests
         public void EqualityCheckForNull()
         {
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                "Uri is null", ()=>Program.EqualityCheckForNull(null));
+                "Uri is null", () => Program.EqualityCheckForNull(null));
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
                 "Uri is: NotNull", () => Program.EqualityCheckForNull("NotNull"));

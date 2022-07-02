@@ -1,7 +1,7 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_10
 {
-    using System;
     using Listing08_02;
+    using System;
 
     #region INCLUDE
     public class Program
@@ -27,7 +27,7 @@
             Publication[] publications = new Publication[3] {
                 new Publication("The End of Poverty: Economic Possibilities for Our Time",
                     "Jeffrey Sachs", 2006),
-                new Publication("Orthodoxy", 
+                new Publication("Orthodoxy",
                     "G.K. Chesterton", 1908),
                 new Publication(
                     "The Hitchhiker's Guide to the Galaxy",
@@ -48,7 +48,7 @@
         {
             int[] columnWidths = DisplayHeaders(headers);
 
-            for(int itemCount = 0; itemCount < items.Length; itemCount++)
+            for (int itemCount = 0; itemCount < items.Length; itemCount++)
             {
                 if (items[itemCount] != null)
                 {
@@ -64,7 +64,7 @@
         private static int[] DisplayHeaders(string[] headers)
         {
             var columnWidths = new int[headers.Length];
-            for(int index = 0; index < headers.Length; index++)
+            for (int index = 0; index < headers.Length; index++)
             {
                 Console.Write(headers[index]);
                 columnWidths[index] = headers[index].Length;
@@ -76,14 +76,14 @@
         private static void DisplayItemRow(
             int[] columnWidths, string?[] values)
         {
-            if(columnWidths.Length != values.Length)
+            if (columnWidths.Length != values.Length)
             {
                 throw new ArgumentOutOfRangeException(
-                    $"{ nameof(columnWidths) },{ nameof(values) }",
+                    $"{nameof(columnWidths)},{nameof(values)}",
                     "The number of column widths must match the number of values to print");
             }
 
-            for(int index = 0; index < values.Length; index++)
+            for (int index = 0; index < values.Length; index++)
             {
                 string? itemToPrint = values[index]?.PadRight(columnWidths[index], ' ');
                 Console.Write(itemToPrint);

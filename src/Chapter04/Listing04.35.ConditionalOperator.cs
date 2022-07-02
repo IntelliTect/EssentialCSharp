@@ -10,7 +10,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_35
 
             // ...
 
-            for(int turn = 1; turn <= 10; turn++)
+            for (int turn = 1; turn <= 10; turn++)
             {
                 // ...
 

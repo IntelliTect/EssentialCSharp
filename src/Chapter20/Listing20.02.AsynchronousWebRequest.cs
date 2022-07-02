@@ -42,8 +42,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_02
                 {
                     int textOccurrenceCount = antecedent.Result;
                     Console.WriteLine(
-                        @$"{Environment.NewLine}'{findText}' appears {
-                            textOccurrenceCount} times at URL '{url}'.");
+                        @$"{Environment.NewLine}'{findText}' appears {textOccurrenceCount} times at URL '{url}'.");
 
                 });
 

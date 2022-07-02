@@ -10,15 +10,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_09
     public class AsyncSynchronizationContext : SynchronizationContext
     {
         public Exception? Exception { get; set; }
-        public ManualResetEventSlim ResetEvent { get; } = 
+        public ManualResetEventSlim ResetEvent { get; } =
             new ManualResetEventSlim();
 
         public override void Send(SendOrPostCallback callback, object? state)
         {
             try
             {
-                Console.WriteLine($@"Send notification invoked...(Thread ID: {
-                    Thread.CurrentThread.ManagedThreadId})");
+                Console.WriteLine($@"Send notification invoked...(Thread ID: {Thread.CurrentThread.ManagedThreadId})");
                 callback(state);
             }
             catch (Exception exception)
@@ -34,8 +33,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_09
         {
             try
             {
-                Console.WriteLine($@"Post notification invoked...(Thread ID: {
-                    Thread.CurrentThread.ManagedThreadId})");
+                Console.WriteLine($@"Post notification invoked...(Thread ID: {Thread.CurrentThread.ManagedThreadId})");
                 callback(state);
             }
             catch (Exception exception)
@@ -60,7 +58,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_09
                 SynchronizationContext.Current;
             try
             {
-                AsyncSynchronizationContext synchronizationContext = 
+                AsyncSynchronizationContext synchronizationContext =
                     new AsyncSynchronizationContext();
                 SynchronizationContext.SetSynchronizationContext(
                     synchronizationContext);
@@ -75,16 +73,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_09
 
                 if (synchronizationContext.Exception != null)
                 {
-                    Console.WriteLine($@"Throwing expected exception....(Thread ID: {
-                    Thread.CurrentThread.ManagedThreadId})");
+                    Console.WriteLine($@"Throwing expected exception....(Thread ID: {Thread.CurrentThread.ManagedThreadId})");
                     System.Runtime.ExceptionServices.ExceptionDispatchInfo.Capture(
                         synchronizationContext.Exception).Throw();
                 }
             }
             catch (Exception exception)
             {
-                Console.WriteLine($@"{exception} thrown as expected.(Thread ID: {
-                    Thread.CurrentThread.ManagedThreadId})");
+                Console.WriteLine($@"{exception} thrown as expected.(Thread ID: {Thread.CurrentThread.ManagedThreadId})");
             }
             finally
             {
@@ -95,13 +91,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_09
 
         static async void OnEvent(object sender, EventArgs eventArgs)
         {
-            Console.WriteLine($@"Invoking Task.Run...(Thread ID: {
-                    Thread.CurrentThread.ManagedThreadId})");
+            Console.WriteLine($@"Invoking Task.Run...(Thread ID: {Thread.CurrentThread.ManagedThreadId})");
             await Task.Run(() =>
             {
                 EventTriggered = true;
-                Console.WriteLine($@"Running task... (Thread ID: {
-                    Thread.CurrentThread.ManagedThreadId})");
+                Console.WriteLine($@"Running task... (Thread ID: {Thread.CurrentThread.ManagedThreadId})");
                 throw new Exception(ExpectedExceptionMessage);
             });
         }

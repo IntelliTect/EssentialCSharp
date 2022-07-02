@@ -38,7 +38,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_09
         {
             get
             {
-                switch(index)
+                switch (index)
                 {
                     case PairItem.First:
                         return First;
@@ -46,7 +46,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_09
                         return Second;
                     default:
                         throw new NotImplementedException(
-                            $"The enum { index.ToString() } has not been implemented");
+                            $"The enum {index.ToString()} has not been implemented");
 
                 }
             }

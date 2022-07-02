@@ -8,7 +8,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_03
         {
             int[] array = new int[] { 1, 2, 3, 4, 5, 6 };
 
-            foreach(int item in array)
+            foreach (int item in array)
             {
                 Console.WriteLine(item);
             }

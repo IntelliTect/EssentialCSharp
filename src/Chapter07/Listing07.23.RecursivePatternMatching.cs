@@ -24,21 +24,23 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_23
             #region INCLUDE
             // ...
             Person inigo = new Person("Inigo", "Montoya");
-            var buttercup = 
+            var buttercup =
                 (FirstName: "Princess", LastName: "Buttercup");
 
             (Person inigo, (string FirstName, string LastName) buttercup) couple =
                 (inigo, buttercup);
 
-            if (couple is 
+            if (couple is
                 ( // Tuple
                     ( // Positional
-                        { // Property
-                            Length: int inigoLength1 }, 
+            { // Property
+                Length: int inigoLength1
+            },
                      _ // Discard
                     ),
-                { // Property
-                    FirstName: string buttercupFirstName }))
+            { // Property
+                FirstName: string buttercupFirstName
+            }))
             {
                 Console.WriteLine($"({inigoLength1}, {buttercupFirstName})");
             }

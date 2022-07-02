@@ -12,7 +12,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_10
 
         public string GetName()
         {
-            return $"{ FirstName }  { LastName }";
+            return $"{FirstName}  {LastName}";
         }
 
         // Caution:  Parameter names use PascalCase

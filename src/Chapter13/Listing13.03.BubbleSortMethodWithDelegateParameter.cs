@@ -14,21 +14,21 @@
             int temp;
 
 
-            if(compare == null)
+            if (compare == null)
             {
                 throw new ArgumentNullException(nameof(compare));
             }
 
-            if(items == null)
+            if (items == null)
             {
                 return;
             }
 
-            for(i = items.Length - 1; i >= 0; i--)
+            for (i = items.Length - 1; i >= 0; i--)
             {
-                for(j = 1; j <= i; j++)
+                for (j = 1; j <= i; j++)
                 {
-                    if(compare(items[j - 1], items[j]))
+                    if (compare(items[j - 1], items[j]))
                     {
                         temp = items[j - 1];
                         items[j - 1] = items[j];

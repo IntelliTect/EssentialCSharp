@@ -21,11 +21,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_47
                 "The available moves are as follows: ");
 
             // Write out the initial available moves
-            foreach(char cell in cells)
+            foreach (char cell in cells)
             {
-                if(cell != 'O' && cell != 'X')
+                if (cell != 'O' && cell != 'X')
                 {
-                    System.Console.Write($"{ cell } ");
+                    System.Console.Write($"{cell} ");
                 }
             }
         }

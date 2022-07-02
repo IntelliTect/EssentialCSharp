@@ -28,7 +28,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_15.Tests
                 Assert.AreEqual<int>(3, (int)fileAttributes);
                 expected = $@"ReadOnly, Hidden = {(int)fileAttributes}";
             }
-            
+
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
                 expected, Program.Main);
         }

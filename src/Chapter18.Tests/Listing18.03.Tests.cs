@@ -24,7 +24,7 @@ Compress.exe /Out:< file name > /Help /Priority:RealTime | High | AboveNormal | 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected,
             () =>
             {
-                Program.Main(new string[] {"/Out:output.dat", "/Priority:high"});
+                Program.Main(new string[] { "/Out:output.dat", "/Priority:high" });
             });
         }
 

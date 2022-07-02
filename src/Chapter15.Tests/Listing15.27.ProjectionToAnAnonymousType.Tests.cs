@@ -1,10 +1,10 @@
 using IntelliTect.TestTools.Console;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Collections.Generic;
-using System.Linq;
-using System.IO;
-using System.Reflection;
 using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Reflection;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_27.Tests
 {
@@ -30,7 +30,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_27.Tests
             });
 
             IEnumerable<string> outputItems = output.Split(
-                new string []{Environment.NewLine}, StringSplitOptions.RemoveEmptyEntries);
+                new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
 
             Assert.AreEqual(expectedItemCount, outputItems.Count());
             foreach (string item in outputItems)

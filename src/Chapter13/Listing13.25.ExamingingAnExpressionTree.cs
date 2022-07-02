@@ -24,7 +24,7 @@
         public static void PrintNode(Expression expression,
             int indent)
         {
-            if(expression is BinaryExpression binaryExpression)
+            if (expression is BinaryExpression binaryExpression)
                 PrintNode(binaryExpression, indent);
             else
                 PrintSingle(expression, indent);

@@ -21,11 +21,10 @@
                 from fileName in fileNames
                 select new FileInfo(fileName);
 
-            foreach(FileInfo fileInfo in fileInfos)
+            foreach (FileInfo fileInfo in fileInfos)
             {
                 Console.WriteLine(
-                    $@".{ fileInfo.Name } ({
-                        fileInfo.LastWriteTime })");
+                    $@".{fileInfo.Name} ({fileInfo.LastWriteTime})");
             }
         }
     }

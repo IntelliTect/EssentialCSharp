@@ -1,7 +1,7 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_38
 {
-    using System;
     using Listing12_22;
+    using System;
 
     #region INCLUDE
     public class ConsoleTreeControl
@@ -15,9 +15,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_38
             Console.WriteLine("\n{0}{1}",
                 "+ --".PadLeft(5 * indent, ' '),
                 tree.Item.ToString());
-            if(tree.SubItems.First != null)
+            if (tree.SubItems.First != null)
                 Show(tree.SubItems.First, indent + 1);
-            if(tree.SubItems.Second != null)
+            if (tree.SubItems.Second != null)
                 Show(tree.SubItems.Second, indent + 1);
         }
     }

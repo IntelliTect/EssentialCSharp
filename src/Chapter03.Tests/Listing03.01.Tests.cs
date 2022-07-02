@@ -10,10 +10,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_01.Tests
         {
             string[] args = { "arg0", "arg1" };
             string expected =
-                $"\'number\' doubled is { args[0].Length * 2 }.";
+                $"\'number\' doubled is {args[0].Length * 2}.";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, ()=>Program.Main(args));
+                expected, () => Program.Main(args));
         }
 
         [TestMethod]

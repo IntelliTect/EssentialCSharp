@@ -28,11 +28,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_02
 #endif
 
             Print(colorMap);
-        } 
+        }
 
         private static void Print(IEnumerable<KeyValuePair<string, ConsoleColor>> items)
         {
-            foreach(KeyValuePair<string, ConsoleColor> item in items)
+            foreach (KeyValuePair<string, ConsoleColor> item in items)
             {
                 Console.ForegroundColor = item.Value;
                 Console.WriteLine(item.Key);

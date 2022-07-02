@@ -6,9 +6,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_55
         {
             // ...
             #region INCLUDE
-            #if CSHARP2PLUS
+#if CSHARP2PLUS
             System.Console.Clear();
-            #endif
+#endif
             #endregion
             // ...
         }

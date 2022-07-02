@@ -69,7 +69,7 @@
             {
                 Stream?.Dispose();
             }
-        #endregion HIGHLIGHT
+            #endregion HIGHLIGHT
             try
             #region HIGHLIGHT
             {

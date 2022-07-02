@@ -1,8 +1,8 @@
+using Chapter10.Tests.PowerShellTestsUtilities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Diagnostics;
 using System.IO;
-using Chapter10.Tests.PowerShellTestsUtilities;
 using System.Text.RegularExpressions;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23.Tests
@@ -20,10 +20,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23.Tests
         public static void ClassInitialize(TestContext testContext)
         {
             if (PowerShellNotAvailable) { Assert.Inconclusive("Powershell not installed"); return; }
-            
+
             if (PowerShellTestsUtilities.WindowsEnvironment()) PowershellEnvironmentVariableName = "powershell";
             else PowershellEnvironmentVariableName = "pwsh";
-            
+
             string testStatus = "create";
             Process powershell = Process.Start(PowershellEnvironmentVariableName, $"-noprofile -command \"{Ps1Path} 0 null {testStatus}\"");
             powershell.WaitForExit();

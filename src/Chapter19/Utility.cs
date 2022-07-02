@@ -28,7 +28,7 @@
         {
             string busySymbols = @"-\|/-\|/";
             int next = 0;
-            while(true)
+            while (true)
             {
                 yield return busySymbols[next];
                 next = (++next) % busySymbols.Length;

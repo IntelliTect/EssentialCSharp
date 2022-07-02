@@ -1,5 +1,5 @@
-using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_50.Tests
 {
@@ -18,11 +18,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_50.Tests
 
             const string expected =
                 @"'Creating' a new Employee.";
-            
+
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
                 expected, (Action<string[]>)Program.Main, arguments);
         }
-        
+
         [TestMethod]
         public void Main_UpdateEmployee_EmployeeUpdated()
         {
@@ -35,11 +35,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_50.Tests
 
             const string expected =
                 @"'Updating' a new Employee.";
-            
+
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
                 expected, (Action<string[]>)Program.Main, arguments);
         }
-        
+
         [TestMethod]
         public void Main_RemovesEmployee()
         {
@@ -52,7 +52,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_50.Tests
 
             const string expected =
                 @"'Updating' a new Employee.";
-            
+
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
                 expected, (Action<string[]>)Program.Main, arguments);
         }

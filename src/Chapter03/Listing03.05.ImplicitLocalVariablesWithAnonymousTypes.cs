@@ -6,11 +6,17 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_05
         public static void Main()
         {
             var patent1 =
-                new { Title = "Bifocals",
-                    YearOfPublication = "1784" };
+                new
+                {
+                    Title = "Bifocals",
+                    YearOfPublication = "1784"
+                };
             var patent2 =
-                new { Title = "Phonograph",
-                    YearOfPublication = "1877" };
+                new
+                {
+                    Title = "Phonograph",
+                    YearOfPublication = "1877"
+                };
 
             System.Console.WriteLine(
                 $"{patent1.Title} ({patent1.YearOfPublication})");

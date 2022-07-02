@@ -23,7 +23,7 @@
             get { return _CurrentTemperature; }
             set
             {
-                if(value != CurrentTemperature)
+                if (value != CurrentTemperature)
                 {
                     _CurrentTemperature = value;
                     // If there are any subscribers,

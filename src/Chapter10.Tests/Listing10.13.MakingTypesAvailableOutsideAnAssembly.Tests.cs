@@ -1,5 +1,4 @@
-﻿using Chapter10.Tests.CustomTestAttributes;
-using Chapter10.Tests.PowerShellTestsUtilities;
+﻿using Chapter10.Tests.PowerShellTestsUtilities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.IO;

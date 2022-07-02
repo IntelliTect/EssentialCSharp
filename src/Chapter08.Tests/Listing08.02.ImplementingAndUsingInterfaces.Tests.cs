@@ -1,5 +1,5 @@
-using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_02.Tests
 {
@@ -42,7 +42,7 @@ The Hitchhiker's Guide to the Galaxy                     Douglas Adams      1979
                     "123 Main St., Spokane, WA  99037",
                     "123-123-1234")
             };
-            ConsoleListControl.List(new[]{"Header1", "Header2"}, contacts);
+            ConsoleListControl.List(new[] { "Header1", "Header2" }, contacts);
         }
 
         [TestMethod]
@@ -53,7 +53,7 @@ The Hitchhiker's Guide to the Galaxy                     Douglas Adams      1979
             string expected = "Header1Header2";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, _ => { ConsoleListControl.List(new[] {"Header1", "Header2"}, contacts); });
+                expected, _ => { ConsoleListControl.List(new[] { "Header1", "Header2" }, contacts); });
         }
 
         [TestMethod]

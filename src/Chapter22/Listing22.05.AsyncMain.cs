@@ -19,9 +19,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_05
             Task task = Task.Run(() => Decrement());
 
             // Increment
-            for(int i = 0; i < _Total; i++)
+            for (int i = 0; i < _Total; i++)
             {
-                lock(_Sync)
+                lock (_Sync)
                 {
                     _Count++;
                 }
@@ -34,9 +34,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_05
 
         static void Decrement()
         {
-            for(int i = 0; i < _Total; i++)
+            for (int i = 0; i < _Total; i++)
             {
-                lock(_Sync)
+                lock (_Sync)
                 {
                     _Count--;
                 }

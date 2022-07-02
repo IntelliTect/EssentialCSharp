@@ -15,7 +15,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_45.Tests
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
                 expected, BinaryConverter.Main);
         }
-        
+
         [TestMethod]
         public void Main_Enter1_WriteBinaryEquivalent()
         {
@@ -26,7 +26,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_45.Tests
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
                 expected, BinaryConverter.Main);
         }
-        
+
         [TestMethod]
         public void Main_Enter20_WriteBinaryEquivalent()
         {

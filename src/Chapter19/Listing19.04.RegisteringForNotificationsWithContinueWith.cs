@@ -1,8 +1,8 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_04
 {
+    using AddisonWesley.Michaelis.EssentialCSharp.Shared;
     using System;
     using System.Threading.Tasks;
-    using AddisonWesley.Michaelis.EssentialCSharp.Shared;
 
     public class Program
     {
@@ -16,7 +16,7 @@
             Task faultedTask = task.ContinueWith(
                 (antecedentTask) =>
                 {
-                    if(!antecedentTask.IsFaulted)
+                    if (!antecedentTask.IsFaulted)
                     {
                         throw new Exception("Antecedent Task Should Be Faulted");
                     }

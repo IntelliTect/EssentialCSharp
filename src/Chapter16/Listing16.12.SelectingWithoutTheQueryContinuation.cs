@@ -18,11 +18,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_12
                 from word in CSharp.Keywords
                 group word by word.Contains('*')
                     into groups
-                    select
-                    (
-                        IsContextualKeyword: groups.Key,
-                        Items: groups
-                    );
+                select
+                (
+                    IsContextualKeyword: groups.Key,
+                    Items: groups
+                );
 
 
             foreach ((bool isContextualKeyword, IGrouping<bool, string> items) in selection)
@@ -30,7 +30,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_12
                 Console.WriteLine(Environment.NewLine + "{0}:",
                     isContextualKeyword ?
                         "Contextual Keywords" : "Keywords");
-                foreach(var keyword in items)
+                foreach (var keyword in items)
                 {
                     Console.Write(" " +
                         keyword.Replace("*", null));

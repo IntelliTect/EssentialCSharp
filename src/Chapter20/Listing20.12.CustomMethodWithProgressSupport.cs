@@ -11,7 +11,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_12
         static public Task<Process> RunProcessAsync(
             string fileName,
             string arguments = "",
-            IProgress<ProcessProgressEventArgs>? progress = 
+            IProgress<ProcessProgressEventArgs>? progress =
                 null, object? objectState = null,
             CancellationToken cancellationToken =
                 default(CancellationToken))

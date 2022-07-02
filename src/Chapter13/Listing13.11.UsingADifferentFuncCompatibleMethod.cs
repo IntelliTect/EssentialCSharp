@@ -12,11 +12,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_11
             int j;
             int temp;
 
-            for(i = items.Length - 1; i >= 0; i--)
+            for (i = items.Length - 1; i >= 0; i--)
             {
-                for(j = 1; j <= i; j++)
+                for (j = 1; j <= i; j++)
                 {
-                    if(compare(items[j - 1], items[j]))
+                    if (compare(items[j - 1], items[j]))
                     {
                         temp = items[j - 1];
                         items[j - 1] = items[j];
@@ -46,7 +46,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_11
         {
             int[] items = new int[5];
 
-            for(int i = 0; i < items.Length; i++)
+            for (int i = 0; i < items.Length; i++)
             {
                 Console.Write("Enter an integer: ");
                 string? text = Console.ReadLine();
@@ -59,7 +59,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_11
 
             BubbleSort(items, AlphabeticalGreaterThan);
 
-            for(int i = 0; i < items.Length; i++)
+            for (int i = 0; i < items.Length; i++)
             {
                 Console.WriteLine(items[i]);
             }

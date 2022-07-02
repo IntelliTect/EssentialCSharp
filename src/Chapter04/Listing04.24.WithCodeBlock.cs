@@ -17,7 +17,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_24
             // double.Parse converts the ReadLine() 
             // return to a double
             radius = double.Parse(System.Console.ReadLine());
-            if(radius >= 0)
+            if (radius >= 0)
             #region HIGHLIGHT
             {
                 // Calculate the area of the circle

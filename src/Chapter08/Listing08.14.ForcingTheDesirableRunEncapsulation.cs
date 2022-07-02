@@ -79,8 +79,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_14
             //  activity.RedirectStandardInOut();
             //  activity.ExecuteProcss();
             Console.WriteLine(
-                @$"Executing non-polymorphic Run() with process '{
-                    activity.ExecutableName}'.");
+                @$"Executing non-polymorphic Run() with process '{activity.ExecutableName}'.");
         }
     }
 

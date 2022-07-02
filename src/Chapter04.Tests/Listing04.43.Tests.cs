@@ -15,7 +15,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_43.Tests
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
                 expected, FibonacciCalculator.Main);
         }
-        
+
         [TestMethod]
         public void Main_Enter1_Write1() // returns next number in sequence GREATER than input
         {
@@ -26,7 +26,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_43.Tests
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
                 expected, FibonacciCalculator.Main);
         }
-        
+
         [TestMethod]
         public void Main_Enter21_Write34()
         {

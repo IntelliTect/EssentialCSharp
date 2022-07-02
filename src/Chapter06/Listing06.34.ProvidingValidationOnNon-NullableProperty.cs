@@ -29,9 +29,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_34
             get => _Name!;
             #endregion
             set => _Name =
-                #region HIGHLIGHT
+            #region HIGHLIGHT
                 value ?? throw new ArgumentNullException(nameof(value));
-                #endregion
+            #endregion
         }
         private string? _Name;
         // ...

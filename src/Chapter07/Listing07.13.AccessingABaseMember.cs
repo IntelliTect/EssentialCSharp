@@ -15,8 +15,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_13
 
         public override string ToString()
         {
-            return $"{ StreetAddress + NewLine }"
-                + $"{ City }, { State }  { Zip }";
+            return $"{StreetAddress + NewLine}"
+                + $"{City}, {State}  {Zip}";
         }
     }
 

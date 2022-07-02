@@ -32,7 +32,7 @@
             task.Exception!.Handle(eachException =>
             {
                 Console.WriteLine(
-                    $"ERROR: { eachException.Message }");
+                    $"ERROR: {eachException.Message}");
                 return true;
             });
         }

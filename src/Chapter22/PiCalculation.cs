@@ -1,8 +1,8 @@
-﻿using System;
+﻿using AddisonWesley.Michaelis.EssentialCSharp.Shared;
+using System;
 using System.ComponentModel;
 using System.Threading;
 using System.Threading.Tasks;
-using AddisonWesley.Michaelis.EssentialCSharp.Shared;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22
 {

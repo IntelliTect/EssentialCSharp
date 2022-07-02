@@ -25,9 +25,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_08
         }
 
         // Justification: Lowercase to simulate the value keyword form a stetter.
-        #pragma warning disable IDE1006 // Naming Styles
+#pragma warning disable IDE1006 // Naming Styles
         public object? value { get; set; }
-        #pragma warning restore IDE1006 // Naming Styles
+#pragma warning restore IDE1006 // Naming Styles
     }
 
     class TemperatureEventArgs

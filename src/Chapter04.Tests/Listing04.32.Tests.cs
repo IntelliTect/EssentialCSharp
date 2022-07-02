@@ -12,9 +12,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_32.Tests
                 @"The time you entered is invalid.";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, ()=>Program.Main("33"));
+                expected, () => Program.Main("33"));
         }
-        
+
         [TestMethod]
         public void Main_EnterNegative1ForHourOfDay_TimeInvalid()
         {

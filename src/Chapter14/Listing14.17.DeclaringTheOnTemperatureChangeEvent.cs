@@ -5,7 +5,7 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_17
 {
     using System;
-// In an actual implementation we would utilize this event
+    // In an actual implementation we would utilize this event
 
     public class Thermostat
     {

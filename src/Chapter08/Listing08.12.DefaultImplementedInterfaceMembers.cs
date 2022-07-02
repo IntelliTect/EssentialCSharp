@@ -68,7 +68,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_12
         ConsoleColor[] CellColors
         {
             get
-        #endregion HIGHLIGHT
+            #endregion HIGHLIGHT
             {
                 var result = new ConsoleColor[CellValues.Length];
                 // Using generic Array method to populate array
@@ -145,7 +145,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_12
         }
 
         static public string GetName(string firstName, string lastName)
-            => $"{ firstName } { lastName }";
+            => $"{firstName} {lastName}";
         #endregion EXCLUDE
     }
 
@@ -244,7 +244,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_12
             if (columnWidths.Length != columValues.Length)
             {
                 throw new ArgumentOutOfRangeException(
-                    $"{ nameof(columnWidths) },{ nameof(item) }.{nameof(item.CellColors) }",
+                    $"{nameof(columnWidths)},{nameof(item)}.{nameof(item.CellColors)}",
                     "The number of column widths must match the number of values to print");
             }
 

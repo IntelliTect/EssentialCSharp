@@ -14,7 +14,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_16
             patents = patents.Where(
                 patent =>
                 {
-                    if(result =
+                    if (result =
                         patent.YearOfPublication.StartsWith("18"))
                     {
                         // Side effects like this in a predicate
@@ -27,7 +27,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_16
                 });
 
             Console.WriteLine("1. Patents prior to the 1900s are:");
-            foreach(Patent patent in patents)
+            foreach (Patent patent in patents)
             {
             }
 
@@ -35,8 +35,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_16
             Console.WriteLine(
                 "2. A second listing of patents prior to the 1900s:");
             Console.WriteLine(
-                $@"   There are { patents.Count()
-                    } patents prior to 1900.");
+                $@"   There are {patents.Count()} patents prior to 1900.");
 
 
             Console.WriteLine();
@@ -45,7 +44,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_16
             patents = patents.ToArray();
             Console.Write("   There are ");
             Console.WriteLine(
-                $"{ patents.Count() } patents prior to 1900.");
+                $"{patents.Count()} patents prior to 1900.");
         }
     }
 }

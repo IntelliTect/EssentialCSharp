@@ -31,7 +31,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_16
         {
             get
             {
-                return $"{ FirstName } { LastName }";
+                return $"{FirstName} {LastName}";
             }
             set
             {
@@ -77,9 +77,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_16
         #region HIGHLIGHT
         public override string GetSummary()
         {
-            return $"FirstName: { FirstName + NewLine }"
-            + $"LastName: { LastName + NewLine }"
-            + $"Address: { Address + NewLine }";
+            return $"FirstName: {FirstName + NewLine}"
+            + $"LastName: {LastName + NewLine}"
+            + $"Address: {Address + NewLine}";
         }
         #endregion
 
@@ -104,10 +104,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_16
         // ...
         public override string GetSummary()
         {
-            return $"Subject: { Name + NewLine }"
-                + $"Start: { StartDateTime + NewLine }"
-                + $"End: { EndDateTime + NewLine }"
-                + $"Location: { Location }";
+            return $"Subject: {Name + NewLine}"
+                + $"Start: {StartDateTime + NewLine}"
+                + $"End: {EndDateTime + NewLine}"
+                + $"Location: {Location}";
         }
     }
     #endregion

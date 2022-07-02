@@ -7,11 +7,11 @@
         // ...
 
         public TemporaryFileStream FileStream =>
-            InternalFileStream??(InternalFileStream = 
+            InternalFileStream ?? (InternalFileStream =
                 new TemporaryFileStream());
 
         private TemporaryFileStream? InternalFileStream
-            { get; set; } = null;
+        { get; set; } = null;
 
 
         // ...

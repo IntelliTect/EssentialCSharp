@@ -1,7 +1,7 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_22
 {
-    using System;
     using Listing12_13;
+    using System;
 
     #region INCLUDE
     public class BinaryTree<T>
@@ -54,8 +54,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_22
                         break;
                     default:
                         throw new InvalidCastException(
-                            @$"Unable to sort the items as {
-                                typeof(T) } does not support IComparable<T>.");
+                            @$"Unable to sort the items as {typeof(T)} does not support IComparable<T>.");
                 };
                 _SubItems = value;
             }

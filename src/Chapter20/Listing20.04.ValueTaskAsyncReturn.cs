@@ -38,7 +38,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_04
             using System.IO.Compression.GZipStream gZipStream = new System.IO.Compression.GZipStream(memoryStream,
                     System.IO.Compression.CompressionMode.Decompress);
 
-             byteArray = new byte[byteArray.Length];
+            byteArray = new byte[byteArray.Length];
 
             //Decompress
             int bytesRead = gZipStream.Read(byteArray, 0, byteArray.Length);

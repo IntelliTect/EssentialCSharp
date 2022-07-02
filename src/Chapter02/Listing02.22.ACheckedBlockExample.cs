@@ -8,12 +8,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_22
             #region HIGHLIGHT
             checked
             {
-            #endregion
+                #endregion
                 // int.MaxValue equals 2147483647
                 int n = int.MaxValue;
                 n = n + 1;
                 System.Console.WriteLine(n);
-            #region HIGHLIGHT
+                #region HIGHLIGHT
             }
             #endregion
         }

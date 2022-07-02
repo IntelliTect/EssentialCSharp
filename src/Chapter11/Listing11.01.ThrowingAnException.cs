@@ -7,8 +7,8 @@
     {
         public static int Parse(string textDigit)
         {
-            string[] digitTexts = 
-                { "zero", "one", "two", "three", "four", 
+            string[] digitTexts =
+                { "zero", "one", "two", "three", "four",
                   "five", "six", "seven", "eight", "nine" };
 
             int result = Array.IndexOf(

@@ -11,7 +11,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_18
         {
             int totalLineCount = 0;
             string directory;
-            if(args.Length > 0)
+            if (args.Length > 0)
             {
                 directory = args[0];
             }
@@ -28,13 +28,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_18
         #endregion
         {
             int lineCount = 0;
-            foreach(string file in
+            foreach (string file in
                 Directory.GetFiles(directory, "*.cs"))
             {
                 lineCount += CountLines(file);
             }
 
-            foreach(string subdirectory in
+            foreach (string subdirectory in
                 Directory.GetDirectories(directory))
             {
                 #region HIGHLIGHT
@@ -54,9 +54,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_18
             StreamReader reader = new StreamReader(stream);
             line = reader.ReadLine();
 
-            while(line != null)
+            while (line != null)
             {
-                if(line.Trim() != "")
+                if (line.Trim() != "")
                 {
                     lineCount++;
                 }

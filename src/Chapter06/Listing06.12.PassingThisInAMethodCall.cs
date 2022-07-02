@@ -26,9 +26,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_12
         {
             #region EXCLUDE
             System.Diagnostics.Trace.WriteLine(
-                $@"Writing employee ({
-                    employee.FirstName} {employee.LastName
-                    }) information to file.");
+                $@"Writing employee ({employee.FirstName} {employee.LastName}) information to file.");
             #endregion
         }
     }

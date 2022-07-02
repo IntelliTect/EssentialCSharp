@@ -16,10 +16,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_13.Tests
 
             string expected = "111 W St" + System.Environment.NewLine +
                               "City, State  11111";
-            
+
             Assert.AreEqual(expected, address.ToString());
         }
-        
+
         [TestMethod]
         public void InternationalAddress_ToString_CallBaseImplementation()
         {
@@ -33,7 +33,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_13.Tests
             string expected = "111 W St" + System.Environment.NewLine +
                               "City, State  11111" + System.Environment.NewLine +
                               "Country";
-            
+
             Assert.AreEqual(expected, internationalAddress.ToString());
         }
     }

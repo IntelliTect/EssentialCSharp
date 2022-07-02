@@ -17,7 +17,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_17
             IEnumerable<string> selection =
                 CSharp.Keywords.Where(word => !word.Contains('*'));
 
-            foreach(var selectionWord in selection)
+            foreach (var selectionWord in selection)
             {
                 Console.WriteLine(Environment.NewLine + "{0}",
                     selectionWord);

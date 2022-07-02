@@ -10,7 +10,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_05.Tests
         public void SynchronizedIncrementAndDecrement()
         {
             Assert.IsTrue(IsIncrementDecrementLikelySynchronized(
-                (args)=>Program.Main(args).Result, short.MaxValue));
+                (args) => Program.Main(args).Result, short.MaxValue));
         }
 
     }

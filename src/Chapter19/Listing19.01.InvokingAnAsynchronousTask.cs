@@ -12,12 +12,12 @@
             // TPL prior to .NET 4.5
             Task task = Task.Run(() =>
                 {
-                    for(int count = 0; count < repetitions; count++)
+                    for (int count = 0; count < repetitions; count++)
                     {
                         Console.Write('-');
                     }
                 });
-            for(int count = 0; count < repetitions; count++)
+            for (int count = 0; count < repetitions; count++)
             {
                 Console.Write('+');
             }

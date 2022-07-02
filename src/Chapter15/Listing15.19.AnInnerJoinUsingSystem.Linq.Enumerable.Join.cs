@@ -12,7 +12,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_19
             Department[] departments = CorporateData.Departments;
             Employee[] employees = CorporateData.Employees;
 
-            IEnumerable<(int Id, string Name, string Title, 
+            IEnumerable<(int Id, string Name, string Title,
                 Department Department)> items =
                 employees.Join(
                     departments,
@@ -29,7 +29,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_19
             foreach ((int Id, string Name, string Title, Department Department) item in items)
             {
                 Console.WriteLine(
-                    $"{ item.Name } ({ item.Title })");
+                    $"{item.Name} ({item.Title})");
                 Console.WriteLine("\t" + item.Department);
             }
         }

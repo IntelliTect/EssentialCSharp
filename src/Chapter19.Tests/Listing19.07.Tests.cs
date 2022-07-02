@@ -5,7 +5,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_07.Tests
     [TestClass]
     public class ProgramTests
     {
-        [TestMethod][Ignore]
+        [TestMethod]
+        [Ignore]
         public void ValueTaskAsyncReturnTest()
         {
             string expected = @"3:0047:Throwing exception.

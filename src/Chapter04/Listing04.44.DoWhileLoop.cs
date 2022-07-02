@@ -21,7 +21,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_44
                 // Check the current player's input
                 // ...
 
-            } while(!valid);
+            } while (!valid);
             #endregion
         }
     }

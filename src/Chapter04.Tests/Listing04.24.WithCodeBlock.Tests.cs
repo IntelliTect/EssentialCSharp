@@ -8,7 +8,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_24.Tests
         [TestMethod]
         public void MainTest()
         {
-            const string expected = 
+            const string expected =
 @"Enter the radius of the circle: <<3
 >>The area of the circle is: 28.27";
 

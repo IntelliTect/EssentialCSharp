@@ -12,7 +12,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_11
             return true;
         }
     }
-    
+
     public class DescriptionAttribute : Attribute
     {
         // TODO: Update listing in Manuscript

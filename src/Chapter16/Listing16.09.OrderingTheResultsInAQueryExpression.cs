@@ -2,8 +2,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_09
 {
     using System;
     using System.Collections.Generic;
-    using System.Linq;
     using System.IO;
+    using System.Linq;
 
     public class Program
     {
@@ -23,15 +23,15 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_09
                 select file;
 
 
-            foreach(FileInfo file in files)
+            foreach (FileInfo file in files)
             {
                 //  As simplification, current directory is
                 //  assumed to be a subdirectory of
                 //  rootDirectory
                 string relativePath = file.FullName.Substring(
                     Directory.GetCurrentDirectory().Length);
-                Console.WriteLine( 
-                    $".{ relativePath }({ file.Length })" );
+                Console.WriteLine(
+                    $".{relativePath}({file.Length})");
             }
         }
     }

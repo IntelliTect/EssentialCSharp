@@ -8,7 +8,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_03.Tests
         [TestMethod]
         public void Main_GivenSerialNumbers_EqualityOverrideUsed()
         {
-            const string expected = 
+            const string expected =
 @"serialNumber1 reference equals serialNumber2
 serialNumber1 equals serialNumber2
 serialNumber1 equals serialNumber3";

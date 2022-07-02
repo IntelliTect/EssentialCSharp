@@ -38,7 +38,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_20
                     // Remove any whitespace around
                     // the new last name
                     value = value.Trim();
-                    if(value == "")
+                    if (value == "")
                     {
                         // Report error
                         // Use "value" rather than
@@ -66,7 +66,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_20
             set
             {
                 // Validate FirstName assignment
-                if(value == null)
+                if (value == null)
                 {
                     // Report error
                     // Use "value" rather than nameof(value) prior to C# 6.0.
@@ -77,7 +77,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_20
                     // Remove any whitespace around
                     // the new last name
                     value = value.Trim();
-                    if(value == "")
+                    if (value == "")
                     {
                         throw new ArgumentException(
                             // Use "value" rather than nameof(value) prior to C# 6.0.

@@ -14,7 +14,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_49
             bool valid = false;
 
             // Check the current player's input
-            switch(input)
+            switch (input)
             {
                 case "1":
                 case "2":

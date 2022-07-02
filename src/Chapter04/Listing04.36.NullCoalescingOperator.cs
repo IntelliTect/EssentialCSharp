@@ -20,7 +20,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_36
                 System.Environment.CurrentDirectory;
 
             // Null-coalescing assignment operator
-            fullName ??= $"{ directory }/{ fileName }";
+            fullName ??= $"{directory}/{fileName}";
 
             // ...
             #endregion

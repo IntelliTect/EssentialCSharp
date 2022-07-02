@@ -2,8 +2,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_07
 {
     using System;
     using System.Collections.Generic;
-    using System.Linq;
     using System.IO;
+    using System.Linq;
 
     public class Program
     {
@@ -22,7 +22,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_07
                     fileName
                 select fileName;
 
-            foreach(string fileName in fileNames)
+            foreach (string fileName in fileNames)
             {
                 Console.WriteLine(fileName);
             }

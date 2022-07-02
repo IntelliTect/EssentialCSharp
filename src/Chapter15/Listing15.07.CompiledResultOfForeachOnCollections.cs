@@ -15,7 +15,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_07
             try
             {
                 int number;
-                while(enumerator.MoveNext())
+                while (enumerator.MoveNext())
                 {
                     number = enumerator.Current;
                     Console.WriteLine(number);

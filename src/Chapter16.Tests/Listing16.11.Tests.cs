@@ -16,9 +16,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_11.Tests
         {
             string expected = $@"
 Keywords:
- { CSharpExpectedData.ExpectedKeywords }
+ {CSharpExpectedData.ExpectedKeywords}
 Contextual Keywords:
- { CSharpExpectedData.ExpectedContextualKeywords }";
+ {CSharpExpectedData.ExpectedContextualKeywords}";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected,
             () =>

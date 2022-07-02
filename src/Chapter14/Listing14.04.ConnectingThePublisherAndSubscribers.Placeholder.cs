@@ -1,8 +1,8 @@
 ﻿// TODO: Update listing in Manuscript
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_04
 {
-    using System;
     using Listing14_01;
+    using System;
 
     public class Program
     {

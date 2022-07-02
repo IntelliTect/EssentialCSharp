@@ -19,7 +19,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_09
             lastName = ReadLine() ?? string.Empty;
 
             WriteLine(
-                $"Your full name is { firstName } { lastName }.");
+                $"Your full name is {firstName} {lastName}.");
         }
     }
     #endregion

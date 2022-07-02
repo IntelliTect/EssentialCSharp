@@ -48,7 +48,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_17
         #endregion
         {
             string result = string.Empty;
-            foreach(string path in paths)
+            foreach (string path in paths)
             {
                 result = Path.Combine(result, path);
             }

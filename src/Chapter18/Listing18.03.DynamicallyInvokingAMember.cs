@@ -10,28 +10,25 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_03
         public static void Main(string[] args)
         {
             CommandLineInfo commandLine = new CommandLineInfo();
-            if(!CommandLineHandler.TryParse(
+            if (!CommandLineHandler.TryParse(
                 args, commandLine, out string? errorMessage))
             {
                 Console.WriteLine(errorMessage);
                 DisplayHelp();
-            } 
-            else if(commandLine.Help || string.IsNullOrWhiteSpace(commandLine.Out))
+            }
+            else if (commandLine.Help || string.IsNullOrWhiteSpace(commandLine.Out))
             {
                 DisplayHelp();
             }
             else
             {
-                if(commandLine.Priority !=
+                if (commandLine.Priority !=
                     ProcessPriorityClass.Normal)
                 {
                     // Change thread priority
                 }
                 Console.WriteLine(
-                    @$"Running {
-                        Path.GetFileName(Environment.GetCommandLineArgs()[0])} /Out:{
-                            commandLine.Out} /Priority:{
-                            commandLine.Priority}");
+                    @$"Running {Path.GetFileName(Environment.GetCommandLineArgs()[0])} /Out:{commandLine.Out} /Priority:{commandLine.Priority}");
 
             }
             // ...
@@ -66,7 +63,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_03
     {
         public static void Parse(string[] args, object commandLine)
         {
-            if(!TryParse(args, commandLine, out string? errorMessage))
+            if (!TryParse(args, commandLine, out string? errorMessage))
             {
                 throw new Exception(errorMessage);
             }
@@ -77,10 +74,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_03
         {
             bool success = false;
             errorMessage = null;
-            foreach(string arg in args)
+            foreach (string arg in args)
             {
                 string option;
-                if(arg[0] == '/' || arg[0] == '-')
+                if (arg[0] == '/' || arg[0] == '-')
                 {
                     string[] optionParts = arg.Split(
                         new char[] { ':' }, 2);
@@ -92,16 +89,16 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_03
                             BindingFlags.IgnoreCase |
                             BindingFlags.Instance |
                             BindingFlags.Public);
-                    if(property != null)
+                    if (property != null)
                     {
-                        if(property.PropertyType == typeof(bool))
+                        if (property.PropertyType == typeof(bool))
                         {
                             // Last parameters for handling indexers
                             property.SetValue(
                                 commandLine, true, null);
                             success = true;
                         }
-                        else if(
+                        else if (
                             property.PropertyType == typeof(string))
                         {
                             property.SetValue(
@@ -122,30 +119,25 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_03
                                     null);
                                 success = true;
                             }
-                            catch(ArgumentException)
+                            catch (ArgumentException)
                             {
                                 success = false;
                                 errorMessage =
-                                    $@"The option '{
-                                        optionParts[1]
-                                        }' is invalid for '{ 
-                                        option }'";
+                                    $@"The option '{optionParts[1]}' is invalid for '{option}'";
                             }
                         }
                         else
                         {
                             success = false;
-                            errorMessage = 
-                                $@"Data type '{
-                                    property.PropertyType }' on {
-                                    commandLine.GetType() } is not supported.";
+                            errorMessage =
+                                $@"Data type '{property.PropertyType}' on {commandLine.GetType()} is not supported.";
                         }
                     }
                     else
                     {
                         success = false;
-                        errorMessage = 
-                           $"Option '{ option }' is not supported.";
+                        errorMessage =
+                           $"Option '{option}' is not supported.";
                     }
                 }
             }

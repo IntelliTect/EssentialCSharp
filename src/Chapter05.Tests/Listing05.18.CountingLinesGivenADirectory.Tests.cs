@@ -1,7 +1,7 @@
-﻿using System;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using System.IO;
 using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_18.Tests
 {
@@ -13,8 +13,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_18.Tests
         {
             string currentDirectory = Environment.CurrentDirectory;
 
-            int expected=0;
-            foreach(string file in Directory.EnumerateFiles(currentDirectory, "*.cs"))
+            int expected = 0;
+            foreach (string file in Directory.EnumerateFiles(currentDirectory, "*.cs"))
             {
                 expected += File.ReadAllLines(file).Count(line => line.Trim().Length > 0);
             }

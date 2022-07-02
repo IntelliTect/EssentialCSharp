@@ -12,15 +12,15 @@
             get { return _CurrentTemperature; }
             set
             {
-                if(value != CurrentTemperature)
+                if (value != CurrentTemperature)
                 {
                     _CurrentTemperature = value;
 
                     // Call subscribers
                     // Justification: Incomplete, check for null needed.
-                    #pragma warning disable CS8602 // Dereference of a possibly null reference.
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
                     OnTemperatureChange(value);
-                    #pragma warning restore CS8602 // Dereference of a possibly null reference.
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
                 }
             }
         }

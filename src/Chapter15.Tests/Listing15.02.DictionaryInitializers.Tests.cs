@@ -9,7 +9,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_02.Tests
         public void DictionaryInitialization()
         {
             string expected = string.Join(System.Environment.NewLine,
-                "Error","Warning", "Information", "Verbose");
+                "Error", "Warning", "Information", "Verbose");
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected,
             () =>

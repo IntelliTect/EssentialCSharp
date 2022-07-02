@@ -4,13 +4,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_26
     using System.Collections.Generic;
     #region INCLUDE
     public class EntityBase<TKey>
-        where TKey: notnull
+        where TKey : notnull
     {
         public EntityBase(TKey key)
         {
             Key = key;
         }
-        
+
         public TKey Key { get; set; }
     }
 
@@ -26,7 +26,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_26
             #region HIGHLIGHT
             TValue newEntity = new TValue
             {
-            #endregion HIGHLIGHT
+                #endregion HIGHLIGHT
                 Key = key
             };
             Add(newEntity.Key, newEntity);

@@ -12,7 +12,7 @@
     public class Employee
     {
         // FirstName&LastName set inside Initialize() method.
-        #pragma warning disable CS8618
+#pragma warning disable CS8618
         public Employee(string firstName, string lastName)
         {
             int id;
@@ -48,7 +48,7 @@
             Initialize(id, firstName, lastName);
             #endregion
         }
-        #pragma warning restore CS8618
+#pragma warning restore CS8618
 
         #region HIGHLIGHT
         private void Initialize(
@@ -81,7 +81,7 @@
                 // first and last names
                 string[] names;
                 names = value.Split(new char[] { ' ' });
-                if(names.Length == 2)
+                if (names.Length == 2)
                 {
                     FirstName = names[0];
                     LastName = names[1];

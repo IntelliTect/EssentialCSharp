@@ -16,7 +16,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_11
 
         public string GetName()
         {
-            return $"{ FirstName } { LastName }";
+            return $"{FirstName} {LastName}";
         }
 
         public void SetName(string newFirstName, string newLastName)
@@ -25,7 +25,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_11
             this.LastName = newLastName;
             #region HIGHLIGHT
             Console.WriteLine(
-                $"Name changed to '{ this.GetName() }'");
+                $"Name changed to '{this.GetName()}'");
             #endregion
         }
     }

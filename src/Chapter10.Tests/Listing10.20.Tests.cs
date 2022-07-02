@@ -32,7 +32,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_20.Tests
                 {
                     File.Delete(TempFileName);
                 }
-                catch(IOException exception)
+                catch (IOException exception)
                 {
                     if (IsFileLocked(TempFileName))
                     {

@@ -2,7 +2,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_01
 {
     using System;
-    using System.Threading;
     using System.Threading.Tasks;
 
     public class Program
@@ -20,7 +19,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_01
             Task task = Task.Run(() => Decrement());
 
             // Increment
-            for(int i = 0; (i < _Total); i++)
+            for (int i = 0; (i < _Total); i++)
             {
                 _Count++;
             }
@@ -34,7 +33,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_01
         static void Decrement()
         {
             // Decrement
-            for(int i = 0; i < _Total; i++)
+            for (int i = 0; i < _Total; i++)
             {
                 _Count--;
             }

@@ -30,7 +30,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_37
             else
             {
                 System.Console.WriteLine(
-                    $"Uri: { uri }");
+                    $"Uri: {uri}");
             }
             #endregion
         }

@@ -17,7 +17,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_14
 
         public string GetName()
         {
-            return $"{ FirstName } { LastName }";
+            return $"{FirstName} {LastName}";
         }
 
         public void SetName(string newFirstName, string newLastName)
@@ -25,7 +25,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_14
             this.FirstName = newFirstName;
             this.LastName = newLastName;
             Console.WriteLine(
-                $"Name changed to '{ this.GetName() }'");
+                $"Name changed to '{this.GetName()}'");
         }
 
         public void Save()
@@ -80,10 +80,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_14
 
             // Read each line from the file and place it into
             // the associated property.
-            employee.FirstName = reader.ReadLine()??
+            employee.FirstName = reader.ReadLine() ??
                 throw new InvalidOperationException(
                     "FirstName cannot be null");
-            employee.LastName = reader.ReadLine()??
+            employee.LastName = reader.ReadLine() ??
                 throw new InvalidOperationException(
                     "LastName cannot be null");
             employee.Salary = reader.ReadLine();
@@ -112,7 +112,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_14
             employee1 = DataStorage.Load("Inigo", "Montoya");
 
             Console.WriteLine(
-                $"{ employee1.GetName() }: { employee1.Salary }");
+                $"{employee1.GetName()}: {employee1.Salary}");
         }
         #region EXCLUDE
         public static void IncreaseSalary(Employee employee)

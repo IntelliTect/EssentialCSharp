@@ -20,7 +20,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_49.Tests
                 _ => Program.ValidateAndMove(playerPositions, currentPlayer, input),
                 true);
         }
-        
+
         [TestMethod]
         public void ValidateAndMove_Input0_InvalidInput()
         {
@@ -37,7 +37,7 @@ ERROR:  Enter a value from 1-9. Push ENTER to quit";
                 _ => Program.ValidateAndMove(playerPositions, currentPlayer, input),
                 false);
         }
-        
+
         [TestMethod]
         public void ValidateAndMove_InputQuit_ExitProgram()
         {
@@ -49,8 +49,8 @@ ERROR:  Enter a value from 1-9. Push ENTER to quit";
             string input = "quit";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, 
-                _ => Program.ValidateAndMove(playerPositions, currentPlayer, input), 
+                expected,
+                _ => Program.ValidateAndMove(playerPositions, currentPlayer, input),
                 true);
         }
     }

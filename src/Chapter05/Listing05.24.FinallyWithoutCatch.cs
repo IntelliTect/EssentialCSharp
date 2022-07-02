@@ -23,11 +23,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_24
             {
                 age = int.Parse(ageText);
                 Console.WriteLine(
-                    $"Hi { firstName }! You are { age * 12 } months old.");
+                    $"Hi {firstName}! You are {age * 12} months old.");
             }
             finally
             {
-                Console.WriteLine($"Goodbye { firstName }");
+                Console.WriteLine($"Goodbye {firstName}");
             }
 
             return result;

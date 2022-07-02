@@ -1,5 +1,5 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Tests;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Threading.Tasks;
 
@@ -16,7 +16,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_03.Tests
                     Task.Run(() => Program.Main(args)));
         }
 
-        protected override void AssertMainException(string messagePrefix,Exception exception)
+        protected override void AssertMainException(string messagePrefix, Exception exception)
         {
             AssertMainException(messagePrefix, (AggregateException)exception);
         }

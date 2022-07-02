@@ -1,9 +1,9 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_08
 {
+    using AddisonWesley.Michaelis.EssentialCSharp.Shared;
     using System;
     using System.Threading;
     using System.Threading.Tasks;
-    using AddisonWesley.Michaelis.EssentialCSharp.Shared;
 
     public class Program
     {
@@ -38,7 +38,7 @@
             string piSection = string.Empty;
             int i = 0;
 
-            while(!cancellationToken.IsCancellationRequested
+            while (!cancellationToken.IsCancellationRequested
                 || i == int.MaxValue)
             {
                 piSection = PiCalculator.Calculate(

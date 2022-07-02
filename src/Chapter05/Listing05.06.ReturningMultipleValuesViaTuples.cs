@@ -22,7 +22,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_06
             #region HIGHLIGHT
             (string First, string Last) name = GetName();
             #endregion
-            System.Console.WriteLine($"Hello { name.First } { name.Last }!");
+            System.Console.WriteLine($"Hello {name.First} {name.Last}!");
         }
     }
     #endregion

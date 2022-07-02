@@ -18,8 +18,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_20
                     department => department.Id,
                     employee => employee.DepartmentId,
                     (department, employee) => (
-                        department.Id, 
-                        department.Name, 
+                        department.Id,
+                        department.Name,
                         Employee: employee)
                     );
 

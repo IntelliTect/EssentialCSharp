@@ -1,5 +1,4 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Text.RegularExpressions;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_03.Tests
 {
@@ -21,8 +20,8 @@ Finished!";
                 Program.Main();
             });
 
-            Assert.IsTrue( 
-                (string.Format(expected, 'B', 'C') == actual.TrimEnd()) || 
+            Assert.IsTrue(
+                (string.Format(expected, 'B', 'C') == actual.TrimEnd()) ||
                 (string.Format(expected, 'C', 'B') == actual.TrimEnd())
                 );
         }

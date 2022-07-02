@@ -1,8 +1,8 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_17
 {
-    using System;
     using Listing17_14;
     using Listing17_16;
+    using System;
 
     public class Program
     {

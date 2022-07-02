@@ -47,7 +47,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_20
             {
                 File?.Delete();
             }
-            catch(IOException exception)
+            catch (IOException exception)
             {
                 Console.WriteLine(exception);
             }

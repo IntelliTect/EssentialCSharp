@@ -1,5 +1,5 @@
-using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_03.Tests
 {
@@ -10,7 +10,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_03.Tests
         public void CompareTo_ObjIsNull_Return1()
         {
             Contact contact = new Contact("Inigo Montoya");
-            
+
             Assert.AreEqual(1, contact.CompareTo(null));
         }
 
@@ -19,7 +19,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_03.Tests
         {
             Contact firstContact = new Contact("Inigo Montoya");
             Contact secondContact = new Contact("Zero Zero");
-            
+
             Assert.AreEqual(-1, firstContact.CompareTo(secondContact));
         }
 
@@ -28,7 +28,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_03.Tests
         {
             Contact firstContact = new Contact("Zero Zero");
             Contact secondContact = new Contact("Inigo Montoya");
-            
+
             Assert.AreEqual(1, firstContact.CompareTo(secondContact));
         }
 
@@ -37,7 +37,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_03.Tests
         {
             Contact firstContact = new Contact("Inigo Montoya");
             Contact secondContact = firstContact;
-            
+
             Assert.AreEqual(0, firstContact.CompareTo(secondContact));
         }
 
@@ -46,7 +46,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_03.Tests
         {
             Contact firstContact = new Contact("Zero Montoya");
             Contact secondContact = new Contact("Inigo Montoya");
-            
+
             Assert.AreEqual(1, firstContact.CompareTo(secondContact));
         }
 

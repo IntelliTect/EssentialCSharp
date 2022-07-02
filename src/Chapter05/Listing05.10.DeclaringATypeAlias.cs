@@ -2,9 +2,7 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_10
 {
     #region INCLUDE
-    using System;
     #region HIGHLIGHT
-    using System.Threading;
     using CountDownTimer = System.Timers.Timer;
     #endregion
 

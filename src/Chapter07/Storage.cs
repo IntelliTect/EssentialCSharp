@@ -17,13 +17,13 @@
     }
     public class Dvd : Storage
     {
-        public Dvd(DvdCapacity capacity) : base((long)capacity) 
+        public Dvd(DvdCapacity capacity) : base((long)capacity)
         {
             switch (capacity)
             {
                 case DvdCapacity.SingleLayeredCapacity:
                 case DvdCapacity.DualLayeredCapacity:
-                        break;
+                    break;
                 default:
                     throw new ArgumentException("Only values of 4.7 GB and 8.5 GB are supported.");
             };
@@ -44,9 +44,9 @@
     {
         public HardDrive(long capacity) : base(capacity) { }
     }
-    public class FloppyDrive : Storage 
+    public class FloppyDrive : Storage
     {
-        public FloppyDrive(): base(1440000){}
+        public FloppyDrive() : base(1440000) { }
     }
     public class UsbKey : Storage
     {

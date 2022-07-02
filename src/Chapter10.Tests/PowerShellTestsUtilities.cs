@@ -1,6 +1,6 @@
 using System;
-using System.Runtime.InteropServices;
 using System.Diagnostics;
+using System.Runtime.InteropServices;
 
 namespace Chapter10.Tests.PowerShellTestsUtilities
 {
@@ -24,19 +24,19 @@ namespace Chapter10.Tests.PowerShellTestsUtilities
             }
             if (result == true)
             {
-                string PowershellEnvironmentVariableName  = "powershell";
+                string PowershellEnvironmentVariableName = "powershell";
                 if (!PowerShellTestsUtilities.WindowsEnvironment()) PowershellEnvironmentVariableName = "pwsh";
                 try
                 {
                     Process powershell = Process.Start(PowershellEnvironmentVariableName, "--version");
                     powershell.WaitForExit();
                     var exitCode = powershell.ExitCode;
-                    if(exitCode == 0)
+                    if (exitCode == 0)
                     {
                         result = false;
                     }
                 }
-                catch(System.ComponentModel.Win32Exception)
+                catch (System.ComponentModel.Win32Exception)
                 {
                     result = true;
                 }

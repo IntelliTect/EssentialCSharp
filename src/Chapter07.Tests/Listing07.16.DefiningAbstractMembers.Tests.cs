@@ -1,5 +1,5 @@
-using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_16.Tests
 {
@@ -17,7 +17,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_16.Tests
             string expected = "FirstName: Inigo" + Environment.NewLine +
                               "LastName: Montoya" + Environment.NewLine +
                               "Address: 111 W St City, State 11111" + Environment.NewLine;
-            
+
             Assert.AreEqual(expected, contact.GetSummary());
         }
 
@@ -32,7 +32,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_16.Tests
                               $"Start: {appointment.StartDateTime}" + Environment.NewLine +
                               $"End: {appointment.EndDateTime}" + Environment.NewLine +
                               "Location: 111 W St City, State 11111";
-            
+
             Assert.AreEqual(expected, appointment.GetSummary());
         }
     }

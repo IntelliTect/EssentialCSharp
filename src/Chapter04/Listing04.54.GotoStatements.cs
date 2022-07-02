@@ -13,29 +13,29 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_54
             bool isFiltered = false;
             bool isRecursive = false;
 
-            foreach(string option in args)
+            foreach (string option in args)
             {
-                switch(option)
+                switch (option)
                 {
                     case "/out":
                         isOutputSet = true;
                         isFiltered = false;
                         #region HIGHLIGHT
                         goto default;
-                        #endregion
+                    #endregion
                     case "/f":
                         isFiltered = true;
                         isRecursive = false;
                         #region HIGHLIGHT
                         goto default;
-                        #endregion
+                    #endregion
                     default:
-                        if(isRecursive)
+                        if (isRecursive)
                         {
                             // Recurse down the hierarchy
                             // ...
                         }
-                        else if(isFiltered)
+                        else if (isFiltered)
                         {
                             // Add option to list of filters
                             // ...

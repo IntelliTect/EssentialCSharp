@@ -27,15 +27,15 @@
 
         public override bool Equals(object? obj)
         {
-            if(obj is null)
+            if (obj is null)
             {
                 return false;
             }
-            if(ReferenceEquals(this, obj))
+            if (ReferenceEquals(this, obj))
             {
                 return true;
             }
-            if(this.GetType() != obj.GetType())
+            if (this.GetType() != obj.GetType())
             {
                 return false;
             }
@@ -74,7 +74,7 @@
 
             // Check if leftHandSide is null
             // (operator == would be recursive)
-            if(leftHandSide is null)
+            if (leftHandSide is null)
             {
                 // Return true if rightHandSide is also null
                 // and false otherwise

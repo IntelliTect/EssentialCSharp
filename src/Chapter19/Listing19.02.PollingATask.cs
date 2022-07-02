@@ -1,8 +1,8 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_02
 {
+    using AddisonWesley.Michaelis.EssentialCSharp.Shared;
     using System;
     using System.Threading.Tasks;
-    using AddisonWesley.Michaelis.EssentialCSharp.Shared;
 
     public class Program
     {
@@ -14,10 +14,10 @@
                 Task.Run<string>(
                     () => PiCalculator.Calculate(100));
 
-            foreach(
+            foreach (
                 char busySymbol in Utility.BusySymbols())
             {
-                if(task.IsCompleted)
+                if (task.IsCompleted)
                 {
                     Console.Write('\b');
                     break;
@@ -28,7 +28,7 @@
             Console.WriteLine();
 
             Console.WriteLine(task.Result);
-            if(!task.IsCompleted)
+            if (!task.IsCompleted)
             {
                 throw new Exception("Task Should Be Completed");
             }

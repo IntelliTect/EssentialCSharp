@@ -32,7 +32,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15
         }
         public override string ToString()
         {
-            return $"{ Name } ({ Title })";
+            return $"{Name} ({Title})";
         }
     }
 

@@ -20,7 +20,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_03
             Task task = Task.Run(() => Decrement());
 
             // Increment
-            for(int i = 0; i < _Total; i++)
+            for (int i = 0; i < _Total; i++)
             {
                 bool lockTaken = false;
                 try
@@ -30,7 +30,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_03
                 }
                 finally
                 {
-                    if(lockTaken)
+                    if (lockTaken)
                     {
                         Monitor.Exit(_Sync);
                     }
@@ -44,7 +44,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_03
 
         static void Decrement()
         {
-            for(int i = 0; i < _Total; i++)
+            for (int i = 0; i < _Total; i++)
             {
                 bool lockTaken = false;
                 try
@@ -54,7 +54,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_03
                 }
                 finally
                 {
-                    if(lockTaken)
+                    if (lockTaken)
                     {
                         Monitor.Exit(_Sync);
                     }
