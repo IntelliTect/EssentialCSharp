@@ -12,7 +12,8 @@
             List2(Directory.GetCurrentDirectory(), "*");
         }
         #endregion EXCLUDE
-        public static void List2(string rootDirectory, string searchPattern)
+        public static void List2
+            (string rootDirectory, string searchPattern)
         {
             #region HIGHLIGHT
             var fileNames = Directory.EnumerateFiles(

@@ -13,7 +13,8 @@
             List1(Directory.GetCurrentDirectory(), "*");
         }
         #endregion EXCLUDE
-        public static void List1(string rootDirectory, string searchPattern)
+        public static void List1
+            (string rootDirectory, string searchPattern)
         {
             #region HIGHLIGHT
             IEnumerable<string> fileNames = Directory.GetFiles(
