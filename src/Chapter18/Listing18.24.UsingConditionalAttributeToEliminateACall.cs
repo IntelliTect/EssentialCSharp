@@ -1,7 +1,9 @@
+#region INCLUDE
 #define CONDITION_A
-
+#region EXCLUDE
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_24
 {
+    #endregion EXCLUDE
     using System;
     using System.Diagnostics;
 
@@ -27,4 +29,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_24
             Console.WriteLine("MethodB() executing...");
         }
     }
+    #endregion INCLUDE
 }

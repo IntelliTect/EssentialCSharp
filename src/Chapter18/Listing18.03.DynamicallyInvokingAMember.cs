@@ -1,5 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_03
 {
+    #region INCLUDE
     using System;
     using System.Diagnostics;
     using System.IO;
@@ -27,6 +28,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_03
                 {
                     // Change thread priority
                 }
+                #region EXCLUDE
                 Console.WriteLine(
                     @$"Running {
                         Path.GetFileName(Environment.GetCommandLineArgs()[0])} /Out:{
@@ -34,7 +36,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_03
                             commandLine.Priority}");
 
             }
-            // ...
+            #endregion EXCLUDE
         }
 
         private static void DisplayHelp()
@@ -87,6 +89,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_03
 
                     // Remove the slash|dash
                     option = optionParts[0].Remove(0, 1);
+                    #region HIGHLIGHT
                     PropertyInfo? property =
                         commandLine.GetType().GetProperty(option,
                             BindingFlags.IgnoreCase |
@@ -122,7 +125,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_03
                                     null);
                                 success = true;
                             }
-                            catch(ArgumentException)
+                            #endregion HIGHLIGHT
+                            catch (ArgumentException)
                             {
                                 success = false;
                                 errorMessage =
@@ -152,4 +156,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_03
             return success;
         }
     }
+    #endregion INCLUDE
 }

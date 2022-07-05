@@ -1,5 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_14
 {
+    #region INCLUDE
     using System;
     using System.Reflection;
     using System.Collections.Generic;
@@ -28,4 +29,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_14
             return missingOptions.ToArray();
         }
     }
+    #endregion INCLUDE
 }

@@ -1,5 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_17
 {
+    #region INCLUDE
     using System;
     using System.Reflection;
     using System.Collections.Generic;
@@ -25,9 +26,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_17
             foreach(PropertyInfo property in properties)
             {
                 options.Add(property.Name, property);
-                foreach(CommandLineSwitchAliasAttribute attribute in
+                #region HIGHLIGHT
+                foreach (CommandLineSwitchAliasAttribute attribute in
                     property.GetCustomAttributes(
                     typeof(CommandLineSwitchAliasAttribute), false))
+                #endregion HIGHLIGHT
                 {
                     options.Add(attribute.Alias.ToLower(), property);
                 }
@@ -35,4 +38,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_17
             return options;
         }
     }
+    #endregion INCLUDE
 }

@@ -2,7 +2,8 @@ using System;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_25
 {
-    class Program
+    #region INCLUDE
+    public class Program
     {
         public static void Main()
         {
@@ -14,4 +15,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_25
         {
         }
     }
+    #endregion INCLUDE
 }

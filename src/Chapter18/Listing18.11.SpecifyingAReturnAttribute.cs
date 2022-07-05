@@ -4,6 +4,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_11
 {
     public class Program
     {
+        #region INCLUDE
         [return: Description(
            "Returns true if the object is in a valid state.")]
         public static bool IsValid()
@@ -11,8 +12,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_11
             // ...
             return true;
         }
+        #endregion INCLUDE
     }
-    
+
     public class DescriptionAttribute : Attribute
     {
         // TODO: Update listing in Manuscript

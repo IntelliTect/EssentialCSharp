@@ -1,10 +1,10 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_07
 {
+    #region INCLUDE
     using System.ComponentModel;
 
     public class Person : INotifyPropertyChanged
     {
-        // TODO: Update listing in Manuscript
         public event PropertyChangedEventHandler? PropertyChanged;
         public Person(string name)
         {
@@ -22,11 +22,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_07
                     // Using C# 6.0 conditional null reference
                     PropertyChanged?.Invoke(
                         this,
+                    #region HIGHLIGHT
                         new PropertyChangedEventArgs(
                             nameof(Name)));
+                    #endregion HIGHLIGHT
                 }
             }
         }
         // ...
     }
+    #endregion INCLUDE
 }

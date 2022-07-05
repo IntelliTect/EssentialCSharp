@@ -1,5 +1,6 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_30
 {
+    #region INCLUDE
     using System.Collections.Generic;
     using System.Dynamic;
    
@@ -39,5 +40,6 @@
         public virtual bool TryUnaryOperation(
             UnaryOperationBinder binder, out object result);
     }
+    #endregion INCLUDE
 
 }

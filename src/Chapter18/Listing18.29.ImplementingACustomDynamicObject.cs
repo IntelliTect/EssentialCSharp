@@ -1,6 +1,6 @@
-// TODO: Update listing in Manuscript
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_29
 {
+    #region INCLUDE
     using System.Dynamic;
     using System.Linq;
     using System.Xml.Linq;
@@ -41,7 +41,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_29
             return success;
         }
 
-        // TODO: Update listing in Manuscript
         public override bool TrySetMember(
             SetMemberBinder binder, object? value)
         {
@@ -63,4 +62,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_29
             return success;
         }
     }
+    #endregion INCLUDE
 }

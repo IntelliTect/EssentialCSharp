@@ -1,5 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_18
 {
+    #region INCLUDE
     using System;
     using System.Reflection;
     using System.Collections.Generic;
@@ -15,11 +16,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_18
             bool success = false;
             errorMessage = null;
 
+            #region HIGHLIGHT
             Dictionary<string, PropertyInfo> options =
                 CommandLineSwitchAliasAttribute.GetSwitches(
                     commandLine);
+            #endregion HIGHLIGHT
 
-            foreach(string arg in args)
+            foreach (string arg in args)
             {
                 string option;
                 if(arg[0] == '/' || arg[0] == '-')
@@ -28,7 +31,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_18
                         new char[] { ':' }, 2);
                     option = optionParts[0].Remove(0, 1).ToLower();
 
-                    if(options.TryGetValue(option, out PropertyInfo? property))
+                    #region HIGHLIGHT
+                    if (options.TryGetValue(option, out PropertyInfo? property))
+                    #endregion HIGHLIGHT
                     {
                         success = SetOption(
                             commandLine, property,
@@ -93,8 +98,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_18
             }
             return success;
         }
+        #endregion INCLUDE
 
-// Justification: Not fully implemented.
+        // Justification: Not fully implemented.
 #pragma warning disable IDE0060 // Remove unused parameter
         private static bool TryParseEnumSwitch(
             object commandLine, string[] optionParts, PropertyInfo property, ref string? errorMessage)

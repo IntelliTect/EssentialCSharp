@@ -1,5 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_06
 {
+    #region INCLUDE
     using System;
     using System.Collections.Generic;
     using System.Reflection;
@@ -17,6 +18,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_06
                 System.Console.WriteLine(
                     "Type parameter: " + type.FullName);
             }
+            //...
         }
     }
+    #endregion INCLUDE
 }

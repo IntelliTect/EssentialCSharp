@@ -1,12 +1,14 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_26
 {
+    #region INCLUDE
     using System;
 
+    #region EXCLUDE
     public class Program
     {
         public static void Main()
         {
-            // ...
+            #endregion EXCLUDE
             dynamic data =
               "Hello!  My name is Inigo Montoya";
             Console.WriteLine(data);
@@ -22,6 +24,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_26
                 data.NonExistentMethodCallStillCompiles();
             }
             // ...
+            #endregion INCLUDE
         }
     }
 }

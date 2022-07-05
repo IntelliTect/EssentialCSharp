@@ -9,6 +9,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_16
     {
         public static void Main()
         {
+            #region INCLUDE
             PropertyInfo property =
             typeof(CommandLineInfo).GetProperty("Help")!;
             CommandLineSwitchAliasAttribute attribute =
@@ -19,6 +20,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_16
             {
                 Console.WriteLine("Help(?)");
             };
+            #endregion INCLUDE
         }
     }
 }
