@@ -25,8 +25,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16
                 "sbyte","sealed","select*","set*","short","sizeof",
                 "stackalloc","static","string","struct","switch","this",
                 "throw","true","try","typeof","uint","ulong","unchecked",
-                "unsafe","ushort","using","value*","var*","virtual","void",
-                "volatile","when*","where*","while","yield*"
+                "unsafe","ushort","using","value*","var*","virtual",
+                "void","volatile","when*","where*","while","yield*"
             });
     }
     #region EXCLUDE
