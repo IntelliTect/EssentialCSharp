@@ -12,6 +12,7 @@
   <Import Project="..\Chapter.props" />
   <ItemGroup>
     <Compile Remove="Listing01.02.SampleNETCoreConsoleProjectFile.cs" />
+    <Compile Remove="Listing01.20.SampleCILOutput.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="System.ValueTuple" Version="4.5.0" />
@@ -21,5 +22,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Listing01.02.SampleNETCoreConsoleProjectFile.cs" />
+    <None Include="Listing01.20.SampleCILOutput.cs" />
   </ItemGroup>
 </Project>
