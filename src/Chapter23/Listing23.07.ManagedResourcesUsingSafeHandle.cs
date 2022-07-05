@@ -20,9 +20,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter23.Listing23_07
         }
 
         public readonly IntPtr _AllocatedPointer;
-        readonly IntPtr _ProcessHandle;
-        readonly IntPtr _MemorySize;
-        bool _Disposed;
+        private readonly IntPtr _ProcessHandle;
+        private readonly IntPtr _MemorySize;
+        private bool _Disposed;
 
         public static implicit operator IntPtr(
             VirtualMemoryPtr virtualMemoryPointer)
