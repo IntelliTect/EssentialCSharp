@@ -3,10 +3,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_21
 {
     using System;
     using Listing13_11;
-
+    #region INCLUDE
     public class Program
     {
         // ...
+        #region HIGHLIGHT
         private sealed class __LocalsDisplayClass_00000001
         {
             public int comparisonCount;
@@ -17,12 +18,15 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_21
                 return first < second;
             }
         }
+        #endregion HIGHLIGHT
 
         public static void Main()
         {
+            #region HIGHLIGHT
             __LocalsDisplayClass_00000001 locals =
                 new __LocalsDisplayClass_00000001();
             locals.comparisonCount = 0;
+            #endregion HIGHLIGHT
             int[] items = new int[5];
 
             for (int i = 0; i < items.Length; i++)
@@ -36,15 +40,20 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_21
                 }
             }
 
-            DelegateSample.BubbleSort(items, locals.__AnonymousMethod_00000000);
-
-            for(int i = 0; i < items.Length; i++)
+            #region HIGHLIGHT
+            DelegateSample.BubbleSort
+                (items, locals.__AnonymousMethod_00000000);
+            #endregion HIGHLIGHT
+            for (int i = 0; i < items.Length; i++)
             {
                 Console.WriteLine(items[i]);
             }
 
+            #region HIGHLIGHT
             Console.WriteLine("Items were compared {0} times.",
                 locals.comparisonCount);
+            #endregion HIGHLIGHT
         }
     }
+    #endregion INCLUDE
 }

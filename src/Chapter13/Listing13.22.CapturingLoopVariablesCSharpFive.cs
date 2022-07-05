@@ -2,10 +2,10 @@
 {
     using System;
     using System.Collections.Generic;
-
-    class CaptureLoop
+    #region INCLUDE
+    public class CaptureLoop
     {
-        static void Main()
+        public static void Main()
         {
             var items = new string[] { "Moe", "Larry", "Curly" };
             var actions = new List<Action>();
@@ -19,4 +19,5 @@
             }
         }
     }
+    #endregion INCLUDE
 }

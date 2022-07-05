@@ -1,5 +1,6 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_25
 {
+    #region INCLUDE
     using System;
     using System.Linq.Expressions;
     using static System.Linq.Expressions.ExpressionType;
@@ -24,7 +25,7 @@
         public static void PrintNode(Expression expression,
             int indent)
         {
-            if(expression is BinaryExpression binaryExpression)
+            if (expression is BinaryExpression binaryExpression)
                 PrintNode(binaryExpression, indent);
             else
                 PrintSingle(expression, indent);
@@ -56,5 +57,6 @@
                 _ => expression.ToString() +
                     " (" + expression.NodeType.ToString() + ")",
             };
+        #endregion INCLUDE
     }
 }

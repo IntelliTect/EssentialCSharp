@@ -1,5 +1,4 @@
-﻿// TODO: Update listing in Manuscript
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_12
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_12
 {
     using System;
 
@@ -58,15 +57,21 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_12
                     return;
                 }
             }
+            #region INCLUDE
+            //...
 
+            #region HIGHLIGHT
             BubbleSort(items,
                 (int first, int second) =>
                 {
                     return first < second;
                 }
             );
+            #endregion HIGHLIGHT
 
-            for(int i = 0; i < items.Length; i++)
+            //...
+            #endregion INCLUDE
+            for (int i = 0; i < items.Length; i++)
             {
                 Console.WriteLine(items[i]);
             }

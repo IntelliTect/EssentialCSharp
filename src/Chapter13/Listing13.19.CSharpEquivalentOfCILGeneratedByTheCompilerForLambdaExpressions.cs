@@ -1,11 +1,10 @@
-﻿// TODO: Update listing in Manuscript
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_19
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_19
 {
     using System;
-
+    #region INCLUDE
     public class DelegateSample
     {
-        #region Members
+        #region EXCLUDE
         public delegate bool ComparisonHandler(int first, int second);
 
         public static void BubbleSort(
@@ -28,7 +27,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_19
                 }
             }
         }
-        #endregion Members
+        #endregion EXCLUDE
 
         public static void Main()
         {
@@ -45,21 +44,25 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_19
                 }
             }
 
+            #region HIGHLIGHT
             BubbleSort(items,
-                DelegateSample.__AnonymousMethod_00000000);
+                __AnonymousMethod_00000000);
+            #endregion HIGHLIGHT
 
 
-            for(int i = 0; i < items.Length; i++)
+            for (int i = 0; i < items.Length; i++)
             {
                 Console.WriteLine(items[i]);
             }
 
         }
-
+        #region HIGHLIGHT
         private static bool __AnonymousMethod_00000000(
             int first, int second)
         {
             return first < second;
         }
+        #endregion HIGHLIGHT
     }
+    #endregion INCLUDE
 }

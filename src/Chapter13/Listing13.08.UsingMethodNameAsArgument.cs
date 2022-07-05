@@ -2,11 +2,12 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_08
 {
     using System;
-
-    class DelegateSample
+    #region INCLUDE
+    public class DelegateSample
     {
         public static void BubbleSort(
             int[] items, Func<int, int, bool> compare)
+        #region EXCLUDE
         {
             int i;
             int j;
@@ -34,13 +35,15 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_08
                 }
             }
         }
-
+        #endregion EXCLUDE
+        #region HIGHLIGHT
         public static bool GreaterThan(int first, int second)
+        #endregion HIGHLIGHT
         {
             return first > second;
         }
 
-        static void Main()
+        public static void Main()
         {
             int[] items = new int[5];
 
@@ -55,12 +58,15 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_08
                 }
             }
 
+            #region HIGHLIGHT
             BubbleSort(items, GreaterThan);
+            #endregion HIGHLIGHT
 
-            for(int i = 0; i < items.Length; i++)
+            for (int i = 0; i < items.Length; i++)
             {
                 Console.WriteLine(items[i]);
             }
         }
     }
+    #endregion INCLUDE
 }
