@@ -2,8 +2,6 @@
 {
     using System;
     using Listing13_11;
-    #region INCLUDE
-    #region EXCLUDE
     public class Program
     {
         public static void Main()
@@ -20,14 +18,16 @@
                     return;
                 }
             }
-            #endregion EXCLUDE
+            #region INCLUDE
+            //...
             DelegateSample.BubbleSort(items,
                 delegate(int first, int second)
                 {
                     return first < second;
                 }
             );
-            #region EXCLUDE
+            //...
+            #endregion INCLUDE
 
             for (int i = 0; i < items.Length; i++)
             {
@@ -35,6 +35,4 @@
             }
         }
     }
-    #endregion EXCLUDE
-    #endregion INCLUDE
 }

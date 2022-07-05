@@ -2,7 +2,6 @@
 {
     using System;
     #region INCLUDE
-
     public class DelegateSample
     {
         // ...
