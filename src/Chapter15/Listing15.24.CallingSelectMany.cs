@@ -1,14 +1,17 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_24
 {
+    #region INCLUDE
     using System;
     using System.Collections.Generic;
     using System.Linq;
-
+    #region EXCLUDE
     public class Program
     {
         public static void Main()
         {
-            (string Team, string[] Players)[] worldCup2006Finalists = new[]
+            #endregion EXCLUDE
+            (string Team, string[] Players)
+                [] worldCup2006Finalists = new[]
             {
                 (
                     TeamName: "France",
@@ -53,7 +56,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_24
                     team => team.Players);
 
             Print(players);
-
+            //...
+            #endregion INCLUDE
         }
 
         private static void Print<T>(IEnumerable<T> items)

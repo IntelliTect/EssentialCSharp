@@ -1,12 +1,14 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_02
 {
+    #region INCLUDE
     using System;
     using System.Collections.Generic;
-
+    #region EXCLUDE
     public class Program
     {
         public static void Main()
         {
+            #endregion EXCLUDE
 #if !PRECSHARP6
             Dictionary<string, ConsoleColor> colorMap =
                 new Dictionary<string, ConsoleColor>
@@ -26,6 +28,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_02
                     {"Verbose", ConsoleColor.White}
                 };
 #endif
+            #endregion INCLUDE
 
             Print(colorMap);
         } 

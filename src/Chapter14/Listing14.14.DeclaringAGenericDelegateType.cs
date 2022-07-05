@@ -4,7 +4,10 @@
 
     public class Thermostat
     {
-        public delegate void EventHandler<TEventArgs>(object sender, TEventArgs e)
+        #region INCLUDE
+        public delegate void EventHandler<TEventArgs>(
+            object sender, TEventArgs e)
+            #endregion INCLUDE
             where TEventArgs : EventArgs;
     }
 }

@@ -1,14 +1,17 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_16
 {
     using AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15;
+    #region INCLUDE
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    #region EXCLUDE
 
     public class Program
     {
         public static void Main()
         {
+            #endregion EXCLUDE
             IEnumerable<Patent> patents = PatentData.Patents;
             bool result;
             patents = patents.Where(
@@ -46,6 +49,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_16
             Console.Write("   There are ");
             Console.WriteLine(
                 $"{ patents.Count() } patents prior to 1900.");
+
+            //...
+            #endregion INCLUDE
         }
     }
 }

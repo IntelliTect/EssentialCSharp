@@ -6,6 +6,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_07
     {
         public static void Main()
         {
+            #region INCLUDE
             System.Collections.Generic.Stack<int> stack =
                 new System.Collections.Generic.Stack<int>();
             System.Collections.Generic.Stack<int>.Enumerator enumerator;
@@ -35,6 +36,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_07
                 //     disposable.Dispose();
                 // }
             }
+            #endregion INCLUDE
         }
     }
 }

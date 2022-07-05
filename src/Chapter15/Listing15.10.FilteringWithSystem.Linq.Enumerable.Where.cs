@@ -1,6 +1,7 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_10
 {
     using AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15;
+    #region INCLUDE
     using System;
     using System.Collections.Generic;
     using System.Linq;
@@ -10,10 +11,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_10
         public static void Main()
         {
             IEnumerable<Patent> patents = PatentData.Patents;
+            #region HIGHLIGHT
             patents = patents.Where(
                 patent => patent.YearOfPublication.StartsWith("18"));
+            #endregion HIGHLIGHT
             Print(patents);
         }
+        #region EXCLUDE
 
         private static void Print<T>(IEnumerable<T> items)
         {
@@ -22,5 +26,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_10
                 Console.WriteLine(item);
             }
         }
+        #endregion EXCLUDE
     }
+    #endregion INCLUDE
 }

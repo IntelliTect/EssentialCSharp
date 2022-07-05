@@ -11,12 +11,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_12
         {
             string rootDirectory = Directory.GetCurrentDirectory();
             string searchPattern = "*"; ;
-
+            #region INCLUDE
+            //...
             IEnumerable<string> fileList = Directory.EnumerateFiles(
                 rootDirectory, searchPattern);
             IEnumerable<FileInfo> files = fileList.Select(
                 file => new FileInfo(file));
-
+            //...
+            #endregion INCLUDE
             Print(files);
         }
 

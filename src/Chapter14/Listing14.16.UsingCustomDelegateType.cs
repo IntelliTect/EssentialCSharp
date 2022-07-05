@@ -1,5 +1,6 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_16
 {
+    #region INCLUDE
     public class Thermostat
     {
         public class TemperatureArgs : System.EventArgs
@@ -9,21 +10,19 @@
                 NewTemperature = newTemperature;
             }
 
-            public float NewTemperature
-            {
-                get { return _NewTemperature; }
-                set { _NewTemperature = value; }
-            }
-            private float _NewTemperature;
+            public float NewTemperature { get; set; }
         }
 
+        #region HIGHLIGHT
         public delegate void TemperatureChangeHandler(
             object sender, TemperatureArgs newTemperature);
 
         public event TemperatureChangeHandler?
             OnTemperatureChange;
+        #endregion HIGHLIGHT
 
         public float CurrentTemperature
+        #region EXCLUDE
         {
             get { return _CurrentTemperature; }
             set
@@ -40,6 +39,8 @@
                 }
             }
         }
+        #endregion EXCLUDE
         private float _CurrentTemperature;
     }
+    #endregion INCLUDE
 }

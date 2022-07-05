@@ -4,16 +4,18 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_27
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
-
+    #region INCLUDE
+    #region EXCLUDE
     public class Program
     {
         public static void Main()
         {
             string rootDirectory = Directory.GetCurrentDirectory();
             string searchPattern = "*";
-
+            #endregion EXCLUDE
             IEnumerable<string> fileList = Directory.EnumerateFiles(
                 rootDirectory, searchPattern);
+            #region HIGHLIGHT
             var items = fileList.Select(
                 file =>
                 {
@@ -24,6 +26,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_27
                         Size = fileInfo.Length
                     };
                 });
+            #endregion HIGHLIGHT
+            #region EXCLUDE
 
             Print(items);
         }
@@ -36,4 +40,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_27
             }
         }
     }
+    #endregion EXCLUDE
+    #endregion INCLUDE
 }

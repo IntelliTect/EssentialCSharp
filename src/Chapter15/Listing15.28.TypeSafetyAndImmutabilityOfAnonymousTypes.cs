@@ -1,8 +1,9 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_28
 {
-    class Program
+    #region INCLUDE
+    public class Program
     {
-        static void Main()
+        public static void Main()
         {
             var patent1 =
                 new
@@ -34,7 +35,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_28
 
             // ERROR: Property or indexer 'AnonymousType#1.Title' 
             //        cannot be assigned to -- it is read-only'
-            //patent1.Title = "Swiss Cheese"; //won't compile if uncommented
+            //patent1.Title = "Swiss Cheese"; 
+                //won't compile if uncommented
         }
     }
+    #endregion INCLUDE
 }

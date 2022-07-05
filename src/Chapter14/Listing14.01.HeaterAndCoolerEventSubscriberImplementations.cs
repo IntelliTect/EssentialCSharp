@@ -1,13 +1,15 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_01
 {
-    class Cooler
+    #region INCLUDE
+    public class Cooler
     {
         public Cooler(float temperature)
         {
             Temperature = temperature;
         }
 
-        // Cooler is activated when ambient temperature is higher than this
+        // Cooler is activated when ambient temperature
+        // is higher than this
         public float Temperature { get; set; }
 
         // Notifies that the temperature changed on this instance
@@ -24,14 +26,15 @@
         }
     }
 
-    class Heater
+    public class Heater
     {
         public Heater(float temperature)
         {
             Temperature = temperature;
         }
 
-        // Cooler is activated when ambient temperature is higher than this
+        // Cooler is activated when ambient temperature
+        // is higher than this
         public float Temperature { get; set; }
 
         // Notifies that the temperature changed on this instance
@@ -47,4 +50,5 @@
             }
         }
     }
+    #endregion INCLUDE
 }

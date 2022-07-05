@@ -1,13 +1,16 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_23
 {
     using AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15;
+    #region INCLUDE
     using System;
     using System.Linq;
+    #region EXCLUDE
 
     public class Program
     {
         public static void Main()
         {
+            #endregion EXCLUDE
             Department[] departments = CorporateData.Departments;
             Employee[] employees = CorporateData.Employees;
 
@@ -38,6 +41,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_23
                     Console.WriteLine("\t" + employee);
                 }
             }
+            //...
+            #endregion INCLUDE
         }
     }
 }
