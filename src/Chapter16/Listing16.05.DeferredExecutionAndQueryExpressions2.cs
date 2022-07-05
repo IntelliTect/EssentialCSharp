@@ -1,17 +1,18 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_05
 {
     using AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16;
+    #region INCLUDE
     using System;
     using System.Collections.Generic;
     using System.Linq;
-
+    #region EXCLUDE
     public class Program
     {
         public static void Main()
         {
             CountContextualKeywords();
         }
-
+        #endregion EXCLUDE
         private static void CountContextualKeywords()
         {
             int delegateInvocations = 0;
@@ -55,11 +56,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_05
 
             // Retrieve the count from the cached collection
             Console.WriteLine(
-                // TODO: Update listing in Manuscript
                 $"7. selectionCache count={ selectionCache.Count }");
 
             Console.WriteLine(
                 $"8. delegateInvocations={ delegateInvocations }");
         }
+        //...
+        #endregion INCLUDE
     }
 }

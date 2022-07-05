@@ -13,12 +13,16 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_13
 
         private static void KeywordCharacters()
         {
+            #region INCLUDE
             var selection =
                 from word in CSharp.Keywords
+                    #region HIGHLIGHT
                 from character in word
+                    #endregion HIGHLIGHT
                 select character;
+            #endregion INCLUDE
 
-            foreach(var wordCharacter in selection)
+            foreach (var wordCharacter in selection)
             {
                 Console.WriteLine(wordCharacter);
             }

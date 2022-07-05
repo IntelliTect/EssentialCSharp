@@ -1,11 +1,10 @@
 ﻿using System.Collections.ObjectModel;
 
-#region INCLUDE
-    #region EXCLUDE
+
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16
 {
-    #endregion
-    static public class CSharp
+    #region INCLUDE
+    public static class CSharp
     {
         public static readonly ReadOnlyCollection<string> Keywords = new(
             new string[]
@@ -37,18 +36,18 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_01
 {
     using AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16;
 
-    #endregion
+    #endregion EXCLUDE
     using System;
     using System.Collections.Generic;
     using System.Linq;
-
+    #region EXCLUDE
     public class Program
     {
         public static void Main()
         {
             ShowContextualKeywords();
         }
-
+        #endregion EXCLUDE
         private static void ShowContextualKeywords()
         {
             #region HIGHLIGHT
@@ -56,15 +55,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_01
                 from word in CSharp.Keywords
                 where !word.Contains('*')
                 select word;
-            #endregion
+            #endregion HIGHLIGHT
 
             foreach (string keyword in selection)
             {
                 Console.Write(keyword + " ");
             }
         }
+        #endregion INCLUDE
     }
-    #region EXCLUDE
 }
-    #endregion
-#endregion

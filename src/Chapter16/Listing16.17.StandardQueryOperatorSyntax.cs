@@ -11,17 +11,21 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_17
         {
             ShowContextualKeywords2();
         }
-
+        #region INCLUDE
         private static void ShowContextualKeywords2()
         {
+            #region HIGHLIGHT
             IEnumerable<string> selection =
                 CSharp.Keywords.Where(word => !word.Contains('*'));
-
-            foreach(var selectionWord in selection)
+            #endregion HIGHLIGHT
+            #region EXCLUDE
+            foreach (var selectionWord in selection)
             {
                 Console.WriteLine(Environment.NewLine + "{0}",
                     selectionWord);
             }
+            #endregion EXCLUDE
         }
+        #endregion INCLUDE
     }
 }
