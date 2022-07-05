@@ -6,7 +6,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter23.Listing23_06
     #region INCLUDE
     public class VirtualMemoryManager
     {
-        [DllImport("kernel32.dll SetLastError = true")]
+        [DllImport("kernel32.dll", SetLastError = true)]
         private static extern IntPtr VirtualAllocEx(
             IntPtr hProcess,
             IntPtr lpAddress,
