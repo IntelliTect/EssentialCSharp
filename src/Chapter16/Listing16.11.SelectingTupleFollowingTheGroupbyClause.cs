@@ -21,7 +21,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_11
                 group word by word.Contains('*');
 
             IEnumerable<
-                (bool IsContextualKeyword, IGrouping<bool, string> Items)> selection =
+                (bool IsContextualKeyword, IGrouping<bool, string> Items)> 
+                    selection =
                 from groups in keywordGroups
                 select
                 (

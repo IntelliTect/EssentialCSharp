@@ -20,13 +20,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16
                 "in","int","interface","internal","into*","is","join*",
                 "let*","lock","long", "nameof*", "namespace","new",
                 "nonnull*","null","object","on*","operator","orderby*",
-                "out","override","params","partial*","private","protected",
-                "public","readonly","ref","remove*","return","sbyte",
-                "sealed","select*","set*","short","sizeof","stackalloc",
-                "static","string","struct","switch","this","throw","true",
-                "try","typeof","uint","ulong","unchecked","unsafe","ushort",
-                "using","value*","var*","virtual","void","volatile"
-                ,"when*","where*","while","yield*"
+                "out","override","params","partial*","private",
+                "protected","public","readonly","ref","remove*","return",
+                "sbyte","sealed","select*","set*","short","sizeof",
+                "stackalloc","static","string","struct","switch","this",
+                "throw","true","try","typeof","uint","ulong","unchecked",
+                "unsafe","ushort","using","value*","var*","virtual","void",
+                "volatile","when*","where*","while","yield*"
             });
     }
     #region EXCLUDE
