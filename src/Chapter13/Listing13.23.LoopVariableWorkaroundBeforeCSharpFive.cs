@@ -3,9 +3,9 @@
     using System;
     using System.Collections.Generic;
     #region INCLUDE
-    class DoNotCaptureLoop
+    public class DoNotCaptureLoop
     {
-        static void Main()
+        public static void Main()
         {
             var items = new string[] { "Moe", "Larry", "Curly" };
             var actions = new List<Action>();
