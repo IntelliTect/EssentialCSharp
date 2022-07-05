@@ -1,8 +1,7 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_12
 {
     using System;
-    #region INCLUDE
-    #region EXCLUDE
+
     public class DelegateSample
     {
         public delegate bool ComparisonHandler(int first, int second);
@@ -58,7 +57,8 @@
                     return;
                 }
             }
-            #endregion EXCLUDE
+            #region INCLUDE
+            //...
 
             #region HIGHLIGHT
             BubbleSort(items,
@@ -69,13 +69,12 @@
             );
             #endregion HIGHLIGHT
 
-            #region EXCLUDE
+            //...
+            #endregion INCLUDE
             for (int i = 0; i < items.Length; i++)
             {
                 Console.WriteLine(items[i]);
             }
         }
     }
-    #endregion EXCLUDE
-    #endregion INCLUDE
 }

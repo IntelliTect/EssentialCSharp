@@ -2,15 +2,13 @@
 {
     using System;
     using Listing13_11;
-    #region INCLUDE
-    #region EXCLUDE
     public class Program
     {
         public static void Main()
         {
             int[] items = new int[5];
 
-            for(int i = 0; i < items.Length; i++)
+            for (int i = 0; i < items.Length; i++)
             {
                 Console.Write("Enter an integer:");
                 string? text = Console.ReadLine();
@@ -20,12 +18,14 @@
                     return;
                 }
             }
-            #endregion EXCLUDE
+            #region INCLUDE
+            //...
             #region HIGHLIGHT
             DelegateSample.BubbleSort
                 (items, (first, second) => first < second);
             #endregion HIGHLIGHT
-            #region EXCLUDE
+            //...
+            #endregion INCLUDE
 
             for (int i = 0; i < items.Length; i++)
             {
@@ -33,6 +33,4 @@
             }
         }
     }
-    #endregion EXCLUDE
-    #endregion INCLUDE
 }

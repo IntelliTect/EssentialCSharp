@@ -7,6 +7,7 @@
         public static void Main()
         {
             #region INCLUDE
+            //...
             Func<string> getUserInput =
             #region HIGHLIGHT
                 () =>
@@ -20,6 +21,7 @@
                     while(!string.IsNullOrWhiteSpace(input));
                     return input!;
                 };
+            //...
             #endregion INCLUDE
             getUserInput();
         }
