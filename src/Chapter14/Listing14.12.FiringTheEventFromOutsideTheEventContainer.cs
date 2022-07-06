@@ -2,7 +2,7 @@
 {
     using Listing14_01;
     using Listing14_10;
-
+    #region INCLUDE
     public class Program
     {
         public static void Main()
@@ -11,8 +11,6 @@
             Heater heater = new Heater(60);
             Cooler cooler = new Cooler(80);
 
-            // Note: Use new Action(cooler.OnTemperatureChanged)
-            // for C# 1.0 syntax
             thermostat.OnTemperatureChange +=
                 heater.OnTemperatureChanged;
 
@@ -20,7 +18,10 @@
                 cooler.OnTemperatureChanged;
 
             // Bug: Should not be allowed
+            #region HIGHLIGHT
             thermostat.OnTemperatureChange(42);
+            #endregion HIGHLIGHT
         }
     }
+    #endregion INCLUDE
 }

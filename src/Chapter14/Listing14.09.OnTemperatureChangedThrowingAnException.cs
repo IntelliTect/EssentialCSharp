@@ -1,10 +1,9 @@
-﻿// TODO: Update listing in Manuscript
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_09
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_09
 {
     using System;
     using Listing14_01;
     using Listing14_05;
-
+    #region INCLUDE
     public class Program
     {
         public static void Main()
@@ -13,16 +12,15 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_09
             Heater heater = new Heater(60);
             Cooler cooler = new Cooler(80);
 
-            // Using C# 2.0 or later syntax
             thermostat.OnTemperatureChange +=
                 heater.OnTemperatureChanged;
-            // Using C# 3.0.  Change to anonymous method
-            // if using C# 2.0
+            #region HIGHLIGHT
             thermostat.OnTemperatureChange +=
                 (newTemperature) =>
                     {
                         throw new InvalidOperationException();
                     };
+            #endregion HIGHLIGHT
             thermostat.OnTemperatureChange +=
                 cooler.OnTemperatureChanged;
 
@@ -36,4 +34,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_09
             thermostat.CurrentTemperature = currentTemperature;
         }
     }
+    #endregion INCLUDE
 }

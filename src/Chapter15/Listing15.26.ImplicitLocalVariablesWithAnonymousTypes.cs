@@ -1,11 +1,13 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_26
 {
+    #region INCLUDE
     using System;
 
     public class Program
     {
         public static void Main()
         {
+            #region HIGHLIGHT
             var patent1 =
                 new
                 {
@@ -25,6 +27,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_26
                     // Renamed to show property naming
                     Year = patent1.YearOfPublication
                 };
+            #endregion HIGHLIGHT
 
             Console.WriteLine(
                 $"{ patent1.Title } ({ patent1.YearOfPublication })");
@@ -40,4 +43,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_26
             Console.WriteLine(patent3);
         }
     }
+    #endregion INCLUDE
 }

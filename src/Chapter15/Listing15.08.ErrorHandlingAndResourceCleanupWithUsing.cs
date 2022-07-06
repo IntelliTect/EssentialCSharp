@@ -6,20 +6,24 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_08
     {
         public static void Main()
         {
+            #region INCLUDE
             System.Collections.Generic.Stack<int> stack =
                 new System.Collections.Generic.Stack<int>();
             int number;
 
-            using(
+            #region HIGHLIGHT
+            using (
                 System.Collections.Generic.Stack<int>.Enumerator
                     enumerator = stack.GetEnumerator())
+            #endregion HIGHLIGHT
             {
-                while(enumerator.MoveNext())
+                while (enumerator.MoveNext())
                 {
                     number = enumerator.Current;
                     Console.WriteLine(number);
                 }
             }
+            #endregion INCLUDE
         }
     }
 }

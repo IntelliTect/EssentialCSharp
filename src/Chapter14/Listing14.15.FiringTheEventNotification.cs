@@ -1,8 +1,9 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_15
 {
     using System;
-
+    #region INCLUDE
     public class Thermostat
+    #region EXCLUDE
     {
         public class TemperatureArgs : System.EventArgs
         {
@@ -17,6 +18,7 @@
         // Define the event publisher
         public event EventHandler<TemperatureArgs> OnTemperatureChange =
             delegate { };
+        #endregion EXCLUDE
 
         public float CurrentTemperature
         {
@@ -29,11 +31,14 @@
                     // If there are any subscribers,
                     // notify them of changes in 
                     // temperature by invoking said subcribers
+                    #region HIGHLIGHT
                     OnTemperatureChange?.Invoke( // C# 6.0
                           this, new TemperatureArgs(value));
+                    #endregion HIGHLIGHT
                 }
             }
         }
         private float _CurrentTemperature;
     }
+    #endregion INCLUDE
 }

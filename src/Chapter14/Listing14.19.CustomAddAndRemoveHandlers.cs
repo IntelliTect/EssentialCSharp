@@ -1,8 +1,10 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_19
 {
+    #region INCLUDE
     public class Thermostat
     {
         public class TemperatureArgs : System.EventArgs
+        #region EXCLUDE
         {
             public TemperatureArgs(float newTemperature)
             {
@@ -11,27 +13,33 @@
 
             public float NewTemperature { get; set; }
         }
-
+     
         // Define the delegate data type
-        public delegate void TemperatureChangeHandler(
+        public delegate void EventHandler<TemperatureArgs>(
             object sender, TemperatureArgs newTemperature);
-
+        #endregion EXCLUDE
+        #region HIGHLIGHT
         // Define the event publisher
-        public event TemperatureChangeHandler OnTemperatureChange
+        public event EventHandler<TemperatureArgs> OnTemperatureChange
         {
             add
             {
-                _OnTemperatureChange = (TemperatureChangeHandler)System.Delegate.Combine(value, _OnTemperatureChange);
+                _OnTemperatureChange = 
+                    (EventHandler<TemperatureArgs>)
+                        System.Delegate.Combine(value, _OnTemperatureChange);
             }
             remove
             {
                 _OnTemperatureChange = 
-                    (TemperatureChangeHandler?)System.Delegate.Remove(_OnTemperatureChange, value);
+                    (EventHandler<TemperatureArgs>?)
+                        System.Delegate.Remove(_OnTemperatureChange, value);
             }
         }
-        protected TemperatureChangeHandler? _OnTemperatureChange;
+        protected EventHandler<TemperatureArgs>? _OnTemperatureChange;
+        #endregion HIGHLIGHT
 
         public float CurrentTemperature
+        #region EXCLUDE
         {
             set
             {
@@ -47,6 +55,8 @@
             }
             get { return _CurrentTemperature; }
         }
+        #endregion EXCLUDE
         private float _CurrentTemperature;
     }
+    #endregion INCLUDE
 }

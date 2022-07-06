@@ -11,9 +11,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_13
         {
             string rootDirectory = Directory.GetCurrentDirectory();
             string searchPattern = "*";
-
+            #region INCLUDE
+            //...
             IEnumerable<string> fileList = Directory.EnumerateFiles(
-                rootDirectory, searchPattern);
+            rootDirectory, searchPattern);
+            #region HIGHLIGHT
             IEnumerable<(string FileName, long Size)> items = fileList.Select(
                 file =>
                 {
@@ -23,8 +25,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_13
                         Size: fileInfo.Length
                     );
                 });
-
-
+            #endregion HIGHLIGHT
+            //...
+            #endregion INCLUDE
 
             Print(items);
         }

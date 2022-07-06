@@ -1,14 +1,16 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_21
 {
     using AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15;
+    #region INCLUDE
     using System;
     using System.Collections.Generic;
     using System.Linq;
-
+    #region EXCLUDE
     public class Program
     {
         public static void Main()
         {
+            #endregion EXCLUDE
             IEnumerable<Employee> employees = CorporateData.Employees;
 
             IEnumerable<IGrouping<int, Employee>> groupedEmployees =
@@ -25,7 +27,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_21
                 Console.WriteLine(
                   "\tCount: " + employeeGroup.Count());
             }
-
+            //...
+            #endregion INCLUDE
         }
     }
 }

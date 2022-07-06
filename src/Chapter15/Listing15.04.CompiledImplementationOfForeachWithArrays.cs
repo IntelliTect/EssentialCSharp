@@ -6,6 +6,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_04
     {
         public static void Main()
         {
+            #region INCLUDE
             int[] tempArray;
             int[] array = new int[] { 1, 2, 3, 4, 5, 6 };
 
@@ -16,6 +17,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_04
 
                 Console.WriteLine(item);
             }
+            #endregion INCLUDE
         }
     }
 }
