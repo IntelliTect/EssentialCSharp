@@ -10,7 +10,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_15
             Alias = alias;
         }
         #endregion HIGHLIGHT
-        public string Alias { get; private set; }
+        public string Alias { get; }
     }
     class CommandLineInfo
     {

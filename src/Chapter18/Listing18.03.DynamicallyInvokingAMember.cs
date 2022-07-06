@@ -17,7 +17,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_03
                 Console.WriteLine(errorMessage);
                 DisplayHelp();
             } 
-            else if(commandLine.Help || string.IsNullOrWhiteSpace(commandLine.Out))
+            else if (commandLine.Help || string.IsNullOrWhiteSpace(commandLine.Out))
             {
                 DisplayHelp();
             }
@@ -35,8 +35,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_03
                             commandLine.Out} /Priority:{
                             commandLine.Priority}");
 
+                #endregion EXCLUDE
             }
-            #endregion EXCLUDE
         }
 
         private static void DisplayHelp()
@@ -68,9 +68,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_03
     {
         public static void Parse(string[] args, object commandLine)
         {
-            if(!TryParse(args, commandLine, out string? errorMessage))
+            if (!TryParse(args, commandLine, out string? errorMessage))
             {
-                throw new Exception(errorMessage);
+                throw new InvalidOperationException(errorMessage);
             }
         }
 

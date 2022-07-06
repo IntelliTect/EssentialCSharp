@@ -1,8 +1,8 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_28
 {
+    using Listing18_29;
     #region INCLUDE
     using System;
-    using Listing18_29;
     #region EXCLUDE
     public class Program
     {

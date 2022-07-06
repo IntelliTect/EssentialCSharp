@@ -1,10 +1,11 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_18
 {
+    using Listing18_17;
     #region INCLUDE
     using System;
     using System.Reflection;
     using System.Collections.Generic;
-    using Listing18_17;
+    using System.Diagnostics;
 
     public class CommandLineHandler
     {
@@ -66,7 +67,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_18
             else
             {
 
-                if((optionParts.Length < 2)
+                if (optionParts.Length < 2
                     || optionParts[1] == "")
                 {
                     // No setting was provided for the switch.
@@ -81,7 +82,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_18
                         commandLine, optionParts[1], null);
                     success = true;
                 }
-                else if(property.PropertyType.GetTypeInfo().IsEnum)
+                else if(
+                    //property.PropertyType.IsEnum also available
+                    property.PropertyType ==
+                        typeof(ProcessPriorityClass))
                 {
                     success = TryParseEnumSwitch(
                         commandLine, optionParts,
@@ -90,10 +94,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_18
                 else
                 {
                     success = false;
-                    errorMessage = string.Format(
-                        "Data type '{0}' on {1} is not supported.",
-                        property.PropertyType.ToString(),
-                        commandLine.GetType().ToString());
+                    errorMessage = 
+                        $@"Data type '{ property.PropertyType.ToString() }' on {
+                        commandLine.GetType().ToString() } is not supported.";
                 }
             }
             return success;

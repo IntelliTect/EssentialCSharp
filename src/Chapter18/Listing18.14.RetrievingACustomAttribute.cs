@@ -20,8 +20,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_14
                      (Attribute[])property.GetCustomAttributes(
                         typeof(CommandLineSwitchRequiredAttribute),
                         false);
-                if((attributes.Length > 0) &&
-                    (property.GetValue(commandLine, null) == null))
+                if (attributes.Length > 0 &&
+                    property.GetValue(commandLine, null) == null)
                 {
                     missingOptions.Add(property.Name);
                 }

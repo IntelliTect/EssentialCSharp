@@ -13,7 +13,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_01
             Type type = dateTime.GetType();
             foreach(
                 System.Reflection.PropertyInfo property in
-                    type.GetTypeInfo().GetProperties())
+                    type.GetProperties())
             {
                 Console.WriteLine(property.Name);
             }

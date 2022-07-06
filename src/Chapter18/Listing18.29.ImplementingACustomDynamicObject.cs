@@ -24,8 +24,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_29
         {
             bool success = false;
             result = null;
-            XElement firstDescendant =
-                Element.Descendants(binder.Name).First();
+            XElement? firstDescendant =
+                Element.Descendants(binder.Name).FirstOrDefault();
             if(firstDescendant != null)
             {
                 if(firstDescendant.Descendants().Any())
@@ -45,8 +45,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_29
             SetMemberBinder binder, object? value)
         {
             bool success = false;
-            XElement firstDescendant =
-                Element.Descendants(binder.Name).First();
+            XElement? firstDescendant =
+                Element.Descendants(binder.Name).FirstOrDefault();
             if(firstDescendant != null)
             {
                 if(value?.GetType() == typeof(XElement))

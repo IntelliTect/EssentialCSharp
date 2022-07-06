@@ -1,10 +1,13 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_20
 {
+    //will not compile if uncommented
+    /*
     #region INCLUDE
     // ERROR: The attribute usage is restricted to properties
-    //[CommandLineSwitchAlias("?")] //will not compile if uncommented
+    [CommandLineSwitchAlias("?")] 
     class CommandLineInfo
     {
     }
     #endregion INCLUDE
+    */
 }
