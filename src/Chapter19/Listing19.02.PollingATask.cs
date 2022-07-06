@@ -1,5 +1,6 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_02
 {
+    #region INCLUDE
     using System;
     using System.Threading.Tasks;
     using AddisonWesley.Michaelis.EssentialCSharp.Shared;
@@ -10,8 +11,10 @@
         {
             // Use Task.Factory.StartNew<string>() for
             // TPL prior to .NET 4.5
+            #region HIGHLIGHT
             Task<string> task =
                 Task.Run<string>(
+            #endregion HIGHLIGHT
                     () => PiCalculator.Calculate(100));
 
             foreach(
@@ -27,11 +30,14 @@
 
             Console.WriteLine();
 
+            #region HIGHLIGHT
             Console.WriteLine(task.Result);
-            if(!task.IsCompleted)
+            #endregion HIGHLIGHT
+            if (!task.IsCompleted)
             {
                 throw new Exception("Task Should Be Completed");
             }
         }
     }
+    #endregion INCLUDE
 }

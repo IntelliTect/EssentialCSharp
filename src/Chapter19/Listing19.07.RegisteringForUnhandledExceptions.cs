@@ -1,12 +1,12 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_07
 {
+    #region INCLUDE
     using System;
     using System.Diagnostics;
     using System.Threading;
 
     public class Program
     {
-        // TODO: Update listing in Manuscript
         private static Stopwatch Clock { get;  } = new Stopwatch();
 
         public static void Main()
@@ -14,8 +14,11 @@
             try
             {
                 Clock.Start();
+                #region HIGHLIGHT
                 // Register a callback to receive notifications
                 // of any unhandled exception
+                #endregion HIGHLIGHT
+                #region EXCLUDE
 #if NETCOREAPP1_1
                 System.Threading.Tasks.TaskScheduler.UnobservedTaskException += (s, e) =>
                 {
@@ -44,20 +47,24 @@
                     Delay(4000);
                 };
 #else
+#endregion EXCLUDE
+                #region HIGHLIGHT
                 AppDomain.CurrentDomain.UnhandledException +=
                   (s, e) =>
                   {
                       Message("Event handler starting");
                       Delay(4000);
                   };
+#endregion HIGHLIGHT
                 Thread thread = new Thread(() =>
                 {
                     Message("Throwing exception.");
                     throw new Exception();
                 });
                 thread.Start();
+                #region EXCLUDE
 #endif
-#if DEBUG1   
+#if DEBUG1
                 resetEvent.Wait();
                 {
                 if (!resetEvent.Wait(5000))
@@ -65,6 +72,7 @@
                     throw new Exception("Timed out waiting for unhandled exception.");
                 }
 #endif // DEBUG
+                #endregion EXCLUDE
                 Delay(2000);
             }
             finally
@@ -87,4 +95,5 @@
                 Clock.ElapsedMilliseconds, text);
         }
     }
+#endregion INCLUDE
 }

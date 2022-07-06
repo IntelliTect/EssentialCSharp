@@ -1,10 +1,11 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_10
 {
+    #region INCLUDE
     using System;
     using System.Threading;
     using System.Threading.Tasks;
     using AddisonWesley.Michaelis.EssentialCSharp.Shared;
-
+    #region EXCLUDE
     public class Program
     {
         public static void Main()
@@ -18,10 +19,16 @@
 
             // Use Task.Factory.StartNew<string>() for
             // TPL prior to .NET 4.5
+            #endregion EXCLUDE
             Task task = Task.Factory.StartNew(
                 () =>
                     WritePi(cancellationTokenSource.Token),
+            #region HIGHLIGHT
                         TaskCreationOptions.LongRunning);
+            #endregion HIGHLIGHT
+
+            //...
+            #endregion INCLUDE
 
             // Wait for the user's input
             Console.ReadLine();
