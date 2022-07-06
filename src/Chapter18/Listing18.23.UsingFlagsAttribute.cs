@@ -1,7 +1,7 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_23
 {
-    /*
     #region INCLUDE
+    /*
     [Flags]
     public enun FileAttributes
     {
@@ -9,10 +9,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_23
         Hidden   = 0x0002,
         // ...
     }
-    #endregion INCLUDE
     */
 
-    #region INCLUDE
     using System;
     using System.IO;
 
