@@ -49,7 +49,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_18
                 remove_OnTemperatureChange(value);
             }
         } 
-        #endif // ConceptulEquivalendCode
+        #endif // ConceptualEquivalentCode
         #endregion INCLUDE
 
         public class TemperatureArgs : System.EventArgs
