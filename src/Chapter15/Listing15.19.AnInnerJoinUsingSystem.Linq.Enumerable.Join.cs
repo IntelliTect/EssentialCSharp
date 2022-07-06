@@ -28,9 +28,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_19
                     ));
 
 
-            foreach
-                ((int Id, string Name, string Title,
-                    Department Department) item in items)
+            foreach ((int Id, string Name, string Title, Department Department) item in items)
             {
                 Console.WriteLine(
                     $"{item.Name} ({item.Title})");
