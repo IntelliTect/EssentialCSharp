@@ -9,6 +9,5 @@
 
         public float CurrentTemperature { get; set; }
         #endregion INCLUDE
-        private float _CurrentTemperature;
     }
 }

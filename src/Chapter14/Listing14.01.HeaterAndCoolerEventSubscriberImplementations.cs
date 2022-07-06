@@ -33,8 +33,8 @@
             Temperature = temperature;
         }
 
-        // Cooler is activated when ambient temperature
-        // is higher than this
+        // Heater is activated when ambient temperature
+        // is lower than this
         public float Temperature { get; set; }
 
         // Notifies that the temperature changed on this instance
