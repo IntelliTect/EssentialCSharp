@@ -35,7 +35,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_18
             System.Delegate.Remove(_OnTemperatureChange, handler);
         }
 
-        #if ConceptulEquivalendCode
+        #if ConceptualEquivalentCode
         public event EventHandler<TemperatureArgs> OnTemperatureChange
         {
             //Would cause a compiler error
