@@ -3,6 +3,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_13
     using System;
     using System.Collections.Generic;
     using System.IO;
+    using System.Linq;
+
     public class Program
     {
         public static void Main()

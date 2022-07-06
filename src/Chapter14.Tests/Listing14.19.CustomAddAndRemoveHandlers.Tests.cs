@@ -3,6 +3,7 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_19.Tests
 {
     using Listing14_19;
+    using static AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_19.Thermostat;
 
     [TestClass]
     public class ProgramTests
@@ -14,7 +15,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_19.Tests
 
             float temp = 0;
 
-            Thermostat.TemperatureChangeHandler T_OnTemperatureChange = (sender, newTemperature) =>
+            Thermostat.EventHandler<TemperatureArgs> T_OnTemperatureChange = (sender, newTemperature) =>
             {
                 temp = newTemperature.NewTemperature;
             };
