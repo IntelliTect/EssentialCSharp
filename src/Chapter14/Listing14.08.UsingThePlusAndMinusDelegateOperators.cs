@@ -3,13 +3,12 @@
     using System;
     using Listing14_01;
     using Listing14_05;
-    #region INCLUDE
-    #region EXCLUDE
     public class Program
     {
         public static void Main()
         {
-            #endregion EXCLUDE
+            #region INCLUDE
+            //...
             Thermostat thermostat = new Thermostat();
             Heater heater = new Heater(60);
             Cooler cooler = new Cooler(80);
@@ -34,9 +33,8 @@
             delegate3 = (delegate3 - delegate2)!;
             #endregion HIGHLIGHT
             delegate3(60);
-            #region EXCLUDE
+            //...
+            #endregion INCLUDE
         }
     }
-    #endregion EXCLUDE
-    #endregion INCLUDE
 }

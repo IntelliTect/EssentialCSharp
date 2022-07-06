@@ -17,8 +17,8 @@
                 if(value != CurrentTemperature)
                 {
                     _CurrentTemperature = value;
-                    Action<float>? 
-                        onTemperatureChange = OnTemperatureChange;
+                    Action<float>? onTemperatureChange 
+                        = OnTemperatureChange;
                     if (onTemperatureChange != null)
                     {
                         #region HIGHLIGHT
