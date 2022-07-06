@@ -27,8 +27,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_20
                     );
 
 
-            foreach 
-                ((long Id, string Name, Employee Employee) item in items)
+            foreach ((long Id, string Name, Employee Employee) item in items)
             {
                 Console.WriteLine(item.Name);
                 Console.WriteLine("\t" + item.Employee);
