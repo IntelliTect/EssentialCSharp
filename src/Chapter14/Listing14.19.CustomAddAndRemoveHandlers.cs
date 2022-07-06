@@ -25,14 +25,14 @@
             add
             {
                 _OnTemperatureChange = 
-                    (EventHandler<TemperatureArgs>)System.Delegate.Combine
-                        (value, _OnTemperatureChange);
+                    (EventHandler<TemperatureArgs>)
+                        System.Delegate.Combine(value, _OnTemperatureChange);
             }
             remove
             {
                 _OnTemperatureChange = 
-                    (EventHandler<TemperatureArgs>?)System.Delegate.Remove
-                        (_OnTemperatureChange, value);
+                    (EventHandler<TemperatureArgs>?)
+                        System.Delegate.Remove(_OnTemperatureChange, value);
             }
         }
         protected EventHandler<TemperatureArgs>? _OnTemperatureChange;

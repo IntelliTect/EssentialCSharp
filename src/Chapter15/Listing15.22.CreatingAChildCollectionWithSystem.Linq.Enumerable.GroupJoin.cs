@@ -15,9 +15,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_22
             Department[] departments = CorporateData.Departments;
             Employee[] employees = CorporateData.Employees;
 
-            IEnumerable<
-                (long Id, string Name, IEnumerable<Employee> Employees)> 
-                    items =
+            IEnumerable<(long Id, string Name, IEnumerable<Employee> Employees)> items =
                 departments.GroupJoin(
                     employees,
                     department => department.Id,
@@ -29,8 +27,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_22
                     ));
 
             foreach (
-                (_, string name, IEnumerable<Employee> employeeCollection) 
-                    in items)
+                (_, string name, IEnumerable<Employee> employeeCollection) in items)
             {
                 Console.WriteLine(name);
                 foreach (Employee employee in employeeCollection)

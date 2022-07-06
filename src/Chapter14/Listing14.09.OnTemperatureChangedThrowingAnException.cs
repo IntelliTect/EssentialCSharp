@@ -28,8 +28,7 @@
             string? temperature = Console.ReadLine();
             if (!int.TryParse(temperature, out int currentTemperature))
             {
-                Console.WriteLine($"'{temperature}'" +
-                    $" is not a valid integer.");
+                Console.WriteLine($"'{temperature}' is not a valid integer.");
                 return;
             }
             thermostat.CurrentTemperature = currentTemperature;
