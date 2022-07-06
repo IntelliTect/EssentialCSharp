@@ -1,10 +1,12 @@
 using AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_10;
+#region INCLUDE
 using System;
 using System.Collections;
 using System.Collections.Generic;
-
+#region EXCLUDE
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_19
 {
+    #endregion EXCLUDE
     [NullableContext(1)]
     [Nullable(0)]
     public struct Pair<[Nullable(2)] T> : IPair<T>, IEnumerable<T>, IEnumerable
@@ -30,7 +32,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_19
                 {
                     if (pairItem2 != PairItem.Second)
                     {
-                        throw new NotImplementedException(string.Format("The enum {0} has not been implemented", index.ToString()));
+                        throw new NotImplementedException(
+                            string.Format(
+                                "The enum {0} has not been implemented", 
+                                index.ToString()));
                     }
                     result = Second;
                 }
@@ -55,3 +60,4 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_19
         }
     }
 }
+#endregion INCLUDE

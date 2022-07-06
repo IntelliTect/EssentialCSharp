@@ -2,11 +2,13 @@ using AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_10;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_11
 {
+    #region INCLUDE
     using System;
 
     public class BinaryTree<T> 
     {
 
+        #region EXCLUDE
         public BinaryTree(T value)
         {
             Value = value;
@@ -20,6 +22,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_11
         /// <example>
         /// familyTree.SubItems.Second.SubItems[PairItem.First].Value
         /// </example>
+        #endregion EXCLUDE
         public BinaryTree<T> this[params PairItem[]? branches]
         {
             get
@@ -48,12 +51,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_11
                 return currentNode;
             }
         }
+        #region EXCLUDE
 
         public T Value { get; set; }
 
         public Pair<BinaryTree<T>> SubItems {get;set;}
-
+        #endregion EXCLUDE
     }
+    #endregion INCLUDE
 
     public class Program
     {

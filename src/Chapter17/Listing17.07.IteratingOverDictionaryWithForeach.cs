@@ -1,5 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_07
 {
+    #region INCLUDE
     using System;
     using System.Collections.Generic;
 
@@ -7,7 +8,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_07
     {
         public static void Main()
         {
+            #region EXCLUDE
 #if !PRECSHARP5
+            #endregion EXCLUDE
             Dictionary<string, ConsoleColor> colorMap =
                 new Dictionary<string, ConsoleColor>
                 {
@@ -16,6 +19,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_07
                     ["Information"] = ConsoleColor.Green,
                     ["Verbose"] = ConsoleColor.White
                 };
+            #region EXCLUDE
 #else
             Dictionary<string, ConsoleColor> colorMap =
                 new Dictionary<string, ConsoleColor>
@@ -26,18 +30,23 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_07
                     {"Verbose", ConsoleColor.White}
                 };
 #endif
-
+            #endregion EXCLUDE
             Print(colorMap);
       }
 
-      private static void Print(
+        #region HIGHLIGHT
+        private static void Print(
           IEnumerable<KeyValuePair<string, ConsoleColor>> items)
-      {
-          foreach (KeyValuePair<string, ConsoleColor> item in items)
-          {
-              Console.ForegroundColor = item.Value;
+        #endregion HIGHLIGHT
+        {
+            #region HIGHLIGHT
+            foreach (KeyValuePair<string, ConsoleColor> item in items)
+            #endregion HIGHLIGHT
+            {
+                Console.ForegroundColor = item.Value;
               Console.WriteLine(item.Key);
           }
         }
     }
+#endregion INCLUDE
 }

@@ -8,6 +8,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_17
     {
         public static void Main()
         {
+            #region INCLUDE
             // JFK
             var jfkFamilyTree = new BinaryTree<string>(
                 "John Fitzgerald Kennedy")
@@ -29,10 +30,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_17
                     })
             };
 
+            #region HIGHLIGHT
             foreach (string name in jfkFamilyTree)
             {
                 Console.WriteLine(name);
             }
+            #endregion HIGHLIGHT
+            #endregion INCLUDE
         }
     }
 }

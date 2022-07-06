@@ -1,8 +1,9 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_02
 {
+    #region INCLUDE
     using System;
     using System.Collections.Generic;
-
+    #region EXCLUDE
     public class Program
     {
         public static void Main()
@@ -33,8 +34,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_02
             }
         }
     }
-
-    class NameComparison : IComparer<Contact>
+    #endregion EXCLUDE
+    public class NameComparison : IComparer<Contact>
     {
         public int Compare(Contact? x, Contact? y)
         {
@@ -62,7 +63,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_02
         }
     }
 
-    class Contact
+    public class Contact
     {
         public string FirstName { get; private set; }
         public string LastName { get; private set; }
@@ -73,4 +74,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_02
             this.LastName = lastName;
         }
     }
+    #endregion INCLUDE
 }

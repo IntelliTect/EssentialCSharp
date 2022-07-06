@@ -15,9 +15,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_20
             }
         }
     }
-
+    #region INCLUDE
     public struct Pair<T> : IPair<T>, IEnumerable<T>
     {
+        #region EXCLUDE
         #region Members
         public Pair(T first, T second)
         {
@@ -48,11 +49,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_20
         #endregion Members
 
         //Listing 16.20 Using yield return in a Method That Returns IEnumerable<T>
+        #endregion EXCLUDE
         public IEnumerable<T> GetReverseEnumerator()
         {
             yield return Second;
             yield return First;
         }
+        #endregion INCLUDE
         //Listing 16.20 Using yield return in a Method That Returns IEnumerable<T>
 
         //Listing 16.18 Escaping Iteration via yield break

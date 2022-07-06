@@ -4,9 +4,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_14
     using Listing17_10;
 
     using System.Collections.Generic;
-
+    #region INCLUDE
     public struct Pair<T> : IPair<T>,
+    #region HIGHLIGHT
     IEnumerable<T>
+    #endregion HIGHLIGHT
     {
         public Pair(T first, T second)
             : this()
@@ -16,7 +18,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_14
         }
         public T First { get; }
         public T Second { get; }
-
+        #region EXCLUDE
         #region Indexer
         public T this[PairItem index]
         {
@@ -37,7 +39,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_14
             }
         #endregion Indexer
         }
-
+        #endregion EXCLUDE
+        #region HIGHLIGHT
         #region IEnumerable<T>
         public IEnumerator<T> GetEnumerator()
         {
@@ -53,5 +56,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_14
             return GetEnumerator();
         }
         #endregion
+        #endregion HIGHLIGHT
     }
+    #endregion INCLUDE
 }

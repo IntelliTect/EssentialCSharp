@@ -34,10 +34,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_10
         public T First { get; } // C# 6.0 Getter-Only Autoproperty
 
         public T Second { get; } // C# 6.0 Getter-Only Autoproperty
-
+        #region INCLUDE
         [System.Runtime.CompilerServices.IndexerName("Entry")]
         public T this[PairItem index]
         {
+            #region EXCLUDE
             get
             {
                 return index switch
@@ -48,6 +49,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_10
                          $"The enum {index} has not been implemented"),
                 };
             }
+            #endregion EXCLUDE
         }
+        #endregion INCLUDE
     }
 }

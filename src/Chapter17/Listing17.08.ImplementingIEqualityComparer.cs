@@ -1,9 +1,10 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_08
 {
+    #region INCLUDE
     using System;
     using System.Collections.Generic;
 
-    class ContactEquality : IEqualityComparer<Contact>
+    public class ContactEquality : IEqualityComparer<Contact>
     {
         public bool Equals(Contact? x, Contact? y)
         {
@@ -25,6 +26,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_08
             return h1 * 23 + h2;
         }
     }
+    #endregion INCLUDE
 
     class Contact
     {
