@@ -23,6 +23,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_13
                         Size: fileInfo.Length
                     );
                 });
+            #endregion HIGHLIGHT
             //...
             #endregion INCLUDE
 
