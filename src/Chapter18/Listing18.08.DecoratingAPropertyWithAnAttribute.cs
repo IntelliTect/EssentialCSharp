@@ -2,7 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_08
 {
     using System;
     #region INCLUDE
-    class CommandLineInfo
+    public class CommandLineInfo
     {
         #region HIGHLIGHT
         [CommandLineSwitchAlias("?")]

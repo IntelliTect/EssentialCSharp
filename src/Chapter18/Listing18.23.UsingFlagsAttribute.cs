@@ -14,7 +14,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_23
     using System;
     using System.IO;
 
-    class Program
+    public class Program
     {
         public static void Main()
         {

@@ -2,7 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_09
 {
     using System;
 
-    class CommandLineInfo
+    public class CommandLineInfo
     {
         [CommandLineSwitchAlias("?")]
         public bool Help { get; set; }

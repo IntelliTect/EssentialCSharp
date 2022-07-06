@@ -12,7 +12,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_15
         #endregion HIGHLIGHT
         public string Alias { get; }
     }
-    class CommandLineInfo
+    public class CommandLineInfo
     {
         #region HIGHLIGHT
         [CommandLineSwitchAlias("?")]
