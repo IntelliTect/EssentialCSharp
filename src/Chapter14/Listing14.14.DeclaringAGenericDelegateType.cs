@@ -7,7 +7,7 @@
         #region INCLUDE
         public delegate void EventHandler<TEventArgs>(
             object sender, TEventArgs e)
-            #endregion INCLUDE
             where TEventArgs : EventArgs;
+        #endregion INCLUDE
     }
 }
