@@ -7,7 +7,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_02
     using System.Runtime.ExceptionServices;
     using System.Threading.Tasks;
 
-    static public class Program
+    public static class Program
     {
         public const string DefaultUrl = "https://IntelliTect.com";
 
@@ -26,15 +26,15 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_02
                 url = args[1];
                 // Ignore additional parameters
             }
-            Console.Write($"Searching for '{findText}' at URL '{url}'.");
+            Console.WriteLine($"Searching for '{findText}' at URL '{url}'.");
 
             using WebClient webClient = new WebClient();
-            Console.Write("\nDownloading...");
+            Console.Write("Downloading...");
             Task task = webClient.DownloadDataTaskAsync(url)
                 .ContinueWith(antecedent =>
                 {
                     byte[] downloadData = antecedent.Result;
-                    Console.Write("\nSearching...");
+                    Console.Write($"{Environment.NewLine}Searching...");
                     return CountOccurrencesAsync(
                         downloadData, findText);
                 })

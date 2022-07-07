@@ -4,7 +4,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_15
     {
         #region INCLUDE
         #region HIGHLIGHT
-        async private void PingButton_Click(
+        private async void PingButton_Click(
         #endregion HIGHLIGHT
     object sender, RoutedEventArgs e)
         {

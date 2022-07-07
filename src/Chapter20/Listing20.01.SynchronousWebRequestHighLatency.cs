@@ -5,7 +5,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_01
     using System.IO;
     using System.Net;
 
-    static public class Program
+    public static class Program
     {
         public const string DefaultUrl = "https://IntelliTect.com";
 
@@ -24,19 +24,19 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_01
                 url = args[1];
                 // Ignore additional parameters
             }
-            Console.Write($"Searching for '{findText}' at URL '{url}'.");
+            Console.WriteLine($"Searching for '{findText}' at URL '{url}'.");
 
-            Console.Write("\nDownloading...");
+            Console.WriteLine("Downloading...");
             using WebClient webClient = new WebClient();
             byte[] downloadData =
                 webClient.DownloadData(url);
 
-            Console.Write("\nSearching...");
+            Console.WriteLine("Searching...");
             int textOccurrenceCount = CountOccurrences(
                 downloadData, findText);
 
             Console.WriteLine(
-                @$"{Environment.NewLine}'{findText}' appears {
+                @$"'{findText}' appears {
                     textOccurrenceCount} times at URL '{url}'.");
         }
 

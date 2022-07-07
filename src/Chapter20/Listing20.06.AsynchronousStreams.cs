@@ -12,7 +12,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_06
 
     public static class Program
     {
-        static public async void Main(params string[] args)
+        public static async void Main(params string[] args)
         {
             string directoryPath = Directory.GetCurrentDirectory();
             string searchPattern = "*";
@@ -54,7 +54,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_06
         }
 
         #region HIGHLIGHT
-        static public async IAsyncEnumerable<string> EncryptFilesAsync(
+        public static async IAsyncEnumerable<string> EncryptFilesAsync(
             IEnumerable<string> files, Cryptographer cryptographer,
             [EnumeratorCancellation] CancellationToken cancellationToken = default)
         #endregion HIGHLIGHT

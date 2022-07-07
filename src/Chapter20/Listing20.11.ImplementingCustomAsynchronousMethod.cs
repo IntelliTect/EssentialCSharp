@@ -7,7 +7,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_11
 
     public class Program
     {
-        static public Task<Process> RunProcessAsync(
+        public static Task<Process> RunProcessAsync(
             string fileName,
             string arguments = "",
             CancellationToken cancellationToken = default)

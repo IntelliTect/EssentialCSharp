@@ -7,7 +7,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_04
     using System.Text;
     using System.Threading.Tasks;
 
-    public static partial class Program
+    public static class Program
     {
         public static async ValueTask<byte[]> CompressAsync(byte[] buffer)
         {

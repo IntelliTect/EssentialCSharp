@@ -8,7 +8,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_12
 
     public class Program
     {
-        static public Task<Process> RunProcessAsync(
+        public static Task<Process> RunProcessAsync(
             string fileName,
             string arguments = "",
         #region HIGHLIGHT
@@ -40,10 +40,31 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_12
                 taskCS.SetResult(process);
             };
 
+            #region HIGHLIGHT
+            if (progress != null)
+            {
+                process.OutputDataReceived +=
+                    (sender, localEventArgs) =>
+                {
+                    progress.Report(
+                        new ProcessProgressEventArgs(
+                            localEventArgs.Data,
+                            objectState));
+                };
+            }
+            #endregion HIGHLIGHT
+
             cancellationToken
                 .ThrowIfCancellationRequested();
 
             process.Start();
+
+            #region HIGHLIGHT
+            if (progress !=null)
+            {
+                process.BeginOutputReadLine();
+            }
+            #endregion HIGHLIGHT
 
             cancellationToken.Register(() =>
             {
@@ -56,9 +77,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_12
         // ...
     }
 
-    class ProcessProgressEventArgs
+    public class ProcessProgressEventArgs
     {
-        // ...
+        #region EXCLUDE
+        public ProcessProgressEventArgs(string? _,object? __){}
+        #endregion EXCLUDE
     }
     #endregion INCLUDE
 }

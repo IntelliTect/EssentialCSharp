@@ -1,8 +1,11 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_08
-{
-}
+
+/*
 #region INCLUDE
+namespace System.Linq
+#region EXCLUDE
+ */
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_08
+#endregion EXCLUDE
 {
     public static class AsyncEnumerable
     {
