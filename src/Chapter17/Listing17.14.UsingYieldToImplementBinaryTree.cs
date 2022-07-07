@@ -10,8 +10,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_14
     IEnumerable<T>
     #endregion HIGHLIGHT
     {
-        public Pair(T first, T second)
-            : this()
+        public Pair(T first, T second) : this()
         {
             First = first;
             Second = second;
@@ -48,7 +47,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_14
             yield return Second;
         }
         #endregion IEnumerable<T>
+        #endregion HIGHLIGHT
 
+        #region HIGHLIGHT
         #region IEnumerable Members
         System.Collections.IEnumerator
             System.Collections.IEnumerable.GetEnumerator()

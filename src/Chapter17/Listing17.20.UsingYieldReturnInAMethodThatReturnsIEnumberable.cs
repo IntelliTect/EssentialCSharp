@@ -40,7 +40,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_20
 
         //Listing 16.20 Using yield return in a Method That Returns IEnumerable<T>
         #endregion EXCLUDE
+        #region HIGHLIGHT
         public IEnumerable<T> GetReverseEnumerator()
+        #endregion HIGHLIGHT
         {
             yield return Second;
             yield return First;
@@ -68,7 +70,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_20
         public static void Main()
         {
             var game = new Pair<string>("Redskins", "Eagles");
+            #region HIGHLIGHT
             foreach (string name in game.GetReverseEnumerator())
+            #endregion HIGHLIGHT
             {
                 Console.WriteLine(name);
             }
