@@ -39,6 +39,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_14
         #endregion Indexer
         }
         #endregion EXCLUDE
+        #region HIGHLIGHT
         #region IEnumerable<T>
         public IEnumerator<T> GetEnumerator()
         {
@@ -53,7 +54,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_14
         {
             return GetEnumerator();
         }
-        #endregion
+        #endregion IEnumerable Members
+        #endregion HIGHLIGHT
     }
-    #endregion INCLUDE
+#endregion INCLUDE
 }
