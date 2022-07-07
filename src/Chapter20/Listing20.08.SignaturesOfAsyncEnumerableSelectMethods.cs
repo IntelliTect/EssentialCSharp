@@ -22,10 +22,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_08
               Func<TSource, ValueTask<TResult>>? selector);
         public static
         #region HIGHLIGHT
-          IAsyncEnumerable<TResult> SelectAwaitWithCancellation<TSource?, TResult?>(
+          IAsyncEnumerable<TResult> SelectAwaitWithCancellation<
         #endregion HIGHLIGHT
+            TSource?, TResult?>(
               this IAsyncEnumerable<TSource> source,
-              Func<TSource, CancellationToken, ValueTask<TResult>> selector);
+              Func<TSource, CancellationToken, 
+                  ValueTask<TResult>> selector);
         // ...
     }
 }

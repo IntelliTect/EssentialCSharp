@@ -26,7 +26,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_02
                 url = args[1];
                 // Ignore additional parameters
             }
-            Console.WriteLine($"Searching for '{findText}' at URL '{url}'.");
+            Console.WriteLine(
+                $"Searching for '{findText}' at URL '{url}'.");
 
             using WebClient webClient = new WebClient();
             Console.Write("Downloading...");

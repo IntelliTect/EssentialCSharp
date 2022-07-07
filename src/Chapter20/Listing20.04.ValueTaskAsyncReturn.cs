@@ -18,7 +18,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_04
             using MemoryStream memoryStream = new MemoryStream();
             using System.IO.Compression.GZipStream gZipStream =
                 new System.IO.Compression.GZipStream(
-                    memoryStream, System.IO.Compression.CompressionMode.Compress);
+                    memoryStream, 
+                        System.IO.Compression.CompressionMode.Compress);
             await gZipStream.WriteAsync(buffer.AsMemory(0, buffer.Length));
 
             return memoryStream.ToArray();
