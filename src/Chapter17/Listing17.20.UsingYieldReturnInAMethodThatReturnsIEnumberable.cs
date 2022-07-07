@@ -4,17 +4,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_20
     using Listing17_10;
     using System.Collections.Generic;
 
-    public class Program
-    {
-        public static void Main()
-        {
-            var game = new Pair<string>("Redskins", "Eagles");
-            foreach(string name in game.GetReverseEnumerator())
-            {
-                Console.WriteLine(name);
-            }
-        }
-    }
+   
     #region INCLUDE
     public struct Pair<T> : IPair<T>, IEnumerable<T>
     {
@@ -55,22 +45,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_20
             yield return Second;
             yield return First;
         }
-        #endregion INCLUDE
-        //Listing 16.20 Using yield return in a Method That Returns IEnumerable<T>
-
-        //Listing 16.18 Escaping Iteration via yield break
-        public System.Collections.Generic.IEnumerable<T> GetNotNullEnumerator()
-        {
-            if((First == null) || (Second == null))
-            {
-                yield break;
-            }
-            yield return Second;
-            yield return First;
-        }
-        //Listing 16.18 Escaping Iteration via yield break
-
-
+        #region EXCLUDE
         #region IEnumerable<T>
         public IEnumerator<T> GetEnumerator()
         {
@@ -86,5 +61,18 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_20
             return GetEnumerator();
         }
         #endregion
+    }
+    public class Program
+    {
+        #endregion EXCLUDE
+        public static void Main()
+        {
+            var game = new Pair<string>("Redskins", "Eagles");
+            foreach (string name in game.GetReverseEnumerator())
+            {
+                Console.WriteLine(name);
+            }
+        }
+        #endregion INCLUDE
     }
 }

@@ -7,7 +7,6 @@
     <Compile Remove="Listing17.19.CSharpEquivalentOfCompilerGeneratedCodeForIterators.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Listing17.11.SpecifyingAReturnAttribute.Description.cs" />
     <None Include="Listing17.19.CSharpEquivalentOfCompilerGeneratedCodeForIterators.cs" />
     <Compile Include="..\Shared\Program.cs">
       <Link>Program.cs</Link>

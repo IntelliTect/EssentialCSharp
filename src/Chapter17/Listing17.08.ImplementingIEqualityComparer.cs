@@ -1,14 +1,13 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_08
 {
     #region INCLUDE
-    using System;
     using System.Collections.Generic;
 
     public class ContactEquality : IEqualityComparer<Contact>
     {
         public bool Equals(Contact? x, Contact? y)
         {
-            if(Object.ReferenceEquals(x, y))
+            if(object.ReferenceEquals(x, y))
                 return true;
             if(x == null || y == null)
                 return false;
@@ -28,7 +27,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_08
     }
     #endregion INCLUDE
 
-    class Contact
+    public class Contact
     {
         public string FirstName { get; private set; }
         public string LastName { get; private set; }
