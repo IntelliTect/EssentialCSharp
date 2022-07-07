@@ -1,18 +1,20 @@
-// TODO: Update listing in Manuscript
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_12
 {
+    #region INCLUDE
     using System;
     using System.Diagnostics;
     using System.Threading;
     using System.Threading.Tasks;
 
-    class Program
+    public class Program
     {
         static public Task<Process> RunProcessAsync(
             string fileName,
             string arguments = "",
+        #region HIGHLIGHT
             IProgress<ProcessProgressEventArgs>? progress = 
                 null, object? objectState = null,
+        #endregion HIGHLIGHT
             CancellationToken cancellationToken =
                 default(CancellationToken))
         {
@@ -25,8 +27,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_12
                 {
                     UseShellExecute = false,
                     Arguments = arguments,
+                    #region HIGHLIGHT
                     RedirectStandardOutput =
                        progress != null
+                    #endregion HIGHLIGHT
                 },
                 EnableRaisingEvents = true
             };
@@ -56,4 +60,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_12
     {
         // ...
     }
+    #endregion INCLUDE
 }

@@ -1,5 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_03
 {
+    #region INCLUDE
     using System;
     using System.IO;
     using System.Net;
@@ -92,4 +93,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_03
             return textOccurrenceCount;
         }
     }
+    #endregion INCLUDE
 }

@@ -1,10 +1,11 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_11
 {
+    #region INCLUDE
     using System.Diagnostics;
     using System.Threading;
     using System.Threading.Tasks;
 
-    class Program
+    public class Program
     {
         static public Task<Process> RunProcessAsync(
             string fileName,
@@ -29,21 +30,26 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_11
                 taskCS.SetResult(process);
             };
 
+            #region HIGHLIGHT
             cancellationToken
                 .ThrowIfCancellationRequested();
+            #endregion HIGHLIGHT
 
             process.Start();
 
+            #region HIGHLIGHT
             cancellationToken.Register(() =>
             {
                 Process.GetProcessById(process.Id).Kill();
             });
+            #endregion HIGHLIGHT
 
             return taskCS.Task;
         }
 
         // ...
     }
+    #endregion INCLUDE
 }
 
 

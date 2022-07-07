@@ -8,6 +8,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_16
 
     public class Program
     {
+        #region INCLUDE
         async private void PingButton_Click(
         object sender, RoutedEventArgs e)
         {
@@ -32,6 +33,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_16
 
             StatusLabel.Content = "Pinging�";
 
+            #region HIGHLIGHT
             foreach (string url in urls)
             {
                 status = await func(url);
@@ -39,8 +41,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_16
                     $@"{ url }: { status.ToString() } ({
                         Thread.CurrentThread.ManagedThreadId })";
             }
+            #endregion HIGHLIGHT
         }
-
+        #endregion INCLUDE
     }
 }
 

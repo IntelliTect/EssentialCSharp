@@ -1,5 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_10
 {
+    #region INCLUDE
     using System;
     using System.IO;
     using System.Net;
@@ -20,7 +21,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_10
             Console.Write(url);
 
             Func<string, Task> writeWebRequestSizeAsync =
+            #region HIGHLIGHT
                 async (string webRequestUrl) =>
+                #endregion HIGHLIGHT
                 {
                     // Error handling omitted for 
                     // elucidation
@@ -28,7 +31,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_10
                        WebRequest.Create(url);
 
                     WebResponse response =
+                    #region HIGHLIGHT
                         await webRequest.GetResponseAsync();
+                    #endregion HIGHLIGHT
 
                     // Explicitly counting rather than invoking
                     // webRequest.ContentLength to demonstrate
@@ -38,20 +43,24 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_10
                             response.GetResponseStream()))
                     {
                         string text =
+                        #region HIGHLIGHT
                             (await reader.ReadToEndAsync());
+                        #endregion HIGHLIGHT
                         Console.WriteLine(
                             FormatBytes(text.Length));
                     }
                 };
 
+            #region HIGHLIGHT
             Task task = writeWebRequestSizeAsync(url);
+            #endregion HIGHLIGHT
 
-            while(!task.Wait(100))
+            while (!task.Wait(100))
             {
                 Console.Write(".");
             }
         }
-
+        #region EXCLUDE
         static public string FormatBytes(long bytes)
         {
             string[] magnitudes =
@@ -65,7 +74,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_10
                         bytes > (max /= 1024)) ?? "0 Bytes",
                     (decimal)bytes / (decimal)max).Trim();
         }
+        #endregion EXCLUDE
     }
+    #endregion INCLUDE
 }
 
 

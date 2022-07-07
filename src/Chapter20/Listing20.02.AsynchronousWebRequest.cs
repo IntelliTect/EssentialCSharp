@@ -1,5 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_02
 {
+    #region INCLUDE
     using System;
     using System.IO;
     using System.Net;
@@ -71,18 +72,21 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_02
                 }
                 catch (WebException)
                 {
-                    // ...
+                    #region EXCLUDE
                     throw;
+                    #endregion EXCLUDE
                 }
                 catch (IOException)
                 {
-                    // ...
+                    #region EXCLUDE
                     throw;
+                    #endregion EXCLUDE
                 }
                 catch (NotSupportedException)
                 {
-                    // ...
+                    #region EXCLUDE
                     throw;
+                    #endregion EXCLUDE
                 }
             }
         }
@@ -91,6 +95,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_02
         private static async Task<int> CountOccurrencesAsync(
             byte[] downloadData, string findText)
         {
+            #region EXCLUDE
             int textOccurrenceCount = 0;
 
             using MemoryStream stream = new MemoryStream(downloadData);
@@ -123,6 +128,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_02
             while (length != 0);
 
             return textOccurrenceCount;
+            #endregion EXCLUDE
         }
     }
+    #endregion INCLUDE
 }
