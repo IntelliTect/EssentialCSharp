@@ -41,8 +41,28 @@
     }
     #region EXCLUDE
     /*
-     #endregion EXCLUDE
-     * 
+    #endregion EXCLUDE
+    public class PiCalculator
+    {
+        public static string Calculate(int digits = 100)
+        {
+            //...
+        }
+    }
+    public class Utility
+    {
+        public static IEnumerable<char> BusySymbols()
+        {
+            string busySymbols = @"-\|/-\|/";
+            int next = 0;
+            while(true)
+            {
+                yield return busySymbols[next];
+                next = next + 1) % busySymbols.Length;
+                yield return '\b';
+            }
+        }
+    }
      #region EXCLUDE
     */
     #endregion EXCLUDE
