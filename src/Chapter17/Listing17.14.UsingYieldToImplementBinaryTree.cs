@@ -47,9 +47,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_14
             yield return Second;
         }
         #endregion IEnumerable<T>
-        #endregion HIGHLIGHT
 
-        #region HIGHLIGHT
         #region IEnumerable Members
         System.Collections.IEnumerator
             System.Collections.IEnumerable.GetEnumerator()
