@@ -8,29 +8,15 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_07
     {
         public static void Main()
         {
-            #region EXCLUDE
-#if !PRECSHARP5
-            #endregion EXCLUDE
-            Dictionary<string, ConsoleColor> colorMap =
-                new Dictionary<string, ConsoleColor>
+            // C# 6.0 (use {"Error", consoleColor.Red} pre-C# 6.0)
+            var colorMap = new Dictionary<string, ConsoleColor>
                 {
                     ["Error"] = ConsoleColor.Red,
                     ["Warning"] = ConsoleColor.Yellow,
                     ["Information"] = ConsoleColor.Green,
                     ["Verbose"] = ConsoleColor.White
                 };
-            #region EXCLUDE
-#else
-            Dictionary<string, ConsoleColor> colorMap =
-                new Dictionary<string, ConsoleColor>
-                {
-                    {"Error", ConsoleColor.Red },
-                    {"Warning", ConsoleColor.Yellow },
-                    {"Information", ConsoleColor.Green },
-                    {"Verbose", ConsoleColor.White}
-                };
-#endif
-            #endregion EXCLUDE
+
             Print(colorMap);
       }
 

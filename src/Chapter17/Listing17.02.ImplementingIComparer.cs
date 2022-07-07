@@ -35,6 +35,17 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_02
         }
     }
     #endregion EXCLUDE
+    public class Contact
+    {
+        public string FirstName { get; private set; }
+        public string LastName { get; private set; }
+
+        public Contact(string firstName, string lastName)
+        {
+            this.FirstName = firstName;
+            this.LastName = lastName;
+        }
+    }
     public class NameComparison : IComparer<Contact>
     {
         public int Compare(Contact? x, Contact? y)
@@ -60,18 +71,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_02
             if(y == null)
                 return -1;
             return x.CompareTo(y);
-        }
-    }
-
-    public class Contact
-    {
-        public string FirstName { get; private set; }
-        public string LastName { get; private set; }
-
-        public Contact(string firstName, string lastName)
-        {
-            this.FirstName = firstName;
-            this.LastName = lastName;
         }
     }
     #endregion INCLUDE

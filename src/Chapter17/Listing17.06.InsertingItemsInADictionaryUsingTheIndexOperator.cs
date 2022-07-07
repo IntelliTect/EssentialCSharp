@@ -9,8 +9,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_06
         public static void Main()
         {
             // C# 6.0 (use {"Error", ConsoleColor.Red} pre-C# 6.0)
-            Dictionary<string, ConsoleColor> colorMap =
-                new Dictionary<string, ConsoleColor>
+            var colorMap = new Dictionary<string, ConsoleColor>
                 {
                     ["Error"] = ConsoleColor.Red,
                     ["Warning"] = ConsoleColor.Yellow,

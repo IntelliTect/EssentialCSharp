@@ -25,19 +25,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_04
                 Console.WriteLine(number);
             }
         }
-        #region EXCLUDE
-
-#if !PRECSHARP6
-#endregion EXCLUDE
         public static bool Even(int value) =>
             (value % 2) == 0;
-#endregion INCLUDE
-#else
-        public static bool Even(int value)
-        {
-            return (value % 2) == 0;
-        }
-#endif
     }
-
+    #endregion INCLUDE
 }

@@ -8,8 +8,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_05
     {
         public static void Main()
         {
-#if !PRECSHARP5
-        // C# 6.0
+        // C# 6.0 (use {"Error", consoleColor.Red} pre-C# 6.0)
         Dictionary<string, ConsoleColor> colorMap =
             new Dictionary<string, ConsoleColor>
             {
@@ -17,18 +16,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_05
                 ["Warning"] = ConsoleColor.Yellow,
                 ["Information"] = ConsoleColor.Green
             };
-            #region EXCLUDE
-#else
-            // Pre-C# 6.0
-            Dictionary<string, ConsoleColor> colorMap =
-            new Dictionary<string, ConsoleColor>
-            {
-                {"Error", ConsoleColor.Red },
-                {"Warning", ConsoleColor.Yellow },
-                {"Information", ConsoleColor.Green }
-            };
-#endif
-            #endregion EXCLUDE
             #region HIGHLIGHT
             colorMap.Add("Verbose", ConsoleColor.White);
             #endregion HIGHLIGHT
