@@ -13,9 +13,9 @@
 
         private static string CalculatePi(int digits)
         {
-            // ...
-
+            #region EXCLUDE
             return string.Empty;
+            #endregion EXCLUDEe
         }
         #endregion INCLUDE
     }

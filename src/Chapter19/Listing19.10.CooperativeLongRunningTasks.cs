@@ -1,10 +1,10 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_10
 {
-    #region INCLUDE
     using System;
     using System.Threading;
-    using System.Threading.Tasks;
     using AddisonWesley.Michaelis.EssentialCSharp.Shared;
+    #region INCLUDE
+    using System.Threading.Tasks;
     #region EXCLUDE
     public class Program
     {
