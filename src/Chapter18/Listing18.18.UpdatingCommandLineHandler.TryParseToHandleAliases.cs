@@ -103,7 +103,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_18
         }
         #endregion INCLUDE
 
-        // Justification: Not fully implemented.
+// Justification: Not fully implemented.
 #pragma warning disable IDE0060 // Remove unused parameter
         private static bool TryParseEnumSwitch(
             object commandLine, string[] optionParts, PropertyInfo property, ref string? errorMessage)
