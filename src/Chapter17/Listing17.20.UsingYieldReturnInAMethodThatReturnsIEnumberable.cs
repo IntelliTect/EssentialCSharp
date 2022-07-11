@@ -4,7 +4,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_20
     using Listing17_10;
     using System.Collections.Generic;
 
-   
     #region INCLUDE
     public struct Pair<T> : IPair<T>, IEnumerable<T>
     {
