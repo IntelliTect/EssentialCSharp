@@ -7,7 +7,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_11
 
     public class BinaryTree<T> 
     {
-
         #region EXCLUDE
         public BinaryTree(T value)
         {
