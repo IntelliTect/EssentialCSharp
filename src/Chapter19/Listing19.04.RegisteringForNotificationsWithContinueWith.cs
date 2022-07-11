@@ -1,5 +1,6 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_04
 {
+    #region INCLUDE
     using System;
     using System.Threading.Tasks;
     using AddisonWesley.Michaelis.EssentialCSharp.Shared;
@@ -52,6 +53,7 @@
             completedTask.Wait();
         }
     }
+    #endregion INCLUDE
 }
 
 

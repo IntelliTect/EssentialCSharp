@@ -1,70 +1,37 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_07
 {
+    #region INCLUDE
     using System;
     using System.Diagnostics;
     using System.Threading;
 
     public class Program
     {
-        // TODO: Update listing in Manuscript
-        private static Stopwatch Clock { get;  } = new Stopwatch();
+        private static Stopwatch Clock { get; } = new Stopwatch();
 
         public static void Main()
         {
             try
             {
                 Clock.Start();
+                #region HIGHLIGHT
                 // Register a callback to receive notifications
                 // of any unhandled exception
-#if NETCOREAPP1_1
-                System.Threading.Tasks.TaskScheduler.UnobservedTaskException += (s, e) =>
-                {
-                    Message("Event handler starting");
-                    resetEvent.Set();
-                };
 
-                void Work()
-                {
-                    Task task = Task.Factory.StartNew(() =>
-                    {
-                        Message("Throwing exception.");
-                        throw new Exception();
-                    });
-                }
-                Work();
-
-                Task.Delay(5000);
-                GC.Collect();
-                GC.WaitForPendingFinalizers();
-                GC.Collect();
-
-                Action<object, EventArgs> unhandledExcpetionHandler = (s, e) =>
-                {
-                    Message("Event handler starting");
-                    Delay(4000);
-                };
-#else
                 AppDomain.CurrentDomain.UnhandledException +=
                   (s, e) =>
                   {
                       Message("Event handler starting");
                       Delay(4000);
                   };
+#endregion HIGHLIGHT
                 Thread thread = new Thread(() =>
                 {
                     Message("Throwing exception.");
                     throw new Exception();
                 });
                 thread.Start();
-#endif
-#if DEBUG1   
-                resetEvent.Wait();
-                {
-                if (!resetEvent.Wait(5000))
-                {
-                    throw new Exception("Timed out waiting for unhandled exception.");
-                }
-#endif // DEBUG
+                
                 Delay(2000);
             }
             finally
@@ -87,4 +54,5 @@
                 Clock.ElapsedMilliseconds, text);
         }
     }
+#endregion INCLUDE
 }
