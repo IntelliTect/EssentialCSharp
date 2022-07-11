@@ -83,7 +83,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_18
                     success = true;
                 }
                 else if(
-                    //property.PropertyType.IsEnum also available
+                    // property.PropertyType.IsEnum also available
                     property.PropertyType ==
                         typeof(ProcessPriorityClass))
                 {
