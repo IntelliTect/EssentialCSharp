@@ -35,7 +35,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_02
                 .ContinueWith(antecedent =>
                 {
                     byte[] downloadData = antecedent.Result;
-                    Console.Write($"{Environment.NewLine}Searching...");
+                    Console.WriteLine("Searching...");
                     return CountOccurrencesAsync(
                         downloadData, findText);
                 })
