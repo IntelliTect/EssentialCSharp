@@ -36,15 +36,19 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_18
         #endregion Members
 
         //Listing 17.18 Escaping Iteration via yield break
+        #region INCLUDE
         public System.Collections.Generic.IEnumerable<T> GetNotNullEnumerator()
         {
-            if((First == null) || (Second == null))
+            #region HIGHLIGHT
+            if ((First == null) || (Second == null))
             {
                 yield break;
             }
+            #endregion HIGHLIGHT
             yield return Second;
             yield return First;
         }
+        #endregion INCLUDE
 
         //Listing 17.18 Escaping Iteration via yield break
 

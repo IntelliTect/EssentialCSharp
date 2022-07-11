@@ -3,24 +3,21 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_09
     using System;
 
     // ----
-
+    #region INCLUDE
     interface IPair<T>
     {
         T First { get; }
         T Second { get; }
+        #region HIGHLIGHT
         T this[PairItem index] { get; }
-
+        #endregion HIGHLIGHT
     }
-
-    // ----
 
     public enum PairItem
     {
         First,
         Second
     }
-
-    // ----
 
     public struct Pair<T> : IPair<T>
     {
@@ -31,14 +28,15 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_09
         }
 
         public T First { get; }  // C# 6.0 Getter-Only Autoproperty
-
         public T Second { get; } // C# 6.0 Getter-Only Autoproperty
 
+        #region HIGHLIGHT
         public T this[PairItem index]
         {
             get
             {
-                switch(index)
+                #endregion HIGHLIGHT
+                switch (index)
                 {
                     case PairItem.First:
                         return First;
@@ -50,6 +48,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_09
 
                 }
             }
+            #region EXCLUDE
 
             /*  
             // In keeping with the principal that structs should
@@ -73,6 +72,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_09
                 }
             }
             */
+            #endregion EXCLUDE
+            #region HIGHLIGHT
         }
+        #endregion HIGHLIGHT
     }
+    #endregion INCLUDE
 }

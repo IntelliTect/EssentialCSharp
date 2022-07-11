@@ -2,15 +2,16 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_16
 {
     using System.Collections.Generic;
     using Listing17_14;
-
+    #region INCLUDE
     public class BinaryTree<T> :
       IEnumerable<T>
     {
+        #region EXCLUDE
         public BinaryTree(T value)
         {
             Value = value;
         }
-
+        #endregion EXCLUDE
         #region IEnumerable<T>
         public IEnumerator<T> GetEnumerator()
         {
@@ -18,7 +19,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_16
             yield return Value;
 
             // Iterate through each of the elements in the pair
-            foreach(BinaryTree<T>? tree in SubItems)
+            #region HIGHLIGHT
+            foreach (BinaryTree<T>? tree in SubItems)
             {
                 if(tree != null)
                 {
@@ -31,6 +33,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_16
                     }
                 }
             }
+            #endregion HIGHLIGHT
         }
         #endregion IEnumerable<T>
 
@@ -41,9 +44,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_16
             return GetEnumerator();
         }
         #endregion
-
+        #region EXCLUDE
         public T Value { get; }  // C# 6.0 Getter-only Autoproperty
 
         public Pair<BinaryTree<T>> SubItems { get; set; }
+        #endregion EXCLUDE
     }
+    #endregion INCLUDE
 }

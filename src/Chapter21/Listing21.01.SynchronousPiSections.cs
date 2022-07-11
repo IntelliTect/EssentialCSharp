@@ -3,7 +3,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_01
     using System;
     using AddisonWesley.Michaelis.EssentialCSharp.Shared;
 
-    class Program
+    public class Program
     {
         const int TotalDigits = 100;
         const int BatchSize = 10;

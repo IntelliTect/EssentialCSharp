@@ -7,11 +7,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_15
     {
         public static void Main()
         {
+            #region INCLUDE
             var fullname = new Pair<string>("Inigo", "Montoya");
             foreach(string name in fullname)
             {
                 Console.WriteLine(name);
             }
+            #endregion INCLUDE
         }
     }
 }

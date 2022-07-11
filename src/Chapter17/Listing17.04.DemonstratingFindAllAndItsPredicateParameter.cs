@@ -1,5 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_04
 {
+    #region INCLUDE
     using System;
     using System.Collections.Generic;
 
@@ -13,23 +14,19 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_04
             list.Add(3);
             list.Add(2);
 
+            #region HIGHLIGHT
             List<int> results = list.FindAll(Even);
+            #endregion HIGHLIGHT
 
-            foreach(int number in results)
+            #region HIGHLIGHT
+            foreach (int number in results)
+            #endregion HIGHLIGHT
             {
                 Console.WriteLine(number);
             }
         }
-
-#if !PRECSHARP6
         public static bool Even(int value) =>
             (value % 2) == 0;
-#else
-        public static bool Even(int value)
-        {
-            return (value % 2) == 0;
-        }
-#endif
     }
-
+    #endregion INCLUDE
 }

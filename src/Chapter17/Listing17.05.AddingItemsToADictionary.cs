@@ -1,5 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_05
 {
+    #region INCLUDE
     using System;
     using System.Collections.Generic;
 
@@ -7,27 +8,17 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_05
     {
         public static void Main()
         {
-#if !PRECSHARP5
-        // C# 6.0
-        Dictionary<string, ConsoleColor> colorMap =
-            new Dictionary<string, ConsoleColor>
+            // C# 6.0 (use {"Error", consoleColor.Red} pre-C# 6.0)
+            var colorMap = new Dictionary<string, ConsoleColor>
             {
                 ["Error"] = ConsoleColor.Red,
                 ["Warning"] = ConsoleColor.Yellow,
                 ["Information"] = ConsoleColor.Green
             };
-#else
-        // Pre-C# 6.0
-        Dictionary<string, ConsoleColor> colorMap =
-            new Dictionary<string, ConsoleColor>
-            {
-                {"Error", ConsoleColor.Red },
-                {"Warning", ConsoleColor.Yellow },
-                {"Information", ConsoleColor.Green }
-            };
-#endif
-
+            #region HIGHLIGHT
             colorMap.Add("Verbose", ConsoleColor.White);
+            #endregion HIGHLIGHT
+            #region EXCLUDE
 
             Print(colorMap);
         }
@@ -39,6 +30,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_05
                 Console.ForegroundColor = item.Value;
                 Console.WriteLine(item.Key);
             }
+            #endregion EXCLUDE
         }
     }
+#endregion INCLUDE
 }

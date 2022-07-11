@@ -1,5 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_07
 {
+    #region INCLUDE
     using System;
     using System.Collections.Generic;
 
@@ -7,37 +8,31 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_07
     {
         public static void Main()
         {
-#if !PRECSHARP5
-            Dictionary<string, ConsoleColor> colorMap =
-                new Dictionary<string, ConsoleColor>
+            // C# 6.0 (use {"Error", consoleColor.Red} pre-C# 6.0)
+            var colorMap = new Dictionary<string, ConsoleColor>
                 {
                     ["Error"] = ConsoleColor.Red,
                     ["Warning"] = ConsoleColor.Yellow,
                     ["Information"] = ConsoleColor.Green,
                     ["Verbose"] = ConsoleColor.White
                 };
-#else
-            Dictionary<string, ConsoleColor> colorMap =
-                new Dictionary<string, ConsoleColor>
-                {
-                    {"Error", ConsoleColor.Red },
-                    {"Warning", ConsoleColor.Yellow },
-                    {"Information", ConsoleColor.Green },
-                    {"Verbose", ConsoleColor.White}
-                };
-#endif
 
             Print(colorMap);
       }
 
-      private static void Print(
+        #region HIGHLIGHT
+        private static void Print(
           IEnumerable<KeyValuePair<string, ConsoleColor>> items)
-      {
-          foreach (KeyValuePair<string, ConsoleColor> item in items)
-          {
-              Console.ForegroundColor = item.Value;
+        #endregion HIGHLIGHT
+        {
+            #region HIGHLIGHT
+            foreach (KeyValuePair<string, ConsoleColor> item in items)
+            #endregion HIGHLIGHT
+            {
+                Console.ForegroundColor = item.Value;
               Console.WriteLine(item.Key);
           }
         }
     }
+#endregion INCLUDE
 }
