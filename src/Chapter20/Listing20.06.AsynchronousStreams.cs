@@ -50,7 +50,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_06
             {
                 Console.WriteLine($"{fileName}=>{encryptedFileName}");
             }
-
         }
 
         #region HIGHLIGHT
