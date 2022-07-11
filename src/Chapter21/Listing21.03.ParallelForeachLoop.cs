@@ -63,7 +63,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_03
             Console.WriteLine($"<<<<<Finished decrypting '{ inputFileName}'.");
         }
         #endregion EXCLUDE
-
     }
     #endregion INCLUDE
 
