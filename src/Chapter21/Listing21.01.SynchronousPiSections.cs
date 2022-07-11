@@ -22,6 +22,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_01
             Console.WriteLine(pi);
         }
     }
+    #region EXCLUDE
+    /*
+    #endregion EXCLUDE
+    
+    #region EXCLUDE
+    */
+    #endregion EXCLUDE
     #endregion INCLUDE
 }
 

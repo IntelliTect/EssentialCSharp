@@ -1,12 +1,12 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_10
 {
+    using AddisonWesley.Michaelis.EssentialCSharp.Shared;
     #region INCLUDE
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading;
     using System.Threading.Tasks;
-    using AddisonWesley.Michaelis.EssentialCSharp.Shared;
 
     public static class Program
     {

@@ -15,7 +15,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_07
             #region HIGHLIGHT
             return data.AsParallel().Select(
             #endregion HIGHLIGHT
-                item => Program.Encrypt(item)).ToList();
+                item => Encrypt(item)).ToList();
         }
         #region EXCLUDE
         private static string Encrypt(string item)

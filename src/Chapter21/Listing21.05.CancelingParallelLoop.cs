@@ -39,8 +39,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_05
 
             Console.WriteLine("Press ENTER to exit.");
 
-            // Use Task.Factory.StartNew<string>() for
-            // TPL prior to .NET 4.5
             Task task = Task.Run(() =>
                 {
                     try
@@ -58,7 +56,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_05
                 });
 
             // Wait for the user's input
-            Console.Read();
+            Console.ReadLine();
 
             // Cancel the query
             #region HIGHLIGHT

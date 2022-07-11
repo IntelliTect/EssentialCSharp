@@ -16,7 +16,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_08
             //...
             #region HIGHLIGHT
             OrderedParallelQuery<string> parallelGroups =
-            data.AsParallel().OrderBy(item => item);
+                data.AsParallel().OrderBy(item => item);
             #endregion HIGHLIGHT
 
             // Show the total count of items still
