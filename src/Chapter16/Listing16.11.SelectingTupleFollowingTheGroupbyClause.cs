@@ -30,7 +30,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_11
                 );
             #endregion HIGHLIGHT
 
-
             foreach (
                 (bool isContextualKeyword, IGrouping<bool, string> items)
                     in selection)
