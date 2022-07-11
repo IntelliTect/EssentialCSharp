@@ -15,15 +15,21 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_09
         static void ListByFileSize3(
             string rootDirectory, string searchPattern)
         {
+            #region INCLUDE
+            //...
             IEnumerable<FileInfo> files =
-                from fileName in Directory.GetFiles(
+                from fileName in Directory.EnumerateFiles(
                     rootDirectory, searchPattern)
+                    #region HIGHLIGHT
                 let file = new FileInfo(fileName)
                 orderby file.Length, fileName
                 select file;
+            #endregion HIGHLIGHT
+            //...
+            #endregion INCLUDE
 
 
-            foreach(FileInfo file in files)
+            foreach (FileInfo file in files)
             {
                 //  As simplification, current directory is
                 //  assumed to be a subdirectory of

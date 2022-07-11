@@ -1,9 +1,11 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_10
 {
     using AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16;
+    #region INCLUDE
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    #region EXCLUDE
 
     public class Program
     {
@@ -11,7 +13,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_10
         {
             GroupKeywords1();
         }
-
+        #endregion EXCLUDE
         private static void GroupKeywords1()
         {
             IEnumerable<IGrouping<bool, string>> selection =
@@ -32,5 +34,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_10
                 }
             }
         }
+        //...
+        #endregion INCLUDE
     }
 }
