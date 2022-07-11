@@ -12,9 +12,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_08
         public static List<string>
           Encrypt(IEnumerable<string> data)
         {
-
+            #region INCLUDE
+            //...
+            #region HIGHLIGHT
             OrderedParallelQuery<string> parallelGroups =
             data.AsParallel().OrderBy(item => item);
+            #endregion HIGHLIGHT
 
             // Show the total count of items still
             // matches the original count
@@ -24,6 +27,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_08
                 throw new Exception("data.Count() != parallelGroups.Sum(item => item.Count()");
             }
             // ...
+            #endregion INCLUDE
 
             return data.AsParallel().Select(
                 item => Program.Encrypt(item)).ToList();

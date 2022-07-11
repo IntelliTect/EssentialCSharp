@@ -1,33 +1,38 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_03
 {
     using AddisonWesley.Michaelis.EssentialCSharp.Shared;
+    #region INCLUDE
     using System;
     using System.Collections.Generic;
     using System.IO;
+    #region HIGHLIGHT
     using System.Threading.Tasks;
+    #endregion HIGHLIGHT
 
     public class Program
     {
+        #region EXCLUDE
         public static void Main()
         {
             EncryptFiles(Directory.GetCurrentDirectory(), "*.*");
         }
-
-        static public void EncryptFiles(
+        #endregion EXCLUDE
+        public static void EncryptFiles(
             string directoryPath, string searchPattern)
+        #region EXCLUDE
         {
             IEnumerable<string> files = Directory.EnumerateFiles(
                 directoryPath, searchPattern,
                 SearchOption.AllDirectories);
-
+            #endregion EXCLUDE
+            #region HIGHLIGHT
             Parallel.ForEach(files, fileName =>
             {
                 Encrypt(fileName);
             });
+            #endregion HIGHLIGHT
         }
-
-        // ...
-
+        #region EXCLUDE
         public static string Encrypt(string fileName)
         {
             string outputFileName = $"{fileName}.encrypt";
@@ -57,8 +62,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_03
             }
             Console.WriteLine($"<<<<<Finished decrypting '{ inputFileName}'.");
         }
+        #endregion EXCLUDE
 
     }
+    #endregion INCLUDE
 
 
 

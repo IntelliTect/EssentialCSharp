@@ -1,9 +1,10 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_01
 {
+    #region INCLUDE
     using System;
     using AddisonWesley.Michaelis.EssentialCSharp.Shared;
 
-    class Program
+    public class Program
     {
         const int TotalDigits = 100;
         const int BatchSize = 10;
@@ -21,6 +22,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_01
             Console.WriteLine(pi);
         }
     }
+    #endregion INCLUDE
 }
 
 

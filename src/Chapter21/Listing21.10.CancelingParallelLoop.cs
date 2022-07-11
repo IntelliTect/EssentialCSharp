@@ -1,5 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_10
 {
+    #region INCLUDE
     using System;
     using System.Collections.Generic;
     using System.Linq;
@@ -97,10 +98,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_10
             Cryptographer cryptographer = new Cryptographer();
             return System.Text.Encoding.UTF8.GetString(cryptographer.Encrypt(item));
         }
-
-        // ...
     }
-
+    #endregion INCLUDE
 }
 
 
