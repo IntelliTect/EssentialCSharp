@@ -20,9 +20,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_11
                 from word in CSharp.Keywords
                 group word by word.Contains('*');
 
-            IEnumerable<
-                (bool IsContextualKeyword, IGrouping<bool, string> Items)> 
-                    selection =
+            IEnumerable<(bool IsContextualKeyword, 
+                IGrouping<bool, string> Items)> selection =
                 from groups in keywordGroups
                 select
                 (
