@@ -1,7 +1,7 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_04
 {
     using System;
-
+    #region INCLUDE
     public class Stack<T>
     {
         //...
@@ -13,4 +13,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_04
         }
         //...
     }
+    #endregion INCLUDE
 }

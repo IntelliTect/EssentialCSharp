@@ -1,20 +1,25 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_15
 {
     using System;
-
+    #region INCLUDE
     public class CommandLineSwitchAliasAttribute : Attribute
     {
+        #region HIGHLIGHT
         public CommandLineSwitchAliasAttribute(string alias)
         {
             Alias = alias;
         }
-        public string Alias { get; private set; }
+        #endregion HIGHLIGHT
+        public string Alias { get; }
     }
-    class CommandLineInfo
+    public class CommandLineInfo
     {
+        #region HIGHLIGHT
         [CommandLineSwitchAlias("?")]
+        #endregion HIGHLIGHT
         public bool Help { get; set; }
 
         // ...
     }
+    #endregion INCLUDE
 }

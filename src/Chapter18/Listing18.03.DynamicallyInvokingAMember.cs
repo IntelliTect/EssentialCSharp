@@ -1,5 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_03
 {
+    #region INCLUDE
     using System;
     using System.Diagnostics;
     using System.IO;
@@ -16,7 +17,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_03
                 Console.WriteLine(errorMessage);
                 DisplayHelp();
             } 
-            else if(commandLine.Help || string.IsNullOrWhiteSpace(commandLine.Out))
+            else if (commandLine.Help || string.IsNullOrWhiteSpace(commandLine.Out))
             {
                 DisplayHelp();
             }
@@ -27,14 +28,15 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_03
                 {
                     // Change thread priority
                 }
+                #region EXCLUDE
                 Console.WriteLine(
                     @$"Running {
                         Path.GetFileName(Environment.GetCommandLineArgs()[0])} /Out:{
                             commandLine.Out} /Priority:{
                             commandLine.Priority}");
 
+                #endregion EXCLUDE
             }
-            // ...
         }
 
         private static void DisplayHelp()
@@ -66,9 +68,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_03
     {
         public static void Parse(string[] args, object commandLine)
         {
-            if(!TryParse(args, commandLine, out string? errorMessage))
+            if (!TryParse(args, commandLine, out string? errorMessage))
             {
-                throw new Exception(errorMessage);
+                throw new InvalidOperationException(errorMessage);
             }
         }
 
@@ -87,6 +89,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_03
 
                     // Remove the slash|dash
                     option = optionParts[0].Remove(0, 1);
+                    #region HIGHLIGHT
                     PropertyInfo? property =
                         commandLine.GetType().GetProperty(option,
                             BindingFlags.IgnoreCase |
@@ -122,7 +125,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_03
                                     null);
                                 success = true;
                             }
-                            catch(ArgumentException)
+                            #endregion HIGHLIGHT
+                            catch (ArgumentException)
                             {
                                 success = false;
                                 errorMessage =
@@ -152,4 +156,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_03
             return success;
         }
     }
+    #endregion INCLUDE
 }

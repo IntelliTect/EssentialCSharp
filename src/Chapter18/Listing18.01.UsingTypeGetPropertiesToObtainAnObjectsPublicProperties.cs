@@ -7,15 +7,17 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_01
     {
         public static void Main()
         {
+            #region INCLUDE
             DateTime dateTime = new DateTime();
 
             Type type = dateTime.GetType();
             foreach(
                 System.Reflection.PropertyInfo property in
-                    type.GetTypeInfo().GetProperties())
+                    type.GetProperties())
             {
                 Console.WriteLine(property.Name);
             }
+            #endregion INCLUDE
         }
     }
 }

@@ -1,7 +1,7 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_05
 {
+    #region INCLUDE
     using System;
-    using System.Reflection;
 
     public class Program
     {
@@ -9,12 +9,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_05
         {
             Type type;
             type = typeof(System.Nullable<>);
-            Console.WriteLine(type.GetTypeInfo().ContainsGenericParameters);
-            Console.WriteLine(type.GetTypeInfo().IsGenericType);
+            Console.WriteLine(type.ContainsGenericParameters);
+            Console.WriteLine(type.IsGenericType);
 
             type = typeof(System.Nullable<DateTime>);
-            Console.WriteLine(type.GetTypeInfo().ContainsGenericParameters);
-            Console.WriteLine(type.GetTypeInfo().IsGenericType);
+            Console.WriteLine(type.ContainsGenericParameters);
+            Console.WriteLine(type.IsGenericType);
         }
     }
+    #endregion INCLUDE
 }

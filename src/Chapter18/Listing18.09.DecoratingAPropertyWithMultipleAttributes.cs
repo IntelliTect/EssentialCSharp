@@ -2,7 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_09
 {
     using System;
 
-    class CommandLineInfo
+    public class CommandLineInfo
     {
         [CommandLineSwitchAlias("?")]
         public bool Help { get; set; }
@@ -10,6 +10,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_09
         //Two Ways to do it
         //[CommandLineSwitchRequired]
         //[CommandLineSwitchAlias("FileName")]
+        #region INCLUDE
         [CommandLineSwitchRequired,
         CommandLineSwitchAlias("FileName")]
         public string? Out { get; set; }
@@ -18,9 +19,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_09
             { get; set; } = 
                 System.Diagnostics.ProcessPriorityClass.Normal;
     }
+    #endregion INCLUDE
 
     // Disabling warning since it is not implemented or shown in manuscript
-    #pragma warning disable CA1018 // Mark attributes with AttributeUsageAttribute
+#pragma warning disable CA1018 // Mark attributes with AttributeUsageAttribute
     internal class CommandLineSwitchRequiredAttribute : Attribute
     {
         //not implimented

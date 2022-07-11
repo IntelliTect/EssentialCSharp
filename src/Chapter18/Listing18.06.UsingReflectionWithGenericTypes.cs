@@ -1,8 +1,8 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_06
 {
+    #region INCLUDE
     using System;
     using System.Collections.Generic;
-    using System.Reflection;
 
     public class Program
     {
@@ -12,11 +12,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_06
 
             Type t = s.GetType();
 
-            foreach(Type type in t.GetTypeInfo().GetGenericArguments())
+            foreach(Type type in t.GetGenericArguments())
             {
                 System.Console.WriteLine(
                     "Type parameter: " + type.FullName);
             }
+            //...
         }
     }
+    #endregion INCLUDE
 }

@@ -1,5 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_14
 {
+    #region INCLUDE
     using System;
     using System.Reflection;
     using System.Collections.Generic;
@@ -19,8 +20,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_14
                      (Attribute[])property.GetCustomAttributes(
                         typeof(CommandLineSwitchRequiredAttribute),
                         false);
-                if((attributes.Length > 0) &&
-                    (property.GetValue(commandLine, null) == null))
+                if (attributes.Length > 0 &&
+                    property.GetValue(commandLine, null) == null)
                 {
                     missingOptions.Add(property.Name);
                 }
@@ -28,4 +29,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_14
             return missingOptions.ToArray();
         }
     }
+    #endregion INCLUDE
 }

@@ -1,9 +1,11 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_18
 {
+    using Listing18_17;
+    #region INCLUDE
     using System;
     using System.Reflection;
     using System.Collections.Generic;
-    using Listing18_17;
+    using System.Diagnostics;
 
     public class CommandLineHandler
     {
@@ -15,11 +17,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_18
             bool success = false;
             errorMessage = null;
 
+            #region HIGHLIGHT
             Dictionary<string, PropertyInfo> options =
                 CommandLineSwitchAliasAttribute.GetSwitches(
                     commandLine);
+            #endregion HIGHLIGHT
 
-            foreach(string arg in args)
+            foreach (string arg in args)
             {
                 string option;
                 if(arg[0] == '/' || arg[0] == '-')
@@ -28,7 +32,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_18
                         new char[] { ':' }, 2);
                     option = optionParts[0].Remove(0, 1).ToLower();
 
-                    if(options.TryGetValue(option, out PropertyInfo? property))
+                    #region HIGHLIGHT
+                    if (options.TryGetValue(option, out PropertyInfo? property))
+                    #endregion HIGHLIGHT
                     {
                         success = SetOption(
                             commandLine, property,
@@ -61,7 +67,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_18
             else
             {
 
-                if((optionParts.Length < 2)
+                if (optionParts.Length < 2
                     || optionParts[1] == "")
                 {
                     // No setting was provided for the switch.
@@ -76,7 +82,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_18
                         commandLine, optionParts[1], null);
                     success = true;
                 }
-                else if(property.PropertyType.GetTypeInfo().IsEnum)
+                else if(
+                    // property.PropertyType.IsEnum also available
+                    property.PropertyType ==
+                        typeof(ProcessPriorityClass))
                 {
                     success = TryParseEnumSwitch(
                         commandLine, optionParts,
@@ -85,14 +94,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_18
                 else
                 {
                     success = false;
-                    errorMessage = string.Format(
-                        "Data type '{0}' on {1} is not supported.",
-                        property.PropertyType.ToString(),
-                        commandLine.GetType().ToString());
+                    errorMessage = 
+                        $@"Data type '{ property.PropertyType.ToString() }' on {
+                        commandLine.GetType().ToString() } is not supported.";
                 }
             }
             return success;
         }
+        #endregion INCLUDE
 
 // Justification: Not fully implemented.
 #pragma warning disable IDE0060 // Remove unused parameter

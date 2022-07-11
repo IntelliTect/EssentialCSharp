@@ -4,15 +4,19 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_11
 {
     public class Program
     {
+#pragma warning disable CA1822 // Mark members as static
+        #region INCLUDE
         [return: Description(
            "Returns true if the object is in a valid state.")]
-        public static bool IsValid()
+        public bool IsValid()
         {
             // ...
             return true;
         }
+        #endregion INCLUDE
+#pragma warning restore CA1822 // Mark members as static
     }
-    
+
     public class DescriptionAttribute : Attribute
     {
         // TODO: Update listing in Manuscript

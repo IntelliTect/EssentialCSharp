@@ -1,9 +1,20 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_23
 {
+    #region INCLUDE
+    /*
+    [Flags]
+    public enun FileAttributes
+    {
+        ReadOnly = 0x0001,
+        Hidden   = 0x0002,
+        // ...
+    }
+    */
+
     using System;
     using System.IO;
 
-    class Program
+    public class Program
     {
         public static void Main()
         {
@@ -27,4 +38,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_23
             // ...
         }
     }
+    #endregion INCLUDE
 }

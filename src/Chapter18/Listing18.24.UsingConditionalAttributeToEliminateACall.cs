@@ -1,7 +1,9 @@
+#region INCLUDE
 #define CONDITION_A
-
+#region EXCLUDE
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_24
 {
+    #endregion EXCLUDE
     using System;
     using System.Diagnostics;
 
@@ -16,15 +18,16 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_24
         }
 
         [Conditional("CONDITION_A")]
-        static void MethodA()
+        public static void MethodA()
         {
             Console.WriteLine("MethodA() executing...");
         }
 
         [Conditional("CONDITION_B")]
-        static void MethodB()
+        public static void MethodB()
         {
             Console.WriteLine("MethodB() executing...");
         }
     }
+    #endregion INCLUDE
 }
