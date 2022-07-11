@@ -14,7 +14,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_09
             string mutexName =
                 Assembly.GetEntryAssembly()!.FullName!;
 
-            // firstApplicationInstance indicates whether this is the first
+            // firstApplicationInstance indicates
+            // whether this is the first
             // application instance.
             using Mutex mutex = new Mutex(false, mutexName,
                  out bool firstApplicationInstance);
