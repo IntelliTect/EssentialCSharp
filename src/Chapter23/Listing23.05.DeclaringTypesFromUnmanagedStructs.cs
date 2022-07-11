@@ -1,7 +1,9 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter23.Listing23_05
 {
     #region INCLUDE
+    #region HIGHLIGHT
     [StructLayout(LayoutKind.Sequential)]
+    #endregion HIGHLIGHT
     struct ColorRef
     {
         public byte Red;

@@ -4,6 +4,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter23.Listing23_19
     {
         public static void Main()
         {
+            #region INCLUDE
             unsafe
             {
                 Angle angle = new Angle(30, 18, 0);
@@ -11,6 +12,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter23.Listing23_19
                 System.Console.WriteLine("{0}* {1}' {2}\"",
                     pAngle->Hours, pAngle->Minutes, pAngle->Seconds);
             }
+            #endregion INCLUDE
         }
     }
 

@@ -1,7 +1,7 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter23.Listing23_08
 {
     #region INCLUDE
-    class VirtualMemoryManager
+    public class VirtualMemoryManager
     {
         // ...
 

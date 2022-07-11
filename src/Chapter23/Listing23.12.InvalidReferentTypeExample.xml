@@ -1,13 +1,17 @@
+#region INCLUDE
 <Project Sdk = "Microsoft.NET.Sdk" >
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp1.0</TargetFramework>
     <ProductName>Chapter20</ProductName>
     <WarningLevel>2</WarningLevel>
+	  #region HIGHLIGHT
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+	  #endregion HIGHLIGHT
   </PropertyGroup>
   <Import Project = "..\Versioning.targets"/>
   <ItemGroup>
     <ProjectReference Include="..\SharedCode\SharedCode.csproj"/>
   </ItemGroup>
 </Project>
+#endregion INCLUDE

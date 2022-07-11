@@ -8,7 +8,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter23.Listing23_03
         static extern bool VirtualProtectEx(
             IntPtr hProcess, IntPtr lpAddress,
             IntPtr dwSize, uint flNewProtect,
+        #region HIGHLIGHT
             ref uint lpflOldProtect);
+        #endregion HIGHLIGHT
     }
     #endregion INCLUDE
 }
