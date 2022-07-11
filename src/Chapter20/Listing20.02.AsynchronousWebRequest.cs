@@ -30,7 +30,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_02
                 $"Searching for '{findText}' at URL '{url}'.");
 
             using WebClient webClient = new WebClient();
-            Console.Write("Downloading...");
+            Console.WriteLine("Downloading...");
             Task task = webClient.DownloadDataTaskAsync(url)
                 .ContinueWith(antecedent =>
                 {
