@@ -42,7 +42,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_12
         }
         public T First { get; }  // C# 6.0 Getter-only Autoproperty
         public T Second { get; } // C# 6.0 Getter-only Autoproperty
-
     }
     #endregion INCLUDE
 }
