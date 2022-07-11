@@ -54,7 +54,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_04
             throw new UnauthorizedAccessException();
         }
         #endregion EXCLUDE
-
     }
     #endregion INCLUDE
 

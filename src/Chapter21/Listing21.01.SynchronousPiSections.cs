@@ -37,10 +37,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_01
 
         //...
     }
-    #region EXCLUDE
-    */
-    #endregion EXCLUDE
     #endregion INCLUDE
+    */
 }
 
 

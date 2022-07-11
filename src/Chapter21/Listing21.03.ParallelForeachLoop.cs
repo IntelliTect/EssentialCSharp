@@ -19,12 +19,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_03
         #endregion EXCLUDE
         public static void EncryptFiles(
             string directoryPath, string searchPattern)
-        #region EXCLUDE
+
         {
             IEnumerable<string> files = Directory.EnumerateFiles(
                 directoryPath, searchPattern,
                 SearchOption.AllDirectories);
-            #endregion EXCLUDE
+
             #region HIGHLIGHT
             Parallel.ForEach(files, fileName =>
             {

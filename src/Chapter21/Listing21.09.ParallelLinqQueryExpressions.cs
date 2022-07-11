@@ -28,6 +28,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_09
             {
                 throw new Exception("data.Count() != parallelGroups.Sum(item => item.Count()");
             }
+            //...
             #endregion INCLUDE
 
             return data.AsParallel().Select(
