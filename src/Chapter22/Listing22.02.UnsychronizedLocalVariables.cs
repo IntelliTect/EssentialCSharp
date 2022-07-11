@@ -1,6 +1,6 @@
-// TODO: Update listing in Manuscript
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_02
 {
+    #region INCLUDE
     using System;
     using System.Threading;
     using System.Threading.Tasks;
@@ -20,7 +20,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_02
                 x--;
             });
             Console.WriteLine("Count = {0}", x);
+            #region EXCLUDE
             return x;
+            #endregion EXCLUDE
         }
     }
+    #endregion INCLUDE
 }

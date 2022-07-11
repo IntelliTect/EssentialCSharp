@@ -1,9 +1,10 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_13
 {
+    #region INCLUDE
     using System;
     using System.Threading.Tasks;
 
-    class Pomodoro
+    public class Pomodoro
     {
         // ...
 
@@ -15,7 +16,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_13
                 DisplayMinuteTicker(minute);
                 for(int second = 0; second < 60; second++)
                 {
-                    // TODO: Update listing in Manuscript
                     await Task.Delay(1000, token);
                     if(token.IsCancellationRequested)
                         break;
@@ -25,7 +25,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_13
                     break;
             }
         }
-
+        #region EXCLUDE
         private static void DisplaySecondTicker()
         {
             // ...
@@ -37,5 +37,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_13
             // ...
             throw new NotImplementedException();
         }
+        #endregion EXCLUDE
     }
+    #endregion INCLUDE
 }

@@ -1,6 +1,6 @@
-// TODO: Update listing in Manuscript
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_05
 {
+    #region INCLUDE
     using System;
     using System.Threading.Tasks;
 
@@ -10,7 +10,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_05
         static int _Total = int.MaxValue;
         static int _Count = 0;
 
+        #region HIGHLIGHT
         public static async Task<int> Main(string[] args)
+        #endregion HIGHLIGHT
         {
             if (args?.Length > 0) { _ = int.TryParse(args[0], out _Total); }
             Console.WriteLine($"Increment and decrementing {_Total} times...");
@@ -27,7 +29,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_05
                 }
             }
 
+            #region HIGHLIGHT
             await task;
+            #endregion HIGHLIGHT
             Console.WriteLine($"Count = {_Count}");
             return _Count;
         }
@@ -43,4 +47,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_05
             }
         }
     }
+    #endregion INCLUDE
 }

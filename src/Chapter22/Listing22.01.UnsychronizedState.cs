@@ -1,6 +1,6 @@
-// TODO: Update listing in Manuscript
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_01
 {
+    #region INCLUDE
     using System;
     using System.Threading;
     using System.Threading.Tasks;
@@ -31,7 +31,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_01
             return _Count;
         }
 
-        static void Decrement()
+        public static void Decrement()
         {
             // Decrement
             for(int i = 0; i < _Total; i++)
@@ -40,4 +40,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_01
             }
         }
     }
+    #endregion INCLUDE
 }

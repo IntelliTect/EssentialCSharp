@@ -1,5 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_10
 {
+    #region INCLUDE
     using System;
     using System.Threading;
     using System.Threading.Tasks;
@@ -15,8 +16,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_10
         public static void DoWork()
         {
             Console.WriteLine("DoWork() started....");
+            #region HIGHLIGHT
             DoWorkSignaledResetEvent.Set();
             MainSignaledResetEvent.Wait();
+            #endregion HIGHLIGHT
             Console.WriteLine("DoWork() ending....");
         }
 
@@ -46,4 +49,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_10
             }
         }
     }
+    #endregion INCLUDE
 }
