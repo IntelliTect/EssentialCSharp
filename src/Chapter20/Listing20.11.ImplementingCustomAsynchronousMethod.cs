@@ -46,7 +46,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_11
 
             return taskCS.Task;
         }
-
         // ...
     }
     #endregion INCLUDE
