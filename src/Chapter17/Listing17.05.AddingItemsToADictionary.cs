@@ -8,8 +8,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_05
     {
         public static void Main()
         {
-        // C# 6.0 (use {"Error", consoleColor.Red} pre-C# 6.0)
-        var colorMap = new Dictionary<string, ConsoleColor>
+            // C# 6.0 (use {"Error", consoleColor.Red} pre-C# 6.0)
+            var colorMap = new Dictionary<string, ConsoleColor>
             {
                 ["Error"] = ConsoleColor.Red,
                 ["Warning"] = ConsoleColor.Yellow,
