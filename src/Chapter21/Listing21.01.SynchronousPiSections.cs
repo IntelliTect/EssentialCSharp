@@ -25,7 +25,18 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_01
     #region EXCLUDE
     /*
     #endregion EXCLUDE
-    
+    using System;
+
+    public static class PiCalculator
+    {
+        public static string Calculate(
+            int digits, int startingAt)
+        {
+            //...
+        }
+
+        //...
+    }
     #region EXCLUDE
     */
     #endregion EXCLUDE
