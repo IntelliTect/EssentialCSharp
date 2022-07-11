@@ -15,9 +15,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_12
         #endregion EXCLUDE
         private static void GroupKeywords1()
         {
-            IEnumerable<
-                (bool IsContextualKeyword, IGrouping<bool, string> Items)> 
-                    selection =
+            IEnumerable<(bool IsContextualKeyword, 
+                IGrouping<bool, string> Items)> selection =
                 from word in CSharp.Keywords
                     #region HIGHLIGHT
                 group word by word.Contains('*')
