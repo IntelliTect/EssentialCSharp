@@ -2,7 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_07
 {
     delegate void TemperatureChangedHandler(Program one, TemperatureEventArgs two);
 
-    class Program
+    public class Program
     {
         private static readonly TemperatureChangedHandler OnTemperatureChanged = delegate { };
 
@@ -11,7 +11,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_07
             #region INCLUDE
             // Not thread safe
             #region HIGHLIGHT
-            if (OnTemperatureChanged != null) // Warning ignored to demonstrate problem.
+            if (OnTemperatureChanged != null)
             #endregion HIGHLIGHT
             {
                 // Call subscribers

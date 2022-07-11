@@ -7,27 +7,31 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_10
 
     public class Program
     {
+        #region EXCLUDE
         // Justification: Initialized at the start of Main.
-        #pragma warning disable CS8618 // Non-nullable field is uninitialized. Consider declaring as nullable.
-        static ManualResetEventSlim MainSignaledResetEvent;
-        static ManualResetEventSlim DoWorkSignaledResetEvent;
-        #pragma warning restore CS8618 // Non-nullable field is uninitialized. Consider declaring as nullable.
+#pragma warning disable CS8618 // Non-nullable field is uninitialized. Consider declaring as nullable.
+        #endregion EXCLUDE
+        static ManualResetEventSlim _MainSignaledResetEvent;
+        static ManualResetEventSlim _DoWorkSignaledResetEvent;
+        #region EXCLUDE
+#pragma warning restore CS8618 // Non-nullable field is uninitialized. Consider declaring as nullable.
+        #endregion EXCLUDE
 
         public static void DoWork()
         {
             Console.WriteLine("DoWork() started....");
             #region HIGHLIGHT
-            DoWorkSignaledResetEvent.Set();
-            MainSignaledResetEvent.Wait();
+            _DoWorkSignaledResetEvent.Set();
+            _MainSignaledResetEvent.Wait();
             #endregion HIGHLIGHT
             Console.WriteLine("DoWork() ending....");
         }
 
         public static void Main()
         {
-            using(MainSignaledResetEvent =
+            using(_MainSignaledResetEvent =
                 new ManualResetEventSlim())
-            using(DoWorkSignaledResetEvent =
+            using(_DoWorkSignaledResetEvent =
                 new ManualResetEventSlim())
             {
                 Console.WriteLine(
@@ -38,10 +42,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_10
                 Task task = Task.Run(() => DoWork());
 
                 // Block until DoWork() has started
-                DoWorkSignaledResetEvent.Wait();
+                _DoWorkSignaledResetEvent.Wait();
                 Console.WriteLine(
                     " Waiting while thread executes...");
-                MainSignaledResetEvent.Set();
+                _MainSignaledResetEvent.Set();
                 task.Wait();
                 Console.WriteLine("Thread completed");
                 Console.WriteLine(
