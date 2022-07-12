@@ -19,7 +19,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter23.Listing23_06
         static extern bool VirtualProtectEx(
             IntPtr hProcess, IntPtr lpAddress,
             IntPtr dwSize, uint flNewProtect,
+        #region HIGHLIGHT
             ref uint lpflOldProtect);
+        #endregion HIGHLIGHT
 
         [Flags]
         private enum AllocationType : uint

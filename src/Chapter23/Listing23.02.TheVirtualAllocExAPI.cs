@@ -12,7 +12,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter23.Listing23_02
                                 // allocate. If lpAddress is NULL,
                                 // the function determines where to
                                 // allocate the region.
-        SIZE_T dwSize,          // The size of the region of memroy to
+        SIZE_T dwSize,          // The size of the region of memory to
                                 // allocate, in bytes. If lpAddress
                                 // is NULL, the function rounds dwSize
                                 // up to the next page boundary.

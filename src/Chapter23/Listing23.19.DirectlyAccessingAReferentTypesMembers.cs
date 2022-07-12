@@ -10,7 +10,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter23.Listing23_19
                 Angle angle = new Angle(30, 18, 0);
                 Angle* pAngle = &angle;
                 System.Console.WriteLine("{0}* {1}' {2}\"",
+                #region HIGHLIGHT
                     pAngle->Hours, pAngle->Minutes, pAngle->Seconds);
+                #endregion HIGHLIGHT
             }
             #endregion INCLUDE
         }
