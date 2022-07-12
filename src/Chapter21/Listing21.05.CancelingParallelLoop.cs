@@ -28,7 +28,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_05
                directoryPath, searchPattern,
                SearchOption.AllDirectories);
 
-#region HIGHLIGHT
+            #region HIGHLIGHT
             CancellationTokenSource cts =
                 new CancellationTokenSource();
             ParallelOptions parallelOptions =
