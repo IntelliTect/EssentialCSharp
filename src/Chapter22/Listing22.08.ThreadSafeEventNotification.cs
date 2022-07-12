@@ -34,7 +34,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_08
 #pragma warning restore IDE1006 // Naming Styles
     }
 
-    class TemperatureEventArgs
+    public class TemperatureEventArgs
     {
         public TemperatureEventArgs(object? _)
         {
