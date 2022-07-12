@@ -30,12 +30,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_02
                 $"Searching for '{findText}' at URL '{url}'.");
 
             using WebClient webClient = new WebClient();
-            Console.WriteLine("Downloading...");
+            Console.Write("Downloading...");
             Task task = webClient.DownloadDataTaskAsync(url)
                 .ContinueWith(antecedent =>
                 {
                     byte[] downloadData = antecedent.Result;
-                    Console.WriteLine("Searching...");
+                    Console.Write($"{Environment.NewLine}Searching...");
                     return CountOccurrencesAsync(
                         downloadData, findText);
                 })
@@ -44,7 +44,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_02
                 {
                     int textOccurrenceCount = antecedent.Result;
                     Console.WriteLine(
-                        @$"'{findText}' appears {
+                         @$"{Environment.NewLine}'{findText}' appears {
                             textOccurrenceCount} times at URL '{url}'.");
 
                 });
