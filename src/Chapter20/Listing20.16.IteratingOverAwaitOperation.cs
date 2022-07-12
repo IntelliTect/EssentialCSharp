@@ -8,17 +8,18 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_16
 
     public class Program
     {
-        async private void PingButton_Click(
+        #region INCLUDE
+        private async void PingButton_Click(
         object sender, RoutedEventArgs e)
         {
             List<string> urls = new List<string>()
-      {
-          "www.habitat-spokane.org",
-          "www.partnersintl.org",
-          "www.iassist.org",
-          "www.fh.org",
-          "www.worldvision.org"
-      };
+                {
+                    "www.habitat-spokane.org",
+                    "www.partnersintl.org",
+                    "www.iassist.org",
+                    "www.fh.org",
+                    "www.worldvision.org"
+                };
             IPStatus status;
 
             Func<string, Task<IPStatus>> func =
@@ -30,8 +31,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_16
                     return pingReply.Status;
                 };
 
-            StatusLabel.Content = "Pinging�";
+            StatusLabel.Content = "Pinging...";
 
+            #region HIGHLIGHT
             foreach (string url in urls)
             {
                 status = await func(url);
@@ -39,8 +41,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_16
                     $@"{ url }: { status.ToString() } ({
                         Thread.CurrentThread.ManagedThreadId })";
             }
+            #endregion HIGHLIGHT
         }
-
+        #endregion INCLUDE
     }
 }
 

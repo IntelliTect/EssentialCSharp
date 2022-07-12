@@ -4,17 +4,19 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_07
     using System.Collections.Generic;
     using System.Threading;
     using System.Threading.Tasks;
-
-    class AsyncEncryptionCollection : IAsyncEnumerable<string>
+    #region INCLUDE
+    public class AsyncEncryptionCollection : IAsyncEnumerable<string>
     {
         public async IAsyncEnumerator<string> GetAsyncEnumerator(
             CancellationToken cancellationToken = default)
         {
+            #region EXCLUDE
             // Mock code
             yield return await Task<string>.Run(() => (string)"<filename>");
+            #endregion EXCLUDE
         }
 
-        static public async void Main()
+        public static async void Main()
         {
             AsyncEncryptionCollection collection =
                 new AsyncEncryptionCollection();
@@ -26,4 +28,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_07
             }
         }
     }
+    #endregion INCLUDE
 }

@@ -3,6 +3,7 @@
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_09
 {
+    #region INCLUDE
     using System;
     using System.Threading;
     using System.Threading.Tasks;
@@ -65,7 +66,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_09
                 SynchronizationContext.SetSynchronizationContext(
                     synchronizationContext);
 
-                OnEvent(typeof(Program), new EventArgs());
+                OnEvent(typeof(Program), EventArgs.Empty);
 
 #if WithOutUsingResetEvent
                 Task.Delay(1000).Wait();  // 
@@ -93,7 +94,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_09
             }
         }
 
-        static async void OnEvent(object sender, EventArgs eventArgs)
+        private static async void OnEvent(object sender, EventArgs eventArgs)
         {
             Console.WriteLine($@"Invoking Task.Run...(Thread ID: {
                     Thread.CurrentThread.ManagedThreadId})");
@@ -106,4 +107,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_09
             });
         }
     }
+    #endregion INCLUDE
 }

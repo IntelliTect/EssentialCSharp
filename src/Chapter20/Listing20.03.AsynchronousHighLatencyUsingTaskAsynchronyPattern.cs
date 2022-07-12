@@ -1,11 +1,12 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_03
 {
+    #region INCLUDE
     using System;
     using System.IO;
     using System.Net;
     using System.Threading.Tasks;
 
-    static public class Program
+    public static class Program
     {
         public const string DefaultUrl = "https://IntelliTect.com";
 
@@ -24,13 +25,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_03
                 url = args[1];
                 // Ignore additional parameters
             }
-            Console.Write($"Searching for '{findText}' at URL '{url}'.");
+            Console.WriteLine(
+                $"Searching for '{findText}' at URL '{url}'.");
 
             using WebClient webClient = new WebClient();
             Task<byte[]> taskDownload =
                 webClient.DownloadDataTaskAsync(url);
 
-            Console.Write("\nDownloading...");
+            Console.Write("Downloading...");
             while (!taskDownload.Wait(100))
             {
                 Console.Write(".");
@@ -41,7 +43,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_03
             Task<int> taskSearch = CountOccurrencesAsync(
              downloadData, findText);
 
-            Console.Write("\nSearching...");
+            Console.Write($"{Environment.NewLine}Searching...");
 
             while (!taskSearch.Wait(100))
             {
@@ -92,4 +94,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_03
             return textOccurrenceCount;
         }
     }
+    #endregion INCLUDE
 }

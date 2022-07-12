@@ -1,18 +1,20 @@
-// TODO: Update listing in Manuscript
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_12
 {
+    #region INCLUDE
     using System;
     using System.Diagnostics;
     using System.Threading;
     using System.Threading.Tasks;
 
-    class Program
+    public class Program
     {
-        static public Task<Process> RunProcessAsync(
+        public static Task<Process> RunProcessAsync(
             string fileName,
             string arguments = "",
+        #region HIGHLIGHT
             IProgress<ProcessProgressEventArgs>? progress = 
                 null, object? objectState = null,
+        #endregion HIGHLIGHT
             CancellationToken cancellationToken =
                 default(CancellationToken))
         {
@@ -25,8 +27,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_12
                 {
                     UseShellExecute = false,
                     Arguments = arguments,
+                    #region HIGHLIGHT
                     RedirectStandardOutput =
                        progress != null
+                    #endregion HIGHLIGHT
                 },
                 EnableRaisingEvents = true
             };
@@ -36,10 +40,31 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_12
                 taskCS.SetResult(process);
             };
 
+            #region HIGHLIGHT
+            if (progress != null)
+            {
+                process.OutputDataReceived +=
+                    (sender, localEventArgs) =>
+                {
+                    progress.Report(
+                        new ProcessProgressEventArgs(
+                            localEventArgs.Data,
+                            objectState));
+                };
+            }
+            #endregion HIGHLIGHT
+
             cancellationToken
                 .ThrowIfCancellationRequested();
 
             process.Start();
+
+            #region HIGHLIGHT
+            if (progress !=null)
+            {
+                process.BeginOutputReadLine();
+            }
+            #endregion HIGHLIGHT
 
             cancellationToken.Register(() =>
             {
@@ -52,8 +77,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_12
         // ...
     }
 
-    class ProcessProgressEventArgs
+    public class ProcessProgressEventArgs
     {
-        // ...
+        #region EXCLUDE
+        public ProcessProgressEventArgs(string? _,object? __){}
+        #endregion EXCLUDE
     }
+    #endregion INCLUDE
 }

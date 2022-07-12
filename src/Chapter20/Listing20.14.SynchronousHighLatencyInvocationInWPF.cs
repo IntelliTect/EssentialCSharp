@@ -2,6 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_14
 {
     public class Program
     {
+        #region INCLUDE
         private void PingButton_Click(
            object sender, RoutedEventArgs e)
         {
@@ -12,6 +13,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_14
                 ping.Send("www.IntelliTect.com");
             StatusLabel.Text = pingReply.Status.ToString();
         }
+        #endregion INCLUDE
     }
 }
 
