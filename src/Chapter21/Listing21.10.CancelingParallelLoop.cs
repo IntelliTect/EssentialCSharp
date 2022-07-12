@@ -1,11 +1,12 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_10
 {
+    using AddisonWesley.Michaelis.EssentialCSharp.Shared;
+    #region INCLUDE
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading;
     using System.Threading.Tasks;
-    using AddisonWesley.Michaelis.EssentialCSharp.Shared;
 
     public static class Program
     {
@@ -97,10 +98,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_10
             Cryptographer cryptographer = new Cryptographer();
             return System.Text.Encoding.UTF8.GetString(cryptographer.Encrypt(item));
         }
-
-        // ...
     }
-
+    #endregion INCLUDE
 }
 
 

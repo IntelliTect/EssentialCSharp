@@ -1,6 +1,7 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_05
 {
     using AddisonWesley.Michaelis.EssentialCSharp.Shared;
+    #region INCLUDE
     using System;
     using System.Collections.Generic;
     using System.IO;
@@ -9,10 +10,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_05
 
     public class Program
     {
+        #region EXCLUDE
         public static void Main()
         {
             EncryptFiles($@"{Directory.GetCurrentDirectory()}\..\..\", "*.*");
         }
+        #endregion EXCLUDE
 
         static void EncryptFiles(
             string directoryPath, string searchPattern)
@@ -25,23 +28,25 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_05
                directoryPath, searchPattern,
                SearchOption.AllDirectories);
 
+            #region HIGHLIGHT
             CancellationTokenSource cts =
                 new CancellationTokenSource();
             ParallelOptions parallelOptions =
                 new ParallelOptions { CancellationToken = cts.Token };
             cts.Token.Register(
                 () => Console.WriteLine("Canceling..."));
+            #endregion HIGHLIGHT
 
             Console.WriteLine("Press ENTER to exit.");
 
-            // Use Task.Factory.StartNew<string>() for
-            // TPL prior to .NET 4.5
             Task task = Task.Run(() =>
                 {
                     try
                     {
                         Parallel.ForEach(
+                        #region HIGHLIGHT
                             files, parallelOptions,
+                        #endregion HIGHLIGHT
                             (fileName, loopState) =>
                             {
                                 Encrypt(fileName);
@@ -51,13 +56,16 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_05
                 });
 
             // Wait for the user's input
-            Console.Read();
+            Console.ReadLine();
 
             // Cancel the query
+            #region HIGHLIGHT
             cts.Cancel();
+            #endregion HIGHLIGHT
             Console.Write(stars);
             task.Wait();
         }
+        #region EXCLUDE
 
         private static void Encrypt(string fileName)
         {
@@ -69,7 +77,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_05
             File.WriteAllBytes($"{fileName}.encrypt", encryptedText);
             Console.WriteLine($"<<<<<Finished encrypting '{ fileName}'.");
         }
+        #endregion EXCLUDE
     }
+    #endregion INCLUDE
 }
 
 

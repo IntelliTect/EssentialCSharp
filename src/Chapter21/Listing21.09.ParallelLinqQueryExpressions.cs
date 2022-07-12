@@ -1,4 +1,3 @@
-// TODO: Update listing in Manuscript
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_09
 {
     using AddisonWesley.Michaelis.EssentialCSharp.Shared;
@@ -6,18 +5,21 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_09
     using System.Collections.Generic;
     using System.Linq;
 
-    class Program
+    public class Program
     {
         // ...
         public static List<string>
           Encrypt(IEnumerable<string> data)
         {
-
+            #region INCLUDE
+            //...
             ParallelQuery<IGrouping<char, string>> parallelGroups;
             parallelGroups =
+            #region HIGHLIGHT
                 from text in data.AsParallel()
                 orderby text
                 group text by text[0];
+            #endregion HIGHLIGHT
 
             // Show the total count of items still
             // matches the original count
@@ -26,7 +28,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_09
             {
                 throw new Exception("data.Count() != parallelGroups.Sum(item => item.Count()");
             }
-             // ...
+            //...
+            #endregion INCLUDE
 
             return data.AsParallel().Select(
                 item => Encrypt(item)).ToList();
