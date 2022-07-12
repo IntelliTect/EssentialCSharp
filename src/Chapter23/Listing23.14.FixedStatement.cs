@@ -4,7 +4,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter23.Listing23_14
     {
         #region INCLUDE
         byte[] bytes = new byte[24];
-        (byte* pData = bytes)
+        fixed (byte* pData = &bytes[0]) //pData = bytes also allowed
         {
           // ...
         }

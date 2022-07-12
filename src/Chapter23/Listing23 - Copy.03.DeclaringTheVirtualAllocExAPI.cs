@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter23.Listing23_04
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter23.Listing23_03
 {
     #region INCLUDE
     public class VirtualMemoryManager
