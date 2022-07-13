@@ -6,6 +6,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter23.Listing23_17
     {
         public static void Main()
         {
+            #region INCLUDE
             string text = "S5280ft";
             Console.Write("{0} = ", text);
             unsafe // Requires /unsafe switch
@@ -22,6 +23,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter23.Listing23_17
                 }
             }
             Console.WriteLine(text);
+            #endregion INCLUDE
         }
     }
 }

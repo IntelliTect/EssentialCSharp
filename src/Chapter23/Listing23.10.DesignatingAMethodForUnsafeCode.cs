@@ -1,7 +1,7 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter23.Listing23_10
 {
     #region INCLUDE
-    class Program
+    public class Program
     {
         unsafe static int Main(string[] args)
         {

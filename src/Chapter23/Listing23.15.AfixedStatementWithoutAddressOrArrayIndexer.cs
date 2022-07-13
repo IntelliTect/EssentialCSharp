@@ -1,12 +1,16 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter23.Listing23_15
 {
-    #region INCLUDE
-    using System;
-    using System.Runtime.InteropServices;
-    public class VirtualMemoryManager
+    public unsafe class FixedState
     {
-        [DllImport("kernel32.dll", EntryPoint = "GetCurrentProcess")]
-        internal static extern IntPtr GetCurrentProcessHandle();
+        public static void Main()
+        {
+            #region INCLUDE
+            byte[] bytes = new byte[24];
+            fixed (byte* pData = bytes)
+            {
+                // ...
+            }
+            #endregion INCLUDE
+        }
     }
-    #endregion INCLUDE
 }

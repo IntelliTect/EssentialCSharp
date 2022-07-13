@@ -1,12 +1,19 @@
+
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter23.Listing23_04
 {
-    #region INCLUDE
     using System;
     using System.Runtime.InteropServices;
+    #region INCLUDE
     public class VirtualMemoryManager
     {
-        [DllImport("kernel32.dll", EntryPoint = "GetCurrentProcess")]
-        internal static extern IntPtr GetCurrentProcessHandle();
+        // ...
+        [DllImport("kernel32.dll", SetLastError = true)]
+        static extern bool VirtualProtectEx(
+            IntPtr hProcess, IntPtr lpAddress,
+            IntPtr dwSize, uint flNewProtect,
+        #region HIGHLIGHT
+            ref uint lpflOldProtect);
+        #endregion HIGHLIGHT
     }
     #endregion INCLUDE
 }

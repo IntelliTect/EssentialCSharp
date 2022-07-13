@@ -1,6 +1,6 @@
-// TODO: Update listing in Manuscript
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter23.Listing23_20
 {
+    #region INCLUDE
     using System;
     using System.Runtime.InteropServices;
     using System.Text;
@@ -54,6 +54,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter23.Listing23_20
             return 0;
         }
     }
+    #endregion INCLUDE
 
     public class VirtualMemoryPtr : SafeHandle
     {
