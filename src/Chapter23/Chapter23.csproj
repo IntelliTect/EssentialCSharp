@@ -5,8 +5,6 @@
   </PropertyGroup>
   <Import Project="..\Chapter.props" />
   <ItemGroup>
-    <Compile Remove="Listing23 - Copy.02.TheVirtualAllocExAPI.cs" />
-    <Compile Remove="Listing23 - Copy.03.DeclaringTheVirtualAllocExAPI.cs" />
     <Compile Remove="Listing23.02.TheVirtualAllocExAPI.cs" />
     <Compile Remove="Listing23.03.DeclaringTheVirtualAllocExAPI.cs" />
     <Compile Remove="Listing23.05.DeclaringTypesFromUnmanagedStructs.cs" />
@@ -23,8 +21,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Listing23 - Copy.02.TheVirtualAllocExAPI.cs" />
-    <None Include="Listing23 - Copy.03.DeclaringTheVirtualAllocExAPI.cs" />
     <None Include="Listing23.02.TheVirtualAllocExAPI.cs" />
     <None Include="Listing23.03.DeclaringTheVirtualAllocExAPI.cs" />
     <None Include="Listing23.05.DeclaringTypesFromUnmanagedStructs.cs" />
