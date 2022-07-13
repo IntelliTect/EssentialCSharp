@@ -1,9 +1,10 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_12
 {
+    #region INCLUDE
     using System;
     using System.Threading;
 
-    class Program
+    public class Program
     {
         [ThreadStatic]
         static double _Count = 0.01134;
@@ -28,7 +29,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_12
             Console.WriteLine("Main Count = {0}", Count);
         }
 
-        static void Decrement()
+        public static void Decrement()
         {
             for(int i = 0; i < short.MaxValue; i++)
             {
@@ -37,4 +38,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_12
             Console.WriteLine("Decrement Count = {0}", Count);
         }
     }
+    #endregion INCLUDE
 }

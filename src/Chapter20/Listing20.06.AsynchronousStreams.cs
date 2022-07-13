@@ -1,6 +1,7 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_06
 {
     using System;
+    #region INCLUDE
     using System.IO;
     using System.Linq;
     using System.Threading.Tasks;
@@ -11,10 +12,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_06
 
     public static class Program
     {
-        static public async void Main(params string[] args)
+        public static async void Main(params string[] args)
         {
             string directoryPath = Directory.GetCurrentDirectory();
             string searchPattern = "*";
+            #region EXCLUDE
             switch (args?.Length)
             {
                 case 1:
@@ -27,7 +29,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_06
                     DisplayHelp();
                     break;
             }
-
+            #endregion EXCLUDE
             using Cryptographer cryptographer = new Cryptographer();
 
             IEnumerable<string> files = Directory.EnumerateFiles(
@@ -38,47 +40,59 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_06
             using CancellationTokenSource cancellationTokenSource =
                 new CancellationTokenSource(1000*60);
 
+            #region HIGHLIGHT
             await foreach ((string fileName, string encryptedFileName)
                 in EncryptFilesAsync(files, cryptographer)
                 .Zip(files.ToAsyncEnumerable())
                 .WithCancellation(cancellationTokenSource.Token)
                 )
+            #endregion HIGHLIGHT
             {
                 Console.WriteLine($"{fileName}=>{encryptedFileName}");
             }
-
         }
 
-        static public async IAsyncEnumerable<string> EncryptFilesAsync(
+        #region HIGHLIGHT
+        public static async IAsyncEnumerable<string> EncryptFilesAsync(
             IEnumerable<string> files, Cryptographer cryptographer,
             [EnumeratorCancellation] CancellationToken cancellationToken = default)
+        #endregion HIGHLIGHT
         {
             foreach (string fileName in files)
             {
+                #region HIGHLIGHT
                 yield return await EncryptFileAsync(fileName, cryptographer);
+                #endregion HIGHLIGHT
                 cancellationToken.ThrowIfCancellationRequested();
             }
         }
 
+        #region HIGHLIGHT
         private static async ValueTask<string> EncryptFileAsync(
             string fileName, Cryptographer cryptographer)
+        #endregion HIGHLIGHT
         {
             string encryptedFileName = $"{fileName}.encrypt";
+            #region HIGHLIGHT
             await using FileStream outputFileStream =
                 new FileStream(encryptedFileName, FileMode.Create);
+            #endregion HIGHLIGHT
 
+            #region HIGHLIGHT
             string data = await File.ReadAllTextAsync(fileName);
 
             await cryptographer.EncryptAsync(data, outputFileStream);
+            #endregion HIGHLIGHT
 
             return encryptedFileName;
         }
-
+        #region EXCLUDE
 
         // Included to simplify testing
         public static Cryptographer? Cryptographer { get; private set; }
 
         private static void DisplayHelp() { /* ... */ }
-
+        #endregion EXCLUDE
     }
+    #endregion INCLUDE
 }

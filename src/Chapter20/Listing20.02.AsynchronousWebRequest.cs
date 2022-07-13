@@ -1,12 +1,13 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_02
 {
+    #region INCLUDE
     using System;
     using System.IO;
     using System.Net;
     using System.Runtime.ExceptionServices;
     using System.Threading.Tasks;
 
-    static public class Program
+    public static class Program
     {
         public const string DefaultUrl = "https://IntelliTect.com";
 
@@ -25,15 +26,16 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_02
                 url = args[1];
                 // Ignore additional parameters
             }
-            Console.Write($"Searching for '{findText}' at URL '{url}'.");
+            Console.WriteLine(
+                $"Searching for '{findText}' at URL '{url}'.");
 
             using WebClient webClient = new WebClient();
-            Console.Write("\nDownloading...");
+            Console.Write("Downloading...");
             Task task = webClient.DownloadDataTaskAsync(url)
                 .ContinueWith(antecedent =>
                 {
                     byte[] downloadData = antecedent.Result;
-                    Console.Write("\nSearching...");
+                    Console.Write($"{Environment.NewLine}Searching...");
                     return CountOccurrencesAsync(
                         downloadData, findText);
                 })
@@ -42,7 +44,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_02
                 {
                     int textOccurrenceCount = antecedent.Result;
                     Console.WriteLine(
-                        @$"{Environment.NewLine}'{findText}' appears {
+                         @$"{Environment.NewLine}'{findText}' appears {
                             textOccurrenceCount} times at URL '{url}'.");
 
                 });
@@ -71,18 +73,21 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_02
                 }
                 catch (WebException)
                 {
-                    // ...
+                    #region EXCLUDE
                     throw;
+                    #endregion EXCLUDE
                 }
                 catch (IOException)
                 {
-                    // ...
+                    #region EXCLUDE
                     throw;
+                    #endregion EXCLUDE
                 }
                 catch (NotSupportedException)
                 {
-                    // ...
+                    #region EXCLUDE
                     throw;
+                    #endregion EXCLUDE
                 }
             }
         }
@@ -91,6 +96,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_02
         private static async Task<int> CountOccurrencesAsync(
             byte[] downloadData, string findText)
         {
+            #region EXCLUDE
             int textOccurrenceCount = 0;
 
             using MemoryStream stream = new MemoryStream(downloadData);
@@ -123,6 +129,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_02
             while (length != 0);
 
             return textOccurrenceCount;
+            #endregion EXCLUDE
         }
     }
+    #endregion INCLUDE
 }

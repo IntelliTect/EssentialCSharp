@@ -2,11 +2,12 @@ using System;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_04
 {
+    #region INCLUDE
     using System.IO;
     using System.Text;
     using System.Threading.Tasks;
 
-    public static partial class Program
+    public static class Program
     {
         public static async ValueTask<byte[]> CompressAsync(byte[] buffer)
         {
@@ -17,12 +18,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_04
             using MemoryStream memoryStream = new MemoryStream();
             using System.IO.Compression.GZipStream gZipStream =
                 new System.IO.Compression.GZipStream(
-                    memoryStream, System.IO.Compression.CompressionMode.Compress);
-            // TODO: Update listing in Manuscript
+                    memoryStream, 
+                        System.IO.Compression.CompressionMode.Compress);
             await gZipStream.WriteAsync(buffer.AsMemory(0, buffer.Length));
 
             return memoryStream.ToArray();
         }
+        #region EXCLUDE
 
         public static string UnZip(string value)
         {
@@ -53,5 +55,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_04
             }
             return data.ToString();
         }
+        #endregion EXCLUDE
     }
+    #endregion INCLUDE
 }

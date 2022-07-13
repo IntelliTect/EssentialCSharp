@@ -1,10 +1,11 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_09
 {
+    #region INCLUDE
     using System;
     using System.Reflection;
     using System.Threading;
 
-    class Program
+    public class Program
     {
         public static void Main()
         {
@@ -13,7 +14,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_09
             string mutexName =
                 Assembly.GetEntryAssembly()!.FullName!;
 
-            // firstApplicationInstance indicates whether this is the first
+            // firstApplicationInstance indicates
+            // whether this is the first
             // application instance.
             using Mutex mutex = new Mutex(false, mutexName,
                  out bool firstApplicationInstance);
@@ -30,4 +32,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_09
             }
         }
     }
+    #endregion INCLUDE
 }

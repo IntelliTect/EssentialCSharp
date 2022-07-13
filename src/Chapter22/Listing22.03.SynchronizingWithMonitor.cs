@@ -1,13 +1,15 @@
-// TODO: Update listing in Manuscript
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_03
 {
+    #region INCLUDE
     using System;
     using System.Threading;
     using System.Threading.Tasks;
 
     public class Program
     {
+        #region HIGHLIGHT
         readonly static object _Sync = new object();
+        #endregion HIGHLIGHT
         static int _Total = int.MaxValue;
         static int _Count = 0;
 
@@ -22,6 +24,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_03
             // Increment
             for(int i = 0; i < _Total; i++)
             {
+                #region HIGHLIGHT
                 bool lockTaken = false;
                 try
                 {
@@ -35,6 +38,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_03
                         Monitor.Exit(_Sync);
                     }
                 }
+                #endregion HIGHLIGHT
             }
 
             task.Wait();
@@ -42,10 +46,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_03
             return _Count;
         }
 
-        static void Decrement()
+        public static void Decrement()
         {
             for(int i = 0; i < _Total; i++)
             {
+                #region HIGHLIGHT
                 bool lockTaken = false;
                 try
                 {
@@ -59,7 +64,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_03
                         Monitor.Exit(_Sync);
                     }
                 }
+                #endregion HIGHLIGHT
             }
         }
     }
+    #endregion INCLUDE
 }
