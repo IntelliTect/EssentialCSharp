@@ -18,16 +18,16 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_32
             #region HIGHLIGHT
             // Convert to an array
             temp = reverse.ToCharArray();
-            #endregion
+            #endregion HIGHLIGHT
 
             #region HIGHLIGHT
             // Reverse the array
             System.Array.Reverse(temp);
-            #endregion
+            #endregion HIGHLIGHT
 
             // Convert the array back to a string and
             // check if reverse string is the same
-            if(reverse == new string(temp))
+            if (reverse == new string(temp))
             {
                 System.Console.WriteLine(
                     $"\"{palindrome}\" is a palindrome.");
@@ -39,5 +39,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_32
             }
         }
     }
-    #endregion
+    #endregion INCLUDE
 }

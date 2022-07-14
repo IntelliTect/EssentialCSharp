@@ -8,12 +8,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_12
     {
         #region HIGHLIGHT
         public static int Main(string[] args)
-        #endregion
+        #endregion HIGHLIGHT
         {
             #region HIGHLIGHT
             int result;
             switch(args.Length)
-            #endregion
+            #endregion HIGHLIGHT
             {
                 default:
                     // Exactly two arguments must be specified; give an error
@@ -28,16 +28,16 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_12
                     WebClient webClient = new WebClient();
                     #region HIGHLIGHT
                     webClient.DownloadFile(args[0], args[1]);
-                    #endregion
+                    #endregion HIGHLIGHT
                     result = 0;
                     #region HIGHLIGHT
                     break;
-                    #endregion
+                    #endregion HIGHLIGHT
             }
             #region HIGHLIGHT
             return result;
-            #endregion
+            #endregion HIGHLIGHT
         }
     }
-    #endregion
+    #endregion INCLUDE
 }

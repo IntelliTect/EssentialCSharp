@@ -34,10 +34,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_16
             ref byte redPixel = ref FindFirstRedEyePixel(image);
             // Update it to be Black
             redPixel = (byte)ConsoleColor.Black;
-            #endregion
+            #endregion HIGHLIGHT
             System.Console.WriteLine(
                 $"image[{index}]={(ConsoleColor)image[redPixel]}");
         }
-        #endregion
+        #endregion INCLUDE
     }
 }

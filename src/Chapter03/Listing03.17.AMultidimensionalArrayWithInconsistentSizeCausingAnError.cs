@@ -17,8 +17,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_17
             };
             #region EXCLUDE
             */
-            #endregion
-            #endregion
+            #endregion EXCLUDE
+            #endregion INCLUDE
         }
     }
 }

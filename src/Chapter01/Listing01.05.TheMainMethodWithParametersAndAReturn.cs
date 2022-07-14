@@ -7,8 +7,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_05
         {
             #region EXCLUDE
             return 0;
-            #endregion
+            #endregion EXCLUDE
         }
-        #endregion
+        #endregion INCLUDE
     }
 }

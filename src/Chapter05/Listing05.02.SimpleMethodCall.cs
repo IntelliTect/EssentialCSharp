@@ -20,5 +20,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_02
                 $"Your full name is { firstName } { lastName }.");
         }
     }
-    #endregion
+    #endregion INCLUDE
 }

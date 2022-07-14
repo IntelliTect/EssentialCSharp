@@ -14,19 +14,19 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_19
                 #region HIGHLIGHT
                 totalLineCount =
                     DirectoryCountLines(args[0], args[1]);
-                #endregion
+                #endregion HIGHLIGHT
             }
             else if(args.Length > 0)
             {
                 #region HIGHLIGHT
                 totalLineCount = DirectoryCountLines(args[0]);
-                #endregion
+                #endregion HIGHLIGHT
             }
             else
             {
                 #region HIGHLIGHT
                 totalLineCount = DirectoryCountLines();
-                #endregion
+                #endregion HIGHLIGHT
             }
 
             System.Console.WriteLine(totalLineCount);
@@ -34,7 +34,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_19
 
         #region HIGHLIGHT
         static int DirectoryCountLines()
-        #endregion
+        #endregion HIGHLIGHT
         {
             return DirectoryCountLines(
                 Directory.GetCurrentDirectory());
@@ -42,14 +42,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_19
 
         #region HIGHLIGHT
         static int DirectoryCountLines(string directory)
-        #endregion
+        #endregion HIGHLIGHT
         {
             return DirectoryCountLines(directory, "*.cs");
         }
 
         #region HIGHLIGHT
         static int DirectoryCountLines(
-        #endregion
+        #endregion HIGHLIGHT
             string directory, string extension)
         {
             int lineCount = 0;
@@ -89,5 +89,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_19
             return lineCount;
         }
     }
-    #endregion
+    #endregion INCLUDE
 }

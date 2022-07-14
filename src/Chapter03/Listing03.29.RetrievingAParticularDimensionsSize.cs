@@ -9,7 +9,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_29
             cells = new bool[2, 3, 3];
             System.Console.WriteLine(cells.GetLength(0)); // Displays 2
             System.Console.WriteLine(cells.Rank); // Displays 3
-            #endregion
+            #endregion INCLUDE
         }
     }
 }

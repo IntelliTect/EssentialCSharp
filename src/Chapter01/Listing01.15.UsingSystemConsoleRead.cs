@@ -10,7 +10,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_15
             readValue = System.Console.Read();
             character = (char) readValue;
             System.Console.Write(character);
-            #endregion
+            #endregion INCLUDE
         }
     }
 }

@@ -13,8 +13,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_07
             // because of the using directive above
             #region HIGHLIGHT
             Console.WriteLine("Hello, my name is Inigo Montoya");
-            #endregion
+            #endregion HIGHLIGHT
         }
     }
-    #endregion
+    #endregion INCLUDE
 }

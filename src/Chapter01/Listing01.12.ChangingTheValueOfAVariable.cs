@@ -10,16 +10,16 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_12
             string miracleMax = "Have fun storming the castle!";
 
             valerie = "Think it will work?";
-            #endregion
+            #endregion HIGHLIGHT
 
             System.Console.WriteLine(miracleMax);
             System.Console.WriteLine(valerie);
 
             #region HIGHLIGHT
             miracleMax = "It would take a miracle.";
-            #endregion
+            #endregion HIGHLIGHT
             System.Console.WriteLine(miracleMax);
         }
     }
-    #endregion
+    #endregion INCLUDE
 }

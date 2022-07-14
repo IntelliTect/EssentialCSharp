@@ -32,7 +32,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_27
                 throw;
             }
             // ...
-            #endregion
+            #endregion INCLUDE
             catch
             {
                 Console.WriteLine("Unexpected error!");
