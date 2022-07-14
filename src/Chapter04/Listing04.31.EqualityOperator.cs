@@ -11,7 +11,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_31
             {
                 System.Console.WriteLine($"Player {currentPlayer} quit!!");
             }
-            #endregion
+            #endregion INCLUDE
         }
     }
 }

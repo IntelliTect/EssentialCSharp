@@ -12,7 +12,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_14
             lines = lines - 1;
             lines -= 1;
             lines--;
-            #endregion
+            #endregion INCLUDE
         }
     }
 }

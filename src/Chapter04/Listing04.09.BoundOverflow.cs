@@ -9,7 +9,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_09
             System.Console.WriteLine(-1f / 0);
             // Displays: Infinity
             System.Console.WriteLine(3.402823E+38f * 2f);
-            #endregion
+            #endregion INCLUDE
         }
     }
 }

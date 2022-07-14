@@ -19,5 +19,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_35
             }
         }
     }
-    #endregion
+    #endregion INCLUDE
 }

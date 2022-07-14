@@ -20,7 +20,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_38
                     propertyChanged(this,
                         new System.EventArgs());
                 }
-                #endregion
+                #endregion INCLUDE
 
                 _Temperature = value; 
             }

@@ -12,5 +12,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_04
                 + windSpeed + " mile/hour wind.");
         }
     }
-    #endregion
+    #endregion INCLUDE
 }

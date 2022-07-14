@@ -7,7 +7,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_06
             #region INCLUDE
             int distance = 'f' - 'c';
             System.Console.WriteLine(distance);
-            #endregion
+            #endregion INCLUDE
         }
     }
 }

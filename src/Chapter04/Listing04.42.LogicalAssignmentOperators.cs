@@ -10,10 +10,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_42
             and &= 7;   // and = 4
             or |= 7;   // or = 15
             xor ^= 7;   // xor = 11
-            #endregion
+            #endregion HIGHLIGHT
             System.Console.WriteLine(
                 $"and = { and } \nor = { or } \nxor = { xor }");
-            #endregion
+            #endregion INCLUDE
         }
     }
 }

@@ -34,5 +34,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_43
                       $"The Fibonacci number following this is { current }");
         }
     }
-    #endregion
+    #endregion INCLUDE
 }

@@ -9,7 +9,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_55
             #if CSHARP2PLUS
             System.Console.Clear();
             #endif
-            #endregion
+            #endregion INCLUDE
             // ...
         }
     }

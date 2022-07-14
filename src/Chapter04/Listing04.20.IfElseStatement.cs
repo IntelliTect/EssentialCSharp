@@ -26,8 +26,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_20
                 // Default to 2 players (even if user didn't enter 2)
                 System.Console.WriteLine(
                     "Play against another player.");
-            #endregion
+            #endregion HIGHLIGHT
         }
     }
-    #endregion
+    #endregion INCLUDE
 }

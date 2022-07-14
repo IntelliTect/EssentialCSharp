@@ -8,10 +8,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_34
             bool valid = false;
             #region HIGHLIGHT
             bool result = !valid;
-            #endregion
+            #endregion HIGHLIGHT
             // Displays "result = True"
             System.Console.WriteLine($"result = { result }");
-            #endregion
+            #endregion INCLUDE
         }
     }
 }

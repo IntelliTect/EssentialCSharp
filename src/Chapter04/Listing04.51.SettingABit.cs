@@ -29,7 +29,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_51
             // subtract 1 to use currentPlayer as an
             // index in a zero based array.
             playerPositions[currentPlayer - 1] |= position;
-            #endregion
+            #endregion INCLUDE
         }
     }
 }

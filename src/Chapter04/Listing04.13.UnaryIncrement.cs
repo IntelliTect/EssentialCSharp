@@ -12,7 +12,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_13
             spaceCount = spaceCount + 1;
             spaceCount += 1;
             spaceCount++;
-            #endregion
+            #endregion INCLUDE
         }
     }
 }

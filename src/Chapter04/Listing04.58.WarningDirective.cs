@@ -6,7 +6,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_58
         {
             #region INCLUDE
             #warning "Same move allowed multiple times."
-            #endregion
+            #endregion INCLUDE
         }
     }
 }

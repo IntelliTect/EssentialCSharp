@@ -10,7 +10,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_46
                 System.Console.Write(
                     $"{ x }{ ((x > y)  ? '>' : '<')}{ y }\t");
             }
-            #endregion
+            #endregion INCLUDE
         }
     }
 }

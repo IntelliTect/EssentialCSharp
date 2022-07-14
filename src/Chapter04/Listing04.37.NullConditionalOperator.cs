@@ -11,7 +11,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_37
             segments = args;
 
             string? uri = null;
-            #endregion
+            #endregion EXCLUDE
 
             int? length = segments?.Length;
             if (length is { } && length != 0)
@@ -32,7 +32,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_37
                 System.Console.WriteLine(
                     $"Uri: { uri }");
             }
-            #endregion
+            #endregion INCLUDE
         }
     }
 }
