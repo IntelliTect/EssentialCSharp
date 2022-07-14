@@ -17,5 +17,5 @@
     {
         // ...
     }
-    #endregion
+    #endregion INCLUDE
 }

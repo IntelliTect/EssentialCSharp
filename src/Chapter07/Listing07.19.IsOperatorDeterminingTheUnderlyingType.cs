@@ -23,9 +23,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_19
             }
             #region EXCLUDE
             Console.WriteLine(data);
-            #endregion
+            #endregion EXCLUDE
         }
-        #endregion
+        #endregion INCLUDE
 
         public static object Encrypt(string data)
         {

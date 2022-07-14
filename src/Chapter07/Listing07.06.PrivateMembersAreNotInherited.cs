@@ -11,7 +11,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_06
         #region EXCLUDE
         // Justification: Disabled pending constructor
         #pragma warning disable CS8618 // Non-nullable field is uninitialized. Consider declaring as nullable.
-        #endregion
+        #endregion EXCLUDE
         private string _Name;
 
         public string Name
@@ -21,7 +21,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_06
         }
         #region EXCLUDE
         #pragma warning restore CS8618 // Non-nullable field is uninitialized. Consider declaring as nullable.
-        #endregion
+        #endregion EXCLUDE
     }
 
     public class Contact : PdaItem
@@ -38,8 +38,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_06
             // ERROR:  'PdaItem._Name' is inaccessible
             // due to its protection level
             // contact._Name = "Inigo Montoya";
-            #endregion
+            #endregion HIGHLIGHT
         }
     }
-    #endregion
+    #endregion INCLUDE
 }

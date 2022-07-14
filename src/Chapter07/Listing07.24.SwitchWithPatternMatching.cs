@@ -23,6 +23,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_24
                 _ => null
             } is { } date ? string.Format(
                 compositFormatString, date.Year, date.Month, date.Day) : null;
-        #endregion
+        #endregion INCLUDE
     }
 }

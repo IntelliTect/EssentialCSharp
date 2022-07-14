@@ -28,12 +28,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_22
             // Positional pattern matching
             #region HIGHLIGHT
             if (person is {FirstName: string firstName, LastName: string lastName })
-            #endregion
+            #endregion HIGHLIGHT
             {
                 Console.WriteLine($"{firstName} {lastName}");
             }
             // ...
-            #endregion
+            #endregion INCLUDE
         }
     }
 }
