@@ -15,7 +15,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_30
                 System.Console.WriteLine(
                 #region HIGHLIGHT
                     $"input was parsed successfully to {number}.");
-                #endregion
+                #endregion HIGHLIGHT
             }
             else
             {
@@ -26,7 +26,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_30
 
             System.Console.WriteLine(
                 $"'number' currently has the value: {number}");
-            #endregion
+            #endregion INCLUDE
         }
     }
 }

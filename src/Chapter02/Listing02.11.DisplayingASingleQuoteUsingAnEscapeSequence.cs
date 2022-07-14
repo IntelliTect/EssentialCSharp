@@ -8,5 +8,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_11
             System.Console.WriteLine('\'');
         }
     }
-    #endregion
+    #endregion INCLUDE
 }

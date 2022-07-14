@@ -13,10 +13,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_17
             #region HIGHLIGHT
             // UNEXPECTED: Does not convert text to uppercase
             text.ToUpper();
-            #endregion
+            #endregion HIGHLIGHT
 
             System.Console.WriteLine(text);
         }
     }
-    #endregion
+    #endregion INCLUDE
 }

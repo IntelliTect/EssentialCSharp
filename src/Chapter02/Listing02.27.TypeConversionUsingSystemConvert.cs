@@ -8,7 +8,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_27
             string middleCText = "261.626";
             double middleC = System.Convert.ToDouble(middleCText);
             bool boolean = System.Convert.ToBoolean(middleC);
-            #endregion
+            #endregion INCLUDE
         }
     }
 }

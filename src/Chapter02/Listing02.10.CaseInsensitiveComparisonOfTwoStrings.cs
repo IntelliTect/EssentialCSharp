@@ -8,7 +8,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_10
             string option = "help";
 
             int comparison = string.Compare(option, "/Help", true);
-            #endregion
+            #endregion INCLUDE
 
             System.Console.WriteLine($"{comparison}");
         }
