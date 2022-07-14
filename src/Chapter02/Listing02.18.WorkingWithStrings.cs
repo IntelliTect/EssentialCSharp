@@ -13,10 +13,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_18
             // Return a new string in uppercase
             #region HIGHLIGHT
             uppercase = text.ToUpper();
-            #endregion
+            #endregion HIGHLIGHT
 
             System.Console.WriteLine(uppercase);
         }
     }
-    #endregion
+    #endregion INCLUDE
 }
