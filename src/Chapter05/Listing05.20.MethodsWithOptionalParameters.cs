@@ -18,7 +18,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_20
             {
                 #region HIGHLIGHT
                 totalLineCount = DirectoryCountLines(args[0]);
-                #endregion
+                #endregion HIGHLIGHT
             }
             else
             {
@@ -32,7 +32,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_20
         {
             #region EXCLUDE
             return 0;
-            #endregion
+            #endregion EXCLUDE
         }
 
         #region HIGHLIGHT
@@ -40,12 +40,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_20
           static int DirectoryCountLines(string directory)
           { ... }
         */
-        #endregion
+        #endregion HIGHLIGHT
 
         #region HIGHLIGHT
         static int DirectoryCountLines(
             string directory, string extension = "*.cs")
-        #endregion
+        #endregion HIGHLIGHT
         {
             int lineCount = 0;
             foreach(string file in
@@ -83,8 +83,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_20
 
             reader.Dispose();  // Automatically closes the stream
             return lineCount;
-            #endregion
+            #endregion EXCLUDE
         }
     }
-    #endregion
+    #endregion INCLUDE
 }

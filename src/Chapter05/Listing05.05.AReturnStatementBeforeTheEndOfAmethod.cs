@@ -8,7 +8,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_05
         {
             System.Console.WriteLine(MyMethod());
         }
-        #endregion
+        #endregion EXCLUDE
 
         public static bool MyMethod()
         {
@@ -28,7 +28,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_05
         {
             throw new System.NotImplementedException();
         }
-        #endregion
+        #endregion EXCLUDE
     }
-    #endregion
+    #endregion INCLUDE
 }

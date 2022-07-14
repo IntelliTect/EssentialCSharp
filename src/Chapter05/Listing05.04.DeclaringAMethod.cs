@@ -43,5 +43,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_04
             return $"{ firstName[0] }. { lastName[0] }.";
         }
     }
-    #endregion
+    #endregion INCLUDE
 }
