@@ -11,5 +11,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_10
             System.Console.WriteLine(max);
         }
     }
-    #endregion
+    #endregion INCLUDE
 }

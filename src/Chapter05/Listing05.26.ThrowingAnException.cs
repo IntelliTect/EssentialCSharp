@@ -17,7 +17,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_26
                 Console.WriteLine("Throw exception");
                 #region HIGHLIGHT
                 throw new Exception("Arbitrary exception");
-                #endregion
+                #endregion HIGHLIGHT
                 Console.WriteLine("End executing");
                 }
             catch(FormatException exception)
@@ -39,5 +39,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_26
                 "Shutting down...");
         }
     }
-    #endregion
+    #endregion INCLUDE
 }

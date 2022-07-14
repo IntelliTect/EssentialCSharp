@@ -11,6 +11,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_30
                 // This parameter is an option
             }
         }
-        #endregion
+        #endregion INCLUDE
     }
 }

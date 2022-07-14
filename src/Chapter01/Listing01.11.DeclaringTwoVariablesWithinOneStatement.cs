@@ -6,7 +6,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_11
         {
             #region INCLUDE
             string message1, message2;
-            #endregion
+            #endregion INCLUDE
 
             message1 = "My name is Inigo Montoya.";;
             message2 = "You killed my father....";

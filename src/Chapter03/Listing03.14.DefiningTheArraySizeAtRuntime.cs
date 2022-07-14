@@ -10,7 +10,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_14
             int size = int.Parse(System.Console.ReadLine());
             groceryList = new string[size];
             // ...
-            #endregion
+            #endregion INCLUDE
         }
     }
 }

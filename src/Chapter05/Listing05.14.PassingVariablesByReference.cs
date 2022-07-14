@@ -10,7 +10,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_14
             string second = "goodbye";
             #region HIGHLIGHT
             Swap(ref first, ref second);
-            #endregion
+            #endregion HIGHLIGHT
 
             System.Console.WriteLine(
                 $@"first = ""{ first }"", second = ""{ second }""");
@@ -19,12 +19,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_14
 
         #region HIGHLIGHT
         static void Swap(ref string x, ref string y)
-        #endregion
+        #endregion HIGHLIGHT
         {
             string temp = x;
             x = y;
             y = temp;
         }
     }
-    #endregion
+    #endregion INCLUDE
 }

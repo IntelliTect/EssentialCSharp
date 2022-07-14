@@ -25,7 +25,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_18
 
         #region HIGHLIGHT
         static int DirectoryCountLines(string directory)
-        #endregion
+        #endregion HIGHLIGHT
         {
             int lineCount = 0;
             foreach(string file in
@@ -39,7 +39,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_18
             {
                 #region HIGHLIGHT
                 lineCount += DirectoryCountLines(subdirectory);
-                #endregion
+                #endregion HIGHLIGHT
             }
 
             return lineCount;
@@ -67,5 +67,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_18
             return lineCount;
         }
     }
-    #endregion
+    #endregion INCLUDE
 }

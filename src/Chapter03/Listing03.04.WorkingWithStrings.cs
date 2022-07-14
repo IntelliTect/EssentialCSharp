@@ -14,5 +14,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_04
             System.Console.WriteLine(uppercase);
         }
     }
-    #endregion
+    #endregion INCLUDE
 }

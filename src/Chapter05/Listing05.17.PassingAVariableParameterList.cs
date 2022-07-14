@@ -17,7 +17,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_17
             fullName = Combine(
                 Directory.GetCurrentDirectory(),
                 "bin", "config", "index.html");
-            #endregion
+            #endregion HIGHLIGHT
             Console.WriteLine(fullName);
 
             // ...
@@ -27,7 +27,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_17
             fullName = Combine(
                 Environment.SystemDirectory,
                 "Temp", "index.html");
-            #endregion
+            #endregion HIGHLIGHT
             Console.WriteLine(fullName);
 
             // ...
@@ -38,14 +38,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_17
                 new string[] {
                     $"C:{Path.DirectorySeparatorChar}", "Data",
                     "HomeDir", "index.html" });
-            #endregion
+            #endregion HIGHLIGHT
             Console.WriteLine(fullName);
             // ...
         }
 
         #region HIGHLIGHT
         static string Combine(params string[] paths)
-        #endregion
+        #endregion HIGHLIGHT
         {
             string result = string.Empty;
             foreach(string path in paths)
@@ -55,5 +55,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_17
             return result;
         }
     }
-    #endregion
+    #endregion INCLUDE
 }

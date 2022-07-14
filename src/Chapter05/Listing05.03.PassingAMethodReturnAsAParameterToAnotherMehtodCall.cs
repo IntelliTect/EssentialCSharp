@@ -9,8 +9,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_03
             System.Console.WriteLine("Hello {0}!",
             #region HIGHLIGHT
                 System.Console.ReadLine());
-            #endregion
+            #endregion HIGHLIGHT
         }
     }
-    #endregion
+    #endregion INCLUDE
 }

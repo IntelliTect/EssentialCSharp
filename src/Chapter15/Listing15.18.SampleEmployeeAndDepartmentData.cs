@@ -3,7 +3,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_18
     using AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15;
     using System;
     using System.Collections.Generic;
-
+    #region INCLUDE
     public class Program
     {
         public static void Main()
@@ -27,4 +27,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_18
             }
         }
     }
+    #endregion INCLUDE
 }

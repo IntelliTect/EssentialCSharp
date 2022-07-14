@@ -19,8 +19,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_16
             System.Console.WriteLine(
             #region HIGHLIGHT
                 $"Your full name is { firstName } { lastName }.");
-            #endregion
+            #endregion HIGHLIGHT
         }
     }
-    #endregion
+    #endregion INCLUDE
 }

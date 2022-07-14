@@ -20,7 +20,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_15
                 {
                     #region HIGHLIGHT
                     if (TryGetPhoneButton(character, out char button))
-                    #endregion
+                    #endregion HIGHLIGHT
                     {
                         Console.Write(button);
                     }
@@ -36,7 +36,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_15
 
         #region HIGHLIGHT
         static bool TryGetPhoneButton(char character, out char button)
-        #endregion
+        #endregion HIGHLIGHT
         {
             bool success = true;
             switch(char.ToLower(character))
@@ -118,7 +118,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_15
                 case '+':
                     button = '0';
                     break;
-                #endregion
+                #endregion EXCLUDE
 
                 case '-':
                     button = '-';
@@ -132,5 +132,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_15
             return success;
         }
     }
-    #endregion
+    #endregion INCLUDE
 }

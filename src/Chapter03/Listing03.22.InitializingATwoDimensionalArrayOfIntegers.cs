@@ -12,7 +12,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_22
             };
             // Set the winning tic-tac-toe move to be player 1
             cells[1, 0] = 1;
-            #endregion
+            #endregion INCLUDE
         }
     }
 }

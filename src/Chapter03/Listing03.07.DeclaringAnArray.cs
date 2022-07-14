@@ -7,7 +7,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_07
         {
             #region INCLUDE
             string[] languages;
-            #endregion
+            #endregion INCLUDE
         }
-    }
+     }
 }

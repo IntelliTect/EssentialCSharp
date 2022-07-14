@@ -23,7 +23,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_25
             // Assume not null for clarity
             ageText = Console.ReadLine()!;
 
-    #endregion
+            #endregion EXCLUDE
             try
             {
                 age = int.Parse(ageText);
@@ -51,7 +51,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_25
             {
                 Console.WriteLine($"Goodbye { firstName }");
             }
-    #endregion
+            #endregion INCLUDE
             return result;
         }
     }

@@ -9,7 +9,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_10
             languages = new string[]{ "C#", "COBOL", "Java",
                 "C++", "TypeScript", "Visual Basic",
                 "Python", "Lisp", "JavaScript" };
-            #endregion
+            #endregion INCLUDE
         }
     }
 }

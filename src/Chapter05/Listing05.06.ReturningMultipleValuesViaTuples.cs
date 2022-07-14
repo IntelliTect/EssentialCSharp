@@ -10,7 +10,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_06
         }
         #region HIGHLIGHT
         static (string First, string Last) GetName()
-        #endregion
+        #endregion HIGHLIGHT
         {
             string firstName, lastName;
             firstName = GetUserInput("Enter your first name: ");
@@ -21,9 +21,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_06
         {
             #region HIGHLIGHT
             (string First, string Last) name = GetName();
-            #endregion
+            #endregion HIGHLIGHT
             System.Console.WriteLine($"Hello { name.First } { name.Last }!");
         }
     }
-    #endregion
+    #endregion INCLUDE
 }
