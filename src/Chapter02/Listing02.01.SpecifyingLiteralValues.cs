@@ -8,7 +8,7 @@
             System.Console.WriteLine(42);
 
             System.Console.WriteLine(1.618034);
-            #endregion
+            #endregion INCLUDE
         }
     }
 }

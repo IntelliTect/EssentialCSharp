@@ -10,5 +10,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_13
             System.Console.Write("\n\"Wait 'til I get going!\"\n");
         }
     }
-    #endregion
+    #endregion INCLUDE
 }

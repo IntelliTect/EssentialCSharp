@@ -9,7 +9,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_28
             string text = boolean.ToString();
             // Display "True"
             System.Console.WriteLine(text);
-            #endregion
+            #endregion INCLUDE
         }
     }
 }

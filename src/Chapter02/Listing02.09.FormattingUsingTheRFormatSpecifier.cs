@@ -19,7 +19,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_09
             System.Console.WriteLine($"{result == number}: {result} == {number}");
 
             // ...
-            #endregion
+            #endregion INCLUDE
         }
     }
 }
