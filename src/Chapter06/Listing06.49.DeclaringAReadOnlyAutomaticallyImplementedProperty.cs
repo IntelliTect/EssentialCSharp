@@ -47,7 +47,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_49
     }
     #endregion INCLUDE
 
-        class TicTacToeBoardPreCSharp5
+    class TicTacToeBoardPreCSharp5
     {
         public TicTacToeBoardPreCSharp5()
         {
