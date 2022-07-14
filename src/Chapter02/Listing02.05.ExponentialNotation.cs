@@ -6,7 +6,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_05
         {
             #region INCLUDE
             System.Console.WriteLine(6.023E23F);
-            #endregion
+            #endregion INCLUDE
         }
     }
 }
