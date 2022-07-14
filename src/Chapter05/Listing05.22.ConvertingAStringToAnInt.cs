@@ -24,8 +24,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_22
 
             Console.WriteLine(
                 $"Hi { firstName }!  You are { age * 12 } months old.");
-            #endregion
+            #endregion HIGHLIGHT
         }
     }
-    #endregion
+    #endregion INCLUDE
 }
