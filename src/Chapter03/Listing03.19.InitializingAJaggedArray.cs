@@ -11,7 +11,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_19
                 new int[] {1, 2},
                 new int[] {1}
             };
-            #endregion
+            #endregion INCLUDE
         }
     }
 }

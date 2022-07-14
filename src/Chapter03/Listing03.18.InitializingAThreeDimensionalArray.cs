@@ -31,7 +31,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_18
                     {false, true, true}
                 }
             };
-            #endregion
+            #endregion INCLUDE
         }
     }
 }

@@ -13,7 +13,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_23
 
             cells[1][0] = 1;
             // ...
-            #endregion
+            #endregion INCLUDE
         }
     }
 }

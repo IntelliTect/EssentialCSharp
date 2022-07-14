@@ -11,7 +11,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_01
             {
                 number = args[0].Length;
             }
-            #endregion
+            #endregion EXCLUDE
             if (number is null)
             {
                 System.Console.WriteLine(
@@ -23,7 +23,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_01
                     $"'number' doubled is { number * 2 }.");
             }
         }
-        #endregion
+        #endregion INCLUDE
     }
 }
 

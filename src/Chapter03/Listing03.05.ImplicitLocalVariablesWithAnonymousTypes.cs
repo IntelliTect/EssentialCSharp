@@ -18,5 +18,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_05
                 $"{patent2.Title} ({patent2.YearOfPublication})");
         }
     }
-    #endregion
+    #endregion INCLUDE
 }

@@ -6,7 +6,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_13
         {
             #region INCLUDE
             string[] languages = new string[9];
-            #endregion
+            #endregion INCLUDE
         }
     }
 }
