@@ -13,7 +13,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_19
 
             #region EXCLUDE
             System.Console.WriteLine($"The age is: {age}");
-            #endregion EXCLUDEr
+            #endregion EXCLUDE
         }
         #endregion INCLUDE
     }
