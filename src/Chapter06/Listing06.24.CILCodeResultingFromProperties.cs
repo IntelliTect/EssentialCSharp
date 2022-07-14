@@ -45,5 +45,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_24
     } // End of property Employee::FirstName
 
     // ...
-    #endregion INCLUDE
+#endregion INCLUDE
 }
