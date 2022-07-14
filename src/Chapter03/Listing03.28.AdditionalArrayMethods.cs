@@ -12,13 +12,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_28
 
             #region HIGHLIGHT
             System.Array.Sort(languages);
-            #endregion
+            #endregion HIGHLIGHT
 
             string searchString = "COBOL";
             #region HIGHLIGHT
             int index = System.Array.BinarySearch(
                 languages, searchString);
-            #endregion
+            #endregion HIGHLIGHT
             System.Console.WriteLine(
                 "The wave of the future, "
                 + $"{ searchString }, is at index { index }.");
@@ -32,20 +32,20 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_28
                     $"{ languages[0],-20 }\t{ languages[^1],-20 }");
             #region HIGHLIGHT
             System.Array.Reverse(languages);
-            #endregion
+            #endregion HIGHLIGHT
             System.Console.WriteLine(
                     $"{ languages[0],-20 }\t{ languages[^1],-20 }");
             // Note this does not remove all items from the array
             // Rather it sets each item to the type's default value
             #region HIGHLIGHT
             System.Array.Clear(languages, 0, languages.Length);
-            #endregion
+            #endregion HIGHLIGHT
             System.Console.WriteLine(
                     $"{ languages[0],-20 }\t{ languages[^1],-20 }");
             System.Console.WriteLine(
                 $"After clearing, the array size is: { languages.Length }");
         }
     }
-    #endregion
+    #endregion INCLUDE
 }
 

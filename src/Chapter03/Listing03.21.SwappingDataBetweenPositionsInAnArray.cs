@@ -15,7 +15,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_21
             languages[3] = languages[2];
             // Assign language to location of "Java"
             languages[2] = language;
-            #endregion
+            #endregion INCLUDE
         }
     }
 }
