@@ -16,14 +16,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_20
             // ...
             #region HIGHLIGHT
             if ((args.Length, args[Action]) is (1, "show"))
-            #endregion
+            #endregion HIGHLIGHT
             {
                 Console.WriteLine(File.ReadAllText(DataFile));
             }
             #region HIGHLIGHT
             else if ((args.Length, args[Action].ToLower(), args[FileName]) 
                 is (2, "encrypt", string fileName))
-            #endregion
+            #endregion HIGHLIGHT
             {
                 string data = File.ReadAllText(DataFile);
                 File.WriteAllText(fileName, Encrypt(data).ToString());
@@ -36,7 +36,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_20
             // See Chapter 19 for actual encryption implementation
             return $"ENCRYPTED <{data}> ENCRYPTED";
         }
-        #endregion
+        #endregion EXCLUDE
     }
-    #endregion
+    #endregion INCLUDE
 }

@@ -6,7 +6,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_15
     // Define an abstract class
     #region HIGHLIGHT
     public abstract class PdaItem
-    #endregion
+    #endregion HIGHLIGHT
     {
         public PdaItem(string name)
         {
@@ -25,6 +25,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_15
             // item = new PdaItem("Inigo Montoya");
         }
     }
-    #endregion
+    #endregion INCLUDE
 #pragma warning restore CS0168
 }

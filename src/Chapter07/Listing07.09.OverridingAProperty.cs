@@ -8,7 +8,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_09
     {
         #region HIGHLIGHT
         public virtual string Name { get; set; }
-        #endregion
+        #endregion HIGHLIGHT
         // ...
     }
 
@@ -16,7 +16,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_09
     {
         #region HIGHLIGHT
         public override string Name
-        #endregion
+        #endregion HIGHLIGHT
         {
             get
             {
@@ -37,5 +37,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_09
 
         // ...
     }
-    #endregion
+    #endregion INCLUDE
 }

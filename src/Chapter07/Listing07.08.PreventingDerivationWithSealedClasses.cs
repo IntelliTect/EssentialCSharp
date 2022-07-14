@@ -11,5 +11,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_08
     {
         // ...
     }
-    #endregion
+    #endregion INCLUDE
 }

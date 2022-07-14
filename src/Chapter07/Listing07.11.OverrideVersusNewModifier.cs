@@ -54,5 +54,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_11
             BaseClass.DisplayName();
         }
     }
-    #endregion
+    #endregion INCLUDE
 }

@@ -12,15 +12,15 @@
             Contact contact = new Contact();
             #region HIGHLIGHT
             PdaItem item = contact;
-            #endregion
+            #endregion HIGHLIGHT
             // ...
 
             // Base types must be cast explicitly to derived types
             #region HIGHLIGHT
             contact = (Contact)item;
-            #endregion
+            #endregion HIGHLIGHT
             // ...
         }
     }
-    #endregion
+    #endregion INCLUDE
 }

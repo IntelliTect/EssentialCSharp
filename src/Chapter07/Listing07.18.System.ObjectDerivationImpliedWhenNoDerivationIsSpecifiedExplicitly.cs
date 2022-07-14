@@ -10,6 +10,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_18
     {
         // ...
     }
-    #endregion
+    #endregion INCLUDE
     */
 }

@@ -13,10 +13,10 @@
     // Define the Contact class as inheriting the PdaItem class
     #region HIGHLIGHT
     public class Contact : PdaItem
-    #endregion
+    #endregion HIGHLIGHT
     {
         public string? Address { get; set; }
         public string? Phone { get; set; }
     }
-    #endregion
+    #endregion INCLUDE
 }

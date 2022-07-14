@@ -10,10 +10,10 @@
             Contact contact = new Contact();
             #region HIGHLIGHT
             contact.Name = "Inigo Montoya";
-            #endregion
+            #endregion HIGHLIGHT
 
             // ...
         }
     }
-    #endregion
+    #endregion INCLUDE
 }
