@@ -44,6 +44,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_49
         //         _Cells = new bool[2, 3, 3];
 
         // ...
+    }
         #endregion INCLUDE
 
         class TicTacToeBoardPreCSharp5
