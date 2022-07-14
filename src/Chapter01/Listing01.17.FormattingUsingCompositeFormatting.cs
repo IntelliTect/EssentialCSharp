@@ -16,11 +16,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_17
             #region HIGHLIGHT
             System.Console.Write("Enter your last name: ");
             lastName = System.Console.ReadLine();
-            #endregion
+            #endregion HIGHLIGHT
 
             System.Console.WriteLine(
                 "Your full name is {0} {1}.", firstName, lastName);
         }
     }
-    #endregion
+    #endregion INCLUDE
 }

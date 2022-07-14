@@ -7,7 +7,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_07
             #region INCLUDE
             System.Console.WriteLine(
                 "Hello. My name is Inigo Montoya.");
-            #endregion
+            #endregion INCLUDE
         }
     }
 }
