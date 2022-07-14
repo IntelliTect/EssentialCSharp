@@ -5,5 +5,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_03
     {
         // ...
     }
-    #endregion
+    #endregion INCLUDE
 }

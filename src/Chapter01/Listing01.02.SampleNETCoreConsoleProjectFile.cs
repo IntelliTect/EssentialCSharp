@@ -5,4 +5,4 @@
         <TargetFramework>net6.0</TargetFramework>
     </PropertyGroup>
 </Project>
-#endregion
+#endregion INCLUDE
