@@ -9,7 +9,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_46
         public static void CopyTo(
         #region HIGHLIGHT
             this DirectoryInfo sourceDirectory, string target,
-        #endregion
+        #endregion HIGHLIGHT
             SearchOption option, string searchPattern)
         {
             #region EXCLUDE
@@ -50,7 +50,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_46
         private static void Copy(string element, string fileName, string searchPattern)
         {
             Console.WriteLine("Copying " + fileName);
-            #endregion
+            #endregion EXCLUDE
         }
     }
 
@@ -59,16 +59,16 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_46
     {
         public static void Main()
         {
-    #endregion
+            #endregion EXCLUDE
             DirectoryInfo directory = new DirectoryInfo(".\\Source");
             #region HIGHLIGHT
             directory.CopyTo(".\\Target",
                 SearchOption.TopDirectoryOnly, "*");
-            #endregion
-    #region EXCLUDE
+            #endregion HIGHLIGHT
+            #region EXCLUDE
             //Extension method. Is Defined above but appears to be a member of the DirectoryInfo object, directory, defined aboves
+            #endregion EXCLUDE
         }
     }
-    #endregion
-    #endregion
+    #endregion INCLUDE
 }

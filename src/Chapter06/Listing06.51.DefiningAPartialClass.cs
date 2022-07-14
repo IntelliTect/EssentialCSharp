@@ -9,5 +9,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_51
     partial class Program
     {
     }
-    #endregion
+    #endregion INCLUDE
 }

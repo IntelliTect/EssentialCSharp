@@ -14,7 +14,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_12
         {
             #region HIGHLIGHT
             DataStorage.Store(this);
-            #endregion
+            #endregion HIGHLIGHT
         }
     }
 
@@ -29,8 +29,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_12
                 $@"Writing employee ({
                     employee.FirstName} {employee.LastName
                     }) information to file.");
-            #endregion
+            #endregion EXCLUDE
         }
     }
-    #endregion
+    #endregion INCLUDE
 }

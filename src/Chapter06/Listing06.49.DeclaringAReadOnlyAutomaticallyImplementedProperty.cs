@@ -37,17 +37,16 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_49
         // Player 1 - X   Player 2 - O
         #region HIGHLIGHT
         public bool[,,] Cells { get; } = new bool[2, 3, 3];
-        #endregion
+        #endregion HIGHLIGHT
         // Error: The property Cells cannot 
         // be assigned to because it is read-only
         // public void SetCells(bool[,,] value) =>
         //         _Cells = new bool[2, 3, 3];
 
         // ...
-    }
-    #endregion
+        #endregion INCLUDE
 
-    class TicTacToeBoardPreCSharp5
+        class TicTacToeBoardPreCSharp5
     {
         public TicTacToeBoardPreCSharp5()
         {

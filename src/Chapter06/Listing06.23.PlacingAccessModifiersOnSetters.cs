@@ -15,7 +15,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_23
             // cannot be used in this context because the set 
             // accessor is inaccessible
             // employee1.Id = "490";
-            #endregion
+            #endregion HIGHLIGHT
         }
     }
 
@@ -26,7 +26,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_23
             #region HIGHLIGHT
             // Set Id property
             Id = id.ToString();
-            #endregion
+            #endregion HIGHLIGHT
         }
 
         // ...
@@ -36,9 +36,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_23
             get => _Id;
             #region HIGHLIGHT
             private set => _Id = value;
-            #endregion
+            #endregion HIGHLIGHT
         }
         private string _Id;
     }
-    #endregion
+    #endregion INCLUDE
 }

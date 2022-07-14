@@ -19,17 +19,17 @@
             // Generate an employee ID...
             #region EXCLUDE
             id = 0; // id needs to be initialized for this example
-            #endregion
+            #endregion EXCLUDE
             #region HIGHLIGHT
             Initialize(id, firstName, lastName);
-            #endregion
+            #endregion HIGHLIGHT
         }
 
         public Employee(int id, string firstName, string lastName)
         {
             #region HIGHLIGHT
             Initialize(id, firstName, lastName);
-            #endregion
+            #endregion HIGHLIGHT
         }
 
         public Employee(int id)
@@ -42,13 +42,13 @@
             #region EXCLUDE
             firstName = string.Empty;
             lastName = string.Empty;
-            #endregion
+            #endregion EXCLUDE
 
             #region HIGHLIGHT
             Initialize(id, firstName, lastName);
-            #endregion
+            #endregion HIGHLIGHT
         }
-        #pragma warning restore CS8618
+#pragma warning restore CS8618
 
         #region HIGHLIGHT
         private void Initialize(
@@ -58,7 +58,7 @@
             FirstName = firstName;
             LastName = lastName;
         }
-        #endregion
+        #endregion HIGHLIGHT
         #region EXCLUDE
 
         public int Id { get; private set; }
@@ -95,7 +95,7 @@
                 }
             }
         }
-        #endregion
+        #endregion EXCLUDE
     }
-    #endregion
+    #endregion INCLUDE
 }

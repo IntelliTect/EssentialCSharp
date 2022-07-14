@@ -32,7 +32,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_14
         {
             DataStorage.Store(this);
         }
-        #endregion
+        #endregion EXCLUDE
     }
 
     public class DataStorage
@@ -63,7 +63,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_14
             // Dispose the StreamWriter and its stream
             writer.Dispose();  // Automatically closes the stream
         }
-        #endregion
+        #endregion EXCLUDE
 
         public static Employee Load(string firstName, string lastName)
         {
@@ -119,7 +119,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_14
         {
             employee.Salary = "Enough to survive on";
         }
-        #endregion
+        #endregion EXCLUDE
     }
-    #endregion
+    #endregion INCLUDE
 }

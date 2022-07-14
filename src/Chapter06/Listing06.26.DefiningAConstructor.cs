@@ -29,7 +29,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_26
             FirstName = firstName;
             LastName = lastName;
         }
-        #endregion
+        #endregion HIGHLIGHT
 
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -68,7 +68,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_26
                 }
             }
         }
-        #endregion
+        #endregion EXCLUDE
     }
-    #endregion
+    #endregion INCLUDE
 }

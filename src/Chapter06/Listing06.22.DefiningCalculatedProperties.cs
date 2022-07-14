@@ -15,7 +15,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_22
             #region HIGHLIGHT
             employee1.Name = "Inigo Montoya";
             System.Console.WriteLine(employee1.Name);
-            #endregion
+            #endregion HIGHLIGHT
 
             // ...
         }
@@ -79,7 +79,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_22
                 }
             }
         }
-        #endregion
+        #endregion HIGHLIGHT
 
         public string Initials => $"{ FirstName[0] } { LastName[0] }";
         #region EXCLUDE
@@ -88,7 +88,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_22
 
         // Manager property
         public Employee? Manager { get; set; }
-        #endregion
+        #endregion EXCLUDE
     }
-    #endregion
+    #endregion INCLUDE
 }

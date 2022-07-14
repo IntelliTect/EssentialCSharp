@@ -55,17 +55,17 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_19
         #region HIGHLIGHT
         // Title property
         public string? Title { get; set; }
-        #endregion
+        #endregion HIGHLIGHT
 
         #region HIGHLIGHT
         // Manager property
         public Employee? Manager { get; set; }
-        #endregion
+        #endregion HIGHLIGHT
 
         #region HIGHLIGHT
         public string? Salary { get; set; } = "Not Enough";
-        #endregion
+        #endregion HIGHLIGHT
         // ...
     }
-    #endregion
+    #endregion INCLUDE
 }

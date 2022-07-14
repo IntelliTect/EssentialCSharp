@@ -12,11 +12,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_03
         {
             #region HIGHLIGHT
             Employee employee1 = new Employee();
-            #endregion
+            #endregion HIGHLIGHT
             Employee employee2;
             #region HIGHLIGHT
             employee2 = new Employee();
-            #endregion
+            #endregion HIGHLIGHT
 
             IncreaseSalary(employee1);
             IncreaseSalary(employee2);
@@ -26,7 +26,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_03
         {
             // ...
         }
-        #endregion
+        #endregion EXCLUDE
     }
-    #endregion
+    #endregion INCLUDE
 }

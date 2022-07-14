@@ -17,8 +17,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_44
             }
         }
         public static int _NextId = 42;
-        #endregion
+        #endregion HIGHLIGHT
         // ...
     }
-    #endregion
+    #endregion INCLUDE
 }

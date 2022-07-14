@@ -10,7 +10,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_27
             Employee employee;
             #region HIGHLIGHT
             employee = new Employee("Inigo", "Montoya");
-            #endregion
+            #endregion HIGHLIGHT
             employee.Salary = "Too Little";
 
             System.Console.WriteLine(
@@ -21,5 +21,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_27
         }
         // ...
     }
-    #endregion
+    #endregion INCLUDE
 }

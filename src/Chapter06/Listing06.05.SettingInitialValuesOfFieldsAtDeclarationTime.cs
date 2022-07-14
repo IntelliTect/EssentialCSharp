@@ -9,7 +9,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_05
         public string LastName;
         #region HIGHLIGHT
         public string? Salary = "Not enough";
-        #endregion
+        #endregion HIGHLIGHT
     }
-    #endregion
+    #endregion INCLUDE
 }

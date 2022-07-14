@@ -16,10 +16,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_28
             // ERROR: No overload because method 'Employee' 
             // takes '0' arguments
             // employee = new Employee();
-            #endregion
+            #endregion HIGHLIGHT
 
             // ...
         }
     }
-    #endregion
+    #endregion INCLUDE
 }

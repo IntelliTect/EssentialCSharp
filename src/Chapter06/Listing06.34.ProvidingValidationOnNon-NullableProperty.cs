@@ -20,21 +20,21 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_34
         {
             #region HIGHLIGHT
             Name = name;
-            #endregion
+            #endregion HIGHLIGHT
         }
 
         public string Name
         {
             #region HIGHLIGHT
             get => _Name!;
-            #endregion
+            #endregion HIGHLIGHT
             set => _Name =
                 #region HIGHLIGHT
                 value ?? throw new ArgumentNullException(nameof(value));
-                #endregion
+            #endregion HIGHLIGHT
         }
         private string? _Name;
         // ...
     }
-    #endregion
+    #endregion INCLUDE
 }

@@ -23,7 +23,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_08
             #region HIGHLIGHT
             Console.WriteLine(
                 $"{ employee1.GetName() }: { employee1.Salary }");
-            #endregion
+            #endregion HIGHLIGHT
             // ...
         }
         #region EXCLUDE
@@ -43,7 +43,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_08
         {
             return FirstName + " " + LastName;
         }
-        #endregion
+        #endregion EXCLUDE
     }
-    #endregion
+    #endregion INCLUDE
 }

@@ -7,5 +7,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_47
         public const int CupsPerGallon = 16;
         // ...
     }
-    #endregion
+    #endregion INCLUDE
 }
