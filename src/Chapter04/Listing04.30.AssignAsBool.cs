@@ -8,7 +8,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_30
         {
             #region INCLUDE
             bool result = 70 > 7;
-            #endregion
+            #endregion INCLUDE
         }
     }
 }

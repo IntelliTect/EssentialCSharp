@@ -23,7 +23,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_36
             fullName ??= $"{ directory }/{ fileName }";
 
             // ...
-            #endregion
+            #endregion INCLUDE
 
         }
 

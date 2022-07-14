@@ -44,6 +44,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_49
 
             return valid;
         }
-        #endregion
+        #endregion INCLUDE
     }
 }

@@ -10,7 +10,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_16
             result = count++;
             System.Console.WriteLine(
                   $"result = {result} and count = {count}");
-            #endregion
+            #endregion INCLUDE
         }
     }
 }

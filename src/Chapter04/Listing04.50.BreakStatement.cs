@@ -27,28 +27,28 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_50
             #region HIGHLIGHT
             foreach (int mask in winningMasks)
             {
-            #endregion
-                if((mask & playerPositions[0]) == mask)
+                #endregion HIGHLIGHT
+                if ((mask & playerPositions[0]) == mask)
                 {
                     winner = 1;
                     #region HIGHLIGHT
                     break;
-                    #endregion
+                    #endregion HIGHLIGHT
                 }
                 else if((mask & playerPositions[1]) == mask)
                 {
                     winner = 2;
                     #region HIGHLIGHT
                     break;
-                    #endregion
+                    #endregion HIGHLIGHT
                 }
-            #region HIGHLIGHT
+                #region HIGHLIGHT
             }
-            #endregion
+            #endregion HIGHLIGHT
 
             System.Console.WriteLine(
                 $"Player { winner } was the winner");
         }
     }
-    #endregion
+    #endregion INCLUDE
 }

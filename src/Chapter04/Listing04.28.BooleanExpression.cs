@@ -9,7 +9,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_28
             #region INCLUDE
             #region HIGHLIGHT
             if (input < 9)
-            #endregion
+            #endregion HIGHLIGHT
             {
                 // Input is less than 9
                 System.Console.WriteLine(
@@ -17,7 +17,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_28
                      " maximum turns.");
             }
             // ...
-            #endregion
+            #endregion INCLUDE
         }
     }
 }

@@ -6,7 +6,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_59
         {
             #region INCLUDE
             #pragma warning disable CS1030
-            #endregion
+            #endregion INCLUDE
         }
     }
 }

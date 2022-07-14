@@ -22,13 +22,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_54
                         isFiltered = false;
                         #region HIGHLIGHT
                         goto default;
-                        #endregion
+                    #endregion HIGHLIGHT
                     case "/f":
                         isFiltered = true;
                         isRecursive = false;
                         #region HIGHLIGHT
                         goto default;
-                        #endregion
+                    #endregion HIGHLIGHT
                     default:
                         if(isRecursive)
                         {
@@ -46,6 +46,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_54
 
             // ...
         }
-        #endregion
+        #endregion INCLUDE
     }
 }

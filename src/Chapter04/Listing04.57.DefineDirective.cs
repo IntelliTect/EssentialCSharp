@@ -1,6 +1,6 @@
 #region INCLUDE
 #define CSHARP2PLUS
-#endregion
+#endregion INCLUDE
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_57
 {
