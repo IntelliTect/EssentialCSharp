@@ -20,7 +20,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_22
                 System.Console.WriteLine(
                     "Correct, tic-tac-toe has a maximum" +
                     " of 9 turns.");
-            #endregion
+            #endregion INCLUDE
         }
     }
 }

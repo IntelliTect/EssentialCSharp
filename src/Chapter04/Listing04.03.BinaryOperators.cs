@@ -21,11 +21,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_03
             #region HIGHLIGHT
             quotient = numerator / denominator;
             remainder = numerator % denominator;
-            #endregion
+            #endregion HIGHLIGHT
 
             System.Console.WriteLine(
                 $"{numerator} / {denominator} = {quotient} with remainder {remainder}");
         }
     }
-    #endregion
+    #endregion INCLUDE
 }

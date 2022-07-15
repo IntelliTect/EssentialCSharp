@@ -6,7 +6,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_10
     #region HIGHLIGHT
     using System.Threading;
     using CountDownTimer = System.Timers.Timer;
-    #endregion
+    #endregion HIGHLIGHT
 
     public class HelloWorld
     {
@@ -14,10 +14,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_10
         {
             #region HIGHLIGHT
             CountDownTimer timer;
-            #endregion
+            #endregion HIGHLIGHT
 
             // ...
         }
     }
-    #endregion
+    #endregion INCLUDE
 }

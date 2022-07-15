@@ -14,5 +14,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_18
             // x now contains the value 127
         }
     }
-    #endregion
+    #endregion INCLUDE
 }

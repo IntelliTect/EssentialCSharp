@@ -7,7 +7,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_11
             #region INCLUDE
             int x = 123;
             x += 2;
-            #endregion
+            #endregion INCLUDE
         }
     }
 }

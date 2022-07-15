@@ -19,12 +19,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_29
                 // ...
             }
             else
-            #endregion
+            #endregion HIGHLIGHT
             {
                 System.Console.WriteLine(
                     "The text entered was not a valid number.");
             }
-            #endregion
+            #endregion INCLUDE
         }
     }
 }

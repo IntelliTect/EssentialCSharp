@@ -27,5 +27,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_41
             System.Console.WriteLine();
         }
     }
-    #endregion
+    #endregion INCLUDE
 }

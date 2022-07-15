@@ -4,7 +4,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_15
     // The using directives allow you to drop the namespace
     #region HIGHLIGHT
     using static System.Console;
-    #endregion
+    #endregion HIGHLIGHT
     public class HeyYou
     {
         public static void Main()
@@ -14,23 +14,23 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_15
 
             #region HIGHLIGHT
             WriteLine("Hey you!");
-            #endregion
+            #endregion HIGHLIGHT
 
             #region HIGHLIGHT
             Write("Enter your first name: ");
             firstName = ReadLine();
-            #endregion
+            #endregion HIGHLIGHT
 
             Write("Enter your last name: ");
             #region HIGHLIGHT
             lastName = ReadLine();
-            #endregion
+            #endregion HIGHLIGHT
 
             #region HIGHLIGHT
             WriteLine(
-            #endregion
+            #endregion HIGHLIGHT
               $"Your full name is {firstName} {lastName}.");
         }
     }
-    #endregion
+    #endregion INCLUDE
 }

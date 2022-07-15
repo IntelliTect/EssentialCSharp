@@ -10,7 +10,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_25
             // RUNTIME ERROR: index out of bounds - should
             // be 8 for the last element
             languages[4] = languages[9];
-            #endregion
+            #endregion INCLUDE
         }
     }
 }

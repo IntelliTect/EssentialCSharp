@@ -28,9 +28,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_13
         {
             #region HIGHLIGHT
             return base.ToString() +
-            #endregion
+            #endregion HIGHLIGHT
                 NewLine + Country;
         }
     }
-    #endregion
+    #endregion INCLUDE
 }

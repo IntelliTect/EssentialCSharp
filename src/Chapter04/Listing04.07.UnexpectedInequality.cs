@@ -37,7 +37,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_07
             // 7. Displays: 4.2F != 4.2D
             System.Console.WriteLine(
                 $"{4.2F}F != {4.2D}D");
-            #endregion
+            #endregion INCLUDE
         }
     }
 }

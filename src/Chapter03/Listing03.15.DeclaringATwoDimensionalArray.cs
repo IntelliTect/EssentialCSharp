@@ -6,7 +6,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_15
         {
             #region INCLUDE
             int[,] cells = new int[3,3];
-            #endregion
+            #endregion INCLUDE
         }
     }
 }

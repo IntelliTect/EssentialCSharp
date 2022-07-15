@@ -20,7 +20,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_14
         #region HIGHLIGHT
         public Contact(string name) :
             base(name)
-        #endregion
+        #endregion HIGHLIGHT
         {
         }
         #pragma warning restore CS8618
@@ -66,5 +66,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_14
 
         // ...
     }
-    #endregion
+    #endregion INCLUDE
 }

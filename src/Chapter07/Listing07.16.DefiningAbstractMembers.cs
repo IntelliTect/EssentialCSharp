@@ -16,7 +16,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_16
         public virtual string Name { get; set; }
         #region HIGHLIGHT
         public abstract string GetSummary();
-        #endregion
+        #endregion HIGHLIGHT
     }
 
     public class Contact : PdaItem
@@ -26,7 +26,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_16
             : base(name)
         {
         }
-        #endregion
+        #endregion EXCLUDE
         public override string Name
         {
             get
@@ -56,7 +56,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_16
             }
         }
         private string? _FirstName;
-        #endregion
+        #endregion HIGHLIGHT
 
         #region HIGHLIGHT
         public string LastName
@@ -71,7 +71,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_16
             }
         }
         private string? _LastName;
-        #endregion
+        #endregion HIGHLIGHT
         public string? Address { get; set; }
 
         #region HIGHLIGHT
@@ -81,7 +81,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_16
             + $"LastName: { LastName + NewLine }"
             + $"Address: { Address + NewLine }";
         }
-        #endregion
+        #endregion HIGHLIGHT
 
         // ...
     }
@@ -110,5 +110,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_16
                 + $"Location: { Location }";
         }
     }
-    #endregion
+    #endregion INCLUDE
 }

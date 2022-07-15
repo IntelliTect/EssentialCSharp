@@ -47,7 +47,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_62
             #endregion Display Tic-tac-toe Board
 
             // ...
-            #endregion
+            #endregion INCLUDE
         }
     }
 }

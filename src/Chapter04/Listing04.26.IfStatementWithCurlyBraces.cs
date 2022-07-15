@@ -16,7 +16,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_26
             }
             System.Console.WriteLine(
                 $"The area of the circle is: {area:0.00}");
-            #endregion
+            #endregion INCLUDE
         }
     }
 }

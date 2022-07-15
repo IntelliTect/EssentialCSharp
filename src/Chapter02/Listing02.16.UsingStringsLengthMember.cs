@@ -14,8 +14,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_16
                 $"The palindrome \"{palindrome}\" is"
             #region HIGHLIGHT
                 + $" {palindrome.Length} characters.");
-            #endregion
+            #endregion HIGHLIGHT
         }
     }
-    #endregion
+    #endregion INCLUDE
 }

@@ -33,7 +33,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_25
         }
         #region EXCLUDE
         public string Name { get; set; }
-        #endregion
+        #endregion EXCLUDE
     }
-    #endregion
+    #endregion INCLUDE
 }

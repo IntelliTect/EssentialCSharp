@@ -21,7 +21,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_27
                 #region HIGHLIGHT
                 string message =
                     "You entered an invalid number of players.";
-                #endregion
+                #endregion HIGHLIGHT
             }
             else
             {
@@ -30,8 +30,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_27
             #region HIGHLIGHT
             // ERROR: message is not in scope:
             // System.Console.WriteLine(message);
-            #endregion
+            #endregion HIGHLIGHT
         }
     }
-    #endregion
+    #endregion INCLUDE
 }

@@ -8,7 +8,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_21
             #region HIGHLIGHT
             DisplayGreeting(
                 firstName: "Inigo", lastName: "Montoya");
-            #endregion
+            #endregion HIGHLIGHT
         }
 
         public static void DisplayGreeting(
@@ -20,5 +20,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_21
             // ...
         }
     }
-    #endregion
+    #endregion INCLUDE
 }

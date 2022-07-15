@@ -9,10 +9,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_17
             int result;
             #region HIGHLIGHT
             result = ++count;
-            #endregion
+            #endregion HIGHLIGHT
             System.Console.WriteLine(
                 $"result = {result} and count = {count}");
-            #endregion
+            #endregion INCLUDE
         }
     }
 }

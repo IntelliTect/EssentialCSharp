@@ -13,12 +13,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_21
         }
         public string FirstName { get; }
         public string LastName { get; }
-        #endregion
+        #endregion EXCLUDE
 
         #region HIGHLIGHT
         public void Deconstruct(out string firstName, out string lastName) =>
             (firstName, lastName) = (FirstName, LastName);
-        #endregion
+        #endregion HIGHLIGHT
     }
 
     public class Program
@@ -30,11 +30,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_21
             // Positional Pattern Matching
             #region HIGHLIGHT
             if (person is (string firstName, string lastName))
-            #endregion
+            #endregion HIGHLIGHT
             {
                 Console.WriteLine($"{firstName} {lastName}");
             }
         }
     }
-    #endregion
+    #endregion INCLUDE
 }

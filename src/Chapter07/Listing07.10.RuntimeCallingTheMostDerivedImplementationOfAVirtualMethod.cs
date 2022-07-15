@@ -23,5 +23,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_10
                 $"{ contact.FirstName } { contact.LastName}");
         }
     }
-    #endregion
+    #endregion INCLUDE
 }

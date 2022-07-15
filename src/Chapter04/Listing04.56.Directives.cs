@@ -10,7 +10,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_56
             #elif WINDOWS
             // ...
             #endif
-            #endregion
+            #endregion INCLUDE
         }
     }
 }

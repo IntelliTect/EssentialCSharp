@@ -25,7 +25,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_24
                 System.Console.WriteLine(
                     $"The area of the circle is: {area:0.00}");
             }
-            #endregion
+            #endregion HIGHLIGHT
             else
             {
                 System.Console.WriteLine(
@@ -33,5 +33,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_24
             }
         }
     }
-    #endregion
+    #endregion INCLUDE
 }

@@ -41,5 +41,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_21
                     "has a maximum of 9 turns.");
        } 
     }
-    #endregion
+    #endregion INCLUDE
 }

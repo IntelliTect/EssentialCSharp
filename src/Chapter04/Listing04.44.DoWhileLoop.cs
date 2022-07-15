@@ -22,7 +22,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_44
                 // ...
 
             } while(!valid);
-            #endregion
+            #endregion INCLUDE
         }
     }
 }

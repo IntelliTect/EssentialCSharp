@@ -27,5 +27,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_19
             // of the program listing
         }
     }
-    #endregion
+    #endregion INCLUDE
 }

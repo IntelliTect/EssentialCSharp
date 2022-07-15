@@ -7,7 +7,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_20
             #region INCLUDE
             long longNumber = 50918309109;
             int intNumber = (int)longNumber;
-            #endregion
+            #endregion INCLUDE
         }
     }
 }

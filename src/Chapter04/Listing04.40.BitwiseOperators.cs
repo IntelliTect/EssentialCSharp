@@ -11,7 +11,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_40
             xor = 12 ^ 7;   // xor = 11
             System.Console.WriteLine(
                 $"and = { and } \nor = { or }\nxor = { xor }");
-            #endregion
+            #endregion INCLUDE
         }
     }
 }
