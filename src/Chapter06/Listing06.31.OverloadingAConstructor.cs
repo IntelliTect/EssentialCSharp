@@ -37,21 +37,21 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_31
                 // ...
             }
         }
-        #endregion
+        #endregion HIGHLIGHT
         #region EXCLUDE
         [System.Diagnostics.CodeAnalysis.NotNull]
         [System.Diagnostics.CodeAnalysis.DisallowNull]
-        #endregion
+        #endregion EXCLUDE
         public string FirstName { get; set; }
         #region EXCLUDE
         [System.Diagnostics.CodeAnalysis.DisallowNull]
         [System.Diagnostics.CodeAnalysis.NotNull]
-        #endregion
+        #endregion EXCLUDE
         public string LastName { get; set; }
         public string? Salary { get; set; } = "Not Enough";
 
 
         // ...
     }
-    #endregion
+    #endregion INCLUDE
 }

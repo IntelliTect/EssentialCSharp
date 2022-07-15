@@ -9,7 +9,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_41
         {
             #region HIGHLIGHT
             Employee.NextId = 1000000;
-            #endregion
+            #endregion HIGHLIGHT
 
             Employee employee1 = new Employee(
                 "Inigo", "Montoya");
@@ -30,11 +30,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_41
             #region HIGHLIGHT
             Console.WriteLine(
                 $"NextId = {Employee.NextId}");
-            #endregion
+            #endregion HIGHLIGHT
         }
         // ...
     }
-    #endregion
+    #endregion INCLUDE
     public class Employee
     {
         public Employee(string firstName, string lastName)

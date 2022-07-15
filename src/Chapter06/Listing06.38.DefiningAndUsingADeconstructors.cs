@@ -42,7 +42,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_38
             FirstName = firstName;
             LastName = lastName;
         }
-        #endregion
+        #endregion EXCLUDE
         public void Deconstruct(
             out int id, out string firstName, 
             out string lastName, out string? salary)
@@ -85,7 +85,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_38
                 }
             }
         }
-        #endregion
+        #endregion EXCLUDE
     }
 
     public class Program
@@ -104,12 +104,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_38
                 employee.FirstName,
                 employee.LastName,
                 employee.Salary);
-            #endregion
+            #endregion EXCLUDE
 
             #region HIGHLIGHT
             employee.Deconstruct(out _, out string firstName,
                 out string lastName, out string? salary);
-            #endregion
+            #endregion HIGHLIGHT
 
             System.Console.WriteLine(
                 "{0} {1}: {2}",
@@ -121,8 +121,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_38
             System.Console.WriteLine(
                 "{0} {1}: {2}",
                 firstName, lastName, salary);
-            #endregion
+            #endregion EXCLUDE
         }
     }
-    #endregion
+    #endregion INCLUDE
 }

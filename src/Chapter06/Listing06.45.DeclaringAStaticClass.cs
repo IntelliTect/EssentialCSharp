@@ -6,7 +6,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_45
     #region INCLUDE
     #region HIGHLIGHT
     public static class SimpleMath
-    #endregion
+    #endregion HIGHLIGHT
     {
         // params allows the number of parameters to vary
         public static int Max(params int[] numbers)
@@ -72,5 +72,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_45
                     Min(numbers) }");
         }
     }
-    #endregion
+    #endregion INCLUDE
 }

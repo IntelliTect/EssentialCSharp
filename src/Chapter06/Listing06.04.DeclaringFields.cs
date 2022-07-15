@@ -10,5 +10,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_04
         public string LastName;
         public string? Salary;
     }
-    #endregion
+    #endregion INCLUDE
 }

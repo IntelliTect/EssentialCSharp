@@ -22,7 +22,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_15
         #region HIGHLIGHT
         private string Password;  
         private bool IsAuthenticated;
-        #endregion
+        #endregion HIGHLIGHT
 
         #region HIGHLIGHT
         public bool Logon(string password)
@@ -38,7 +38,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_15
         {
             return IsAuthenticated;
         }
-        #endregion
+        #endregion HIGHLIGHT
         // ...
     }
 
@@ -58,9 +58,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_15
             // accessed from outside the class
             // Console.WriteLine(
             //    ("Password = {0}", employee.Password);
-            #endregion
+            #endregion HIGHLIGHT
         }
         // ...
     }
-    #endregion
+    #endregion INCLUDE
 }

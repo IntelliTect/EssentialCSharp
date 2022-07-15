@@ -10,14 +10,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_39
             #region HIGHLIGHT
             Id = NextId;
             NextId++;
-            #endregion
+            #endregion HIGHLIGHT
         }
 
         // ...
 
         #region HIGHLIGHT
         public static int NextId;
-        #endregion
+        #endregion HIGHLIGHT
         public int Id { get; private set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -25,5 +25,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_39
 
         // ...
     }
-    #endregion
+    #endregion INCLUDE
 }

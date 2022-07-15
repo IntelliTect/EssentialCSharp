@@ -15,7 +15,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_07
         {
             return $"{ FirstName }  { LastName }";
         }
-        #endregion
+        #endregion HIGHLIGHT
     }
-    #endregion
+    #endregion INCLUDE
 }

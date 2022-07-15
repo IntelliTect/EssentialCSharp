@@ -12,9 +12,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_42
             public static void CopyTo(
                 DirectoryInfo sourceDirectory, string target,
                 SearchOption option, string searchPattern)
-            #endregion
+            #endregion HIGHLIGHT
             {
-                if(target[target.Length - 1] !=
+                if (target[target.Length - 1] !=
                     Path.DirectorySeparatorChar)
                 {
                     target += Path.DirectorySeparatorChar;
@@ -53,23 +53,21 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_42
             {
                 Console.WriteLine("Copying " + fileName);
             }
-            #endregion
+            #endregion EXCLUDE
         }
 
         #region EXCLUDE
         public static void Main()
         {
-        #endregion
+        #endregion EXCLUDE
             DirectoryInfo directory = new DirectoryInfo(".\\Source");
             directory.MoveTo(".\\Root");
             #region HIGHLIGHT
             DirectoryInfoExtension.CopyTo(
                 directory, ".\\Target",
                 SearchOption.AllDirectories, "*");
-        #endregion
-        #region EXCLUDE
+            #endregion HIGHLIGHT
         }
-        #endregion
-        #endregion
+        #endregion INCLUDE
     }
 }

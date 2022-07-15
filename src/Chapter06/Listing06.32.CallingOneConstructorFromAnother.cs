@@ -13,7 +13,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_32
         public Employee(
             int id, string firstName, string lastName)
             : this(firstName, lastName)
-        #endregion
+        #endregion HIGHLIGHT
         {
             Id = id;
         }
@@ -31,7 +31,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_32
             // NOTE: Member constructors cannot be 
             // called explicitly inline
             // this(id, firstName, lastName);
-            #endregion
+            #endregion HIGHLIGHT
         }
         #pragma warning restore CS8618
 
@@ -42,5 +42,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_32
 
         // ...
     }
-    #endregion
+    #endregion INCLUDE
 }

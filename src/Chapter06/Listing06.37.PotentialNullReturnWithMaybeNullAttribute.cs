@@ -16,7 +16,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_37
           System.Collections.Generic.IEnumerable<T> sequence, Func<T, bool> match)
         =>
         // ...
-        #endregion
+        #endregion INCLUDE
             sequence.FirstOrDefault(match);
     }
 }

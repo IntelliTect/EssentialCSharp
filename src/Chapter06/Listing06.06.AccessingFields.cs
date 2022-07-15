@@ -22,7 +22,7 @@
                 employee1.FirstName,
                 employee1.LastName,
                 employee1.Salary);
-            #endregion
+            #endregion HIGHLIGHT
             // ...
         }
 
@@ -30,8 +30,8 @@
         {
             #region HIGHLIGHT
             employee.Salary = "Enough to survive on";
-            #endregion
+            #endregion HIGHLIGHT
         }
     }
-    #endregion
+    #endregion INCLUDE
 }

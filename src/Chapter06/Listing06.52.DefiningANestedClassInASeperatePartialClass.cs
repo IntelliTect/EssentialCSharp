@@ -18,7 +18,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_52
                 #region EXCLUDE
                 default:
                     break;
-                #endregion
+                #endregion EXCLUDE
             }
         }
     }
@@ -41,8 +41,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_52
                 get { throw new NotImplementedException(); }
                 set { throw new NotImplementedException(); }
             }
-            #endregion
+            #endregion EXCLUDE
         }
     }
-    #endregion
+    #endregion INCLUDE
 }

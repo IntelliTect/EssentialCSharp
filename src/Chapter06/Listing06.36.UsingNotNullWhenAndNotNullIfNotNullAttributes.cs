@@ -5,7 +5,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_36
     #region EXCLUDE
     public class NullabilityAttributesExamined
     {
-    #endregion
+    #endregion EXCLUDE
         static public bool TryGetDigitAsText(
             char number, [NotNullWhen(true)]out string? text) =>
                 (text = number switch
@@ -35,6 +35,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_36
             }
             return result;
         }
-    #endregion
+    #endregion INCLUDE
     }
 }

@@ -12,7 +12,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_48
 
         #region HIGHLIGHT
         private readonly int _Id;
-        #endregion
+        #endregion HIGHLIGHT
         public int Id
         {
           get { return _Id; }
@@ -26,5 +26,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_48
 
         // ...
     }
-    #endregion
+    #endregion INCLUDE
 }

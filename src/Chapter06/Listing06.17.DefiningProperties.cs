@@ -36,9 +36,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_17
             }
         }
         private string _FirstName;
-        #endregion
+        #endregion HIGHLIGHT
 
         // ...
     }
-    #endregion
+    #endregion INCLUDE
 }

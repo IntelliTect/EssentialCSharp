@@ -43,8 +43,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_18
             set => _LastName = value;
         }
         private string _LastName;
-        #endregion
+        #endregion HIGHLIGHT
         // ...
     }
-    #endregion
+    #endregion INCLUDE
 }

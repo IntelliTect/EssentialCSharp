@@ -22,7 +22,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_09
             this.FirstName = newFirstName;
             this.LastName = newLastName;
         }
-        #endregion
+        #endregion HIGHLIGHT
     }
-    #endregion
+    #endregion INCLUDE
 }

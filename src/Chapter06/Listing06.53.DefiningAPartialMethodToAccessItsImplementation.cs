@@ -1,6 +1,5 @@
 // Non-nullable field is uninitialized. Consider declaring as nullable.
 #pragma warning disable CS8618 // Pending a constructors
-// TODO: Update listing in Manuscript
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_53
 {
@@ -14,8 +13,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_53
         #region HIGHLIGHT
         static partial void OnLastNameChanging(string value);
         static partial void OnFirstNameChanging(string value);
-        #endregion
-        #endregion
+        #endregion HIGHLIGHT
+        #endregion Extensibility Method Definitions
 
         // ...
         public string LastName
@@ -30,7 +29,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_53
                 {
                     #region HIGHLIGHT
                     OnLastNameChanging(value);
-                    #endregion
+                    #endregion HIGHLIGHT
                     _LastName = value;
                 }
             }
@@ -50,7 +49,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_53
                 {
                     #region HIGHLIGHT
                     OnFirstNameChanging(value);
-                    #endregion
+                    #endregion HIGHLIGHT
                     _FirstName = value;
                 }
             }
@@ -90,7 +89,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_53
 
             }
         }
-        #endregion
+        #endregion EXCLUDE
     }
-    #endregion
+    #endregion INCLUDE
 }

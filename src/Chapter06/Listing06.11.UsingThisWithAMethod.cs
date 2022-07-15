@@ -12,7 +12,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_11
         public string FirstName;
         public string LastName;
         public string? Salary = "Not enough";
-        #endregion
+        #endregion EXCLUDE
 
         public string GetName()
         {
@@ -26,7 +26,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_11
             #region HIGHLIGHT
             Console.WriteLine(
                 $"Name changed to '{ this.GetName() }'");
-            #endregion
+            #endregion HIGHLIGHT
         }
     }
 
@@ -41,5 +41,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_11
         }
         // ...
     }
-    #endregion
+    #endregion INCLUDE
 }

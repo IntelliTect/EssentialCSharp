@@ -22,5 +22,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_10
             this.LastName = LastName;
         }
     }
-    #endregion
+    #endregion INCLUDE
 }

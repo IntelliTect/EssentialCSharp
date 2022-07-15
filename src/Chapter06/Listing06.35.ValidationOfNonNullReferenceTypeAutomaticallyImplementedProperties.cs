@@ -9,12 +9,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_35
         {
             #region HIGHLIGHT
             Name = name ?? throw new ArgumentNullException(nameof(name));
-            #endregion
+            #endregion HIGHLIGHT
         }
 
         #region HIGHLIGHT
         public string Name { get; }
-        #endregion
+        #endregion HIGHLIGHT
     }
-    #endregion
+    #endregion INCLUDE
 }

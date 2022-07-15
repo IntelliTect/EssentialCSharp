@@ -14,10 +14,10 @@
                 employee.LastName,
                 employee.Title,
                 employee.Salary);
-            #endregion
+            #endregion EXCLUDE
         }
     }
-    #endregion
+    #endregion INCLUDE
 
     public class Employee
     {

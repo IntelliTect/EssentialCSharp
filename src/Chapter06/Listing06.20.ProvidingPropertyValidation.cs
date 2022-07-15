@@ -51,7 +51,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_20
                         _LastName = value;
                     }
                 }
-                #endregion
+                #endregion HIGHLIGHT
             }
         }
         private string _LastName;
@@ -91,7 +91,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_20
             }
         }
         private string _FirstName;
-        #endregion
+        #endregion EXCLUDE
     }
-    #endregion
+    #endregion INCLUDE
 }

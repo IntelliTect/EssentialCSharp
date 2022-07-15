@@ -14,16 +14,16 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_02
         {
             #region HIGHLIGHT
             Employee employee1, employee2;
-            #endregion
+            #endregion HIGHLIGHT
             // ...
         }
 
         #region HIGHLIGHT
         public static void IncreaseSalary(Employee employee)
-        #endregion
+        #endregion HIGHLIGHT
         {
             // ...
         }
     }
-    #endregion
+    #endregion INCLUDE
 }

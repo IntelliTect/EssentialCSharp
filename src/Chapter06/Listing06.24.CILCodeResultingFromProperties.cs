@@ -7,7 +7,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_24
 .method public hidebysig specialname instance string
     #region HIGHLIGHT
         get_FirstName() cil managed
-    #endregion
+    #endregion HIGHLIGHT
     {
         // Code size       12 (0xc)
         .maxstack  1
@@ -25,7 +25,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_24
     .method public hidebysig specialname instance void
     #region HIGHLIGHT
             set_FirstName(string 'value') cil managed
-    #endregion
+    #endregion HIGHLIGHT
     {
       // Code size       9 (0x9)
       .maxstack  8
@@ -45,5 +45,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_24
     } // End of property Employee::FirstName
 
     // ...
-#endregion
+#endregion INCLUDE
 }
