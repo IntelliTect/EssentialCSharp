@@ -68,8 +68,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_20
                 // Validate FirstName assignment
                 if(value == null)
                 {
-                    // Report error
-                    // Use "value" rather than nameof(value) prior to C# 6.0.
+                    // Report error.
                     throw new ArgumentNullException(nameof(value));
                 }
                 else
@@ -80,7 +79,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_20
                     if(value == "")
                     {
                         throw new ArgumentException(
-                            // Use "value" rather than nameof(value) prior to C# 6.0.
                             "FirstName cannot be blank.", nameof(value));
                     }
                     else
