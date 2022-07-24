@@ -41,7 +41,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_15
                     }
                 }
 
-                // Use bit operators prior to C# 4.0/.NET 4.0
                 if ((file.Attributes & FileAttributes.ReadOnly) !=
                 FileAttributes.ReadOnly)
                 {
