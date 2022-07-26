@@ -23,7 +23,9 @@ try {
     Get-Item "$PSScriptRoot/$ConsoleProgramProjectName" -ErrorAction Ignore | Remove-Item  -Recurse
     Set-PSDebug -Trace $traceLevel
     dotnet new Console --output "$PSScriptRoot/$ConsoleProgramProjectName"
-  
+    New-Item -Path 'Directory.Build.props' -ItemType File
+    Set-Content Directory.Props.build '<Project></Project>'
+
     $SutCSFile = split-path -leaf $MyInvocation.MyCommand.Definition
     $SutCSFile = "$PSScriptRoot/$([IO.Path]::GetFileNameWithoutExtension($SutCSFile)).cs"
     if(-not (Test-Path $SutCSFile)) { throw "Unable to find the file with the type to export ('$SutCSFile')"}
