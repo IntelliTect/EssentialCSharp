@@ -33,6 +33,7 @@ jobs:
         run: |
           ls "/Users/runner/.dotnet/sdk"
           touch "/Users/runner/.dotnet/sdk/test42.txt"
+          ls "/Users/runner/.dotnet/sdk"
       - name: Restore dependencies
         run: dotnet restore
       - name: Build
