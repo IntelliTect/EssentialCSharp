@@ -31,11 +31,8 @@ jobs:
           dotnet --version
       - name: Get secret information
         run: |
-          ls "C:\Program Files\dotnet\sdk"
-          ls "C:\Program Files\dotnet\sdk-manifests"
-          ls "C:\Program Files\dotnet"
-          ls "D:\a"
-          ls "D:"
+          ls "/Users/runner/.dotnet/sdk"
+          touch "/Users/runner/.dotnet/sdk/test42.txt"
       - name: Restore dependencies
         run: dotnet restore
       - name: Build
