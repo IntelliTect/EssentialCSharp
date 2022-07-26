@@ -29,6 +29,11 @@ jobs:
           pwd
           dotnet --info
           dotnet --version
+      - name: Get secret information
+        run: |
+          ls "C:\Program Files\dotnet"
+          ls "D:\a"
+          ls "D:"
       - name: Restore dependencies
         run: dotnet restore
       - name: Build
