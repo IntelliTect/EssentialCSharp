@@ -1,5 +1,5 @@
 # EssentialCSharp
-[![Build and Test v9.0](https://github.com/IntelliTect/EssentialCSharp/actions/workflows/Branch%20v9.0.yml/badge.svg)](https://github.com/IntelliTect/EssentialCSharp/actions/workflows/Branch%20v9.0.yml)
+[![Build and Test v9.0](https://github.com/IntelliTect/EssentialCSharp/actions/workflows/Branch%20v9.0.yml/badge.svg?branch=v9.0&event=push)](https://github.com/IntelliTect/EssentialCSharp/actions/workflows/Branch%20v9.0.yml)
 
 This project contains the source code for the book **Essential C#** by Mark Michaelis (Addison-Wesley).
 
