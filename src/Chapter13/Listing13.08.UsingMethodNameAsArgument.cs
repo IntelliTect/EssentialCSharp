@@ -1,5 +1,4 @@
-﻿// TODO: Update listing in Manuscript
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_08
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_08
 {
     using System;
     #region INCLUDE

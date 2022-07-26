@@ -32,7 +32,7 @@
                     // notify them of changes in 
                     // temperature by invoking said subcribers
                     #region HIGHLIGHT
-                    OnTemperatureChange?.Invoke( // C# 6.0
+                    OnTemperatureChange?.Invoke(
                           this, new TemperatureArgs(value));
                     #endregion HIGHLIGHT
                 }

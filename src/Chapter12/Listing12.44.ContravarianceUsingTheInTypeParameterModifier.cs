@@ -28,7 +28,6 @@
         }
         static void Main()
         {
-            // Allowed in C# 4.0 and later
             ICompareThings<Fruit> fc = new FruitComparer();
 
             Apple apple1 = new Apple();

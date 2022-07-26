@@ -29,7 +29,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_12
         }
         #endregion IEnumerable<T>
 
-        public T Value { get; }  // C# 6.0 Getter-only Autoproperty
+        public T Value { get; }
         public Pair<BinaryTree<T>> SubItems { get; set; }
     }
 
@@ -40,8 +40,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_12
             First = first;
             Second = second;
         }
-        public T First { get; }  // C# 6.0 Getter-only Autoproperty
-        public T Second { get; } // C# 6.0 Getter-only Autoproperty
+        public T First { get; }
+        public T Second { get; }
     }
     #endregion INCLUDE
 }

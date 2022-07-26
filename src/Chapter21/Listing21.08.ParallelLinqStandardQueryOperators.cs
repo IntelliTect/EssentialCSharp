@@ -1,4 +1,3 @@
-// TODO: Update listing in Manuscript
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_08
 {
     using AddisonWesley.Michaelis.EssentialCSharp.Shared;
