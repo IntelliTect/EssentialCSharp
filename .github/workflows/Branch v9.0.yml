@@ -24,6 +24,7 @@ jobs:
           dotnet-version: | 
             3.1.x
             5.0.x
+            6.0.301
       - name: Get Build Information
         run: |
           pwd
