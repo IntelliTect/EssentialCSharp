@@ -25,6 +25,7 @@ try {
     dotnet new Console --output "$PSScriptRoot/$ConsoleProgramProjectName"
     New-Item -Path 'Directory.Build.props' -ItemType File
     Set-Content Directory.Props.build '<Project></Project>'
+    ls
 
     $SutCSFile = split-path -leaf $MyInvocation.MyCommand.Definition
     $SutCSFile = "$PSScriptRoot/$([IO.Path]::GetFileNameWithoutExtension($SutCSFile)).cs"
