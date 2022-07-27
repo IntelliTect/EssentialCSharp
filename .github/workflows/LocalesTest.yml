@@ -5,22 +5,21 @@ on:
     branches: [ v9.0 ]
   pull_request:
     branches: [ v9.0 ]
-  
-env:
-  LOCALE_LANG: "pt_BR.UTF-8"
 
 jobs:
-  test-portuguese-locale:
-    name: Test Brazilian Portuguese Locale On Ubuntu
+  set-build-and-test-locale-languages:
+    name: Build and Test ${{ matrix.locale-lang }} Locale On Ubuntu
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
+      matrix:
+        locale-lang: ["pt_BR.UTF-8", "fr_FR.UTF-8"]
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Setup dotnet SDK
-        uses: actions/setup-dotnet@v1
+        uses: actions/setup-dotnet@v2
         with:
-          dotnet-version: | 
+          dotnet-version: |
             3.1.x
             5.x
             6.x
@@ -29,13 +28,13 @@ jobs:
           pwd
           dotnet --info
           dotnet --version
-      - name: SetLocale To ${{ env.LOCALE_LANG }}, Build and Test
+      - name: SetLocale To ${{ matrix.locale-lang }}, and Build and Test
         run: |
-          sudo locale-gen ${{ env.LOCALE_LANG }}
-          sudo localectl set-locale LANG=${{ env.LOCALE_LANG }}
-          LANG=${{ env.LOCALE_LANG }}
-          export LANG=${{ env.LOCALE_LANG }}
-          sudo update-locale LANG=${{ env.LOCALE_LANG }}
+          sudo locale-gen ${{ matrix.locale-lang }}
+          sudo localectl set-locale LANG=${{ matrix.locale-lang }}
+          LANG=${{ matrix.locale-lang }}
+          export LANG=${{ matrix.locale-lang }}
+          sudo update-locale LANG=${{ matrix.locale-lang }}
           echo Current Locale Settings:
           echo Run locale to get the information about the current locale and language settings:
           locale
