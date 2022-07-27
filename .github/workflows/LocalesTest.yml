@@ -16,32 +16,6 @@ jobs:
     strategy:
       fail-fast: false
     steps:
-      - name: SetLocale To ${{ env.LOCALE_LANG }}
-        run: |
-          whoami
-          sudo locale-gen ${{ env.LOCALE_LANG }}
-          sudo localectl set-locale LANG=${{ env.LOCALE_LANG }}
-          LANG=${{ env.LOCALE_LANG }}
-          export LANG=${{ env.LOCALE_LANG }}
-          sudo update-locale LANG=${{ env.LOCALE_LANG }}
-          locale
-      - name: Current Locale Settings
-        run: |
-          whoami
-          echo Run locale to get the information about the current locale and language settings:
-          locale
-          echo Run locale -a to list all enabled locales:
-          locale -a
-          echo Run localectl status to find system locale status.
-          localectl status
-      - name: Visual Test
-        run: |
-          whoami
-          echo "Printing decimal"
-          /bin/bash -c "printf \"%'.3f\n\" 123123,123"
-          printf "%'.3f\n" 123123,123
-          echo "Printing date"
-          date
       - uses: actions/checkout@v2
       - name: Setup dotnet SDK
         uses: actions/setup-dotnet@v1
@@ -55,15 +29,26 @@ jobs:
           pwd
           dotnet --info
           dotnet --version
-      - name: Restore dependencies
-        run: dotnet restore
-      - name: Build
-        run: dotnet build --no-restore
-      - name: Visual Test
+      - name: SetLocale To ${{ env.LOCALE_LANG }}, Build and Test
         run: |
-          echo "Printing decimal"
-          printf "%'.3f\n" 123123,123
+          sudo locale-gen ${{ env.LOCALE_LANG }}
+          sudo localectl set-locale LANG=${{ env.LOCALE_LANG }}
+          LANG=${{ env.LOCALE_LANG }}
+          export LANG=${{ env.LOCALE_LANG }}
+          sudo update-locale LANG=${{ env.LOCALE_LANG }}
+          echo Current Locale Settings:
+          echo Run locale to get the information about the current locale and language settings:
+          locale
+          echo Run locale -a to list all enabled locales:
+          locale -a
+          echo Run localectl status to find system locale status.
+          localectl status
+          echo Visual Test
           echo "Printing date"
           date
-      - name: Test
-        run: dotnet test --no-build --no-restore --verbosity normal
+          echo Restore dependencies
+          dotnet restore
+          echo Build
+          dotnet build --no-restore
+          echo Test
+          dotnet test --no-build --no-restore --verbosity normal
