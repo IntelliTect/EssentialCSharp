@@ -23,7 +23,8 @@ try {
     Get-Item "$PSScriptRoot/$ConsoleProgramProjectName" -ErrorAction Ignore | Remove-Item  -Recurse
     Set-PSDebug -Trace $traceLevel
     dotnet new Console --output "$PSScriptRoot/$ConsoleProgramProjectName"
-  
+    Set-Content $PSScriptRoot/$ConsoleProgramProjectName/Directory.Build.props '<Project><PropertyGroup><Nullable>enable</Nullable></PropertyGroup></Project>'
+
     $SutCSFile = split-path -leaf $MyInvocation.MyCommand.Definition
     $SutCSFile = "$PSScriptRoot/$([IO.Path]::GetFileNameWithoutExtension($SutCSFile)).cs"
     if(-not (Test-Path $SutCSFile)) { throw "Unable to find the file with the type to export ('$SutCSFile')"}
@@ -32,8 +33,7 @@ try {
         Get-Content $SutCSFile | Where-Object { $_ -notlike 'namespace *'})
     $codeListing > "$PSScriptRoot/$ConsoleProgramProjectName/Program.cs"
     Get-Content "$PSScriptRoot/$ConsoleProgramProjectName/Program.cs"  # Display the listing
-    
-    
+
 }catch{
     Write-Error "Unable to create project"
 }
