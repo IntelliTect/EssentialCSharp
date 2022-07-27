@@ -20,8 +20,8 @@ jobs:
         run: |
           sudo locale-gen ${{ env.LOCALE_LANG }}
           sudo localectl set-locale LANG=${{ env.LOCALE_LANG }}
-          LANG="${{ env.LOCALE_LANG }}"
-          export LANG="${{ env.LOCALE_LANG }}"
+          LANG=${{ env.LOCALE_LANG }}
+          export LANG=${{ env.LOCALE_LANG }}
           sudo update-locale LANG=${{ env.LOCALE_LANG }}
       - name: Current Locale Settings
         run: |
@@ -34,6 +34,7 @@ jobs:
       - name: Visual Test
         run: |
           echo "Printing decimal"
+          /bin/bash -c "printf \"%'.3f\n\" 123123,123"
           printf "%'.3f\n" 123123,123
           echo "Printing date"
           date
