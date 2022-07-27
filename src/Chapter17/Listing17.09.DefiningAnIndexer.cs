@@ -27,8 +27,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_09
             Second = second;
         }
 
-        public T First { get; }  // C# 6.0 Getter-Only Autoproperty
-        public T Second { get; } // C# 6.0 Getter-Only Autoproperty
+        public T First { get; }
+        public T Second { get; }
 
         #region HIGHLIGHT
         public T this[PairItem index]

@@ -26,7 +26,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_04
             return System.Console.ReadLine() ?? string.Empty;
         }
 
-        static string GetFullName(  // C# 6.0 expression-bodied method
+        static string GetFullName(  
               string firstName, string lastName) =>
                   $"{ firstName } { lastName }";
 

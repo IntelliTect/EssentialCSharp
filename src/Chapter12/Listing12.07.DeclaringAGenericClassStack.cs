@@ -8,7 +8,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_07
             InternalItems = new T[maxSize];
         }
 
-        // Use read-only field prior to C# 6.0
         private T[] InternalItems { get; }
 
         public void Push(T data)

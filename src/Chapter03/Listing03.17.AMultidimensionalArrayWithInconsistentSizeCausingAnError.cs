@@ -8,7 +8,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_17
             // ERROR: Each dimension must be consistently sized
             #region EXCLUDE
             /*
-            #endregion
+            #endregion EXLUDE
             int[,] cells = {
                 {1, 0, 2, 0},
                 {1, 2, 0},

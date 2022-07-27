@@ -19,7 +19,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_06
             Stack<Cell> path = new Stack<Cell>();
             #endregion HIGHLIGHT
             Cell currentPosition;
-            ConsoleKeyInfo key;  // Added in C# 2.0
+            ConsoleKeyInfo key;
             #region EXCLUDE
             Console.WriteLine("Use arrow keys to draw. X to exit.");
             for(int i = 2; i < Console.WindowHeight; i++)
@@ -105,7 +105,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_06
                         break;
 
                     default:
-                        Console.Beep();  // Added in C# 2.0
+                        Console.Beep();
                         break;
                 }
 

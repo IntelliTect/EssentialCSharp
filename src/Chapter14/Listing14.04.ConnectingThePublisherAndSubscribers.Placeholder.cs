@@ -1,5 +1,4 @@
-﻿// TODO: Update listing in Manuscript
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_04
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_04
 {
     using System;
     using Listing14_01;
@@ -12,7 +11,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_04
             Heater heater = new Heater(60);
             Cooler cooler = new Cooler(80);
 
-            // Using C# 2.0 or later syntax
             thermostat.OnTemperatureChange +=
                 heater.OnTemperatureChanged;
             thermostat.OnTemperatureChange +=

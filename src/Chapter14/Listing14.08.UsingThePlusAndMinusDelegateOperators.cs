@@ -17,8 +17,6 @@
             Action<float> delegate2;
             Action<float> delegate3;
 
-            // Note: Use new Action(cooler.OnTemperatureChanged)
-            // for C# 1.0 syntax
             delegate1 = heater.OnTemperatureChanged;
             delegate2 = cooler.OnTemperatureChanged;
 

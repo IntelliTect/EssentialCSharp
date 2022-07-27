@@ -13,7 +13,6 @@
             Seconds = seconds;
         }
 
-        // Using C# 6.0 read-only, automatically implemented properties
         public int Degrees { get; }
         public int Minutes { get; }
         public int Seconds { get; }

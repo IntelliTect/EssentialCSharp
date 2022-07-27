@@ -19,7 +19,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_07
                 if (_Name != value)
                 {
                     _Name = value;
-                    // Using C# 6.0 conditional null reference
                     PropertyChanged?.Invoke(
                         this,
                     #region HIGHLIGHT

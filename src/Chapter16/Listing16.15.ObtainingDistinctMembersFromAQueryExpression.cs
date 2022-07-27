@@ -1,5 +1,3 @@
-
-
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_15
 {
     #region INCLUDE
