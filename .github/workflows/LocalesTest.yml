@@ -5,11 +5,9 @@ on:
     branches: [ v9.0 ]
   pull_request:
     branches: [ v9.0 ]
-  schedule:
-    - cron: 0 6 * * 1
   
 env:
-  LOCALE_LANG: "fr_FR.utf8"
+  LOCALE_LANG: "fr_FR.UTF-8"
 
 jobs:
   test-french-locale:
@@ -31,6 +29,7 @@ jobs:
           locale
           echo Run locale -a to list all enabled locales:
           locale -a
+          echo Run localectl status to find system locale status.
           localectl status
       - name: Visual Test
         run: |
@@ -44,8 +43,8 @@ jobs:
         with:
           dotnet-version: | 
             3.1.x
-            5.0.x
-            6.0.x
+            5.x
+            6.x
       - name: Get Build Information
         run: |
           pwd
