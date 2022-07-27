@@ -23,10 +23,7 @@ try {
     Get-Item "$PSScriptRoot/$ConsoleProgramProjectName" -ErrorAction Ignore | Remove-Item  -Recurse
     Set-PSDebug -Trace $traceLevel
     dotnet new Console --output "$PSScriptRoot/$ConsoleProgramProjectName"
-    pwd
     Set-Content ../../../../Chapter10/ProcessExitTestProgram/Directory.Build.props '<Project></Project>'
-    echo ../../../../Chapter10/
-    ls ../../../../Chapter10/ProcessExitTestProgram
 
     $SutCSFile = split-path -leaf $MyInvocation.MyCommand.Definition
     $SutCSFile = "$PSScriptRoot/$([IO.Path]::GetFileNameWithoutExtension($SutCSFile)).cs"
@@ -36,7 +33,6 @@ try {
         Get-Content $SutCSFile | Where-Object { $_ -notlike 'namespace *'})
     $codeListing > "$PSScriptRoot/$ConsoleProgramProjectName/Program.cs"
     Get-Content "$PSScriptRoot/$ConsoleProgramProjectName/Program.cs"  # Display the listing
-
 
 }catch{
     Write-Error "Unable to create project"
