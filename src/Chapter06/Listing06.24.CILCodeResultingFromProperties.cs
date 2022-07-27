@@ -41,7 +41,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_24
       #region HIGHLIGHT
       .get instance string Employee::get_FirstName()
       .set instance void Employee::set_FirstName(string)
-      #endregion
+      #endregion HIGHLIGHT
     } // End of property Employee::FirstName
 
     // ...
