@@ -23,7 +23,7 @@ try {
     Get-Item "$PSScriptRoot/$ConsoleProgramProjectName" -ErrorAction Ignore | Remove-Item  -Recurse
     Set-PSDebug -Trace $traceLevel
     dotnet new Console --output "$PSScriptRoot/$ConsoleProgramProjectName"
-    Set-Content $PSScriptRoot/$ConsoleProgramProjectName/Directory.Build.props '<Project></Project>'
+    Set-Content ../../../../Chapter10/ProcessExitTestProgram/Directory.Build.props '<Project><PropertyGroup><Nullable>enable</Nullable></PropertyGroup></Project>'
 
     $SutCSFile = split-path -leaf $MyInvocation.MyCommand.Definition
     $SutCSFile = "$PSScriptRoot/$([IO.Path]::GetFileNameWithoutExtension($SutCSFile)).cs"
