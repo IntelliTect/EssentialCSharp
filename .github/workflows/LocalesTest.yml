@@ -7,11 +7,11 @@ on:
     branches: [ v9.0 ]
   
 env:
-  LOCALE_LANG: "fr_FR.UTF-8"
+  LOCALE_LANG: "pt_BR.UTF-8"
 
 jobs:
-  test-french-locale:
-    name: Test French Locale On Ubuntu
+  test-portuguese-locale:
+    name: Test Brazilian Portuguese Locale On Ubuntu
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
