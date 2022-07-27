@@ -105,7 +105,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_06
                         break;
 
                     default:
-                        Console.Beep();  
+                        Console.Beep();
                         break;
                 }
 
