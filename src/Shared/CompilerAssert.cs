@@ -105,16 +105,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                     for (int i = 0; i < actualCompileErrors.Length; i++)
                     {
                         // Compare Id's first as that is more meaningful.
-                        Assert.AreEqual<string>(diagnostics[i].Message, actualCompileErrors[i].Message,
-                            $"The expected Messages do not match for item {i}: " +
-                            $"{diagnostics[i].Message} <> {diagnostics[i].Message}");
                         Assert.AreEqual<string>(diagnostics[i].Id, actualCompileErrors[i].Id,
                             $"The expected Ids do not match for item {i}: " +
-                            $"{diagnostics[i].Id} <> {actualCompileErrors[i].Id}");
+                            $"{diagnostics[i].Id}: {diagnostics[i].Message} <> {actualCompileErrors[i].Id}: {actualCompileErrors[i].Message}");
                     }
-                    //CollectionAssert.AreEquivalent(
-                    //    diagnostics, 
-                    //    actualCompileErrors.ToList());
                 }
                 return actualCompileErrors;
             }
