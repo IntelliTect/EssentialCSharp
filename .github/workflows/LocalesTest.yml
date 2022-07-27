@@ -9,7 +9,7 @@ on:
     - cron: 0 6 * * 1
   
 env:
-  LOCALE_LANG: "fr_FR.UTF-8"
+  LOCALE_LANG: "fr_FR.utf8"
 
 jobs:
   test-french-locale:
@@ -18,18 +18,18 @@ jobs:
     strategy:
       fail-fast: false
     steps:
-      - name: SetLocale To $LOCALE_LANG
+      - name: SetLocale To ${{ env.LOCALE_LANG }}
         run: |
-          sudo locale-gen $LOCALE_LANG
-          sudo localectl set-locale LANG=$LOCALE_LANG
-          LANG="$LOCALE_LANG"
-          export LANG="$LOCALE_LANG"
-          sudo update-locale LANG=$LOCALE_LANG
+          sudo locale-gen ${{ env.LOCALE_LANG }}
+          sudo localectl set-locale LANG=${{ env.LOCALE_LANG }}
+          LANG="${{ env.LOCALE_LANG }}"
+          export LANG="${{ env.LOCALE_LANG }}"
+          sudo update-locale LANG=${{ env.LOCALE_LANG }}
       - name: Current Locale Settings
         run: |
-          echo run locale to get the information about the current locale and language settings:
+          echo Run locale to get the information about the current locale and language settings:
           locale
-          echo run locale -a to list all enabled locales:
+          echo Run locale -a to list all enabled locales:
           locale -a
           localectl status
       - name: Visual Test
