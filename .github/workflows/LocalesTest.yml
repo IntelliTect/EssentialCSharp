@@ -27,11 +27,11 @@ jobs:
           sudo update-locale LANG=$LOCALE_LANG
       - name: Current Locale Settings
         run: |
-        echo run locale to get the information about the current locale and language settings:
-        locale
-        echo run locale -a to list all enabled locales:
-        locale -a
-        localectl status
+          echo run locale to get the information about the current locale and language settings:
+          locale
+          echo run locale -a to list all enabled locales:
+          locale -a
+          localectl status
       - name: Visual Test
         run: |
           echo "Printing decimal"
