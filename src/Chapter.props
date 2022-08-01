@@ -1,4 +1,5 @@
 <Project>
+  <Import Project="../Common.props"/>
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <StartupObject>AddisonWesley.Michaelis.EssentialCSharp.Shared.Program</StartupObject>
