@@ -1,6 +1,3 @@
-// Justification: Catching general exception types to demonstrate control flow.
-#pragma warning disable CA1031 // Do not catch general exception types
-
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_09
 {
     #region INCLUDE
@@ -25,6 +22,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_09
             catch (Exception exception)
             {
                 Exception = exception;
+            }
+            finally
+            {
 #if !WithOutUsingResetEvent
                 ResetEvent.Set();
 #endif
@@ -42,6 +42,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_09
             catch (Exception exception)
             {
                 Exception = exception;
+            }
+            finally
+            {
 #if !WithOutUsingResetEvent
                 ResetEvent.Set();
 #endif
@@ -69,7 +72,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_09
                 OnEvent(typeof(Program), EventArgs.Empty);
 
 #if WithOutUsingResetEvent
-                Task.Delay(1000).Wait();  // 
+                Task.Delay(1000).Wait();
 #else
                 synchronizationContext.ResetEvent.Wait();
 #endif
