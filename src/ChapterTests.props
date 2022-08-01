@@ -1,4 +1,5 @@
 <Project>
+  <Import Project="../Common.props"/>
   <PropertyGroup>
     <ProductName>$(ProductName).Tests</ProductName>
   </PropertyGroup>
