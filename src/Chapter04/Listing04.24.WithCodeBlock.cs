@@ -16,7 +16,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_24
 
             // double.Parse converts the ReadLine() 
             // return to a double
-            radius = double.Parse(System.Console.ReadLine());
+            string temp = System.Console.ReadLine();
+            radius = double.Parse(temp);
             if(radius >= 0)
             #region HIGHLIGHT
             {
