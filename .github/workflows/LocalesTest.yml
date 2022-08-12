@@ -10,6 +10,7 @@ jobs:
   set-build-and-test-locale-languages:
     name: Build and Test ${{ matrix.locale-lang }} Locale On Ubuntu
     runs-on: ubuntu-latest
+    strategy:
       matrix:
         locale-lang: ["pt_BR.UTF-8", "fr_FR.UTF-8"]
     steps:
