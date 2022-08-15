@@ -10,21 +10,21 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_07.Tests
         public void MainTest()
         {
             string netCoreApp3expected =
-$@"{(decimal)4.2} != {(decimal)4.2000002861023}
-{(double)4.2} != {(double)4.20000028610229}
-(float){(float)4.2}M != {(float)4.2}F
-{(double)4.20000028610229} != {(double)4.2}
-{(float)4.2}F != {(double)4.2D}D
-{(double)4.19999980926514F} != {4.2D}
+$@"{4.2D} != {4.2000002861023D}
+{4.2} != {4.20000028610229}
+(float){4.2F}M != {4.2F}F
+{4.20000028610229} != {4.2}
+{4.2F}F != {4.2D}D
+{4.19999980926514D} != {4.2D}
 {4.2F}F != {4.2D}D";
 
             string expected =
-                $@"{(decimal)4.2} != {(decimal)4.2000002861023}
-{(double)4.2} != {(double)4.200000286102295}
-(float){(float)4.2}M != {(float)4.2000003}F
-{(double)4.200000286102295} != {(double)4.2}
-{(float)4.2000003}F != {(double)4.2}D
-{(double)4.199999809265137F} != {4.2D}
+                $@"{4.2D} != {4.2000002861023D}
+{4.2} != {4.200000286102295}
+(float){4.2F}M != {4.2000003F}F
+{4.200000286102295} != {4.2}
+{4.2000003F}F != {4.2}D
+{4.199999809265137D} != {4.2D}
 {4.2F}F != {4.2D}D";
 
             string netCoreVersion = NetCore.GetNetCoreVersion();
