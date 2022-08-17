@@ -1,0 +1,52 @@
+name: Test Different Locales
+
+on:
+  push:
+    branches: [ v9.0 ]
+  pull_request:
+    branches: [ v9.0 ]
+
+jobs:
+  set-build-and-test-locale-languages:
+    name: Build and Test ${{ matrix.locale-lang }} Locale On Ubuntu
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        locale-lang: ["pt_BR.UTF-8", "fr_FR.UTF-8"]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup dotnet SDK
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: |
+            3.1.x
+            5.x
+            6.x
+      - name: Get Build Information
+        run: |
+          pwd
+          dotnet --info
+          dotnet --version
+      - name: SetLocale To ${{ matrix.locale-lang }}, and Build and Test
+        run: |
+          sudo locale-gen ${{ matrix.locale-lang }}
+          sudo localectl set-locale LANG=${{ matrix.locale-lang }}
+          LANG=${{ matrix.locale-lang }}
+          export LANG=${{ matrix.locale-lang }}
+          sudo update-locale LANG=${{ matrix.locale-lang }}
+          echo Current Locale Settings:
+          echo Run locale to get the information about the current locale and language settings:
+          locale
+          echo Run locale -a to list all enabled locales:
+          locale -a
+          echo Run localectl status to find system locale status.
+          localectl status
+          echo Visual Test
+          echo "Printing date"
+          date
+          echo Restore dependencies
+          dotnet restore
+          echo Build
+          dotnet build --no-restore
+          echo Test
+          dotnet test --no-build --no-restore --verbosity normal

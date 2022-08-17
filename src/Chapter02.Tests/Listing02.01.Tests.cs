@@ -1,4 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_01.Tests
 {
@@ -8,9 +9,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_01.Tests
     [TestMethod]
     public void Main_WriteNumbers()
     {
-      const string expected =
-@"42
-1.618034";
+            string expected =
+      $@"{42}
+{1.618034}";
 
       IntelliTect.TestTools.Console.ConsoleAssert.Expect(
           expected, Program.Main);

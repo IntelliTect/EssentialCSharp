@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Threading.Tasks;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_02.Tests
 {
     // Use keyword struct to declare a value type 
 
@@ -10,7 +10,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09.Tests
     [TestClass]
     public class MyTestClass
     {
-        [TestMethod]// [Ignore("WIP: Currently an error is not reported when one is expected.")]
+        [TestMethod]
         async public Task ReadOnlyMethod_ModifyObject_ErrorReported()
         {
             string thingCode = @"

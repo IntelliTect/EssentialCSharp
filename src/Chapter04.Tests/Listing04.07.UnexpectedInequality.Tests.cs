@@ -9,23 +9,23 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_07.Tests
         [TestMethod]
         public void MainTest()
         {
-            const string netCoreApp3expected =
-@"4.2 != 4.2000002861023
-4.2 != 4.20000028610229
-(float)4.2M != 4.2F
-4.20000028610229 != 4.2
-4.2F != 4.2D
-4.19999980926514 != 4.2
-4.2F != 4.2D";
+            string netCoreApp3expected =
+$@"{4.2D} != {4.2000002861023D}
+{4.2} != {4.20000028610229}
+(float){4.2F}M != {4.2F}F
+{4.20000028610229} != {4.2}
+{4.2F}F != {4.2D}D
+{4.19999980926514D} != {4.2D}
+{4.2F}F != {4.2D}D";
 
             string expected =
-                @"4.2 != 4.2000002861023
-4.2 != 4.200000286102295
-(float)4.2M != 4.2000003F
-4.200000286102295 != 4.2
-4.2000003F != 4.2D
-4.199999809265137 != 4.2
-4.2F != 4.2D";
+                $@"{4.2D} != {4.2000002861023D}
+{4.2} != {4.200000286102295}
+(float){4.2F}M != {4.2000003F}F
+{4.200000286102295} != {4.2}
+{4.2000003F}F != {4.2}D
+{4.199999809265137D} != {4.2D}
+{4.2F}F != {4.2D}D";
 
             string netCoreVersion = NetCore.GetNetCoreVersion();
             if (string.Compare(netCoreVersion, "3") < 0)
