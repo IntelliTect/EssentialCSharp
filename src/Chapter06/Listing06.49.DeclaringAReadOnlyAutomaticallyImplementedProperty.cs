@@ -15,7 +15,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_49
         // ...
     }
 
-    class Program
+    public class Program
     {
         public static void Main()
         {
