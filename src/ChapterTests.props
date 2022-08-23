@@ -8,7 +8,7 @@
     <ProjectReference Include="..\submodules\TestTools\IntelliTect.TestTools.Console\IntelliTect.TestTools.Console.csproj" Condition="Exists('..\submodules\TestTools\IntelliTect.TestTools.Console\IntelliTect.TestTools.Console.csproj')" />
     -->
     <PackageReference Include="IntelliTect.TestTools.Console" Version="0.7.1-*" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.2.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.3.0" />
     <PackageReference Include="MSTest.TestAdapter" Version="2.2.10" />
     <PackageReference Include="MSTest.TestFramework" Version="2.2.10" />
     <PackageReference Include="coverlet.collector" Version="3.1.2">
@@ -16,7 +16,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
     <PackageReference Update="coverlet.msbuild" Version="3.1.2" />
-    <!--<PackageReference Update="Microsoft.NET.Test.Sdk" Version="17.2.0" />-->
+    <!--<PackageReference Update="Microsoft.NET.Test.Sdk" Version="17.3.0" />-->
     <!--<PackageReference Update="MSTest.TestAdapter" Version="2.1.2" />-->
     <!--<PackageReference Update="MSTest.TestFramework" Version="2.1.2" />-->    
   </ItemGroup>
