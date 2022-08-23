@@ -10,7 +10,7 @@
 
             for(int i = 0; i < items.Length; i++)
             {
-                Console.Write("Enter an integer:");
+                Console.Write("Enter an integer: ");
                 string? text = Console.ReadLine();
                 if (!int.TryParse(text, out items[i]))
                 {
