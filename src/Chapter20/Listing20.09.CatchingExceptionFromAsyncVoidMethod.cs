@@ -25,9 +25,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_09
             }
             finally
             {
-#if !WithOutUsingResetEvent
                 ResetEvent.Set();
-#endif
             }
         }
 
@@ -45,9 +43,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_09
             }
             finally
             {
-#if !WithOutUsingResetEvent
                 ResetEvent.Set();
-#endif
             }
         }
     }
@@ -71,11 +67,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_09
 
                 OnEvent(typeof(Program), EventArgs.Empty);
 
-#if WithOutUsingResetEvent
-                Task.Delay(1000).Wait();
-#else
                 synchronizationContext.ResetEvent.Wait();
-#endif
 
                 if (synchronizationContext.Exception != null)
                 {
