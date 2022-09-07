@@ -8,10 +8,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_07.Tests
         [TestMethod]
         public void MainTest()
         {
-            const string expected = @"";
-
-            IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, AsyncEncryptionCollection.Main);
+            IntelliTect.TestTools.Console.ConsoleAssert.Expect("<filename>", async () => await AsyncEncryptionCollection.Main());
         }
     }
 }

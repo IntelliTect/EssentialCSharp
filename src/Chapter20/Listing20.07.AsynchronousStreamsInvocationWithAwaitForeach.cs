@@ -16,7 +16,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_07
             #endregion EXCLUDE
         }
 
-        public static async void Main()
+        public static async Task Main()
         {
             AsyncEncryptionCollection collection =
                 new AsyncEncryptionCollection();
