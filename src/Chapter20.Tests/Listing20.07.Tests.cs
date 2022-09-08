@@ -1,14 +1,14 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿//using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_07.Tests
-{
-    [TestClass]
-    public class ProgramTests
-    {
-        [TestMethod]
-        public void MainTest()
-        {
-            IntelliTect.TestTools.Console.ConsoleAssert.Expect("<filename>", async () => await AsyncEncryptionCollection.Main());
-        }
-    }
-}
+//namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_07.Tests
+//{
+//    [TestClass]
+//    public class ProgramTests
+//    {
+//        [TestMethod]
+//        public async Task MainTest()
+//        {
+//            await IntelliTect.TestTools.Console.ConsoleAssert.ExpectAsync("<filename>", async () => await AsyncEncryptionCollection.Main());
+//        }
+//    }
+//}
