@@ -8,10 +8,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_12.Tests
         [TestMethod]
         public void MainTest()
         {
-            string expected = $@"Decrement Count = -32767
-Main Count = {32767.01134}";
+            const string expected = @"Decrement Count = *
+Main Count = *";
 
-            IntelliTect.TestTools.Console.ConsoleAssert.Expect(
+            IntelliTect.TestTools.Console.ConsoleAssert.ExpectLike(
                 expected, Program.Main);
         }
     }
