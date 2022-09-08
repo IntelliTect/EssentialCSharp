@@ -3,10 +3,10 @@ using System.Threading.Tasks;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_07.Tests
 {
-    [Ignore]
     [TestClass]
     public class ProgramTests
     {
+        [Ignore]
         [TestMethod]
         public async Task MainTest()
         {
