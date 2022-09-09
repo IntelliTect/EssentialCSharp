@@ -13,9 +13,15 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23.Tests
     {
         public TestContext TestContext { get; set; } = null!; // Auto-initialized by MSTest.
 
+<<<<<<< RefactorPowerShellTestUtilities
         static string Ps1DirectoryPath { get; } = 
             Path.GetFullPath(Path.Join("..","..", "..", "..", "Chapter10"), Environment.CurrentDirectory);
         static string Ps1Path { get; } = Path.GetFullPath($"{Ps1DirectoryPath}/Listing10.23.RegisteringAFinalizerWithProcessExit.ps1", Environment.CurrentDirectory);
+=======
+        static string Ps1Path { get; } = Path.GetFullPath("../../../../Chapter10/Listing10.23.RegisteringAFinalizerWithProcessExit.ps1", Environment.CurrentDirectory);
+        static bool PowerShellNotAvailable = PowerShellTestsUtilities.PowerShellNotInstalled;
+        static string PowershellEnvironmentVariableName { get; set; } = "powershell";
+>>>>>>> Added top level statement and refactored PowerShellTestsUtilities
 
         [ClassInitialize]
         public static void ClassInitialize(TestContext testContext)
@@ -45,12 +51,19 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23.Tests
             int traceValue = 0;
             string testStatus = "run";
 
+<<<<<<< RefactorPowerShellTestUtilities
             TestContext.WriteLine($"Ps1Path = '{Path.GetFullPath(Ps1Path)}'");
             string psOutput;
             int exitCode = RunPowerShellScript(
                 testStatus, finalizerOrderOption, traceValue, out psOutput);
 
             Assert.AreEqual(0, exitCode, $"PowerShell Output: {psOutput}");
+=======
+            int exitCode = PowerShellTestsUtilities.RunPowerShellScript(
+                Ps1Path, $"{traceValue} {finalizerOrderOption} {testStatus}", out string psOutput);
+
+            Assert.AreEqual(0, exitCode);
+>>>>>>> Added top level statement and refactored PowerShellTestsUtilities
 
             Assert.AreEqual<string>(RemoveWhiteSpace(expectedOutput), RemoveWhiteSpace(psOutput),
                 $"Unexpected output from '{Ps1Path} {traceValue} {finalizerOrderOption} {testStatus}:{Environment.NewLine}{psOutput}");

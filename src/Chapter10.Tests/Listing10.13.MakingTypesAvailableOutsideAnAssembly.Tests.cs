@@ -13,12 +13,20 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_13.Tests
         [TestMethod]
         public void MakingTypesAvailableExternallyPS1_ExitCodeIs0()
         {
+<<<<<<< RefactorPowerShellTestUtilities
             if (PowerShellTestUtilities.PowerShellNotInstalled) Assert.Inconclusive("Powershell not installed");
+=======
+            if (PowerShellTestsUtilities.PowerShellNotInstalled) Assert.Inconclusive("Powershell not installed");
+>>>>>>> Added top level statement and refactored PowerShellTestsUtilities
             //EssentialCSharp\\src\\Chapter10.Tests\\bin\\Debug\\netcoreapp3.0
             string ps1Path = Path.GetFullPath("../../../../Chapter10/Listing10.13.MakingTypesAvailableExternally.ps1", Environment.CurrentDirectory);
             string traceValue = "0";
 
+<<<<<<< RefactorPowerShellTestUtilities
             int exitCode = PowerShellTestUtilities.RunPowerShellScript(ps1Path, traceValue);
+=======
+            int exitCode = PowerShellTestsUtilities.RunPowerShellScript(ps1Path, traceValue);
+>>>>>>> Added top level statement and refactored PowerShellTestsUtilities
             
             Assert.AreEqual(0, exitCode);
         }
