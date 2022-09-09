@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_01.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_01B.Tests
 {
     [TestClass]
     public class HelloWorldTests

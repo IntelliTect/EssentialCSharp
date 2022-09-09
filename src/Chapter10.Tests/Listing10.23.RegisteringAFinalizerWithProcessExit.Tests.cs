@@ -8,12 +8,11 @@ using System.Text.RegularExpressions;
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23.Tests
 {
     [TestClass]
-
     public class DisposeTests
     {
 
         static string Ps1Path { get; } = Path.GetFullPath("../../../../Chapter10/Listing10.23.RegisteringAFinalizerWithProcessExit.ps1", Environment.CurrentDirectory);
-        static bool PowerShellNotAvailable = PowerShellTestsUtilities.PowerShellNotInstalled();
+        static bool PowerShellNotAvailable = PowerShellTestsUtilities.PowerShellNotInstalled;
         static string PowershellEnvironmentVariableName { get; set; } = "powershell";
 
         [ClassInitialize]
@@ -49,15 +48,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23.Tests
             string traceValue = "0";
             string testStatus = "run";
 
-            var powershell = new Process();
-            powershell.StartInfo.RedirectStandardOutput = true;
-            powershell.StartInfo.FileName = PowershellEnvironmentVariableName;
-            powershell.StartInfo.Arguments = $"-noprofile -command \"{Ps1Path} {traceValue} {finalizerOrderOption} {testStatus}\"";
-            powershell.Start();
-            string psOutput = powershell.StandardOutput.ReadToEnd();
-            powershell.WaitForExit();
+            int exitCode = PowerShellTestsUtilities.RunPowerShellScript(
+                Ps1Path, $"{traceValue} {finalizerOrderOption} {testStatus}", out string psOutput);
 
-            Assert.AreEqual(0, powershell.ExitCode);
+            Assert.AreEqual(0, exitCode);
 
             Assert.AreEqual<string>(RemoveWhiteSpace(expectedOutput), RemoveWhiteSpace(psOutput));
         }

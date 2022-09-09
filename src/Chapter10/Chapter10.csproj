@@ -10,6 +10,11 @@
   </PropertyGroup>
   <Import Project="..\Chapter.props" />
   <ItemGroup>
+    <Compile Remove="ProcessExitTestProgram\**" />
+    <EmbeddedResource Remove="ProcessExitTestProgram\**" />
+    <None Remove="ProcessExitTestProgram\**" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="..\Shared\Program.cs">
       <Link>Program.cs</Link>
     </Compile>
