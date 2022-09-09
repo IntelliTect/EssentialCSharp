@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_01
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_01B
 {
     #region INCLUDE
     public class HelloWorld

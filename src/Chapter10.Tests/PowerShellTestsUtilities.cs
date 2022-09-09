@@ -1,6 +1,8 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace Chapter10.Tests.PowerShellTestsUtilities
 {
@@ -11,37 +13,60 @@ namespace Chapter10.Tests.PowerShellTestsUtilities
             return RuntimeInformation.IsOSPlatform(OSPlatform.Windows);
         }
 
-        public static bool PowerShellNotInstalled()
+
+        public static Lazy<string?> _PowerShellCommand = new Lazy<string?>(() =>
         {
-            var environmentVariables = Environment.GetEnvironmentVariables().Values;
-            bool result = true;
-            foreach (string? value in environmentVariables)
+            string? powershellCommand = WindowsEnvironment() ? "powershell" : null;
+
+            IEnumerable<string>? environmentVariables = Environment.GetEnvironmentVariables().Values.Cast<string>();
+
+            if(environmentVariables.Any(item => item.ToLowerInvariant().Contains("pwsh")))
             {
-                if (!string.IsNullOrEmpty(value) && (value.ToLowerInvariant().Contains("powershell") || value.ToLowerInvariant().Contains("pwsh")))
-                {
-                    result = false;
-                }
+                powershellCommand = "pwsh";
             }
-            if (result == true)
+
+            if (powershellCommand is not null)
             {
-                string PowershellEnvironmentVariableName  = "powershell";
-                if (!PowerShellTestsUtilities.WindowsEnvironment()) PowershellEnvironmentVariableName = "pwsh";
+                // Verify that the PowerShell command executes successfully.
                 try
                 {
-                    Process powershell = Process.Start(PowershellEnvironmentVariableName, "--version");
+                    Process powershell = Process.Start(powershellCommand, "-h");
                     powershell.WaitForExit();
                     var exitCode = powershell.ExitCode;
-                    if(exitCode == 0)
+                    if (exitCode != 0)
                     {
-                        result = false;
+                        powershellCommand = null;
                     }
                 }
-                catch(System.ComponentModel.Win32Exception)
+                catch (System.ComponentModel.Win32Exception)
                 {
-                    result = true;
+                    powershellCommand = null;
                 }
             }
-            return result;
+            return powershellCommand;
+        });
+        public static int RunPowerShellScript(string scriptPath, string arguments) =>
+            RunPowerShellScript(scriptPath, arguments, out string psOutput);
+
+        public static int RunPowerShellScript(string scriptPath, string arguments, out string psOutput)
+        {
+            if(PowerShellCommand is null)
+            {
+                throw new InvalidOperationException("PowerShell is not installed");
+            }
+
+            using var powerShell = new Process();
+            powerShell.StartInfo.RedirectStandardOutput = true;
+            powerShell.StartInfo.FileName = PowerShellCommand;
+            powerShell.StartInfo.Arguments = $"-noprofile -command \"{scriptPath} {arguments}\"";
+            powerShell.Start();
+            psOutput = powerShell.StandardOutput.ReadToEnd();
+            powerShell.WaitForExit();
+
+            return powerShell.ExitCode;
         }
+
+        public static string? PowerShellCommand => _PowerShellCommand!.Value;
+        public static bool PowerShellNotInstalled =>_PowerShellCommand.Value == null;
     }
 }
