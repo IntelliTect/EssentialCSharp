@@ -4,9 +4,9 @@ using System.Diagnostics;
 using System.Linq;
 using System.Collections.Generic;
 
-namespace Chapter10.Tests.PowerShellTestsUtilities
+namespace AddisonWesley.Michaelis.EssentialCSharp.Shared.Tests
 {
-    class PowerShellTestsUtilities
+    public class PowerShellTestsUtilities
     {
         public static bool WindowsEnvironment()
         {
@@ -53,6 +53,11 @@ namespace Chapter10.Tests.PowerShellTestsUtilities
             if(PowerShellCommand is null)
             {
                 throw new InvalidOperationException("PowerShell is not installed");
+            }
+
+            if(!System.IO.File.Exists(scriptPath))
+            {
+                throw new InvalidOperationException($"scriptPath, '{scriptPath}', not found.");
             }
 
             using var powerShell = new Process();
