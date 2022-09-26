@@ -119,6 +119,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chapter23", "src\Chapter23\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chapter23.Tests", "src\Chapter23.Tests\Chapter23.Tests.csproj", "{21342ABB-E09B-459F-8405-33743DC90EF6}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{22D1D24E-29B7-478D-ADBA-0F4836D3857A}"
+	ProjectSection(SolutionItems) = preProject
+		src\Shared\Tests\PowerShellTestsUtilities.cs = src\Shared\Tests\PowerShellTestsUtilities.cs
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -684,6 +689,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{22D1D24E-29B7-478D-ADBA-0F4836D3857A} = {91698F73-19EB-4531-980C-5B8B76DC28C9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {712ED6C0-5F52-4F27-B3D2-B0273E92F5F0}
