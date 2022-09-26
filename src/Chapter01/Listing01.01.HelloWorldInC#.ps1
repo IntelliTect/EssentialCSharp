@@ -2,7 +2,8 @@
 param(
     [int]$traceLevel
 )
-if($traceLevel -notin $PSBoundParameters.Keys) {
+
+if('traceLevel' -notin $PSBoundParameters.Keys) {
     $traceLevel = Read-Host -Prompt @"
     Specifiy the trace level:
     - 0: Turn script tracing off.
@@ -35,7 +36,11 @@ class HelloWorld
 
     $codeListing > Program.cs
     Get-Content Program.cs
-    dotnet run
+
+    Write-Warning "Remove dotnet build step once we upgrade to version 10"
+    # Build with version 10 because dotnet version 6 defaults to an ImplicitUsings element in the project file.
+    dotnet build /property:LangVersion=10
+    dotnet run --no-build
 }
 finally {
     Set-PSDebug -Off

@@ -45,6 +45,15 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
             {
                 input = ParseListingName(input);
 
+                // We handle listing 1.1 specially since the listing is a top level statement and
+                // the file (Listing01.01.HelloWorldInC#.cs) is set to not build as part of the project.
+                if(input == "01_01")
+                {
+                    throw new InvalidOperationException(
+                        "This listing (HelloWorld) is left as an exercise for the reader on the command line. ");
+                }
+
+
                 Regex reg = new Regex($"Listing{input}\\.+");
 
                 IEnumerable<Type?> targets = assembly.GetTypes().Where(type =>
