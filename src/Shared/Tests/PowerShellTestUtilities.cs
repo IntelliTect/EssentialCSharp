@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Shared.Tests
 {
-    public class PowerShellTestsUtilities
+    public class PowerShellTestUtilities
     {
         public static bool WindowsEnvironment()
         {
