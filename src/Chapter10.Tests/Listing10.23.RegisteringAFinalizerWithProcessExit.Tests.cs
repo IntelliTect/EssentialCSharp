@@ -11,6 +11,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23.Tests
     [TestClass]
     public class DisposeTests
     {
+<<<<<<< RefactorPowerShellTestUtilities
         public TestContext TestContext { get; set; } = null!; // Auto-initialized by MSTest.
 
 <<<<<<< RefactorPowerShellTestUtilities
@@ -41,6 +42,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23.Tests
             Assert.AreEqual<int>(0, RunPowerShellScript(
                 "cleanup", out string _));
         }
+=======
+        static string Ps1Path { get; } = Path.GetFullPath("../../../../Chapter10/Listing10.23.RegisteringAFinalizerWithProcessExit.ps1", Environment.CurrentDirectory);
+>>>>>>> Refactored PowerShellTestsUtilities into a solution shared file.
 
         [DataTestMethod]
         [DataRow("processExit", FinalizerRegisteredWithProcessExit, DisplayName = "Finalizer Registered With ProcessExit")]
@@ -48,7 +52,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23.Tests
         [DataRow("gc", GCCalled, DisplayName = "Garbage Collected called")]
         public void FinalizerRunsAsPredicted_ConsoleOutputIsInOrder(string finalizerOrderOption, string expectedOutput)
         {
+<<<<<<< RefactorPowerShellTestUtilities
             int traceValue = 0;
+=======
+            string traceValue = "0";
+>>>>>>> Refactored PowerShellTestsUtilities into a solution shared file.
             string testStatus = "run";
 
 <<<<<<< RefactorPowerShellTestUtilities
