@@ -60,6 +60,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23.Tests
             string testStatus = "run";
 
 <<<<<<< RefactorPowerShellTestUtilities
+<<<<<<< RefactorPowerShellTestUtilities
             TestContext.WriteLine($"Ps1Path = '{Path.GetFullPath(Ps1Path)}'");
             string psOutput;
             int exitCode = RunPowerShellScript(
@@ -68,6 +69,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23.Tests
             Assert.AreEqual(0, exitCode, $"PowerShell Output: {psOutput}");
 =======
             int exitCode = PowerShellTestsUtilities.RunPowerShellScript(
+=======
+            int exitCode = PowerShellTestUtilities.RunPowerShellScript(
+>>>>>>> Minor rename of PowerShellTestUtilities
                 Ps1Path, $"{traceValue} {finalizerOrderOption} {testStatus}", out string psOutput);
 
             Assert.AreEqual(0, exitCode);
