@@ -122,10 +122,14 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{22D1D24E-29B7-478D-ADBA-0F4836D3857A}"
 	ProjectSection(SolutionItems) = preProject
 <<<<<<< RefactorPowerShellTestUtilities
+<<<<<<< RefactorPowerShellTestUtilities
 		src\Shared\Tests\PowerShellTestUtilities.cs = src\Shared\Tests\PowerShellTestUtilities.cs
 =======
 		src\Shared\Tests\PowerShellTestsUtilities.cs = src\Shared\Tests\PowerShellTestsUtilities.cs
 >>>>>>> Refactored PowerShellTestsUtilities into a solution shared file.
+=======
+		src\Shared\Tests\PowerShellTestUtilities.cs = src\Shared\Tests\PowerShellTestUtilities.cs
+>>>>>>> Minor rename of PowerShellTestUtilities
 	EndProjectSection
 EndProject
 Global

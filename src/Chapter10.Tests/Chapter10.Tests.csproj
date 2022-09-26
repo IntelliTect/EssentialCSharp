@@ -5,10 +5,14 @@
   <Import Project="..\ChapterTests.props" />
   <ItemGroup>
 <<<<<<< RefactorPowerShellTestUtilities
+<<<<<<< RefactorPowerShellTestUtilities
     <Compile Include="..\Shared\Tests\PowerShellTestUtilities.cs" Link="PowerShellTestUtilities.cs" />
 =======
     <Compile Include="..\Shared\Tests\PowerShellTestsUtilities.cs" Link="PowerShellTestsUtilities.cs" />
 >>>>>>> Refactored PowerShellTestsUtilities into a solution shared file.
+=======
+    <Compile Include="..\Shared\Tests\PowerShellTestUtilities.cs" Link="PowerShellTestUtilities.cs" />
+>>>>>>> Minor rename of PowerShellTestUtilities
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Chapter10\Chapter10.csproj" />
