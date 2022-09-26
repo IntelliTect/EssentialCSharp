@@ -121,7 +121,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chapter23.Tests", "src\Chap
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{22D1D24E-29B7-478D-ADBA-0F4836D3857A}"
 	ProjectSection(SolutionItems) = preProject
+<<<<<<< RefactorPowerShellTestUtilities
 		src\Shared\Tests\PowerShellTestUtilities.cs = src\Shared\Tests\PowerShellTestUtilities.cs
+=======
+		src\Shared\Tests\PowerShellTestsUtilities.cs = src\Shared\Tests\PowerShellTestsUtilities.cs
+>>>>>>> Refactored PowerShellTestsUtilities into a solution shared file.
 	EndProjectSection
 EndProject
 Global

@@ -4,7 +4,11 @@
   </PropertyGroup>
   <Import Project="..\ChapterTests.props" />
   <ItemGroup>
+<<<<<<< RefactorPowerShellTestUtilities
     <Compile Include="..\Shared\Tests\PowerShellTestUtilities.cs" Link="PowerShellTestUtilities.cs" />
+=======
+    <Compile Include="..\Shared\Tests\PowerShellTestsUtilities.cs" Link="PowerShellTestsUtilities.cs" />
+>>>>>>> Refactored PowerShellTestsUtilities into a solution shared file.
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Chapter10\Chapter10.csproj" />
