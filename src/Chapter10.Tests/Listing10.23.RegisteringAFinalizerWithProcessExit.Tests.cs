@@ -22,7 +22,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23.Tests
             string traceValue = "0";
             string testStatus = "run";
 
-            int exitCode = PowerShellTestsUtilities.RunPowerShellScript(
+            int exitCode = PowerShellTestUtilities.RunPowerShellScript(
                 Ps1Path, $"{traceValue} {finalizerOrderOption} {testStatus}", out string psOutput);
 
             Assert.AreEqual(0, exitCode);

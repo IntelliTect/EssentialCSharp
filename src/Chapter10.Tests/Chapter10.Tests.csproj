@@ -4,7 +4,7 @@
   </PropertyGroup>
   <Import Project="..\ChapterTests.props" />
   <ItemGroup>
-    <Compile Include="..\Shared\Tests\PowerShellTestsUtilities.cs" Link="PowerShellTestsUtilities.cs" />
+    <Compile Include="..\Shared\Tests\PowerShellTestUtilities.cs" Link="PowerShellTestUtilities.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Chapter10\Chapter10.csproj" />
