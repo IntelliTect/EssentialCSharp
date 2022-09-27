@@ -16,26 +16,19 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared.Tests
 
         public static Lazy<string?> _PowerShellCommand = new Lazy<string?>(() =>
         {
-            string? powershellCommand = WindowsEnvironment() ? "powershell" : null;
-
-            IEnumerable<string>? environmentVariables = Environment.GetEnvironmentVariables().Values.Cast<string>();
-
-            if(environmentVariables.Any(item => item.ToLowerInvariant().Contains("pwsh")))
+            string? powershellCommand = null;
+            // Verify that the PowerShell command executes successfully.
+            foreach(string command in 
+                new string[]{ "pwsh", WindowsEnvironment() ? "powershell" : null!}.Where(item=> item is not null))
             {
-                powershellCommand = "pwsh";
-            }
-
-            if (powershellCommand is not null)
-            {
-                // Verify that the PowerShell command executes successfully.
                 try
                 {
-                    Process powershell = Process.Start(powershellCommand, "-h");
+                    Process powershell = Process.Start(command, "-h");
                     powershell.WaitForExit();
-                    var exitCode = powershell.ExitCode;
-                    if (exitCode != 0)
+                    if (powershell.ExitCode == 0)
                     {
-                        powershellCommand = null;
+                        powershellCommand = command;
+                        break;
                     }
                 }
                 catch (System.ComponentModel.Win32Exception)
