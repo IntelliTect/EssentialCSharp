@@ -11,7 +11,27 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23.Tests
     [TestClass]
     public class DisposeTests
     {
+        public TestContext TestContext { get; set; } = null!; // Auto-initialized by MSTest.
+
         static string Ps1Path { get; } = Path.GetFullPath("../../../../Chapter10/Listing10.23.RegisteringAFinalizerWithProcessExit.ps1", Environment.CurrentDirectory);
+
+        [ClassInitialize]
+        public static void ClassInitialize(TestContext testContext)
+        {
+            string testStatus = "create";
+            Assert.AreEqual<int>(0, PowerShellTestUtilities.RunPowerShellScript(
+                Ps1Path, $"0 test {testStatus}", out string psOutput));
+            testContext.WriteLine(psOutput);
+            Assert.IsTrue(File.Exists(@"C:\Git\EssentialCSharp\SCC\src\Chapter10\ProcessExitTestProgram\ProcessExitTestProgram.csproj"));
+        }
+
+        [ClassCleanup]
+        public static void RemoveProcessExitProj()
+        {
+            string testStatus = "cleanup";
+            Assert.AreEqual<int>(0, PowerShellTestUtilities.RunPowerShellScript(
+                Ps1Path, $"0 test {testStatus}", out string _));
+        }
 
         [DataTestMethod]
         [DataRow("processExit", FinalizerRegisteredWithProcessExit, DisplayName = "Finalizer Registered With ProcessExit")]
@@ -22,12 +42,15 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23.Tests
             string traceValue = "0";
             string testStatus = "run";
 
+            TestContext.WriteLine($"Ps1Path = '{Path.GetFullPath(Ps1Path)}'");
+
             int exitCode = PowerShellTestUtilities.RunPowerShellScript(
                 Ps1Path, $"{traceValue} {finalizerOrderOption} {testStatus}", out string psOutput);
 
-            Assert.AreEqual(0, exitCode);
+            Assert.AreEqual(0, exitCode, $"PowerShell Output: {psOutput}");
 
-            Assert.AreEqual<string>(RemoveWhiteSpace(expectedOutput), RemoveWhiteSpace(psOutput));
+            Assert.AreEqual<string>(RemoveWhiteSpace(expectedOutput), RemoveWhiteSpace(psOutput),
+                $"Unexpected output from '{Ps1Path} {traceValue} {finalizerOrderOption} {testStatus}:{Environment.NewLine}{psOutput}");
         }
 
         public const string DisposeManuallyCalledExpectedOutput =
