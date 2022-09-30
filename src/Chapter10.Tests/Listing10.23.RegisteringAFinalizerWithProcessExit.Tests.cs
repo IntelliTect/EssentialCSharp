@@ -20,14 +20,20 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23.Tests
         [ClassInitialize]
         public static void ClassInitialize(TestContext testContext)
         {
-            string testStatus = "create";
-            Assert.AreEqual<int>(0, PowerShellTestUtilities.RunPowerShellScript(
-                Ps1Path, $"0 test {testStatus}", out string psOutput));
-            string projectFilePath = 
+            string testStage = "create";
+            Assert.AreEqual<int>(0, RunPowerShellScript(testStage, out string psOutput),
+                $"Script failed with $testStage='{testStage}'. psOutput:\n{psOutput}");
+            string projectFilePath =
                 Path.Join(Ps1DirectoryPath, "ProcessExitTestProgram", "ProcessExitTestProgram.csproj");
             Assert.IsTrue(File.Exists(projectFilePath),
                 $"The expected project file, '{projectFilePath}', was not created.");
         }
+
+        private static int RunPowerShellScript(string testStage, out string psOutput) => 
+            RunPowerShellScript(testStage, null, 0, out psOutput);
+        private static int RunPowerShellScript(
+            string testStage, string? finalizerOrderOption, int traceLevel, out string psOutput) => PowerShellTestUtilities.RunPowerShellScript(
+                            Ps1Path, $"-TestStage {testStage} -FinalizerOption {finalizerOrderOption??"ignore"} {traceLevel}", out psOutput);
 
         [ClassCleanup]
         public static void RemoveProcessExitProj()
@@ -43,13 +49,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23.Tests
         [DataRow("gc", GCCalled, DisplayName = "Garbage Collected called")]
         public void FinalizerRunsAsPredicted_ConsoleOutputIsInOrder(string finalizerOrderOption, string expectedOutput)
         {
-            string traceValue = "0";
+            int traceValue = 0;
             string testStatus = "run";
 
             TestContext.WriteLine($"Ps1Path = '{Path.GetFullPath(Ps1Path)}'");
-
-            int exitCode = PowerShellTestUtilities.RunPowerShellScript(
-                Ps1Path, $"{traceValue} {finalizerOrderOption} {testStatus}", out string psOutput);
+            string psOutput;
+            int exitCode = RunPowerShellScript(
+                testStatus, finalizerOrderOption, traceValue, out psOutput);
 
             Assert.AreEqual(0, exitCode, $"PowerShell Output: {psOutput}");
 
