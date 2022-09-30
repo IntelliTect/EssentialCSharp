@@ -13,7 +13,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23.Tests
     {
         public TestContext TestContext { get; set; } = null!; // Auto-initialized by MSTest.
 
-        static string Ps1Path { get; } = Path.GetFullPath("../../../../Chapter10/Listing10.23.RegisteringAFinalizerWithProcessExit.ps1", Environment.CurrentDirectory);
+        static string Ps1DirectoryPath { get; } = 
+            Path.GetFullPath(Path.Join("..","..", "..", "..", "Chapter10"), Environment.CurrentDirectory);
+        static string Ps1Path { get; } = Path.GetFullPath($"{Ps1DirectoryPath}/Listing10.23.RegisteringAFinalizerWithProcessExit.ps1", Environment.CurrentDirectory);
 
         [ClassInitialize]
         public static void ClassInitialize(TestContext testContext)
@@ -21,8 +23,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23.Tests
             string testStatus = "create";
             Assert.AreEqual<int>(0, PowerShellTestUtilities.RunPowerShellScript(
                 Ps1Path, $"0 test {testStatus}", out string psOutput));
-            testContext.WriteLine(psOutput);
-            Assert.IsTrue(File.Exists(@"C:\Git\EssentialCSharp\SCC\src\Chapter10\ProcessExitTestProgram\ProcessExitTestProgram.csproj"));
+            string projectFilePath = 
+                Path.Join(Ps1DirectoryPath, "ProcessExitTestProgram", "ProcessExitTestProgram.csproj");
+            Assert.IsTrue(File.Exists(projectFilePath),
+                $"The expected project file, '{projectFilePath}', was not created.");
         }
 
         [ClassCleanup]
