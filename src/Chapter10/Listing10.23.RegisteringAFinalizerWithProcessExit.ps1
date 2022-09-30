@@ -1,12 +1,12 @@
 [CmdletBinding()]
 param(
-    [int]$traceLevel,
-    [string]$finalizerOption,
-    [string]$testStatus
-   
+    [string]$TestStage,
+    [string]$FinalizerOption,
+    [int]$TraceLevel=$null
 )
-if('traceLevel' -notin $PSBoundParameters.Keys) {
-    $traceLevel = Read-Host -Prompt @"
+
+if(($TraceLevel == null) -and 'TraceLevel' -notin $PSBoundParameters.Keys) {
+    $TraceLevel = Read-Host -Prompt @"
     Specifiy the trace level:
     - 0: Turn script tracing off.
     - 1: Trace script lines as they run.
@@ -19,12 +19,12 @@ $ConsoleProgramProjectName = 'ProcessExitTestProgram'
 
 [string]$projectDirectory = (Join-Path $PSScriptRoot $ConsoleProgramProjectName)
 
-switch ($testStatus) {
+switch ($TestStage) {
     "create" {
         try {
             Write-Host "`$projectDirectory: $projectDirectory"
             Get-Item $projectDirectory -ErrorAction Ignore | Remove-Item  -Recurse -Force
-            Set-PSDebug -Trace $traceLevel
+            Set-PSDebug -Trace $TraceLevel
             dotnet new Console --output $projectDirectory
             Set-Content (Join-Path $projectDirectory 'Directory.Build.props') '<Project><PropertyGroup><Nullable>enable</Nullable></PropertyGroup></Project>'
 
@@ -52,7 +52,7 @@ switch ($testStatus) {
                 Write-Error "Unable to find project file ($projectFile)"
             }
 
-            switch($finalizerOption) {
+            switch($FinalizerOption) {
                 'dispose' {
                     dotnet run --project $projectFile -- -dispose
                 }
@@ -63,7 +63,7 @@ switch ($testStatus) {
                     dotnet run --project $projectFile
                 }
                 default {
-                    Write-Error "finalizerOption: $finalizerOption not valid with the testStatus: run"
+                    Write-Error "finalizerOption: $FinalizerOption not valid with the testStatus: run"
                 }
             }
         }
@@ -72,6 +72,6 @@ switch ($testStatus) {
         }
     }
     default {
-        Write-Error "testStatus ('$testStatus') is not valid."
+        Write-Error "testStatus ('$TestStage') is not valid."
     }
 }
