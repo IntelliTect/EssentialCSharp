@@ -23,7 +23,7 @@ switch ($testStatus) {
     "create" {
         try {
             Write-Host "`$projectDirectory: $projectDirectory"
-            Get-Item $projectDirectory -ErrorAction Ignore | Remove-Item  -Recurse
+            Get-Item $projectDirectory -ErrorAction Ignore | Remove-Item  -Recurse -Force
             Set-PSDebug -Trace $traceLevel
             dotnet new Console --output $projectDirectory
             Set-Content (Join-Path $projectDirectory 'Directory.Build.props') '<Project><PropertyGroup><Nullable>enable</Nullable></PropertyGroup></Project>'
@@ -42,7 +42,7 @@ switch ($testStatus) {
         }
     }
     "cleanup" { 
-        Get-Item $projectDirectory -ErrorAction Ignore | Remove-Item  -Recurse
+        Get-Item $projectDirectory -ErrorAction Ignore | Remove-Item  -Recurse -Force
     }
     "run"   {
         try{ 
@@ -52,21 +52,26 @@ switch ($testStatus) {
                 Write-Error "Unable to find project file ($projectFile)"
             }
 
-            if($finalizerOption -eq 'dispose'){
-            dotnet run --project $projectFile -- -dispose
-            }
-            elseif($finalizerOption -eq 'gc'){
-            dotnet run --project $projectFile -- -gc
-            }
-            elseif($finalizerOption -eq 'processExit'){
-            dotnet run --project $projectFile
-            }
-            else{
-                Write-Error "finalizerOption: $finalizerOption not valid with the testStatus: run"
+            switch($finalizerOption) {
+                'dispose' {
+                    dotnet run --project $projectFile -- -dispose
+                }
+                'gc' {
+                    dotnet run --project $projectFile -- -gc
+                }
+                'processExit' {
+                    dotnet run --project $projectFile
+                }
+                default {
+                    Write-Error "finalizerOption: $finalizerOption not valid with the testStatus: run"
+                }
             }
         }
         finally {
             Set-PSDebug -Off
         }
+    }
+    default {
+        Write-Error "testStatus ('$testStatus') is not valid."
     }
 }
