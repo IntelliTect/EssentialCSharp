@@ -29,18 +29,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23.Tests
                 $"The expected project file, '{projectFilePath}', was not created.");
         }
 
-        private static int RunPowerShellScript(string testStage, out string psOutput) => 
-            RunPowerShellScript(testStage, null, 0, out psOutput);
-        private static int RunPowerShellScript(
-            string testStage, string? finalizerOrderOption, int traceLevel, out string psOutput) => PowerShellTestUtilities.RunPowerShellScript(
-                            Ps1Path, $"-TestStage {testStage} -FinalizerOption {finalizerOrderOption??"ignore"} {traceLevel}", out psOutput);
-
         [ClassCleanup]
         public static void RemoveProcessExitProj()
         {
-            string testStatus = "cleanup";
-            Assert.AreEqual<int>(0, PowerShellTestUtilities.RunPowerShellScript(
-                Ps1Path, $"0 test {testStatus}", out string _));
+            Assert.AreEqual<int>(0, RunPowerShellScript(
+                "cleanup", out string _));
         }
 
         [DataTestMethod]
@@ -62,6 +55,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23.Tests
             Assert.AreEqual<string>(RemoveWhiteSpace(expectedOutput), RemoveWhiteSpace(psOutput),
                 $"Unexpected output from '{Ps1Path} {traceValue} {finalizerOrderOption} {testStatus}:{Environment.NewLine}{psOutput}");
         }
+
+        private static int RunPowerShellScript(string testStage, out string psOutput) =>
+            RunPowerShellScript(testStage, null, 0, out psOutput);
+        private static int RunPowerShellScript(
+            string testStage, string? finalizerOrderOption, int traceLevel, out string psOutput) => PowerShellTestUtilities.RunPowerShellScript(
+                            Ps1Path, $"-TestStage {testStage} -FinalizerOption {finalizerOrderOption??"ignore"} {traceLevel}", out psOutput);
 
         public const string DisposeManuallyCalledExpectedOutput =
             @"Main: Starting...

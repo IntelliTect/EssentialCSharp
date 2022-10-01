@@ -2,7 +2,6 @@ using System;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
 using System.Linq;
-using System.Collections.Generic;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Shared.Tests
 {
