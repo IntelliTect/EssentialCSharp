@@ -11,18 +11,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23.Tests
     [TestClass]
     public class DisposeTests
     {
-<<<<<<< RefactorPowerShellTestUtilities
         public TestContext TestContext { get; set; } = null!; // Auto-initialized by MSTest.
 
-<<<<<<< RefactorPowerShellTestUtilities
-        static string Ps1DirectoryPath { get; } = 
-            Path.GetFullPath(Path.Join("..","..", "..", "..", "Chapter10"), Environment.CurrentDirectory);
+        static string Ps1DirectoryPath { get; } =
+            Path.GetFullPath(Path.Join("..", "..", "..", "..", "Chapter10"), Environment.CurrentDirectory);
         static string Ps1Path { get; } = Path.GetFullPath($"{Ps1DirectoryPath}/Listing10.23.RegisteringAFinalizerWithProcessExit.ps1", Environment.CurrentDirectory);
-=======
-        static string Ps1Path { get; } = Path.GetFullPath("../../../../Chapter10/Listing10.23.RegisteringAFinalizerWithProcessExit.ps1", Environment.CurrentDirectory);
-        static bool PowerShellNotAvailable = PowerShellTestsUtilities.PowerShellNotInstalled;
-        static string PowershellEnvironmentVariableName { get; set; } = "powershell";
->>>>>>> Added top level statement and refactored PowerShellTestsUtilities
 
         [ClassInitialize]
         public static void ClassInitialize(TestContext testContext)
@@ -36,15 +29,18 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23.Tests
                 $"The expected project file, '{projectFilePath}', was not created.");
         }
 
+        private static int RunPowerShellScript(string testStage, out string psOutput) =>
+            RunPowerShellScript(testStage, null, 0, out psOutput);
+        private static int RunPowerShellScript(
+            string testStage, string? finalizerOrderOption, int traceLevel, out string psOutput) => PowerShellTestUtilities.RunPowerShellScript(
+                            Ps1Path, $"-TestStage {testStage} -FinalizerOption {finalizerOrderOption ?? "ignore"} {traceLevel}", out psOutput);
+
         [ClassCleanup]
         public static void RemoveProcessExitProj()
         {
             Assert.AreEqual<int>(0, RunPowerShellScript(
                 "cleanup", out string _));
         }
-=======
-        static string Ps1Path { get; } = Path.GetFullPath("../../../../Chapter10/Listing10.23.RegisteringAFinalizerWithProcessExit.ps1", Environment.CurrentDirectory);
->>>>>>> Refactored PowerShellTestsUtilities into a solution shared file.
 
         [DataTestMethod]
         [DataRow("processExit", FinalizerRegisteredWithProcessExit, DisplayName = "Finalizer Registered With ProcessExit")]
@@ -52,30 +48,15 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23.Tests
         [DataRow("gc", GCCalled, DisplayName = "Garbage Collected called")]
         public void FinalizerRunsAsPredicted_ConsoleOutputIsInOrder(string finalizerOrderOption, string expectedOutput)
         {
-<<<<<<< RefactorPowerShellTestUtilities
             int traceValue = 0;
-=======
-            string traceValue = "0";
->>>>>>> Refactored PowerShellTestsUtilities into a solution shared file.
             string testStatus = "run";
 
-<<<<<<< RefactorPowerShellTestUtilities
-<<<<<<< RefactorPowerShellTestUtilities
             TestContext.WriteLine($"Ps1Path = '{Path.GetFullPath(Ps1Path)}'");
             string psOutput;
             int exitCode = RunPowerShellScript(
                 testStatus, finalizerOrderOption, traceValue, out psOutput);
 
             Assert.AreEqual(0, exitCode, $"PowerShell Output: {psOutput}");
-=======
-            int exitCode = PowerShellTestsUtilities.RunPowerShellScript(
-=======
-            int exitCode = PowerShellTestUtilities.RunPowerShellScript(
->>>>>>> Minor rename of PowerShellTestUtilities
-                Ps1Path, $"{traceValue} {finalizerOrderOption} {testStatus}", out string psOutput);
-
-            Assert.AreEqual(0, exitCode);
->>>>>>> Added top level statement and refactored PowerShellTestsUtilities
 
             Assert.AreEqual<string>(RemoveWhiteSpace(expectedOutput), RemoveWhiteSpace(psOutput),
                 $"Unexpected output from '{Ps1Path} {traceValue} {finalizerOrderOption} {testStatus}:{Environment.NewLine}{psOutput}");

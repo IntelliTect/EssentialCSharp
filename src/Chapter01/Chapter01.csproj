@@ -13,6 +13,7 @@
   <Import Project="..\Chapter.props" />
   <ItemGroup>
     <Compile Remove="HelloWorld\**" />
+    <Compile Remove="Listing01.01.HelloWorldInC#.cs" />
     <Compile Remove="Listing01.01A.HelloWorldInC#.cs" />
     <Compile Remove="Listing01.02.SampleNETCoreConsoleProjectFile.cs" />
     <Compile Remove="Listing01.20.SampleCILOutput.cs" />
@@ -24,7 +25,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Listing01.01A.HelloWorldInC#.cs" />
+    <None Include="Listing01.01.HelloWorldInC#.cs" />
     <None Include="Listing01.02.SampleNETCoreConsoleProjectFile.cs" />
     <None Include="Listing01.20.SampleCILOutput.cs" />
   </ItemGroup>

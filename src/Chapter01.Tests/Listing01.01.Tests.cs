@@ -6,7 +6,7 @@ using AddisonWesley.Michaelis.EssentialCSharp.Shared.Tests;
 
 using System.Text.RegularExpressions;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_01A.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_01.Tests
 {
     [TestClass]
     public class HelloWorldTests
