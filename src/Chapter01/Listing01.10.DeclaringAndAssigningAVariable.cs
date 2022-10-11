@@ -5,8 +5,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_10
     {
         public static void Main()
         {
-            string max;
-
+            string max;     // "string" identifies the data type
+                            // "max" is the variable
             max = "Have fun storming the castle!";
             System.Console.WriteLine(max);
         }
