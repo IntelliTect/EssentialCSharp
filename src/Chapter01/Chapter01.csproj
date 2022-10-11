@@ -9,6 +9,7 @@
     unexpected exception as concept to check for null hasn't been explained yet-->
     <IgnoredWarnings>$(IgnoredWarnings),CS8600,CA1052,IDE0059,IDE0060</IgnoredWarnings>
     <StartupObject>AddisonWesley.Michaelis.EssentialCSharp.Shared.Program</StartupObject>
+    <ImplicitUsings>Enable</ImplicitUsings>
   </PropertyGroup>
   <Import Project="..\Chapter.props" />
   <ItemGroup>
