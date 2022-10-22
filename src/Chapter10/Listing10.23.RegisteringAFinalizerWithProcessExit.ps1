@@ -5,7 +5,9 @@ param(
     [int]$TraceLevel=$null
 )
 
-if(($TraceLevel == null) -and 'TraceLevel' -notin $PSBoundParameters.Keys) {
+Set-StrictMode -Version 3.0
+
+if(($TraceLevel -eq $null) -and 'TraceLevel' -notin $PSBoundParameters.Keys) {
     $TraceLevel = Read-Host -Prompt @"
     Specifiy the trace level:
     - 0: Turn script tracing off.
@@ -25,7 +27,7 @@ switch ($TestStage) {
             Write-Host "`$projectDirectory: $projectDirectory"
             Get-Item $projectDirectory -ErrorAction Ignore | Remove-Item  -Recurse -Force
             Set-PSDebug -Trace $TraceLevel
-            dotnet new Console --output $projectDirectory
+            dotnet new console --output $projectDirectory
             Set-Content (Join-Path $projectDirectory 'Directory.Build.props') '<Project><PropertyGroup><Nullable>enable</Nullable></PropertyGroup></Project>'
 
             $SutCSFile = split-path -leaf $MyInvocation.MyCommand.Definition
