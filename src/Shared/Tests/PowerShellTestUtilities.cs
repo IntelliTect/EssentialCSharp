@@ -49,7 +49,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared.Tests
 
             if(!System.IO.File.Exists(scriptPath))
             {
-                throw new InvalidOperationException($"scriptPath, '{scriptPath}', not found.");
+                throw new ArgumentException($"scriptPath, '{scriptPath}', not found.", nameof(scriptPath));
             }
 
             using var powerShell = new Process();
@@ -63,7 +63,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared.Tests
             return powerShell.ExitCode;
         }
 
-        public static string? PowerShellCommand => _PowerShellCommand!.Value;
+        public static string? PowerShellCommand => _PowerShellCommand.Value;
         public static bool PowerShellNotInstalled =>_PowerShellCommand.Value == null;
     }
 }
