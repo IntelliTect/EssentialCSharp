@@ -13,7 +13,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23.Tests
         public TestContext TestContext { get; set; } = null!; // Auto-initialized by MSTest.
 
         static string Ps1DirectoryPath { get; } =
-            Path.GetFullPath(Path.Join("..", "..", "..", "..", "Chapter10"), Environment.CurrentDirectory);
+            Path.GetFullPath(
+                Path.Join(IntelliTect.Multitool.RepositoryPaths.GetDefaultRepoRoot(),"src", "Chapter10"));
+
         static string Ps1Path { get; } = 
             Path.GetFullPath(Path.Join(Ps1DirectoryPath, "Listing10.23.RegisteringAFinalizerWithProcessExit.ps1"), Environment.CurrentDirectory);
 

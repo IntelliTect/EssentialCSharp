@@ -7,6 +7,9 @@
     <Compile Include="..\Shared\Tests\PowerShellTestUtilities.cs" Link="PowerShellTestUtilities.cs" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="IntelliTect.Multitool" Version="1.2.0" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\Chapter10\Chapter10.csproj" />
   </ItemGroup>
   <ItemGroup>
