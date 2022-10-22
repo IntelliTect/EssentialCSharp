@@ -19,9 +19,9 @@ jobs:
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: |
-            3.1.x
-            5.x
             6.x
+            7.x
+          include-prerelease: true
       - name: Get Build Information
         run: |
           pwd

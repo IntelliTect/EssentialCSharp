@@ -14,7 +14,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_14.Tests
                  /    \
                 /      \
                /________\
-    end";
+end";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
                 expected, Triangle.Main);
