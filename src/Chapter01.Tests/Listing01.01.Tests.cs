@@ -13,7 +13,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_01.Tests
     public class HelloWorldTests
     {
         static string Ps1DirectoryPath { get; } =
-            Path.GetFullPath(Path.Join("..", "..", "..", "..", "Chapter01"), Environment.CurrentDirectory);
+            Path.GetFullPath(Path.Join(
+                IntelliTect.Multitool.RepositoryPaths.GetDefaultRepoRoot(), "src", "Chapter01"));
         static string Ps1Path { get; } = 
             Path.GetFullPath(
                 Path.Join(Ps1DirectoryPath, "Listing01.01.HelloWorldInC#.ps1"), Environment.CurrentDirectory);
