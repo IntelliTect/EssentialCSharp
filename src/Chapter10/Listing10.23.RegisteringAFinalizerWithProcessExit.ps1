@@ -28,7 +28,8 @@ switch ($TestStage) {
             Get-Item $projectDirectory -ErrorAction Ignore | Remove-Item  -Recurse -Force
             Set-PSDebug -Trace $TraceLevel
             dotnet new console --output $projectDirectory
-            Set-Content (Join-Path $projectDirectory 'Directory.Build.props') '<Project><PropertyGroup><Nullable>enable</Nullable></PropertyGroup></Project>'
+            # No longer needed in .net7.0./C#11
+            # Set-Content (Join-Path $projectDirectory 'Directory.Build.props') '<Project><PropertyGroup><Nullable>enable</Nullable></PropertyGroup></Project>'
 
             $SutCSFile = split-path -leaf $MyInvocation.MyCommand.Definition
             $SutCSFile = Join-Path $PSScriptRoot "$([IO.Path]::GetFileNameWithoutExtension($SutCSFile)).cs"
