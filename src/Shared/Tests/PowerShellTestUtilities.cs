@@ -63,6 +63,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared.Tests
         }
 
         public static string? PowerShellCommand => _PowerShellCommand.Value;
-        public static bool PowerShellNotInstalled =>_PowerShellCommand.Value == null;
+        public static bool PowerShellNotInstalled => _PowerShellCommand.Value is null;
     }
 }
