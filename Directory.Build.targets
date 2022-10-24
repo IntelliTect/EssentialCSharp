@@ -6,6 +6,9 @@
 	"WarningsNotAsErrors" so they don't trigger a failure in the build. -->
     <WarningsNotAsErrors>$(ExpectedWarnings)</WarningsNotAsErrors>
   </PropertyGroup>
+  <ItemGroup>
+      <Compile Remove="**\*.testing\**" />
+  </ItemGroup>
   <Target Name="VSTestIfTestProject">
     <CallTarget Targets="VSTest" Condition="'$(IsTestProject)' == 'true'" />
   </Target>
