@@ -19,7 +19,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23.Tests
         static string Ps1Path { get; } = 
             Path.GetFullPath(Path.Join(Ps1DirectoryPath, "Listing10.23.RegisteringAFinalizerWithProcessExit.ps1"), Environment.CurrentDirectory);
 
-        private const string ProjectName = "ProcessExitTestProgram.g";
+        private const string ProjectName = "ProcessExitTestProgram.testing";
 
         [ClassInitialize]
         public static void ClassInitialize(TestContext testContext)
