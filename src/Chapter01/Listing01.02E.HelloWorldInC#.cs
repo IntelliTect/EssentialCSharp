@@ -1,7 +1,7 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_02E
 {
     #region INCLUDE
-    public class HelloWorld
+    public class Program
     {
         public static void Main()
         {
