@@ -17,7 +17,7 @@ if(($TraceLevel -eq $null) -and 'TraceLevel' -notin $PSBoundParameters.Keys) {
 }
 
 #$LibraryProjectName = 'ProcessExit'
-$ConsoleProgramProjectName = 'ProcessExitTestProgram'
+$ConsoleProgramProjectName = 'ProcessExitTestProgram.g'
 
 [string]$projectDirectory = (Join-Path $PSScriptRoot $ConsoleProgramProjectName)
 

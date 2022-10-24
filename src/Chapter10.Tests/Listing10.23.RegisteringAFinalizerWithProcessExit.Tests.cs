@@ -19,6 +19,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23.Tests
         static string Ps1Path { get; } = 
             Path.GetFullPath(Path.Join(Ps1DirectoryPath, "Listing10.23.RegisteringAFinalizerWithProcessExit.ps1"), Environment.CurrentDirectory);
 
+        private const string ProjectName = "ProcessExitTestProgram.g";
+
         [ClassInitialize]
         public static void ClassInitialize(TestContext testContext)
         {
@@ -26,7 +28,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23.Tests
             Assert.AreEqual<int>(0, RunPowerShellScript(testStage, out string psOutput),
                 $"Script failed with $testStage='{testStage}'. psOutput:\n{psOutput}");
             string projectFilePath =
-                Path.Join(Ps1DirectoryPath, "ProcessExitTestProgram", "ProcessExitTestProgram.csproj");
+                Path.Join(Ps1DirectoryPath, ProjectName, $"{ProjectName}.csproj");
             Assert.IsTrue(File.Exists(projectFilePath),
                 $"The expected project file, '{projectFilePath}', was not created.");
         }

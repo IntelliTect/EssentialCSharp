@@ -13,8 +13,8 @@ if('traceLevel' -notin $PSBoundParameters.Keys) {
 "@ 
 }
 
-[string]$LibraryProjectName = 'GeoCoordinates'
-[string]$ConsoleProgramProjectName = 'GeoCoordinateProgram'
+[string]$LibraryProjectName = 'GeoCoordinates.g'
+[string]$ConsoleProgramProjectName = 'GeoCoordinateProgram.g'
 
 [xml]$directoryBuildPropsXml = ([xml](Get-Content "$PSScriptRoot/../../Directory.Build.props"))
 [string]$langVersion = $directoryBuildPropsXml.Project.PropertyGroup.LangVersion
