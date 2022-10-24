@@ -36,3 +36,14 @@ jobs:
         run: dotnet build --no-restore
       - name: Test
         run: dotnet test --no-build --no-restore --verbosity normal
+
+  automerge:
+    needs: [build-and-test]
+    runs-on: ubuntu-latest
+
+    permissions:
+      pull-requests: write
+      contents: write
+
+    steps:
+      - uses: fastify/github-action-merge-dependabot@v3.4.1  
