@@ -7,10 +7,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_16
         {
             string palindrome;
 
-            System.Console.Write("Enter a palindrome: ");
-            palindrome = System.Console.ReadLine();
+            Console.Write("Enter a palindrome: ");
+            palindrome = Console.ReadLine();
 
-            System.Console.WriteLine(
+            Console.WriteLine(
                 $"The palindrome \"{palindrome}\" is"
             #region HIGHLIGHT
                 + $" {palindrome.Length} characters.");

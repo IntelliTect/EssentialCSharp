@@ -5,9 +5,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_12
         public static void Main()
         {
             #region INCLUDE
-            System.Console.Write('\u003A');
+            Console.Write('\u003A');
 
-            System.Console.WriteLine('\u0029');
+            Console.WriteLine('\u0029');
             #endregion INCLUDE
         }
     }

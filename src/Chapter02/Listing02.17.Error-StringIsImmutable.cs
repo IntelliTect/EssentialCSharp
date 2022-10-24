@@ -7,15 +7,15 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_17
         {
             string text;
 
-            System.Console.Write("Enter text: ");
-            text = System.Console.ReadLine();
+            Console.Write("Enter text: ");
+            text = Console.ReadLine();
 
             #region HIGHLIGHT
             // UNEXPECTED: Does not convert text to uppercase
             text.ToUpper();
             #endregion HIGHLIGHT
 
-            System.Console.WriteLine(text);
+            Console.WriteLine(text);
         }
     }
     #endregion INCLUDE

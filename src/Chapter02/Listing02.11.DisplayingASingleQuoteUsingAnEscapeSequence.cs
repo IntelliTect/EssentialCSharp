@@ -5,7 +5,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_11
     {
         public static void Main()
         {
-            System.Console.WriteLine('\'');
+            Console.WriteLine('\'');
         }
     }
     #endregion INCLUDE

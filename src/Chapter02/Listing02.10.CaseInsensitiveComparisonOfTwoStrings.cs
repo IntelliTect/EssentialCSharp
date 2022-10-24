@@ -10,7 +10,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_10
             int comparison = string.Compare(option, "/Help", true);
             #endregion INCLUDE
 
-            System.Console.WriteLine($"{comparison}");
+            Console.WriteLine($"{comparison}");
         }
     }
 }

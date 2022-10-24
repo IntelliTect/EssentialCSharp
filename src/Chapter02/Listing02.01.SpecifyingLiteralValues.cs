@@ -5,9 +5,9 @@
         public static void Main()
         {
             #region INCLUDE
-            System.Console.WriteLine(42);
+            Console.WriteLine(42);
 
-            System.Console.WriteLine(1.618034);
+            Console.WriteLine(1.618034);
             #endregion INCLUDE
         }
     }
