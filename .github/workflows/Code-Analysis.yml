@@ -33,7 +33,7 @@ jobs:
 
       # Upload the analysis results file
       - name: Upload analysis results
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: analysis_results.sarif
           path: ${{ steps.code-analysis.outputs.sarifFile }}
