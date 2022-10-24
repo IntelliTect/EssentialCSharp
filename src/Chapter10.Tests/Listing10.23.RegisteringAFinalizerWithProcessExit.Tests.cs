@@ -24,6 +24,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23.Tests
         [ClassInitialize]
         public static void ClassInitialize(TestContext testContext)
         {
+            // Clean up at the start incase the class cleanup doesn't run (due to debug for example)
+            Assert.AreEqual<int>(0, RunPowerShellScript("cleanup", out string _));
             string testStage = "create";
             Assert.AreEqual<int>(0, RunPowerShellScript(testStage, out string psOutput),
                 $"Script failed with $testStage='{testStage}'. psOutput:\n{psOutput}");
@@ -34,10 +36,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23.Tests
         }
 
         [ClassCleanup]
-        public static void RemoveProcessExitProj()
+        public static void ClassCleanup()
         {
-            Assert.AreEqual<int>(0, RunPowerShellScript(
-                "cleanup", out string _));
+            // No return check since an exception here will be ignored.
+            RunPowerShellScript("cleanup", out string _);
         }
 
         [DataTestMethod]
