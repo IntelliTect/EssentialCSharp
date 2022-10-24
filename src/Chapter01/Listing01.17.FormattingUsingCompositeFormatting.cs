@@ -8,17 +8,17 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_17
             string firstName;
             string lastName;
 
-            System.Console.WriteLine("Hey you!");
+            Console.WriteLine("Hey you!");
 
-            System.Console.Write("Enter your first name: ");
-            firstName = System.Console.ReadLine();
+            Console.Write("Enter your first name: ");
+            firstName = Console.ReadLine();
 
             #region HIGHLIGHT
-            System.Console.Write("Enter your last name: ");
-            lastName = System.Console.ReadLine();
+            Console.Write("Enter your last name: ");
+            lastName = Console.ReadLine();
             #endregion HIGHLIGHT
 
-            System.Console.WriteLine(
+            Console.WriteLine(
                 "Your full name is {0} {1}.", firstName, lastName);
         }
     }

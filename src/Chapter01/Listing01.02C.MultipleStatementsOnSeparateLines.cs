@@ -5,9 +5,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_02C
         public static void Main()
         {
             #region INCLUDE
-            System.Console.WriteLine("Down");
-            System.Console.WriteLine("Side");
-            System.Console.WriteLine("Up");
+            Console.WriteLine("Down");
+            Console.WriteLine("Side");
+            Console.WriteLine("Up");
             #endregion INCLUDE
         }
     }
