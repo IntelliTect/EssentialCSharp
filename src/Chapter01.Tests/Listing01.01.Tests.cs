@@ -52,7 +52,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_01.Tests
                 foreach (string text in expectedText)
                 {
                     Assert.IsTrue(psOutput.Contains(text),
-                        $"Unexpectedly, '{text}' did not appear in the console output: \n {psOutput}");
+                        $"Unexpectedly, '{text}' did not appear in the console output: {Environment.NewLine} {psOutput}");
                 }
             }
         }
