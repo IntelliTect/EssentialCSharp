@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_02C
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_04
 {
     public class HelloWorld
     {

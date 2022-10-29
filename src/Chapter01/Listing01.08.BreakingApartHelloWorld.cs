@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_04
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_08
 {
     #region INCLUDE
     public class Program                // BEGIN Class definition

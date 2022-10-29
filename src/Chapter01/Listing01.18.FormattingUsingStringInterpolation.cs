@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_17
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_18
 {
     #region INCLUDE
     public class HeyYou
@@ -13,13 +13,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_17
             Console.Write("Enter your first name: ");
             firstName = Console.ReadLine();
 
-            #region HIGHLIGHT
             Console.Write("Enter your last name: ");
             lastName = Console.ReadLine();
-            #endregion HIGHLIGHT
 
             Console.WriteLine(
-                "Your full name is {0} {1}.", firstName, lastName);
+            #region HIGHLIGHT
+                $"Your full name is { firstName } { lastName }.");
+            #endregion HIGHLIGHT
         }
     }
     #endregion INCLUDE

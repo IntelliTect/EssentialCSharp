@@ -1,18 +1,18 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_05.Tests
 {
     [TestClass]
-    public class ProgramTests
+    public class HelloWorldTests
     {
         [TestMethod]
-        public void Main_GiveNone_GetZero()
+        public void Main_InigoHello()
         {
-            int expected = 0;
-            int value = Program.Main(Array.Empty<string>());
+            const string expected = 
+                @"Hello. My name is Inigo Montoya.";
 
-            Assert.AreEqual(expected, value);
+            IntelliTect.TestTools.Console.ConsoleAssert.Expect(
+                expected, HelloWorld.Main);
         }
     }
 }

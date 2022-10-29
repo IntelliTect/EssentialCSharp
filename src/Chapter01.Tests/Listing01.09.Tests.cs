@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_09.Tests
 {
@@ -6,12 +7,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_09.Tests
     public class ProgramTests
     {
         [TestMethod]
-        public void Main_HelloToInigo()
+        public void Main_GiveNone_GetZero()
         {
-            const string expected = @"Hello Inigo Montoya";
+            int expected = 0;
+            int value = Program.Main(Array.Empty<string>());
 
-            IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, HelloWorld.Main);
+            Assert.AreEqual(expected, value);
         }
     }
 }
