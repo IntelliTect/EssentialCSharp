@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_10
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_12
 {
     #region INCLUDE
     public class MiracleMax

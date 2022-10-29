@@ -1,6 +1,6 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_02D.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_06.Tests
 {
     [TestClass]
     public class HelloWorldTests
@@ -12,7 +12,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_02D.Tests
                 @"Hello. My name is Inigo Montoya.";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, HelloWorld.Main);
+                expected, Program.Main);
         }
     }
 }
