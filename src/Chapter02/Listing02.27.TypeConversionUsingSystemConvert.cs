@@ -6,8 +6,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_27
         {
             #region INCLUDE
             string middleCText = "261.626";
-            double middleC = System.Convert.ToDouble(middleCText);
-            bool boolean = System.Convert.ToBoolean(middleC);
+            double middleC = Convert.ToDouble(middleCText);
+            bool boolean = Convert.ToBoolean(middleC);
             #endregion INCLUDE
         }
     }

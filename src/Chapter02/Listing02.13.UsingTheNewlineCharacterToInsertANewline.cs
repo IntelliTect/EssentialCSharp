@@ -5,9 +5,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_13
         public static void Main()
         {
             #region INCLUDE
-            System.Console.Write(
+            Console.Write(
                 "\"Truly, you have a dizzying intellect.\"");
-            System.Console.Write("\n\"Wait 'til I get going!\"\n");
+            Console.Write("\n\"Wait 'til I get going!\"\n");
             #endregion INCLUDE
         }
     }

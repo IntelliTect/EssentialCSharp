@@ -5,7 +5,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_14
         public static void Main()
         {
             #region INCLUDE
-            System.Console.Write(@"begin
+            Console.Write(@"begin
                    /\
                   /  \
                  /    \

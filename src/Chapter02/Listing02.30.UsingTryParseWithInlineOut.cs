@@ -8,11 +8,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_30
             // double number;
             string input;
 
-            System.Console.Write("Enter a number: ");
-            input = System.Console.ReadLine();
+            Console.Write("Enter a number: ");
+            input = Console.ReadLine();
             if (double.TryParse(input, out double number))
             {
-                System.Console.WriteLine(
+                Console.WriteLine(
                 #region HIGHLIGHT
                     $"input was parsed successfully to {number}.");
                 #endregion HIGHLIGHT
@@ -20,11 +20,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_30
             else
             {
                 // Note: number scope is here too (although not assigned)
-                System.Console.WriteLine(
+                Console.WriteLine(
                     "The text entered was not a valid number.");
             }
 
-            System.Console.WriteLine(
+            Console.WriteLine(
                 $"'number' currently has the value: {number}");
             #endregion INCLUDE
         }

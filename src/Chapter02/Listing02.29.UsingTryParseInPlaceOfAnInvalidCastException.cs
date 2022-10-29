@@ -10,8 +10,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_29
             double number;
             string input;
 
-            System.Console.Write("Enter a number: ");
-            input = System.Console.ReadLine();
+            Console.Write("Enter a number: ");
+            input = Console.ReadLine();
             #region HIGHLIGHT
             if (double.TryParse(input, out number))
             {
@@ -21,7 +21,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_29
             else
             #endregion HIGHLIGHT
             {
-                System.Console.WriteLine(
+                Console.WriteLine(
                     "The text entered was not a valid number.");
             }
             #endregion INCLUDE
