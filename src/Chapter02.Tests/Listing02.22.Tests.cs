@@ -6,10 +6,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_22.Tests
     public class ProgramTests
     {
         [TestMethod]
-        [ExpectedException(typeof(System.OverflowException))]
-        public void Main_IntegerOverFlow_ExceptionThrown()
+        public void Main_WriteOverflowExample()
         {
-            IntelliTect.TestTools.Console.ConsoleAssert.Execute("", Program.Main);
+            const string expected = "-2147483648";
+
+            IntelliTect.TestTools.Console.ConsoleAssert.Expect(
+                expected, Program.Main);
         }
     }
 }

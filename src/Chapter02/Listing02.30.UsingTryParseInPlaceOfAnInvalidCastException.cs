@@ -1,6 +1,6 @@
 // Justification: Inline variable declaration not explained yet.
 #pragma warning disable IDE0018 // Inline variable declaration
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_29
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_30
 {
     public class Program
     {

@@ -1,6 +1,6 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_21.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_20.Tests
 {
     [TestClass]
     public class ProgramTests
@@ -8,7 +8,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_21.Tests
         [TestMethod]
         public void Main_WriteOverflowExample()
         {
-            const string expected = "-2147483648";
+            const string expected = "The age is: ";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
                 expected, Program.Main);

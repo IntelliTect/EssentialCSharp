@@ -1,17 +1,19 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_19.Tests
 {
     [TestClass]
-    public class ProgramTests
+    public class UppercaseTests
     {
         [TestMethod]
-        public void Main_WriteOverflowExample()
+        public void Main_InputLorem_OutputIsCapitalized()
         {
-            const string expected = "The age is: ";
+            const string expected =
+@"Enter text: <<Lorem
+>>LOREM";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, Program.Main);
+                expected, Uppercase.Main);
         }
     }
 }
