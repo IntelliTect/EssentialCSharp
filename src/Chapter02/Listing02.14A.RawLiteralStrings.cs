@@ -8,7 +8,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_14A
             string name = "mobius";
             Console.Write(
                 $$"""
-                begin
+                Begin
                            ____
                           /   /\
                          /   /  \
@@ -23,7 +23,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_14A
                 /________________\   \   \
                 \                 \   \  /
                  \_________________\___\/
-                end
+                End
                 """);
             #endregion INCLUDE
         }
