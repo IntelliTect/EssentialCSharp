@@ -5,13 +5,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_14
         public static void Main()
         {
             #region INCLUDE
-            Console.Write(@"begin
+            Console.Write(@"Begin
                    /\
                   /  \
                  /    \
                 /      \
                /________\
-end");
+End");
             #endregion INCLUDE
         }
     }
