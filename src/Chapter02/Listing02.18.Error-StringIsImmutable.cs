@@ -5,17 +5,17 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_18
     {
         public static void Main()
         {
-            string text, uppercase;
+            string text;
 
             Console.Write("Enter text: ");
             text = Console.ReadLine();
 
-            // Return a new string in uppercase
             #region HIGHLIGHT
-            uppercase = text.ToUpper();
+            // UNEXPECTED: Does not convert text to uppercase
+            text.ToUpper();
             #endregion HIGHLIGHT
 
-            Console.WriteLine(uppercase);
+            Console.WriteLine(text);
         }
     }
     #endregion INCLUDE

@@ -1,6 +1,6 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_14A.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_15.Tests
 {
     [TestClass]
     public class TriangleTests

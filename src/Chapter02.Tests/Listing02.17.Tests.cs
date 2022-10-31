@@ -1,19 +1,19 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_17.Tests
 {
     [TestClass]
-    public class UppercaseTests
+    public class PalindromeLengthTests
     {
         [TestMethod]
-        public void Main_InputLorem_OutputNotCapitalized()
+        public void Main_InputRacecar_OutputPalindromeSevenChars()
         {
             const string expected =
-@"Enter text: <<Lorem
->>Lorem";
+@"Enter a palindrome: <<racecar
+>>The palindrome ""racecar"" is 7 characters.";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, Uppercase.Main);
+                expected, PalindromeLength.Main);
         }
     }
 }

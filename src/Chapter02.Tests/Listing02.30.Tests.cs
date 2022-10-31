@@ -1,5 +1,4 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_30.Tests
 {
@@ -7,23 +6,24 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_30.Tests
     public class ProgramTests
     {
         [TestMethod]
-        public void Main_UsingTryParseWithInlineOut_Pi()
+        public void Main_TryParseStringValidNumber_CorrectlyParsed()
         {
-            string expected = $"Enter a number: <<{System.Math.PI}>>input was parsed successfully to {System.Math.PI}.>>{Environment.NewLine}'number' currently has the value: { System.Math.PI }";
+            const string expected =
+                @"Enter a number: <<42>>";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
                 expected, Program.Main);
-
         }
 
         [TestMethod]
-        public void Main_UsingTryParseWithInlineOut_Pie()
+        public void Main_TryParseStringNonNumber_IncorrectInput()
         {
-            string expected = @$"Enter a number: <<pie>>The text entered was not a valid number.
-'number' currently has the value: { default(int) }";
+            const string expected =
+@"Enter a number: <<forty-two
+>>The text entered was not a valid number.";
+
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
                 expected, Program.Main);
-
         }
     }
 }
