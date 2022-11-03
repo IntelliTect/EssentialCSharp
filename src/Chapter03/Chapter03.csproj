@@ -13,7 +13,6 @@
   <Import Project="..\Chapter.props" />
   <ItemGroup>
     <Compile Remove="Listing03.02.DereferencingAnUnassignedVariable.cs" />
-    <Compile Remove="Listing03.03.EnablingNullableProjectWide.cs" />
     <Compile Remove="Listing03.06.TheCSharpEquivalentOfCompilerGeneratedCILCodeForAValueTupleReturn.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -25,7 +24,6 @@
     <None Include="Listing03.02.DereferencingAnUnassignedVariable.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Listing03.03.EnablingNullableProjectWide.cs" />
     <None Include="Listing03.06.TheCSharpEquivalentOfCompilerGeneratedCILCodeForAValueTupleReturn.cs" />
   </ItemGroup>
 </Project>
