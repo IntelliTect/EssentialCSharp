@@ -15,26 +15,28 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Table03_02
         // 2.
         static public void Assignment()
         {
-            string[] languages = { "C#", "COBOL", "Java",
+            string[] languages = {
+                "C#", "COBOL", "Java",
                 "C++", "TypeScript", "Pascal",
                 "Python", "Lisp", "JavaScript"};
-            languages = new string[9];
-            languages = new string[]{"C#", "COBOL", "Java",
+            languages = new string[]{
+                "C#", "COBOL", "Java",
                 "C++", "TypeScript", "Pascal",
                 "Python", "Lisp", "JavaScript" };
             // Multidimensional array assignment
             // and initialization
-            int[,] cells = new int[3, 3] {
+            int[,] cells = new [,] {
                 { 1, 0, 2},
                 { 1, 2, 0},
                 { 1, 2, 1}
             };
+            languages = new string[9];
         }
 
         // 3.
         static public void ForwardAndReverseAccessingAnArray()
         {
-            string[] languages = new string[]{
+            string[] languages = new []{
                 "C#", "COBOL", "Java",
                 "C++", "TypeScript", "Visual Basic",
                 "Python", "Lisp", "JavaScript"};
@@ -51,7 +53,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Table03_02
         // 4.
         static public void Ranges()
         {
-            string[] languages = new string[]{
+            string[] languages = new []{
                 "C#", "COBOL", "Java",
                 "C++", "TypeScript", "Visual Basic",
                 "Python", "Lisp", "JavaScript"};
