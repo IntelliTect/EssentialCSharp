@@ -5,6 +5,7 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Diagnostics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.CodeDom.Compiler;
+using System.Globalization;
 using System.Text;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Table03_03.Tests
@@ -53,10 +54,21 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Table03_03.Tests
             CompileError[] compilerErrors = await CompilerAssert.CompileAsync(code);
             TestContext.WriteLine("CompileIds:" + string.Join(", ", compilerErrors.Select(item => item.Id).ToArray()));
             CollectionAssert.AreEquivalent(errorIds, compilerErrors.Select(item => item.Id).ToList());
-            foreach(CompileError item in compilerErrors)
+            if (CultureInfo.CurrentCulture.Name != "en-US")
             {
-                TestContext.WriteLine($"{{\"{item.Id}\", \"{item.Message}\"}}");
-                if (CompilerErrorMessages[item.Id] != null) Assert.AreEqual(item.Message, CompilerErrorMessages[item.Id]);
+                TestContext.WriteLine("Due to Culture, compiler error messages are not the same:");
+            }
+            foreach (CompileError item in compilerErrors)
+            {
+                if (CultureInfo.CurrentCulture.Name == "en-US")
+                {
+                    TestContext.WriteLine($"{{\"{item.Id}\", \"{item.Message}\"}}");
+                    if (CompilerErrorMessages[item.Id] != null) Assert.AreEqual(item.Message, CompilerErrorMessages[item.Id]);
+                }
+                else
+                {
+                    TestContext.WriteLine($"\t\"{item.Message}\" != \"{CompilerErrorMessages[item.Id]}\"");
+                }
             }
             //Assert.IsTrue(compilerErrors.Select(item=>item.Id).SequenceEqual(errorIds));
         }
