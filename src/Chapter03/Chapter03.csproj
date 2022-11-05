@@ -13,7 +13,7 @@
   <Import Project="..\Chapter.props" />
   <ItemGroup>
     <Compile Remove="Listing03.02.DereferencingAnUnassignedVariable.cs" />
-    <Compile Remove="Listing03.05.TheCSharpEquivalentOfCompilerGeneratedCILCodeForAValueTupleReturn.cs" />
+    <Compile Remove="Listing03.04.TheCSharpEquivalentOfCompilerGeneratedCILCodeForAValueTupleReturn.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\Shared\Program.cs">
@@ -24,7 +24,7 @@
     <None Include="Listing03.02.DereferencingAnUnassignedVariable.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Listing03.05.TheCSharpEquivalentOfCompilerGeneratedCILCodeForAValueTupleReturn.cs" />
+    <None Include="Listing03.04.TheCSharpEquivalentOfCompilerGeneratedCILCodeForAValueTupleReturn.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="Table03.03.CommonArrayCodingErrors.cs">
