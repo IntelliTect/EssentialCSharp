@@ -1,10 +1,10 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_27
 {
-    #region INCLUDE
     public class ProgrammingLanguages
     {
         public static void Main()
         {
+            #region INCLUDE
             string[] languages = new string[]{
                 "C#", "COBOL", "Java",
                 "C++", "TypeScript", "Swift",
@@ -44,8 +44,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_27
                     $"{ languages[0],-20 }\t{ languages[^1],-20 }");
             Console.WriteLine(
                 $"After clearing, the array size is: { languages.Length }");
+            #endregion INCLUDE
         }
     }
-    #endregion INCLUDE
 }
 

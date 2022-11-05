@@ -1,10 +1,10 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_31
 {
-    #region INCLUDE
     public class Palindrome
     {
         public static void Main()
         {
+            #region INCLUDE
             string reverse, palindrome;
             char[] temp;
 
@@ -37,7 +37,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_31
                 Console.WriteLine(
                     $"\"{palindrome}\" is NOT a palindrome.");
             }
+            #endregion INCLUDE
         }
     }
-    #endregion INCLUDE
 }
