@@ -1,10 +1,6 @@
 using Microsoft.CodeAnalysis.CSharp.Scripting;
 using Microsoft.CodeAnalysis.Scripting;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
 {
@@ -41,8 +37,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
         // override object.Equals
         public override bool Equals(object? obj)
         {
-            return (obj is CompileError)
-              && Equals((CompileError)obj);
+            return (obj is CompileError error)
+              && Equals(error);
         }
 
         // Implemented IEquitable<T>
@@ -68,52 +64,60 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
     }
     static public class CompilerAssert
     {
-            async static public Task<CompileError[]> ExpectErrorsInFileAsync(
-                string fileName, params CompileError[] diagnostics)
-            {
-                string sourceCode =
-                    (await File.ReadAllLinesAsync(fileName))
-                    // Namespace is not supported so we need to remove 
-                    // it's declaration (and curlys) or take a different approach than C# Scripting.
-                    .Aggregate(
-                        (string result, string item) =>
-                            result += $"\n{item}");
+        async static public Task<CompileError[]> ExpectErrorsInFileAsync(
+            string fileName, params CompileError[] diagnostics)
+        {
+            string sourceCode =
+                (await File.ReadAllLinesAsync(fileName))
+                // Namespace is not supported so we need to remove 
+                // it's declaration (and curlys) or take a different approach than C# Scripting.
+                .Aggregate(
+                    (string result, string item) =>
+                        result += $"\n{item}");
 
             return await ExpectErrorsAsync(sourceCode, diagnostics);
-            }
+        }
 
-            async static public Task<CompileError[]> ExpectErrorsAsync(
+        async static public Task<CompileError[]> ExpectErrorsAsync(
             string sourceCode, params CompileError[] diagnostics)
         {
+            CompileError[] actualCompileErrors = await CompileAsync(sourceCode);
+
+            if (diagnostics is { } && diagnostics.Length > 0)
+            {
+                Assert.AreEqual<int>(diagnostics.Length, actualCompileErrors.Length,
+                    "The number of errors returned does not match what was expected.");
+
+                for (int i = 0; i < actualCompileErrors.Length; i++)
+                {
+                    // Compare Id's first as that is more meaningful.
+                    Assert.AreEqual<string>(diagnostics[i].Id, actualCompileErrors[i].Id,
+                        $"The expected Ids do not match for item {i}: " +
+                        $"{diagnostics[i].Id}: {diagnostics[i].Message} <> {actualCompileErrors[i].Id}: {actualCompileErrors[i].Message}");
+                }
+                return actualCompileErrors;
+            }
+
+            Assert.Fail("The expected compilation errors did not occur.");
+            return null!;  // This code will never execute due to the Fail line above.
+        }
+        async static public Task<CompileError[]> CompileAsync(
+            string sourceCode)
+        {
+            CompileError[] actualCompileErrors = Array.Empty<CompileError>();
             try
             {
                 await CSharpScript.EvaluateAsync(sourceCode);
             }
-            catch(CompilationErrorException exception)
+            catch (CompilationErrorException exception)
             {
                 Assert.IsTrue(exception.Diagnostics.Length > 0);
 
-                CompileError[] actualCompileErrors;
                 actualCompileErrors = exception.Diagnostics.Select(item =>
                     new CompileError(item.Id, item.GetMessage())).ToArray();
 
-                if (diagnostics is { } && diagnostics.Length > 0)
-                {
-                    Assert.AreEqual<int>(diagnostics.Length, actualCompileErrors.Length,
-                        "The number of errors returned does not match what was expected.");
-
-                    for (int i = 0; i < actualCompileErrors.Length; i++)
-                    {
-                        // Compare Id's first as that is more meaningful.
-                        Assert.AreEqual<string>(diagnostics[i].Id, actualCompileErrors[i].Id,
-                            $"The expected Ids do not match for item {i}: " +
-                            $"{diagnostics[i].Id}: {diagnostics[i].Message} <> {actualCompileErrors[i].Id}: {actualCompileErrors[i].Message}");
-                    }
-                }
-                return actualCompileErrors;
             }
-            Assert.Fail("The expected compilation errors did not occur.");
-            return null!;  // This code will never execute due to the Fail line above.
+            return actualCompileErrors;
         }
     }
 }

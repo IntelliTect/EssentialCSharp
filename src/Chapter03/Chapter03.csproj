@@ -26,4 +26,9 @@
     </None>
     <None Include="Listing03.05.TheCSharpEquivalentOfCompilerGeneratedCILCodeForAValueTupleReturn.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Table03.03.CommonArrayCodingErrors.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+  </ItemGroup>
 </Project>
