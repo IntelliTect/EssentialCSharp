@@ -6,10 +6,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_19
         {
             #region INCLUDE
             int[][] cells = {
-                new int[] {1, 0, 2, 0},
-                new int[] {1, 2, 0},
-                new int[] {1, 2},
-                new int[] {1}
+                new [] {1, 0, 2, 0},
+                new [] {1, 2, 0},
+                new [] {1, 2},
+                new [] {1}
             };
             #endregion INCLUDE
         }
