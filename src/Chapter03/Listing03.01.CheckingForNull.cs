@@ -14,12 +14,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_01
             #endregion EXCLUDE
             if (number is null)
             {
-                System.Console.WriteLine(
+                Console.WriteLine(
                     "'number' requires a value and cannot be null");
             }
             else
             {
-                System.Console.WriteLine(
+                Console.WriteLine(
                     $"'number' doubled is { number * 2 }.");
             }
         }

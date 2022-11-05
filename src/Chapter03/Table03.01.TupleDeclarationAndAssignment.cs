@@ -7,7 +7,7 @@
         {
             (string country, string capital, double gdpPerCapita) =
                 ("Burundi", "Bujumbura", 263.67);
-            System.Console.WriteLine(
+            Console.WriteLine(
                 $@"The poorest country in the world in 2017 was {
                     country}, {capital}: {gdpPerCapita}");
         }
@@ -21,7 +21,7 @@
 
             (country, capital, gdpPerCapita) =
                 ("Burundi", "Bujumbura", 263.67);
-            System.Console.WriteLine(
+            Console.WriteLine(
                 $@"The poorest country in the world in 2017 was {
                     country}, {capital}: {gdpPerCapita}");
         }
@@ -31,7 +31,7 @@
         {
             (var country, var capital, var gdpPerCapita) =
                 ("Burundi", "Bujumbura", 263.67);
-            System.Console.WriteLine(
+            Console.WriteLine(
                 $@"The poorest country in the world in 2017 was {
                     country}, {capital}: {gdpPerCapita}");
         }
@@ -41,7 +41,7 @@
         {
             var (country, capital, gdpPerCapita) =
                 ("Burundi", "Bujumbura", 263.67);
-            System.Console.WriteLine(
+            Console.WriteLine(
                 $@"The poorest country in the world in 2017 was {
                     country}, {capital}: {gdpPerCapita}");
         }
@@ -51,7 +51,7 @@
         {
             (string Name, string Capital, double GdpPerCapita) countryInfo =
                 ("Burundi", "Bujumbura", 263.67);
-            System.Console.WriteLine(
+            Console.WriteLine(
                 $@"The poorest country in the world in 2017 was {
                     countryInfo.Name}, {countryInfo.Capital}: {
                     countryInfo.GdpPerCapita}");
@@ -62,7 +62,7 @@
         {
             var countryInfo =
                 (Name: "Burundi", Capital: "Bujumbura", GdpPerCapita: 263.67);
-            System.Console.WriteLine(
+            Console.WriteLine(
               $@"The poorest country in the world in 2017 was {
               countryInfo.Name}, {countryInfo.Capital}: {
               countryInfo.GdpPerCapita}");
@@ -74,7 +74,7 @@
         {
             var countryInfo =
                 ("Burundi", "Bujumbura", 263.67);
-            System.Console.WriteLine(
+            Console.WriteLine(
               $@"The poorest country in the world in 2017 was {
               countryInfo.Item1}, {countryInfo.Item2}: {
               countryInfo.Item3}");
@@ -87,7 +87,7 @@
         {
             var countryInfo =
                 (Name: "Burundi", Capital: "Bujumbura", GdpPerCapita: 263.67);
-            System.Console.WriteLine(
+            Console.WriteLine(
               $@"The poorest country in the world in 2017 was {
               countryInfo.Item1}, {countryInfo.Item2}: {
               countryInfo.Item3}");
@@ -110,7 +110,7 @@
 
             var countryInfo =
                 (country, capital, gdpPerCapita);
-            System.Console.WriteLine(
+            Console.WriteLine(
                 $@"The poorest country in the world in 2017 was {
                     countryInfo.country}, {countryInfo.capital}: {
                     countryInfo.gdpPerCapita}");

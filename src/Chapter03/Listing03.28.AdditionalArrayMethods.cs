@@ -11,38 +11,38 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_28
                 "Python", "Lisp", "JavaScript"};
 
             #region HIGHLIGHT
-            System.Array.Sort(languages);
+            Array.Sort(languages);
             #endregion HIGHLIGHT
 
             string searchString = "COBOL";
             #region HIGHLIGHT
-            int index = System.Array.BinarySearch(
+            int index = Array.BinarySearch(
                 languages, searchString);
             #endregion HIGHLIGHT
-            System.Console.WriteLine(
+            Console.WriteLine(
                 "The wave of the future, "
                 + $"{ searchString }, is at index { index }.");
 
-            System.Console.WriteLine();
-            System.Console.WriteLine(
+            Console.WriteLine();
+            Console.WriteLine(
                 $"{ "First Element",-20 }\t{ "Last Element",-20 }");
-            System.Console.WriteLine(
+            Console.WriteLine(
                 $"{ "-------------",-20 }\t{ "------------",-20 }");
-            System.Console.WriteLine(
+            Console.WriteLine(
                     $"{ languages[0],-20 }\t{ languages[^1],-20 }");
             #region HIGHLIGHT
-            System.Array.Reverse(languages);
+            Array.Reverse(languages);
             #endregion HIGHLIGHT
-            System.Console.WriteLine(
+            Console.WriteLine(
                     $"{ languages[0],-20 }\t{ languages[^1],-20 }");
             // Note this does not remove all items from the array
             // Rather it sets each item to the type's default value
             #region HIGHLIGHT
-            System.Array.Clear(languages, 0, languages.Length);
+            Array.Clear(languages, 0, languages.Length);
             #endregion HIGHLIGHT
-            System.Console.WriteLine(
+            Console.WriteLine(
                     $"{ languages[0],-20 }\t{ languages[^1],-20 }");
-            System.Console.WriteLine(
+            Console.WriteLine(
                 $"After clearing, the array size is: { languages.Length }");
         }
     }

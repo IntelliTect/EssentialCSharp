@@ -5,13 +5,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_04
     {
         public static void Main()
         {
-            System.Console.Write("Enter text: ");
-            var text = System.Console.ReadLine();
+            Console.Write("Enter text: ");
+            var text = Console.ReadLine();
 
             // Return a new string in uppercase
             var uppercase = text.ToUpper();
 
-            System.Console.WriteLine(uppercase);
+            Console.WriteLine(uppercase);
         }
     }
     #endregion INCLUDE
