@@ -43,11 +43,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Table03_02
             // Retrieve fifth item in languages array (TypeScript)
             string language = languages[4];
             // Write “TypeScript”
-            System.Console.WriteLine(language);
+            Console.WriteLine(language);
             // Retrieve second item from the end (Python)
             language = languages[^3];
             // Write “Python”
-            System.Console.WriteLine(language);
+            Console.WriteLine(language);
         }
 
         // 4.
@@ -58,19 +58,19 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Table03_02
                 "C++", "TypeScript", "Visual Basic",
                 "Python", "Lisp", "JavaScript"};
 
-            System.Console.WriteLine($@"^3..^0: {
+            Console.WriteLine($@"^3..^0: {
                 // Python, Lisp, JavaScript
                 string.Join(", ", languages[^3..^0])
             }");
-            System.Console.WriteLine($@"^3..: {
+            Console.WriteLine($@"^3..: {
                 // Python, Lisp, JavaScript
                 string.Join(", ", languages[^3..])
             }");
-            System.Console.WriteLine($@" 3..^3: {
+            Console.WriteLine($@" 3..^3: {
                 // C++, TypeScript, Visual Basic
                 string.Join(", ", languages[3..^3])
             }");
-            System.Console.WriteLine($@"  ..^6: {
+            Console.WriteLine($@"  ..^6: {
                 // C#, COBOL, Java
                 string.Join(", ", languages[..^6])
             }");

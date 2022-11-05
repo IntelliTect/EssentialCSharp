@@ -8,8 +8,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_32
             string reverse, palindrome;
             char[] temp;
 
-            System.Console.Write("Enter a palindrome: ");
-            palindrome = System.Console.ReadLine();
+            Console.Write("Enter a palindrome: ");
+            palindrome = Console.ReadLine();
 
             // Remove spaces and convert to lowercase
             reverse = palindrome.Replace(" ", "");
@@ -22,19 +22,19 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_32
 
             #region HIGHLIGHT
             // Reverse the array
-            System.Array.Reverse(temp);
+            Array.Reverse(temp);
             #endregion HIGHLIGHT
 
             // Convert the array back to a string and
             // check if reverse string is the same
             if (reverse == new string(temp))
             {
-                System.Console.WriteLine(
+                Console.WriteLine(
                     $"\"{palindrome}\" is a palindrome.");
             }
             else
             {
-                System.Console.WriteLine(
+                Console.WriteLine(
                     $"\"{palindrome}\" is NOT a palindrome.");
             }
         }

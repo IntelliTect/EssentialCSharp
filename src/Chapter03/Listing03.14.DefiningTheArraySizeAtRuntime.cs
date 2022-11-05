@@ -6,8 +6,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_14
         {
             #region INCLUDE
             string[] groceryList;
-            System.Console.Write("How many items on the list? ");
-            int size = int.Parse(System.Console.ReadLine());
+            Console.Write("How many items on the list? ");
+            int size = int.Parse(Console.ReadLine());
             groceryList = new string[size];
             // ...
             #endregion INCLUDE

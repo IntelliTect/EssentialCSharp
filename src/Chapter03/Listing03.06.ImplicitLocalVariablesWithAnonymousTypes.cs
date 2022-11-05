@@ -12,9 +12,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_06
                 new { Title = "Phonograph",
                     YearOfPublication = "1877" };
 
-            System.Console.WriteLine(
+            Console.WriteLine(
                 $"{patent1.Title} ({patent1.YearOfPublication})");
-            System.Console.WriteLine(
+            Console.WriteLine(
                 $"{patent2.Title} ({patent2.YearOfPublication})");
         }
     }
