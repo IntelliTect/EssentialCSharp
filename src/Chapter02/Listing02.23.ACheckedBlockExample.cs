@@ -1,10 +1,10 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_23
 {
-    #region INCLUDE
     public class Program
     {
         public static void Main()
         {
+            #region INCLUDE
             #region HIGHLIGHT
             checked
             {
@@ -16,7 +16,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_23
             #region HIGHLIGHT
             }
             #endregion HIGHLIGHT
+            #endregion INCLUDE
         }
     }
-    #endregion INCLUDE
 }
