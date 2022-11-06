@@ -101,7 +101,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
             Assert.Fail("The expected compilation errors did not occur.");
             return null!;  // This code will never execute due to the Fail line above.
         }
-        async static public Task<CompileError[]> CompileAsync(
+        public static async Task<CompileError[]> CompileAsync(
             string sourceCode)
         {
             CompileError[] actualCompileErrors = Array.Empty<CompileError>();
