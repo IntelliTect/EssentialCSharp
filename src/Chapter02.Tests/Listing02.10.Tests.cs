@@ -8,7 +8,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_10.Tests
         [TestMethod]
         public void Main_WriteBooleanStatements()
         {
-            const string expected = "1";
+            const string expected = "Help Requested: True";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
                 expected, Program.Main);

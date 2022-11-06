@@ -5,12 +5,15 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_10
         public static void Main()
         {
             #region INCLUDE
-            string option = "help";
-
-            int comparison = string.Compare(option, "/Help", true);
+            bool ignoreCase = true;
+            string option = "/help";
+            // ...
+            int comparison = string.Compare(option, "/Help", ignoreCase);
+            bool isHelpRequested = (comparison == 0);
+            // Displays: Help Requested: True
+            Console.WriteLine($"Help Requested: {isHelpRequested}");
             #endregion INCLUDE
 
-            Console.WriteLine($"{comparison}");
         }
     }
 }
