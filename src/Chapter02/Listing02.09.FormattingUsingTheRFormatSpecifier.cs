@@ -14,7 +14,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_09
             result = double.Parse(text);
             Console.WriteLine($"{result == number}: {result} == {number}");
 
-            text = string.Format("{0:R}", number);
+            text = $"{number:R}";
             result = double.Parse(text);
             Console.WriteLine($"{result == number}: {result} == {number}");
 
