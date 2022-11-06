@@ -83,7 +83,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
         {
             CompileError[] actualCompileErrors = await CompileAsync(sourceCode);
 
-            if (diagnostics is { } && diagnostics.Length > 0)
+            if (diagnostics?.Length > 0)
             {
                 Assert.AreEqual<int>(diagnostics.Length, actualCompileErrors.Length,
                     "The number of errors returned does not match what was expected.");
