@@ -3,16 +3,16 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_47.Tests
 {
     [TestClass]
-    public class TicTacToeTests
+    public class ProgramTests
     {
         [TestMethod]
-        public void Main_DetermineRemainingMoves_WriteRemainingMoves()
+        public void MainTest()
         {
             const string expected =
-                @"The available moves are as follows: 1 2 3 4 5 6 7 8 9 ";
+"0<5\t1<4\t2<3\t3>2\t4>1\t5>0\t";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, TicTacToe.Main);
+                expected, Program.Main);
         }
     }
 }

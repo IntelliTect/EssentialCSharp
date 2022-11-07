@@ -1,4 +1,4 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_27.Tests
 {
@@ -8,7 +8,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_27.Tests
         [TestMethod]
         public void MainTest()
         {
-            const string expected = @"Enter the number of players (1 or 2):";
+            string expected = 
+$@"The area of the circle is: {0.00M}";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
                 expected, Program.Main);

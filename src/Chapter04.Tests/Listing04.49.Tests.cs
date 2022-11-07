@@ -6,52 +6,34 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_49.Tests
     public class ProgramTests
     {
         [TestMethod]
-        public void ValidateAndMove_Input4_ValidInput()
+        public void Main_Input4_ValidInput()
         {
             const string expected =
                 @"";
 
-            int[] playerPositions = new int[1];
-            int currentPlayer = 0;
-            string input = "4";
-
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected,
-                _ => Program.ValidateAndMove(playerPositions, currentPlayer, input),
-                true);
+                expected, () => Program.Main("4"));
         }
         
         [TestMethod]
-        public void ValidateAndMove_Input0_InvalidInput()
+        public void Main_Input0_InvalidInput()
         {
             const string expected =
 @"
 ERROR:  Enter a value from 1-9. Push ENTER to quit";
 
-            int[] playerPositions = new int[1];
-            int currentPlayer = 0;
-            string input = "10";
-
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected,
-                _ => Program.ValidateAndMove(playerPositions, currentPlayer, input),
-                false);
+                expected, () => Program.Main("0"));
         }
         
         [TestMethod]
-        public void ValidateAndMove_InputQuit_ExitProgram()
+        public void Main_InputQuit_ExitProgram()
         {
             const string expected =
                 @"";
 
-            int[] playerPositions = new int[1];
-            int currentPlayer = 0;
-            string input = "quit";
-
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, 
-                _ => Program.ValidateAndMove(playerPositions, currentPlayer, input), 
-                true);
+                expected, () => Program.Main("quit"));
         }
     }
 }

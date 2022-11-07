@@ -3,37 +3,16 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_48.Tests
 {
     [TestClass]
-    public class ProgramTests
+    public class TicTacToeTests
     {
         [TestMethod]
-        public void Main_Input4_ValidInput()
+        public void Main_DetermineRemainingMoves_WriteRemainingMoves()
         {
             const string expected =
-                @"";
+                @"The available moves are as follows: 1 2 3 4 5 6 7 8 9 ";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, () => Program.Main("4"));
-        }
-        
-        [TestMethod]
-        public void Main_Input0_InvalidInput()
-        {
-            const string expected =
-@"
-ERROR:  Enter a value from 1-9. Push ENTER to quit";
-
-            IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, () => Program.Main("0"));
-        }
-        
-        [TestMethod]
-        public void Main_InputQuit_ExitProgram()
-        {
-            const string expected =
-                @"";
-
-            IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, () => Program.Main("quit"));
+                expected, TicTacToe.Main);
         }
     }
 }

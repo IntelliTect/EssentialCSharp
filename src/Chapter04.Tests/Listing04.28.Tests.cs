@@ -6,10 +6,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_28.Tests
     public class ProgramTests
     {
         [TestMethod]
-        public void Main_Input5_BooleanConditionHit()
+        public void MainTest()
         {
-            const string expected =
-                @"Tic-tac-toe has more than 5 maximum turns.";
+            const string expected = @"Enter the number of players (1 or 2):";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
                 expected, Program.Main);
