@@ -6,13 +6,28 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_39.Tests
     public class ProgramTests
     {
         [TestMethod]
-        public void Main_Negative7RightShiftBitwiseBy2()
+        public void ChangeTemperatureWithoutConditionalOperator()
         {
-            const string expected =
-                @"x = -2.";
+            bool eventFired = false;
+            Thermostat thermostat = new Thermostat();
+            thermostat.PropertyChanged += (object? sender, System.EventArgs e) =>
+            {
+                eventFired = true;
+            };
+            thermostat.Temperature = 42;
+            Assert.IsTrue(eventFired);
+        }
 
-            IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, Program.Main);
+        public static void ChangeHumidityWithConditionalOperator()
+        {
+            bool eventFired = false;
+            Thermostat thermostat = new Thermostat();
+            thermostat.PropertyChanged += (object? sender, System.EventArgs e) =>
+            {
+                eventFired = true;
+            };
+            thermostat.Humidity = 42;
+            Assert.IsTrue(eventFired);
         }
     }
 }

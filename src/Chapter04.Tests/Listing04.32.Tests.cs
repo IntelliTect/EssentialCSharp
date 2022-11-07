@@ -6,23 +6,23 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_32.Tests
     public class ProgramTests
     {
         [TestMethod]
-        public void Main_Enter33ForHourOfDay_TimeInvalid()
+        public void Main_InputIsEmpty_PlayerQuitConditionHit()
         {
             const string expected =
-                @"The time you entered is invalid.";
+                @"Player Inigo quit!!";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, ()=>Program.Main("33"));
+                expected, ()=>Program.Main("","Inigo"));
         }
         
         [TestMethod]
-        public void Main_EnterNegative1ForHourOfDay_TimeInvalid()
+        public void Main_InputIsQuit_PlayerQuitConditionHit()
         {
             const string expected =
-                @"The time you entered is invalid.";
+                @"Player Inigo quit!!";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, () => Program.Main("-1"));
+                expected, () => Program.Main("quit", "Inigo"));
         }
     }
 }

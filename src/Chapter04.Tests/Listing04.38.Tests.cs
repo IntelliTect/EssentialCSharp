@@ -1,4 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_38.Tests
 {
@@ -6,28 +7,51 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_38.Tests
     public class ProgramTests
     {
         [TestMethod]
-        public void ChangeTemperatureWithoutConditionalOperator()
+        public void GivenSegmentsIsNull()
         {
-            bool eventFired = false;
-            Thermostat thermostat = new Thermostat();
-            thermostat.PropertyChanged += (object? sender, System.EventArgs e) =>
-            {
-                eventFired = true;
-            };
-            thermostat.Temperature = 42;
-            Assert.IsTrue(eventFired);
+            const string expected =
+                @"There were no segments to combine.";
+
+            IntelliTect.TestTools.Console.ConsoleAssert.Expect(
+                expected, ()=>Program.Main(null!));
         }
 
-        public static void ChangeHumidityWithConditionalOperator()
+        [TestMethod]
+        public void GivenSegmentsEmpty()
         {
-            bool eventFired = false;
-            Thermostat thermostat = new Thermostat();
-            thermostat.PropertyChanged += (object? sender, System.EventArgs e) =>
+            const string expected =
+                @"There were no segments to combine.";
+
+            IntelliTect.TestTools.Console.ConsoleAssert.Expect(
+                expected, () => Program.Main(Array.Empty<string>()));
+        }
+
+        [TestMethod]
+        public void GivenMultipleSegments()
+        {
+            const string expected =
+                @"Uri: first/second/third";
+
+            IntelliTect.TestTools.Console.ConsoleAssert.Expect(
+                expected, () => Program.Main(new[] { "first", "second", "third" }));
+        }
+
+        [TestMethod]
+        public void MyTestMethod()
+        {
+            string? uri = null;
+
+            if (uri is object thing)
             {
-                eventFired = true;
-            };
-            thermostat.Humidity = 42;
-            Assert.IsTrue(eventFired);
+                System.Console.WriteLine(
+                    $"Uri is: { thing }");
+            }
+            else // (uri is null)
+            {
+                System.Console.WriteLine(
+                    "Uri is null");
+            }
+
         }
     }
 }
