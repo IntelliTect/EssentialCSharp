@@ -1,10 +1,10 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_47
 {
-    #region INCLUDE
     public class TicTacToe // Declares the TicTacToe class
     {
         public static void Main() // Declares the entry point of the program
         {
+            #region INCLUDE
             // Hardcode initial board as follows
             // ---+---+---
             //  1 | 2 | 3
@@ -28,7 +28,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_47
                     Console.Write($"{ cell } ");
                 }
             }
+            #endregion INCLUDE
         }
     }
-    #endregion INCLUDE
 }

@@ -2,11 +2,11 @@
 #pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_20
 {
-    #region INCLUDE
     public class TicTacToe // Declares the TicTacToe class
     {
         public static void Main() // Declares the entry point of the program
         {
+            #region INCLUDE
             string input;
 
             // Prompt the user to select a 1- or 2- player game
@@ -27,7 +27,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_20
                 Console.WriteLine(
                     "Play against another player.");
             #endregion HIGHLIGHT
+            #endregion INCLUDE
         }
     }
-    #endregion INCLUDE
 }

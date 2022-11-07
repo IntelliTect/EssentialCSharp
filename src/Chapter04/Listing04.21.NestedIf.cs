@@ -2,11 +2,11 @@
 #pragma warning disable CS8604 // Possible null reference argument
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_21
 {
-    #region INCLUDE
     public class TicTacToeTrivia
     {
         public static void Main()
         {
+            #region INCLUDE
             int input;    // Declare a variable to store the input
 
             Console.Write(
@@ -39,7 +39,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_21
                 Console.WriteLine(  // line 33
                     "Correct, tic-tac-toe " +
                     "has a maximum of 9 turns.");
+            #endregion INCLUDE
        } 
     }
-    #endregion INCLUDE
 }

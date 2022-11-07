@@ -3,11 +3,11 @@
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_24
 {
-    #region INCLUDE
     public class CircleAreaCalculator
     {
         public static void Main()
         {
+            #region INCLUDE
             double radius;  // Declare a variable to store the radius
             double area;    // Declare a variable to store the area
 
@@ -31,7 +31,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_24
                 Console.WriteLine(
                     $"{radius} is not a valid radius.");
             }
+            #endregion INCLUDE
         }
     }
-    #endregion INCLUDE
 }
