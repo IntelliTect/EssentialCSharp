@@ -2,11 +2,11 @@
 #pragma warning disable CS8604 // Possible null reference argument
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_03
 {
-    #region INCLUDE
     public class Division
     {
         public static void Main()
         {
+            #region INCLUDE
             int numerator;
             int denominator;
             int quotient;
@@ -24,8 +24,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_03
             #endregion HIGHLIGHT
 
             Console.WriteLine(
-                $"{numerator} / {denominator} = {quotient} with remainder {remainder}");
+                $"{numerator} / {denominator} = {
+                    quotient} with remainder {remainder}");
+            #endregion INCLUDE
         }
     }
-    #endregion INCLUDE
 }

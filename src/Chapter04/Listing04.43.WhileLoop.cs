@@ -1,10 +1,10 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_43
 {
-    #region INCLUDE
     public class FibonacciCalculator
     {
         public static void Main()
         {
+            #region INCLUDE
             decimal current;
             decimal previous;
             decimal temp;
@@ -32,7 +32,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_43
 
             Console.WriteLine(
                       $"The Fibonacci number following this is { current }");
+            #endregion INCLUDE
         }
     }
-    #endregion INCLUDE
 }
