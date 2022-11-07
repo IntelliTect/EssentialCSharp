@@ -1,5 +1,3 @@
-using System;
-
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_26
 {
     public class Program
