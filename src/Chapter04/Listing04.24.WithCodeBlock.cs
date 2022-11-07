@@ -12,24 +12,24 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_24
             double radius;  // Declare a variable to store the radius
             double area;    // Declare a variable to store the area
 
-            System.Console.Write("Enter the radius of the circle: ");
+            Console.Write("Enter the radius of the circle: ");
 
             // double.Parse converts the ReadLine() 
             // return to a double
-            string temp = System.Console.ReadLine();
+            string temp = Console.ReadLine();
             radius = double.Parse(temp);
             if(radius >= 0)
             #region HIGHLIGHT
             {
                 // Calculate the area of the circle
                 area = Math.PI * radius * radius;
-                System.Console.WriteLine(
+                Console.WriteLine(
                     $"The area of the circle is: {area:0.00}");
             }
             #endregion HIGHLIGHT
             else
             {
-                System.Console.WriteLine(
+                Console.WriteLine(
                     $"{radius} is not a valid radius.");
             }
         }

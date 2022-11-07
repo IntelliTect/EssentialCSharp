@@ -10,11 +10,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_43
             decimal temp;
             decimal input;
 
-            System.Console.Write("Enter a positive integer:");
+            Console.Write("Enter a positive integer:");
 
             // decimal.Parse convert the ReadLine to a decimal
             // If ReadLine returns null, use "42" as default input
-            input = decimal.Parse(System.Console.ReadLine() ?? "42");
+            input = decimal.Parse(Console.ReadLine() ?? "42");
 
             // Initialize current and previous to 1, the first
             // two numbers in the Fibonacci series
@@ -30,7 +30,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_43
                 // statement caused current to exceed input
             }
 
-            System.Console.WriteLine(
+            Console.WriteLine(
                       $"The Fibonacci number following this is { current }");
         }
     }

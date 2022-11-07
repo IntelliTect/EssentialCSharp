@@ -24,12 +24,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_37
             // uri = segments?[0];
             if (uri is null || length is 0)
             {
-                System.Console.WriteLine(
+                Console.WriteLine(
                     "There were no segments to combine.");
             }
             else
             {
-                System.Console.WriteLine(
+                Console.WriteLine(
                     $"Uri: { uri }");
             }
             #endregion INCLUDE
