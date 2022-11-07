@@ -28,11 +28,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_62
 
             // Display the top line of dashes
             // ("\n---+---+---\n")
-            System.Console.Write(borders[2]);
+            Console.Write(borders[2]);
             foreach(char cell in cells)
             {
                 // Write out a cell value and the border that comes after it
-                System.Console.Write($" { cell } { borders[border] }");
+                Console.Write($" { cell } { borders[border] }");
 
                 // Increment to the next border
                 border++;

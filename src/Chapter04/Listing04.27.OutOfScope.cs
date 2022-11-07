@@ -13,9 +13,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_27
         public static void Main(string[] args)
         {
             string playerCount;
-            System.Console.Write(
+            Console.Write(
                 "Enter the number of players (1 or 2):");
-            playerCount = System.Console.ReadLine();
+            playerCount = Console.ReadLine();
             if (playerCount != "1" && playerCount != "2")
             {
                 #region HIGHLIGHT

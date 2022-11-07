@@ -10,7 +10,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_17
             #region HIGHLIGHT
             result = ++count;
             #endregion HIGHLIGHT
-            System.Console.WriteLine(
+            Console.WriteLine(
                 $"result = {result} and count = {count}");
             #endregion INCLUDE
         }

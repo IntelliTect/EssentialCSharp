@@ -6,9 +6,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_09
         {
             #region INCLUDE
             // Displays: -Infinity
-            System.Console.WriteLine(-1f / 0);
+            Console.WriteLine(-1f / 0);
             // Displays: Infinity
-            System.Console.WriteLine(3.402823E+38f * 2f);
+            Console.WriteLine(3.402823E+38f * 2f);
             #endregion INCLUDE
         }
     }

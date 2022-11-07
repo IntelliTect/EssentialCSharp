@@ -12,7 +12,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_28
             #endregion HIGHLIGHT
             {
                 // Input is less than 9
-                System.Console.WriteLine(
+                Console.WriteLine(
                     $"Tic-tac-toe has more than {input}" +
                      " maximum turns.");
             }

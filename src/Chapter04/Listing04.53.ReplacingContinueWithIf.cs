@@ -7,10 +7,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_53
             string email;
             bool insideDomain = false;
 
-            System.Console.WriteLine("Enter an email address: ");
-            email = System.Console.ReadLine() ?? string.Empty;
+            Console.WriteLine("Enter an email address: ");
+            email = Console.ReadLine() ?? string.Empty;
 
-            System.Console.Write("The email domain is: ");
+            Console.Write("The email domain is: ");
 
             #region INCLUDE
             // Iterate through each letter in the email address
@@ -18,7 +18,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_53
             {
                 if(insideDomain)
                 {
-                    System.Console.Write(letter);
+                    Console.Write(letter);
                 }
                 else
                 {

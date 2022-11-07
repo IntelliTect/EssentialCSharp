@@ -12,18 +12,18 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_03
             int quotient;
             int remainder;
 
-            System.Console.Write("Enter the numerator: ");
-            numerator = int.Parse(System.Console.ReadLine());
+            Console.Write("Enter the numerator: ");
+            numerator = int.Parse(Console.ReadLine());
 
-            System.Console.Write("Enter the denominator: ");
-            denominator = int.Parse(System.Console.ReadLine());
+            Console.Write("Enter the denominator: ");
+            denominator = int.Parse(Console.ReadLine());
 
             #region HIGHLIGHT
             quotient = numerator / denominator;
             remainder = numerator % denominator;
             #endregion HIGHLIGHT
 
-            System.Console.WriteLine(
+            Console.WriteLine(
                 $"{numerator} / {denominator} = {quotient} with remainder {remainder}");
         }
     }

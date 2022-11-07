@@ -9,7 +9,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_02
             decimal debt = -26457079712930.80M;
             #endregion INCLUDE
 
-            System.Console.WriteLine(debt);
+            Console.WriteLine(debt);
         }
     }
 }

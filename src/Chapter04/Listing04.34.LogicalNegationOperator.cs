@@ -10,7 +10,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_34
             bool result = !valid;
             #endregion HIGHLIGHT
             // Displays "result = True"
-            System.Console.WriteLine($"result = { result }");
+            Console.WriteLine($"result = { result }");
             #endregion INCLUDE
         }
     }

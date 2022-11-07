@@ -46,7 +46,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_50
             }
             #endregion HIGHLIGHT
 
-            System.Console.WriteLine(
+            Console.WriteLine(
                 $"Player { winner } was the winner");
         }
     }
