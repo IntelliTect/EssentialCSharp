@@ -14,8 +14,7 @@
   <ItemGroup>
     <Compile Remove="HelloWorld\**" />
     <Compile Remove="Listing01.01.HelloWorldInC#.cs" />
-    <Compile Remove="Listing01.01A.HelloWorldInC#.cs" />
-    <Compile Remove="Listing01.20.SampleCILOutput.cs" />
+    <Compile Remove="Listing01.22.SampleCILOutput.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\Shared\Program.cs">
@@ -24,6 +23,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Listing01.01.HelloWorldInC#.cs" />
-    <None Include="Listing01.20.SampleCILOutput.cs" />
+    <None Include="Listing01.22.SampleCILOutput.cs" />
   </ItemGroup>
 </Project>
