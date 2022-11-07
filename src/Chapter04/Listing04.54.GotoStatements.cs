@@ -1,5 +1,4 @@
 #pragma warning disable CS0219 // Variable is assigned but its value is never used
-#pragma warning disable IDE0059 // Unnecessary assignment of a value
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_54
 {
@@ -20,24 +19,29 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_54
                     case "/out":
                         isOutputSet = true;
                         isFiltered = false;
-                        #region HIGHLIGHT
+                        // ...
+                    #region HIGHLIGHT
                         goto default;
                     #endregion HIGHLIGHT
                     case "/f":
                         isFiltered = true;
                         isRecursive = false;
-                        #region HIGHLIGHT
+                        // ...
+                    #region HIGHLIGHT
                         goto default;
                     #endregion HIGHLIGHT
                     default:
                         if(isRecursive)
                         {
                             // Recurse down the hierarchy
+                            Console.WriteLine("Recursing...");
                             // ...
+
                         }
                         else if(isFiltered)
                         {
                             // Add option to list of filters
+                            Console.WriteLine("Filtering...");
                             // ...
                         }
                         break;
