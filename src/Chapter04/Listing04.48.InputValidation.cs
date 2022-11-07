@@ -31,7 +31,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_48
             }
             else
             {
-                System.Console.WriteLine(
+                Console.WriteLine(
                   "\nERROR:  Enter a value from 1-9. "
                   + "Push ENTER to quit");
             }

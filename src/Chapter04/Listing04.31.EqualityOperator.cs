@@ -9,7 +9,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_31
             #region INCLUDE
             if (input.Length == 0 || input == "quit")
             {
-                System.Console.WriteLine($"Player {currentPlayer} quit!!");
+                Console.WriteLine($"Player {currentPlayer} quit!!");
             }
             #endregion INCLUDE
         }

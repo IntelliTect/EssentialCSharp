@@ -17,7 +17,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_47
                 '1', '2', '3', '4', '5', '6', '7', '8', '9'
             };
 
-            System.Console.Write(
+            Console.Write(
                 "The available moves are as follows: ");
 
             // Write out the initial available moves
@@ -25,7 +25,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_47
             {
                 if(cell != 'O' && cell != 'X')
                 {
-                    System.Console.Write($"{ cell } ");
+                    Console.Write($"{ cell } ");
                 }
             }
         }

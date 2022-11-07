@@ -17,7 +17,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_36
             string fileName = GetFileName() ?? "config.json";
             string directory = GetConfigurationDirectory() ??
                 GetApplicationDirectory() ??
-                System.Environment.CurrentDirectory;
+                Environment.CurrentDirectory;
 
             // Null-coalescing assignment operator
             fullName ??= $"{ directory }/{ fileName }";

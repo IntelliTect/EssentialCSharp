@@ -6,12 +6,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Table04_04
         {
             if (uri != null)
             {
-                System.Console.WriteLine(
+                Console.WriteLine(
                     $"Uri is: { uri }");
             }
             else // (uri == null)
             {
-                System.Console.WriteLine(
+                Console.WriteLine(
                     "Uri is null");
             }
         }
@@ -19,12 +19,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Table04_04
         {
             if (uri != null)
             {
-                System.Console.WriteLine(
+                Console.WriteLine(
                     $"Uri is: { uri }");
             }
             else // (uri == null)
             {
-                System.Console.WriteLine(
+                Console.WriteLine(
                     "Uri is null");
             }
         }
@@ -32,12 +32,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Table04_04
         {
             if (uri != null)
             {
-                System.Console.WriteLine(
+                Console.WriteLine(
                     $"Uri is: { uri }");
             }
             else // (uri == null)
             {
-                System.Console.WriteLine(
+                Console.WriteLine(
                     "Uri is null");
             }
         }
