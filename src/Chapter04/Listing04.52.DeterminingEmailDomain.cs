@@ -1,14 +1,14 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_52
 {
-    #region INCLUDE
     public class EmailDomain
     {
         public static void Main()
         {
+            #region INCLUDE
             string email;
             bool insideDomain = false;
 
-            Console.WriteLine("Enter an email address: ");
+            Console.Write("Enter an email address: ");
             email = Console.ReadLine() ?? string.Empty;
 
             Console.Write("The email domain is: ");
@@ -27,7 +27,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_52
 
                 Console.Write(letter);
             }
+            #endregion INCLUDE
         }
     }
-    #endregion INCLUDE
 }

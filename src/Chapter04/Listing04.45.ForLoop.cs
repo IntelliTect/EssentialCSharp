@@ -1,11 +1,11 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_45
 {
-    #region INCLUDE
     public class BinaryConverter
     {
         public static void Main()
         {
-            const int size = 64;
+            #region INCLUDE
+            const int size = 64; // Also available from sizeof(ulong)
             ulong value;
             char bit;
 
@@ -24,7 +24,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_45
                 // Shift mask one location over to the right
                 mask >>= 1;
             }
+            #endregion INCLUDE
         }
     }
-    #endregion INCLUDE
 }

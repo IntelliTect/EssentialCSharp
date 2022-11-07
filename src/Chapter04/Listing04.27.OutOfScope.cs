@@ -7,11 +7,11 @@
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_27
 {
-    #region INCLUDE
     public class Program
     {
         public static void Main(string[] args)
         {
+            #region INCLUDE
             string playerCount;
             Console.Write(
                 "Enter the number of players (1 or 2):");
@@ -27,11 +27,15 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_27
             {
                 // ...
             }
+            #endregion INCLUDE
+            #if INCLUDE
+            #region INCLUDE
             #region HIGHLIGHT
             // ERROR: message is not in scope:
-            // System.Console.WriteLine(message);
+            System.Console.WriteLine(message);
             #endregion HIGHLIGHT
+            #endregion INCLUDE
+            #endif // INCLUDE
         }
     }
-    #endregion INCLUDE
 }

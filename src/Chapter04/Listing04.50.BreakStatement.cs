@@ -1,10 +1,10 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_50
 {
-    #region INCLUDE
     public class TicTacToe // Declares the TicTacToe class
     {
         public static void Main() // Declares the entry point of the program
         {
+            #region INCLUDE
             int winner = 0;
             // Stores locations each player has moved
             int[] playerPositions = { 0, 0 };
@@ -48,7 +48,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_50
 
             Console.WriteLine(
                 $"Player { winner } was the winner");
+            #endregion INCLUDE
         }
     }
-    #endregion INCLUDE
 }

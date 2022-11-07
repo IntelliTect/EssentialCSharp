@@ -9,8 +9,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_52.Tests
         public void Main_EnterValidEmailWithDomain_WriteDomain()
         {
             const string expected =
-@"Enter an email address: 
-<<First.Last@domain.com
+@"Enter an email address: <<First.Last@domain.com
 >>The email domain is: domain.com";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
@@ -21,8 +20,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_52.Tests
         public void Main_EnterInvalidEmailWithoutDomain_WriteBlank()
         {
             const string expected =
-@"Enter an email address: 
-<<First.Last
+@"Enter an email address: <<First.Last
 >>The email domain is: ";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
