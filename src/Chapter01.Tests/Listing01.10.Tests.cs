@@ -1,17 +1,17 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_10.Tests
 {
     [TestClass]
-    public class MiracleMaxTests
+    public class HelloWorldTests
     {
         [TestMethod]
-        public void Main_StormCastleShort()
+        public void Main_HelloToInigo()
         {
-            const string expected = @"Have fun storming the castle!";
+            const string expected = @"Hello Inigo Montoya";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, MiracleMax.Main);
+                expected, HelloWorld.Main);
         }
     }
 }

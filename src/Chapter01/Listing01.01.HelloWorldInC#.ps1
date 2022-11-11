@@ -2,7 +2,8 @@
 param(
     [int]$traceLevel
 )
-if($traceLevel -notin $PSBoundParameters.Keys) {
+
+if('traceLevel' -notin $PSBoundParameters.Keys) {
     $traceLevel = Read-Host -Prompt @"
     Specifiy the trace level:
     - 0: Turn script tracing off.
@@ -22,14 +23,13 @@ try {
     Set-Location ./HelloWorld/
     dotnet new console
     Get-Content Program.cs
-    dotnet run
     $codeListing = 
     @"
 class HelloWorld
 {
     static void Main()
     {
-        System.Console.WriteLine("Hello. My name is Inigo Montoya.");
+        Console.WriteLine("Hello. My name is Inigo Montoya.");
     }
 }
 "@

@@ -1,18 +1,61 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Diagnostics;
+using System.IO;
+using AddisonWesley.Michaelis.EssentialCSharp.Shared.Tests;
+
+using System.Text.RegularExpressions;
+using System.Linq;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_01.Tests
 {
     [TestClass]
     public class HelloWorldTests
     {
-        [TestMethod]
-        public void Main_InigoHello()
-        {
-            const string expected = 
-                @"Hello. My name is Inigo Montoya.";
+        static string Ps1DirectoryPath { get; } =
+            Path.GetFullPath(Path.Join(
+                IntelliTect.Multitool.RepositoryPaths.GetDefaultRepoRoot(), "src", "Chapter01"));
+        static string Ps1Path { get; } = 
+            Path.GetFullPath(
+                Path.Join(Ps1DirectoryPath, "Listing01.01.HelloWorldInC#.ps1"), Environment.CurrentDirectory);
 
-            IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, HelloWorld.Main);
+
+        [TestMethod]
+        public void CreateAndRunNewConsoleProject()
+        {
+            string traceLevel = "0";
+
+            int exitCode = PowerShellTestUtilities.RunPowerShellScript(
+               Ps1Path, $"{traceLevel}", out string psOutput);
+
+            Assert.AreEqual(0, exitCode);
+
+            // Check that the program successfully ran and 
+            // produced the expected output.
+            Assert.IsTrue(
+                psOutput.Contains(
+                    $"{Environment.NewLine}Hello. My name is Inigo Montoya.{Environment.NewLine}"),
+                "The expected HelloWorld output was not found.");
+
+            // If the output is in English
+            if (psOutput.Contains("Error(s)") && psOutput.Contains("Warning(s)"))
+            {
+                // Test that the program successfully produced the expected output.
+                string[] expectedText = 
+                    {
+                        "The template \"Console App\" was created successfully.",
+                        "Build succeeded.",
+                        "0 Error(s)",
+                        "0 Warning(s)"
+                    };
+
+                foreach (string text in expectedText)
+                {
+                    Assert.IsTrue(psOutput.Contains(text),
+                        $"Unexpectedly, '{text}' did not appear in the console output: {Environment.NewLine} {psOutput}");
+                }
+            }
         }
+
     }
 }

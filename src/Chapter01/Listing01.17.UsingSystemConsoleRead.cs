@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_15
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_17
 {
     public class Program
     {
@@ -7,9 +7,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_15
             #region INCLUDE
             int readValue;
             char character;
-            readValue = System.Console.Read();
+            readValue = Console.Read();
             character = (char) readValue;
-            System.Console.Write(character);
+            Console.Write(character);
             #endregion INCLUDE
         }
     }

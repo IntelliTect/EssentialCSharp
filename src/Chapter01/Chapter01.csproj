@@ -8,20 +8,21 @@
     <!-- CS8600: Trust that null assignment doesn't cause 
     unexpected exception as concept to check for null hasn't been explained yet-->
     <IgnoredWarnings>$(IgnoredWarnings),CS8600,CA1052,IDE0059,IDE0060</IgnoredWarnings>
+    <StartupObject>AddisonWesley.Michaelis.EssentialCSharp.Shared.Program</StartupObject>
   </PropertyGroup>
   <Import Project="..\Chapter.props" />
   <ItemGroup>
-    <Compile Remove="Listing01.02.SampleNETCoreConsoleProjectFile.cs" />
-    <Compile Remove="Listing01.20.SampleCILOutput.cs" />
+    <Compile Remove="HelloWorld\**" />
+    <Compile Remove="Listing01.01.HelloWorldInC#.cs" />
+    <Compile Remove="Listing01.22.SampleCILOutput.cs" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="System.ValueTuple" Version="4.5.0" />
     <Compile Include="..\Shared\Program.cs">
       <Link>Program.cs</Link>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Listing01.02.SampleNETCoreConsoleProjectFile.cs" />
-    <None Include="Listing01.20.SampleCILOutput.cs" />
+    <None Include="Listing01.01.HelloWorldInC#.cs" />
+    <None Include="Listing01.22.SampleCILOutput.cs" />
   </ItemGroup>
 </Project>

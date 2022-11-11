@@ -3,16 +3,15 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_11.Tests
 {
     [TestClass]
-    public class HelloWorldTests
+    public class ProgramTests
     {
         [TestMethod]
-        public void Main_InigoMantra_ProperOutput()
+        public void Main_HelloToInigo()
         {
-            const string expected =
-@"My name is Inigo Montoya.
-You killed my father....";
+            const string expected = @"Hello Inigo Montoya";
 
-            IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected, HelloWorld.Main);
+            IntelliTect.TestTools.Console.ConsoleAssert.Expect(
+                expected, HelloWorld.Main);
         }
     }
 }

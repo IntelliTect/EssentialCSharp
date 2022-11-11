@@ -1,6 +1,5 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_20
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_22
 {
-/*
 #region INCLUDE
 .assembly extern System.Runtime
 {
@@ -71,5 +70,4 @@
     } // End of method System.Void HelloWorld.Program::.ctor()
 } // End of class HelloWorld.Program
 #endregion INCLUDE
-*/
 }

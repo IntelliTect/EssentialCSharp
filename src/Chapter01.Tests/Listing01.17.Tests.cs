@@ -1,4 +1,4 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_17.Tests
 {
@@ -6,16 +6,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_17.Tests
     public class ProgramTests
     {
         [TestMethod]
-        public void Main_InputInigoMontoya_WriteFirstLast()
+        public void Main_InputOne_WriteOne()
         {
-            const string expected =
-@"Hey you!
-Enter your first name: <<Inigo
->>Enter your last name: <<Montoya
->>Your full name is Inigo Montoya.";
+            const string expected = @"1<<1>>";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, HeyYou.Main);
+                expected, Program.Main);
         }
     }
 }
