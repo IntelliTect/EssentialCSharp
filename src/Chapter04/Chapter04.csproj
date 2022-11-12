@@ -1,12 +1,15 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <ChapterNumber>04</ChapterNumber>
-	<ExpectedWarnings>$(ExpectedWarnings),CS1030</ExpectedWarnings>
+    <!-- IDE0150: Null check can be clarified -->
+    <!-- IDE0041: Null check can be simplified -->
+    <!-- CS0183: The given expression is always of the provided ('object') type  -->
+    <ExpectedWarnings>$(ExpectedWarnings),CS1030,CS0183,IDE0150,IDE0041</ExpectedWarnings>
     <!-- CA1052: Suggest Program is static which hasn't been explained yet. -->
     <!-- IDE0059: Unnecessary assignment of a value ignored since listing is not complete. -->
     <!-- IDE0060: Remove unused parameter suggestion ignored since listing is not complete -->
     <IgnoredWarnings>$(IgnoredWarnings),CA1052,IDE0059,IDE0060</IgnoredWarnings>
-	<IgnoreExpectedWarnings>false</IgnoreExpectedWarnings>
+    <IgnoreExpectedWarnings>false</IgnoreExpectedWarnings>
   </PropertyGroup>
   <Import Project="..\Chapter.props" />
   <ItemGroup>
