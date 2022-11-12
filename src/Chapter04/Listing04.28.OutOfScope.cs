@@ -32,7 +32,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_28
             #region INCLUDE
             #region HIGHLIGHT
             // ERROR: message is not in scope:
-            System.Console.WriteLine(message);
+            Console.WriteLine(message);
             #endregion HIGHLIGHT
             #endregion INCLUDE
             #endif // INCLUDE

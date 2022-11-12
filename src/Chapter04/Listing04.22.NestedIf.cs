@@ -1,4 +1,4 @@
-// Justification: Checking for null isn't discussed yet.
+// Justification: Checkihng for null isn't discussed yet.
 #pragma warning disable CS8604 // Possible null reference argument
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_22
 {
@@ -23,22 +23,22 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_22
                 Console.WriteLine("Exiting...");
             else
                 if(input < 9) // line 20
-                              // Input is less than 9
-                Console.WriteLine(
+                    // Input is less than 9
+                    Console.WriteLine(
                         $"Tic-tac-toe has more than {input}" +
                         " maximum turns.");
-            else
-                if (input > 9) // line 26
-                               // Input is greater than 9
-                Console.WriteLine(
-                        $"Tic-tac-toe has fewer than {input}" +
-                        " maximum turns.");
+                else
+                    if (input > 9) // line 26
+                        // Input is greater than 9
+                        Console.WriteLine(
+                            $"Tic-tac-toe has fewer than {input}" +
+                            " maximum turns.");
 
-            else
-                // Input equals 9
-                Console.WriteLine(  // line 33
-                    "Correct, tic-tac-toe " +
-                    "has a maximum of 9 turns.");
+                    else
+                        // Input equals 9
+                        Console.WriteLine(  // line 33
+                            "Correct, tic-tac-toe " +
+                            "has a maximum of 9 turns.");
             #endregion INCLUDE
        } 
     }
