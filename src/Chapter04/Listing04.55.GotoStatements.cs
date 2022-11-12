@@ -36,7 +36,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_55
                             // Recurse down the hierarchy
                             Console.WriteLine("Recursing...");
                             // ...
-
                         }
                         else if(isFiltered)
                         {

@@ -10,7 +10,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_26
             #region INCLUDE
             if (radius >= 0)
                 area = Math.PI * radius * radius;
-            Console.WriteLine(
+                Console.WriteLine(
                     $"The area of the circle is: {area:0.00}");
             #endregion INCLUDE
         }
