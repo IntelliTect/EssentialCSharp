@@ -1,43 +1,42 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_16
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_16;
+
+using System;
+
+public class Program
 {
-    using System;
-
-    public class Program
+    #region INCLUDE
+    // Returning a reference
+    public static ref byte FindFirstRedEyePixel(byte[] image)
     {
-        #region INCLUDE
-        // Returning a reference
-        public static ref byte FindFirstRedEyePixel(byte[] image)
+        // Do fancy image detection perhaps with machine learning
+        for (int counter = 0; counter < image.Length; counter++)
         {
-            // Do fancy image detection perhaps with machine learning
-            for (int counter = 0; counter < image.Length; counter++)
+            if (image[counter] == (byte)ConsoleColor.Red)
             {
-                if (image[counter] == (byte)ConsoleColor.Red)
-                {
-                    return ref image[counter];
-                }
+                return ref image[counter];
             }
-            throw new InvalidOperationException("No pixels are red.");
         }
-        public static void Main()
-        {
-            byte[] image = new byte[254];
-            // Load image
-            int index = new Random().Next(0, image.Length - 1);
-            image[index] =
-                (byte)ConsoleColor.Red;
-            Console.WriteLine(
-                $"image[{index}]={(ConsoleColor)image[index]}");
-            // ...
-
-            #region HIGHLIGHT
-            // Obtain a reference to the first red pixel
-            ref byte redPixel = ref FindFirstRedEyePixel(image);
-            // Update it to be Black
-            redPixel = (byte)ConsoleColor.Black;
-            #endregion HIGHLIGHT
-            Console.WriteLine(
-                $"image[{index}]={(ConsoleColor)image[redPixel]}");
-        }
-        #endregion INCLUDE
+        throw new InvalidOperationException("No pixels are red.");
     }
+    public static void Main()
+    {
+        byte[] image = new byte[254];
+        // Load image
+        int index = new Random().Next(0, image.Length - 1);
+        image[index] =
+            (byte)ConsoleColor.Red;
+        Console.WriteLine(
+            $"image[{index}]={(ConsoleColor)image[index]}");
+        // ...
+
+        #region HIGHLIGHT
+        // Obtain a reference to the first red pixel
+        ref byte redPixel = ref FindFirstRedEyePixel(image);
+        // Update it to be Black
+        redPixel = (byte)ConsoleColor.Black;
+        #endregion HIGHLIGHT
+        Console.WriteLine(
+            $"image[{index}]={(ConsoleColor)image[redPixel]}");
+    }
+    #endregion INCLUDE
 }

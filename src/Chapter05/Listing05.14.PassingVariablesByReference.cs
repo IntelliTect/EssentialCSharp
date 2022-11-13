@@ -1,30 +1,29 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_14
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_14;
+
+#region INCLUDE
+public class Program
 {
-    #region INCLUDE
-    public class Program
+    public static void Main()
     {
-        public static void Main()
-        {
-            // ...
-            string first = "hello";
-            string second = "goodbye";
-            #region HIGHLIGHT
-            Swap(ref first, ref second);
-            #endregion HIGHLIGHT
-
-            Console.WriteLine(
-                $@"first = ""{ first }"", second = ""{ second }""");
-            // ...
-        }
-
+        // ...
+        string first = "hello";
+        string second = "goodbye";
         #region HIGHLIGHT
-        static void Swap(ref string x, ref string y)
+        Swap(ref first, ref second);
         #endregion HIGHLIGHT
-        {
-            string temp = x;
-            x = y;
-            y = temp;
-        }
+
+        Console.WriteLine(
+            $@"first = ""{ first }"", second = ""{ second }""");
+        // ...
     }
-    #endregion INCLUDE
+
+    #region HIGHLIGHT
+    static void Swap(ref string x, ref string y)
+    #endregion HIGHLIGHT
+    {
+        string temp = x;
+        x = y;
+        y = temp;
+    }
 }
+#endregion INCLUDE

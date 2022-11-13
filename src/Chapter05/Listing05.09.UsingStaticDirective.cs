@@ -1,26 +1,25 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_09
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_09;
+
+#region INCLUDE
+using static System.Console;
+
+public class HeyYou
 {
-    #region INCLUDE
-    using static System.Console;
-
-    public class HeyYou
+    public static void Main()
     {
-        public static void Main()
-        {
-            string firstName;
-            string lastName;
+        string firstName;
+        string lastName;
 
-            WriteLine("Hey you!");
+        WriteLine("Hey you!");
 
-            Write("Enter your first name: ");
-            firstName = ReadLine() ?? string.Empty;
+        Write("Enter your first name: ");
+        firstName = ReadLine() ?? string.Empty;
 
-            Write("Enter your last name: ");
-            lastName = ReadLine() ?? string.Empty;
+        Write("Enter your last name: ");
+        lastName = ReadLine() ?? string.Empty;
 
-            WriteLine(
-                $"Your full name is { firstName } { lastName }.");
-        }
+        WriteLine(
+            $"Your full name is { firstName } { lastName }.");
     }
-    #endregion INCLUDE
 }
+#endregion INCLUDE
