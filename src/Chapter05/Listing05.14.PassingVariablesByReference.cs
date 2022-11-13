@@ -12,7 +12,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_14
             Swap(ref first, ref second);
             #endregion HIGHLIGHT
 
-            System.Console.WriteLine(
+            Console.WriteLine(
                 $@"first = ""{ first }"", second = ""{ second }""");
             // ...
         }

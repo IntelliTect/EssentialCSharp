@@ -6,7 +6,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_05
         #region EXCLUDE
         public static void Main()
         {
-            System.Console.WriteLine(MyMethod());
+            Console.WriteLine(MyMethod());
         }
         #endregion EXCLUDE
 
@@ -26,7 +26,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_05
         #region EXCLUDE
         private static string ObtainCommand()
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
         #endregion EXCLUDE
     }

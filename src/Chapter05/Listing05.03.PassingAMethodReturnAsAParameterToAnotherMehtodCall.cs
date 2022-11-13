@@ -5,10 +5,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_03
     {
         public static void Main()
         {
-            System.Console.Write("Enter your first name: ");
-            System.Console.WriteLine("Hello {0}!",
+            Console.Write("Enter your first name: ");
+            Console.WriteLine("Hello {0}!",
             #region HIGHLIGHT
-                System.Console.ReadLine());
+                Console.ReadLine());
             #endregion HIGHLIGHT
         }
     }

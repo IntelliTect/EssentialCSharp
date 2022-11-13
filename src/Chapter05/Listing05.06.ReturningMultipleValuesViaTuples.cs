@@ -5,8 +5,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_06
     {
         static string GetUserInput(string prompt)
         {
-            System.Console.Write(prompt);
-            return System.Console.ReadLine() ?? string.Empty;
+            Console.Write(prompt);
+            return Console.ReadLine() ?? string.Empty;
         }
         #region HIGHLIGHT
         static (string First, string Last) GetName()
@@ -22,7 +22,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_06
             #region HIGHLIGHT
             (string First, string Last) name = GetName();
             #endregion HIGHLIGHT
-            System.Console.WriteLine($"Hello { name.First } { name.Last }!");
+            Console.WriteLine($"Hello { name.First } { name.Last }!");
         }
     }
     #endregion INCLUDE

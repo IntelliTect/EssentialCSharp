@@ -25,7 +25,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_16
             int index = new Random().Next(0, image.Length - 1);
             image[index] =
                 (byte)ConsoleColor.Red;
-            System.Console.WriteLine(
+            Console.WriteLine(
                 $"image[{index}]={(ConsoleColor)image[index]}");
             // ...
 
@@ -35,7 +35,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_16
             // Update it to be Black
             redPixel = (byte)ConsoleColor.Black;
             #endregion HIGHLIGHT
-            System.Console.WriteLine(
+            Console.WriteLine(
                 $"image[{index}]={(ConsoleColor)image[redPixel]}");
         }
         #endregion INCLUDE

@@ -25,7 +25,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_20
                 totalLineCount = DirectoryCountLines();
             }
 
-            System.Console.WriteLine(totalLineCount);
+            Console.WriteLine(totalLineCount);
         }
 
         static int DirectoryCountLines()

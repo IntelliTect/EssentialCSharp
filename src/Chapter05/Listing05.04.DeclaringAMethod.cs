@@ -10,7 +10,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_04
             string fullName;
             string initials;
 
-            System.Console.WriteLine("Hey you!");
+            Console.WriteLine("Hey you!");
 
             firstName = GetUserInput("Enter your first name: ");
             lastName = GetUserInput("Enter your last name: ");
@@ -22,8 +22,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_04
 
         static string GetUserInput(string prompt)
         {
-            System.Console.Write(prompt);
-            return System.Console.ReadLine() ?? string.Empty;
+            Console.Write(prompt);
+            return Console.ReadLine() ?? string.Empty;
         }
 
         static string GetFullName(  
@@ -33,7 +33,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_04
 
         static void DisplayGreeting(string fullName, string initials)
         {
-            System.Console.WriteLine(
+            Console.WriteLine(
                 $"Hello { fullName }! Your initials are { initials }");
             return;
         }

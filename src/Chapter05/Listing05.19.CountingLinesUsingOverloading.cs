@@ -29,7 +29,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_19
                 #endregion HIGHLIGHT
             }
 
-            System.Console.WriteLine(totalLineCount);
+            Console.WriteLine(totalLineCount);
         }
 
         #region HIGHLIGHT

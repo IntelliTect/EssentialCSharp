@@ -24,7 +24,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_13
         {
             string path;
             path = string.Format("{1}{0}{2}{0}{3}",
-                System.IO.Path.DirectorySeparatorChar,
+                Path.DirectorySeparatorChar,
                 driveLetter, folderPath, fileName);
             return path;
         }

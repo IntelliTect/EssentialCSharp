@@ -20,7 +20,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_18
                 directory = Directory.GetCurrentDirectory();
             }
             totalLineCount = DirectoryCountLines(directory);
-            System.Console.WriteLine(totalLineCount);
+            Console.WriteLine(totalLineCount);
         }
 
         #region HIGHLIGHT
