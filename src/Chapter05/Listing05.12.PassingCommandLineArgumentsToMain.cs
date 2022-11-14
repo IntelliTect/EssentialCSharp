@@ -1,9 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_12;
 
 #region INCLUDE
-using System;
-using System.Net;
-
 public class Program
 {
     #region HIGHLIGHT
@@ -25,10 +22,15 @@ public class Program
                 result = 1;
                 break;
             case 2:
-                WebClient webClient = new WebClient();
                 #region HIGHLIGHT
-                webClient.DownloadFile(args[0], args[1]);
+                string url = args[0];
+                string fileName = args[1];
                 #endregion HIGHLIGHT
+                HttpClient client = new();
+                byte[] response =
+                    client.GetByteArrayAsync(url).Result;
+                client.Dispose();
+                File.WriteAllBytes(fileName, response);
                 result = 0;
                 #region HIGHLIGHT
                 break;

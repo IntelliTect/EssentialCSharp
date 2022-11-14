@@ -8,8 +8,16 @@
     <ExpectedWarnings>$(ExpectedWarnings),CS1058</ExpectedWarnings>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="Listing05.07.ImplicitUsingsGeneratedGlocalUsingDeclaratives.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Using Include="System.Net" />
+    <!--<Using Include="System.Timers.Timer" Alias="Timer" />-->
     <Compile Include="..\Shared\Program.cs">
       <Link>Program.cs</Link>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Listing05.07.ImplicitUsingsGeneratedGlocalUsingDeclaratives.cs" />
   </ItemGroup>
 </Project>

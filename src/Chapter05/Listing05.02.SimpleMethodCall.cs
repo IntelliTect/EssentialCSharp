@@ -1,8 +1,8 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_02;
 
-#region INCLUDE
 public class HeyYou
 {
+    #region INCLUDE
     public static void Main()
     {
         string? firstName;
@@ -19,5 +19,5 @@ public class HeyYou
         Console.WriteLine(
             $"Your full name is { firstName } { lastName }.");
     }
+    #endregion INCLUDE
 }
-#endregion INCLUDE

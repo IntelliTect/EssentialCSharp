@@ -1,8 +1,8 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_01;
 
-#region INCLUDE
 public class LineCount
 {
+    #region INCLUDE
     public static void Main()
     {
         int lineCount;
@@ -13,7 +13,7 @@ public class LineCount
         lineCount = CountLines(files);
         DisplayLineCount(lineCount);
     }
-    #region EXCLUDE
+    #endregion INCLUDE
     private static void DisplayLineCount(int lineCount)
     {
         throw new NotImplementedException();
@@ -33,6 +33,4 @@ public class LineCount
     {
         throw new NotImplementedException();
     }
-    #endregion EXCLUDE
 }
-#endregion INCLUDE

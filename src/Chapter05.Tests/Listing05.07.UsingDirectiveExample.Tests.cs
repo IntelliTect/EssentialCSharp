@@ -3,17 +3,21 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_07.Tests;
 
 [TestClass]
-public class HelloWorldTests
+public class ProgramTests
 {
+    public const string Initial = "T";
+    public static string Expected = $"""
+        Enter your full name (e.g. Inigo T. Montoya): <<{Inigo} {Initial}. {Montoya}
+        >>
+        FirstName: {Inigo}
+        Initial: {Initial}
+        LastName: {Montoya}
+        """;
+
     [TestMethod]
     public void Main_WriteMyName()
     {
-        string view = "Hello, my name is Inigo Montoya";
-
-        IntelliTect.TestTools.Console.ConsoleAssert.Expect(view,
-        () =>
-        {
-            HelloWorld.Main();
-        });
+        IntelliTect.TestTools.Console.ConsoleAssert.Expect(Expected,
+            Program.Main);
     }
 }
