@@ -18,7 +18,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_22
             // return to an int data type
             input = int.Parse(Console.ReadLine());
 
-            // Check 1.
+            // Condition 1.
             if (input <= 0) // line 16
                 // Input is less than or equal to 0
                 Console.WriteLine("Exiting...");
