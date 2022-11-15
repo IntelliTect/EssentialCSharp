@@ -1,4 +1,4 @@
-// Justification: Checkihng for null isn't discussed yet.
+// Justification: Checking for null isn't discussed yet.
 #pragma warning disable CS8604 // Possible null reference argument
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_22
 {
