@@ -10,7 +10,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_24.Tests
         public void Main_Input8_ExitProgram()
         {
             const string expected =
-                @"Exiting";
+                "Exiting";
 
             ConsoleAssert.Expect(
                 expected, ()=>Program.Main("8"));
