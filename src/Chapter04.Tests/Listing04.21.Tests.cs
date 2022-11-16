@@ -9,11 +9,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_21.Tests
         [TestMethod]
         public void Main_Enter1TryToPlayAgainstComputer_ComputerPathSelected()
         {
-            const string expected =
-@"1 - Play against the computer
-2 - Play against another player.
-Choose:<<1
->>Play against computer selected.";
+            const string expected = """
+                1 - Play against the computer
+                2 - Play against another player.
+                Choose:<<1
+                >>Play against computer selected.
+                """;
 
             ConsoleAssert.Expect(
                 expected, TicTacToe.Main);

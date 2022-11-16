@@ -8,10 +8,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_41.Tests
         [TestMethod]
         public void Main_BitwiseOperators_WriteAndOrXORValues()
         {
-            const string expected =
-@"and = 4 
-or = 15
-xor = 11";
+            const string expected = """
+                and = 4
+                or = 15
+                xor = 11
+                """;
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
                 expected, Program.Main);
