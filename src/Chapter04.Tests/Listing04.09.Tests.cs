@@ -9,8 +9,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_09.Tests
         [TestMethod]
         public void Main_OverflowBoundsOfFloat_WriteInfinity()
         {
-            string expected = $"-{NumberFormatInfo.CurrentInfo.PositiveInfinitySymbol}\n" + 
-                              $"{NumberFormatInfo.CurrentInfo.PositiveInfinitySymbol}";
+            string expected = $"""
+                -{NumberFormatInfo.CurrentInfo.PositiveInfinitySymbol}
+                {NumberFormatInfo.CurrentInfo.PositiveInfinitySymbol}
+                """;
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
                 expected, Program.Main);

@@ -11,8 +11,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_43
             or |= 7;   // or = 15
             xor ^= 7;   // xor = 11
             #endregion HIGHLIGHT
-            Console.WriteLine(
-                $"and = { and } \nor = { or } \nxor = { xor }");
+            Console.WriteLine( $"""
+                and = {and}
+                or = {or}
+                xor = {xor}
+                """);
             #endregion INCLUDE
         }
     }

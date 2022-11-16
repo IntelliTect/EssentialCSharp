@@ -31,9 +31,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_49
             }
             else
             {
-                Console.WriteLine(
-                  "\nERROR:  Enter a value from 1-9. "
-                  + "Push ENTER to quit");
+                Console.WriteLine( $"""
+                    ERROR:  Enter a value from 1-9.
+                    Push ENTER to quit
+                    """);
             }
 
             // ...
