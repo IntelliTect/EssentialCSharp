@@ -37,7 +37,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_50
                     // If none of the other case statements
                     // is encountered then the text is invalid
                     Console.WriteLine(
-                    "\nERROR:  Enter a value from 1-9. "
+                    "ERROR:  Enter a value from 1-9. "
                     + "Push ENTER to quit");
                     break;
             }
