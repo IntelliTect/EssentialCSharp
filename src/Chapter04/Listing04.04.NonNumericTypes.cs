@@ -7,7 +7,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_04
         {
             short windSpeed = 42;
             Console.WriteLine(
-                "The original Tacoma Bridge in Washington\nwas "
+                $"The original Tacoma Bridge in Washington" +
+                $"{Environment.NewLine}was "
                 + "brought down by a "
                 + windSpeed + " mile/hour wind.");
         }
