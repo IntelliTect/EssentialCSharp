@@ -35,23 +35,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_38.Tests
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
                 expected, () => Program.Main(new[] { "first", "second", "third" }));
         }
-
-        [TestMethod]
-        public void MyTestMethod()
-        {
-            string? uri = null;
-
-            if (uri is object thing)
-            {
-                System.Console.WriteLine(
-                    $"Uri is: { thing }");
-            }
-            else // (uri is null)
-            {
-                System.Console.WriteLine(
-                    "Uri is null");
-            }
-
-        }
     }
 }
