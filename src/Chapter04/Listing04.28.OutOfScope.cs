@@ -28,14 +28,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_28
                 // ...
             }
             #endregion INCLUDE
-            #if INCLUDE
+            #if COMPILE_ERRR
             #region INCLUDE
             #region HIGHLIGHT
             // ERROR: message is not in scope:
             Console.WriteLine(message);
             #endregion HIGHLIGHT
             #endregion INCLUDE
-            #endif // INCLUDE
+            #endif // COMPILE_ERRR
         }
     }
 }
