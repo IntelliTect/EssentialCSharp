@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_18
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_19
 {
     #region INCLUDE
     public class Uppercase
@@ -7,15 +7,15 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_18
         {
             string text, uppercase;
 
-            System.Console.Write("Enter text: ");
-            text = System.Console.ReadLine();
+            Console.Write("Enter text: ");
+            text = Console.ReadLine();
 
             // Return a new string in uppercase
             #region HIGHLIGHT
             uppercase = text.ToUpper();
             #endregion HIGHLIGHT
 
-            System.Console.WriteLine(uppercase);
+            Console.WriteLine(uppercase);
         }
     }
     #endregion INCLUDE

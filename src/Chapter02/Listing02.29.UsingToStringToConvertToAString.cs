@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_28
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_29
 {
     public class Program
     {
@@ -8,7 +8,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_28
             bool boolean = true;
             string text = boolean.ToString();
             // Display "True"
-            System.Console.WriteLine(text);
+            Console.WriteLine(text);
             #endregion INCLUDE
         }
     }

@@ -5,9 +5,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_27
         public static void Main()
         {
             #region INCLUDE
-            string middleCText = "261.626";
-            double middleC = System.Convert.ToDouble(middleCText);
-            bool boolean = System.Convert.ToBoolean(middleC);
+            string text = "9.11E-31";
+            float kgElectronMass = float.Parse(text);
             #endregion INCLUDE
         }
     }

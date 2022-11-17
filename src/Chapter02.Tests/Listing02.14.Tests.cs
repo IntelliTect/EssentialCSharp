@@ -8,13 +8,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_14.Tests
         [TestMethod]
         public void Main_WriteTriangle()
         {
-            const string expected = @"begin
+            const string expected = @"Begin
                    /\
                   /  \
                  /    \
                 /      \
                /________\
-    end";
+End";
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
                 expected, Triangle.Main);

@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_15
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_16
 {
     #region INCLUDE
     // The using directives allow you to drop the namespace

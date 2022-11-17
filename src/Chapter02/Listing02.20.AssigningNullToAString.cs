@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_19
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_20
 {
     public class Program
     {
@@ -12,7 +12,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_19
             age = null;
 
             #region EXCLUDE
-            System.Console.WriteLine($"The age is: {age}");
+            Console.WriteLine($"The age is: {age}");
             #endregion EXCLUDE
         }
         #endregion INCLUDE
