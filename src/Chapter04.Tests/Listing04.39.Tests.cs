@@ -10,7 +10,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_39.Tests
         {
             bool eventFired = false;
             Thermostat thermostat = new Thermostat();
-            thermostat.PropertyChanged += (object? sender, System.EventArgs e) =>
+            thermostat.PropertyChanged += (object? sender, EventArgs e) =>
             {
                 eventFired = true;
             };
@@ -22,7 +22,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_39.Tests
         {
             bool eventFired = false;
             Thermostat thermostat = new Thermostat();
-            thermostat.PropertyChanged += (object? sender, System.EventArgs e) =>
+            thermostat.PropertyChanged += (object? sender, EventArgs e) =>
             {
                 eventFired = true;
             };
