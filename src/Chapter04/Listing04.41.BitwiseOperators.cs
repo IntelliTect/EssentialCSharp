@@ -9,8 +9,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_41
             and = 12 & 7;   // and = 4
             or = 12 | 7;    // or = 15
             xor = 12 ^ 7;   // xor = 11
-            Console.WriteLine(
-                $"and = { and } \nor = { or }\nxor = { xor }");
+            Console.WriteLine( $"""
+                and = { and }
+                or = { or }
+                xor = { xor }
+                """);
             #endregion INCLUDE
         }
     }

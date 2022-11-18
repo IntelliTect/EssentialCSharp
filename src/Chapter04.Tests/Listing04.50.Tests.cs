@@ -25,8 +25,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_50.Tests
         public void ValidateAndMove_Input0_InvalidInput()
         {
             const string expected =
-@"
-ERROR:  Enter a value from 1-9. Push ENTER to quit";
+                @"ERROR:  Enter a value from 1-9. Push ENTER to quit";
 
             int[] playerPositions = new int[1];
             int currentPlayer = 0;

@@ -10,10 +10,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_21
             string input;
 
             // Prompt the user to select a 1- or 2- player game
-            Console.Write(
-                "1 - Play against the computer\n" +
-                "2 - Play against another player.\n" +
-                "Choose:"
+            Console.Write($"""
+                1 - Play against the computer
+                2 - Play against another player.
+                Choose:
+                """
             );
             input = Console.ReadLine();
 

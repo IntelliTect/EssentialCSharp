@@ -4,13 +4,13 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_24.Tests
 {
     [TestClass]
-    public class Listing04_23_Tests
+    public class ProgramTests
     {
         [TestMethod]
         public void Main_Input8_ExitProgram()
         {
             const string expected =
-                @"Exiting";
+                "Exiting";
 
             ConsoleAssert.Expect(
                 expected, ()=>Program.Main("8"));

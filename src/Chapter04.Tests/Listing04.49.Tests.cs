@@ -18,9 +18,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_49.Tests
         [TestMethod]
         public void Main_Input0_InvalidInput()
         {
-            const string expected =
-@"
-ERROR:  Enter a value from 1-9. Push ENTER to quit";
+            const string expected = """
+                ERROR:  Enter a value from 1-9.
+                Push ENTER to quit
+                """;
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
                 expected, () => Program.Main("0"));
