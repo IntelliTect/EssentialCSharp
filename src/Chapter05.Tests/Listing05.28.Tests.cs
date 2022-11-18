@@ -3,29 +3,33 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_28.Tests;
 
 [TestClass]
-public class LeveragingTryParseTests
+public class ProgramTests
 {
     [TestMethod]
-    public void Main_InputNameAndAge35_AgeProperlyParsed()
+    public void Main_HappyPath()
     {
-        const string expected =
-@"Enter your first name: <<Inigo
->>Enter your age: <<36
->>Hi Inigo! You are 432 months old.";
-
-        IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected, 
-            LeveragingTryParse.Main);
+        string expected = @"Enter your first name: <<Inigo
+>>Enter your age: <<42
+>>Hi Inigo!  You are 504 months old.
+Goodbye Inigo";
+        IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected,
+        () =>
+        {
+            ExceptionHandling.Main();
+        });
     }
 
     [TestMethod]
-    public void Main_InputNameAndAgeThirtyFive_AgeNotParsed()
+    public void Main_GivenInvalidAge_ThrowException()
     {
-        const string expected =
-@"Enter your first name: <<Inigo
->>Enter your age: <<ThirtyFive
->>The age entered ,ThirtyFive, is not valid.";
-
-        IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-            expected, LeveragingTryParse.Main);
+        string expected = @"Enter your first name: <<Inigo
+>>Enter your age: <<forty-two
+>>The age entered ,forty-two, is not valid.
+Goodbye Inigo";
+        IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected,
+        () =>
+        {
+            ExceptionHandling.Main();
+        });
     }
 }
