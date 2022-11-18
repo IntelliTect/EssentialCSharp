@@ -6,22 +6,26 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_38
         {
             #region INCLUDE
             string[]? segments = null;
+            string? uri = null;
+
             #region EXCLUDE
             // Not shown in manuscript since args won't be null in a normal Main method.
             segments = args;
 
-            string? uri = null;
             #endregion EXCLUDE
 
             int? length = segments?.Length;
-            if (length is { } && length != 0)
+            #region EXCLUDE
+            // Pattern matching also allows:
+            // the following but this is not used
+            // until covering the topic fully in Chapter 7.
+            if (length is not null and not 0) { /*...*/ }
+            #endregion EXCLUDE
+            if (length is not null && length != 0)
             {
                 uri = string.Join('/', segments!);
             }
 
-            // Null-conditional with array accessor
-            // assuming we know there is at least one element
-            // uri = segments?[0];
             if (uri is null || length is 0)
             {
                 Console.WriteLine(

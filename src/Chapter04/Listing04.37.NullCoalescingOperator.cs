@@ -5,7 +5,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_37
         public static void Main()
         {
             #region INCLUDE
-            string? fullName = GetDefaultDirectory();
+            string? fullName = GetSaveFilePath();
             // ...
 
             // Null-coalescing operator
@@ -22,7 +22,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_37
 
         }
 
-        private static string? GetDefaultDirectory()
+        private static string? GetSaveFilePath()
         {
             throw new NotImplementedException();
         }

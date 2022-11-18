@@ -1,38 +1,48 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Reflection;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Table04_04.Tests
 {
     [TestClass]
     public class ProgramTests
     {
-        [TestMethod]
-        public void EqualityCheckForNull()
+        private static void InvokeNullCheck(Action<string?> method, string uri)
         {
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                "Uri is null", ()=>Program.EqualityCheckForNull(null));
+                "Uri is null", ()=>method(null));
 
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                "Uri is: NotNull", () => Program.EqualityCheckForNull("NotNull"));
+                $"Uri is: {uri}", () => method(uri));
         }
 
+        // 1.
         [TestMethod]
-        public void PatternMatchingCheckForNull()
-        {
-            IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                "Uri is null", () => Program.PatternMatchingCheckForNull(null));
+        public void PatternMatchingIsNullTest() =>
+            InvokeNullCheck(Program.PatternMatchingIsNull, "NotNull");
 
-            IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                "Uri is: NotNull", () => Program.PatternMatchingCheckForNull("NotNull"));
-        }
-
+        // 2.
         [TestMethod]
-        public void PropertPatternMatchingCheckForNull()
-        {
-            IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                "Uri is null", () => Program.PropertyPatternMatchingCheckForNull(null));
+        public void PatternMatchingIsNotNullTest() =>
+            InvokeNullCheck(Program.PatternMatchingIsNotNull, "NotNull");
 
-            IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                "Uri is: NotNull", () => Program.PropertyPatternMatchingCheckForNull("NotNull"));
-        }
+        // 3.
+        [TestMethod]
+        public void EqualityInEqualityCheckForNullTest() =>
+            InvokeNullCheck(Program.EqualityInEqualityCheckForNull, "NotNull");
+
+        // 4.
+        [TestMethod]
+        public void IsObjectTest() =>
+            InvokeNullCheck(Program.IsObject, "NotNull");
+
+         // 5.
+        [TestMethod]
+        public void IsPatternMatchingTest() =>
+            InvokeNullCheck(Program.IsPatternMatching, "NotNull");
+        
+         // 5.
+        [TestMethod]
+        public void ReferenceEqualsCheckForNotNullTest() =>
+            InvokeNullCheck(Program.ReferenceEqualsCheckForNotNull, "NotNull");
     }
 }

@@ -18,22 +18,25 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_22
             // return to an int data type
             input = int.Parse(Console.ReadLine());
 
-            if(input <= 0) // line 16
+            // Condition 1.
+            if (input <= 0) // line 16
                 // Input is less than or equal to 0
                 Console.WriteLine("Exiting...");
             else
-                if(input < 9) // line 20
+                // Condition 2.
+                if (input < 9) // line 20
                     // Input is less than 9
                     Console.WriteLine(
                         $"Tic-tac-toe has more than {input}" +
                         " maximum turns.");
                 else
+                    // Condition 3.
                     if (input > 9) // line 26
                         // Input is greater than 9
                         Console.WriteLine(
                             $"Tic-tac-toe has fewer than {input}" +
                             " maximum turns.");
-
+                    // Condition 4.
                     else
                         // Input equals 9
                         Console.WriteLine(  // line 33
