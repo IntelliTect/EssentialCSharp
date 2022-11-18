@@ -1,8 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_23;
 
 #region INCLUDE
-using System;
-
 public class ExceptionHandling
 {
     public static int Main(string[] args)

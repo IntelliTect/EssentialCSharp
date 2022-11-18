@@ -1,5 +1,5 @@
-#pragma warning disable CS0168 // Variable is declared but never used
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_25;
+#pragma warning disable CS0168 // Variable is declared but never used
 
 #region INCLUDE
 // A previous catch clause already catches all exceptions

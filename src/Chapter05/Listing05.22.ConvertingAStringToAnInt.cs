@@ -1,10 +1,8 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_22;
 
-#region INCLUDE
-using System;
-
 public class ExceptionHandling
 {
+    #region INCLUDE
     public static void Main()
     {
         string? firstName;
@@ -26,5 +24,5 @@ public class ExceptionHandling
             $"Hi { firstName }!  You are { age * 12 } months old.");
         #endregion HIGHLIGHT
     }
+    #endregion INCLUDE
 }
-#endregion INCLUDE

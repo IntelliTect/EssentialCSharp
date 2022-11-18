@@ -1,8 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_19;
 
 #region INCLUDE
-using System.IO;
-
 public static class LineCounter
 {
     public static void Main(string[] args)

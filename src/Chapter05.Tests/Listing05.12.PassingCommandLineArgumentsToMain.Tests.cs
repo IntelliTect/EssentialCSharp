@@ -11,15 +11,34 @@ public class ProgramTests
     public void Main_NoArgs_ExpectErrors()
     {
         string[] args = Array.Empty<string>();
-        string view =
-@"ERROR:  You must specify the URL and the file name
-Usage: Downloader.exe <URL> <TargetFileName>";
+        string expected = """
+            ERROR:  You must specify the URL and the file name
+            Usage: Downloader.exe <URL> <TargetFileName>
+            """;
 
-        IntelliTect.TestTools.Console.ConsoleAssert.Expect(view,
+        IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected,
         () =>
         {
             Program.Main(args);
         });
+    }
+
+    [TestMethod]
+    public void Main_IntelliTectIndexHtmlArgs_DownloadFile()
+    {
+        try
+        { 
+            string[] args = { "http://IntelliTect.com", "Index.html" };
+            string expected = $"Downloaded 'Index.html' from '{ args[0]}'.";
+
+            int? result = null;
+            IntelliTect.TestTools.Console.ConsoleAssert.Expect(
+                expected, () => result = Program.Main(args));
+        }
+        catch (AggregateException exception) when (exception.InnerException!.GetType() == typeof(System.Net.Http.HttpRequestException))
+        {
+            Assert.Inconclusive("Unable to download the file.  Check your Internet connection.");
+        }
     }
 
     [TestMethod]

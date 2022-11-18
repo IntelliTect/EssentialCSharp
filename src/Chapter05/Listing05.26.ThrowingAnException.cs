@@ -3,12 +3,10 @@
 #pragma warning disable CS0162 // Unreachable code detected
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_26;
 
-#region INCLUDE
-// A previous catch clause already catches all exceptions
-using System;
-
 public class ThrowingExceptions
 {
+    // A previous catch clause already catches all exceptions
+    #region INCLUDE
     public static void Main()
     {
         try
@@ -17,6 +15,7 @@ public class ThrowingExceptions
             Console.WriteLine("Throw exception");
             #region HIGHLIGHT
             throw new Exception("Arbitrary exception");
+            // Catch 1
             #endregion HIGHLIGHT
             Console.WriteLine("End executing");
             }
@@ -25,18 +24,21 @@ public class ThrowingExceptions
             Console.WriteLine(
                 "A FormatException was thrown");
         }
+        // Catch 1
         catch(Exception exception)
         {
             Console.WriteLine(
                 $"Unexpected error: { exception.Message }");
+            // Jump to Post Catch
         }
         catch
         {
             Console.WriteLine("Unexpected error!");
         }
 
+        // Post Catch
         Console.WriteLine(
             "Shutting down...");
     }
+    #endregion INCLUDE
 }
-#endregion INCLUDE

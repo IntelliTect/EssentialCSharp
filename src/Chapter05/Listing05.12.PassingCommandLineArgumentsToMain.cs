@@ -23,14 +23,15 @@ public class Program
                 break;
             case 2:
                 #region HIGHLIGHT
-                string url = args[0];
+                string urlString = args[0];
                 string fileName = args[1];
                 #endregion HIGHLIGHT
                 HttpClient client = new();
                 byte[] response =
-                    client.GetByteArrayAsync(url).Result;
+                    client.GetByteArrayAsync(urlString).Result;
                 client.Dispose();
                 File.WriteAllBytes(fileName, response);
+                Console.WriteLine($"Downloaded '{ fileName }' from '{ urlString }'.");
                 result = 0;
                 #region HIGHLIGHT
                 break;

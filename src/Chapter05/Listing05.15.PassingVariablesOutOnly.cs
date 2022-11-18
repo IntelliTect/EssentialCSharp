@@ -1,9 +1,8 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_15;
 
-using System;
-#region INCLUDE
 public class ConvertToPhoneNumber
 {
+    #region INCLUDE
     public static int Main(string[] args)
     {
         if(args.Length == 0)
@@ -131,5 +130,5 @@ public class ConvertToPhoneNumber
         }
         return success;
     }
+    #endregion INCLUDE
 }
-#endregion INCLUDE

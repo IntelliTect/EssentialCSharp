@@ -3,8 +3,6 @@
 #pragma warning disable CS0168 // Variable is declared but never used
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_27;
 
-using System;
-
 public class ThrowingExceptions
 {
     public static void Main()

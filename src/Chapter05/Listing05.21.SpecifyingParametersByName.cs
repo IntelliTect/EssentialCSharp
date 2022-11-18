@@ -1,8 +1,8 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_21;
 
-#region INCLUDE
 public class Program
 {
+    #region INCLUDE
     public static void Main()
     {
         #region HIGHLIGHT
@@ -19,5 +19,5 @@ public class Program
     {
         // ...
     }
+    #endregion INCLUDE
 }
-#endregion INCLUDE

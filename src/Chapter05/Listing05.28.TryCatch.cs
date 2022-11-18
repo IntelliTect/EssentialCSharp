@@ -1,7 +1,5 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_28;
 
-using System;
-
 public class LeveragingTryParse
 {
     public static void Main()
