@@ -6,8 +6,8 @@
         public void AssignTupleToIndividuallyDeclaredVaraibles()
         {
             (string country, string capital, double gdpPerCapita) =
-                ("South Sudan", "Juba", 275.18);
-            System.Console.WriteLine(
+                ("Burundi", "Bujumbura", 263.67);
+            Console.WriteLine(
                 $@"The poorest country in the world in 2017 was {
                     country}, {capital}: {gdpPerCapita}");
         }
@@ -20,8 +20,8 @@
             double gdpPerCapita;
 
             (country, capital, gdpPerCapita) =
-                ("South Sudan", "Juba", 275.18);
-            System.Console.WriteLine(
+                ("Burundi", "Bujumbura", 263.67);
+            Console.WriteLine(
                 $@"The poorest country in the world in 2017 was {
                     country}, {capital}: {gdpPerCapita}");
         }
@@ -30,8 +30,8 @@
         public void AssignTupleToIndividuallyDeclaredAndImplicitlyTypedVariables()
         {
             (var country, var capital, var gdpPerCapita) =
-                ("South Sudan", "Juba", 275.18);
-            System.Console.WriteLine(
+                ("Burundi", "Bujumbura", 263.67);
+            Console.WriteLine(
                 $@"The poorest country in the world in 2017 was {
                     country}, {capital}: {gdpPerCapita}");
         }
@@ -40,8 +40,8 @@
         public void AssignTupleToIndividuallyDeclaredVariablesThatImplicitlyTypedWithADistributiveSyntax()
         {
             var (country, capital, gdpPerCapita) =
-                ("South Sudan", "Juba", 275.18);
-            System.Console.WriteLine(
+                ("Burundi", "Bujumbura", 263.67);
+            Console.WriteLine(
                 $@"The poorest country in the world in 2017 was {
                     country}, {capital}: {gdpPerCapita}");
         }
@@ -50,8 +50,8 @@
         public void DeclareANamedItemTupleAndAssignItTupleValuesAndThenAccessTheTupleItemsByName()
         {
             (string Name, string Capital, double GdpPerCapita) countryInfo =
-                ("South Sudan", "Juba", 275.18);
-            System.Console.WriteLine(
+                ("Burundi", "Bujumbura", 263.67);
+            Console.WriteLine(
                 $@"The poorest country in the world in 2017 was {
                     countryInfo.Name}, {countryInfo.Capital}: {
                     countryInfo.GdpPerCapita}");
@@ -61,8 +61,8 @@
         public void AssignANamedItemTupleToASingleImplicitlyTypedVariableThatIsImplicitlyTypedAndThenAccessTheTupleItemsByName()
         {
             var countryInfo =
-                (Name: "South Sudan", Capital: "Juba", GdpPerCapita: 275.18);
-            System.Console.WriteLine(
+                (Name: "Burundi", Capital: "Bujumbura", GdpPerCapita: 263.67);
+            Console.WriteLine(
               $@"The poorest country in the world in 2017 was {
               countryInfo.Name}, {countryInfo.Capital}: {
               countryInfo.GdpPerCapita}");
@@ -73,8 +73,8 @@
         public void AssignAnUnnamedTupleToASingleImplicitlyTypedVariableAndThenAccessTheTupleElementsByTheirItemNumberProperty()
         {
             var countryInfo =
-                ("South Sudan", "Juba", 275.18);
-            System.Console.WriteLine(
+                ("Burundi", "Bujumbura", 263.67);
+            Console.WriteLine(
               $@"The poorest country in the world in 2017 was {
               countryInfo.Item1}, {countryInfo.Item2}: {
               countryInfo.Item3}");
@@ -86,8 +86,8 @@
         public void AssignANamedItemTupleToASingleImplicitlyTypedVariableAndThenAccessTheTupleItemsByTheirItemNumberProperty()
         {
             var countryInfo =
-                (Name: "South Sudan", Capital: "Juba", GdpPerCapita: 275.18);
-            System.Console.WriteLine(
+                (Name: "Burundi", Capital: "Bujumbura", GdpPerCapita: 263.67);
+            Console.WriteLine(
               $@"The poorest country in the world in 2017 was {
               countryInfo.Item1}, {countryInfo.Item2}: {
               countryInfo.Item3}");
@@ -98,19 +98,19 @@
         public void DiscardPortionsOfTheTupleWithUnderscores()
         {
             (string name, _, double gdpPerCapita) =
-                ("South Sudan", "Juba", 275.18);
+                ("Burundi", "Bujumbura", 263.67);
         }
 
         // 10.
         public void TupleElementNamesCanBeInferredFromVariableAndPropertyNames()
         {
-            string country = "South Sudan";
-            string capital = "Juba";
-            double gdpPerCapita = 275.18;
+            string country = "Burundi";
+            string capital = "Bujumbura";
+            double gdpPerCapita = 263.67;
 
             var countryInfo =
                 (country, capital, gdpPerCapita);
-            System.Console.WriteLine(
+            Console.WriteLine(
                 $@"The poorest country in the world in 2017 was {
                     countryInfo.country}, {countryInfo.capital}: {
                     countryInfo.gdpPerCapita}");
