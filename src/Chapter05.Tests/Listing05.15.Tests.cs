@@ -35,7 +35,7 @@ public class ProgramTests
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
                 expected, () => result = Program.Main(args));
         }
-        catch (AggregateException exception) when (exception.InnerException!.GetType() == typeof(System.Net.Http.HttpRequestException))
+        catch (AggregateException exception) when (exception.InnerException is System.Net.Http.HttpRequestException)
         {
             Assert.Inconclusive("Unable to download the file.  Check your internet connection.");
         }
