@@ -13,7 +13,7 @@ public class ProgramTests
     {
         string currentDirectory = Environment.CurrentDirectory;
 
-        int expected=0;
+        int expected = 0;
         foreach(string file in Directory.EnumerateFiles(currentDirectory, "*.cs"))
         {
             expected += File.ReadAllLines(file).Count(line => line.Trim().Length > 0);
