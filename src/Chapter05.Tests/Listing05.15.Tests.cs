@@ -25,9 +25,10 @@ public class ProgramTests
     public void Main_IntelliTectIndexHtmlArgs_DownloadFile()
     {
         try
-        { 
-            string[] args = { "http://IntelliTect.com", "Index.html" };
-            string expected = $"Downloaded 'Index.html' from '{ args[0]}'.";
+        {
+            string fileName = "about";
+            string[] args = { "http://IntelliTect.com", fileName };
+            string expected = $"Downloaded '{fileName}' from '{ args[0]}'.";
 
             int? result = null;
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
