@@ -18,7 +18,7 @@ public class ThrowingExceptions
             // Catch 1
             #endregion HIGHLIGHT
             Console.WriteLine("End executing");
-            }
+        }
         catch(FormatException exception)
         {
             Console.WriteLine(
