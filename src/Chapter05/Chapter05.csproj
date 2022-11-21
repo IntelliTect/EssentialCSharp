@@ -13,7 +13,6 @@
   </ItemGroup>
   <ItemGroup>
     <Using Include="System.Net" />
-    <!--<Using Include="System.Timers.Timer" Alias="Timer" />-->
     <Compile Include="..\Shared\Program.cs">
       <Link>Program.cs</Link>
     </Compile>
