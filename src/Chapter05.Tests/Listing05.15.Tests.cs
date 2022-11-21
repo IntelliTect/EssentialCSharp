@@ -37,7 +37,7 @@ public class ProgramTests
         }
         catch (AggregateException exception) when (exception.InnerException!.GetType() == typeof(System.Net.Http.HttpRequestException))
         {
-            Assert.Inconclusive("Unable to download the file.  Check your Internet connection.");
+            Assert.Inconclusive("Unable to download the file.  Check your internet connection.");
         }
     }
 
