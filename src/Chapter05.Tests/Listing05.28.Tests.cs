@@ -10,7 +10,7 @@ public class ProgramTests
     {
         string expected = @"Enter your first name: <<Inigo
 >>Enter your age: <<42
->>Hi Inigo!  You are 504 months old.
+>>Hi Inigo! You are 504 months old.
 Goodbye Inigo";
         IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected,
         () =>

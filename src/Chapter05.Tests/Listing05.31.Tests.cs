@@ -23,7 +23,7 @@ public class LeveragingTryParseTests
         const string expected =
 @"Enter your first name: <<Inigo
 >>Enter your age: <<ThirtyFive
->>The age entered ,ThirtyFive, is not valid.";
+>>The age entered, ThirtyFive, is not valid.";
 
         IntelliTect.TestTools.Console.ConsoleAssert.Expect(
             expected, LeveragingTryParse.Main);

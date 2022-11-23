@@ -28,7 +28,7 @@ public class ExceptionHandling
         {
             age = int.Parse(ageText);
             Console.WriteLine(
-                $"Hi { firstName }!  You are { age * 12 } months old.");
+                $"Hi { firstName }! You are { age * 12 } months old.");
         }
         catch(FormatException exception)
         {
