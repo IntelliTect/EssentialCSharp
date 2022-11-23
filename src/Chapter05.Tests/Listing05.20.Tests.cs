@@ -12,7 +12,8 @@ public class ProgramTests
         view += Environment.NewLine;
         view += Path.Combine(Environment.SystemDirectory, "Temp", "index.html");
         view += Environment.NewLine;
-        view += $"C:{Path.DirectorySeparatorChar}{Path.Combine("Data", "HomeDir", "index.html")}";
+        view += Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "Documents",
+                "Web", "index.html");
 
 //            string view =
 //Directory.GetCurrentDirectory() + @"\bin\config\index.html
@@ -20,9 +21,6 @@ public class ProgramTests
 //C:\Data\HomeDir\index.html";
 
         IntelliTect.TestTools.Console.ConsoleAssert.Expect(view,
-        () =>
-        {
-            Program.Main();
-        });
+        Program.Main);
     }
 }

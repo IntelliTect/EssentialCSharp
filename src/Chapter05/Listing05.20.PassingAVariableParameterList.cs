@@ -36,8 +36,8 @@ public class Program
         // Call Combine() with an array
         fullName = Combine(
             new string[] {
-                $"C:{Path.DirectorySeparatorChar}", "Data",
-                "HomeDir", "index.html" });
+                $"{Environment.GetFolderPath(Environment.SpecialFolder.UserProfile)}", "Documents",
+                "Web", "index.html" });
         #endregion HIGHLIGHT
         Console.WriteLine(fullName);
         // ...
