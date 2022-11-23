@@ -1,16 +1,14 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_03
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_03;
+
+public class Program
 {
     #region INCLUDE
-    public class Program
+    public static void Main()
     {
-        public static void Main()
-        {
-            System.Console.Write("Enter your first name: ");
-            System.Console.WriteLine("Hello {0}!",
-            #region HIGHLIGHT
-                System.Console.ReadLine());
-            #endregion HIGHLIGHT
-        }
+        Console.Write("Enter your first name: ");
+        #region HIGHLIGHT
+        Console.WriteLine($"Hello { Console.ReadLine() }!");
+        #endregion HIGHLIGHT
     }
     #endregion INCLUDE
 }

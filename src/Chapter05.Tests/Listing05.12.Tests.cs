@@ -1,12 +1,12 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_02.Tests;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_12.Tests;
 
 [TestClass]
 public class HeyYouTests
 {
     [TestMethod]
-    public void Main_MethodCalls_MethodsCalledSuccessfully()
+    public void Main_StaticUsing_MethodsCalledNormally()
     {
         const string expected =
 @"Hey you!

@@ -1,0 +1,1 @@
+global using static AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Tests.Constants;
