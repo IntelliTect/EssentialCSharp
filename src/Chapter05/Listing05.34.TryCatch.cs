@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_31;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_34;
 
 public class LeveragingTryParse
 {

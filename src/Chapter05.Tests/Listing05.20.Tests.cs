@@ -21,6 +21,6 @@ public class ProgramTests
 //C:\Data\HomeDir\index.html";
 
         IntelliTect.TestTools.Console.ConsoleAssert.Expect(view,
-        Program.Main);
+            Program.Main);
     }
 }
