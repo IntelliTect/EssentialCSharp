@@ -49,6 +49,8 @@ public static class LineCounter
     {
         string? line;
         int lineCount = 0;
+        // This can be improved with a using statement
+        // which is not yet described.
         FileStream stream =
             new FileStream(file, FileMode.Open);
         StreamReader reader = new StreamReader(stream);
