@@ -25,6 +25,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_20
             set
             {
                 #region HIGHLIGHT
+                value=value?.Trim()!; // Remove surrounding whitespace.
+#if !NET7_0_OR_GREATER
                 // Validate LastName assignment
                 if (value is null)
                 {
@@ -46,11 +48,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_20
                         throw new ArgumentException(
                             "LastName cannot be blank.", nameof(value));
                     }
-                    else
-                    {
-                        _LastName = value;
-                    }
-                }
+                 }
+#else // NET7_0_OR_GREATER
+                // Validate LastName assignment
+                ArgumentException.ThrowIfNullOrEmpty(value);
+                // Remove any whitespace around
+                // the new last name
+#endif // NET7_0_OR_GREATER
+                _LastName = value;
                 #endregion HIGHLIGHT
             }
         }
