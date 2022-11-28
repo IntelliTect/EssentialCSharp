@@ -11,7 +11,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_16.Tests
         [DataRow("")]
         public void SetFirstName_FirstNamePropertySet(string firstName)
         {
-            Employee employee = new Employee();
+            Employee employee = new();
             employee.SetFirstName(firstName);
             
             Assert.AreEqual(firstName == "" ? null : firstName, employee.GetFirstName());
@@ -23,7 +23,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_16.Tests
         [DataRow("")]
         public void SetLastName_LastNamePropertySet(string lastName)
         {
-            Employee employee = new Employee();
+            Employee employee = new();
             employee.SetLastName(lastName);
             
             Assert.AreEqual(lastName == "" ? null : lastName, employee.GetLastName());

@@ -11,7 +11,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_13.Tests
         [TestMethod]
         public void Store_StoreInigoMontoya_WriteToFileAndRetrieve()
         {
-            Employee employee = new Employee();
+            Employee employee = new();
             employee.FirstName = "Inigo";
             employee.LastName = "Montoya";
             employee.Salary = "Too Little";

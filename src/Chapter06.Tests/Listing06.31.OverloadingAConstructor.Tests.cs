@@ -8,7 +8,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_31.Tests
         [TestMethod]
         public void EmployeeConstructor_TwoParameterConstructorSuccess()
         {
-            Employee employee = new Employee("Inigo", "Montoya");
+            Employee employee = new("Inigo", "Montoya");
             
             Assert.AreEqual("Inigo", employee.FirstName);
             Assert.AreEqual("Montoya", employee.LastName);

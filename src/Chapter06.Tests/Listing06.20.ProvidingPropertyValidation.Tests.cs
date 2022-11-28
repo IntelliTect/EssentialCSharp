@@ -10,7 +10,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_20.Tests
         [ExpectedException(typeof(ArgumentNullException))]
         public void Initialize_NullForFirstName_ThrowsArgumentNullException()
         {
-            Employee employee = new Employee();
+            Employee employee = new();
             // Null-forgiving operator used with null for testing.
             employee.Initialize(null!, "Montoya");
         }
@@ -19,7 +19,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_20.Tests
         [ExpectedException(typeof(ArgumentNullException))]
         public void Initialize_NullForLastName_ThrowsArgumentNullException()
         {
-            Employee employee = new Employee();
+            Employee employee = new();
             // Null-forgiving operator used with null for testing.
             employee.Initialize("Inigo", null!);
         }
@@ -27,7 +27,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_20.Tests
         [TestMethod]
         public void Initialize_FirstNameWithTrailingNewLine_FirstNameTrimmed()
         {
-            Employee employee = new Employee();
+            Employee employee = new();
             employee.Initialize("Inigo\n", "Montoya");
             
             Assert.AreEqual("Inigo", employee.FirstName);
@@ -36,7 +36,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_20.Tests
         [TestMethod]
         public void Initialize_LastNameWithTrailingNewLine_LastNameTrimmed()
         {
-            Employee employee = new Employee();
+            Employee employee = new();
             employee.Initialize("Inigo", "Montoya\n");
             
             Assert.AreEqual("Montoya", employee.LastName);
@@ -46,7 +46,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_20.Tests
         [ExpectedException(typeof(ArgumentException))]
         public void Initialize_BlankForFirstName_ThrowsArgumentException()
         {
-            Employee employee = new Employee();
+            Employee employee = new();
             employee.Initialize("", "Montoya");
         }
         
@@ -54,7 +54,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_20.Tests
         [ExpectedException(typeof(ArgumentException))]
         public void Initialize_BlankForLastName_ThrowsArgumentException()
         {
-            Employee employee = new Employee();
+            Employee employee = new();
             employee.Initialize("Inigo", "");
         }
     }
