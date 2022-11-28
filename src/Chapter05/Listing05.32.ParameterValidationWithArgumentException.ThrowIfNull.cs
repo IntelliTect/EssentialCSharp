@@ -10,11 +10,11 @@ public class Program
     public static void DownloadSSL(string httpsUrl, string fileName)
     {
 #if !NET7_0_OR_GREATER
-        httpsUrl=httpsUrl?.Trim()??
+        httpsUrl = httpsUrl?.Trim() ??
             throw new ArgumentNullException(nameof(httpsUrl));
-        fileName=fileName?.Trim()??
+        fileName = fileName ??
             throw new ArgumentNullException(nameof(fileName));
-        if (fileName?.Length == 0)
+        if (fileName.Trim().Length == 0)
         {
             throw new ArgumentException(
                 $"{nameof(fileName)} cannot be empty or only whitespace");

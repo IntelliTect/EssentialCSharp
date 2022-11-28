@@ -29,26 +29,26 @@ public class Program
 
 private static void DownloadSSL(string httpsUrl, string fileName)
 {
-    #region HIGHLIGHT
 #if !NET7_0_OR_GREATER
-    httpsUrl=httpsUrl?.Trim()??
+    httpsUrl = httpsUrl?.Trim() ??
         throw new ArgumentNullException(nameof(httpsUrl));
-    fileName=fileName?.Trim()??
+    fileName = fileName ??
         throw new ArgumentNullException(nameof(fileName));
-    if (fileName?.Length == 0)
+    if (fileName.Trim().Length == 0)
     {
         throw new ArgumentException(
             $"{nameof(fileName)} cannot be empty or only whitespace");
     }
 #else
-    ArgumentException.ThrowIfNullOrEmpty(httpsUrl.TrimEnd());
-    ArgumentException.ThrowIfNullOrEmpty(fileName?.Trim());
+        ArgumentException.ThrowIfNullOrEmpty(httpsUrl.Trim());
+        ArgumentException.ThrowIfNullOrEmpty(fileName?.Trim());
 #endif
+
     if (!httpsUrl.ToUpper().StartsWith("HTTPS"))
     {
         throw new ArgumentException("URL must start with 'HTTPS'.");
     }
-#endregion HIGHLIGHT
+
     HttpClient client = new();
     byte[] response =
         client.GetByteArrayAsync(httpsUrl).Result;
