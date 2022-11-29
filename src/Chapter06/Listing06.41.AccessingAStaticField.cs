@@ -11,9 +11,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_41
             Employee.NextId = 1000000;
             #endregion HIGHLIGHT
 
-            Employee employee1 = new Employee(
+            Employee employee1 = new(
                 "Inigo", "Montoya");
-            Employee employee2 = new Employee(
+            Employee employee2 = new(
                 "Princess", "Buttercup");
 
             Console.WriteLine(

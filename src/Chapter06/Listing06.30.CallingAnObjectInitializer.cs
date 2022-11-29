@@ -8,10 +8,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_30
     {
         public static void Main()
         {
-            List<Employee> employees = new List<Employee>()
+            List<Employee> employees = new()
                 {
-                    new Employee("Inigo", "Montoya"),
-                    new Employee("Kevin", "Bost")
+                    new("Inigo", "Montoya"),
+                    new("Kevin", "Bost")
                 };
             // ...
         }

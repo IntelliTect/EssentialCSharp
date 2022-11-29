@@ -6,7 +6,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_34
     {
         public static void Main()
         {
-            Employee employee = new Employee("Inigo Montoya");
+            Employee employee = new("Inigo Montoya");
 
             System.Console.WriteLine(employee.Name);
 

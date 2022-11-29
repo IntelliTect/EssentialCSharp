@@ -5,7 +5,7 @@
     {
         public static void Main()
         {
-            Employee employee = new Employee("Inigo", "Montoya") 
+            Employee employee = new("Inigo", "Montoya") 
                 { Title = "Computer Nerd", Salary = "Not enough" };
             #region EXCLUDE
             System.Console.WriteLine(

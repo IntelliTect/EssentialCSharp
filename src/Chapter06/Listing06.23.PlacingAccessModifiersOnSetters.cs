@@ -8,7 +8,7 @@
     {
         public static void Main()
         {
-            Employee employee1 = new Employee();
+            Employee employee1 = new();
             employee1.Initialize(42);
             #region HIGHLIGHT
             // ERROR: The property or indexer 'Employee.Id' 

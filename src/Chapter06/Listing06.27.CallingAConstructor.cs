@@ -9,7 +9,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_27
         {
             Employee employee;
             #region HIGHLIGHT
-            employee = new Employee("Inigo", "Montoya");
+            employee = new("Inigo", "Montoya");
             #endregion HIGHLIGHT
             employee.Salary = "Too Little";
 

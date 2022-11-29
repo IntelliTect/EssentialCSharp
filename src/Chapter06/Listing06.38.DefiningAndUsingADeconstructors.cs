@@ -93,7 +93,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_38
         public static void Main()
         {
             Employee employee;
-            employee = new Employee("Inigo", "Montoya")
+            employee = new ("Inigo", "Montoya")
             {
                 // Leveraging object initializer syntax
                 Salary = "Too Little"

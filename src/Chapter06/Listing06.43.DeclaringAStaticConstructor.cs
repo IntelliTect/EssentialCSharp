@@ -7,7 +7,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_43
     {
         static Employee()
         {
-            Random randomGenerator = new Random();
+            Random randomGenerator = new();
             NextId = randomGenerator.Next(101, 999);
         }
 

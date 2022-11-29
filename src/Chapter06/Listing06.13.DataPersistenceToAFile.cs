@@ -16,13 +16,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_13
             // for the filename. FileMode.Create will force
             // a new file to be created or override an
             // existing file
-            FileStream stream = new FileStream(
+            FileStream stream = new(
                 employee.FirstName + employee.LastName + ".dat",
                 FileMode.Create);
 
             // Create a StreamWriter object for writing text
             // into the FileStream
-            StreamWriter writer = new StreamWriter(stream);
+            StreamWriter writer = new(stream);
 
             // Write all the data associated with the employee
             writer.WriteLine(employee.FirstName);
