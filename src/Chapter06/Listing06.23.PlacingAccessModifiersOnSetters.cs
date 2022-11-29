@@ -1,8 +1,8 @@
 // Non-nullable field is uninitialized. Consider declaring as nullable.
 #pragma warning disable CS8618 // Pending a constructors
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_23
-{
+//namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_23
+//{
     #region INCLUDE
     public class Program
     {
@@ -14,7 +14,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_23
             // ERROR: The property or indexer 'Employee.Id' 
             // cannot be used in this context because the set 
             // accessor is inaccessible
-            // employee1.Id = "490";
+            employee1.Id = "490";
             #endregion HIGHLIGHT
         }
     }
@@ -41,4 +41,4 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_23
         private string _Id;
     }
     #endregion INCLUDE
-}
+//}

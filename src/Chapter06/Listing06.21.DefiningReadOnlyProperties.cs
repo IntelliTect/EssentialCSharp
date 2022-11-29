@@ -1,8 +1,8 @@
 // Non-nullable field is uninitialized. Consider declaring as nullable.
 #pragma warning disable CS8618 // Pending a constructors
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_21
-{
+//namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_21
+//{
     #region INCLUDE
     public class Program
     {
@@ -14,7 +14,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_21
             #region HIGHLIGHT
             // ERROR:  Property or indexer 'Employee.Id' 
             // cannot be assigned to; it is read-only
-            // employee1.Id = "490";
+            employee1.Id = "490";
             #endregion HIGHLIGHT
         }
     }
@@ -42,4 +42,4 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_21
         private string _Id;
     }
     #endregion INCLUDE
-}
+//}
