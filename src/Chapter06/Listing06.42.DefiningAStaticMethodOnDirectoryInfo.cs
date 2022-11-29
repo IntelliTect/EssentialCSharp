@@ -60,7 +60,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_42
         public static void Main()
         {
         #endregion EXCLUDE
-            DirectoryInfo directory = new DirectoryInfo(".\\Source");
+            DirectoryInfo directory = new(".\\Source");
             directory.MoveTo(".\\Root");
             #region HIGHLIGHT
             DirectoryInfoExtension.CopyTo(

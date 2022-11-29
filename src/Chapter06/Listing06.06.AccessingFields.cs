@@ -10,7 +10,7 @@
         {
             Employee employee1 = new Employee();
             Employee employee2;
-            employee2 = new Employee();
+            employee2 = new ();
 
             #region HIGHLIGHT
             employee1.FirstName = "Inigo";

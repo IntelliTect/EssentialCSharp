@@ -9,9 +9,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_19
         public static void Main()
         {
             Employee employee1 =
-                new Employee();
+                new();
             Employee employee2 =
-                new Employee();
+                new();
 
             // Call the FirstName property's setter
             employee1.FirstName = "Inigo";

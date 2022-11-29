@@ -11,7 +11,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_52
     {
         static void Main(string[] args)
         {
-            CommandLine commandLine = new CommandLine(args);
+            CommandLine commandLine = new(args);
 
             switch(commandLine.Action)
             {

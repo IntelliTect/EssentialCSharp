@@ -15,7 +15,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_03
             #endregion HIGHLIGHT
             Employee employee2;
             #region HIGHLIGHT
-            employee2 = new Employee();
+            employee2 = new();
             #endregion HIGHLIGHT
 
             IncreaseSalary(employee1);

@@ -34,7 +34,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_11
     {
         public static void Main()
         {
-            Employee employee = new Employee();
+            Employee employee = new();
 
             employee.SetName("Inigo", "Montoya");
             // ...

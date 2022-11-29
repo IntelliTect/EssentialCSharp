@@ -47,7 +47,7 @@ using System;
     {
         public static void Main()
         {
-            Employee employee = new Employee();
+            Employee employee = new();
 
             employee.FirstName = "Inigo";
             employee.LastName = "Montoya";

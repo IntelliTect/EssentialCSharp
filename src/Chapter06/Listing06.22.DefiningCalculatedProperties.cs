@@ -10,7 +10,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_22
     {
         public static void Main()
         {
-            Employee employee1 = new Employee();
+            Employee employee1 = new();
 
             #region HIGHLIGHT
             employee1.Name = "Inigo Montoya";

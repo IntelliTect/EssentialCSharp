@@ -5,13 +5,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_49
     class CommonGuid
     {
         public static readonly Guid ComIUnknownGuid =
-            new Guid("00000000-0000-0000-C000-000000000046");
+            new("00000000-0000-0000-C000-000000000046");
         public static readonly Guid ComIClassFactoryGuid =
-            new Guid("00000001-0000-0000-C000-000000000046");
+            new("00000001-0000-0000-C000-000000000046");
         public static readonly Guid ComIDispatchGuid =
-            new Guid("00020400-0000-0000-C000-000000000046");
+            new("00020400-0000-0000-C000-000000000046");
         public static readonly Guid ComITypeInfoGuid =
-            new Guid("00020401-0000-0000-C000-000000000046");
+            new("00020401-0000-0000-C000-000000000046");
         // ...
     }
 
@@ -20,7 +20,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_49
         public static void Main()
         {
             // Note: board.Cells does not require initialization
-            TicTacToeBoard board = new TicTacToeBoard();
+            TicTacToeBoard board = new();
             Console.WriteLine(board.Cells);
         }
     }
