@@ -11,6 +11,9 @@
   </PropertyGroup>
   <Import Project="..\Chapter.props" />
   <ItemGroup>
+    <Compile Remove="Listing06.15.UsingThePrivateAccessModifier.cs" />
+    <Compile Remove="Listing06.21.DefiningReadOnlyProperties.cs" />
+    <Compile Remove="Listing06.23.PlacingAccessModifiersOnSetters.cs" />
     <Compile Remove="Listing06.24.CILCodeResultingFromProperties.cs" />
     <Compile Remove="Listing06.25.PropertiesAreAnExplicitConstructInCIL.cs" />
   </ItemGroup>
@@ -20,6 +23,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Listing06.15.UsingThePrivateAccessModifier.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Listing06.21.DefiningReadOnlyProperties.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Listing06.23.PlacingAccessModifiersOnSetters.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Listing06.24.CILCodeResultingFromProperties.cs" />
     <None Include="Listing06.25.PropertiesAreAnExplicitConstructInCIL.cs" />
   </ItemGroup>

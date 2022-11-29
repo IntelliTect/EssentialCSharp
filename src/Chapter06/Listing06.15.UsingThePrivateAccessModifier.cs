@@ -7,9 +7,10 @@
 // Add readonly modifier ignored pending introduction of the concept
 #pragma warning disable IDE0044
 
+using System;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_15
-{
+//namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_15
+//{
     #region INCLUDE
     public class Employee
     {
@@ -54,13 +55,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_15
             // ...
 
             #region HIGHLIGHT
-            // Password is private, so it cannot be
+            // ERROR: Password is private, so it cannot be
             // accessed from outside the class
-            // Console.WriteLine(
-            //    ("Password = {0}", employee.Password);
+            Console.WriteLine(
+               "Password = {0}", employee.Password);
             #endregion HIGHLIGHT
         }
         // ...
     }
     #endregion INCLUDE
-}
+//}

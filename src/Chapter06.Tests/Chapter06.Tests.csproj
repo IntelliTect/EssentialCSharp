@@ -4,6 +4,12 @@
   </PropertyGroup>
   <Import Project="..\ChapterTests.props" />
   <ItemGroup>
+    <Compile Include="..\Shared\CompilerAssert.cs" Link="CompilerAssert.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Scripting" Version="4.4.0" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\Chapter06\Chapter06.csproj" />
   </ItemGroup>
   <ItemGroup>
