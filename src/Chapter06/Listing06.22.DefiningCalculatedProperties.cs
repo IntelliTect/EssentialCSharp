@@ -58,6 +58,16 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_22
             }
             set
             {
+                // #region EXCLUDE
+#if !NET7_0_OR_GREATER
+                value = value?.Trim() ??
+                    throw new ArgumentException("Value cannot be null, empty or Whitespace");
+#else
+                // #endregion EXCLUDE
+                ArgumentException.ThrowIfNullOrEmpty(value.Trim());
+                // #region EXCLUDE
+#endif // NET7_0_OR_GREATER
+                // #endregion EXCLUDE
                 // Split the assigned value into 
                 // first and last names
                 string[] names;

@@ -24,43 +24,32 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_20
             get => _LastName;
             set
             {
-                #region HIGHLIGHT
+                // #region EXCLUDE
+                #if !NET7_0_OR_GREATER
+                _LastName = value;
                 value=value?.Trim()!; // Remove surrounding whitespace.
-#if !NET7_0_OR_GREATER
                 // Validate LastName assignment
-                if (value is null)
+                value = value?.Trim() ?? throw new ArgumentNullException(nameof(value));
+                if(value.Length == 0)
                 {
                     // Report error
-                    // Use "value" rather than
-                    // nameof(value) prior to C# 6.0.
-                    throw new ArgumentNullException(nameof(value));
+                    throw new ArgumentException(
+                        "LastName cannot be blank or whitespace.", nameof(value));
                 }
-                else
-                {
-                    // Remove any whitespace around
-                    // the new last name
-                    value = value.Trim();
-                    if(value == "")
-                    {
-                        // Report error
-                        // Use "value" rather than
-                        // nameof(value) prior to C# 6.0.
-                        throw new ArgumentException(
-                            "LastName cannot be blank.", nameof(value));
-                    }
-                 }
-#else // NET7_0_OR_GREATER
+                #else
+                // #endregion EXCLUDE
+                #region HIGHLIGHT
                 // Validate LastName assignment
-                ArgumentException.ThrowIfNullOrEmpty(value);
-                // Remove any whitespace around
-                // the new last name
-#endif // NET7_0_OR_GREATER
-                _LastName = value;
+                ArgumentException.ThrowIfNullOrEmpty(value.Trim());
                 #endregion HIGHLIGHT
+                // #region EXCLUDE
+                #endif // NET7_0_OR_GREATER
+                // #endregion EXCLUDE
+                _LastName = value;
             }
         }
         private string _LastName;
-        #region EXCLUDE
+#region EXCLUDE
         // FirstName property
         public string FirstName
         {
@@ -70,31 +59,24 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_20
             }
             set
             {
+                #if !NET7_0_OR_GREATER
                 // Validate FirstName assignment
-                if(value == null)
+                value = value?.Trim() ?? throw new ArgumentNullException(nameof(value));
+                if (value.Length == 0)
                 {
-                    // Report error.
-                    throw new ArgumentNullException(nameof(value));
+                    // Report error
+                    throw new ArgumentException(
+                        "LastName cannot be blank or whitespace.", nameof(value));
                 }
-                else
-                {
-                    // Remove any whitespace around
-                    // the new last name
-                    value = value.Trim();
-                    if(value == "")
-                    {
-                        throw new ArgumentException(
-                            "FirstName cannot be blank.", nameof(value));
-                    }
-                    else
-                    {
-                        _FirstName = value;
-                    }
-                }
+                #else // NET7_0_OR_GREATER
+                // Validate LastName assignment
+                ArgumentException.ThrowIfNullOrEmpty(value.Trim());
+                #endif // NET7_0_OR_GREATER
+                _FirstName = value;
             }
         }
         private string _FirstName;
-        #endregion EXCLUDE
+#endregion EXCLUDE
     }
-    #endregion INCLUDE
+#endregion INCLUDE
 }
