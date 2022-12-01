@@ -16,6 +16,7 @@
     <Compile Remove="Listing06.23.PlacingAccessModifiersOnSetters.cs" />
     <Compile Remove="Listing06.24.CILCodeResultingFromProperties.cs" />
     <Compile Remove="Listing06.25.PropertiesAreAnExplicitConstructInCIL.cs" />
+    <Compile Remove="Listing06.28.DefaultConstructorNoLongerAvailable.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\Shared\Program.cs">
@@ -34,5 +35,8 @@
     </None>
     <None Include="Listing06.24.CILCodeResultingFromProperties.cs" />
     <None Include="Listing06.25.PropertiesAreAnExplicitConstructInCIL.cs" />
+    <None Include="Listing06.28.DefaultConstructorNoLongerAvailable.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>
