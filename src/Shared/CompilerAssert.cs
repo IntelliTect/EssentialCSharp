@@ -1,11 +1,31 @@
+using Microsoft.CodeAnalysis.CSharp;
+using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp.Scripting;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Scripting;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Globalization;
+using System.Diagnostics;
+using Microsoft.CodeAnalysis.Text;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
 {
+
+
     readonly public struct CompileError
     {
+        public static Dictionary<string, string?> CompilerErrorMessages { get; } = new Dictionary<string, string?>()
+        {
+            {"CS0650", "Bad array declarator: To declare a managed array the rank specifier precedes the variable's identifier. To declare a fixed size buffer field, use the fixed keyword before the field type." },
+            {"CS1525", "Invalid expression term '{'"},
+            {"CS1002", "; expected"},
+            {"CS1513", "} expected"},
+            {"CS0270", "Array size cannot be specified in a variable declaration (try initializing with a 'new' expression)"},
+            {"CS1586", "Array creation must have array size or array initializer"},
+            {"CS0847", null}, // "An array initializer of length 'X' is expected"
+            //{"CS0847", "An array initializer of length '1' is expected"}
+        };
+
         public string Id { get; }
         public string Message { get; }
 
@@ -64,6 +84,58 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
     }
     static public class CompilerAssert
     {
+        public static async Task Compile(
+            string fileName, 
+            string targetMethod, 
+            string[] errorIds) => await Compile(
+                new string[] { fileName }, targetMethod, errorIds);
+
+
+        public static async Task Compile(string[] fileNames, string targetMethod, string[] errorIds)
+        {
+            List<SyntaxTree> syntaxTrees = new();
+            foreach (string fileName in fileNames)
+            {
+                string code1 = File.ReadAllText(fileName);
+                syntaxTrees.Add(CSharpSyntaxTree.ParseText(code1, 
+                    new CSharpParseOptions().WithPreprocessorSymbols("INCLUDE")));
+
+            }
+
+            string methodStatements;
+            CompilationUnitSyntax root = (CompilationUnitSyntax)syntaxTrees[0].GetRoot();
+            NamespaceDeclarationSyntax namespaceRoot =
+                root.Members.OfType<NamespaceDeclarationSyntax>().First();
+            ClassDeclarationSyntax classRoot =
+                namespaceRoot.Members.OfType<ClassDeclarationSyntax>().First();
+            MethodDeclarationSyntax methodBody =
+                classRoot.Members.OfType<MethodDeclarationSyntax>().First(
+                    item => item.Identifier.Text == targetMethod)!;
+
+            // TODO: Switch to use Roslyn for compilation
+            methodStatements = methodBody.Body!.Statements.ToString()!;
+            CompileError[] compilerErrors = await CompilerAssert.CompileAsync(methodStatements);
+            Debug.WriteLine("CompileIds:" + string.Join(", ", compilerErrors.Select(item => item.Id).ToArray()));
+            CollectionAssert.AreEquivalent(errorIds, compilerErrors.Select(item => item.Id).ToList());
+            if (CultureInfo.CurrentCulture.Name != "en-US")
+            {
+                Debug.WriteLine("Due to Culture, compiler error messages are not the same:");
+            }
+            foreach (CompileError item in compilerErrors)
+            {
+                if (CultureInfo.CurrentCulture.Name == "en-US")
+                {
+                    Debug.WriteLine($"{{\"{item.Id}\", \"{item.Message}\"}}");
+                    if (CompileError.CompilerErrorMessages[item.Id] != null) Assert.AreEqual(item.Message, CompileError.CompilerErrorMessages[item.Id]);
+                }
+                else
+                {
+                    Debug.WriteLine($"\t\"{item.Message}\" != \"{CompileError.CompilerErrorMessages[item.Id]}\"");
+                }
+            }
+        }
+
+
         async static public Task<CompileError[]> ExpectErrorsInFileAsync(
             string fileName, params CompileError[] diagnostics)
         {
@@ -85,16 +157,17 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
 
             if (diagnostics?.Length > 0)
             {
-                Assert.AreEqual<int>(diagnostics.Length, actualCompileErrors.Length,
-                    "The number of errors returned does not match what was expected.");
 
-                for (int i = 0; i < actualCompileErrors.Length; i++)
+
+                for (int i = 0; i < Math.Min(actualCompileErrors.Length, diagnostics.Length); i++)
                 {
                     // Compare Id's first as that is more meaningful.
-                    Assert.AreEqual<string>(diagnostics[i].Id, actualCompileErrors[i].Id,
-                        $"The expected Ids do not match for item {i}: " +
-                        $"{diagnostics[i].Id}: {diagnostics[i].Message} <> {actualCompileErrors[i].Id}: {actualCompileErrors[i].Message}");
+                    Assert.AreEqual<(string Id, string Message)>((Id:diagnostics[i].Id, Message:diagnostics[i].Message), (Id: actualCompileErrors[i].Id, Message: actualCompileErrors[i].Message));
+                        //$"The expected Ids do not match for item {i}: " +
+                        //$"{diagnostics[i].Id}: {diagnostics[i].Message} <> {actualCompileErrors[i].Id}: {actualCompileErrors[i].Message}");
                 }
+                Assert.AreEqual<int>(diagnostics.Length, actualCompileErrors.Length,
+                    "The number of errors returned does not match what was expected.");
                 return actualCompileErrors;
             }
 
