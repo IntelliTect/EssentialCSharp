@@ -7,11 +7,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_28.Tests
     public class ProgramTests
     {
         [TestMethod]
+        [Ignore]
         async public Task UnassignedVariableThrowsError()
         {
-            _ = await CompilerAssert.ExpectErrorsInFileAsync(
-                "Listing06.28.DefaultConstructorNoLongerAvailable.cs",
-                new CompileError("CS0246", "The property or indexer 'Employee.Id' cannot be used in this context because the set accessor is inaccessible"));
+            await CompilerAssert.Compile2Async(
+                new string[] { "Listing06.28.DefaultConstructorNoLongerAvailable.cs", "Listing06.26.DefiningAConstructor.cs" },
+                new string[]{ "CS0246" });
         }
     }
 }
