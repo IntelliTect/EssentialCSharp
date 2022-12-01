@@ -194,6 +194,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                         //$"The expected Ids do not match for item {i}: " +
                         //$"{diagnostics[i].Id}: {diagnostics[i].Message} <> {actualCompileErrors[i].Id}: {actualCompileErrors[i].Message}");
                 }
+                Assert.AreEqual<int>(diagnostics.Length, actualCompileErrors.Length,
+                    "The number of errors returned does not match what was expected.");
                 return actualCompileErrors;
             }
             Assert.AreEqual<int>(diagnostics.Length, actualCompileErrors.Length,
