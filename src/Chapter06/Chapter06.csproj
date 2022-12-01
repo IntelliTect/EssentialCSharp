@@ -36,7 +36,7 @@
     <None Include="Listing06.24.CILCodeResultingFromProperties.cs" />
     <None Include="Listing06.25.PropertiesAreAnExplicitConstructInCIL.cs" />
     <None Include="Listing06.28.DefaultConstructorNoLongerAvailable.cs">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
