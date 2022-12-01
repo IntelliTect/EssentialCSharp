@@ -84,37 +84,65 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
     }
     static public class CompilerAssert
     {
-        public static async Task Compile(
-            string fileName, 
-            string targetMethod, 
-            string[] errorIds) => await Compile(
-                new string[] { fileName }, targetMethod, errorIds);
+
+        private static readonly CSharpCompilationOptions DefaultCompilationOptions =
+            new CSharpCompilationOptions(OutputKind.DynamicallyLinkedLibrary)
+                    .WithOverflowChecks(true).WithOptimizationLevel(OptimizationLevel.Release);
+                    //.WithUsings(DefaultNamespaces);
 
 
-        public static async Task Compile(string[] fileNames, string targetMethod, string[] errorIds)
+        public static async Task Compile2Async(
+            string fileName,
+            string[] errorIds,
+            string? targetMethod) => await Compile2Async(
+                new string[] { fileName }, errorIds, targetMethod);
+
+
+        public static async Task Compile2Async(string[] fileNames, string[] errorIds, string? targetMethod = null)
         {
+            string code = string.Empty;
             List<SyntaxTree> syntaxTrees = new();
             foreach (string fileName in fileNames)
             {
-                string code1 = File.ReadAllText(fileName);
-                syntaxTrees.Add(CSharpSyntaxTree.ParseText(code1, 
-                    new CSharpParseOptions().WithPreprocessorSymbols("INCLUDE")));
-
+                code += Environment.NewLine + await File.ReadAllTextAsync(fileName);
             }
 
-            string methodStatements;
-            CompilationUnitSyntax root = (CompilationUnitSyntax)syntaxTrees[0].GetRoot();
-            NamespaceDeclarationSyntax namespaceRoot =
-                root.Members.OfType<NamespaceDeclarationSyntax>().First();
-            ClassDeclarationSyntax classRoot =
-                namespaceRoot.Members.OfType<ClassDeclarationSyntax>().First();
-            MethodDeclarationSyntax methodBody =
-                classRoot.Members.OfType<MethodDeclarationSyntax>().First(
-                    item => item.Identifier.Text == targetMethod)!;
+            if (string.IsNullOrEmpty(code))
+            {
+                throw new InvalidOperationException("There is no code to parse.");
+            }
 
-            // TODO: Switch to use Roslyn for compilation
-            methodStatements = methodBody.Body!.Statements.ToString()!;
-            CompileError[] compilerErrors = await CompilerAssert.CompileAsync(methodStatements);
+            CompileError[] compilerErrors;
+
+            SyntaxTree syntaxTree = CSharpSyntaxTree.ParseText(code,
+                new CSharpParseOptions().WithPreprocessorSymbols("INCLUDE"));
+
+            if (targetMethod is not null)
+            {
+                CompilationUnitSyntax root = (CompilationUnitSyntax)syntaxTree.GetCompilationUnitRoot();
+                NamespaceDeclarationSyntax namespaceRoot =
+                    root.Members.OfType<NamespaceDeclarationSyntax>().First();
+                ClassDeclarationSyntax classRoot =
+                    namespaceRoot.Members.OfType<ClassDeclarationSyntax>().First();
+
+                MethodDeclarationSyntax methodBody =
+                    classRoot.Members.OfType<MethodDeclarationSyntax>().First(
+                        item => item.Identifier.Text == targetMethod)!;
+
+                // TODO: Switch to use Roslyn for compilation
+                code = methodBody.Body!.Statements.ToString()!;
+
+                syntaxTree = CSharpSyntaxTree.ParseText(code,
+                    new CSharpParseOptions().WithPreprocessorSymbols("INCLUDE"));
+                compilerErrors = await CompileAsyncOld(code);
+            }
+            else
+            {
+                compilerErrors = syntaxTree.GetDiagnostics().Select(item =>
+                        new CompileError(item.Id, item.GetMessage())).ToArray();
+            }
+
+
             Debug.WriteLine("CompileIds:" + string.Join(", ", compilerErrors.Select(item => item.Id).ToArray()));
             CollectionAssert.AreEquivalent(errorIds, compilerErrors.Select(item => item.Id).ToList());
             if (CultureInfo.CurrentCulture.Name != "en-US")
@@ -132,7 +160,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                 {
                     Debug.WriteLine($"\t\"{item.Message}\" != \"{CompileError.CompilerErrorMessages[item.Id]}\"");
                 }
-            }
+            } 
+            
         }
 
 
@@ -153,12 +182,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
         async static public Task<CompileError[]> ExpectErrorsAsync(
             string sourceCode, params CompileError[] diagnostics)
         {
+            ArgumentNullException.ThrowIfNull(diagnostics);
             CompileError[] actualCompileErrors = await CompileAsync(sourceCode);
 
-            if (diagnostics?.Length > 0)
+            if (diagnostics.Length > 0)
             {
-
-
                 for (int i = 0; i < Math.Min(actualCompileErrors.Length, diagnostics.Length); i++)
                 {
                     // Compare Id's first as that is more meaningful.
@@ -166,15 +194,15 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                         //$"The expected Ids do not match for item {i}: " +
                         //$"{diagnostics[i].Id}: {diagnostics[i].Message} <> {actualCompileErrors[i].Id}: {actualCompileErrors[i].Message}");
                 }
-                Assert.AreEqual<int>(diagnostics.Length, actualCompileErrors.Length,
-                    "The number of errors returned does not match what was expected.");
                 return actualCompileErrors;
             }
+            Assert.AreEqual<int>(diagnostics.Length, actualCompileErrors.Length,
+                "The number of errors returned does not match what was expected.");
 
             Assert.Fail("The expected compilation errors did not occur.");
             return null!;  // This code will never execute due to the Fail line above.
         }
-        public static async Task<CompileError[]> CompileAsync(
+        public static async Task<CompileError[]> CompileAsyncOld(
             string sourceCode)
         {
             CompileError[] actualCompileErrors = Array.Empty<CompileError>();
@@ -191,6 +219,23 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
 
             }
             return actualCompileErrors;
+        }
+
+        public static async Task<CompileError[]> CompileAsync(
+            string sourceCode)
+        {
+            CompileError[] actualCompileErrors = Array.Empty<CompileError>();
+                SyntaxTree tree = CSharpSyntaxTree.ParseText(sourceCode);
+                CompilationUnitSyntax root = tree.GetCompilationUnitRoot();
+            return root.GetDiagnostics().Select(item =>
+                    new CompileError(item.Id, item.GetMessage())).ToArray();
+
+            //Assert.IsTrue(exception.Diagnostics.Length > 0);
+
+            //    actualCompileErrors = exception.Diagnostics.Select(item =>
+            //        new CompileError(item.Id, item.GetMessage())).ToArray();
+
+            //return actualCompileErrors;
         }
     }
 }
