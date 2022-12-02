@@ -48,7 +48,7 @@
             Initialize(id, firstName, lastName);
             #endregion HIGHLIGHT
         }
-#pragma warning restore CS8618
+        #pragma warning restore CS8618
 
         #region HIGHLIGHT
         private void Initialize(
