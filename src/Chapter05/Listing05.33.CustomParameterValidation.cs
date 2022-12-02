@@ -40,8 +40,8 @@ private static void DownloadSSL(string httpsUrl, string fileName)
             $"{nameof(fileName)} cannot be empty or only whitespace");
     }
 #else
-        ArgumentException.ThrowIfNullOrEmpty(httpsUrl.Trim());
-        ArgumentException.ThrowIfNullOrEmpty(fileName?.Trim());
+    ArgumentException.ThrowIfNullOrEmpty(httpsUrl = httpsUrl?.Trim()!);
+    ArgumentException.ThrowIfNullOrEmpty(fileName = fileName?.Trim()!);
 #endif
 
     if (!httpsUrl.ToUpper().StartsWith("HTTPS"))
