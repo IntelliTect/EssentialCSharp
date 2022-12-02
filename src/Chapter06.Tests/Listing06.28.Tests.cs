@@ -8,7 +8,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_28.Tests
     {
         [TestMethod]
         [Ignore]
-        async public Task UnassignedVariableThrowsError()
+        public async Task UnassignedVariableThrowsError()
         {
             await CompilerAssert.Compile2Async(
                 new string[] { "Listing06.28.DefaultConstructorNoLongerAvailable.cs", "Listing06.26.DefiningAConstructor.cs" },

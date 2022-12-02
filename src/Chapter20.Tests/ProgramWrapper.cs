@@ -13,7 +13,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Tests
             MainMethod = mainMethod;
         }
 
-        async public Task Main(string[] args)
+        public async Task Main(string[] args)
         {
             await MainMethod(args);
         }

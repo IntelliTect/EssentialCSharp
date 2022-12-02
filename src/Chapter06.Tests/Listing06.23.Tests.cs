@@ -7,7 +7,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_23.Tests
     public class ProgramTests
     {
         [TestMethod]
-        async public Task UnassignedVariableThrowsError()
+        public async Task UnassignedVariableThrowsError()
         {
             _ = await CompilerAssert.ExpectErrorsInFileAsync(
                 "Listing06.23.PlacingAccessModifiersOnSetters.cs",

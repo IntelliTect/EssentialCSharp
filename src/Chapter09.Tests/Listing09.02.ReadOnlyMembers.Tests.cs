@@ -11,7 +11,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_02.Tests
     public class MyTestClass
     {
         [TestMethod]
-        async public Task ReadOnlyMethod_ModifyObject_ErrorReported()
+        public async Task ReadOnlyMethod_ModifyObject_ErrorReported()
         {
             string thingCode = @"
                 public struct Thing
