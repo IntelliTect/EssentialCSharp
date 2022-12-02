@@ -12,7 +12,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_02.Tests
         public TestContext? TestContext { get; set; }
 
         [TestMethod]
-        async public Task UnassignedVariableThrowsError()
+        public async Task UnassignedVariableThrowsError()
         {
             _ = await CompilerAssert.ExpectErrorsInFileAsync(
                 "Listing03.02.DereferencingAnUnassignedVariable.cs",
