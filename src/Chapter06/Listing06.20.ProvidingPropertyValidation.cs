@@ -26,8 +26,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_20
             {
                 // #region EXCLUDE
 #if !NET7_0_OR_GREATER
-                _LastName = value;
-                value=value?.Trim()!; // Remove surrounding whitespace.
                 // Validate LastName assignment
                 value = value?.Trim() ?? throw new ArgumentNullException(nameof(value));
                 if(value.Length == 0)
