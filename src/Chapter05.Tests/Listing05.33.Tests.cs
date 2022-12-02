@@ -86,7 +86,7 @@ public class ProgramTests
     public void Main_NoArgs_ExpectFirstNullError()
     {
         string[] args = { null!, "Montoya" };
-        string expected = "Value cannot be null. (Parameter \'httpsUrl = httpsUrl?.Trim()!\')";
+        string expected = "Object reference not set to an instance of an object.";
 
         IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected,
         () =>
@@ -106,7 +106,7 @@ public class ProgramTests
     public void Main_FirstArg_ExpectSecondNullError()
     {
         string[] args = { "Inigo", null! };
-        string expected = "Value cannot be null. (Parameter \'fileName = fileName?.Trim()!\')";
+        string expected = "Value cannot be null. (Parameter \'fileName?.Trim()\')";
 
         IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected,
         () =>
@@ -126,7 +126,7 @@ public class ProgramTests
     public void Main_InvalidSecondArg_ExpectWhitespaceError()
     {
         string[] args = { "Inigo", "  " };
-        string expected = "The value cannot be an empty string. (Parameter \'fileName = fileName?.Trim()!\')";
+        string expected = "The value cannot be an empty string. (Parameter \'fileName?.Trim()\')";
 
         IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected,
         () =>
