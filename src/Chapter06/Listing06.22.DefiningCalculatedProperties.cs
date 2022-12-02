@@ -64,7 +64,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_22
                     throw new ArgumentException("Value cannot be null, empty or Whitespace");
 #else
                 // #endregion EXCLUDE
-                ArgumentException.ThrowIfNullOrEmpty(value.Trim());
+                ArgumentException.ThrowIfNullOrEmpty(value = value?.Trim()!);
                 // #region EXCLUDE
 #endif // NET7_0_OR_GREATER
                 // #endregion EXCLUDE
