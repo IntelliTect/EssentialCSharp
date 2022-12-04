@@ -10,9 +10,7 @@ using Microsoft.CodeAnalysis.Text;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
 {
-
-
-    readonly public struct CompileError
+    public readonly struct CompileError
     {
         public static Dictionary<string, string?> CompilerErrorMessages { get; } = new Dictionary<string, string?>()
         {
@@ -82,15 +80,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
             CompileError lhs, CompileError rhs) =>
                 !lhs.Equals(rhs);
     }
-    static public class CompilerAssert
+    public static class CompilerAssert
     {
-
-        private static readonly CSharpCompilationOptions DefaultCompilationOptions =
-            new CSharpCompilationOptions(OutputKind.DynamicallyLinkedLibrary)
-                    .WithOverflowChecks(true).WithOptimizationLevel(OptimizationLevel.Release);
-                    //.WithUsings(DefaultNamespaces);
-
-
         public static async Task Compile2Async(
             string fileName,
             string[] errorIds,
@@ -176,14 +167,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                     (string result, string item) =>
                         result += $"\n{item}");
 
-            return await ExpectErrorsAsync(sourceCode, diagnostics);
+            return ExpectErrorsAsync(sourceCode, diagnostics);
         }
 
-        async static public Task<CompileError[]> ExpectErrorsAsync(
+        static public CompileError[] ExpectErrorsAsync(
             string sourceCode, params CompileError[] diagnostics)
         {
             ArgumentNullException.ThrowIfNull(diagnostics);
-            CompileError[] actualCompileErrors = await CompileAsync(sourceCode);
+            CompileError[] actualCompileErrors = CompileAsync(sourceCode);
 
             if (diagnostics.Length > 0)
             {
@@ -221,7 +212,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
             return actualCompileErrors;
         }
 
-        public static async Task<CompileError[]> CompileAsync(
+        public static CompileError[] CompileAsync(
             string sourceCode)
         {
             CompileError[] actualCompileErrors = Array.Empty<CompileError>();
