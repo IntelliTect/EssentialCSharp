@@ -52,7 +52,8 @@ public static class CompilerAssert2
                 //Setup set #nullable enable
                 nullableContextOptions: NullableContextOptions.Enable);
 
-            return compilationOptions.WithSpecificDiagnosticOptions(
+            return compilationOptions
+                .WithSpecificDiagnosticOptions(
                  compilationOptions.SpecificDiagnosticOptions.SetItems(GetNullableWarningsFromCompiler()));
         }
 
@@ -72,7 +73,8 @@ public static class CompilerAssert2
         }
 
         protected override ParseOptions CreateParseOptions()
-            => new CSharpParseOptions(LanguageVersion, DocumentationMode.Diagnose);
+            => new CSharpParseOptions(LanguageVersion, DocumentationMode.Diagnose)
+                   .WithPreprocessorSymbols("INCLUDE");
 
         protected override IEnumerable<DiagnosticAnalyzer> GetDiagnosticAnalyzers()
             => Enumerable.Empty<DiagnosticAnalyzer>();
