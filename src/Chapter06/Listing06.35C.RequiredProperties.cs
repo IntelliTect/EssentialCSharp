@@ -1,18 +1,14 @@
 #if NET7_0_OR_GREATER
 using System.Diagnostics.CodeAnalysis;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_34A
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_34C
 {
     public class Program
     {
         public static void Main()
         {
-            Book book1 = 
-                new() { Isbn= "Essential C#",Title= "978-0135972267" };
-            book1 =
-                 new() { Isbn= "Essential C#", Title= "978-0135972267" };
-            //book1 =
-            //    new(42);
+            Book book = new(42) { 
+                /*Isbn= "Essential C#",*/ Title= "978-0135972267" };
         }
     }
 
@@ -27,59 +23,35 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_34A
     #region INCLUDE
     public class Book
     {
-        //public Book(string title, string isbn)
-        //{
-        //    Title = title;
-        //    ISBN = isbn;
-        //}
-
-        //#region HIGHLIGHT
-        //public Book(
-        //    int id, string firstName, string lastName)
-        //    : this(firstName, lastName)
-        //#endregion HIGHLIGHT
-        //{
-        //    Id = id;
-        //}
-
-        public Book()
-        {
-            //Isbn = isbn;
-            //Title = title;
-
-            // Look up employee name...
-            // ...
-        }
-
         [SetsRequiredMembers]
         public Book(int id)
         {
-            Isbn = "ISBN";
-            Title = "title";
+            Id = id;
 
-            // Look up employee name...
+            // Look up employee data
+            #region EXCLUDE
+            Title = string.Empty;
+            //Isbn = string.Empty;
+            #endregion EXCLUDE
             // ...
         }
+        public int Id { get; init; }
 
         //#pragma warning disable CS8618
-        [SetsRequiredMembers]
-        public Book(string isbn)
-        {
-            Isbn = isbn;
-
-            // Look up employee name...
-            // ...
-            Title = "Title";
-        }
         //#pragma warning restore CS8618
+        //public Book()
+        //{
+        //    // Look up employee name...
+        //    // ...
+        //}
 
-        // public int Id { get; init; }
         string? _Title;
-        public required string Title 
-        { get
-            { 
-                return _Title!; 
-            } 
+        public required string Title
+        {
+            get
+            {
+                return _Title!;
+            }
             set
             {
                 ArgumentException.ThrowIfNullOrEmpty(
@@ -87,6 +59,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_34A
                 _Title = value;
             }
         }
+
         string? _Isbn;
         public required string Isbn
         {
