@@ -27,10 +27,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_34
         {
             #region HIGHLIGHT
             get => _Name!;
-            #endregion HIGHLIGHT
-            set => _Name =
-                #region HIGHLIGHT
-                value ?? throw new ArgumentNullException(nameof(value));
+            set => _Name = value ?? throw new ArgumentNullException(
+                nameof(value));
             #endregion HIGHLIGHT
         }
         private string? _Name;
