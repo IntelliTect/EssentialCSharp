@@ -9,7 +9,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_34C
         {
             Book book = new(42) { 
                 Subtitle = "The Comprehensive, Expert Guide " +
-                    "to C# for Programmers at All Levels" };
+                    "to C# for Programmers at all levels" };
         }
     }
 

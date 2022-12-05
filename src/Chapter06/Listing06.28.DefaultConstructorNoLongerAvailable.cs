@@ -12,14 +12,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_28
         {
             Employee employee;
 
-             //asdfasdfasdfdsaf
-            //#if INCLUDE
+            #if COMPILEERROR
             #region HIGHLIGHT
             // ERROR: No overload because method 'Employee' 
             // takes '0' arguments
             employee = new Employee();
             #endregion HIGHLIGHT
-            //#endif INCLUDE
+            #endif // COMPILEERROR
 
             // ...
         }

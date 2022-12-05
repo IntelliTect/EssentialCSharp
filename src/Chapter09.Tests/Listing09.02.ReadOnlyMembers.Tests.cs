@@ -35,7 +35,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_02.Tests
                     }
                 }";
 
-            CompilerAssert.ExpectErrorsAsync(thingCode,
+            CompilerAssertOld.ExpectErrors(thingCode,
                 new CompileError("CS1604", "Cannot assign to 'Number' because it is read-only"));
         }
     }
