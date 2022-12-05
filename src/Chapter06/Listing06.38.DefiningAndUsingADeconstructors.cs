@@ -114,14 +114,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_38
             System.Console.WriteLine(
                 "{0} {1}: {2}",
                 firstName, lastName, salary);
-
-            #region EXCLUDE
-            (_, firstName, lastName, salary) = employee;
-
-            System.Console.WriteLine(
-                "{0} {1}: {2}",
-                firstName, lastName, salary);
-            #endregion EXCLUDE
         }
     }
     #endregion INCLUDE
