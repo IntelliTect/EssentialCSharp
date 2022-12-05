@@ -26,7 +26,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Table03_03.Tests
         /* 9. */ [DataRow(nameof(CommonArayCodingErrors.MultiDimensionalArrayWithInconsistentSize), "CS0847")]
         public async Task ParseAndCompile(string targetMethod, params string[] errorIds)
         {
-            await CompilerAssert.Compile2Async("Table03.03.CommonArrayCodingErrors.cs", errorIds, targetMethod);
+            await CompilerAssertOld.Compile2Async("Table03.03.CommonArrayCodingErrors.cs", errorIds, targetMethod);
         }
 
         // 6.

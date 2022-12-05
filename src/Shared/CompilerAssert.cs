@@ -82,23 +82,16 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
             CompileError lhs, CompileError rhs) =>
                 !lhs.Equals(rhs);
     }
-    static public class CompilerAssert
+    static public class CompilerAssertOld
     {
-
-        private static readonly CSharpCompilationOptions DefaultCompilationOptions =
-            new CSharpCompilationOptions(OutputKind.DynamicallyLinkedLibrary)
-                    .WithOverflowChecks(true).WithOptimizationLevel(OptimizationLevel.Release);
-        //.WithUsings(DefaultNamespaces);
-
-
         public static async Task Compile2Async(
             string fileName,
             string[] errorIds,
-            string? targetMethod) => await Compile2Async(
+            string? targetMethod) => await CompileAsync(
                 new string[] { fileName }, errorIds, targetMethod);
 
 
-        public static async Task Compile2Async(string[] fileNames, string[] errorIds, string? targetMethod = null)
+        public static async Task CompileAsync(string[] fileNames, string[] errorIds, string? targetMethod = null)
         {
             string code = string.Empty;
             List<SyntaxTree> syntaxTrees = new();
@@ -176,10 +169,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                     (string result, string item) =>
                         result += $"\n{item}");
 
-            return ExpectErrorsAsync(sourceCode, diagnostics);
+            return ExpectErrors(sourceCode, diagnostics);
         }
 
-        public static CompileError[] ExpectErrorsAsync(
+        public static CompileError[] ExpectErrors(
             string sourceCode, params CompileError[] diagnostics)
         {
             ArgumentNullException.ThrowIfNull(diagnostics);
