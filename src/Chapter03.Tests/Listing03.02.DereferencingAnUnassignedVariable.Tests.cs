@@ -14,7 +14,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_02.Tests
         [TestMethod]
         public async Task UnassignedVariableThrowsError()
         {
-            _ = await CompilerAssert.ExpectErrorsInFileAsync(
+            _ = await CompilerAssertOld.ExpectErrorsInFileAsync(
                 "Listing03.02.DereferencingAnUnassignedVariable.cs",
                 new CompileError("CS0165", "Use of unassigned local variable 'text'"));
         }
