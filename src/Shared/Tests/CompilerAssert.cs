@@ -5,11 +5,11 @@ using Microsoft.CodeAnalysis.Testing;
 using Microsoft.CodeAnalysis.Testing.Verifiers;
 using System.Collections.Immutable;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Shared;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Shared.Tests;
 
-public static class CompilerAssert2
+public static class CompilerAssert
 {
-    public static async Task Compile2Async(string[] fileNames, string[] expectedErrorIds)
+    public static async Task CompileAsync(string[] fileNames, string[] expectedErrorIds)
     {
         string code = string.Empty;
         foreach (string fileName in fileNames)
@@ -28,6 +28,9 @@ public static class CompilerAssert2
 
         await test.RunAsync();
     }
+    public static async Task CompileAsync(string fileName, params string[] expectedErrorIds) =>
+        await CompileAsync(new string[] { fileName }, expectedErrorIds);
+
 
     //Custom verifier to ignore diagnostic locations locations
     public class CustomMSTestVerifier : MSTestVerifier
@@ -74,7 +77,11 @@ public static class CompilerAssert2
 
         protected override ParseOptions CreateParseOptions()
             => new CSharpParseOptions(LanguageVersion, DocumentationMode.Diagnose)
-                   .WithPreprocessorSymbols("INCLUDE");
+                   .WithPreprocessorSymbols("COMPILEERROR")
+#if NET7_0_OR_GREATER
+                    .WithPreprocessorSymbols("NET7_0_OR_GREATER")
+#endif // NET7_0_OR_GREATER
+            ;
 
         protected override IEnumerable<DiagnosticAnalyzer> GetDiagnosticAnalyzers()
             => Enumerable.Empty<DiagnosticAnalyzer>();
