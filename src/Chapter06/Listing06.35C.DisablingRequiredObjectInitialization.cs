@@ -61,7 +61,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_34C
                 _Isbn = value;
             }
         }
-        public string? Subtitle { get; set; } = "Not Enough";
+        public string? Subtitle { get; set; }
 
         // ...
     }
