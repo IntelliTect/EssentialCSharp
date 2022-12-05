@@ -10,17 +10,17 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_35B
     {
         public static void Main()
         {
+            #if INCLUDE
             #region INCLUDE
             // Error CS9035:
             // Required member 'Book.Isbn' must be set in the object
             // initializer or attribute constructor
-            #if INCLUDE
             Book book = 
                 new() { Title= "Essential C#" };
-            #endif // INCLUDE
 
             // ...
             #endregion INCLUDE
+            #endif // INCLUDE
           }
     }
 }
