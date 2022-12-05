@@ -76,7 +76,7 @@ public static class LineCounter
             new FileStream(file, FileMode.Open);
         StreamReader reader = new StreamReader(stream);
         line = reader.ReadLine();
-        while(line is object)
+        while(line is not null)
         {
             if(line.Trim() != "")
             {

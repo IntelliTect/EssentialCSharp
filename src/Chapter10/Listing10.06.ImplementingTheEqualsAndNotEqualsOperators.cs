@@ -59,7 +59,7 @@
             // } 
 
             // STEP 1: Check for null
-            return ((obj is object)
+            return ((obj is not null)
                 // STEP 5: Compare identifying fields for equality.
                 && (ProductSeries == obj.ProductSeries) &&
                 (Model == obj.Model) &&

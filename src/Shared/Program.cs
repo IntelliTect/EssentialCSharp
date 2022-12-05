@@ -163,7 +163,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
             {
                 return "<null>";
             }
-            else if (method.GetCustomAttribute(typeof(AsyncIteratorStateMachineAttribute), false) is object)
+            else if (method.GetCustomAttribute(typeof(AsyncIteratorStateMachineAttribute), false) is not null)
             {
                 return result switch
                 {
@@ -173,7 +173,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
                     _ => throw new NotImplementedException($"This {nameof(IAsyncEnumerable<string>)} type parameter is not implemented."),
                 };
             }
-            else if (method.GetCustomAttribute(typeof(AsyncStateMachineAttribute), false) is object)
+            else if (method.GetCustomAttribute(typeof(AsyncStateMachineAttribute), false) is not null)
             {
                 switch (result)
                 {

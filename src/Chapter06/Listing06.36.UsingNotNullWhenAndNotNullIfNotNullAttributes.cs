@@ -17,7 +17,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_36
                     // ...
                     '9' => "nine",
                     _ => null
-                }) is string;
+                }) is not null;
 
         [return: NotNullIfNotNull("text")]
         static public string? TryGetDigitsAsText(string? text)

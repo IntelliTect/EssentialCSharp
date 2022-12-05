@@ -8,15 +8,15 @@ public class ProgramTests
     [TestMethod]
     public void GetObject_CollectionWithItem_ReturnItem()
     {
-        Assert.IsNull(NullabilityAttributesExamined.GetObject(
-            new string[] { "item" }, item => item is object));
+        Assert.IsNotNull(NullabilityAttributesExamined.GetObject(
+            new string[] { "item" }, item => item is not null));
     }
 
     [TestMethod]
     public void GetObject_GivenEmptyCollection_ReturnNull()
     {
         Assert.IsNull(NullabilityAttributesExamined.GetObject(
-            System.Array.Empty<string>(), item => item is object));
+            System.Array.Empty<string>(), item => item is not null));
     }
 
     [TestMethod]
