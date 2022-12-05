@@ -7,6 +7,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_28.Tests;
 public class ProgramTests
 {
     [TestMethod]
+    [Ignore]
     public async Task UnassignedVariableThrowsError()
     {
         await CompilerAssert.CompileAsync(
