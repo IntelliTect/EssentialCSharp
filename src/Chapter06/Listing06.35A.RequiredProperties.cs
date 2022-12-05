@@ -58,7 +58,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_35A
                 Title= "Harold and the Purple Crayon"
             };
             #region EXCLUDE
-            #pragma warning enable IDE0059 // Unnecessary assignment of a value
+            #pragma warning restore IDE0059 // Unnecessary assignment of a value
             #endregion EXCLUDE
         }
     }

@@ -11,7 +11,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_02.Tests
     public class MyTestClass
     {
         [TestMethod]
-        public async Task ReadOnlyMethod_ModifyObject_ErrorReported()
+        public void ReadOnlyMethod_ModifyObject_ErrorReported()
         {
             string thingCode = @"
                 public struct Thing
@@ -35,9 +35,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_02.Tests
                     }
                 }";
 
-            await CompilerAssert.ExpectErrorsAsync(thingCode,
-                new CompileError("CS1604", "Cannot assign to 'Number' because it is read-only")
-                );
+            CompilerAssert.ExpectErrorsAsync(thingCode,
+                new CompileError("CS1604", "Cannot assign to 'Number' because it is read-only"));
         }
     }
 }
