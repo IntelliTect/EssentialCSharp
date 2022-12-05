@@ -87,7 +87,7 @@
         {
             byte[]? data = (byte[]?)Data.Target;
 
-            if (data is object)
+            if (data is not null)
             {
                 return data;
             }
