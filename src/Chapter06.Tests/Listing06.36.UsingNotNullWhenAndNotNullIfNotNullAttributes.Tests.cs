@@ -8,10 +8,8 @@ public class NullabilityAttributesExaminedTests
     [TestMethod]
     public void TryGetAsText_Given4_ReturnFour()
     {
-        if(NullabilityAttributesExamined.TryGetDigitAsText('4', out string? text))
-        {
-            Assert.AreEqual<string>("four", text);
-        }
+        Assert.IsTrue(NullabilityAttributesExamined.TryGetDigitAsText('4', out string? text));
+        Assert.AreEqual<string>("four", text);
     }
 
 

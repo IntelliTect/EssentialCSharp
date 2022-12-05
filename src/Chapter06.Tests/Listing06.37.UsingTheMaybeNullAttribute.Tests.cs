@@ -8,8 +8,8 @@ public class ProgramTests
     [TestMethod]
     public void GetObject_CollectionWithItem_ReturnItem()
     {
-        NullabilityAttributesExamined.GetObject(
-            new string[] { "item" }, item => item is object);
+        Assert.IsNull(NullabilityAttributesExamined.GetObject(
+            new string[] { "item" }, item => item is object));
     }
 
     [TestMethod]
