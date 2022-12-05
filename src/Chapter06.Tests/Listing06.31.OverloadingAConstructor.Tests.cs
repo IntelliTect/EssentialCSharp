@@ -1,17 +1,16 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_31.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_31.Tests;
+
+[TestClass]
+public class EmployeeTests
 {
-    [TestClass]
-    public class EmployeeTests
+    [TestMethod]
+    public void EmployeeConstructor_TwoParameterConstructorSuccess()
     {
-        [TestMethod]
-        public void EmployeeConstructor_TwoParameterConstructorSuccess()
-        {
-            Employee employee = new("Inigo", "Montoya");
-            
-            Assert.AreEqual("Inigo", employee.FirstName);
-            Assert.AreEqual("Montoya", employee.LastName);
-        }
+        Employee employee = new("Inigo", "Montoya");
+        
+        Assert.AreEqual("Inigo", employee.FirstName);
+        Assert.AreEqual("Montoya", employee.LastName);
     }
 }

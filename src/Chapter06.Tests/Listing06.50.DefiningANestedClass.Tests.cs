@@ -1,60 +1,59 @@
 using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_50.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_50.Tests;
+
+[TestClass]
+public class ProgramTests
 {
-    [TestClass]
-    public class ProgramTests
+    [TestMethod]
+    public void Main_CreatesEmployee()
     {
-        [TestMethod]
-        public void Main_CreatesEmployee()
-        {
-            string[] arguments = {
-                "new",
-                "15",
-                "Inigo",
-                "Montoya"
-            };
+        string[] arguments = {
+            "new",
+            "15",
+            "Inigo",
+            "Montoya"
+        };
 
-            const string expected =
-                @"'Creating' a new Employee.";
-            
-            IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, (Action<string[]>)Program.Main, arguments);
-        }
+        const string expected =
+            @"'Creating' a new Employee.";
         
-        [TestMethod]
-        public void Main_UpdateEmployee_EmployeeUpdated()
-        {
-            string[] arguments = {
-                "update",
-                "15",
-                "Inigo",
-                "Montoya"
-            };
+        IntelliTect.TestTools.Console.ConsoleAssert.Expect(
+            expected, (Action<string[]>)Program.Main, arguments);
+    }
+    
+    [TestMethod]
+    public void Main_UpdateEmployee_EmployeeUpdated()
+    {
+        string[] arguments = {
+            "update",
+            "15",
+            "Inigo",
+            "Montoya"
+        };
 
-            const string expected =
-                @"'Updating' a new Employee.";
-            
-            IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, (Action<string[]>)Program.Main, arguments);
-        }
+        const string expected =
+            @"'Updating' a new Employee.";
         
-        [TestMethod]
-        public void Main_RemovesEmployee()
-        {
-            string[] arguments = {
-                "update",
-                "15",
-                "Inigo",
-                "Montoya"
-            };
+        IntelliTect.TestTools.Console.ConsoleAssert.Expect(
+            expected, (Action<string[]>)Program.Main, arguments);
+    }
+    
+    [TestMethod]
+    public void Main_RemovesEmployee()
+    {
+        string[] arguments = {
+            "update",
+            "15",
+            "Inigo",
+            "Montoya"
+        };
 
-            const string expected =
-                @"'Updating' a new Employee.";
-            
-            IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, (Action<string[]>)Program.Main, arguments);
-        }
+        const string expected =
+            @"'Updating' a new Employee.";
+        
+        IntelliTect.TestTools.Console.ConsoleAssert.Expect(
+            expected, (Action<string[]>)Program.Main, arguments);
     }
 }

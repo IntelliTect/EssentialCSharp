@@ -1,17 +1,16 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_49.Tests
-{
-    [TestClass]
-    public class DirectoryTests
-    {
-        [TestMethod]
-        public void MainTest()
-        {
-            const string expected = @"System.Boolean[,,]";
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_49.Tests;
 
-            IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, Program.Main);
-        }
+[TestClass]
+public class DirectoryTests
+{
+    [TestMethod]
+    public void MainTest()
+    {
+        const string expected = @"System.Boolean[,,]";
+
+        IntelliTect.TestTools.Console.ConsoleAssert.Expect(
+            expected, Program.Main);
     }
 }
