@@ -1,8 +1,8 @@
 // Non-nullable field is uninitialized. Consider declaring as nullable.
 #pragma warning disable CS8618 // Pending a constructors
 
-//namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_23
-//{
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_23
+{
     #region INCLUDE
     public class Program
     {
@@ -41,4 +41,4 @@
         private string _Id;
     }
     #endregion INCLUDE
-//}
+}

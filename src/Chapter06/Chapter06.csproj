@@ -30,6 +30,9 @@
     </None>
     <None Include="Listing06.24.CILCodeResultingFromProperties.cs" />
     <None Include="Listing06.25.PropertiesAreAnExplicitConstructInCIL.cs" />
+    <Compile Update="Listing06.30A.InitOnlySetters.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
     <Compile Update="Listing06.15.UsingThePrivateAccessModifier.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>

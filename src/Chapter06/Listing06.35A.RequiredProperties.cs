@@ -2,7 +2,6 @@
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_35A
 {
-using System.Diagnostics.CodeAnalysis;
     #region INCLUDE
     public class Book
     {
