@@ -18,15 +18,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_42
             {
                 target += Path.DirectorySeparatorChar;
             }
-            if (!Directory.Exists(target))
-            {
-                Directory.CreateDirectory(target);
-            }
+            Directory.CreateDirectory(target);
 
             for (int i = 0; i < searchPattern.Length; i++)
             {
                 foreach (string file in
-                    Directory.GetFiles(
+                    Directory.EnumerateFiles(
                         sourceDirectory.FullName, searchPattern))
                 {
                     File.Copy(file,
@@ -38,7 +35,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_42
             if (option == SearchOption.AllDirectories)
             {
                 foreach (string element in
-                    Directory.GetDirectories(
+                    Directory.EnumerateDirectories(
                         sourceDirectory.FullName))
                 {
                     Copy(element,
