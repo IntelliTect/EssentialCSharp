@@ -9,8 +9,8 @@
 
 using System;
 
-//namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_15
-//{
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_15
+{
     #region INCLUDE
     public class Employee
     {
@@ -54,14 +54,17 @@ using System;
 
             // ...
 
+            
+            #if COMPILEERROR
             #region HIGHLIGHT
             // ERROR: Password is private, so it cannot be
             // accessed from outside the class
             Console.WriteLine(
                "Password = {0}", employee.Password);
             #endregion HIGHLIGHT
+            #endif // COMPILEERROR
         }
         // ...
     }
     #endregion INCLUDE
-//}
+}

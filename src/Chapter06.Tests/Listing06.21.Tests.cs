@@ -1,4 +1,4 @@
-﻿using AddisonWesley.Michaelis.EssentialCSharp.Shared;
+﻿using AddisonWesley.Michaelis.EssentialCSharp.Shared.Tests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_21.Tests
@@ -9,9 +9,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_21.Tests
         [TestMethod]
         public async Task UnassignedVariableThrowsError()
         {
-            _ = await CompilerAssert.ExpectErrorsInFileAsync(
+            await CompilerAssert.CompileAsync(
                 "Listing06.21.DefiningReadOnlyProperties.cs",
-                new CompileError("CS0200", "Property or indexer 'Employee.Id' cannot be assigned to -- it is read only"));
+                "CS0200");
         }
     }
 }

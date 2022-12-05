@@ -1,8 +1,8 @@
 #if NET7_0_OR_GREATER
-using System.Diagnostics.CodeAnalysis;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_35A
 {
+using System.Diagnostics.CodeAnalysis;
     #region INCLUDE
     public class Book
     {
@@ -17,9 +17,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_35A
             }
             set
             {
-                ArgumentException.ThrowIfNullOrEmpty(
-                    value = value?.Trim()!);
-                _Title = value;
+                _Title = value ?? throw new ArgumentNullException(nameof(value));
             }
         }
 
@@ -34,9 +32,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_35A
             }
             set
             {
-                ArgumentException.ThrowIfNullOrEmpty(
-                    value = value?.Trim()!);
-                _Isbn = value;
+                _Isbn = value ?? throw new ArgumentNullException(nameof(value));
             }
         }
 
@@ -54,8 +50,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_35A
             #endregion EXCLUDE
             Book book = new()
             {
-                Isbn= "978-0135972267",
-                Title= "Harold and the Purple Crayon"
+                Isbn = "978-0135972267",
+                Title = "Harold and the Purple Crayon"
             };
             #region EXCLUDE
             #pragma warning restore IDE0059 // Unnecessary assignment of a value

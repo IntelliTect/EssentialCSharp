@@ -1,4 +1,4 @@
-﻿using AddisonWesley.Michaelis.EssentialCSharp.Shared;
+using AddisonWesley.Michaelis.EssentialCSharp.Shared.Tests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_28.Tests
@@ -9,9 +9,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_28.Tests
         [TestMethod]
         public async Task UnassignedVariableThrowsError()
         {
-            await CompilerAssert2.Compile2Async(
+            await CompilerAssert.CompileAsync(
                 new string[] { "Listing06.28.DefaultConstructorNoLongerAvailable.cs", "Listing06.26.DefiningAConstructor.cs" },
-                new string[]{ "CS7036" });
+                new string[] { "CS7036" });
         }
     }
 }
