@@ -3,49 +3,9 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_35A
 {
-    public class Program
-    {
-        public static void Main()
-        {
-            Book book = new(42) {
-                Isbn= "Essential C#",
-                Title= "978-0135972267" };
-        }
-    }
-
-    /* 
-    GUIDELINES
-    DO NOT use constructor parameters to initialize required properties, instead rely on initializer specified values.
-    DO NOT use SetRequiredParameters unless all required parameters are assigned valid values during construction (the nullability warnings will help identify the required non-nullable reference type properties.
-    Not Proposed: "DO NOT use SetRequiredMembers unless there is a valid value you can assign to all required properties during construction."
-    Not Proposed: CONSIDER required properties with a default constructor to force the use of an initializer rather than a constructor for all required properties.
-    */
-
     #region INCLUDE
     public class Book
     {
-        [SetsRequiredMembers]
-        public Book(int id)
-        {
-            Id = id;
-
-            // Look up employee data
-            #region EXCLUDE
-            Title = string.Empty;
-            Isbn = string.Empty;
-            #endregion EXCLUDE
-            // ...
-        }
-        public int Id { get; init; }
-
-        //#pragma warning disable CS8618
-        //#pragma warning restore CS8618
-        public Book()
-        {
-            // Look up employee name...
-            // ...
-        }
-
         string? _Title;
         #region HIGHLIGHT
         public required string Title
@@ -80,9 +40,27 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_35A
             }
         }
 
-        public string? Subtitle { get; set; } = "Not Enough";
+        public string? Subtitle { get; set; }
 
         // ...
+    }
+
+    public class Program
+    {
+        public static void Main()
+        {
+            #region EXCLUDE
+            #pragma warning disable IDE0059 // Unnecessary assignment of a value
+            #endregion EXCLUDE
+            Book book = new()
+            {
+                Isbn= "978-0135972267",
+                Title= "Harold and the Purple Crayon"
+            };
+            #region EXCLUDE
+            #pragma warning enable IDE0059 // Unnecessary assignment of a value
+            #endregion EXCLUDE
+        }
     }
     #endregion INCLUDE
 }
