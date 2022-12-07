@@ -8,8 +8,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_30A
     {
         public Employee(int id, string name)
         {
-            // Use field because Id property has no setter;
-            // it is read-only
             Id = id;
             Name = name;
             Salary = null;
@@ -17,11 +15,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_30A
 
         // ...
 
-        // Id property declaration
         public int Id { get; }
         public string Name { get; }
 
-        // Name property declaration
         public string? Salary
         {
             get => _Salary;
