@@ -70,10 +70,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_58
             if (value.Trim().Length == 0)
             {
                 throw new ArgumentException(
-                "LastName cannot be empty.",
+                    $"{nameof(LastName)} cannot be empty.",
                     nameof(value));
             }
         }
+
         #region EXCLUDE
         static partial void OnFirstNameChanging(string value)
         {
@@ -83,13 +84,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_58
             if (value.Trim().Length == 0)
             {
                 throw new ArgumentException(
-                    "FirstName cannot be empty.",
+                    $"{nameof(FirstName)} cannot be empty.",
                     nameof(value));
-
             }
         }
         #endregion EXCLUDE
-
 
         public partial string GetName() => $"{FirstName} {LastName}";
     }

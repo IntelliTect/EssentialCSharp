@@ -18,11 +18,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_53
           get { return _Id; }
         }
 
+        #if COMPILEERROR
         // Error: A readonly field cannot be assigned to (except
         // in a constructor or a variable initializer)
-
-        // public void SetId(int id) =>
-        //          _Id = id;
+        public void SetId(int id) =>
+            _Id = id;
+        #endif // COMPILEERROR
 
         // ...
     }
