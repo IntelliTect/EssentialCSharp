@@ -46,6 +46,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Table04_04
             }
 
         }
+#pragma warning disable IDE0150 // Prefer 'null' check over type check
         public static void IsObject(string? uri = null!)
         {
             // 4.
@@ -66,6 +67,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Table04_04
                     "Uri is null");
             }
         }
+#pragma warning restore IDE0150 // Prefer 'null' check over type check
         public static void IsPatternMatching(string? uri = null!)
         {
             // 5.
@@ -80,6 +82,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Table04_04
                     "Uri is null");
             }
         }
+#pragma warning disable IDE0041 // Use 'is null' check
         public static void ReferenceEqualsCheckForNotNull(string? uri = null)
         {
             // 6.
@@ -95,5 +98,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Table04_04
                     $"Uri is: {uri}");
             }
         }
+#pragma warning restore IDE0041 // Use 'is null' check
     }
 }

@@ -25,7 +25,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_58
             }
             set
             {
-                if ((_LastName != value))
+                if (_LastName != value)
                 {
                     #region HIGHLIGHT
                     OnLastNameChanging(value);
