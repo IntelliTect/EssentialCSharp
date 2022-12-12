@@ -10,18 +10,14 @@
   </PropertyGroup>
   <Import Project="..\Chapter.props" />
   <ItemGroup>
-    <Compile Remove="Listing07.06.PrivateMembersAreNotInherited.cs" />
-    <Compile Remove="Listing07.07.ProtectedMembersAreAccessibleOnlyFromDerivedClasses.cs" />
     <Compile Remove="Table07.03.TypePatternMatchingWithIsOperator.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\Shared\Program.cs">
       <Link>Program.cs</Link>
     </Compile>
-    <None Include="Listing07.06.PrivateMembersAreNotInherited.cs">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </None>
-    <None Include="Listing07.07.ProtectedMembersAreAccessibleOnlyFromDerivedClasses.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Table07.03.TypePatternMatchingWithIsOperator.cs" />
   </ItemGroup>
 </Project>

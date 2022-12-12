@@ -1,7 +1,6 @@
-using AddisonWesley.Michaelis.EssentialCSharp.Shared;
+using AddisonWesley.Michaelis.EssentialCSharp.Shared.Tests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Diagnostics.CodeAnalysis;
-using System.Threading.Tasks;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_02.Tests;
 
@@ -11,11 +10,12 @@ public class UppercaseTests
     [NotNull]
     public TestContext? TestContext { get; set; }
 
-    [TestMethod]
-    public async Task UnassignedVariableThrowsError()
-    {
-        _ = await CompilerAssertOld.ExpectErrorsInFileAsync(
-            "Listing03.02.DereferencingAnUnassignedVariable.cs",
-            new CompileError("CS0165", "Use of unassigned local variable 'text'"));
+        [TestMethod]
+        public async Task UnassignedVariableThrowsError()
+        {
+            await CompilerAssert.CompileAsync(
+                new string[] { "Listing03.02.DereferencingAnUnassignedVariable.cs" },
+                new string[] { "CS0165", "CS8602" });
+        }
     }
 }

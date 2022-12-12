@@ -19,8 +19,17 @@
     <PackageReference Update="coverlet.msbuild" Version="3.2.0" />
     <PackageReference Include="Microsoft.CodeAnalysis" Version="4.4.0" />
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp.SourceGenerators.Testing.MSTest" Version="1.1.1" />    
-    <!--<PackageReference Update="Microsoft.NET.Test.Sdk" Version="17.4.0" />-->
-    <!--<PackageReference Update="MSTest.TestAdapter" Version="2.1.2" />-->
-    <!--<PackageReference Update="MSTest.TestFramework" Version="2.1.2" />-->    
   </ItemGroup>
+  
+  <!-- TODO: Ideally this would be placed in a ChapterTests.targets file. -->
+  <Target Name="OutputGeneratedGlobalUsings"
+      BeforeTargets="BeforeCompile;CoreCompile"
+      AfterTargets="GenerateGlobalUsings"
+      Condition="@(Using->Count()) != 0">
+    <WriteLinesToFile
+      File="$(OutputPath)GlobalUsings.cs"
+      Lines="@(_GlobalUsingLines)"
+      Overwrite="true"
+      WriteOnlyWhenDifferent="true" />
+  </Target>
 </Project>

@@ -15,8 +15,9 @@ public class PdaItem
 }
 public class Contact : PdaItem
 {
-    // Disable warning since FirstName&LastName set via Name property 
-    #pragma warning disable CS8618 // Non-nullable field is uninitialized. 
+    // Disable warning since FirstName&LastName set via Name property
+    // Non-nullable field is uninitialized.
+    #pragma warning disable CS8618
     #region HIGHLIGHT
     public Contact(string name) :
         base(name)
