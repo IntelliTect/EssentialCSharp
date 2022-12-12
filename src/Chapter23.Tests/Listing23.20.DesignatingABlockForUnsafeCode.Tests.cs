@@ -9,16 +9,15 @@ public class Listing21_20_Tests
     [TestMethod]
     public void GetProcessorIdReturnsCorrectValue()
     {
-        string expected = @"Processor Id: GenuineIntel";
+        string expected = @"Processor Id: *";
         if (!System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
         {
             expected = "This sample is only valid for Windows";
         }
-
-            IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected,
-        () =>
-        {
-            Program.Main();
-        });
+        IntelliTect.TestTools.Console.ConsoleAssert.ExpectLike(expected,
+            () =>
+            {
+                Program.Main();
+            });
     }
 }
