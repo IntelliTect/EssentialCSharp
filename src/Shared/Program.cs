@@ -50,7 +50,7 @@ public static class Program
             }
 
 
-            Regex reg = new Regex($"Listing{input}\\.+");
+            Regex reg = new($"Listing{input}\\.+");
 
             IEnumerable<Type?> targets = assembly.GetTypes().Where(type =>
             {
@@ -202,7 +202,7 @@ public static class Program
 
     private static async Task<string?> AggregateToString<T>(IAsyncEnumerable<T> asyncEnumerable)
     {
-        List<string> list = new List<string>();
+        List<string> list = new();
         await foreach (T item in asyncEnumerable)
         {
             list.Add($"{item}");

@@ -25,7 +25,7 @@ public class Program
 {
     public static void Main()
     {
-        Person person = new Person("Inigo", "Montoya");
+        Person person = new("Inigo", "Montoya");
 
         // Positional Pattern Matching
         #region HIGHLIGHT

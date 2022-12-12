@@ -7,7 +7,7 @@ public class Program
 {
     public static void Main()
     {
-        Contact contact = new Contact();
+        Contact contact = new();
         #region HIGHLIGHT
         contact.Name = "Inigo Montoya";
         #endregion HIGHLIGHT

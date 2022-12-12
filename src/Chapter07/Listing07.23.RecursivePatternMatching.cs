@@ -23,7 +23,7 @@ public class Program
     {
         #region INCLUDE
         // ...
-        Person inigo = new Person("Inigo", "Montoya");
+        Person inigo = new("Inigo", "Montoya");
         var buttercup = 
             (FirstName: "Princess", LastName: "Buttercup");
 

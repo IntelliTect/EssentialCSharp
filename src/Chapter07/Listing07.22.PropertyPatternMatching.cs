@@ -23,7 +23,7 @@ public class Program
     {
         #region INCLUDE
         // ...
-        Person person = new Person("Inigo", "Montoya");
+        Person person = new("Inigo", "Montoya");
 
         // Positional pattern matching
         #region HIGHLIGHT

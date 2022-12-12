@@ -9,7 +9,7 @@ public class Program
     {
         // Derived types can be implicitly converted to
         // base types
-        Contact contact = new Contact();
+        Contact contact = new();
         #region HIGHLIGHT
         PdaItem item = contact;
         #endregion HIGHLIGHT

@@ -41,8 +41,7 @@ public class Program
 
     public static void Main()
     {
-        SuperSubDerivedClass superSubDerivedClass
-            = new SuperSubDerivedClass();
+        SuperSubDerivedClass superSubDerivedClass = new();
 
         SubDerivedClass subDerivedClass = superSubDerivedClass;
         DerivedClass derivedClass = superSubDerivedClass;

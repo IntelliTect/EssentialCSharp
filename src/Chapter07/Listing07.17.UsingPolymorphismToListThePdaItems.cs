@@ -10,14 +10,13 @@ public class Program
     {
         PdaItem[] pda = new PdaItem[3];
 
-        Contact contact = new Contact("Sherlock Holmes")
+        Contact contact = new("Sherlock Holmes")
         {
             Address = "221B Baker Street, London, England"
         };
         pda[0] = contact;
 
-        Appointment appointment =
-            new Appointment(
+        Appointment appointment = new(
                "Soccer tournament", "Estádio da Machava", 
                new DateTime(2008, 7, 18), new DateTime(2008, 7, 19));
         pda[1] = appointment;
