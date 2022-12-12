@@ -1,18 +1,17 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_27.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_27.Tests;
+
+[TestClass]
+public class ProgramTests
 {
-    [TestClass]
-    public class ProgramTests
+    [TestMethod]
+    public void MainTest()
     {
-        [TestMethod]
-        public void MainTest()
-        {
-            string expected = 
+        string expected = 
 $@"The area of the circle is: {0.00M}";
 
-            IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, Program.Main);
-        }
+        IntelliTect.TestTools.Console.ConsoleAssert.Expect(
+            expected, Program.Main);
     }
 }

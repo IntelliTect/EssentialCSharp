@@ -1,14 +1,14 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_15.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_15.Tests;
+
+[TestClass]
+public class TriangleTests
 {
-    [TestClass]
-    public class TriangleTests
+    [TestMethod]
+    public void Main_WriteTriangle()
     {
-        [TestMethod]
-        public void Main_WriteTriangle()
-        {
-            const string expected = @"Begin
+        const string expected = @"Begin
            ____
           /   /\
          /   /  \
@@ -25,8 +25,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_15.Tests
  \_________________\___\/
 End";
 
-            IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, Triangle.Main);
-        }
+        IntelliTect.TestTools.Console.ConsoleAssert.Expect(
+            expected, Triangle.Main);
     }
 }

@@ -1,36 +1,35 @@
 using System;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_19
-{
-    public class Program
-    {
-        #region INCLUDE
-        public static void Save(object data)
-        {
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_19;
 
-            if (data is string)
+public class Program
+{
+    #region INCLUDE
+    public static void Save(object data)
+    {
+
+        if (data is string)
+        {
+            string text = (string)data;
+            if (text.Length > 0)
             {
-                string text = (string)data;
-                if (text.Length > 0)
-                {
-                    data = Encrypt(text);
-                    // ...
-                }
-            }
-            else if (data is null)
-            {
+                data = Encrypt(text);
                 // ...
             }
-            #region EXCLUDE
-            Console.WriteLine(data);
-            #endregion EXCLUDE
         }
-        #endregion INCLUDE
-
-        public static object Encrypt(string data)
+        else if (data is null)
         {
-            // See Chapter 19 for actual encryption implementation
-            return $"ENCRYPTED <{data}> ENCRYPTED";
+            // ...
         }
+        #region EXCLUDE
+        Console.WriteLine(data);
+        #endregion EXCLUDE
+    }
+    #endregion INCLUDE
+
+    public static object Encrypt(string data)
+    {
+        // See Chapter 19 for actual encryption implementation
+        return $"ENCRYPTED <{data}> ENCRYPTED";
     }
 }

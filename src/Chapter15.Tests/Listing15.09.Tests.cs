@@ -1,14 +1,14 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_09.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_09.Tests;
+
+[TestClass]
+public class ProgramTests
 {
-    [TestClass]
-    public class ProgramTests
+    [TestMethod]
+    public void MainTest()
     {
-        [TestMethod]
-        public void MainTest()
-        {
-            const string expected = @"Bifocals (1784)
+        const string expected = @"Bifocals (1784)
 Phonograph (1877)
 Kinetoscope (1888)
 Electrical Telegraph (1837)
@@ -25,8 +25,7 @@ George Stephenson (Wylam, Northumberland)
 John Michaelis (Chicago, IL)
 Mary Phelps Jacob (New York, NY)";
 
-            IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, Program.Main);
-        }
+        IntelliTect.TestTools.Console.ConsoleAssert.Expect(
+            expected, Program.Main);
     }
 }

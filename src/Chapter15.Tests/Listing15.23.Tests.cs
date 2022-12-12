@@ -1,14 +1,14 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_23.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_23.Tests;
+
+[TestClass]
+public class ProgramTests
 {
-    [TestClass]
-    public class ProgramTests
+    [TestMethod]
+    public void MainTest()
     {
-        [TestMethod]
-        public void MainTest()
-        {
-            const string expected = @"Corporate
+        const string expected = @"Corporate
 	Mark Michaelis (Chief Computer Nerd)
 Human Resources
 	Anne Beard (HR Director)
@@ -23,8 +23,7 @@ Philanthropy
 	Eric Edmonds (Philanthropy Coordinator)
 Marketing";
 
-            IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, Program.Main);
-        }
+        IntelliTect.TestTools.Console.ConsoleAssert.Expect(
+            expected, Program.Main);
     }
 }

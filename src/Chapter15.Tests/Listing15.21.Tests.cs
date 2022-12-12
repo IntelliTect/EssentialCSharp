@@ -1,14 +1,14 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_21.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_21.Tests;
+
+[TestClass]
+public class ProgramTests
 {
-    [TestClass]
-    public class ProgramTests
+    [TestMethod]
+    public void MainTest()
     {
-        [TestMethod]
-        public void MainTest()
-        {
-            const string expected = @"
+        const string expected = @"
 Mark Michaelis (Chief Computer Nerd)
 	Count: 1
 
@@ -27,8 +27,7 @@ Pat Dever (Enterprise Architect)
 Eric Edmonds (Philanthropy Coordinator)
 	Count: 1";
 
-            IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, Program.Main);
-        }
+        IntelliTect.TestTools.Console.ConsoleAssert.Expect(
+            expected, Program.Main);
     }
 }

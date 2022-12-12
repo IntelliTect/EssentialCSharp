@@ -1,18 +1,17 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_07.Tests
-{
-    [TestClass]
-    public class ProgramTests
-    {
-        [TestMethod]
-        public void MainTest()
-        {
-            string expected = $@"Invoke both delegates:{Environment.NewLine}Heater: Off{Environment.NewLine}Cooler: On{Environment.NewLine}Invoke only delegate2{Environment.NewLine}Cooler: Off";
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_07.Tests;
 
-            IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, Program.Main);
-        }
+[TestClass]
+public class ProgramTests
+{
+    [TestMethod]
+    public void MainTest()
+    {
+        string expected = $@"Invoke both delegates:{Environment.NewLine}Heater: Off{Environment.NewLine}Cooler: On{Environment.NewLine}Invoke only delegate2{Environment.NewLine}Cooler: Off";
+
+        IntelliTect.TestTools.Console.ConsoleAssert.Expect(
+            expected, Program.Main);
     }
 }

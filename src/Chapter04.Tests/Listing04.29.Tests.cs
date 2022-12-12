@@ -1,18 +1,17 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_29.Tests
-{
-    [TestClass]
-    public class ProgramTests
-    {
-        [TestMethod]
-        public void Main_Input5_BooleanConditionHit()
-        {
-            const string expected =
-                @"Tic-tac-toe has more than 5 maximum turns.";
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_29.Tests;
 
-            IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, Program.Main);
-        }
+[TestClass]
+public class ProgramTests
+{
+    [TestMethod]
+    public void Main_Input5_BooleanConditionHit()
+    {
+        const string expected =
+            @"Tic-tac-toe has more than 5 maximum turns.";
+
+        IntelliTect.TestTools.Console.ConsoleAssert.Expect(
+            expected, Program.Main);
     }
 }

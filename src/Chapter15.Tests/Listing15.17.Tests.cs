@@ -1,14 +1,14 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_17.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_17.Tests;
+
+[TestClass]
+public class ProgramTests
 {
-    [TestClass]
-    public class ProgramTests
+    [TestMethod]
+    public void MainTest()
     {
-        [TestMethod]
-        public void MainTest()
-        {
-            const string expected = @"Bifocals (1784)
+        const string expected = @"Bifocals (1784)
 Steam Locomotive (1815)
 Electrical Telegraph (1837)
 Phonograph (1877)
@@ -26,8 +26,7 @@ Electrical Telegraph (1837)
 Steam Locomotive (1815)
 Bifocals (1784)";
 
-            IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, Program.Main);
-        }
+        IntelliTect.TestTools.Console.ConsoleAssert.Expect(
+            expected, Program.Main);
     }
 }

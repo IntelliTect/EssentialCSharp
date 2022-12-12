@@ -1,14 +1,14 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_25.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_25.Tests;
+
+[TestClass]
+public class ProgramTests
 {
-    [TestClass]
-    public class ProgramTests
+    [TestMethod]
+    public void MoreEnumerableMethodCalls()
     {
-        [TestMethod]
-        public void MoreEnumerableMethodCalls()
-        {
-            string expected =
+        string expected =
 $@"Stuff: System.Object, 1, 3, 5, 7, 9, ""thing"", ????????-????-????-????-????????????
 Even integers: 0, 2, 4, 6, 8
 Odd integers: 1, 3, 5, 7, 9
@@ -24,11 +24,10 @@ Sum: 45
 Max: 9
 Min: 0";
 
-            IntelliTect.TestTools.Console.ConsoleAssert.ExpectLike(expected,
-            () =>
-            {
-                Program.Main();
-            });
-        }
+        IntelliTect.TestTools.Console.ConsoleAssert.ExpectLike(expected,
+        () =>
+        {
+            Program.Main();
+        });
     }
 }

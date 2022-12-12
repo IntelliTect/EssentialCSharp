@@ -1,14 +1,14 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_63.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_63.Tests;
+
+[TestClass]
+public class EmailDomainTests
 {
-    [TestClass]
-    public class EmailDomainTests
+    [TestMethod]
+    public void Main_EnterValidEmailWithDomain_WriteDomain()
     {
-        [TestMethod]
-        public void Main_EnterValidEmailWithDomain_WriteDomain()
-        {
-            const string expected = @"
+        const string expected = @"
 ---+---+---
  1 | 2 | 3 
 ---+---+---
@@ -17,8 +17,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_63.Tests
  7 | 8 | 9 
 ---+---+---";
 
-            IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, Program.Main);
-        }
+        IntelliTect.TestTools.Console.ConsoleAssert.Expect(
+            expected, Program.Main);
     }
 }

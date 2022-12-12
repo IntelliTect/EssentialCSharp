@@ -1,24 +1,23 @@
 ﻿#pragma warning disable IDE0060 // Remove unused parameter
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_05
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_05;
+
+#region INCLUDE
+class GPSCoordinates
 {
-    #region INCLUDE
-    class GPSCoordinates
+    // ...
+
+    public static implicit operator UTMCoordinates(
+        GPSCoordinates coordinates)
     {
-        // ...
-
-        public static implicit operator UTMCoordinates(
-            GPSCoordinates coordinates)
-        {
-            #region EXCLUDE
-            return null!; //return the new UTMCoordinates object
-            #endregion EXCLUDE
-        }
+        #region EXCLUDE
+        return null!; //return the new UTMCoordinates object
+        #endregion EXCLUDE
     }
-    #endregion INCLUDE
+}
+#endregion INCLUDE
 
-    class UTMCoordinates
-    {
+class UTMCoordinates
+{
 
-    }
 }

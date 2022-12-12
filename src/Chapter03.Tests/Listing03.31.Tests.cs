@@ -1,30 +1,29 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_31.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_31.Tests;
+
+[TestClass]
+public class PalindromeTests
 {
-    [TestClass]
-    public class PalindromeTests
+    [TestMethod]    
+    public void Main_InputValidPalindrome_IdentifiedAsPalindrome()
     {
-        [TestMethod]    
-        public void Main_InputValidPalindrome_IdentifiedAsPalindrome()
-        {
-            const string expected =
+        const string expected =
 @"Enter a palindrome: <<kayak
 >>""kayak"" is a palindrome.";
 
-            IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, Palindrome.Main);
-        }
-        
-        [TestMethod]
-        public void Main_InputInvalidPalindrome_NotIdentifiedAsPalindrome()
-        {
-            const string expected =
+        IntelliTect.TestTools.Console.ConsoleAssert.Expect(
+            expected, Palindrome.Main);
+    }
+    
+    [TestMethod]
+    public void Main_InputInvalidPalindrome_NotIdentifiedAsPalindrome()
+    {
+        const string expected =
 @"Enter a palindrome: <<test
 >>""test"" is NOT a palindrome.";
 
-            IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, Palindrome.Main);
-        }
+        IntelliTect.TestTools.Console.ConsoleAssert.Expect(
+            expected, Palindrome.Main);
     }
 }

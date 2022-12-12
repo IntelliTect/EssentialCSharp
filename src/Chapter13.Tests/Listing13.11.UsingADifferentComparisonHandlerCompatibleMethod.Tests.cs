@@ -1,15 +1,15 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_11.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_11.Tests;
+
+[TestClass]
+public class DelegateSampleTests
 {
-    [TestClass]
-    public class DelegateSampleTests
+    [TestMethod]
+    public void Main()
     {
-        [TestMethod]
-        public void Main()
-        {
-            string expected =
-            @"Enter an integer: <<1
+        string expected =
+        @"Enter an integer: <<1
 >>Enter an integer: <<12
 >>Enter an integer: <<13
 >>Enter an integer: <<5
@@ -21,11 +21,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_11.Tests
 5
 ";
 
-            IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected,
-            () =>
-            {
-                DelegateSample.Main();
-            });
-        }
+        IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected,
+        () =>
+        {
+            DelegateSample.Main();
+        });
     }
 }

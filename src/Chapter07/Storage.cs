@@ -1,61 +1,60 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07;
+
+using System;
+
+/*  *****************************************************
+ *  For the purposes of pattern matching, assume that the 
+ *  source code is not available and so polymorphism is
+ *  not possible.
+ *  *****************************************************/
+public abstract class Storage
 {
-    using System;
+    protected Storage(long capacity)
+    {
+        Capacity = capacity;
+    }
+    public long Capacity { get; }
+}
+public class Dvd : Storage
+{
+    public Dvd(DvdCapacity capacity) : base((long)capacity) 
+    {
+        switch (capacity)
+        {
+            case DvdCapacity.SingleLayeredCapacity:
+            case DvdCapacity.DualLayeredCapacity:
+                    break;
+            default:
+                throw new ArgumentException("Only values of 4.7 GB and 8.5 GB are supported.");
+        };
+    }
+    public bool IsInserted { get; set; }
 
-    /*  *****************************************************
-     *  For the purposes of pattern matching, assume that the 
-     *  source code is not available and so polymorphism is
-     *  not possible.
-     *  *****************************************************/
-    public abstract class Storage
+    internal static void Eject()
     {
-        protected Storage(long capacity)
-        {
-            Capacity = capacity;
-        }
-        public long Capacity { get; }
+        Console.WriteLine("Ejecting the DVD...");
     }
-    public class Dvd : Storage
+    public enum DvdCapacity : long
     {
-        public Dvd(DvdCapacity capacity) : base((long)capacity) 
-        {
-            switch (capacity)
-            {
-                case DvdCapacity.SingleLayeredCapacity:
-                case DvdCapacity.DualLayeredCapacity:
-                        break;
-                default:
-                    throw new ArgumentException("Only values of 4.7 GB and 8.5 GB are supported.");
-            };
-        }
-        public bool IsInserted { get; set; }
+        SingleLayeredCapacity = 47000000000,
+        DualLayeredCapacity = 85000000000
+    }
+}
+public class HardDrive : Storage
+{
+    public HardDrive(long capacity) : base(capacity) { }
+}
+public class FloppyDrive : Storage 
+{
+    public FloppyDrive(): base(1440000){}
+}
+public class UsbKey : Storage
+{
+    public UsbKey(long capacity) : base(capacity) { }
+    public bool IsPluggedIn { get; set; }
 
-        internal static void Eject()
-        {
-            Console.WriteLine("Ejecting the DVD...");
-        }
-        public enum DvdCapacity : long
-        {
-            SingleLayeredCapacity = 47000000000,
-            DualLayeredCapacity = 85000000000
-        }
-    }
-    public class HardDrive : Storage
+    internal static void Unload()
     {
-        public HardDrive(long capacity) : base(capacity) { }
-    }
-    public class FloppyDrive : Storage 
-    {
-        public FloppyDrive(): base(1440000){}
-    }
-    public class UsbKey : Storage
-    {
-        public UsbKey(long capacity) : base(capacity) { }
-        public bool IsPluggedIn { get; set; }
-
-        internal static void Unload()
-        {
-            Console.WriteLine("Unloading the UsbKey...");
-        }
+        Console.WriteLine("Unloading the UsbKey...");
     }
 }

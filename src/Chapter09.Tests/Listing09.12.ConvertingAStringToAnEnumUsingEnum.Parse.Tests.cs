@@ -1,17 +1,16 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_12.Tests
-{
-    [TestClass]
-    public class ProgramTests
-    {
-        [TestMethod]
-        public void Main_CastThreadLevelPriorityEnumToString()
-        {
-            const string expected = "Idle";
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_12.Tests;
 
-            IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, Program.Main);
-        }
+[TestClass]
+public class ProgramTests
+{
+    [TestMethod]
+    public void Main_CastThreadLevelPriorityEnumToString()
+    {
+        const string expected = "Idle";
+
+        IntelliTect.TestTools.Console.ConsoleAssert.Expect(
+            expected, Program.Main);
     }
 }

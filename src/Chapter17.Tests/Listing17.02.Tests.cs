@@ -1,14 +1,14 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_02.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_02.Tests;
+
+[TestClass]
+public class ProgramTests
 {
-    [TestClass]
-    public class ProgramTests
+    [TestMethod]
+    public void MainTest()
     {
-        [TestMethod]
-        public void MainTest()
-        {
-            const string expected = @"Dwarf, Bashful
+        const string expected = @"Dwarf, Bashful
 Dwarf, Doc
 Dwarf, Dopey
 Dwarf, Duplicate
@@ -18,8 +18,7 @@ Dwarf, Sleepy
 Dwarf, Sneezy
 Scarf, Duplicate";
 
-            IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, Program.Main);
-        }
+        IntelliTect.TestTools.Console.ConsoleAssert.Expect(
+            expected, Program.Main);
     }
 }

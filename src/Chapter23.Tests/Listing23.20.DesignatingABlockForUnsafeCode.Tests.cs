@@ -1,25 +1,23 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Runtime.InteropServices;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter23.Listing23_20.Tests
-{
-    [TestClass]
-    public class Listing21_20_Tests
-    {
-        [TestMethod]
-        public void GetProcessorIdReturnsCorrectValue()
-        {
-            string expected = @"Processor Id: GenuineIntel";
-            if (!System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
-            {
-                expected = "This sample is only valid for Windows";
-            }
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter23.Listing23_20.Tests;
 
-                IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected,
+[TestClass]
+public class Listing21_20_Tests
+{
+    [TestMethod]
+    public void GetProcessorIdReturnsCorrectValue()
+    {
+        string expected = @"Processor Id: *";
+        if (!System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+        {
+            expected = "This sample is only valid for Windows";
+        }
+        IntelliTect.TestTools.Console.ConsoleAssert.ExpectLike(expected,
             () =>
             {
                 Program.Main();
             });
-        }
     }
 }
