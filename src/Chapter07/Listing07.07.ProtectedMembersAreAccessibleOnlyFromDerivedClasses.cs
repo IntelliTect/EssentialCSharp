@@ -1,7 +1,4 @@
-﻿// Justification: Invalid code commented out resulting in partial implementation
-#pragma warning disable IDE0059 // Unnecessary assignment of a value
-
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_07;
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_07;
 
 using System;
 #region INCLUDE
@@ -33,25 +30,30 @@ public class Contact : PdaItem
     }
     static public Contact Copy(Contact contact)
     #region HIGHLIGHT
-        => new Contact(contact.ObjectKey);
+        => new(contact.ObjectKey);
     #endregion HIGHLIGHT
 
-    // static public Contact Copy(PdaItem pdaItem) =>
+    #if COMPILEERROR
+    static public Contact Copy(PdaItem pdaItem) =>
     #region HIGHLIGHT
-    // Error: Cannot access protected member PdaItem.ObjectKey.
-    // new Contact(((Contact)pdaItem).ObjectKey);
+    // ERROR: Cannot access protected member PdaItem.ObjectKey.
+    // Use ((Contact)pdaItem).ObjectKey instead.
+        new(pdaItem.ObjectKey);
     #endregion HIGHLIGHT
+    #endif // COMPILEERROR
 }
 
 public class Program
 {
     public static void Main()
     {
-        Contact contact = new Contact(Guid.NewGuid());
+        Contact contact = new(Guid.NewGuid());
 
         #region HIGHLIGHT
+        #if COMPILEERROR
         // ERROR:  'PdaItem.ObjectKey' is inaccessible
-        // Console.WriteLine(contact.ObjectKey);
+        Console.WriteLine(contact.ObjectKey);
+        #endif // COMPILEERROR
         #endregion HIGHLIGHT
     }
 }

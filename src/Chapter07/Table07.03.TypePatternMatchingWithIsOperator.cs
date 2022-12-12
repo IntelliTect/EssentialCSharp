@@ -5,9 +5,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Table07_03
 {
     public class Program
     {
-            // ...
+        // ...
         string id =
-            "92e80a67-d453-4998-8d85-f430fa02d6c7"
+            "92e80a67-d453-4998-8d85-f430fa02d6c7";
         if(GetObjectById(id) is Employee employee)
         {
             Display(employee);

@@ -157,46 +157,6 @@ static public class CompilerAssertOld
 
     }
 
-
-    async static public Task<CompileError[]> ExpectErrorsInFileAsync(
-        string fileName, params CompileError[] diagnostics)
-    {
-        string sourceCode =
-            (await File.ReadAllLinesAsync(fileName))
-            // Namespace is not supported so we need to remove 
-            // it's declaration (and curlys) or take a different approach than C# Scripting.
-            .Aggregate(
-                (string result, string item) =>
-                    result += $"\n{item}");
-
-        return ExpectErrors(sourceCode, diagnostics);
-    }
-
-    public static CompileError[] ExpectErrors(
-        string sourceCode, params CompileError[] diagnostics)
-    {
-        ArgumentNullException.ThrowIfNull(diagnostics);
-        CompileError[] actualCompileErrors = CompileAsync(sourceCode);
-
-        if (diagnostics.Length > 0)
-        {
-            for (int i = 0; i < Math.Min(actualCompileErrors.Length, diagnostics.Length); i++)
-            {
-                // Compare Id's first as that is more meaningful.
-                Assert.AreEqual<(string Id, string Message)>(
-                    (diagnostics[i].Id, diagnostics[i].Message), (actualCompileErrors[i].Id, actualCompileErrors[i].Message));
-                //$"The expected Ids do not match for item {i}: " +
-                //$"{diagnostics[i].Id}: {diagnostics[i].Message} <> {actualCompileErrors[i].Id}: {actualCompileErrors[i].Message}");
-            }
-            return actualCompileErrors;
-        }
-        Assert.AreEqual<int>(diagnostics.Length, actualCompileErrors.Length,
-            "The number of errors returned does not match what was expected.");
-
-        Assert.Fail("The expected compilation errors did not occur.");
-        return null!;  // This code will never execute due to the Fail line above.
-    }
-
     public static async Task<CompileError[]> CompileAsyncOld(
         string sourceCode)
     {
@@ -216,20 +176,4 @@ static public class CompilerAssertOld
         return actualCompileErrors;
     }
 
-    public static CompileError[] CompileAsync(
-        string sourceCode)
-    {
-        CompileError[] actualCompileErrors = Array.Empty<CompileError>();
-        SyntaxTree tree = CSharpSyntaxTree.ParseText(sourceCode);
-        CompilationUnitSyntax root = tree.GetCompilationUnitRoot();
-        return root.GetDiagnostics().Select(item =>
-                new CompileError(item.Id, item.GetMessage())).ToArray();
-
-        //Assert.IsTrue(exception.Diagnostics.Length > 0);
-
-        //    actualCompileErrors = exception.Diagnostics.Select(item =>
-        //        new CompileError(item.Id, item.GetMessage())).ToArray();
-
-        //return actualCompileErrors;
-    }
 }

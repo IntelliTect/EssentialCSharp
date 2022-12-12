@@ -4,7 +4,9 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Diagnostics;
 using Microsoft.CodeAnalysis.Testing;
 using Microsoft.CodeAnalysis.Testing.Verifiers;
+using Microsoft.CodeAnalysis.Text;
 using System.Collections.Immutable;
+using System.Runtime.CompilerServices;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Shared.Tests;
 
@@ -12,33 +14,50 @@ public static class CompilerAssert
 {
     public static async Task CompileAsync(string[] fileNames, string[] expectedErrorIds)
     {
-        string code = string.Empty;
+
+        var test = new Test()
+        {
+            CompilerDiagnostics = CompilerDiagnostics.Warnings,
+            ReferenceAssemblies = new ReferenceAssemblies(
+                        "net7.0",
+                        new PackageIdentity(
+                            "Microsoft.NETCore.App.Ref",
+                            "7.0.0"),
+                        Path.Combine("ref", "net7.0"))
+        };
+
         foreach (string each in fileNames)
         {
             string fileName = each;
-            if(!File.Exists(each))
+            if (!File.Exists(fileName))
             {
                 // Search up to find the file in the target project directory.
-                string testCsprojName = Path.GetFileName(Path.ChangeExtension(System.Reflection.Assembly.GetExecutingAssembly().Location, "csproj"));
+                string testCsprojName = Path.GetFileName(
+                    Path.ChangeExtension(System.Reflection.Assembly.GetExecutingAssembly().Location, "csproj"));
                 // TODO: Update to search up each directory if the hard coded location 3 directories up is not correct.
-                string currentChapterTestDirectory = Path.GetFullPath(Path.Combine("..", "..", "..", Path.GetFileName(Path.ChangeExtension(System.Reflection.Assembly.GetExecutingAssembly().Location, "csproj"))));
-                string? currentTargetDirectory = Path.GetDirectoryName( currentChapterTestDirectory.Replace(".Tests", ""));
-                if((Path.Join(currentTargetDirectory, each) is string temp) && File.Exists(temp))
+                string currentChapterTestDirectory = Path.GetFullPath(
+                    Path.Combine("..", "..", "..", testCsprojName));
+                string? currentTargetDirectory = Path.GetDirectoryName(currentChapterTestDirectory.Replace(".Tests", ""));
+                if ((Path.Join(currentTargetDirectory, fileName) is string temp) && File.Exists(temp))
                 {
                     fileName = temp;
                 }
             }
-            code += Environment.NewLine + await File.ReadAllTextAsync(fileName);
-            
+            test.TestState.Sources.Add((Path.GetFileName(fileName), await File.ReadAllTextAsync(fileName)));
         }
-        
-        var test = new Test()
+
+        // Note: GeneratedSources is ignored.
+        test.TestState.Sources.Add(("GlobalUsings.cs", await File.ReadAllTextAsync("GlobalUsings.cs")));
+
+        test.DisabledDiagnostics.Add("CS1587"); // XML comment is not placed on a valid language element
+        test.DisabledDiagnostics.Add("CS1591"); // Missing XML comment for publicly visible type or member 'Type_or_Member'
+
+
+        foreach (var errorId in expectedErrorIds)
         {
-            TestCode = code
-        };
-        foreach(var errorId in expectedErrorIds)
-        {
-            test.ExpectedDiagnostics.Add(DiagnosticResult.CompilerError(errorId));
+            test.ExpectedDiagnostics.Add(
+                DiagnosticResult.CompilerError(errorId).WithOptions(
+                    DiagnosticOptions.IgnoreAdditionalLocations | DiagnosticOptions.IgnoreSeverity));
         }
 
         await test.RunAsync();
@@ -47,8 +66,13 @@ public static class CompilerAssert
     public static async Task CompileAsync(string fileName, params string[] expectedErrorIds) =>
         await CompileAsync(new string[] { fileName }, expectedErrorIds);
 
+    //public static async Task CompileAsync(string[] expectedErrorIds, [CallerFilePath] string fileName = null!) =>
+    //    await CompileAsync(new string[] { fileName }, expectedErrorIds);
 
-    //Custom verifier to ignore diagnostic locations locations
+    //public static async Task CompileAsync(string expectedErrorId, [CallerFilePath] string fileName = null!) =>
+    //    await CompileAsync(new string[] { fileName }, new string[] { expectedErrorId });
+
+    //Custom verifier to ignore diagnostic locations
     public class CustomMSTestVerifier : MSTestVerifier
     {
         public override void Equal<T>(T expected, T actual, string? message = null)
@@ -66,7 +90,7 @@ public static class CompilerAssert
         protected override CompilationOptions CreateCompilationOptions()
         {
             var compilationOptions = new CSharpCompilationOptions(
-                OutputKind.DynamicallyLinkedLibrary, 
+                OutputKind.DynamicallyLinkedLibrary,
                 allowUnsafe: true,
                 //Setup set #nullable enable
                 nullableContextOptions: NullableContextOptions.Enable);
@@ -93,9 +117,10 @@ public static class CompilerAssert
 
         protected override ParseOptions CreateParseOptions()
             => new CSharpParseOptions(LanguageVersion, DocumentationMode.Diagnose)
-                   .WithPreprocessorSymbols("COMPILEERROR")
 #if NET7_0_OR_GREATER
-                    .WithPreprocessorSymbols("NET7_0_OR_GREATER")
+                .WithPreprocessorSymbols("COMPILEERROR", "NET7_0_OR_GREATER")
+#else
+                .WithPreprocessorSymbols("COMPILEERROR")
 #endif // NET7_0_OR_GREATER
             ;
 

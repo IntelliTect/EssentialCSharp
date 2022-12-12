@@ -20,9 +20,11 @@ public class Program
 {
     public static void Main()
     {
-        PdaItem item;
+        
+        #if COMPILEERROR
         // ERROR:  Cannot create an instance of the abstract class
-        // item = new PdaItem("Inigo Montoya");
+        PdaItem item = new("Inigo Montoya");
+        #endif // COMPILEERROR
     }
 }
 #endregion INCLUDE
