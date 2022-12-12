@@ -11,8 +11,7 @@
                 LoggerFactory.Create(builder =>
                 builder.AddConsole().AddDebug());
 
-            ILogger logger = loggerFactory.CreateLogger(
-                categoryName: "Console");
+            ILogger logger = loggerFactory.CreateLogger<Program>();
 
             logger.LogInformation($@"Hospital Emergency Codes: = '{
                 string.Join("', '", args)}'");
