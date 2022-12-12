@@ -1,14 +1,14 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_18.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_18.Tests;
+
+[TestClass]
+public class ProgramTests
 {
-    [TestClass]
-    public class ProgramTests
+    [TestMethod]
+    public void MainTest()
     {
-        [TestMethod]
-        public void MainTest()
-        {
-            const string expected = @"Corporate
+        const string expected = @"Corporate
 Human Resources
 Engineering
 Information Technology
@@ -24,8 +24,7 @@ Kevin Bost (Programmer Extraordinaire)
 Thomas Heavey (Software Architect)
 Eric Edmonds (Philanthropy Coordinator)";
 
-            IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, Program.Main);
-        }
+        IntelliTect.TestTools.Console.ConsoleAssert.Expect(
+            expected, Program.Main);
     }
 }

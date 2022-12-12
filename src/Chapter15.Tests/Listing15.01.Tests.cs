@@ -1,14 +1,14 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_01.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_01.Tests;
+
+[TestClass]
+public class ProgramTests
 {
-    [TestClass]
-    public class ProgramTests
+    [TestMethod]
+    public void MainTest()
     {
-        [TestMethod]
-        public void MainTest()
-        {
-            const string expected = @"Wealth without work
+        const string expected = @"Wealth without work
 Pleasure without conscience
 Knowledge without character
 Commerce without morality
@@ -16,8 +16,7 @@ Science without humanity
 Worship without sacrifice
 Politics without principle";
 
-            IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, Program.Main);
-        }
+        IntelliTect.TestTools.Console.ConsoleAssert.Expect(
+            expected, Program.Main);
     }
 }

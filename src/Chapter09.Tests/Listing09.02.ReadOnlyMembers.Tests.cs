@@ -2,18 +2,18 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Threading.Tasks;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_02.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_02.Tests;
+
+// Use keyword struct to declare a value type 
+
+
+[TestClass]
+public class MyTestClass
 {
-    // Use keyword struct to declare a value type 
-
-
-    [TestClass]
-    public class MyTestClass
+    [TestMethod]
+    public void ReadOnlyMethod_ModifyObject_ErrorReported()
     {
-        [TestMethod]
-        public void ReadOnlyMethod_ModifyObject_ErrorReported()
-        {
-            string thingCode = @"
+        string thingCode = @"
                 public struct Thing
                 {
                     public Thing(int number)
@@ -35,8 +35,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_02.Tests
                     }
                 }";
 
-            CompilerAssertOld.ExpectErrors(thingCode,
-                new CompileError("CS1604", "Cannot assign to 'Number' because it is read-only"));
-        }
+        CompilerAssertOld.ExpectErrors(thingCode,
+            new CompileError("CS1604", "Cannot assign to 'Number' because it is read-only"));
     }
 }

@@ -1,14 +1,14 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_24.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_24.Tests;
+
+[TestClass]
+public class ProgramTests
 {
-    [TestClass]
-    public class ProgramTests
+    [TestMethod]
+    public void SelectManyTests()
     {
-        [TestMethod]
-        public void SelectManyTests()
-        {
-            string expected =
+        string expected =
 @"Fabien Barthez
 Gregory Coupet
 Mickael Landreau
@@ -56,11 +56,10 @@ Alberto Gilardino
 Filippo Inzaghi
 Vincenzo Iaquinta";
 
-            IntelliTect.TestTools.Console.ConsoleAssert.ExpectLike(expected,
-            () =>
-            {
-                Program.Main();
-            });
-        }
+        IntelliTect.TestTools.Console.ConsoleAssert.ExpectLike(expected,
+        () =>
+        {
+            Program.Main();
+        });
     }
 }

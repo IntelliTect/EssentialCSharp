@@ -5,71 +5,71 @@ using AddisonWesley.Michaelis.EssentialCSharp.Shared.Tests;
 
 using System.Text.RegularExpressions;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23.Tests;
+
+[TestClass]
+public class DisposeTests
 {
-    [TestClass]
-    public class DisposeTests
+    public TestContext TestContext { get; set; } = null!; // Auto-initialized by MSTest.
+
+    static string Ps1DirectoryPath { get; } =
+        Path.GetFullPath(
+            Path.Join(IntelliTect.Multitool.RepositoryPaths.GetDefaultRepoRoot(),"src", "Chapter10"));
+
+    static string Ps1Path { get; } = 
+        Path.GetFullPath(Path.Join(Ps1DirectoryPath, "Listing10.23.RegisteringAFinalizerWithProcessExit.ps1"), Environment.CurrentDirectory);
+
+    private const string ProjectName = "ProcessExitTestProgram.testing";
+
+    [ClassInitialize]
+    public static void ClassInitialize(TestContext testContext)
     {
-        public TestContext TestContext { get; set; } = null!; // Auto-initialized by MSTest.
+        // Clean up at the start incase the class cleanup doesn't run (due to debug for example)
+        Assert.AreEqual<int>(0, RunPowerShellScript("cleanup", out string _));
+        string testStage = "create";
+        Assert.AreEqual<int>(0, RunPowerShellScript(testStage, out string psOutput),
+            $"Script failed with $testStage='{testStage}'. psOutput:\n{psOutput}");
+        string projectFilePath =
+            Path.Join(Ps1DirectoryPath, ProjectName, $"{ProjectName}.csproj");
+        Assert.IsTrue(File.Exists(projectFilePath),
+            $"The expected project file, '{projectFilePath}', was not created.");
+    }
 
-        static string Ps1DirectoryPath { get; } =
-            Path.GetFullPath(
-                Path.Join(IntelliTect.Multitool.RepositoryPaths.GetDefaultRepoRoot(),"src", "Chapter10"));
+    [ClassCleanup]
+    public static void ClassCleanup()
+    {
+        // No return check since an exception here will be ignored.
+        RunPowerShellScript("cleanup", out string _);
+    }
 
-        static string Ps1Path { get; } = 
-            Path.GetFullPath(Path.Join(Ps1DirectoryPath, "Listing10.23.RegisteringAFinalizerWithProcessExit.ps1"), Environment.CurrentDirectory);
+    [DataTestMethod]
+    [DataRow("processExit", FinalizerRegisteredWithProcessExit, DisplayName = "Finalizer Registered With ProcessExit")]
+    [DataRow("dispose", DisposeManuallyCalledExpectedOutput, DisplayName = "Dispose called before ProcessExit does finalizer")]
+    [DataRow("gc", GCCalled, DisplayName = "Garbage Collected called")]
+    public void FinalizerRunsAsPredicted_ConsoleOutputIsInOrder(string finalizerOrderOption, string expectedOutput)
+    {
+        int traceValue = 0;
+        string testStatus = "run";
 
-        private const string ProjectName = "ProcessExitTestProgram.testing";
+        TestContext.WriteLine($"Ps1Path = '{Path.GetFullPath(Ps1Path)}'");
+        string psOutput;
+        int exitCode = RunPowerShellScript(
+            testStatus, finalizerOrderOption, traceValue, out psOutput);
 
-        [ClassInitialize]
-        public static void ClassInitialize(TestContext testContext)
-        {
-            // Clean up at the start incase the class cleanup doesn't run (due to debug for example)
-            Assert.AreEqual<int>(0, RunPowerShellScript("cleanup", out string _));
-            string testStage = "create";
-            Assert.AreEqual<int>(0, RunPowerShellScript(testStage, out string psOutput),
-                $"Script failed with $testStage='{testStage}'. psOutput:\n{psOutput}");
-            string projectFilePath =
-                Path.Join(Ps1DirectoryPath, ProjectName, $"{ProjectName}.csproj");
-            Assert.IsTrue(File.Exists(projectFilePath),
-                $"The expected project file, '{projectFilePath}', was not created.");
-        }
+        Assert.AreEqual(0, exitCode, $"PowerShell Output: {psOutput}");
 
-        [ClassCleanup]
-        public static void ClassCleanup()
-        {
-            // No return check since an exception here will be ignored.
-            RunPowerShellScript("cleanup", out string _);
-        }
+        Assert.AreEqual<string>(RemoveWhiteSpace(expectedOutput), RemoveWhiteSpace(psOutput),
+            $"Unexpected output from '{Ps1Path} {traceValue} {finalizerOrderOption} {testStatus}:{Environment.NewLine}{psOutput}");
+    }
 
-        [DataTestMethod]
-        [DataRow("processExit", FinalizerRegisteredWithProcessExit, DisplayName = "Finalizer Registered With ProcessExit")]
-        [DataRow("dispose", DisposeManuallyCalledExpectedOutput, DisplayName = "Dispose called before ProcessExit does finalizer")]
-        [DataRow("gc", GCCalled, DisplayName = "Garbage Collected called")]
-        public void FinalizerRunsAsPredicted_ConsoleOutputIsInOrder(string finalizerOrderOption, string expectedOutput)
-        {
-            int traceValue = 0;
-            string testStatus = "run";
+    private static int RunPowerShellScript(string testStage, out string psOutput) =>
+        RunPowerShellScript(testStage, null, 0, out psOutput);
+    private static int RunPowerShellScript(
+        string testStage, string? finalizerOrderOption, int traceLevel, out string psOutput) => PowerShellTestUtilities.RunPowerShellScript(
+                        Ps1Path, $"-TestStage {testStage} -FinalizerOption {finalizerOrderOption??"ignore"} {traceLevel}", out psOutput);
 
-            TestContext.WriteLine($"Ps1Path = '{Path.GetFullPath(Ps1Path)}'");
-            string psOutput;
-            int exitCode = RunPowerShellScript(
-                testStatus, finalizerOrderOption, traceValue, out psOutput);
-
-            Assert.AreEqual(0, exitCode, $"PowerShell Output: {psOutput}");
-
-            Assert.AreEqual<string>(RemoveWhiteSpace(expectedOutput), RemoveWhiteSpace(psOutput),
-                $"Unexpected output from '{Ps1Path} {traceValue} {finalizerOrderOption} {testStatus}:{Environment.NewLine}{psOutput}");
-        }
-
-        private static int RunPowerShellScript(string testStage, out string psOutput) =>
-            RunPowerShellScript(testStage, null, 0, out psOutput);
-        private static int RunPowerShellScript(
-            string testStage, string? finalizerOrderOption, int traceLevel, out string psOutput) => PowerShellTestUtilities.RunPowerShellScript(
-                            Ps1Path, $"-TestStage {testStage} -FinalizerOption {finalizerOrderOption??"ignore"} {traceLevel}", out psOutput);
-
-        public const string DisposeManuallyCalledExpectedOutput =
-            @"Main: Starting...
+    public const string DisposeManuallyCalledExpectedOutput =
+        @"Main: Starting...
             DoStuff: Starting...
             SampleUnmanagedResource.ctor: Starting...
             SampleUnmanagedResource.ctor: Creating managed stuff...
@@ -82,8 +82,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23.Tests
             DoStuff: Exiting...
             Main: Exiting...";
 
-        public const string FinalizerRegisteredWithProcessExit =
-            @"Main: Starting...
+    public const string FinalizerRegisteredWithProcessExit =
+        @"Main: Starting...
             DoStuff: Starting...
             SampleUnmanagedResource.ctor: Starting...
             SampleUnmanagedResource.ctor: Creating managed stuff...
@@ -98,8 +98,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23.Tests
             Dispose: Exiting...
             ProcessExitHandler: Exiting...";
 
-        public const string GCCalled =
-            @"Main: Starting...
+    public const string GCCalled =
+        @"Main: Starting...
             DoStuff: Starting...
             SampleUnmanagedResource.ctor: Starting...
             SampleUnmanagedResource.ctor: Creating managed stuff...
@@ -113,10 +113,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23.Tests
             Finalize: Exiting...
             Main: Exiting...";
 
-        public static string RemoveWhiteSpace(string str)
-        {
-            return Regex.Replace(str, @"\s+", String.Empty);
-        }
-
+    public static string RemoveWhiteSpace(string str)
+    {
+        return Regex.Replace(str, @"\s+", String.Empty);
     }
+
 }

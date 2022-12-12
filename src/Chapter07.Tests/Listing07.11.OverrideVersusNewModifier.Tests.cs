@@ -1,21 +1,20 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_11.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_11.Tests;
+
+[TestClass]
+public class ProgramTests
 {
-    [TestClass]
-    public class ProgramTests
+    [TestMethod]
+    public void Main_InheritanceTreeExample()
     {
-        [TestMethod]
-        public void Main_InheritanceTreeExample()
-        {
-            const string expected =
+        const string expected =
 @"SuperSubDerivedClass
 SubDerivedClass
 SubDerivedClass
 BaseClass";
 
-            IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, Program.Main);
-        }
+        IntelliTect.TestTools.Console.ConsoleAssert.Expect(
+            expected, Program.Main);
     }
 }

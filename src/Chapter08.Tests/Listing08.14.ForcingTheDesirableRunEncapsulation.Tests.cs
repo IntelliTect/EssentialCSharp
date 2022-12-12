@@ -1,14 +1,14 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_14.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_14.Tests;
+
+[TestClass]
+public class ProgramTests
 {
-    [TestClass]
-    public class ProgramTests
+    [TestMethod]
+    public void Main()
     {
-        [TestMethod]
-        public void Main()
-        {
-            string expected = @"Invoking ((IExecuteProcessActivity)activity).Run()...
+        string expected = @"Invoking ((IExecuteProcessActivity)activity).Run()...
 IWorkflowActivity.Start()...
 ExecuteProcessActivity.RedirectStandardInOut()...
 ExecuteProcessActivity.IExecuteProcessActivity.ExecuteProcess()...
@@ -17,9 +17,8 @@ IWorkflowActivity.Stop()...
 
 Invoking activity.Run()...
 Executing non-polymorphic Run() with process 'dotnet'.";
-            IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected,
-                Program.Main);
-        }
+        IntelliTect.TestTools.Console.ConsoleAssert.Expect(
+            expected,
+            Program.Main);
     }
 }

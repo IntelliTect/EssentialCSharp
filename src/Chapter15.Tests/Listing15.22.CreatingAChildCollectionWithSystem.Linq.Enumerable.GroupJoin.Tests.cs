@@ -1,14 +1,14 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_22.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_22.Tests;
+
+[TestClass]
+public class ProgramTests
 {
-    [TestClass]
-    public class ProgramTests
+    [TestMethod]
+    public void EnumerableGroupJoinTest()
     {
-        [TestMethod]
-        public void EnumerableGroupJoinTest()
-        {
-            string expected =
+        string expected =
 @"Corporate
 	Mark Michaelis (Chief Computer Nerd)
 Human Resources
@@ -24,11 +24,10 @@ Philanthropy
 	Eric Edmonds (Philanthropy Coordinator)
 Marketing";
 
-            IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected,
-            () =>
-            {
-                Program.Main();
-            });
-        }
+        IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected,
+        () =>
+        {
+            Program.Main();
+        });
     }
 }

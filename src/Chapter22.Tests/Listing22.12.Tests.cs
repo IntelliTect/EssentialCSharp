@@ -1,18 +1,17 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_12.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_12.Tests;
+
+[TestClass]
+public class ProgramTests
 {
-    [TestClass]
-    public class ProgramTests
+    [TestMethod]
+    public void MainTest()
     {
-        [TestMethod]
-        public void MainTest()
-        {
-            const string expected = @"Decrement Count = *
+        const string expected = @"Decrement Count = *
 Main Count = *";
 
-            IntelliTect.TestTools.Console.ConsoleAssert.ExpectLike(
-                expected, Program.Main);
-        }
+        IntelliTect.TestTools.Console.ConsoleAssert.ExpectLike(
+            expected, Program.Main);
     }
 }

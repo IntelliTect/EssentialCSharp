@@ -1,15 +1,15 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_25.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_25.Tests;
+
+[TestClass]
+public class ProgramTests
 {
-    [TestClass]
-    public class ProgramTests
+    [TestMethod]
+    public void Main_ExamingingAnExpressTree()
     {
-        [TestMethod]
-        public void Main_ExamingingAnExpressTree()
-        {
-            string expected =
-            @"------------- (x, y) => (x > y) -------------
+        string expected =
+        @"------------- (x, y) => (x > y) -------------
      x (Parameter)
 >
      y (Parameter)
@@ -24,11 +24,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_25.Tests
      +
           y (Parameter)";
 
-            IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected,
-            () =>
-            {
-                Program.Main();
-            });
-        }
+        IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected,
+        () =>
+        {
+            Program.Main();
+        });
     }
 }

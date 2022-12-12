@@ -1,14 +1,14 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_05.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_05.Tests;
+
+[TestClass]
+public class ProgramTests
 {
-    [TestClass]
-    public class ProgramTests
+    [TestMethod]
+    public void InvokingDelegateWithoutCheckingForNull()
     {
-        [TestMethod]
-        public void InvokingDelegateWithoutCheckingForNull()
-        {
-            string expected = @"1. delegateInvocations=0
+        string expected = @"1. delegateInvocations=0
 2. Contextual keyword count=29
 3. delegateInvocations=29
 4. Contextual keyword count=29
@@ -17,11 +17,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_05.Tests
 7. selectionCache count=29
 8. delegateInvocations=87";
 
-            IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected,
-            () =>
-            {
-                Program.Main();
-            });
-        }
+        IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected,
+        () =>
+        {
+            Program.Main();
+        });
     }
 }

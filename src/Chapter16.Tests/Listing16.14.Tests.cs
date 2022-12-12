@@ -1,14 +1,14 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_14.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_14.Tests;
+
+[TestClass]
+public class ProgramTests
 {
-    [TestClass]
-    public class ProgramTests
+    [TestMethod]
+    public void SelectingAnonymousTypeFollowingGroupClause()
     {
-        [TestMethod]
-        public void SelectingAnonymousTypeFollowingGroupClause()
-        {
-            string expected = $@"(abstract, 1)
+        string expected = $@"(abstract, 1)
 (abstract, 2)
 (abstract, 3)
 (add\*, 1)
@@ -24,12 +24,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_14.Tests
 (yield\*, 2)
 (yield\*, 3)";
 
-            expected = IntelliTect.TestTools.Console.ConsoleAssert.NormalizeLineEndings(expected);
+        expected = IntelliTect.TestTools.Console.ConsoleAssert.NormalizeLineEndings(expected);
 
-            IntelliTect.TestTools.Console.ConsoleAssert.ExpectLike(expected, () =>
-            {
-                Program.Main();
-            });
-        }
+        IntelliTect.TestTools.Console.ConsoleAssert.ExpectLike(expected, () =>
+        {
+            Program.Main();
+        });
     }
 }

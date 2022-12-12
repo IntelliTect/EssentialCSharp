@@ -1,17 +1,16 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_27.Tests
-{
-    [TestClass]
-    public class ProgramTests
-    {
-        [TestMethod]
-        public void MainTest()
-        {
-            const string expected = @"InigoMontoya";
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_27.Tests;
 
-            IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, Program.Main);
-        }
+[TestClass]
+public class ProgramTests
+{
+    [TestMethod]
+    public void MainTest()
+    {
+        const string expected = @"InigoMontoya";
+
+        IntelliTect.TestTools.Console.ConsoleAssert.Expect(
+            expected, Program.Main);
     }
 }

@@ -1,16 +1,15 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_22.Tests
-{
-    [TestClass]
-    public class ProgramTests
-    {
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_22.Tests;
 
-        [TestMethod]
-        public void Main_EncryptFile_Success()
-        {
-            IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                "Inigo Montoya", () => Program.Main());
-        }
+[TestClass]
+public class ProgramTests
+{
+
+    [TestMethod]
+    public void Main_EncryptFile_Success()
+    {
+        IntelliTect.TestTools.Console.ConsoleAssert.Expect(
+            "Inigo Montoya", () => Program.Main());
     }
 }

@@ -1,18 +1,17 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_36.Tests
-{
-    [TestClass]
-    public class ProgramTests
-    {
-        [TestMethod]
-        public void MainTest()
-        {
-            string expected = $@"490{Environment.NewLine}Fireswamp";
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_36.Tests;
 
-            IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, Program.Main);
-        }
+[TestClass]
+public class ProgramTests
+{
+    [TestMethod]
+    public void MainTest()
+    {
+        string expected = $@"490{Environment.NewLine}Fireswamp";
+
+        IntelliTect.TestTools.Console.ConsoleAssert.Expect(
+            expected, Program.Main);
     }
 }

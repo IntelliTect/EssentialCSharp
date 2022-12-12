@@ -1,19 +1,18 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_09.Tests
-{
-    [TestClass]
-    public class ContactTests
-    {
-        [TestMethod]
-        public void NameProperty_Overridden()
-        {
-            Contact contact = new Contact();
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_09.Tests;
 
-            contact.Name = "Inigo Montoya";
-            
-            Assert.AreEqual("Inigo", contact.FirstName);
-            Assert.AreEqual("Montoya", contact.LastName);
-        }
+[TestClass]
+public class ContactTests
+{
+    [TestMethod]
+    public void NameProperty_Overridden()
+    {
+        Contact contact = new Contact();
+
+        contact.Name = "Inigo Montoya";
+        
+        Assert.AreEqual("Inigo", contact.FirstName);
+        Assert.AreEqual("Montoya", contact.LastName);
     }
 }
