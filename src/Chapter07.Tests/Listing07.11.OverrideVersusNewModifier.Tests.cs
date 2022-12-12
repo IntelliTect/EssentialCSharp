@@ -9,26 +9,22 @@ public class ProgramTests
     [TestMethod]
     public void Main_InheritanceTreeExample()
     {
-        [TestMethod]
-        public void Main_InheritanceTreeExample()
-        {
-            const string expected = """
+        const string expected = """
                 SuperSubDerivedClass
                 SubDerivedClass
                 SubDerivedClass
                 BaseClass
                 """;
 
-            IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, Program.Main);
-        }
+        IntelliTect.TestTools.Console.ConsoleAssert.Expect(
+            expected, Program.Main);
+    }
 
-        [TestMethod]
-        public async Task OverrideVersusNewModifier()
-        {
-            await CompilerAssert.CompileAsync(
-                new string[] { "Listing07.11.OverrideVersusNewModifier.cs" },
-                new string[] { "CS0108" });
-        }
+    [TestMethod]
+    public async Task OverrideVersusNewModifier()
+    {
+        await CompilerAssert.CompileAsync(
+            new string[] { "Listing07.11.OverrideVersusNewModifier.cs" },
+            new string[] { "CS0108" });
     }
 }

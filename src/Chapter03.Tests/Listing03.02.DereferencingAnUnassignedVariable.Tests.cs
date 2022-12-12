@@ -10,12 +10,11 @@ public class UppercaseTests
     [NotNull]
     public TestContext? TestContext { get; set; }
 
-        [TestMethod]
-        public async Task UnassignedVariableThrowsError()
-        {
-            await CompilerAssert.CompileAsync(
-                new string[] { "Listing03.02.DereferencingAnUnassignedVariable.cs" },
-                new string[] { "CS0165", "CS8602" });
-        }
+    [TestMethod]
+    public async Task UnassignedVariableThrowsError()
+    {
+        await CompilerAssert.CompileAsync(
+            new string[] { "Listing03.02.DereferencingAnUnassignedVariable.cs" },
+            new string[] { "CS0165", "CS8602" });
     }
 }
