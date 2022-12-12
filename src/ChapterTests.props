@@ -10,7 +10,7 @@
     <Compile Include="..\Shared\Tests\CompilerAssert.cs" Link="CompilerAssert.cs" />
     <PackageReference Include="IntelliTect.TestTools.Console" Version="0.7.1-*" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.4.0" />
-    <PackageReference Include="MSTest.TestAdapter" Version="2.2.10" />
+    <PackageReference Include="MSTest.TestAdapter" Version="3.0.0" />
     <PackageReference Include="MSTest.TestFramework" Version="3.0.0" />
     <PackageReference Include="coverlet.collector" Version="3.2.0">
       <PrivateAssets>all</PrivateAssets>
