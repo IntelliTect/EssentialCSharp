@@ -16,9 +16,9 @@ public class TextNumberParserTests
         string expected =
             $"""
             info: { typeof(Program).FullName }[0]
-                    Hospital Emergency Codes: = 'black', 'blue', 'brown', 'CBR', 'orange', 'purple', 'red', 'yellow'
+                  Hospital Emergency Codes: = 'black', 'blue', 'brown', 'CBR', 'orange', 'purple', 'red', 'yellow'
             warn: { typeof(Program).FullName }[0]
-                    This is a test of the emergency...
+                  This is a test of the emergency...
 
             """;
 
