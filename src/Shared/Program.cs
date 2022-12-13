@@ -1,4 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
+using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
@@ -40,15 +40,6 @@ public static class Program
         try
         {
             input = ParseListingName(input);
-
-            // We handle listing 1.1 specially since the listing is a top level statement and
-            // the file (Listing01.01.HelloWorldInC#.cs) is set to not build as part of the project.
-            if(input == "01_01")
-            {
-                throw new InvalidOperationException(
-                    "This listing (HelloWorld) is left as an exercise for the reader on the command line. ");
-            }
-
 
             Regex reg = new($"Listing{input}\\.+");
 
