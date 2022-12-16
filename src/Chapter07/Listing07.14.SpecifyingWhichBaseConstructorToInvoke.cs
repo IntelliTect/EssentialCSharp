@@ -1,4 +1,3 @@
-using System;
 using System.Diagnostics.CodeAnalysis;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_14;
