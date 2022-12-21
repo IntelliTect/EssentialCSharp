@@ -39,13 +39,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_31
             };
             #endregion HIGHLIGHT
 
-            #if COMPILEERROR
+            #if COMPILEERROR // EXCLUDE
             #region HIGHLIGHT
             // ERROR:  Property or indexer 'Employee.Salary' 
             // cannot be assigned after initialization completes.
             employee.Salary = "Enough";
             #endregion HIGHLIGHT
-            #endif // COMPILEERROR
+            #endif // COMPILEERROR // EXCLUDE
         }
     }
     #endregion INCLUDE

@@ -6,12 +6,12 @@ public sealed class CommandLineParser
     // ...
 }
 
-#if COMPILEERROR
+#if COMPILEERROR // EXCLUDE
 // ERROR:  Sealed classes cannot be derived from
 public sealed class DerivedCommandLineParser
     : CommandLineParser
 {
     // ...
 }
-#endif // COMPILEERROR
+#endif // COMPILEERROR // EXCLUDE
 #endregion INCLUDE

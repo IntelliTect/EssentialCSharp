@@ -35,11 +35,11 @@ public class Program
     {
         Contact contact = new Contact();
         #region HIGHLIGHT
-        #if COMPILEERROR
+        #if COMPILEERROR // EXCLUDE
         // ERROR:  'PdaItem._Name' is inaccessible
         // due to its protection level
         contact._Name = "Inigo Montoya";
-        #endif // COMPILEERROR
+        #endif // COMPILEERROR // EXCLUDE
         #endregion HIGHLIGHT
     }
 }

@@ -21,10 +21,10 @@ public class Program
     public static void Main()
     {
         
-        #if COMPILEERROR
+        #if COMPILEERROR // EXCLUDE
         // ERROR:  Cannot create an instance of the abstract class
         PdaItem item = new("Inigo Montoya");
-        #endif // COMPILEERROR
+        #endif // COMPILEERROR // EXCLUDE
     }
 }
 #endregion INCLUDE
