@@ -1,8 +1,8 @@
 #if NET7_0_OR_GREATER
 
-#if COMPILEERROR
+#if COMPILEERROR // EXCLUDE
 using AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_37;
-#endif // COMPILEERROR
+#endif // COMPILEERROR // EXCLUDE
 
 using System.Runtime.CompilerServices;
 
@@ -12,7 +12,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_38
     {
         public static void Main()
         {
-            #if COMPILEERROR
+            #if COMPILEERROR // EXCLUDE
             #region INCLUDE
             // Error CS9035:
             // Required member 'Book.Isbn' must be set in the object
@@ -21,7 +21,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_38
 
             // ...
             #endregion INCLUDE
-            #endif // COMPILEERROR
+            #endif // COMPILEERROR // EXCLUDE
           }
     }
 }

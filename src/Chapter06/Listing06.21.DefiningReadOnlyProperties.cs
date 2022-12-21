@@ -11,13 +11,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_21
             Employee employee1 = new();
             employee1.Initialize(42);
 
-            #if COMPILEERROR
+            #if COMPILEERROR // EXCLUDE
             #region HIGHLIGHT
             // ERROR:  Property or indexer 'Employee.Id' 
             // cannot be assigned to; it is read-only
             employee1.Id = "490";
             #endregion HIGHLIGHT
-            #endif // COMPILEERROR
+            #endif // COMPILEERROR // EXCLUDE
         }
     }
 

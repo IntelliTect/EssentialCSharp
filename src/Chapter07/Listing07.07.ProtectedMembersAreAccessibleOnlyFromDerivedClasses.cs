@@ -33,14 +33,14 @@ public class Contact : PdaItem
         => new(contact.ObjectKey);
     #endregion HIGHLIGHT
 
-    #if COMPILEERROR
+    #if COMPILEERROR // EXCLUDE
     static public Contact Copy(PdaItem pdaItem) =>
     #region HIGHLIGHT
     // ERROR: Cannot access protected member PdaItem.ObjectKey.
     // Use ((Contact)pdaItem).ObjectKey instead.
         new(pdaItem.ObjectKey);
     #endregion HIGHLIGHT
-    #endif // COMPILEERROR
+    #endif // COMPILEERROR // EXCLUDE
 }
 
 public class Program
@@ -50,10 +50,10 @@ public class Program
         Contact contact = new(Guid.NewGuid());
 
         #region HIGHLIGHT
-        #if COMPILEERROR
+        #if COMPILEERROR // EXCLUDE
         // ERROR:  'PdaItem.ObjectKey' is inaccessible
         Console.WriteLine(contact.ObjectKey);
-        #endif // COMPILEERROR
+        #endif // COMPILEERROR // EXCLUDE
         #endregion HIGHLIGHT
     }
 }

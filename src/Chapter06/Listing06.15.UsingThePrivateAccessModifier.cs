@@ -55,14 +55,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_15
             // ...
 
             
-            #if COMPILEERROR
+            #if COMPILEERROR // EXCLUDE
             #region HIGHLIGHT
             // ERROR: Password is private, so it cannot be
             // accessed from outside the class
             Console.WriteLine(
                "Password = {0}", employee.Password);
             #endregion HIGHLIGHT
-            #endif // COMPILEERROR
+            #endif // COMPILEERROR // EXCLUDE
         }
         // ...
     }
