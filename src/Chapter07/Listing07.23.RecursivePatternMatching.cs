@@ -29,16 +29,18 @@ public class Program
             (inigo, buttercup);
 
         if (couple is 
-            ( // Tuple
-                ( // Positional
-                    { // Property
-                        Length: int inigoLength1 }, 
-                 _ // Discard
+            ( // Tuple: Retrived from deconstructor of Person
+                ( // Positional: Select left side or tuple
+                    { // Property of firstName
+                        Length: int inigoFirstNameLength
+                    }, 
+                 _ // Discard last name portion of tuple
                 ),
-            { // Property
+            { // Property of Princess Buttercup tuple
                 FirstName: string buttercupFirstName }))
         {
-            Console.WriteLine($"({inigoLength1}, {buttercupFirstName})");
+            Console.WriteLine(
+                $"({ inigoFirstNameLength }, { buttercupFirstName })");
         }
         else
         {
