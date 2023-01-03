@@ -4,6 +4,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_41
     using System;
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
+    using System.Collections.Generic;
 
     public class NullabilityAttributesExamined
     {
@@ -13,7 +14,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_41
         // ...
         [return: MaybeNull]
         static public T GetObject<T>(
-          System.Collections.Generic.IEnumerable<T> sequence, Func<T, bool> match)
+          IEnumerable<T> sequence, Func<T, bool> match)
         =>
         // ...
         #endregion INCLUDE
