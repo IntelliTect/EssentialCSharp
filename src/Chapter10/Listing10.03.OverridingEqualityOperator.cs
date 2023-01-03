@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_03
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_03
 {
     using AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_06;
     #region INCLUDE

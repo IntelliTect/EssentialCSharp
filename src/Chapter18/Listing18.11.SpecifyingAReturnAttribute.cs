@@ -1,5 +1,3 @@
-using System;
-
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_11
 {
     public class Program

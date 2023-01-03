@@ -1,5 +1,3 @@
-using System;
-
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15
 {
     public class Patent

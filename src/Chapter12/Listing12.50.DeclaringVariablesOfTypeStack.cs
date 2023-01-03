@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_50
 {
     public class Program
