@@ -6,11 +6,8 @@ using Microsoft.CodeAnalysis.Scripting;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Globalization;
 using System.Diagnostics;
-using Microsoft.CodeAnalysis.Text;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Shared;
-
-
 
 readonly public struct CompileError
 {
@@ -82,6 +79,7 @@ readonly public struct CompileError
         CompileError lhs, CompileError rhs) =>
             !lhs.Equals(rhs);
 }
+
 static public class CompilerAssertOld
 {
     public static async Task Compile2Async(
@@ -89,7 +87,6 @@ static public class CompilerAssertOld
         string[] errorIds,
         string? targetMethod) => await CompileAsync(
             new string[] { fileName }, errorIds, targetMethod);
-
 
     public static async Task CompileAsync(string[] fileNames, string[] errorIds, string? targetMethod = null)
     {
@@ -175,5 +172,4 @@ static public class CompilerAssertOld
         }
         return actualCompileErrors;
     }
-
 }
