@@ -1,5 +1,4 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter11.Listing11_01.Tests;
 

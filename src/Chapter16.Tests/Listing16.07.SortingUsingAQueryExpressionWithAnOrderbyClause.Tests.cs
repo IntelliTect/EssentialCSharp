@@ -1,10 +1,5 @@
 ﻿using IntelliTect.TestTools.Console;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Reflection;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_07.Tests;
 

@@ -1,6 +1,3 @@
-using System;
-using System.Threading.Tasks;
-
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Tests;
 
 public class ProgramWrapper

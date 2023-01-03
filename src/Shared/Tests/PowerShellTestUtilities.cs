@@ -1,7 +1,5 @@
-using System;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
-using System.Linq;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Shared.Tests
 {

@@ -1,4 +1,3 @@
-using System;
 using AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_02;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 

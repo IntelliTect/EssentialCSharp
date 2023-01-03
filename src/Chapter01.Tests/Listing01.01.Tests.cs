@@ -1,11 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Diagnostics;
-using System.IO;
 using AddisonWesley.Michaelis.EssentialCSharp.Shared.Tests;
-
-using System.Text.RegularExpressions;
-using System.Linq;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_01.Tests;
 

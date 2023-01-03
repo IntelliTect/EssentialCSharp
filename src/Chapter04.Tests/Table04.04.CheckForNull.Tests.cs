@@ -1,5 +1,4 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Reflection;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Table04_04.Tests;
 

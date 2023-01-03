@@ -1,8 +1,5 @@
 ﻿using AddisonWesley.Michaelis.EssentialCSharp.Shared.Tests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.IO;
-using System.Runtime.InteropServices;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_13.Tests;
 

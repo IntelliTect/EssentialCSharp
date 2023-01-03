@@ -1,12 +1,6 @@
 using AddisonWesley.Michaelis.EssentialCSharp.Shared;
-using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.CSharp;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
-using Microsoft.CodeAnalysis.Diagnostics;
+using AddisonWesley.Michaelis.EssentialCSharp.Shared.Tests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.CodeDom.Compiler;
-using System.Globalization;
-using System.Text;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Table03_03.Tests;
 
@@ -26,6 +20,7 @@ public class ArrayHighlightsTests
     /* 9. */ [DataRow(nameof(CommonArayCodingErrors.MultiDimensionalArrayWithInconsistentSize), "CS0847")]
     public async Task ParseAndCompile(string targetMethod, params string[] errorIds)
     {
+        // TODO: await CompilerAssert.CompileAsync("Table03.03.CommonArrayCodingErrors.cs", errorIds,)
         await CompilerAssertOld.Compile2Async("Table03.03.CommonArrayCodingErrors.cs", errorIds, targetMethod);
     }
 
