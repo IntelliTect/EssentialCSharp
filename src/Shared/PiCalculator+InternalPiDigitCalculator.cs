@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
 {
     public partial class PiCalculator
     {

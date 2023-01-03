@@ -1,7 +1,4 @@
-﻿using System;
-using System.ComponentModel;
-
-namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Shared
 {
     public class DoWorkEventArgs : EventArgs
     {
