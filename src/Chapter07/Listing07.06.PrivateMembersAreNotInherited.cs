@@ -1,7 +1,6 @@
 ﻿// Justification: Invalid code commented out resulting in partial implementation
 #pragma warning disable IDE0059 // Unnecessary assignment of a value
 
-using System.Diagnostics.CodeAnalysis;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_06;
 

@@ -1,7 +1,6 @@
 // Non-nullable field is uninitialized. Consider declaring as nullable.
 #pragma warning disable CS8618
 
-using System;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_20
 {

@@ -2,8 +2,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_14;
 
 #region INCLUDE
-using System;
-using System.Threading;
 
 #region HIGHLIGHT
 // Declare alias Timer to refer to System.Timers.Timer to

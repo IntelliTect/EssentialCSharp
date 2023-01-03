@@ -1,4 +1,3 @@
-using System;
 using System.Runtime.Serialization;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter11.Listing11_05

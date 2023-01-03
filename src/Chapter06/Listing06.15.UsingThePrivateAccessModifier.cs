@@ -7,7 +7,6 @@
 // Add readonly modifier ignored pending introduction of the concept
 #pragma warning disable IDE0044
 
-using System;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_15
 {

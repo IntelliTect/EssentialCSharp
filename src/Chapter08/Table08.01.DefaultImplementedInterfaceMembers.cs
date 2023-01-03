@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Table08_01
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Table08_01
 {
     // 1.
     namespace StaticMembers
@@ -90,7 +88,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Table08_01
     // 4.
     namespace ProtectedAccessModifiers
     {
-        
+
     }
 
     // 5. 
@@ -135,7 +133,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Table08_01
     // 8. 
     namespace PrivateProtectedAccessModifiers
     {
-    class Program
+        class Program
     {
         static void Main()
         {
