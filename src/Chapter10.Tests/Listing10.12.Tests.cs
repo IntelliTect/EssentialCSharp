@@ -1,8 +1,4 @@
-﻿using IntelliTect.TestTools.Console;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-using System;
-using System.IO;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Text.RegularExpressions;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_12.Tests;

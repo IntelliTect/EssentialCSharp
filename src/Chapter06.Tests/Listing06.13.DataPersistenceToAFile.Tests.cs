@@ -1,5 +1,3 @@
-using System;
-using System.IO;
 using AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_12;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 

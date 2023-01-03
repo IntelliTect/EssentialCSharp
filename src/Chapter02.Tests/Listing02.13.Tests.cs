@@ -1,5 +1,4 @@
-﻿using System;
-using IntelliTect.TestTools.Console;
+﻿using IntelliTect.TestTools.Console;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_13.Tests;
