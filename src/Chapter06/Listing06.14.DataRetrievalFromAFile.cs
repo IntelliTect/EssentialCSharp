@@ -46,7 +46,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_14
             // Instantiate a FileStream using FirstNameLastName.dat
             // for the filename. FileMode.Create will force
             // a new file to be created or override an
-            // existing file
+            // existing file.
+            // Note: This code could be improved with a using
+            // statement — a construct that we have avoided because
+            // it has not yet been introduced.
             FileStream stream = new(
                 employee.FirstName + employee.LastName + ".dat",
                 FileMode.Create);
