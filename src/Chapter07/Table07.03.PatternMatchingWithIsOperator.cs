@@ -38,7 +38,10 @@ public class PaternMatchingExamples
     {
         public Employee(string firstName, string lastName, string id) : base(firstName, lastName)
         {
+            Id = id;
         }
+
+        public string Id { get; }
     }
 
 // 1. Declaration Pattern

@@ -17,7 +17,7 @@ public class Program
                 Console.WriteLine(File.ReadAllText(dataFile));
                 break;
             case (2, "encrypt"):
-                #endregion HIGHLIGHT
+        #endregion HIGHLIGHT
                 {
                     string data = File.ReadAllText(dataFile);
                     File.WriteAllText(

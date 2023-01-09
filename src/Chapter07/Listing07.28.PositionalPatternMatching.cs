@@ -6,8 +6,9 @@ using System.Drawing;
 
 public static class PointHelper
 {
-    public static void Deconstruct(this Point point, out int x, out int y) =>
-        (x, y) = (point.X, point.Y);
+    public static void Deconstruct(
+        this Point point, out int x, out int y) =>
+            (x, y) = (point.X, point.Y);
 
     public static bool IsVisibleOnVGAScreen(Point point) =>
         point is (>=0 and <=1920, >=0 and <=1080);

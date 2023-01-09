@@ -23,8 +23,9 @@ public class ProgramTests
         )
     {
         Assert.AreEqual(expectedResult, ExpenseItem.ValidateExpenseItem(
-                new ExpenseItem(itemId, new Employee(employeeId, employeeName, role),
-                    itemName, (decimal)amount, DateTime.Now.AddDays(-daysPassed))
+                new ExpenseItem(itemId, itemName,
+                    (decimal)amount, DateTime.Now.AddDays(-daysPassed), 
+                    new Employee(employeeId, employeeName, role))
                 ));
     }
 
