@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_32;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_30;
 
 public class Program
 {
@@ -23,7 +23,7 @@ public class Program
                     // preferable but not covered until Chapter 12.
                     ((int Year, int Month, int Day)?) null,
             _ => null
-        } is { } date ? string.Format(
+        } is (int, int, int) date ? string.Format(
             compositFormatString, date.Year, date.Month, date.Day) : null;
     #endregion INCLUDE
 }
