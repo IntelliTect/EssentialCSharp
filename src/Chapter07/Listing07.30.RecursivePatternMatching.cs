@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_23;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_30;
 
 public class Person
 {

@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_25;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_33;
 
 #region INCLUDE
 public class PdaItem

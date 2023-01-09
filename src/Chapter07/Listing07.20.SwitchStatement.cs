@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_19A;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_20;
 
 public class TimeOnlyHelper
 {

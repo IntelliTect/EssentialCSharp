@@ -1,5 +1,5 @@
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_21;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_28;
 
 #region INCLUDE
 using System.Drawing;

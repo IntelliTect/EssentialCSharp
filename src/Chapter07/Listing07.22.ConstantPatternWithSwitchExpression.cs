@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_19D;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_22;
 
 #region INCLUDE
 using System.Diagnostics.CodeAnalysis;

@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_20;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_26;
 
 using System.IO;
 using System.Runtime.CompilerServices;

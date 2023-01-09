@@ -1,15 +1,15 @@
 using System.Diagnostics.CodeAnalysis;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_19F;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_25;
 
 public class PeriodsOfTheDay
 {
     #region INCLUDE
-    public bool IsStandardWorkHours(
+    public bool IsOutsideOfStandardWorkHours(
         TimeOnly time) =>
-            time.Hour is > 8
-                and < 17
-                and not 12; // lunch
+            time.Hour is not
+                (> 8 and < 17 and not 12); // Parentbhesis Pattern - C# 10.
+    #endregion INCLUDE
 
     static bool TryGetPhoneButton(
         char character,
@@ -31,5 +31,4 @@ public class PeriodsOfTheDay
             _ => null,// Set the button to indicate an invalid value
         }) is not null;
     }
-    #endregion INCLUDE
 }

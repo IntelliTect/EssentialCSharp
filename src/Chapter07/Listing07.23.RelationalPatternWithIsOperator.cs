@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_19E;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_23;
 
 public class PeriodsOfTheDay
 {

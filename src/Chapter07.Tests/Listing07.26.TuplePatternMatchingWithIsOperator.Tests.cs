@@ -1,6 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_20A.Tests;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_26.Tests;
 
 [TestClass]
 public class ProgramTests
@@ -9,12 +9,11 @@ public class ProgramTests
     const string EncryptedFileName = "temp.out";
 
     [TestMethod]
-    public async Task Main_EncryptFileUsingSwitchStatement_Success()
+    public async Task Main_EncryptFileUsingIsOperator_Success()
     {
         await InvokeMainWithEncriptAction(
             Program.Main);
     }
-
 
     private async Task InvokeMainWithEncriptAction(Action<string[]> action)
     {
@@ -30,7 +29,7 @@ public class ProgramTests
     }
 
     [TestMethod]
-    public async Task Main_ShowFileWithSwitchStatement_Success()
+    public async Task Main_ShowFileWithIsOperator_Success()
     {
         await InvokeMainWithShowFile(Program.Main);
     }

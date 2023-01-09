@@ -1,6 +1,6 @@
 using AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_12;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_22;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_29;
 
 
 public record class Employee
