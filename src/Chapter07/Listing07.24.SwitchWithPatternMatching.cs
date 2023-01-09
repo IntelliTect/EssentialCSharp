@@ -7,19 +7,28 @@ public class Program
             object input, string compositFormatString) =>
         input switch
         {
-            DateTime { Year: int year, Month: int month, Day: int day }
+            DateTime 
+                { Year: int year, Month: int month, Day: int day }
                 => (year, month, day),
             DateTimeOffset
-            { Year: int year, Month: int month, Day: int day }
+                { Year: int year, Month: int month, Day: int day }
+                    => (year, month, day),
+            DateOnly 
+                { Year: int year, Month: int month, Day: int day }
                     => (year, month, day),
             string dateText => DateTime.TryParse(
                 dateText, out DateTime dateTime) ?
                     (dateTime.Year, dateTime.Month, dateTime.Day) :
                     // default ((int Year, int Month, int Day)?)
                     // preferable but not covered until Chapter 12.
-                    ((int Year, int Month, int Day)?)null,
+                    ((int Year, int Month, int Day)?) null,
             _ => null
         } is { } date ? string.Format(
             compositFormatString, date.Year, date.Month, date.Day) : null;
     #endregion INCLUDE
 }
+file static class DateDeconstructors
+{
+    public static void Deconstruct(this DateTime date, out int year, out int month, out int day) => (year, month, day) = (date.Year, date.Month, date.Day);
+}
+

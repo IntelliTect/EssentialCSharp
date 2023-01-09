@@ -1,37 +1,23 @@
+
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_21;
 
 #region INCLUDE
-public class Person
+using System.Drawing;
+
+public static class PointHelper
 {
-    #region EXCLUDE
-    public Person(string firstName, string lastName)
+    public static void Deconstruct(this Point point, out int x, out int y) =>
+        (x, y) = (point.X, point.Y);
+
+    public static bool IsVisibleOnVGAScreen(Point point) =>
+        point is (>=0 and <=1920, >=0 and <=1080);
+
+    public static string GetQuadrant(Point point) => point switch
     {
-        FirstName = firstName ?? throw new ArgumentNullException(nameof(firstName));
-        LastName = lastName ?? throw new ArgumentNullException(nameof(lastName));
-    }
-    public string FirstName { get; }
-    public string LastName { get; }
-    #endregion EXCLUDE
-
-    #region HIGHLIGHT
-    public void Deconstruct(out string firstName, out string lastName) =>
-        (firstName, lastName) = (FirstName, LastName);
-    #endregion HIGHLIGHT
-}
-
-public class Program
-{
-    public static void Main()
-    {
-        Person person = new("Inigo", "Montoya");
-
-        // Positional Pattern Matching
-        #region HIGHLIGHT
-        if (person is (string firstName, string lastName))
-        #endregion HIGHLIGHT
-        {
-            Console.WriteLine($"{firstName} {lastName}");
-        }
-    }
+        (>=0, >=0) => "Quadrant I",   //  II | I
+        (<=0, >=0) => "Quadrant II",  // ____|____
+        (<=0, <=0) => "Quadrant III", //     |
+        (>=0, <=0) => "Quadrant IV"   // III | IV
+    };
 }
 #endregion INCLUDE

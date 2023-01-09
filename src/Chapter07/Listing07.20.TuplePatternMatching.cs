@@ -1,39 +1,76 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_20;
 
 using System.IO;
+using System.Runtime.CompilerServices;
 
-#region INCLUDE
+
 public class Program
 {
-    const int Action = 0;
-    const int FileName = 1;
-    public const string DataFile = "data.dat";
-
-    static public void Main(params string[] args)
+    public class PositionalPatternMatchingIsOperator
     {
-        // ...
-        #region HIGHLIGHT
-        if ((args.Length, args[Action]) is (1, "show"))
-        #endregion HIGHLIGHT
+        public static void Main(params string[] args)
         {
-            Console.WriteLine(File.ReadAllText(DataFile));
+            #region INCLUDE
+            const int command = 0;
+            const int fileName = 1;
+            const string dataFile = "data.dat";
+
+            // ...
+            #region HIGHLIGHT
+            if ((args.Length, args[command]) is (1, "show"))
+            #endregion HIGHLIGHT
+            {
+                Console.WriteLine(File.ReadAllText(dataFile));
+            }
+            #region HIGHLIGHT
+            else if ((args.Length, args[command].ToLower())
+                is (2, "encrypt"))
+            #endregion HIGHLIGHT
+            {
+                string data = File.ReadAllText(dataFile);
+                File.WriteAllText(args[fileName], Encrypt(data).ToString());
+            }
+
+            #region EXCLUDE
         }
-        #region HIGHLIGHT
-        else if ((args.Length, args[Action].ToLower(), args[FileName]) 
-            is (2, "encrypt", string fileName))
-        #endregion HIGHLIGHT
-        {
-            string data = File.ReadAllText(DataFile);
-            File.WriteAllText(fileName, Encrypt(data).ToString());
-        }
-        // ...
     }
-    #region EXCLUDE
+
+
+    public class PositionalPatternMatchingSwtichStatement
+    {
+        #endregion EXCLUDE
+
+        public static void Main(params string[] args)
+        {
+            const int action = 0;
+            const int fileName = 1;
+            const string dataFile = "data.dat";
+            
+            // ...
+            #region HIGHLIGHT
+            switch ((args.Length, args[action]))
+            {
+                case (1, "show"):
+                    Console.WriteLine(File.ReadAllText(dataFile));
+                    break;
+                case (2, "encrypt"):
+                    #endregion HIGHLIGHT
+                    {
+                        string data = File.ReadAllText(dataFile);
+                        File.WriteAllText(args[fileName], Encrypt(data).ToString());
+                    }
+                    break;
+                default:
+                    Console.WriteLine("Arguments are invalid.");
+                    break;
+            }
+        }
+        #endregion INCLUDE
+    }
+
     public static string Encrypt(string data)
     {
         // See Chapter 19 for actual encryption implementation
         return $"ENCRYPTED <{data}> ENCRYPTED";
     }
-    #endregion EXCLUDE
 }
-#endregion INCLUDE

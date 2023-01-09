@@ -7,7 +7,7 @@ public class ProgramTests
 {
 
     [TestMethod]
-    public void Main_EncryptFile_Success()
+    public void RecursivePatternMatchingTest()
     {
         IntelliTect.TestTools.Console.ConsoleAssert.Expect(
             "(5, Princess)", () => Program.Main());
