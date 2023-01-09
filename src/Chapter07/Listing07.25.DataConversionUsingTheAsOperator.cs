@@ -1,7 +1,5 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_25;
 
-using System;
-
 #region INCLUDE
 public class PdaItem
 {

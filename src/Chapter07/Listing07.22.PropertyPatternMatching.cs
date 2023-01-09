@@ -1,36 +1,53 @@
+using AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_12;
+
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_22;
 
-public class Person
-{
-    public Person(string firstName, string lastName)
-    {
-        FirstName = firstName ??
-            throw new ArgumentNullException(nameof(firstName));
-        LastName = lastName ??
-            throw new ArgumentNullException(nameof(lastName));
-    }
-    public string FirstName { get; }
-    public string LastName { get; }
 
-    public void Deconstruct(out string firstName, out string lastName) =>
-        (firstName, lastName) = (FirstName, LastName);
+public record class Employee
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public string Role { get; set; }
+
+    public Employee(int id, string name, string role) =>
+        (Id, Name, Role) = (id, name, role);
 }
-public class Program
-{
-    public static void Main()
-    {
-        #region INCLUDE
-        // ...
-        Person person = new("Inigo", "Montoya");
 
-        // Positional pattern matching
-        #region HIGHLIGHT
-        if (person is {FirstName: string firstName, LastName: string lastName })
-        #endregion HIGHLIGHT
+
+public class ExpenseItem
+{
+    public int Id { get; set; }
+
+    public string ItemName { get; set; }
+
+    public Employee Employee { get; set; }
+
+    public decimal CostAmount { get; set; }
+
+    public DateTime ExpenseDate { get; set; } = DateTime.Now;
+
+    public ExpenseItem(int id, Employee employee, string name, decimal amount, DateTime date) =>
+        (Id, Employee, ItemName, CostAmount, ExpenseDate) = (id, employee, name, amount, date);
+
+    #region INCLUDE
+#pragma warning disable IDE0170 // Property pattern can be simplified
+    public static bool ValidateExpenseItem(ExpenseItem expenseItem) =>
+        expenseItem switch
         {
-            Console.WriteLine($"{firstName} {lastName}");
-        }
-        // ...
-        #endregion INCLUDE
-    }
+            // Note: A property pattern checks that the input value is not null
+            // Expanded Property Pattern
+            { ItemName.Length: > 0, Employee.Role: "Admin" } => true,
+            // Property Pattern
+            { ItemName.Length: > 0, Employee: {Role: "Manager" }, 
+                ExpenseDate: DateTime date } 
+                when date >= DateTime.Now.AddDays(-30) => true,
+            { ItemName.Length: > 0,  Employee.Name.Length: > 0, 
+                CostAmount: <= 1000, ExpenseDate: DateTime date }
+                when date >= DateTime.Now.AddDays(-30) => true,
+            { } => false, // This not null check can be eliminated.
+            _ => false
+        };
+#pragma warning restore IDE0170 // Property pattern can be simplified
+    #endregion INCLUDE
 }
+
