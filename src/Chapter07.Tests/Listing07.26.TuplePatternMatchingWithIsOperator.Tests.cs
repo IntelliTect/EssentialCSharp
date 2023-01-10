@@ -4,8 +4,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_26.Tests;
 
 internal static class TuplePatternMatchingTests
 {
-    static string DataFile = "./data.dat";
-    const string EncryptedFileName = "./temp.out";
+    private const string DataFile = "./data.dat";
+    private const string EncryptedFileName = "./temp.out";
     
     public static async Task InvokeMainWithEncriptAction(Action<string[]> action)
     {
