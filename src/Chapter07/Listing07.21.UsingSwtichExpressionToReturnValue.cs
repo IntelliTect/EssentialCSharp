@@ -12,7 +12,7 @@ public class TimeOnlyHelper
                     => TimeOnly.FromDateTime(datetimeOffset.DateTime),
             string dateText => TimeOnly.Parse(
                 dateText),
-            null => throw new Exception(),
+            null => throw new ArgumentNullException(nameof(input)),
             _ => throw new ArgumentException(
                 $"Invalid type - {input.GetType().FullName}"),
         };

@@ -13,7 +13,7 @@ public class TimeOnlyHelper
             case string dateText:
                 return TimeOnly.Parse(dateText);
             case null:
-                throw new Exception();
+               throw new ArgumentNullException(nameof(input));
             default:
                 throw new ArgumentException(
                     $"Invalid type - {input.GetType().FullName}");

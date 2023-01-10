@@ -13,7 +13,7 @@ public class Program
         #region HIGHLIGHT
         switch ((args.Length, args[action]))
         {
-            case (1, "show"):
+            case (1, "cat"):
                 Console.WriteLine(File.ReadAllText(dataFile));
                 break;
             case (2, "encrypt"):

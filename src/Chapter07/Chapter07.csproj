@@ -5,7 +5,8 @@
   <PropertyGroup>
     <!--Listing the warning here causes it to be a warning rather than an error.-->
     <!--CS0108 hides inherited member warning where 'new' is advised.-->
-    <ExpectedWarnings>$(ExpectedWarnings)CS0108,</ExpectedWarnings>
+    <!--IDE0170 Property pattern can be simplified (to use expanded property pattern) -->
+    <ExpectedWarnings>$(ExpectedWarnings)CS0108,IDE0170</ExpectedWarnings>
     <IgnoredWarnings>$(IgnoredWarnings)</IgnoredWarnings>
   </PropertyGroup>
   <Import Project="..\Chapter.props" />

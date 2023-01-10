@@ -26,7 +26,7 @@ public static class SolisticeHelper
         [NotNullWhen(true)] out string? solstice
     )
     {
-        if ((decimal)date.Day is 21)
+        if (date.Day is 21)
         {
             if ((solstice = date.Month switch
             {

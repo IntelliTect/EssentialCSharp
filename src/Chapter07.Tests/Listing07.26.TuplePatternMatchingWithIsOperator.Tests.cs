@@ -2,45 +2,48 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_26.Tests;
 
-[TestClass]
-public class ProgramTests
+static class TuplePatternMatchingTests
 {
-    string DataFile = "data.dat";
+    static string DataFile = "data.dat";
     const string EncryptedFileName = "temp.out";
-
-    [TestMethod]
-    public async Task Main_EncryptFileUsingIsOperator_Success()
-    {
-        await InvokeMainWithEncriptAction(
-            Program.Main);
-    }
-
-    private async Task InvokeMainWithEncriptAction(Action<string[]> action)
+    
+    public static async Task InvokeMainWithEncriptAction(Action<string[]> action)
     {
         const string data = "DATA";
         await File.WriteAllTextAsync(DataFile, data);
         string expected = $"ENCRYPTED <{data}> ENCRYPTED";
 
-        
+
         action(new string[] { "Encrypt", EncryptedFileName });
 
         string actual = await File.ReadAllTextAsync(EncryptedFileName);
         Assert.AreEqual<string>(expected, actual);
     }
 
-    [TestMethod]
-    public async Task Main_ShowFileWithIsOperator_Success()
-    {
-        await InvokeMainWithShowFile(Program.Main);
-    }
-
-    private async Task InvokeMainWithShowFile(Action<string[]> action)
+    public static async Task InvokeMainWithShowFile(Action<string[]> action)
     {
         const string data = "DATA";
         await File.WriteAllTextAsync(DataFile, data);
 
         IntelliTect.TestTools.Console.ConsoleAssert.Expect(
             data,
-            () => action(new string[] { "show" }));
+            () => action(new string[] { "cat" }));
+    }
+}
+
+[TestClass]
+public class ProgramTests
+{
+    [TestMethod]
+    public async Task Main_EncryptFileUsingIsOperator_Success()
+    {
+        await TuplePatternMatchingTests.InvokeMainWithEncriptAction(
+            Program.Main);
+    }
+
+    [TestMethod]
+    public async Task Main_ShowFileWithIsOperator_Success()
+    {
+        await TuplePatternMatchingTests.InvokeMainWithShowFile(Program.Main);
     }
 }

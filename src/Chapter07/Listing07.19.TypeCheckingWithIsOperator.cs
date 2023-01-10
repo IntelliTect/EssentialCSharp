@@ -39,7 +39,7 @@ public class Program
 
         if (id.StartsWith(nameof(Employee)))
         {
-            return new Employee("Inigo", "Montoya", id.Replace(nameof(Employee), ""));
+            return new Employee("Inigo", "Montoya", id.Remove(0,nameof(Employee).Length));
         }
         else if (id.StartsWith(nameof(Person)))
         {
