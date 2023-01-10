@@ -18,7 +18,7 @@ public class ExpenseItem
     public int Id { get; set; }
     public string ItemName { get; set; }
     public decimal CostAmount { get; set; }
-    public DateTime ExpenseDate { get; set; } = DateTime.Now;
+    public DateTime ExpenseDate { get; set; }
     public Employee Employee { get; set; }
 
     public ExpenseItem(

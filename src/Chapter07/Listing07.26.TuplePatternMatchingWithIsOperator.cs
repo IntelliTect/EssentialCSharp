@@ -16,7 +16,7 @@ public class Program
 
         // ...
         #region HIGHLIGHT
-        if ((args.Length, args[command]) is (1, "show"))
+        if ((args.Length, args[command]) is (1, "cat"))
         #endregion HIGHLIGHT
         {
             Console.WriteLine(File.ReadAllText(dataFile));

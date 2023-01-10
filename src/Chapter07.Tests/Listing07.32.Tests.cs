@@ -48,24 +48,17 @@ public class ProgramTests
         }
     }
 
-    private static List<string> PrefixCommands(string command)
+    private static IEnumerable<string> PrefixCommands(string command)
     {
-        List<string> commands = new();
-
-        string[] shortPrefix = new[] { "/", "-" };
-
         if (command.Length == 1)
         {
-            foreach (string item in shortPrefix)
-            {
-                commands.Add($"{item}{command}");
-            }
+            yield return $"/{command}";
+            yield return $"-{command}";
         }
         else
         {
-            commands.Add($"--{command}");
+            yield return $"--{command}";
         }
-        return commands;
     }
 
 

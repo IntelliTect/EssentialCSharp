@@ -45,7 +45,7 @@ public class Program
         }
     }
 
-    static bool ExecuteCommand(string command, string[] args) =>
+    private static bool ExecuteCommand(string command, string[] args) =>
         (command, args) switch
         {
             ("cat" or "c", [string fileName]) =>
