@@ -11,7 +11,7 @@ public class Program
 
         // ...
         #region HIGHLIGHT
-        switch ((args.Length, args[action]))
+        switch ((args.Length, args[action].ToLower()))
         {
             case (1, "cat"):
                 Console.WriteLine(File.ReadAllText(dataFile));
