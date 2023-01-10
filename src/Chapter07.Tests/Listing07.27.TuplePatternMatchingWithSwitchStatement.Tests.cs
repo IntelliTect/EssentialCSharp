@@ -6,9 +6,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_27.Tests;
 [TestClass]
 public class ProgramTests
 {
-    string DataFile = "data.dat";
-    const string EncryptedFileName = "temp.out";
-
     [TestMethod]
     public async Task Main_EncryptFileUsingSwitchStatement_Success()
     {
