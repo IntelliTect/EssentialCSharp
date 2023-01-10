@@ -2,7 +2,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_26.Tests;
 
-static class TuplePatternMatchingTests
+internal static class TuplePatternMatchingTests
 {
     static string DataFile = "./data.dat";
     const string EncryptedFileName = "./temp.out";
