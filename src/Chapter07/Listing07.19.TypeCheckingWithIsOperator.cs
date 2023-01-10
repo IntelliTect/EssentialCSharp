@@ -32,7 +32,7 @@ public class Employee : Person
 
 public class Program
 {
-    static object? GetObjectById(string id)
+    private static object? GetObjectById(string id)
     {
         #region EXCLUDE
         if(id is null) throw new ArgumentNullException("id");
