@@ -16,7 +16,7 @@ public class ProgramTests
     {
         foreach (string item in PrefixCommands(command))
         {
-            command = $"{item}";
+            command = item;
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
                 "Command Help...", () => Program.Main(command));
         }
