@@ -16,9 +16,11 @@ public class Program
 
         // ...
 
+        #if COMPILEERROR // EXCLUDE
         // ERROR:  Unable to call .CellValues directly
         //         on a contact
-        // values = contact.CellValues;
+        values = contact.CellValues;
+        #endif // COMPILEERROR // EXCLUDE
 
         // First cast to IListable
         #region HIGHLIGHT

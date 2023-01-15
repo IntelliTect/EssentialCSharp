@@ -7,16 +7,17 @@ interface IReadableSettingsProvider
 
 interface ISettingsProvider : IReadableSettingsProvider
 {
-    /*
+
     #region INCLUDE
+    #if COMPILEERROR // EXCLUDE
     // ERROR:  GetSetting() not available on ISettingsProvider
     string ISettingsProvider.GetSetting(
         string name, string defaultValue)
     {
         // ...
     }
+    #endif // COMPILEERROR // EXCLUDE
     #endregion INCLUDE
-    */
 
     void SetSetting(string name, string value);
 }
