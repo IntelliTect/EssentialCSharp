@@ -138,9 +138,13 @@
         static void Main()
         {
             IPerson? person = null;
+            #if COMPILEERROR // EXCLUDE
+            // Error CS0122 'IPerson.GetName()' is 
+            // inaccessible due to its protection level
             // Non-deriving classes cannot call
             // private protected member.
-            // person?.GetName();
+            person?.GetName();
+            #endif // COMPILEERROR // EXCLUDE
             Console.WriteLine(person);
         }
     }
@@ -168,12 +172,13 @@
         public string FirstName { get; }
         public string LastName { get; }
 
+        #if COMPILEERROR // EXCLUDE
         // private protected interface members
         // are not accessible in derived classes.
-       
-        // public int PersonTitle => 
-        //      GetName().ToUpper();
-    }
+        public int persontitle => 
+            getname().toupper();
+        #endif // COMPILEERROR // EXCLUDE
+        }
     }
 
     // 9. 
