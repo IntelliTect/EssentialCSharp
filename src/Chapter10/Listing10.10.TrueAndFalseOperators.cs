@@ -1,22 +1,21 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_10
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_10;
+
+public struct Example
 {
-    public struct Example
+    /*
+    #region INCLUDE
+    public static bool operator false(object item)
     {
-        /*
-        #region INCLUDE
-        public static bool operator false(object item)
-        {
-            #region EXCLUDE
-            return true;
-            #endregion EXCLUDE
-        }
-        public static bool operator true(object item)
-        {
-            #region EXCLUDE
-            return true;
-            #endregion EXCLUDE
-        }
-        #endregion INCLUDE
-        */
+        #region EXCLUDE
+        return true;
+        #endregion EXCLUDE
     }
+    public static bool operator true(object item)
+    {
+        #region EXCLUDE
+        return true;
+        #endregion EXCLUDE
+    }
+    #endregion INCLUDE
+    */
 }

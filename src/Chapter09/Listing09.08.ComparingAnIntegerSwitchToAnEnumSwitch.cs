@@ -1,59 +1,58 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_08
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_08;
+
+using Listing09_10;
+
+public class Program
 {
-    using Listing09_10;
-
-    public class Program
+    public static void SwitchInt()
     {
-        public static void SwitchInt()
+        #region INCLUDE
+        int connectionState;
+        #region EXCLUDE
+        // initialize connectionState for example
+        connectionState = 2;
+        #endregion EXCLUDE
+        switch (connectionState)
         {
-            #region INCLUDE
-            int connectionState;
-            #region EXCLUDE
-            // initialize connectionState for example
-            connectionState = 2;
-            #endregion EXCLUDE
-            switch (connectionState)
-            {
-                case 0:
-                    // ...
-                    break;
-                case 1:
-                    // ...
-                    break;
-                case 2:
-                    // ...
-                    break;
-                case 3:
-                    // ...
-                    break;
-            }
-            #region EXCLUDE
+            case 0:
+                // ...
+                break;
+            case 1:
+                // ...
+                break;
+            case 2:
+                // ...
+                break;
+            case 3:
+                // ...
+                break;
         }
+        #region EXCLUDE
+    }
 
-        public static void SwitchEnum()
+    public static void SwitchEnum()
+    {
+        #endregion EXCLUDE
+        ConnectionState connectionState;
+        #region EXCLUDE
+        // initialize connectionState for example
+        connectionState = ConnectionState.Connecting;
+        #endregion EXCLUDE
+        switch (connectionState)
         {
-            #endregion EXCLUDE
-            ConnectionState connectionState;
-            #region EXCLUDE
-            // initialize connectionState for example
-            connectionState = ConnectionState.Connecting;
-            #endregion EXCLUDE
-            switch (connectionState)
-            {
-                case ConnectionState.Connected:
-                    // ...
-                    break;
-                case ConnectionState.Connecting:
-                    // ...
-                    break;
-                case ConnectionState.Disconnected:
-                    // ...
-                    break;
-                case ConnectionState.Disconnecting:
-                    // ...
-                    break;
-            }
-            #endregion INCLUDE
+            case ConnectionState.Connected:
+                // ...
+                break;
+            case ConnectionState.Connecting:
+                // ...
+                break;
+            case ConnectionState.Disconnected:
+                // ...
+                break;
+            case ConnectionState.Disconnecting:
+                // ...
+                break;
         }
+        #endregion INCLUDE
     }
 }

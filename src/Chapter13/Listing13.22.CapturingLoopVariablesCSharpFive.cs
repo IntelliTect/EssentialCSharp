@@ -1,23 +1,22 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_22
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_22;
+
+using System;
+using System.Collections.Generic;
+#region INCLUDE
+public class CaptureLoop
 {
-    using System;
-    using System.Collections.Generic;
-    #region INCLUDE
-    public class CaptureLoop
+    public static void Main()
     {
-        public static void Main()
+        var items = new string[] { "Moe", "Larry", "Curly" };
+        var actions = new List<Action>();
+        foreach(string item in items)
         {
-            var items = new string[] { "Moe", "Larry", "Curly" };
-            var actions = new List<Action>();
-            foreach(string item in items)
-            {
-                actions.Add(() => { Console.WriteLine(item); });
-            }
-            foreach(Action action in actions)
-            {
-                action();
-            }
+            actions.Add(() => { Console.WriteLine(item); });
+        }
+        foreach(Action action in actions)
+        {
+            action();
         }
     }
-    #endregion INCLUDE
 }
+#endregion INCLUDE

@@ -1,60 +1,59 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_04
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_04;
+
+#region INCLUDE
+using System;
+using System.Threading.Tasks;
+using AddisonWesley.Michaelis.EssentialCSharp.Shared;
+
+public class Program
 {
-    #region INCLUDE
-    using System;
-    using System.Threading.Tasks;
-    using AddisonWesley.Michaelis.EssentialCSharp.Shared;
-
-    public class Program
+    public static void Main()
     {
-        public static void Main()
-        {
-            // Use Task.Factory.StartNew<string>() for
-            // TPL prior to .NET 4.5
-            Task<string> task =
-                Task.Run<string>(
-                    () => PiCalculator.Calculate(10));
-            Task faultedTask = task.ContinueWith(
-                (antecedentTask) =>
+        // Use Task.Factory.StartNew<string>() for
+        // TPL prior to .NET 4.5
+        Task<string> task =
+            Task.Run<string>(
+                () => PiCalculator.Calculate(10));
+        Task faultedTask = task.ContinueWith(
+            (antecedentTask) =>
+            {
+                if(!antecedentTask.IsFaulted)
                 {
-                    if(!antecedentTask.IsFaulted)
-                    {
-                        throw new Exception("Antecedent Task Should Be Faulted");
-                    }
-                    Console.WriteLine(
-                        "Task State: Faulted");
-                },
-                TaskContinuationOptions.OnlyOnFaulted);
+                    throw new Exception("Antecedent Task Should Be Faulted");
+                }
+                Console.WriteLine(
+                    "Task State: Faulted");
+            },
+            TaskContinuationOptions.OnlyOnFaulted);
 
-            Task canceledTask = task.ContinueWith(
-                (antecedentTask) =>
+        Task canceledTask = task.ContinueWith(
+            (antecedentTask) =>
+            {
+                if (!antecedentTask.IsCanceled)
                 {
-                    if (!antecedentTask.IsCanceled)
-                    {
-                        throw new Exception("Antecedent Task Should Be Canceled");
-                    }
-                    Console.WriteLine(
-                        "Task State: Canceled");
-                },
-                TaskContinuationOptions.OnlyOnCanceled);
+                    throw new Exception("Antecedent Task Should Be Canceled");
+                }
+                Console.WriteLine(
+                    "Task State: Canceled");
+            },
+            TaskContinuationOptions.OnlyOnCanceled);
 
-            Task completedTask = task.ContinueWith(
-                (antecedentTask) =>
+        Task completedTask = task.ContinueWith(
+            (antecedentTask) =>
+            {
+                if (!antecedentTask.IsCompleted)
                 {
-                    if (!antecedentTask.IsCompleted)
-                    {
-                        throw new Exception("Antecedent Task Should Be Completed");
-                    }
-                    Console.WriteLine(
-                        "Task State: Completed");
-                }, TaskContinuationOptions.
-                        OnlyOnRanToCompletion);
+                    throw new Exception("Antecedent Task Should Be Completed");
+                }
+                Console.WriteLine(
+                    "Task State: Completed");
+            }, TaskContinuationOptions.
+                    OnlyOnRanToCompletion);
 
-            completedTask.Wait();
-        }
+        completedTask.Wait();
     }
-    #endregion INCLUDE
 }
+#endregion INCLUDE
 
 
 

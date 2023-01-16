@@ -1,38 +1,37 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_35
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_35;
+
+using System;
+
+#region INCLUDE
+public static class MathEx
 {
-    using System;
-
-    #region INCLUDE
-    public static class MathEx
+    public static T Max<T>(T first, params T[] values)
+        where T : IComparable<T>
     {
-        public static T Max<T>(T first, params T[] values)
-            where T : IComparable<T>
+        T maximum = first;
+        foreach(T item in values)
         {
-            T maximum = first;
-            foreach(T item in values)
+            if(item.CompareTo(maximum) > 0)
             {
-                if(item.CompareTo(maximum) > 0)
-                {
-                    maximum = item;
-                }
+                maximum = item;
             }
-            return maximum;
         }
-
-        public static T Min<T>(T first, params T[] values)
-            where T : IComparable<T>
-        {
-            T minimum = first;
-
-            foreach(T item in values)
-            {
-                if(item.CompareTo(minimum) < 0)
-                {
-                    minimum = item;
-                }
-            }
-            return minimum;
-        }
+        return maximum;
     }
-    #endregion INCLUDE
+
+    public static T Min<T>(T first, params T[] values)
+        where T : IComparable<T>
+    {
+        T minimum = first;
+
+        foreach(T item in values)
+        {
+            if(item.CompareTo(minimum) < 0)
+            {
+                minimum = item;
+            }
+        }
+        return minimum;
+    }
 }
+#endregion INCLUDE

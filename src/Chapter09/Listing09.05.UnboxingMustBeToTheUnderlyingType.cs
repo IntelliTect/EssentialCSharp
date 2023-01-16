@@ -1,23 +1,22 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_05
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_05;
+
+public class DisplayFibonacci
 {
-    public class DisplayFibonacci
+    static void Main()
     {
-        static void Main()
-        {
-            #region INCLUDE
-            // ...
+        #region INCLUDE
+        // ...
 
-            int number;
-            object thing;
-            double bigNumber;
+        int number;
+        object thing;
+        double bigNumber;
 
-            number = 42;
-            thing = number;
-            // ERROR: InvalidCastException
-            // bigNumber = (double)thing;
-            bigNumber = (double)(int)thing;
-            // ...
-            #endregion INCLUDE
-        }
+        number = 42;
+        thing = number;
+        // ERROR: InvalidCastException
+        // bigNumber = (double)thing;
+        bigNumber = (double)(int)thing;
+        // ...
+        #endregion INCLUDE
     }
 }

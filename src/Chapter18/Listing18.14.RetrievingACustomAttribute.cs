@@ -1,33 +1,32 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_14
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_14;
+
+#region INCLUDE
+using System;
+using System.Reflection;
+using System.Collections.Generic;
+
+public class CommandLineSwitchRequiredAttribute : Attribute
 {
-    #region INCLUDE
-    using System;
-    using System.Reflection;
-    using System.Collections.Generic;
-
-    public class CommandLineSwitchRequiredAttribute : Attribute
+    public static string[] GetMissingRequiredOptions(
+        object commandLine)
     {
-        public static string[] GetMissingRequiredOptions(
-            object commandLine)
-        {
-            List<string> missingOptions = new List<string>();
-            PropertyInfo[] properties =
-                commandLine.GetType().GetProperties();
+        List<string> missingOptions = new List<string>();
+        PropertyInfo[] properties =
+            commandLine.GetType().GetProperties();
 
-            foreach(PropertyInfo property in properties)
+        foreach(PropertyInfo property in properties)
+        {
+            Attribute[] attributes =
+                 (Attribute[])property.GetCustomAttributes(
+                    typeof(CommandLineSwitchRequiredAttribute),
+                    false);
+            if (attributes.Length > 0 &&
+                property.GetValue(commandLine, null) == null)
             {
-                Attribute[] attributes =
-                     (Attribute[])property.GetCustomAttributes(
-                        typeof(CommandLineSwitchRequiredAttribute),
-                        false);
-                if (attributes.Length > 0 &&
-                    property.GetValue(commandLine, null) == null)
-                {
-                    missingOptions.Add(property.Name);
-                }
+                missingOptions.Add(property.Name);
             }
-            return missingOptions.ToArray();
         }
+        return missingOptions.ToArray();
     }
-    #endregion INCLUDE
 }
+#endregion INCLUDE

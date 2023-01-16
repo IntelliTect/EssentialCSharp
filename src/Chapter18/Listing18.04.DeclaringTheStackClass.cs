@@ -1,17 +1,16 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_04
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_04;
+
+using System;
+#region INCLUDE
+public class Stack<T>
 {
-    using System;
-    #region INCLUDE
-    public class Stack<T>
+    //...
+    public void Add(T i)
     {
         //...
-        public void Add(T i)
-        {
-            //...
-            Type t = typeof(T);
-            //...
-        }
+        Type t = typeof(T);
         //...
     }
-    #endregion INCLUDE
+    //...
 }
+#endregion INCLUDE

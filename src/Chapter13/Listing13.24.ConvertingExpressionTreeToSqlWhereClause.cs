@@ -1,12 +1,11 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_24
-{
-    /*
-    #region INCLUDE
-    EXPRESSION TREE:
-        persons.Where(person => person.Name.ToUpper() == "INIGO MONTOYA");
-           
-    SQL WHERE CLAUSE:
-        select * from Person where upper(Name) = 'INIGO MONTOYA';
-    #endregion INCLUDE
-     */
-}
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_24;
+
+/*
+#region INCLUDE
+EXPRESSION TREE:
+    persons.Where(person => person.Name.ToUpper() == "INIGO MONTOYA");
+       
+SQL WHERE CLAUSE:
+    select * from Person where upper(Name) = 'INIGO MONTOYA';
+#endregion INCLUDE
+ */

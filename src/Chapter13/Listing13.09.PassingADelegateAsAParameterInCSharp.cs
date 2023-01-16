@@ -1,63 +1,62 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_09
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_09;
+
+using System;
+using Listing13_05;
+
+public class DelegateSample
 {
-    using System;
-    using Listing13_05;
-
-    public class DelegateSample
+    public static void BubbleSort(
+        int[] items, Comparer compare)
     {
-        public static void BubbleSort(
-            int[] items, Comparer compare)
+        int i;
+        int j;
+        int temp;
+
+        if(items == null)
         {
-            int i;
-            int j;
-            int temp;
+            return;
+        }
+        if(compare == null)
+        {
+            throw new ArgumentNullException(nameof(compare));
+        }
 
-            if(items == null)
+        for(i = items.Length - 1; i >= 0; i--)
+        {
+            for(j = 1; j <= i; j++)
             {
-                return;
-            }
-            if(compare == null)
-            {
-                throw new ArgumentNullException(nameof(compare));
-            }
-
-            for(i = items.Length - 1; i >= 0; i--)
-            {
-                for(j = 1; j <= i; j++)
+                if(compare(items[j - 1], items[j]))
                 {
-                    if(compare(items[j - 1], items[j]))
-                    {
-                        temp = items[j - 1];
-                        items[j - 1] = items[j];
-                        items[j] = temp;
-                    }
+                    temp = items[j - 1];
+                    items[j - 1] = items[j];
+                    items[j] = temp;
                 }
             }
         }
+    }
 
-        public static bool GreaterThan(int first, int second)
+    public static bool GreaterThan(int first, int second)
+    {
+        return first > second;
+    }
+
+    public static void Main()
+    {
+        int i;
+        int[] items = new int[100];
+        Random random = new Random();
+
+        for(i = 0; i < items.Length; i++)
         {
-            return first > second;
+            items[i] = random.Next(int.MinValue, int.MaxValue);
         }
-
-        public static void Main()
+        #region INCLUDE
+        BubbleSort(items,
+            new Comparer(GreaterThan));
+        #endregion INCLUDE
+        for (i = 0; i < items.Length; i++)
         {
-            int i;
-            int[] items = new int[100];
-            Random random = new Random();
-
-            for(i = 0; i < items.Length; i++)
-            {
-                items[i] = random.Next(int.MinValue, int.MaxValue);
-            }
-            #region INCLUDE
-            BubbleSort(items,
-                new Comparer(GreaterThan));
-            #endregion INCLUDE
-            for (i = 0; i < items.Length; i++)
-            {
-                Console.WriteLine(items[i]);
-            }
+            Console.WriteLine(items[i]);
         }
     }
 }

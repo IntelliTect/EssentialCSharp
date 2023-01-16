@@ -1,18 +1,17 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_13
-{
-    using System;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_13;
 
-    public class Program
+using System;
+
+public class Program
+{
+    public static void Main()
     {
-        public static void Main()
+        #region INCLUDE
+        System.Diagnostics.ThreadPriorityLevel priority;
+        if(Enum.TryParse("Idle", out priority))
         {
-            #region INCLUDE
-            System.Diagnostics.ThreadPriorityLevel priority;
-            if(Enum.TryParse("Idle", out priority))
-            {
-                Console.WriteLine(priority);
-            }
-            #endregion INCLUDE
+            Console.WriteLine(priority);
         }
+        #endregion INCLUDE
     }
 }

@@ -1,15 +1,14 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_21
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_21;
+
+using System;
+#region INCLUDE
+// Restrict the attribute to properties and methods
+#region HIGHLIGHT
+[AttributeUsage(
+  AttributeTargets.Field | AttributeTargets.Property)]
+#endregion HIGHLIGHT
+public class CommandLineSwitchAliasAttribute : Attribute
 {
-    using System;
-    #region INCLUDE
-    // Restrict the attribute to properties and methods
-    #region HIGHLIGHT
-    [AttributeUsage(
-      AttributeTargets.Field | AttributeTargets.Property)]
-    #endregion HIGHLIGHT
-    public class CommandLineSwitchAliasAttribute : Attribute
-    {
-        // ...
-    }
-    #endregion INCLUDE
+    // ...
 }
+#endregion INCLUDE

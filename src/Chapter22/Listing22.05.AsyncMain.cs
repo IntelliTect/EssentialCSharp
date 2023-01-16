@@ -1,51 +1,50 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_05
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_05;
+
+#region INCLUDE
+using System;
+using System.Threading.Tasks;
+
+public class Program
 {
-    #region INCLUDE
-    using System;
-    using System.Threading.Tasks;
+    readonly static object _Sync = new object();
+    static int _Total = int.MaxValue;
+    static int _Count = 0;
 
-    public class Program
+    #region HIGHLIGHT
+    public static async Task<int> Main(string[] args)
+    #endregion HIGHLIGHT
     {
-        readonly static object _Sync = new object();
-        static int _Total = int.MaxValue;
-        static int _Count = 0;
+        if (args?.Length > 0) { _ = int.TryParse(args[0], out _Total); }
+        Console.WriteLine($"Increment and decrementing {_Total} times...");
 
-        #region HIGHLIGHT
-        public static async Task<int> Main(string[] args)
-        #endregion HIGHLIGHT
+        // Use Task.Factory.StartNew for .NET 4.0
+        Task task = Task.Run(() => Decrement());
+
+        // Increment
+        for(int i = 0; i < _Total; i++)
         {
-            if (args?.Length > 0) { _ = int.TryParse(args[0], out _Total); }
-            Console.WriteLine($"Increment and decrementing {_Total} times...");
-
-            // Use Task.Factory.StartNew for .NET 4.0
-            Task task = Task.Run(() => Decrement());
-
-            // Increment
-            for(int i = 0; i < _Total; i++)
+            lock(_Sync)
             {
-                lock(_Sync)
-                {
-                    _Count++;
-                }
+                _Count++;
             }
-
-            #region HIGHLIGHT
-            await task;
-            #endregion HIGHLIGHT
-            Console.WriteLine($"Count = {_Count}");
-            return _Count;
         }
 
-        static void Decrement()
+        #region HIGHLIGHT
+        await task;
+        #endregion HIGHLIGHT
+        Console.WriteLine($"Count = {_Count}");
+        return _Count;
+    }
+
+    static void Decrement()
+    {
+        for(int i = 0; i < _Total; i++)
         {
-            for(int i = 0; i < _Total; i++)
+            lock(_Sync)
             {
-                lock(_Sync)
-                {
-                    _Count--;
-                }
+                _Count--;
             }
         }
     }
-    #endregion INCLUDE
 }
+#endregion INCLUDE
