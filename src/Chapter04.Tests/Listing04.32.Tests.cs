@@ -1,28 +1,27 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_32.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_32.Tests;
+
+[TestClass]
+public class ProgramTests
 {
-    [TestClass]
-    public class ProgramTests
+    [TestMethod]
+    public void Main_InputIsEmpty_PlayerQuitConditionHit()
     {
-        [TestMethod]
-        public void Main_Enter33ForHourOfDay_TimeInvalid()
-        {
-            const string expected =
-                @"The time you entered is invalid.";
+        const string expected =
+            @"Player Inigo quit!!";
 
-            IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, ()=>Program.Main("33"));
-        }
-        
-        [TestMethod]
-        public void Main_EnterNegative1ForHourOfDay_TimeInvalid()
-        {
-            const string expected =
-                @"The time you entered is invalid.";
+        IntelliTect.TestTools.Console.ConsoleAssert.Expect(
+            expected, ()=>Program.Main("","Inigo"));
+    }
+    
+    [TestMethod]
+    public void Main_InputIsQuit_PlayerQuitConditionHit()
+    {
+        const string expected =
+            @"Player Inigo quit!!";
 
-            IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, () => Program.Main("-1"));
-        }
+        IntelliTect.TestTools.Console.ConsoleAssert.Expect(
+            expected, () => Program.Main("quit", "Inigo"));
     }
 }

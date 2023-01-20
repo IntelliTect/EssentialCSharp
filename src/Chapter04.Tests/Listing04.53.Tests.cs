@@ -1,32 +1,29 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_53.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_53.Tests;
+
+[TestClass]
+public class EmailDomainTests
 {
-    [TestClass]
-    public class EmailDomainTests
+    [TestMethod]
+    public void Main_EnterValidEmailWithDomain_WriteDomain()
     {
-        [TestMethod]
-        public void Main_EnterValidEmailWithDomain_WriteDomain()
-        {
-            const string expected =
-@"Enter an email address: 
-<<First.Last@domain.com
+        const string expected =
+@"Enter an email address: <<First.Last@domain.com
 >>The email domain is: domain.com";
 
-            IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, EmailDomain.Main);
-        }
-        
-        [TestMethod]
-        public void Main_EnterInvalidEmailWithoutDomain_WriteBlank()
-        {
-            const string expected =
-@"Enter an email address: 
-<<First.Last
+        IntelliTect.TestTools.Console.ConsoleAssert.Expect(
+            expected, EmailDomain.Main);
+    }
+    
+    [TestMethod]
+    public void Main_EnterInvalidEmailWithoutDomain_WriteBlank()
+    {
+        const string expected =
+@"Enter an email address: <<First.Last
 >>The email domain is: ";
 
-            IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, EmailDomain.Main);
-        }
+        IntelliTect.TestTools.Console.ConsoleAssert.Expect(
+            expected, EmailDomain.Main);
     }
 }

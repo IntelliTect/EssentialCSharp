@@ -5,11 +5,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_02
         public static void Main()
         {
             #region INCLUDE
-            //National Debt to the Penny
-            decimal debt = -26457079712930.80M;
+            // World Debt on 2022-11-06
+            // see https://worlddebtclocks.com/
+            decimal debt = -72748555131730M;
             #endregion INCLUDE
 
-            System.Console.WriteLine(debt);
+            Console.WriteLine(debt);
         }
     }
 }

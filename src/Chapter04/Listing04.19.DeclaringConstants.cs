@@ -6,14 +6,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_19
 {
     public class Program
     {
-        #region INCLUDE
         public static void Main()
         {
+            #region INCLUDE
             const int secondsPerDay = 60 * 60 * 24;
             const int secondsPerWeek = secondsPerDay * 7;
-
-            // ...
+            #endregion INCLUDE
         }
-        #endregion INCLUDE
     }
 }

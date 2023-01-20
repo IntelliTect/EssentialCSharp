@@ -1,33 +1,37 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_38.Tests
-{
-    [TestClass]
-    public class ProgramTests
-    {
-        [TestMethod]
-        public void ChangeTemperatureWithoutConditionalOperator()
-        {
-            bool eventFired = false;
-            Thermostat thermostat = new Thermostat();
-            thermostat.PropertyChanged += (object? sender, System.EventArgs e) =>
-            {
-                eventFired = true;
-            };
-            thermostat.Temperature = 42;
-            Assert.IsTrue(eventFired);
-        }
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_38.Tests;
 
-        public static void ChangeHumidityWithConditionalOperator()
-        {
-            bool eventFired = false;
-            Thermostat thermostat = new Thermostat();
-            thermostat.PropertyChanged += (object? sender, System.EventArgs e) =>
-            {
-                eventFired = true;
-            };
-            thermostat.Humidity = 42;
-            Assert.IsTrue(eventFired);
-        }
+[TestClass]
+public class ProgramTests
+{
+    [TestMethod]
+    public void GivenSegmentsIsNull()
+    {
+        const string expected =
+            @"There were no segments to combine.";
+
+        IntelliTect.TestTools.Console.ConsoleAssert.Expect(
+            expected, ()=>Program.Main(null!));
+    }
+
+    [TestMethod]
+    public void GivenSegmentsEmpty()
+    {
+        const string expected =
+            @"There were no segments to combine.";
+
+        IntelliTect.TestTools.Console.ConsoleAssert.Expect(
+            expected, () => Program.Main(Array.Empty<string>()));
+    }
+
+    [TestMethod]
+    public void GivenMultipleSegments()
+    {
+        const string expected =
+            @"Uri: first/second/third";
+
+        IntelliTect.TestTools.Console.ConsoleAssert.Expect(
+            expected, () => Program.Main(new[] { "first", "second", "third" }));
     }
 }
