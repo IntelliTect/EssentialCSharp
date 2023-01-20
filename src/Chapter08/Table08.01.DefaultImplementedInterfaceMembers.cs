@@ -175,8 +175,8 @@
         #if COMPILEERROR // EXCLUDE
         // private protected interface members
         // are not accessible in derived classes.
-        public int persontitle => 
-            getname().toupper();
+        public int PersonTitle => 
+            GetName().ToUpper();
         #endif // COMPILEERROR // EXCLUDE
         }
     }
