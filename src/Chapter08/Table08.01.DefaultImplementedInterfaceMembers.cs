@@ -22,7 +22,7 @@
     {
         public interface IPerson
         {
-            // Standard abstract property definnitions
+            // Standard abstract property definitions
             string FirstName { get; set; }
             string LastName { get; set; }
 
