@@ -8,7 +8,7 @@
     {
         public static void Main()
         {
-            Employee employee1 = new Employee();
+            Employee employee1 = new();
             Employee employee2;
             employee2 = new Employee();
 

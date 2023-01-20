@@ -8,7 +8,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_26
         public static void Main()
         {
             Employee employee;
-            employee = new Employee("Inigo", "Montoya");
+            employee = new("Inigo", "Montoya");
             employee.Salary = "Too Little";
 
             System.Console.WriteLine(

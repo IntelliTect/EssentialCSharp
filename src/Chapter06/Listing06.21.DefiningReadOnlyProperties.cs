@@ -8,14 +8,16 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_21
     {
         public static void Main()
         {
-            Employee employee1 = new Employee();
+            Employee employee1 = new();
             employee1.Initialize(42);
 
+            #if COMPILEERROR // EXCLUDE
             #region HIGHLIGHT
             // ERROR:  Property or indexer 'Employee.Id' 
             // cannot be assigned to; it is read-only
-            // employee1.Id = "490";
+            employee1.Id = "490";
             #endregion HIGHLIGHT
+            #endif // COMPILEERROR // EXCLUDE
         }
     }
 

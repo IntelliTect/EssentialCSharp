@@ -2,9 +2,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_13
 {
     using Listing06_12;
     #region INCLUDE
-    // IO namespace
-    using System.IO;
-
     public class DataStorage
     {
         // Save an employee object to a file 
@@ -16,13 +13,16 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_13
             // for the filename. FileMode.Create will force
             // a new file to be created or override an
             // existing file
-            FileStream stream = new FileStream(
+            // Note: This code could be improved with a using  
+            // statement — a construct that we have avoided because 
+            // it has not yet been introduced.
+            FileStream stream = new(
                 employee.FirstName + employee.LastName + ".dat",
                 FileMode.Create);
 
             // Create a StreamWriter object for writing text
             // into the FileStream
-            StreamWriter writer = new StreamWriter(stream);
+            StreamWriter writer = new(stream);
 
             // Write all the data associated with the employee
             writer.WriteLine(employee.FirstName);

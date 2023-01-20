@@ -1,18 +1,17 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_18.Tests
-{
-    [TestClass]
-    public class ProgramTests
-    {
-        [TestMethod]
-        public void Main_PropertySetterGetter_WriteProperty()
-        {
-            const string expected =
-                @"Inigo";
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_18.Tests;
 
-            IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, Program.Main);
-        }
+[TestClass]
+public class ProgramTests
+{
+    [TestMethod]
+    public void Main_PropertySetterGetter_WriteProperty()
+    {
+        const string expected =
+            @"Inigo";
+
+        IntelliTect.TestTools.Console.ConsoleAssert.Expect(
+            expected, Program.Main);
     }
 }

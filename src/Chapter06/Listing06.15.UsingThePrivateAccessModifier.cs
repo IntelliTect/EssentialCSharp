@@ -46,19 +46,22 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_15
     {
         public static void Main()
         {
-            Employee employee = new Employee();
+            Employee employee = new();
 
             employee.FirstName = "Inigo";
             employee.LastName = "Montoya";
 
             // ...
 
+            
+            #if COMPILEERROR // EXCLUDE
             #region HIGHLIGHT
-            // Password is private, so it cannot be
+            // ERROR: Password is private, so it cannot be
             // accessed from outside the class
-            // Console.WriteLine(
-            //    ("Password = {0}", employee.Password);
+            Console.WriteLine(
+               "Password = {0}", employee.Password);
             #endregion HIGHLIGHT
+            #endif // COMPILEERROR // EXCLUDE
         }
         // ...
     }

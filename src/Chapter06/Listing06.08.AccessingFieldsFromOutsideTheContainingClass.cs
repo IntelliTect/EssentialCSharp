@@ -14,7 +14,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_08
         {
             Employee employee1 = new Employee();
             Employee employee2;
-            employee2 = new Employee();
+            employee2 = new();
 
             employee1.FirstName = "Inigo";
             employee1.LastName = "Montoya";

@@ -8,14 +8,16 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_23
     {
         public static void Main()
         {
-            Employee employee1 = new Employee();
+            Employee employee1 = new();
             employee1.Initialize(42);
+            #if COMPILEERROR // EXCLUDE
             #region HIGHLIGHT
             // ERROR: The property or indexer 'Employee.Id' 
             // cannot be used in this context because the set 
             // accessor is inaccessible
-            // employee1.Id = "490";
+            employee1.Id = "490";
             #endregion HIGHLIGHT
+            #endif // COMPILEERROR // EXCLUDE
         }
     }
 

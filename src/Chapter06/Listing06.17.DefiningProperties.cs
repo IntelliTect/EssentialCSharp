@@ -10,7 +10,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_17
     {
         public static void Main()
         {
-            Employee employee = new Employee();
+            Employee employee = new();
 
             // Call the FirstName property's setter
             employee.FirstName = "Inigo";
