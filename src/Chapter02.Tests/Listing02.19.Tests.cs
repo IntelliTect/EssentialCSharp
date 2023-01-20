@@ -1,19 +1,18 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_19.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_19.Tests;
+
+[TestClass]
+public class UppercaseTests
 {
-    [TestClass]
-    public class UppercaseTests
+    [TestMethod]
+    public void Main_InputLorem_OutputIsCapitalized()
     {
-        [TestMethod]
-        public void Main_InputLorem_OutputIsCapitalized()
-        {
-            const string expected =
+        const string expected =
 @"Enter text: <<Lorem
 >>LOREM";
 
-            IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, Uppercase.Main);
-        }
+        IntelliTect.TestTools.Console.ConsoleAssert.Expect(
+            expected, Uppercase.Main);
     }
 }
