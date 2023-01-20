@@ -2,6 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_20;
 
 public class TimeOnlyHelper
 {
+    #region INCLUDE
     public static TimeOnly GetTime(object input)
     {
         switch (input)
@@ -19,5 +20,6 @@ public class TimeOnlyHelper
                     $"Invalid type - {input.GetType().FullName}");
         };
     }
+    #endregion INCLUDE
 }
 
