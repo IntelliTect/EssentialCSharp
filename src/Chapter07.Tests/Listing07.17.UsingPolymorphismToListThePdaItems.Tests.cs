@@ -1,18 +1,17 @@
-using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_17.Tests
-{
-    [TestClass]
-    public class ProgramTests
-    {
-        [TestMethod]
-        public void Main_WriteMultiplePdaItemToScreen()
-        {
-            DateTime startDateTime = new DateTime(2008, 7, 18);
-            DateTime endDateTime = startDateTime.AddDays(1);
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_17.Tests;
 
-            string expected =
+[TestClass]
+public class ProgramTests
+{
+    [TestMethod]
+    public void Main_WriteMultiplePdaItemToScreen()
+    {
+        DateTime startDateTime = new DateTime(2008, 7, 18);
+        DateTime endDateTime = startDateTime.AddDays(1);
+
+        string expected =
 $@"________
 FirstName: Sherlock
 LastName: Holmes
@@ -28,8 +27,7 @@ FirstName: Anne
 LastName: Frank
 Address: Apt 56B, Whitehaven Mansions, Sandhurst Sq, London" + Environment.NewLine + Environment.NewLine;
 
-            IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, Program.Main);
-        }
+        IntelliTect.TestTools.Console.ConsoleAssert.Expect(
+            expected, Program.Main);
     }
 }
