@@ -1,14 +1,14 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_26.Tests
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_26.Tests;
+
+[TestClass]
+public class ProgramTests
 {
-    [TestClass]
-    public class ProgramTests
+    [TestMethod]
+    public void Main_GetLengthOfDimensionOf3DArray_ReturnsLength()
     {
-        [TestMethod]
-        public void Main_GetLengthOfDimensionOf3DArray_ReturnsLength()
-        {
-            const string expected =
+        const string expected =
 @"  0..3: C#, COBOL, Java
 ^3..^0: Python, Lisp, JavaScript
  3..^3: C++, TypeScript, Swift
@@ -17,8 +17,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_26.Tests
     ..: C#, COBOL, Java, C++, TypeScript, Swift, Python, Lisp, JavaScript
     ..: C#, COBOL, Java, C++, TypeScript, Swift, Python, Lisp, JavaScript";
 
-            IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                expected, Program.Main);
-        }
+        IntelliTect.TestTools.Console.ConsoleAssert.Expect(
+            expected, Program.Main);
     }
 }
