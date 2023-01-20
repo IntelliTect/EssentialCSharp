@@ -8,6 +8,11 @@
     <ExpectedWarnings>$(ExpectedWarnings),CS1058</ExpectedWarnings>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="Listing05.07.ImplicitUsingsGeneratedGlocalUsingDeclaratives.cs" />
+    <None Remove="Listing05.09.UsingElementInProjectFile.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Using Include="System.Net" />
     <Compile Include="..\Shared\Program.cs">
       <Link>Program.cs</Link>
     </Compile>
