@@ -270,3 +270,6 @@ paket-files/
 # CodeRush
 .cr/
 /Test.Results.txt
+
+# Ingore files created for Live Unit Testing
+*.lutconfig
