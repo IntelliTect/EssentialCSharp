@@ -5,8 +5,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_26
         public static void Main()
         {
             #region INCLUDE
-            int intNumber = 31416;
-            long longNumber = (long)intNumber;
+            long longNumber = 50918309109;
+            int intNumber = (int)longNumber;
             #endregion INCLUDE
         }
     }

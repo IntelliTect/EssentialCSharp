@@ -1,4 +1,4 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_01
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_18
 {
     public class Program
     {
@@ -6,7 +6,7 @@
         {
             #region INCLUDE
             Console.WriteLine(
-                $"""Hello, I'm {firstName}. {firstName} {lastName}""");
+                """Mama said, "Life was just a box of chocolates..." """);
             #endregion INCLUDE
         }
     }

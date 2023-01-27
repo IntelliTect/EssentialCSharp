@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_25
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_31
 {
     public class Program
     {
@@ -6,7 +6,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_25
         {
             #region INCLUDE
             int intNumber = 31416;
-            long longNumber = intNumber;
+            long longNumber = (long)intNumber;
             #endregion INCLUDE
         }
     }

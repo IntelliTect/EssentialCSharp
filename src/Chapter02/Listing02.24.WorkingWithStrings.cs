@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_19
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_24
 {
     #region INCLUDE
     public class Uppercase
