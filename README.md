@@ -11,7 +11,7 @@ Ensure one of the following frameworks is installed at the latest version.
 
 [Visual Studio 2019](https://www.visualstudio.com) contains the .NET Framework runtime as well as gives options to install .NET Core.  Not to mention, it's a great IDE that makes it easy to get started.
 
-### Download the Code
+### Download the Codety
 
 #### Local Copy  
 
