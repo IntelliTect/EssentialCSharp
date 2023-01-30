@@ -1,6 +1,4 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_01.Tests;
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_01.Tests;
 
 [TestClass]
 public class AngleTests
@@ -18,6 +16,14 @@ public class AngleTests
     {
         Angle angle1 = new(0, 0, 0);
         Angle angle2 = new(0, 0, 0);
+        Assert.AreEqual<Angle>(angle1, angle2);
+    }
+
+    [TestMethod]
+    public void With_CopyWithSameDegreesMinutesSeconds_AreEqual()
+    {
+        Angle angle1 = new(0, 0, 0);
+        Angle angle2 = angle1 with { };
         Assert.AreEqual<Angle>(angle1, angle2);
     }
 }

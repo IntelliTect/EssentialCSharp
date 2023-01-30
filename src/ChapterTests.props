@@ -18,7 +18,8 @@
     </PackageReference>
     <PackageReference Update="coverlet.msbuild" Version="3.2.0" />
     <PackageReference Include="Microsoft.CodeAnalysis" Version="4.4.0" />
-    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.SourceGenerators.Testing.MSTest" Version="1.1.1" />    
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.SourceGenerators.Testing.MSTest" Version="1.1.1" />
+    <Using Include="Microsoft.VisualStudio.TestTools.UnitTesting"/>
   </ItemGroup>
   
   <!-- TODO: Ideally this would be placed in a ChapterTests.targets file. -->
