@@ -10,7 +10,7 @@
     <ProjectReference Include="..\Chapter10\Chapter10.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="IntelliTect.Multitool" Version="1.2.0" />
+    <PackageReference Include="IntelliTect.Multitool" Version="1.3.0" />
     <PackageReference Update="coverlet.collector" Version="3.2.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
