@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_04;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_05C;
 
 public readonly record struct Angle(int Degrees, int Minutes, int Seconds, string? Name = null)
 {
@@ -35,13 +35,10 @@ public readonly record struct Angle(int Degrees, int Minutes, int Seconds, strin
             string.IsNullOrWhiteSpace(Name)?string.Empty : Name+": ";
         return $"{prefix}{Degrees}° {Minutes}' {Seconds}\"";
     }
-    
-    public bool Equals(Angle other)
-    {
-        return EqualityComparer<int>.Default.Equals(Degrees, other.Degrees)
-            && EqualityComparer<int>.Default.Equals(_Minutes, other._Minutes)
-            && EqualityComparer<int>.Default.Equals(_Seconds, other._Seconds);
-    }
+
+    public bool Equals(Angle other) =>
+        (Degrees, Minutes, Seconds).Equals(
+            (other.Degrees, other.Minutes, other.Seconds));
 
     public override int GetHashCode() =>
         HashCode.Combine(Degrees.GetHashCode(), 

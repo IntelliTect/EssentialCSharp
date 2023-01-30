@@ -30,7 +30,7 @@ public class Program
         }
 
         Angle copy = new(degrees, minutes, seconds);
-
+        
         // Records provide a custom equality operator.
         Trace.Assert(angle == copy);
     }
