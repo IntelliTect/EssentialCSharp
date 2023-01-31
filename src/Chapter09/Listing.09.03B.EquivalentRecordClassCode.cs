@@ -1,6 +1,6 @@
 ﻿using AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_01;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_05B;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_03B;
 #region INCLUDE
 using System.Runtime.CompilerServices;
 using System.Text;
