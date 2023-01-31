@@ -1,4 +1,4 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_03C;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_06;
 
 public readonly record struct Angle(int Degrees, int Minutes, int Seconds, string? Name = null)
 {
