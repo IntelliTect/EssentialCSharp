@@ -1,18 +1,8 @@
-﻿using System.Text;
-
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_05C;
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_05C;
 
 public readonly record struct Angle(int Degrees, int Minutes, int Seconds, string? Name = null)
 {
-    // Default constructor is not invoked unless
-    // called explicitly by the instantiation.
-    public Angle() : this(-42, 0, 0, null) { }
 
-    public Angle(string degrees, string? minutes, string seconds)
-        : this(degrees.Length, minutes!.Length, seconds.Length)
-    {
-    }
-    
     public int Degrees { get; } = Degrees;
 
     private readonly int _Minutes = Minutes;
@@ -27,6 +17,10 @@ public readonly record struct Angle(int Degrees, int Minutes, int Seconds, strin
     {
         get => _Seconds;
         init => _Seconds=value;
+    }
+    public Angle(string degrees, string minutes, string seconds)
+        : this(int.Parse(degrees), int.Parse(minutes), int.Parse(seconds))
+    {
     }
 
     public override readonly string ToString()
@@ -49,4 +43,3 @@ public readonly record struct Angle(int Degrees, int Minutes, int Seconds, strin
         (Degrees, Minutes, Seconds).GetHashCode();
 #endif // UsingTupleToGenerateHashCode        
 }
-

@@ -74,7 +74,7 @@ public readonly struct Angle : IEquatable<Angle>
         && EqualityComparer<string>.Default.Equals(Name, other.Name);
 
     public void Deconstruct(
-        out int Degrees, out int Minutes, out int Seconds, string? Name)
+        out int Degrees, out int Minutes, out int Seconds, out string? Name)
     {
         Degrees = this.Degrees;
         Minutes = this.Minutes;

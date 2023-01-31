@@ -8,15 +8,10 @@ using System.Text;
 [CompilerGenerated]
 public class Coordinate : IEquatable<Coordinate>
 {
+
     public Angle Longitude { get; init; }
     public Angle Latitude { get; init; }
 
-    public Coordinate Foo = null;
-
-
-
-    
-    
     public Coordinate(Angle Longitude, Angle Latitude) :
         base()
     {
@@ -58,8 +53,8 @@ public class Coordinate : IEquatable<Coordinate>
         static int GetHashCode(Angle angle) =>
             EqualityComparer<Angle>.Default.GetHashCode(angle);
         
-        return (EqualityComparer<Type>.Default.GetHashCode(EqualityContract())
-                * -1521134295 
+        return (EqualityComparer<Type>.Default.GetHashCode(
+            EqualityContract()) * -1521134295 
             + GetHashCode(Longitude)) * -1521134295 
             + GetHashCode(Latitude);
     }
@@ -70,8 +65,10 @@ public class Coordinate : IEquatable<Coordinate>
     public virtual bool Equals(Coordinate? other) => 
         (object)this == other || (other is not null
             && EqualityContract() == other!.EqualityContract()
-            && EqualityComparer<Angle>.Default.Equals(Longitude, other!.Longitude)
-            && EqualityComparer<Angle>.Default.Equals(Latitude, other!.Latitude));
+            && EqualityComparer<Angle>.Default.Equals(
+                Longitude, other!.Longitude)
+            && EqualityComparer<Angle>.Default.Equals(
+                Latitude, other!.Latitude));
 
     public void Deconstruct(out Angle Longitude, out Angle Latitude)
     {
@@ -82,8 +79,6 @@ public class Coordinate : IEquatable<Coordinate>
     protected virtual Type EqualityContract() => typeof(Coordinate);
 
     public Type ExternalEqualityContract => EqualityContract();
-
-    public Coordinate Foo1 => Foo;
 
     protected Coordinate(Coordinate original)
     {
