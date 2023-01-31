@@ -1,4 +1,4 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_05C.Tests;
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_03C.Tests;
 
 [TestClass]
 public class AngleTests

@@ -6,14 +6,12 @@ public class DisplayFibonacci
 {
     public static void Main()
     {
-        int totalCount;
         // Intentionally using ArrayList to demonstrate boxing
-        System.Collections.ArrayList list =
-            new System.Collections.ArrayList();
+        System.Collections.ArrayList list = new();
 
         Console.Write("Enter an integer between 2 and 1000: ");
         string? inputText = Console.ReadLine();
-        if (!int.TryParse(inputText, out totalCount))
+        if (!int.TryParse(inputText, out int totalCount))
         {
             Console.WriteLine($"'{inputText}' is not a valid integer.");
             return;

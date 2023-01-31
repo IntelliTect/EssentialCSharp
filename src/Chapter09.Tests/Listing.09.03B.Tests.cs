@@ -1,6 +1,6 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_05B.Tests;
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_03B.Tests;
 using AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_01;
-using AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_04;
+using AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_03A;
 using AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Tests;
 
 [TestClass]
@@ -9,7 +9,7 @@ public class CoordinateTests
     [TestMethod]
     public void Create_Coordinate_IsReadOnly()
     {
-        Coordinate coordinate = new(
+        _ = new Coordinate(
             new Angle(180, 0, 0), new Angle(180, 0, 0));
     }
 
@@ -28,8 +28,6 @@ public class CoordinateTests
     public void EqualityContract_GetType()
     {
         Coordinate coordinate1 = new(
-            new Angle(180, 0, 0), new Angle(180, 0, 0));
-        Coordinate coordinate2 = new(
             new Angle(180, 0, 0), new Angle(180, 0, 0));
         GeoCoordinate geoCoordinate = new(
             new Angle(180, 0, 0), new Angle(180, 0, 0), "GeoCoordinate");
