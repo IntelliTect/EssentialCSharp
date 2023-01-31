@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_05;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_08;
 
 public class DisplayFibonacci
 {
