@@ -3,16 +3,14 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_18.Tests;
 
 [TestClass]
-public class UppercaseTests
+public class SingleRawLiteralTests
 {
     [TestMethod]
-    public void Main_InputLorem_OutputNotCapitalized()
+    public void Main_OutputsQuote()
     {
-        const string expected =
-@"Enter text: <<Lorem
->>Lorem";
+        const string expected = """Mama said, "Life was just a box of chocolates..." """;
 
         IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-            expected, Uppercase.Main);
+            expected, Program.Main);
     }
 }

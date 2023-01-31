@@ -1,9 +1,10 @@
+using Microsoft.CodeAnalysis;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_15.Tests;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_16.Tests;
 
 [TestClass]
-public class InterpolationTests
+public class NewLineInterpolationTests
 {
     [TestMethod]
     public void Main_CorrectOutput()
@@ -15,7 +16,7 @@ public class InterpolationTests
 <<{firstName}
 >>Enter your last name: 
 <<{lastName}
->>Your full name is {firstName} {lastName}.";
+>>Your full name is: {firstName} {lastName}";
 
 
         IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected,

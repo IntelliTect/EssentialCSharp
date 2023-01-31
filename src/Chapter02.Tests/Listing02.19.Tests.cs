@@ -3,16 +3,22 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_19.Tests;
 
 [TestClass]
-public class UppercaseTests
+public class RawLiteralsWithInterpolationTests
 {
     [TestMethod]
-    public void Main_InputLorem_OutputIsCapitalized()
+    public void Main_CorrectOutput()
     {
-        const string expected =
-@"Enter text: <<Lorem
->>LOREM";
+        const string firstName = "Inigo";
+        const string lastName = "Montoya";
 
-        IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-            expected, Uppercase.Main);
+        const string expected = $@"Enter your first name: 
+<<{firstName}
+>>Enter your last name: 
+<<{lastName}
+>>Hello, I'm {firstName}. {firstName} {lastName}";
+
+        string result = IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected,
+             Program.Main);
+
     }
 }

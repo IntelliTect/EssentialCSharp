@@ -6,7 +6,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_26
         {
             #region INCLUDE
             long longNumber = 50918309109;
-            int intNumber = (int)longNumber;
+            int intNumber = (int)longNumber; // (int) is a cast operator.
             #endregion INCLUDE
         }
     }

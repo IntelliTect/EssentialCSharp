@@ -3,12 +3,16 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_23.Tests;
 
 [TestClass]
-public class ProgramTests
+public class UppercaseTests
 {
     [TestMethod]
-    [ExpectedException(typeof(System.OverflowException))]
-    public void Main_IntegerOverFlow_ExceptionThrown()
+    public void Main_InputLorem_OutputNotCapitalized()
     {
-        IntelliTect.TestTools.Console.ConsoleAssert.Execute("", Program.Main);
+        const string expected =
+@"Enter text: <<Lorem
+>>Lorem";
+
+        IntelliTect.TestTools.Console.ConsoleAssert.Expect(
+            expected, Uppercase.Main);
     }
 }

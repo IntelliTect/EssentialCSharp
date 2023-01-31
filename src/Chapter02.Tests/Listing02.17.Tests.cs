@@ -1,18 +1,26 @@
+using Microsoft.CodeAnalysis;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_17.Tests;
 
 [TestClass]
-public class PalindromeLengthTests
+public class CombiningLiteralsWithInterpolationTests
 {
     [TestMethod]
-    public void Main_InputRacecar_OutputPalindromeSevenChars()
+    public void Main_CorrectOutput()
     {
-        const string expected =
-@"Enter a palindrome: <<racecar
->>The palindrome ""racecar"" is 7 characters.";
+        string firstName = "Inigo";
+        string lastName = "Montoya";
 
-        IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-            expected, PalindromeLength.Main);
+        string expected = @$"Enter your first name: 
+<<{firstName}
+>>Enter your last name: 
+<<{lastName}
+>>Your full name is:
+{firstName} {lastName}";
+
+
+        IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected,
+              Program.Main);
     }
 }
