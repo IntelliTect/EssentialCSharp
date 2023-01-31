@@ -6,9 +6,3 @@ public record class Coordinate(Angle Longitude, Angle Latitude)
 {
     public Type ExternalEqualityContract => EqualityContract;
 }
-
-
-public record class GeoCoordinate(Angle Longitude, Angle Latitude, string Name) : Coordinate(Longitude, Latitude)
-{
-    public new Type ExternalEqualityContract => EqualityContract;
-}

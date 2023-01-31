@@ -1,18 +1,15 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_04.Tests;
 using AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_01;
-
+using AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Tests;
 
 [TestClass]
 public partial class CoordinateTests
 {
-
-    
     [TestMethod]
     public void Create_Coordinate_IsReadOnly()
     {
         Coordinate coordinate = new(
             new Angle(180, 0, 0), new Angle(180, 0, 0));
-        // coordinate.Lattitudce = new(0, 0, 0);
     }
 
     [TestMethod]
@@ -43,9 +40,5 @@ public partial class CoordinateTests
         Coordinate coordinate = new(
             new Angle(180, 0, 0), new Angle(180, 0, 0));
         int hashCode1 = coordinate.GetHashCode();
-        //coordinate.Latitude = new(0, 0, 0);
-
-
-        // Assert.AreNotEqual<Type>(coordinate.GetType(), coordinate2.GetType());
     }
 }
