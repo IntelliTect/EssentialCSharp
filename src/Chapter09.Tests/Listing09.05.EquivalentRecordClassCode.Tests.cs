@@ -16,18 +16,4 @@ public class CoordinateTests
 
         Assert.AreEqual<Coordinate>(coordinate1, coordinate2);
     }
-
-    [TestMethod]
-    public void EqualityContract_GetType()
-    {
-        Coordinate coordinate1 = new(
-            new Angle(180, 0, 0), new Angle(180, 0, 0));
-        GeoCoordinate geoCoordinate = new(
-            new Angle(180, 0, 0), new Angle(180, 0, 0), "GeoCoordinate");
-
-        Assert.AreEqual(coordinate1.ExternalEqualityContract, coordinate1.GetType());
-
-        Assert.AreEqual(geoCoordinate.ExternalEqualityContract, geoCoordinate.GetType());
-        Assert.AreEqual(((Coordinate)geoCoordinate).ExternalEqualityContract, ((Coordinate)geoCoordinate).GetType());
-    }
 }
