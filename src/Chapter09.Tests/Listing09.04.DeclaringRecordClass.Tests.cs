@@ -1,6 +1,7 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_04.Tests;
 using AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_01;
 using AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Tests;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 [TestClass]
 public partial class CoordinateTests
@@ -40,5 +41,10 @@ public partial class CoordinateTests
         Coordinate coordinate = new(
             new Angle(180, 0, 0), new Angle(180, 0, 0));
         int hashCode1 = coordinate.GetHashCode();
+
+        coordinate = coordinate with { Longitude = new Angle(0, 0, 0) };
+        int hashCode2 = coordinate.GetHashCode();
+
+        Assert.AreNotEqual<int>(hashCode1, hashCode2);
     }
 }

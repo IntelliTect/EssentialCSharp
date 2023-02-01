@@ -31,8 +31,8 @@ public class DisplayFibonacci
         }
 
         list.Add((double)1);
-        
-        for(int count = 2; count < totalCount; count++)
+
+        for (int count = 2; count < totalCount; count++)
         {
             list.Add(
                 (double)list[count - 1]! +

@@ -28,23 +28,14 @@ struct Angle : IAngle
         _Seconds = seconds;
     }
     #region EXCLUDE
-    public int Degrees
-    {
-        get { return _Degrees; }
-    }
     private int _Degrees;
+    public int Degrees => _Degrees;
 
-    public int Minutes
-    {
-        get { return _Minutes; }
-    }
     private int _Minutes;
+    public int Minutes => _Minutes;
 
-    public int Seconds
-    {
-        get { return _Seconds; }
-    }
     private int _Seconds;
+    public int Seconds => _Seconds;
     #endregion EXCLUDE
 }
 public class Program
@@ -53,7 +44,7 @@ public class Program
     {
         // ...
 
-        Angle angle = new Angle(25, 58, 23);
+        Angle angle = new(25, 58, 23);
         // Example 1: Simple box operation
         object objectAngle = angle;  // Box
         Console.Write(((Angle)objectAngle).Degrees);

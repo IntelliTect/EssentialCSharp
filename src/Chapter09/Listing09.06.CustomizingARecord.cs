@@ -30,10 +30,12 @@ public readonly record struct Angle(int Degrees, int Minutes, int Seconds, strin
         return $"{prefix}{Degrees}° {Minutes}' {Seconds}\"";
     }
 
+    #region INCLUDE
     public bool Equals(Angle other) =>
         (Degrees, Minutes, Seconds).Equals(
             (other.Degrees, other.Minutes, other.Seconds));
-
+    #endregion INCLUDE
+    
     public override int GetHashCode() =>
         HashCode.Combine(Degrees.GetHashCode(), 
             Minutes.GetHashCode(), Seconds.GetHashCode);
