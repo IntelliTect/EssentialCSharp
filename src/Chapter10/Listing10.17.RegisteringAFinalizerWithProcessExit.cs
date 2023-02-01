@@ -63,7 +63,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_17
                 $"{nameof(SampleUnmanagedResource)}.ctor");
 
             WeakReference<IDisposable> weakReferenceToSelf =
-                 new WeakReference<IDisposable>(this);
+                 new(this);
             ProcessExitHandler = (_, __) =>
             {
                 WriteLine("Starting...", "ProcessExitHandler");

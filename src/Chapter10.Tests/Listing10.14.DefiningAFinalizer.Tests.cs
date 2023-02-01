@@ -44,7 +44,7 @@ public class TemporaryFileStreamTests
     [TestMethod]
     public void Create_GivenNewDocument_FileGetsCreated()
     {
-        TemporaryFileStream fileStream = new TemporaryFileStream(TempFileName);
+        TemporaryFileStream fileStream = new(TempFileName);
         Assert.IsTrue(File.Exists(fileStream.File?.FullName!));
     }
 

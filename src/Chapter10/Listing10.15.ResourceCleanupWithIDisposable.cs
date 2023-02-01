@@ -10,7 +10,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_15
         public static void Search()
         {
             TemporaryFileStream fileStream =
-                new TemporaryFileStream();
+                new();
 
             // Use temporary file stream
             // ...

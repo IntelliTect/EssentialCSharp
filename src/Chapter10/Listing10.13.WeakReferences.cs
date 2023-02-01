@@ -77,7 +77,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_13
 
     public class ObjectDataSource
     {
-        private readonly WeakReference Data = new WeakReference(null);
+        private readonly WeakReference Data = new(null);
         public void ClearReference()
         {
             Data.Target = null;

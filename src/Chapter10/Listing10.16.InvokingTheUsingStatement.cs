@@ -13,14 +13,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_16
             #region HIGHLIGHT
             // C# 8.0
             using TemporaryFileStream fileStream1 =
-                new TemporaryFileStream();
+                new();
             #endregion HIGHLIGHT
 
             #region HIGHLIGHT
             // Prior to C# 8.0
             using (TemporaryFileStream fileStream2 =
-                new TemporaryFileStream(),
-                fileStream3 = new TemporaryFileStream())
+                new(),
+                fileStream3 = new())
             #endregion HIGHLIGHT
             {
                 // Use temporary file stream;
