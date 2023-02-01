@@ -21,7 +21,4 @@
     <PackageReference Update="MSTest.TestAdapter" Version="3.0.2" />
     <PackageReference Update="MSTest.TestFramework" Version="3.0.2" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Original09\" />
-  </ItemGroup>
 </Project>

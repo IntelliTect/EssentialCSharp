@@ -7,13 +7,6 @@ using AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Tests;
 public class CoordinateTests
 {
     [TestMethod]
-    public void Create_Coordinate_IsReadOnly()
-    {
-        _ = new Coordinate(
-            new Angle(180, 0, 0), new Angle(180, 0, 0));
-    }
-
-    [TestMethod]
     public void With_Coordinate_IsReadOnly()
     {
         Coordinate coordinate1 = new(

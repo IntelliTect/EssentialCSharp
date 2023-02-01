@@ -40,5 +40,10 @@ public partial class CoordinateTests
         Coordinate coordinate = new(
             new Angle(180, 0, 0), new Angle(180, 0, 0));
         int hashCode1 = coordinate.GetHashCode();
+
+        coordinate = coordinate with { Longitude = new Angle(0, 0, 0) };
+        int hashCode2 = coordinate.GetHashCode();
+
+        Assert.AreNotEqual<int>(hashCode1, hashCode2);
     }
 }
