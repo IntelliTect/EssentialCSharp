@@ -1,4 +1,4 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_06
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_01
 {
     #region INCLUDE
     public sealed class ProductSerialNumber

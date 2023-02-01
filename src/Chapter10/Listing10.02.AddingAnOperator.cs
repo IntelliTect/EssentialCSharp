@@ -1,4 +1,4 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_07
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_02
 {
     #region INCLUDE
     public struct Arc

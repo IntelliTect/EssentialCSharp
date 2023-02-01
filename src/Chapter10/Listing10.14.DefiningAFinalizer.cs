@@ -1,6 +1,6 @@
-﻿// Justification: Implementation is incomplete in the catch block.
+// Justification: Implementation is incomplete in the catch block.
 #pragma warning disable CS0168 // Variable is declared but never used
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_20
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_14
 {
     using System;
     #region INCLUDE

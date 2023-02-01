@@ -1,7 +1,7 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_08
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_03
 {
     using System;
-    using Listing10_07;
+    using Listing10_02;
     #region INCLUDE
     public class Program
     {

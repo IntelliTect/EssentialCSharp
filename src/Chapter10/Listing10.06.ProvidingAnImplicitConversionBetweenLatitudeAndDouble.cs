@@ -1,4 +1,4 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_11
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_06
 {
     #region INCLUDE
     public struct Latitude

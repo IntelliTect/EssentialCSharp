@@ -1,6 +1,6 @@
-﻿using Chapter10;
+using Chapter10;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_17
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_12
 {
     #region INCLUDE
     /// <summary>

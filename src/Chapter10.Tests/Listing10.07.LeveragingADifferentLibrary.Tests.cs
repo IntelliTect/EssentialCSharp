@@ -1,7 +1,7 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Text.RegularExpressions;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_12.Tests;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_07.Tests;
 
 [TestClass]
 public class TextNumberParserTests

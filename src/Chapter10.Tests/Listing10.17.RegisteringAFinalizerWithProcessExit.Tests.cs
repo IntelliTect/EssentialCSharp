@@ -3,7 +3,7 @@ using AddisonWesley.Michaelis.EssentialCSharp.Shared.Tests;
 
 using System.Text.RegularExpressions;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23.Tests;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_17.Tests;
 
 [TestClass]
 public class DisposeTests
@@ -15,14 +15,14 @@ public class DisposeTests
             Path.Join(IntelliTect.Multitool.RepositoryPaths.GetDefaultRepoRoot(),"src", "Chapter10"));
 
     static string Ps1Path { get; } = 
-        Path.GetFullPath(Path.Join(Ps1DirectoryPath, "Listing10.23.RegisteringAFinalizerWithProcessExit.ps1"), Environment.CurrentDirectory);
+        Path.GetFullPath(Path.Join(Ps1DirectoryPath, "Listing10.17.RegisteringAFinalizerWithProcessExit.ps1"), Environment.CurrentDirectory);
 
     private const string ProjectName = "ProcessExitTestProgram.testing";
 
     [ClassInitialize]
     public static void ClassInitialize(TestContext testContext)
     {
-        // Clean up at the start incase the class cleanup doesn't run (due to debug for example)
+        // Clean up at the start in case the class cleanup doesn't run (due to debug for example)
         Assert.AreEqual<int>(0, RunPowerShellScript("cleanup", out string _));
         string testStage = "create";
         Assert.AreEqual<int>(0, RunPowerShellScript(testStage, out string psOutput),

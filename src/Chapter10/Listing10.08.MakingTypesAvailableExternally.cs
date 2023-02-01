@@ -1,4 +1,4 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_13
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_08
 {
     #region INCLUDE
     public struct Coordinate
