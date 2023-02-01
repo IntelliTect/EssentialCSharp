@@ -3,7 +3,7 @@ using AddisonWesley.Michaelis.EssentialCSharp.Shared.Tests;
 
 using System.Text.RegularExpressions;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_17.Tests;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_18.Tests;
 
 [TestClass]
 public class DisposeTests
