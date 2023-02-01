@@ -1,6 +1,6 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_24
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_18
 {
-    using AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_21;
+    using Listing10_15;
     #region INCLUDE
     class DataCache
     {
@@ -19,9 +19,9 @@
     #endregion INCLUDE
 }
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_23_PreCSharp6
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_18_PRECSHARP6
 {
-    using AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_21;
+    using Listing10_15;
 
     class DataCache
     {

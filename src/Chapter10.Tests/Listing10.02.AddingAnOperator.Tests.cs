@@ -1,35 +1,10 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_09.Tests;
-
-[TestClass]
-public class ArcTests
-{
-    [TestMethod]
-    public void ArcUnaryMinus_InvertSignOfArc()
-    {
-        Arc arc = new Arc(new Longitude(48), new Latitude(12));
-        arc = -arc;
-        
-        Assert.AreEqual(-48, arc.LongitudeDifference.Degrees);
-        Assert.AreEqual(-12, arc.LatitudeDifference.Degrees);
-    }
-}
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_02.Tests;
 
 [TestClass]
 public class CoordinateTests
 {
-    [TestMethod]
-    public void ArcUnaryPlus_KeepSignOfArc()
-    {
-        Arc arc = new Arc(new Longitude(48), new Latitude(12));
-        arc = +arc;
-        
-        Assert.AreEqual(48, arc.LongitudeDifference.Degrees);
-        Assert.AreEqual(12, arc.LatitudeDifference.Degrees);
-    }
-    
-    
     [TestMethod]
     public void CoordinateEquals_GivenEqualObjects_AreEqual()
     {

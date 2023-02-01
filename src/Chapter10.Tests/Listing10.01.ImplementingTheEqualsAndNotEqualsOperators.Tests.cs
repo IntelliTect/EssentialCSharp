@@ -1,6 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_06.Tests;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_01.Tests;
 
 [TestClass]
 public class ProductSerialNumberTests
