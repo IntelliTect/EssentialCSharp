@@ -8,7 +8,7 @@ public class LatitudeTests
     [TestMethod]
     public void LatitudeDoubleCast_GivenValidLatitude_CastDegreesToDouble()
     {
-        Latitude latitude = new Latitude(12);
+        Latitude latitude = new(12);
 
         double castTo = (Double) latitude;
         

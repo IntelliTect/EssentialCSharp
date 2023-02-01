@@ -10,7 +10,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared.Tests
             return RuntimeInformation.IsOSPlatform(OSPlatform.Windows);
         }
 
-        public static Lazy<string?> _PowerShellCommand = new Lazy<string?>(() =>
+        public static Lazy<string?> _PowerShellCommand = new(() =>
         {
             string? powershellCommand = null;
             // Verify that the PowerShell command executes successfully.

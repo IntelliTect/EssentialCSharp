@@ -7,8 +7,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_18
         // ...
 
         public TemporaryFileStream FileStream =>
-            InternalFileStream??(InternalFileStream = 
-                new TemporaryFileStream());
+            InternalFileStream ??= 
+                new TemporaryFileStream();
 
         private TemporaryFileStream? InternalFileStream
             { get; set; } = null;
@@ -31,10 +31,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_18_PRECSHA
         {
             get
             {
-                if (_FileStream is null)
-                {
-                    _FileStream = new TemporaryFileStream();
-                }
+                _FileStream ??= new TemporaryFileStream();
                 return _FileStream;
             }
         }

@@ -18,13 +18,13 @@ public class TextNumberParserTests
 
             """;
 
-        Action act = () => Program.Main(new[]
+        static void invokeMain() => Program.Main(new[]
         {
             "black", "blue", "brown", "CBR",
             "orange", "purple", "red", "yellow"
         });
 
-        string? result = Execute(act);
+        string? result = Execute(invokeMain);
 
         Assert.AreEqual(expected, result);
     }

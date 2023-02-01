@@ -1,7 +1,7 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_02
 {
     #region INCLUDE
-    public struct Arc
+    public readonly struct Arc
     {
         public Arc(
             Longitude longitudeDifference,
@@ -16,7 +16,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_02
 
     }
 
-    public struct Coordinate
+    public readonly struct Coordinate
     {
         #region EXCLUDE
         public Coordinate(Longitude longitude, Latitude latitude)
@@ -28,7 +28,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_02
         public static Coordinate operator +(
             Coordinate source, Arc arc)
         {
-            Coordinate result = new Coordinate(
+            Coordinate result = new(
                 new Longitude(
                     source.Longitude + arc.LongitudeDifference),
                 new Latitude(
@@ -40,7 +40,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_02
         public static Coordinate operator -(
             Coordinate source, Arc arc)
         {
-            Coordinate result = new Coordinate(
+            Coordinate result = new(
                 new Longitude(
                     source.Longitude - arc.LongitudeDifference),
                 new Latitude(
@@ -138,7 +138,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_02
     }
     #endregion INCLUDE
 
-    public struct Longitude
+    public readonly struct Longitude
     {
         public Longitude(int degrees, int minutes)
         {
@@ -167,7 +167,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_02
         }
     }
 
-    public struct Latitude
+    public readonly struct Latitude
     {
         public Latitude(int degrees, int minutes)
         {

@@ -1,7 +1,7 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_06
 {
     #region INCLUDE
-    public struct Latitude
+    public readonly struct Latitude
     {
         // ...
 

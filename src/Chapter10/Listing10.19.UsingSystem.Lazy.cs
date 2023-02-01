@@ -40,7 +40,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_19_Listing
                 return _FileStream.Value;
             }
         }
-        private Lazy<TemporaryFileStream> _FileStream;
+        private readonly Lazy<TemporaryFileStream> _FileStream;
 
         // ...
     }

@@ -20,7 +20,7 @@ public class DisposeTests
     private const string ProjectName = "ProcessExitTestProgram.testing";
 
     [ClassInitialize]
-    public static void ClassInitialize(TestContext testContext)
+    public static void ClassInitialize(TestContext _)
     {
         // Clean up at the start in case the class cleanup doesn't run (due to debug for example)
         Assert.AreEqual<int>(0, RunPowerShellScript("cleanup", out string _));
@@ -50,9 +50,8 @@ public class DisposeTests
         string testStatus = "run";
 
         TestContext.WriteLine($"Ps1Path = '{Path.GetFullPath(Ps1Path)}'");
-        string psOutput;
         int exitCode = RunPowerShellScript(
-            testStatus, finalizerOrderOption, traceValue, out psOutput);
+            testStatus, finalizerOrderOption, traceValue, out string psOutput);
 
         Assert.AreEqual(0, exitCode, $"PowerShell Output: {psOutput}");
 

@@ -8,9 +8,9 @@ public class CoordinateTests
     [TestMethod]
     public void CoordinateEquals_GivenEqualObjects_AreEqual()
     {
-        Coordinate coordinate1 = new Coordinate(new Longitude(48, 52), 
+        Coordinate coordinate1 = new(new Longitude(48, 52), 
             new Latitude(-2, -20));
-        Coordinate coordinate2 = new Coordinate(new Longitude(48, 52), 
+        Coordinate coordinate2 = new(new Longitude(48, 52), 
             new Latitude(-2, -20));
         
         Assert.IsTrue(coordinate1.Equals(coordinate2));
@@ -24,9 +24,9 @@ public class CoordinateTests
     public void CoordinateNotEquals_GivenDifferentObjects_NotEqual(int longDegrees1, int longMinutes1,
         int latDegrees1, int latMinutes1, int longDegrees2, int longMinutes2, int latDegrees2, int latMinutes2)
     {
-        Coordinate coordinate1 = new Coordinate(new Longitude(longDegrees1, longMinutes1), 
+        Coordinate coordinate1 = new(new Longitude(longDegrees1, longMinutes1), 
             new Latitude(latDegrees1, latMinutes1));
-        Coordinate coordinate2 = new Coordinate(new Longitude(longDegrees2, longMinutes2), 
+        Coordinate coordinate2 = new(new Longitude(longDegrees2, longMinutes2), 
             new Latitude(latDegrees2, latMinutes2));
         
         Assert.IsTrue(coordinate1 != coordinate2);
@@ -35,7 +35,7 @@ public class CoordinateTests
     [TestMethod]
     public void CoordinateEquals_GivenNull_NotEqual()
     {
-        Coordinate coordinate1 = new Coordinate(new Longitude(48, 52), 
+        Coordinate coordinate1 = new(new Longitude(48, 52), 
             new Latitude(-2, -20));
         Coordinate? coordinate2 = null;
         
@@ -45,7 +45,7 @@ public class CoordinateTests
     [TestMethod]
     public void CoordinateEquals_GivenSameReference_Equal()
     {
-        Coordinate coordinate1 = new Coordinate(new Longitude(48, 52), 
+        Coordinate coordinate1 = new(new Longitude(48, 52), 
             new Latitude(-2, -20));
         Coordinate coordinate2 = coordinate1;
         
@@ -55,7 +55,7 @@ public class CoordinateTests
     [TestMethod]
     public void CoordinateEquals_GivenDifferentTypes_NotEqual()
     {
-        Coordinate coordinate1 = new Coordinate(new Longitude(48, 52), 
+        Coordinate coordinate1 = new(new Longitude(48, 52), 
             new Latitude(-2, -20));
         int otherObj = 12;
         
@@ -66,9 +66,9 @@ public class CoordinateTests
     [TestMethod]
     public void CoordinateAdd_GivenArc_CoordinateOffset()
     {
-        Coordinate coordinate = new Coordinate(new Longitude(48, 52), 
+        Coordinate coordinate = new(new Longitude(48, 52), 
             new Latitude(-2, -20));
-        Arc arc = new Arc(new Longitude(3), new Latitude(1));
+        Arc arc = new(new Longitude(3), new Latitude(1));
         coordinate += arc;
         
         Assert.AreEqual(51, coordinate.Longitude.Degrees);
@@ -80,9 +80,9 @@ public class CoordinateTests
     [TestMethod]
     public void CoordinateSubtract_GivenArc_CoordinateOffset()
     {
-        Coordinate coordinate = new Coordinate(new Longitude(48, 52), 
+        Coordinate coordinate = new(new Longitude(48, 52), 
             new Latitude(-2, -20));
-        Arc arc = new Arc(new Longitude(3), new Latitude(1));
+        Arc arc = new(new Longitude(3), new Latitude(1));
         coordinate -= arc;
         
         Assert.AreEqual(45, coordinate.Longitude.Degrees);
@@ -94,7 +94,7 @@ public class CoordinateTests
     [TestMethod]
     public void CoordinateToString_ValidateCoordinate()
     {
-        Coordinate coordinate = new Coordinate(new Longitude(48, 52), 
+        Coordinate coordinate = new(new Longitude(48, 52), 
             new Latitude(-2, -20));
 
         string expected = @"48° 52' 0 E -2° -20' 0 N";
