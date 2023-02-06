@@ -19,7 +19,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared.Tests
             {
                 try
                 {
-                    Process powershell = Process.Start(command, "-h");
+                    Process powershell = Process.Start(command, "-Version");
                     powershell.WaitForExit();
                     if (powershell.ExitCode == 0)
                     {
