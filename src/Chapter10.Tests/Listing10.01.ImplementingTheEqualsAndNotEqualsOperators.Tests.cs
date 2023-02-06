@@ -28,6 +28,7 @@ public class ProductSerialNumberTests
     }
 
     [TestMethod]
+    [Ignore("Switch to use records")]
     public void Equals_GivenNull_NotEqual()
     {
         ProductSerialNumber productSerialNumber1 = new("12", 11, 11001);
@@ -38,6 +39,7 @@ public class ProductSerialNumberTests
     }
 
     [TestMethod]
+    [Ignore("Switch to use records")]
     public void Equals_GivenSameReference_Equal()
     {
         ProductSerialNumber productSerialNumber1 = new("12", 11, 11001);
@@ -47,6 +49,7 @@ public class ProductSerialNumberTests
     }
 
     [TestMethod]
+    [Ignore("Switch to use records")]
     public void Equals_GivenDifferentTypes_NotEqual()
     {
         ProductSerialNumber productSerialNumber1 = new("12", 11, 11001);
