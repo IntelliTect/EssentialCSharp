@@ -1,7 +1,7 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_05.Tests;
 using AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_01;
 using AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_04;
-using AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_06B;
+using AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_07;
 
 [TestClass]
 public class CoordinateTests

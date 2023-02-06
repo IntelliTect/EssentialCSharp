@@ -1,6 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_04.Tests;
 using AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_01;
-using AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_06B;
+using AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_07;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 [TestClass]
@@ -9,7 +9,7 @@ public partial class CoordinateTests
     [TestMethod]
     public void Create_Coordinate_IsReadOnly()
     {
-        Coordinate coordinate = new(
+         _ = new Coordinate(
             new Angle(180, 0, 0), new Angle(180, 0, 0));
     }
 
@@ -35,6 +35,8 @@ public partial class CoordinateTests
         Assert.AreNotEqual<Type>(coordinate1.GetType(), coordinate2.GetType());
     }
 
+    record struct SampleStruct(int A, int B);
+    
     [TestMethod]
     public void GetHashCode_ChangeData_GetHashCodeChanges()
     {
