@@ -15,11 +15,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared.Tests
             string? powershellCommand = null;
             // Verify that the PowerShell command executes successfully.
             foreach(string command in 
-                new string[]{ "pwsh", WindowsEnvironment() ? "powershell" : null!}.Where(item=> item is not null))
+                new string[]{ "pwsh", WindowsEnvironment() ? "PowerShell" : null!}.Where(item=> item is not null))
             {
                 try
                 {
-                    Process powershell = Process.Start(command, "-h");
+                    Process powershell = Process.Start(command, "-Version");
                     powershell.WaitForExit();
                     if (powershell.ExitCode == 0)
                     {
