@@ -35,16 +35,47 @@ public partial class CoordinateTests
         Assert.AreNotEqual<Type>(coordinate1.GetType(), coordinate2.GetType());
     }
 
-    record struct SampleStruct(int A, int B);
+    record struct SampleStruct(int A, int B)
+    {
+        int C { get; set; }
+    }
     
     [TestMethod]
     public void GetHashCode_ChangeData_GetHashCodeChanges()
     {
-        Coordinate coordinate = new(
-            new Angle(180, 0, 0), new Angle(180, 0, 0));
-        int hashCode1 = coordinate.GetHashCode();
+        SampleStruct sample1 = new(1, 2);
+        int expected = sample1.GetHashCode();
+        sample1.A = 3;
+        Assert.AreNotEqual<int>(expected, sample1.GetHashCode());
     }
 
+
+    [TestMethod]
+    public void GetHashCode_StoredInDictionary_NotFoundWhenChanged()
+    {
+        SampleStruct sample = new(1, 2);
+        Dictionary<SampleStruct, string> dictionary = new() { { sample, "" } };
+        sample.A = 3;
+        Assert.IsFalse(dictionary.ContainsKey(sample));
+    }
+
+
+    [TestMethod]
+    public void GetHashCode_OnTuplesStoredInDictionary_NotFoundWhenChanged()
+    {
+        (int A, int B) tuple = new(1, 2);
+        Dictionary<(int A, int B), string> dictionary = new() { { tuple, "" } };
+        tuple.A = 3;
+        Assert.IsFalse(dictionary.ContainsKey(tuple));
+    }
+    
+    [TestMethod]
+    public void ToString_GivenAdditionalProperty_IgnoredInOutput()
+    {
+        SampleStruct sampleStruct = new(1, 2);
+        Assert.AreEqual<string>("SampleStruct { A = 1, B = 2 }", sampleStruct.ToString());
+    }
+    
     [TestMethod]
     public void With_Instance_Equivalent()
     {
