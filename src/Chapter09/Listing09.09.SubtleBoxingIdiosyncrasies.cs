@@ -58,11 +58,14 @@ public class Program
         object objectAngle = angle;  // Box
         Console.Write(((Angle)objectAngle).Degrees);
 
-        // Example 2: Unbox, modify unboxed value, and discard value
-        ((Angle)objectAngle).MoveTo(26, 58, 23);
+        // Example 2: Unbox, modify unboxed value,
+        //            and discard value
+        ((Angle)objectAngle).MoveTo
+            (26, 58, 23);
         Console.Write(", " + ((Angle)objectAngle).Degrees);
 
-        // Example 3: Box, modify boxed value, and discard reference to box
+        // Example 3: Box, modify boxed value,
+        //            and discard reference to box
         ((IAngle)angle).MoveTo(26, 58, 23);
         Console.Write(", " + ((Angle)angle).Degrees);
 

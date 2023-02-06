@@ -1,28 +1,19 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_06;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_06C;
 
-public readonly record struct Angle(int Degrees, int Minutes, int Seconds, string? Name = null)
+#region INCLUDE
+public readonly record struct Angle(
+    int Degrees, int Minutes, int Seconds, string? Name = null)
 {
 
     public int Degrees { get; } = Degrees;
 
-    private readonly int _Minutes = Minutes;
-    public int Minutes
+    public Angle(
+        string degrees, string minutes, string seconds)
+        : this(int.Parse(degrees), 
+              int.Parse(minutes), int.Parse(seconds))
     {
-        get => _Minutes;
-        init => _Minutes=value;
     }
     
-    private readonly int _Seconds = Seconds;
-    public int Seconds
-    {
-        get => _Seconds;
-        init => _Seconds=value;
-    }
-    public Angle(string degrees, string minutes, string seconds)
-        : this(int.Parse(degrees), int.Parse(minutes), int.Parse(seconds))
-    {
-    }
-
     public override readonly string ToString()
     {
         string prefix = 
@@ -30,6 +21,7 @@ public readonly record struct Angle(int Degrees, int Minutes, int Seconds, strin
         return $"{prefix}{Degrees}° {Minutes}' {Seconds}\"";
     }
 
+    // Changing Equals() to ignore Name
     public bool Equals(Angle other) =>
         (Degrees, Minutes, Seconds).Equals(
             (other.Degrees, other.Minutes, other.Seconds));
@@ -38,8 +30,9 @@ public readonly record struct Angle(int Degrees, int Minutes, int Seconds, strin
         HashCode.Combine(Degrees.GetHashCode(), 
             Minutes.GetHashCode(), Seconds.GetHashCode);
 
-#if UsingTupleToGenerateHashCode
+    #if UsingTupleToGenerateHashCode
     public override int GetHashCode() => 
         (Degrees, Minutes, Seconds).GetHashCode();
-#endif // UsingTupleToGenerateHashCode        
+    #endif // UsingTupleToGenerateHashCode        
 }
+#endregion INCLUDE

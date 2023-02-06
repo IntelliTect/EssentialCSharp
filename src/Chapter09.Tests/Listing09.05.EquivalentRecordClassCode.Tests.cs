@@ -1,7 +1,7 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_05.Tests;
 using AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_01;
 using AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_04;
-using AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Tests;
+using AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_06B;
 
 [TestClass]
 public class CoordinateTests
@@ -29,7 +29,7 @@ public class CoordinateTests
     {
         Coordinate coordinate1 = new(
             new Angle(180, 0, 0), new Angle(180, 0, 0));
-        GeoCoordinate geoCoordinate = new(
+        NamedCoordinate geoCoordinate = new(
             new Angle(180, 0, 0), new Angle(180, 0, 0), "GeoCoordinate");
 
         Assert.AreEqual(coordinate1.ExternalEqualityContract, coordinate1.GetType());

@@ -80,6 +80,11 @@ public class Coordinate : IEquatable<Coordinate>
 
     public Type ExternalEqualityContract => EqualityContract();
 
+
+    // Actual name in IL is "<Clone>$". However, 
+    // you can't add a Clone method to a record.
+    public Coordinate Clone() => new(this);
+
     protected Coordinate(Coordinate original)
     {
         Longitude = original.Longitude;
