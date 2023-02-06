@@ -1,10 +1,10 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_15.Tests;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_18.Tests;
 
 [TestClass]
 public class ProgramTests
 {
     [TestMethod]
-    public void Main_CastThreadLevelPriorityEnumToString()
+    public void Main_TryParseThreadLevelPriorityEnumToStringUsing()
     {
         const string expected = "Idle";
 

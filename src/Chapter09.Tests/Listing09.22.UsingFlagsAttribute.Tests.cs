@@ -1,6 +1,6 @@
 using System.Runtime.InteropServices;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_20.Tests;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_22.Tests;
 
 [TestClass]
 public class ProgramTests
