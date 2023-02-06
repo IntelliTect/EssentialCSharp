@@ -4,9 +4,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_08.Tests;
 public class AngleTests
 {
     [TestMethod]
-    public void Title_Null_ThrowsArgumentNullException() => _ = new Angle(0,0,0);
-    
-    [TestMethod]
     public void ToString_90Degrees_90DegreesFormatted()
     {
         string expected = $"90° 0' 0\"";
