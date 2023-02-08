@@ -30,9 +30,18 @@ public class Program
         }
 
         Angle copy = new(degrees, minutes, seconds);
-        
         // Records provide a custom equality operator.
         Trace.Assert(angle == copy);
+
+        // The with operator is the equivalent of
+        // Angle copy = new(degrees, minutes, seconds);
+        copy = angle with { };
+        Trace.Assert(angle == copy);
+
+        // The with operator has object initializer type
+        // syntax for instantiating a modified copy.
+        Angle modifiedCopy = angle with { Degrees = 180 };
+        Trace.Assert(angle != modifiedCopy);
     }
 }
 #endregion INCLUDE

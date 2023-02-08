@@ -1,8 +1,8 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_06.Tests;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_08.Tests;
 
 [TestClass]
 public class AngleTests
-{    
+{
     [TestMethod]
     public void ToString_90Degrees_90DegreesFormatted()
     {

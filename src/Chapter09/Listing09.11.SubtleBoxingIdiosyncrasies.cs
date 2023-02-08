@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_09;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_11;
 
 using System;
 
@@ -28,14 +28,23 @@ struct Angle : IAngle
         _Seconds = seconds;
     }
     #region EXCLUDE
+    public int Degrees
+    {
+        get { return _Degrees; }
+    }
     private int _Degrees;
-    public int Degrees => _Degrees;
 
+    public int Minutes
+    {
+        get { return _Minutes; }
+    }
     private int _Minutes;
-    public int Minutes => _Minutes;
 
+    public int Seconds
+    {
+        get { return _Seconds; }
+    }
     private int _Seconds;
-    public int Seconds => _Seconds;
     #endregion EXCLUDE
 }
 public class Program
@@ -44,16 +53,19 @@ public class Program
     {
         // ...
 
-        Angle angle = new(25, 58, 23);
+        Angle angle = new Angle(25, 58, 23);
         // Example 1: Simple box operation
         object objectAngle = angle;  // Box
         Console.Write(((Angle)objectAngle).Degrees);
 
-        // Example 2: Unbox, modify unboxed value, and discard value
-        ((Angle)objectAngle).MoveTo(26, 58, 23);
+        // Example 2: Unbox, modify unboxed value,
+        //            and discard value
+        ((Angle)objectAngle).MoveTo
+            (26, 58, 23);
         Console.Write(", " + ((Angle)objectAngle).Degrees);
 
-        // Example 3: Box, modify boxed value, and discard reference to box
+        // Example 3: Box, modify boxed value,
+        //            and discard reference to box
         ((IAngle)angle).MoveTo(26, 58, 23);
         Console.Write(", " + ((Angle)angle).Degrees);
 

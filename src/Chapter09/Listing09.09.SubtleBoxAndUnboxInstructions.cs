@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_07;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_09;
 
 using System;
 #region INCLUDE
@@ -31,8 +31,8 @@ public class DisplayFibonacci
         }
 
         list.Add((double)1);
-
-        for (int count = 2; count < totalCount; count++)
+        
+        for(int count = 2; count < totalCount; count++)
         {
             list.Add(
                 (double)list[count - 1]! +
