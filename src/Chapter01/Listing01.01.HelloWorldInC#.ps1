@@ -14,7 +14,7 @@ if('traceLevel' -notin $PSBoundParameters.Keys) {
 }
 
 try {
-    Get-Item .\HelloWorld -ErrorAction Ignore | Remove-Item -Recurse
+    Get-Item .\HelloWorld -ErrorAction Ignore | ForEach-Object { Start-Sleep 10;Remove-Item -Recurse $_ }
     $startLocation = Get-Location 
     Set-PSDebug -Trace $traceLevel
 
@@ -41,4 +41,5 @@ class HelloWorld
 finally {
     Set-PSDebug -Off
     Set-Location $startLocation
+    Get-Item .\HelloWorld -ErrorAction Ignore | Remove-Item -Recurse
 }
