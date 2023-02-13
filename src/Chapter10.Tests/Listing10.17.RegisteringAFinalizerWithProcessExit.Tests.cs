@@ -124,8 +124,17 @@ public partial class DisposeTests
         Main: Exiting...
         """;
 
+#if NET6_0
     public static string RemoveWhiteSpace(string str)
     {
         return Regex.Replace(str, @"\s+", String.Empty);
     }
+#else
+    [GeneratedRegex("\\s+")]
+    private static partial Regex RemoveWhiteSpaceRegex();
+    public static string RemoveWhiteSpace(string str)
+    {
+        return RemoveWhiteSpaceRegex().Replace(str, string.Empty);
+    }
+#endif
 }
