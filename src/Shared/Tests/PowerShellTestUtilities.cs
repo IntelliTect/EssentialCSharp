@@ -39,31 +39,40 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared.Tests
 
         public static int RunPowerShellScript(string scriptPath, string arguments, out string psOutput)
         {
-            if(PowerShellCommand is null)
+            using Mutex mutext = new(false, typeof(PowerShellTestUtilities).FullName);
+            try
             {
-                throw new InvalidOperationException("PowerShell is not installed");
-            }
+                mutext.WaitOne();
+                if (PowerShellCommand is null)
+                {
+                    throw new InvalidOperationException("PowerShell is not installed");
+                }
 
-            if(!System.IO.File.Exists(scriptPath))
-            {
-                throw new ArgumentException($"scriptPath, '{scriptPath}', not found.", nameof(scriptPath));
-            }
+                if (!System.IO.File.Exists(scriptPath))
+                {
+                    throw new ArgumentException($"scriptPath, '{scriptPath}', not found.", nameof(scriptPath));
+                }
 
-            using var powerShell = new Process();
-            powerShell.StartInfo.RedirectStandardOutput = true;
+                using var powerShell = new Process();
+                powerShell.StartInfo.RedirectStandardOutput = true;
                 powerShell.StartInfo.RedirectStandardError = true;
-            powerShell.StartInfo.FileName = PowerShellCommand;
-            powerShell.StartInfo.Arguments = $"-noprofile -command \"{scriptPath} {arguments}\"";
-            powerShell.Start();
-            psOutput = powerShell.StandardOutput.ReadToEnd();
+                powerShell.StartInfo.FileName = PowerShellCommand;
+                powerShell.StartInfo.Arguments = $"-noprofile -command \"{scriptPath} {arguments}\"";
+                powerShell.Start();
+                psOutput = powerShell.StandardOutput.ReadToEnd();
                 string errorOutput = powerShell.StandardError.ReadToEnd();
                 if (errorOutput.Length > 0)
                 {
                     psOutput += $"{Environment.NewLine}ERROR: {Environment.NewLine}{errorOutput}";
                 }
-            powerShell.WaitForExit();
+                powerShell.WaitForExit();
 
-            return powerShell.ExitCode;
+                return powerShell.ExitCode;
+            }
+            finally
+            {
+                mutext.ReleaseMutex();
+            }
         }
 
         public static string? PowerShellCommand => _PowerShellCommand.Value;

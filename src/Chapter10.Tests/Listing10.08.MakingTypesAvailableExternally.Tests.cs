@@ -11,7 +11,7 @@ public class TypeTests
     public void MakingTypesAvailableExternallyPS1_ExitCodeIs0()
     {
         if (PowerShellTestUtilities.PowerShellNotInstalled) Assert.Inconclusive("PowerShell not installed");
-        //EssentialCSharp\\src\\Chapter10.Tests\\bin\\Debug\\netcoreapp3.0
+        // EssentialCSharp\\src\\Chapter10.Tests\\bin\\Debug\\netcoreapp3.0
         string ps1Path = Path.GetFullPath("../../../../Chapter10/Listing10.08.MakingTypesAvailableExternally.ps1", Environment.CurrentDirectory);
         string traceValue = "0";
 
