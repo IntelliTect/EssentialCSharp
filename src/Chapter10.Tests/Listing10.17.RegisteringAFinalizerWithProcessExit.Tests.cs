@@ -8,6 +8,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_17.Tests;
 [TestClass]
 public partial class DisposeTests
 {
+    private static Mutex Mutext { get; } = new (false, typeof(DisposeTests).FullName);
+
     public TestContext TestContext { get; set; } = null!; // Auto-initialized by MSTest.
 
     static string Ps1DirectoryPath { get; } =
@@ -24,8 +26,6 @@ public partial class DisposeTests
     public static void ClassInitialize(TestContext testContext)
     {
         string psOutput;
-        using Mutex mutext = new(true, nameof(Listing10_17));
-        
         // Clean up at the start in case the class cleanup doesn't run (due to debug for example)
         string testStage = "cleanup";
         Assert.AreEqual<int>(0, RunPowerShellScript(testStage, out psOutput),
@@ -38,6 +38,7 @@ public partial class DisposeTests
             Path.Join(Ps1DirectoryPath, ProjectName, $"{ProjectName}.csproj");
         Assert.IsTrue(File.Exists(projectFilePath),
             $"The expected project file, '{projectFilePath}', was not created.");
+
     }
 
     [ClassCleanup]
@@ -45,6 +46,7 @@ public partial class DisposeTests
     {
         // No return check since an exception here will be ignored.
         RunPowerShellScript("cleanup", out string _);
+        Mutext.Dispose();
     }
 
     [DataTestMethod]
@@ -53,18 +55,25 @@ public partial class DisposeTests
     [DataRow("gc", GCCalled, DisplayName = "Garbage Collected called")]
     public void FinalizerRunsAsPredicted_ConsoleOutputIsInOrder(string finalizerOrderOption, string expectedOutput)
     {
-        using Mutex mutext = new(true, nameof(Listing10_17));
-        int traceValue = 0;
-        string testStatus = "run";
+        try
+        {
+            Mutext.WaitOne();
+            int traceValue = 0;
+            string testStatus = "run";
 
-        TestContext.WriteLine($"Ps1Path = '{Path.GetFullPath(Ps1Path)}'");
-        int exitCode = RunPowerShellScript(
-            testStatus, finalizerOrderOption, traceValue, out string psOutput);
+            TestContext.WriteLine($"Ps1Path = '{Path.GetFullPath(Ps1Path)}'");
+            int exitCode = RunPowerShellScript(
+                testStatus, finalizerOrderOption, traceValue, out string psOutput);
 
-        Assert.AreEqual(0, exitCode, $"PowerShell Output: {psOutput}");
+            Assert.AreEqual(0, exitCode, $"PowerShell Output: {psOutput}");
 
-        Assert.AreEqual<string>(RemoveWhiteSpace(expectedOutput), RemoveWhiteSpace(psOutput),
-            $"Unexpected output from '{Ps1Path} {traceValue} {finalizerOrderOption} {testStatus}:{Environment.NewLine}{psOutput}");
+            Assert.AreEqual<string>(RemoveWhiteSpace(expectedOutput), RemoveWhiteSpace(psOutput),
+                $"Unexpected output from '{Ps1Path} {traceValue} {finalizerOrderOption} {testStatus}:{Environment.NewLine}{psOutput}");
+        }
+        finally
+        {
+            Mutext.ReleaseMutex();
+        }
     }
 
     private static int RunPowerShellScript(string testStage, out string psOutput) =>
