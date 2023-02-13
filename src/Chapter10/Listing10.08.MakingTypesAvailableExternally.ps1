@@ -23,8 +23,13 @@ if('traceLevel' -notin $PSBoundParameters.Keys) {
 [string]$SutCSFile = "$PSScriptRoot/$([IO.Path]::GetFileNameWithoutExtension($SutCSFile)).cs"
 if(-not (Test-Path $SutCSFile)) { throw "Unable to find the file with the type to export ('$SutCSFile')"}
 
+function script:Remove-ProjectDirectory() {
+   Get-Item "$PSScriptRoot/$LibraryProjectName","$PSScriptRoot/$ConsoleProgramProjectName" -ErrorAction Ignore | Remove-Item  -Recurse -Force
+}
+
 try {
-    Get-Item "$PSScriptRoot/$LibraryProjectName","$PSScriptRoot/$ConsoleProgramProjectName" -ErrorAction Ignore | Remove-Item  -Recurse
+    if (("$PSScriptRoot/$LibraryProjectName","$PSScriptRoot/$ConsoleProgramProjectName"| Test-Path) -contains $true) { Start-Sleep 5 }
+    Remove-ProjectDirectory
     Set-PSDebug -Trace $traceLevel
     
     if([string]::IsNullOrEmpty($langVersion))
@@ -77,5 +82,6 @@ namespace $ConsoleProgramProjectName
 
 }
 finally {
+    Remove-ProjectDirectory
     Set-PSDebug -Off
 }

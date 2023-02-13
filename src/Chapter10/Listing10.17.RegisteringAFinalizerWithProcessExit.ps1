@@ -21,8 +21,16 @@ $ConsoleProgramProjectName = 'ProcessExitTestProgram.testing'
 
 [string]$projectDirectory = (Join-Path $PSScriptRoot $ConsoleProgramProjectName)
 
+function script:Remove-ProjectDirectory() {
+    Get-Item $projectDirectory -ErrorAction Ignore | Remove-Item  -Recurse -Force
+}
+
+
 switch ($TestStage) {
     "create" {
+        # Pause if there is already a project directory
+        if (("$projectDirectory"| Test-Path) -contains $true) { Start-Sleep 10 }
+        Remove-ProjectDirectory
         try {
             Write-Host "`$projectDirectory: $projectDirectory"
             Get-Item $projectDirectory -ErrorAction Ignore | Remove-Item  -Recurse -Force
@@ -45,7 +53,7 @@ switch ($TestStage) {
         }
     }
     "cleanup" { 
-        Get-Item $projectDirectory -ErrorAction Ignore | Remove-Item  -Recurse -Force
+        Remove-ProjectDirectory
     }
     "run"   {
         try{ 
