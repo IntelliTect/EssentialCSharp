@@ -46,7 +46,7 @@ public class Coordinate : IEquatable<Coordinate>
         !(left == right);
 
     public static bool operator ==(Coordinate? left, Coordinate? right) => 
-        left == right || (left?.Equals(right) ?? false);
+        ReferenceEquals(left, right) || (left?.Equals(right) ?? false);
 
     public override int GetHashCode()
     {
