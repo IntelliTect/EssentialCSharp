@@ -5,12 +5,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared.Tests
 {
     public class PowerShellTestUtilities
     {
+        private readonly static Mutex Mutext = new (false, typeof(PowerShellTestUtilities).FullName);
+        
         public static bool WindowsEnvironment()
         {
             return RuntimeInformation.IsOSPlatform(OSPlatform.Windows);
         }
-
-        public static Lazy<string?> _PowerShellCommand = new(() =>
+        
+        private readonly static Lazy<string?> _PowerShellCommand = new(() =>
         {
             string? powershellCommand = null;
             // Verify that the PowerShell command executes successfully.
@@ -35,14 +37,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared.Tests
             return powershellCommand;
         });
         public static int RunPowerShellScript(string scriptPath, string arguments) =>
-            RunPowerShellScript(scriptPath, arguments, out string psOutput);
+            RunPowerShellScript(scriptPath, arguments, out string _);
 
         public static int RunPowerShellScript(string scriptPath, string arguments, out string psOutput)
         {
-            using Mutex mutext = new(false, typeof(PowerShellTestUtilities).FullName);
             try
             {
-                mutext.WaitOne();
+                Mutext.WaitOne();
                 if (PowerShellCommand is null)
                 {
                     throw new InvalidOperationException("PowerShell is not installed");
@@ -71,7 +72,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared.Tests
             }
             finally
             {
-                mutext.ReleaseMutex();
+                Mutext.ReleaseMutex();
             }
         }
 
