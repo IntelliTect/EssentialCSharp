@@ -5,7 +5,7 @@ param(
 
 if('traceLevel' -notin $PSBoundParameters.Keys) {
     $traceLevel = Read-Host -Prompt @"
-    Specifiy the trace level:
+    Specify the trace level:
     - 0: Turn script tracing off.
     - 1: Trace script lines as they run.
     - 2: Trace script lines, variable assignments, function calls, and scripts.
@@ -32,7 +32,7 @@ try {
         throw "LangVersion not set."
     }
 
-    # Specyfing langVersion as dotnet new appears to ignore the Directory.Build.props file.
+    # Specifying langVersion as dotnet new appears to ignore the Directory.Build.props file.
     dotnet new Console --langVersion $langVersion --output "$ConsoleProgramProjectName"
     $projectFilePath = "$PSScriptRoot/$ConsoleProgramProjectName/$($ConsoleProgramProjectName).csproj"
     $updatedContent =(Get-Content $projectFilePath) | ? { $_ -notlike '*TargetFramework*'} 

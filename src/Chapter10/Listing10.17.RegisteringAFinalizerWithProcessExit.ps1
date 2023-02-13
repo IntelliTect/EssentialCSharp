@@ -9,7 +9,7 @@ Set-StrictMode -Version 3.0
 
 if(($TraceLevel -eq $null) -and 'TraceLevel' -notin $PSBoundParameters.Keys) {
     $TraceLevel = Read-Host -Prompt @"
-    Specifiy the trace level:
+    Specify the trace level:
     - 0: Turn script tracing off.
     - 1: Trace script lines as they run.
     - 2: Trace script lines, variable assignments, function calls, and scripts.
