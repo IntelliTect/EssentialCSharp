@@ -51,10 +51,16 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared.Tests
 
             using var powerShell = new Process();
             powerShell.StartInfo.RedirectStandardOutput = true;
+                powerShell.StartInfo.RedirectStandardError = true;
             powerShell.StartInfo.FileName = PowerShellCommand;
             powerShell.StartInfo.Arguments = $"-noprofile -command \"{scriptPath} {arguments}\"";
             powerShell.Start();
             psOutput = powerShell.StandardOutput.ReadToEnd();
+                string errorOutput = powerShell.StandardError.ReadToEnd();
+                if (errorOutput.Length > 0)
+                {
+                    psOutput += $"{Environment.NewLine}ERROR: {Environment.NewLine}{errorOutput}";
+                }
             powerShell.WaitForExit();
 
             return powerShell.ExitCode;
