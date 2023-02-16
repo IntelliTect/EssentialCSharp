@@ -25,20 +25,27 @@ public partial class DisposeTests
     [ClassInitialize]
     public static void ClassInitialize(TestContext testContext)
     {
-        string psOutput;
-        // Clean up at the start in case the class cleanup doesn't run (due to debug for example)
-        string testStage = "cleanup";
-        Assert.AreEqual<int>(0, RunPowerShellScript(testStage, out psOutput),
-            $"Script failed with $testStage='{testStage}'. psOutput:\n{psOutput}");
-        testStage = "create";
-        int exitCode = RunPowerShellScript(testStage, out psOutput);
-        Assert.AreEqual<int>(0, exitCode,
-            $"Script failed with $testStage='{testStage}'. psOutput:\n{psOutput}");
-        string projectFilePath =
-            Path.Join(Ps1DirectoryPath, ProjectName, $"{ProjectName}.csproj");
-        Assert.IsTrue(File.Exists(projectFilePath),
-            $"The expected project file, '{projectFilePath}', was not created.");
-
+        try
+        {
+            Mutext.WaitOne();
+            string psOutput;
+            // Clean up at the start in case the class cleanup doesn't run (due to debug for example)
+            string testStage = "cleanup";
+            Assert.AreEqual<int>(0, RunPowerShellScript(testStage, out psOutput),
+                $"Script failed with $testStage='{testStage}'. psOutput:\n{psOutput}");
+            testStage = "create";
+            int exitCode = RunPowerShellScript(testStage, out psOutput);
+            Assert.AreEqual<int>(0, exitCode,
+                $"Script failed with $testStage='{testStage}'. psOutput:\n{psOutput}");
+            string projectFilePath =
+                Path.Join(Ps1DirectoryPath, ProjectName, $"{ProjectName}.csproj");
+            Assert.IsTrue(File.Exists(projectFilePath),
+                $"The expected project file, '{projectFilePath}', was not created.");
+        }
+        finally
+        {
+            Mutext.ReleaseMutex();
+        }
     }
 
     [ClassCleanup]
