@@ -19,7 +19,6 @@ public class CombiningLiteralsWithInterpolationTests
 >>Your full name is:
 {firstName} {lastName}";
 
-
         IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected,
               Program.Main);
     }

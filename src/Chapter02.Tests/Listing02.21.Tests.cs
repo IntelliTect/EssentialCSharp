@@ -18,8 +18,7 @@ public class RawLiteralTests
         }
         catch (JsonException ex)
         {
-            string message = "Invalid JSON format: " + ex.Message;
-            Assert.Fail(message);
+            Assert.Fail("Invalid JSON format: " + ex.Message);
         }
     }
 }

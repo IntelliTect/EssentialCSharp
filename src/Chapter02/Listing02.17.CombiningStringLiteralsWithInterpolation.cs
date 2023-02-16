@@ -6,7 +6,6 @@
         {
             string firstName;
             string lastName;
-
            
             Console.WriteLine("Enter your first name: ");
             firstName = Console.ReadLine();
