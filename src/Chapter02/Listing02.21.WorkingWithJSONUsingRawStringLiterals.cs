@@ -1,21 +1,20 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_21;
-#region INCLUDE
-// The using directives allow you to drop the namespace
-#region HIGHLIGHT
-#endregion HIGHLIGHT
+
 public class Program
 {
     public static void Main()
     {
+        #region INCLUDE
         string firstName = "Forest";
 
-        string lastName = """Gump"""; // Single-line raw string literal.
+        // Single-line raw string literal.
+        string lastName = """Gump""";
 
-        string greeting = // Single-line raw string literal with interpolation.
-
+        // Single-line raw string literal with interpolation.
+        string greeting =
         $"""Hello, I'm {firstName}. {firstName} {lastName}""";
 
-        string proposal = "Do you want a chocolate?" 
+        string proposal = "Do you want a chocolate?"
             + "I could eat about a million and a half of these.";
 
         string mamaSaid = // Multi-line raw string literal.
@@ -33,12 +32,12 @@ public class Program
                         "character": "The MAN",
                         "dialogue": "{{greeting}}"
                      },
-                    "description" : "She nods, not much interested. He takes an old candy kiss out of his pocket. Offering it to her:",
+                    "description" : "She nods, not much interested. He...",
                     "quote": {
                         "character": "The MAN",
                         "dialogue": "{{proposal}}"
                      },
-                     "description" : "She shakes \"no\" He unwraps it, popping it into his mouth.",
+                     "description" : "She shakes \"no\" He unwraps it...",
                      "quote": {
                         "character": "The MAN",
                          "dialogue": "{{mamaSaid.Replace("\"", "\\\"")}}"
@@ -47,7 +46,7 @@ public class Program
                 """;
 
         Console.WriteLine(jsonDialogue);
+        #endregion INCLUDE
     }
 }
-#endregion INCLUDE
 
