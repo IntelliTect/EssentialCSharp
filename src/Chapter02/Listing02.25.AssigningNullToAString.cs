@@ -1,20 +1,19 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_25
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_25;
+
+public class Program
 {
-    public class Program
+    #region INCLUDE
+    public static void Main()
     {
-        #region INCLUDE
-        public static void Main()
-        {
-            int? age;
-            //...
+        int? age;
+        //...
 
-            // Clear the value of age
-            age = null;
+        // Clear the value of age
+        age = null;
 
-            #region EXCLUDE
-            Console.WriteLine($"The age is: {age}");
-            #endregion EXCLUDE
-        }
-        #endregion INCLUDE
+        #region EXCLUDE
+        Console.WriteLine($"The age is: {age}");
+        #endregion EXCLUDE
     }
+    #endregion INCLUDE
 }

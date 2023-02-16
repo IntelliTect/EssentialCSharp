@@ -10,15 +10,6 @@ public class RawLiteralTests
     public void Main_OutputsJson()
     {
         string result = IntelliTect.TestTools.Console.ConsoleAssert.Execute("", Program.Main);
-
-        try
-        {
-            JsonDocument.Parse(result);
-
-        }
-        catch (JsonException ex)
-        {
-            Assert.Fail("Invalid JSON format: " + ex.Message);
-        }
+        Assert.IsNotNull(JsonDocument.Parse(result));
     }
 }

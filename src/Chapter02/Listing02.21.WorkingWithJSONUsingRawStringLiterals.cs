@@ -1,33 +1,33 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_21
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_21;
+#region INCLUDE
+// The using directives allow you to drop the namespace
+#region HIGHLIGHT
+#endregion HIGHLIGHT
+public class Program
 {
-    #region INCLUDE
-    // The using directives allow you to drop the namespace
-    #region HIGHLIGHT
-    #endregion HIGHLIGHT
-    public class Program
+    public static void Main()
     {
-        public static void Main()
-        {
-            string firstName = "Forest";
+        string firstName = "Forest";
 
-            string lastName = """Gump"""; // Single-line raw string literal.
+        string lastName = """Gump"""; // Single-line raw string literal.
 
-            string greeting = // Single-line raw string literal with interpolation.
+        string greeting = // Single-line raw string literal with interpolation.
 
-            $"""Hello, I'm {firstName}. {firstName} {lastName}""";
+        $"""Hello, I'm {firstName}. {firstName} {lastName}""";
 
-            string proposal = "Do you want a chocolate? I could eat about a million and a half of these.";
+        string proposal = "Do you want a chocolate?" 
+            + "I could eat about a million and a half of these.";
 
-            string mamaSaid = // Multi-line raw string literal.
-                """
+        string mamaSaid = // Multi-line raw string literal.
+            """
                 Mama said, "Life was just a box of chocolates..."
                 """;
 
-            string jsonDialogue =
+        string jsonDialogue =
 
             // Multi-line raw string literal with interpolation.
 
-                $$"""
+            $$"""
                 {
                     "quote": {
                         "character": "The MAN",
@@ -46,8 +46,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_21
                 }
                 """;
 
-            Console.WriteLine(jsonDialogue);
-        }
+        Console.WriteLine(jsonDialogue);
     }
-    #endregion INCLUDE
 }
+#endregion INCLUDE
+

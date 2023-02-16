@@ -1,12 +1,12 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_11
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_11;
+
+#region INCLUDE
+public class SingleQuote
 {
-    #region INCLUDE
-    public class SingleQuote
+    public static void Main()
     {
-        public static void Main()
-        {
-            Console.WriteLine('\'');
-        }
+        Console.WriteLine('\'');
     }
-    #endregion INCLUDE
 }
+#endregion INCLUDE
+

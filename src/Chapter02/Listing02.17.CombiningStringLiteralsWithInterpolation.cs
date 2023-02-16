@@ -1,23 +1,22 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_17
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_17;
+
+public class Program
 {
-    public class Program
+    public static void Main()
     {
-        public static void Main()
-        {
-            string firstName;
-            string lastName;
-           
-            Console.WriteLine("Enter your first name: ");
-            firstName = Console.ReadLine();
+        string firstName;
+        string lastName;
 
-            Console.WriteLine("Enter your last name: ");
+        Console.WriteLine("Enter your first name: ");
+        firstName = Console.ReadLine();
 
-            lastName = Console.ReadLine();
+        Console.WriteLine("Enter your last name: ");
 
-            #region INCLUDE
-            Console.WriteLine($@"Your full name is:
+        lastName = Console.ReadLine();
+
+        #region INCLUDE
+        Console.WriteLine($@"Your full name is:
 {firstName} {lastName}");
-            #endregion INCLUDE
-        }
+        #endregion INCLUDE
     }
 }

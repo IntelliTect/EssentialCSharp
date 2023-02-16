@@ -1,13 +1,13 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_30
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_30;
+
+public class Program
 {
-    public class Program
+    public static void Main()
     {
-        public static void Main()
-        {
-            #region INCLUDE
-            int intNumber = 31416;
-            long longNumber = intNumber;
-            #endregion INCLUDE
-        }
+        #region INCLUDE
+        int intNumber = 31416;
+        long longNumber = intNumber;
+        #endregion INCLUDE
     }
 }
+

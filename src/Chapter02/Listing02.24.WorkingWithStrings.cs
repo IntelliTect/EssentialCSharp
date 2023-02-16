@@ -1,22 +1,20 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_24
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_24;
+#region INCLUDE
+public class Uppercase
 {
-    #region INCLUDE
-    public class Uppercase
+    public static void Main()
     {
-        public static void Main()
-        {
-            string text, uppercase;
+        string text, uppercase;
 
-            Console.Write("Enter text: ");
-            text = Console.ReadLine();
+        Console.Write("Enter text: ");
+        text = Console.ReadLine();
 
-            // Return a new string in uppercase
-            #region HIGHLIGHT
-            uppercase = text.ToUpper();
-            #endregion HIGHLIGHT
+        // Return a new string in uppercase
+        #region HIGHLIGHT
+        uppercase = text.ToUpper();
+        #endregion HIGHLIGHT
 
-            Console.WriteLine(uppercase);
-        }
+        Console.WriteLine(uppercase);
     }
-    #endregion INCLUDE
 }
+#endregion INCLUDE
