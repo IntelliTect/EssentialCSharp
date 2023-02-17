@@ -3,7 +3,7 @@
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_17
 {
-    using Listing10_15;
+    using Listing10_16;
 
     #region INCLUDE
     public static class Program
@@ -12,8 +12,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_17
         {
             #region HIGHLIGHT
             // C# 8.0
-            using TemporaryFileStream fileStream1 =
-                new();
+            using TemporaryFileStream fileStream1 = new();
             #endregion HIGHLIGHT
 
             #region HIGHLIGHT
