@@ -3,14 +3,16 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_22.Tests;
 
 [TestClass]
-public class ProgramTests
+public class PalindromeLengthTests
 {
     [TestMethod]
-    public void Main_WriteOverflowExample()
+    public void Main_InputRacecar_OutputPalindromeSevenChars()
     {
-        const string expected = "-2147483648";
+        const string expected =
+@"Enter a palindrome: <<racecar
+>>The palindrome ""racecar"" is 7 characters.";
 
         IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-            expected, Program.Main);
+            expected, PalindromeLength.Main);
     }
 }

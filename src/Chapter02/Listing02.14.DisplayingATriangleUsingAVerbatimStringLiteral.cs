@@ -1,18 +1,17 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_14
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_14;
+
+public class Triangle
 {
-    public class Triangle
+    public static void Main()
     {
-        public static void Main()
-        {
-            #region INCLUDE
-            Console.Write(@"Begin
+        #region INCLUDE
+        Console.Write(@"Begin
                    /\
                   /  \
                  /    \
                 /      \
                /________\
 End");
-            #endregion INCLUDE
-        }
+        #endregion INCLUDE
     }
 }

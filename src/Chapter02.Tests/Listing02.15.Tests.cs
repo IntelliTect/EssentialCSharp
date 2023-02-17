@@ -3,29 +3,24 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_15.Tests;
 
 [TestClass]
-public class TriangleTests
+public class InterpolationTests
 {
     [TestMethod]
-    public void Main_WriteTriangle()
+    public void Main_CorrectOutput()
     {
-        const string expected = @"Begin
-           ____
-          /   /\
-         /   /  \
-        /   /   /\
-       /   /   /  \
-      /   /   /\   \
-     /   /   /  \   \
-    /   /   /\   \   \
-   /   /   /  \   \   \
-  /___/___/____\   \   \
- /     {mobius} \   \   \
-/________________\   \   \
-\                 \   \  /
- \_________________\___\/
-End";
+        string firstName = "Inigo";
+        string lastName = "Montoya";
 
-        IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-            expected, Triangle.Main);
+        string expected = @$"Enter your first name: 
+<<{firstName}
+>>Enter your last name: 
+<<{lastName}
+>>Your full name is {firstName} {lastName}.";
+
+
+        IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected,
+              Program.Main);
+
+
     }
 }

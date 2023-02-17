@@ -1,13 +1,12 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_15
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_20;
+public class Triangle
 {
-    public class Triangle
+    public static void Main()
     {
-        public static void Main()
-        {
-            #region INCLUDE
-            string name = "mobius";
-            Console.Write(
-                $$"""
+        #region INCLUDE
+        string name = "mobius";
+        Console.Write(
+            $$"""
                 Begin
                            ____
                           /   /\
@@ -25,7 +24,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_15
                  \_________________\___\/
                 End
                 """);
-            #endregion INCLUDE
-        }
+        #endregion INCLUDE
     }
 }
