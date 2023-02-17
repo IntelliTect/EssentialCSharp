@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_18
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_19
 {
     using Listing10_15;
     #region INCLUDE

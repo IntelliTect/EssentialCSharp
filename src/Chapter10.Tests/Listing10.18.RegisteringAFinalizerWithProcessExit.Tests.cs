@@ -3,7 +3,7 @@ using AddisonWesley.Michaelis.EssentialCSharp.Shared.Tests;
 
 using System.Text.RegularExpressions;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_17.Tests;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_18.Tests;
 
 [TestClass]
 public partial class DisposeTests
@@ -17,7 +17,7 @@ public partial class DisposeTests
             Path.Join(IntelliTect.Multitool.RepositoryPaths.GetDefaultRepoRoot(),"src", "Chapter10"));
 
     static string Ps1Path { get; } = 
-        Path.GetFullPath(Path.Join(Ps1DirectoryPath, "Listing10.17.RegisteringAFinalizerWithProcessExit.ps1"), Environment.CurrentDirectory);
+        Path.GetFullPath(Path.Join(Ps1DirectoryPath, "Listing10.18.RegisteringAFinalizerWithProcessExit.ps1"), Environment.CurrentDirectory);
 
     private const string ProjectName = "ProcessExitTestProgram.testing";
 
