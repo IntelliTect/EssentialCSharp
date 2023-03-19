@@ -2,9 +2,9 @@ name: Test Different Locales
 
 on:
   push:
-    branches: [ v9.0 ]
+    branches: [ v11.0 ]
   pull_request:
-    branches: [ v9.0 ]
+    branches: [ v11.0 ]
 
 jobs:
   set-build-and-test-locale-languages:

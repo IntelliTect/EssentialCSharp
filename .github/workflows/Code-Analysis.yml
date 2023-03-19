@@ -1,24 +1,25 @@
-name: .NET Code Analysis windows-latest
+name: .NET Code Analysis
+
 on:
   push:
-    branches: [ v9.0 ]
+    branches: [ v11.0 ]
   pull_request:
-    branches: [ v9.0 ]
+    branches: [ v11.0 ]
   
 jobs:  
   NET-Code-Analysis:
     name: .NET Code Analysis runner
     strategy:
       fail-fast: false
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - name: Setup dotnet SDK
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: | 
-            3.1.x
-            5.0.x
+            6.x
+            7.x
       # Run NuGet restore for the solution at repo root
       - name: Run NuGet restore
         run: dotnet restore
