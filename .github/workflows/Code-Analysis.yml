@@ -1,4 +1,5 @@
-name: .NET Code Analysis windows-latest
+name: .NET Code Analysis
+
 on:
   push:
     branches: [ v11.0 ]
