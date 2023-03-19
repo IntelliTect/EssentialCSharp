@@ -1,5 +1,5 @@
 # EssentialCSharp
-[![Build and Test v9.0](https://github.com/IntelliTect/EssentialCSharp/actions/workflows/Branch%20v9.0.yml/badge.svg?branch=v9.0&event=push)](https://github.com/IntelliTect/EssentialCSharp/actions/workflows/Branch%20v9.0.yml)
+[![Build and Test v11.0](https://github.com/IntelliTect/EssentialCSharp/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/IntelliTect/EssentialCSharp/actions/workflows/build-and-test.yml)
 
 This project contains the source code for the book **Essential C#** by Mark Michaelis (Addison-Wesley).
 
@@ -7,9 +7,9 @@ This project contains the source code for the book **Essential C#** by Mark Mich
 
 Ensure one of the following frameworks is installed at the latest version.
 
-* [.NET](https://www.microsoft.com/net/core) (All) - This project is currently tested against .NET 5.0 and .NET Core 3.1
+* [.NET](https://www.microsoft.com/net/core) (All) - This project is currently tested against .NET 7.0 and .NET 6.0
 
-[Visual Studio 2019](https://www.visualstudio.com) contains the .NET Framework runtime as well as gives options to install .NET Core.  Not to mention, it's a great IDE that makes it easy to get started.
+[Visual Studio](https://www.visualstudio.com) contains the .NET Framework runtime as well as gives options to install .NET Core.  Not to mention, it's a great IDE that makes it easy to get started.
 
 ### Download the Code
 
@@ -25,7 +25,7 @@ cd ./EssentialCSharp/
 The source code is the most recently published edition of the book and this is the default branch following the clone command.  However, you can switch to a different branch, v9.0 for example, with the command:
 
 ```
-git checkout v9.0
+git checkout v11.0
 ```
 
 ### Build
