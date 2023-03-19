@@ -10,7 +10,7 @@ jobs:
     name: .NET Code Analysis runner
     strategy:
       fail-fast: false
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - name: Setup dotnet SDK
