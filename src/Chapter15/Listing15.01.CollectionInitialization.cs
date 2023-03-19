@@ -1,36 +1,35 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_01
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_01;
+
+#region INCLUDE
+using System;
+using System.Collections.Generic;
+
+public class Program
 {
-    #region INCLUDE
-    using System;
-    using System.Collections.Generic;
-
-    public class Program
+    public static void Main()
     {
-        public static void Main()
+        List<string> sevenWorldBlunders;
+        sevenWorldBlunders = new List<string>()
         {
-            List<string> sevenWorldBlunders;
-            sevenWorldBlunders = new List<string>()
-            {
-                // Quotes from Gandhi
-                "Wealth without work",
-                "Pleasure without conscience",
-                "Knowledge without character",
-                "Commerce without morality",
-                "Science without humanity",
-                "Worship without sacrifice",
-                "Politics without principle"
-            };
+            // Quotes from Gandhi
+            "Wealth without work",
+            "Pleasure without conscience",
+            "Knowledge without character",
+            "Commerce without morality",
+            "Science without humanity",
+            "Worship without sacrifice",
+            "Politics without principle"
+        };
 
-            Print(sevenWorldBlunders);
-        }
+        Print(sevenWorldBlunders);
+    }
 
-        private static void Print<T>(IEnumerable<T> items)
+    private static void Print<T>(IEnumerable<T> items)
+    {
+        foreach(T item in items)
         {
-            foreach(T item in items)
-            {
-                Console.WriteLine(item);
-            }
+            Console.WriteLine(item);
         }
     }
-    #endregion INCLUDE
 }
+#endregion INCLUDE

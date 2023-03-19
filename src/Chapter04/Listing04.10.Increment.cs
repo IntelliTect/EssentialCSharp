@@ -1,15 +1,14 @@
 // Justification: Demonstrating the without += just prior showing +=
 #pragma warning disable IDE0054 // Use compound assignment
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_10
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_10;
+
+public class Program
 {
-    public class Program
+    public static void Main()
     {
-        public static void Main()
-        {
-            #region INCLUDE
-            int x = 123;
-            x = x + 2;
-            #endregion INCLUDE
-        }
+        #region INCLUDE
+        int x = 123;
+        x = x + 2;
+        #endregion INCLUDE
     }
 }

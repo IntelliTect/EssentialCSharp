@@ -1,16 +1,15 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_57
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_57;
+
+public class Program
 {
-    public class Program
+    public static void Main()
     {
-        public static void Main()
-        {
-            #region INCLUDE
-            #if LINUX
-            // ...
-            #elif WINDOWS
-            // ...
-            #endif
-            #endregion INCLUDE
-        }
+        #region INCLUDE
+        #if LINUX
+        // ...
+        #elif WINDOWS
+        // ...
+        #endif
+        #endregion INCLUDE
     }
 }

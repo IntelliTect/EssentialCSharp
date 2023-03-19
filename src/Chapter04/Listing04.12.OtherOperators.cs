@@ -1,17 +1,16 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_12
-{
-    public class Program
-    {
-        public static void Main()
-        {
-            int x = 0;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_12;
 
-            #region INCLUDE
-            x -= 2;
-            x /= 2;
-            x *= 2;
-            x %= 2;
-            #endregion INCLUDE
-        }
+public class Program
+{
+    public static void Main()
+    {
+        int x = 0;
+
+        #region INCLUDE
+        x -= 2;
+        x /= 2;
+        x *= 2;
+        x %= 2;
+        #endregion INCLUDE
     }
 }

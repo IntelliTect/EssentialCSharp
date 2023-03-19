@@ -1,40 +1,39 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_40
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_40;
+
+#region INCLUDE
+using System.Diagnostics.CodeAnalysis;
+#region EXCLUDE
+public class NullabilityAttributesExamined
 {
-    #region INCLUDE
-    using System.Diagnostics.CodeAnalysis;
-    #region EXCLUDE
-    public class NullabilityAttributesExamined
-    {
-    #endregion EXCLUDE
-        static public bool TryGetDigitAsText(
-            char number, [NotNullWhen(true)]out string? text) =>
-                (text = number switch
-                {
-                    '1' => "one",
-                    '2' => "two",
-                    '3' => "three",
-                    '4' => "four",
-                    // ...
-                    '9' => "nine",
-                    _ => null
-                }) is not null;
-
-        [return: NotNullIfNotNull("text")]
-        static public string? TryGetDigitsAsText(string? text)
-        {
-            if (text == null) return null;
-
-            string result = "";
-            foreach (char character in text)
+#endregion EXCLUDE
+    static public bool TryGetDigitAsText(
+        char number, [NotNullWhen(true)]out string? text) =>
+            (text = number switch
             {
-                if (TryGetDigitAsText(character, out string? digitText))
-                {
-                    if (result != "") result += '-';
-                    result += digitText.ToLower();
-                }
+                '1' => "one",
+                '2' => "two",
+                '3' => "three",
+                '4' => "four",
+                // ...
+                '9' => "nine",
+                _ => null
+            }) is not null;
+
+    [return: NotNullIfNotNull("text")]
+    static public string? TryGetDigitsAsText(string? text)
+    {
+        if (text == null) return null;
+
+        string result = "";
+        foreach (char character in text)
+        {
+            if (TryGetDigitAsText(character, out string? digitText))
+            {
+                if (result != "") result += '-';
+                result += digitText.ToLower();
             }
-            return result;
         }
-    #endregion INCLUDE
+        return result;
     }
+#endregion INCLUDE
 }

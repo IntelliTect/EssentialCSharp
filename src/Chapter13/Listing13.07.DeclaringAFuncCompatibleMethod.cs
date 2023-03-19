@@ -1,48 +1,47 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_07
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_07;
+
+using System;
+#region INCLUDE
+public class DelegateSample
 {
-    using System;
-    #region INCLUDE
-    public class DelegateSample
+    public static void BubbleSort(
+        int[] items, Func<int, int, bool> compare)
+    #region EXCLUDE
     {
-        public static void BubbleSort(
-            int[] items, Func<int, int, bool> compare)
-        #region EXCLUDE
+        int i;
+        int j;
+        int temp;
+
+        if(items == null)
         {
-            int i;
-            int j;
-            int temp;
+            return;
+        }
+        if(compare == null)
+        {
+            throw new ArgumentNullException(nameof(compare));
+        }
 
-            if(items == null)
+        for(i = items.Length - 1; i >= 0; i--)
+        {
+            for(j = 1; j <= i; j++)
             {
-                return;
-            }
-            if(compare == null)
-            {
-                throw new ArgumentNullException(nameof(compare));
-            }
-
-            for(i = items.Length - 1; i >= 0; i--)
-            {
-                for(j = 1; j <= i; j++)
+                if(compare(items[j - 1], items[j]))
                 {
-                    if(compare(items[j - 1], items[j]))
-                    {
-                        temp = items[j - 1];
-                        items[j - 1] = items[j];
-                        items[j] = temp;
-                    }
+                    temp = items[j - 1];
+                    items[j - 1] = items[j];
+                    items[j] = temp;
                 }
             }
         }
-        #endregion EXCLUDE
-        #region HIGHLIGHT
-        public static bool GreaterThan(int first, int second)
-        {
-            return first > second;
-        }
-        #endregion HIGHLIGHT
-
-        // ...
     }
-    #endregion INCLUDE
+    #endregion EXCLUDE
+    #region HIGHLIGHT
+    public static bool GreaterThan(int first, int second)
+    {
+        return first > second;
+    }
+    #endregion HIGHLIGHT
+
+    // ...
 }
+#endregion INCLUDE

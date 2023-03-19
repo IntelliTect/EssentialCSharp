@@ -1,42 +1,41 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_07a
-{
-    using System;
-    using System.Collections.Generic;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_07a;
 
-    public class Program
+using System;
+using System.Collections.Generic;
+
+public class Program
+{
+    public static void Main()
     {
-        public static void Main()
-        {
 #if !PRECSHARP5
-            var colorMap = new SortedDictionary<string, ConsoleColor>
-                {
-                    ["Error"] = ConsoleColor.Red,
-                    ["Warning"] = ConsoleColor.Yellow,
-                    ["Information"] = ConsoleColor.Green,
-                    ["Verbose"] = ConsoleColor.White
-                };
+        var colorMap = new SortedDictionary<string, ConsoleColor>
+            {
+                ["Error"] = ConsoleColor.Red,
+                ["Warning"] = ConsoleColor.Yellow,
+                ["Information"] = ConsoleColor.Green,
+                ["Verbose"] = ConsoleColor.White
+            };
 #else
-            Dictionary<string, ConsoleColor> colorMap =
-                new Dictionary<string, ConsoleColor>
-                {
-                    {"Error", ConsoleColor.Red },
-                    {"Warning", ConsoleColor.Yellow },
-                    {"Information", ConsoleColor.Green },
-                    {"Verbose", ConsoleColor.White}
-                };
+        Dictionary<string, ConsoleColor> colorMap =
+            new Dictionary<string, ConsoleColor>
+            {
+                {"Error", ConsoleColor.Red },
+                {"Warning", ConsoleColor.Yellow },
+                {"Information", ConsoleColor.Green },
+                {"Verbose", ConsoleColor.White}
+            };
 #endif
 
-            Print(colorMap);
-      }
+        Print(colorMap);
+  }
 
-      private static void Print(
-          IEnumerable<KeyValuePair<string, ConsoleColor>> items)
+  private static void Print(
+      IEnumerable<KeyValuePair<string, ConsoleColor>> items)
+  {
+      foreach (KeyValuePair<string, ConsoleColor> item in items)
       {
-          foreach (KeyValuePair<string, ConsoleColor> item in items)
-          {
-              Console.ForegroundColor = item.Value;
-              Console.WriteLine(item.Key);
-          }
-        }
+          Console.ForegroundColor = item.Value;
+          Console.WriteLine(item.Key);
+      }
     }
 }

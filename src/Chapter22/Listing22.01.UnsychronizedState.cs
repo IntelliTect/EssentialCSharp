@@ -1,43 +1,42 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_01
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_01;
+
+#region INCLUDE
+using System;
+using System.Threading.Tasks;
+
+public class Program
 {
-    #region INCLUDE
-    using System;
-    using System.Threading.Tasks;
+    static int _Total = int.MaxValue;
+    static int _Count = 0;
 
-    public class Program
+    public static int Main(string[] args)
     {
-        static int _Total = int.MaxValue;
-        static int _Count = 0;
+        if (args?.Length > 0) { _ = int.TryParse(args[0], out _Total); }
 
-        public static int Main(string[] args)
+        Console.WriteLine($"Increment and decrementing {_Total} times...");
+
+        // Use Task.Factory.StartNew for .NET 4.0
+        Task task = Task.Run(() => Decrement());
+
+        // Increment
+        for(int i = 0; i < _Total; i++)
         {
-            if (args?.Length > 0) { _ = int.TryParse(args[0], out _Total); }
-
-            Console.WriteLine($"Increment and decrementing {_Total} times...");
-
-            // Use Task.Factory.StartNew for .NET 4.0
-            Task task = Task.Run(() => Decrement());
-
-            // Increment
-            for(int i = 0; i < _Total; i++)
-            {
-                _Count++;
-            }
-
-            task.Wait();
-            Console.WriteLine($"Count = {_Count}");
-
-            return _Count;
+            _Count++;
         }
 
-        public static void Decrement()
+        task.Wait();
+        Console.WriteLine($"Count = {_Count}");
+
+        return _Count;
+    }
+
+    public static void Decrement()
+    {
+        // Decrement
+        for(int i = 0; i < _Total; i++)
         {
-            // Decrement
-            for(int i = 0; i < _Total; i++)
-            {
-                _Count--;
-            }
+            _Count--;
         }
     }
-    #endregion INCLUDE
 }
+#endregion INCLUDE

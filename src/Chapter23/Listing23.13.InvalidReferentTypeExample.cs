@@ -1,10 +1,9 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter23.Listing23_13
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter23.Listing23_13;
+
+#region INCLUDE
+struct ServiceStatus
 {
-    #region INCLUDE
-    struct ServiceStatus
-    {
-        int State;
-        string Description;  // Description is a reference type
-    }
-    #endregion INCLUDE
+    int State;
+    string Description;  // Description is a reference type
 }
+#endregion INCLUDE

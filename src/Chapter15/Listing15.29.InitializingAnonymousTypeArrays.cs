@@ -1,47 +1,46 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_29
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_29;
+
+#region INCLUDE
+using System;
+using System.Collections.Generic;
+
+public class Program
 {
-    #region INCLUDE
-    using System;
-    using System.Collections.Generic;
-
-    public class Program
+    public static void Main()
     {
-        public static void Main()
+        var worldCup2006Finalists = new[]
         {
-            var worldCup2006Finalists = new[]
+            new
             {
-                new
+                TeamName = "France",
+                Players = new string[]
                 {
-                    TeamName = "France",
-                    Players = new string[]
-                    {
-                        "Fabien Barthez", "Gregory Coupet",
-                        "Mickael Landreau", "Eric Abidal",
-                        // ...
-                    }
-                },
-                new
-                {
-                    TeamName = "Italy",
-                    Players = new string[]
-                    {
-                        "Gianluigi Buffon", "Angelo Peruzzi",
-                        "Marco Amelia", "Cristian Zaccardo",
-                        // ...
-                    }
+                    "Fabien Barthez", "Gregory Coupet",
+                    "Mickael Landreau", "Eric Abidal",
+                    // ...
                 }
-            };
-
-            Print(worldCup2006Finalists);
-        }
-
-        private static void Print<T>(IEnumerable<T> items)
-        {
-            foreach(T item in items)
+            },
+            new
             {
-                Console.WriteLine(item);
+                TeamName = "Italy",
+                Players = new string[]
+                {
+                    "Gianluigi Buffon", "Angelo Peruzzi",
+                    "Marco Amelia", "Cristian Zaccardo",
+                    // ...
+                }
             }
+        };
+
+        Print(worldCup2006Finalists);
+    }
+
+    private static void Print<T>(IEnumerable<T> items)
+    {
+        foreach(T item in items)
+        {
+            Console.WriteLine(item);
         }
     }
-    #endregion INCLUDE
 }
+#endregion INCLUDE

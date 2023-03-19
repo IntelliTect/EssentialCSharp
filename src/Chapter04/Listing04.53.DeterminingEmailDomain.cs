@@ -1,33 +1,32 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_53
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_53;
+
+public class EmailDomain
 {
-    public class EmailDomain
+    public static void Main()
     {
-        public static void Main()
+        #region INCLUDE
+        string email;
+        bool insideDomain = false;
+
+        Console.Write("Enter an email address: ");
+        email = Console.ReadLine() ?? string.Empty;
+
+        Console.Write("The email domain is: ");
+
+        // Iterate through each letter in the email address
+        foreach(char letter in email)
         {
-            #region INCLUDE
-            string email;
-            bool insideDomain = false;
-
-            Console.Write("Enter an email address: ");
-            email = Console.ReadLine() ?? string.Empty;
-
-            Console.Write("The email domain is: ");
-
-            // Iterate through each letter in the email address
-            foreach(char letter in email)
+            if(!insideDomain)
             {
-                if(!insideDomain)
+                if(letter == '@')
                 {
-                    if(letter == '@')
-                    {
-                        insideDomain = true;
-                    }
-                    continue;
+                    insideDomain = true;
                 }
-
-                Console.Write(letter);
+                continue;
             }
-            #endregion INCLUDE
+
+            Console.Write(letter);
         }
+        #endregion INCLUDE
     }
 }

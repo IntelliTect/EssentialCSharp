@@ -1,38 +1,37 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_05
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_05;
+
+using System.Threading.Tasks;
+
+public class Program
 {
-    using System.Threading.Tasks;
-
-    public class Program
+    #region INCLUDE
+    public async Task<int> DoStuffAsync()
     {
-        #region INCLUDE
-        public async Task<int> DoStuffAsync()
-        {
-            await DoSomethingAsync();
-            await DoSomethingElseAsync();
-            return await GetAnIntegerAsync() + 1;
-        }
-        #endregion INCLUDE
+        await DoSomethingAsync();
+        await DoSomethingElseAsync();
+        return await GetAnIntegerAsync() + 1;
+    }
+    #endregion INCLUDE
 
-        public Task<int> GetAnIntegerAsync()
-        {
-            // ...
+    public Task<int> GetAnIntegerAsync()
+    {
+        // ...
 
-            throw new System.NotImplementedException();
-        }
+        throw new System.NotImplementedException();
+    }
 
-        public Task DoSomethingElseAsync()
-        {
-            // ...
+    public Task DoSomethingElseAsync()
+    {
+        // ...
 
-            throw new System.NotImplementedException();
-        }
+        throw new System.NotImplementedException();
+    }
 
-        public Task DoSomethingAsync()
-        {
-            // ...
+    public Task DoSomethingAsync()
+    {
+        // ...
 
-            throw new System.NotImplementedException();
-        }
+        throw new System.NotImplementedException();
     }
 }
 

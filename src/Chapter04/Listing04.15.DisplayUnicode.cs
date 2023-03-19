@@ -1,27 +1,26 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_15
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_15;
+
+public class Program
 {
-    public class Program
+    public static void Main()
     {
-        public static void Main()
+        #region INCLUDE
+        char current;
+        int unicodeValue;
+
+        // Set the initial value of current
+        current = 'z';
+
+        do
         {
-            #region INCLUDE
-            char current;
-            int unicodeValue;
+            // Retrieve the Unicode value of current
+            unicodeValue = current;
+            Console.Write($"{current}={unicodeValue}\t");
 
-            // Set the initial value of current
-            current = 'z';
-
-            do
-            {
-                // Retrieve the Unicode value of current
-                unicodeValue = current;
-                Console.Write($"{current}={unicodeValue}\t");
-
-                // Proceed to the previous letter in the alphabet
-                current--;
-            }
-            while(current >= 'a');
-            #endregion INCLUDE
+            // Proceed to the previous letter in the alphabet
+            current--;
         }
+        while(current >= 'a');
+        #endregion INCLUDE
     }
 }

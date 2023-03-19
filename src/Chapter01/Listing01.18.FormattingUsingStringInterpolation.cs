@@ -1,26 +1,25 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_18
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_18;
+
+#region INCLUDE
+public class HeyYou
 {
-    #region INCLUDE
-    public class HeyYou
+    public static void Main()
     {
-        public static void Main()
-        {
-            string firstName;
-            string lastName;
+        string firstName;
+        string lastName;
 
-            Console.WriteLine("Hey you!");
+        Console.WriteLine("Hey you!");
 
-            Console.Write("Enter your first name: ");
-            firstName = Console.ReadLine();
+        Console.Write("Enter your first name: ");
+        firstName = Console.ReadLine();
 
-            Console.Write("Enter your last name: ");
-            lastName = Console.ReadLine();
+        Console.Write("Enter your last name: ");
+        lastName = Console.ReadLine();
 
-            Console.WriteLine(
-            #region HIGHLIGHT
-                $"Your full name is { firstName } { lastName }.");
-            #endregion HIGHLIGHT
-        }
+        Console.WriteLine(
+        #region HIGHLIGHT
+            $"Your full name is { firstName } { lastName }.");
+        #endregion HIGHLIGHT
     }
-    #endregion INCLUDE
 }
+#endregion INCLUDE

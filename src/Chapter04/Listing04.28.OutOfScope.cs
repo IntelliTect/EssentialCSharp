@@ -5,37 +5,36 @@
 // Justification: Attempting to use message outside of it's scope so it goes unused.
 #pragma warning disable CS0219  // Variable is assigned but its value is never used
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_28
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_28;
+
+public class Program
 {
-    public class Program
+    public static void Main(string[] args)
     {
-        public static void Main(string[] args)
+        #region INCLUDE
+        string playerCount;
+        Console.Write(
+            "Enter the number of players (1 or 2):");
+        playerCount = Console.ReadLine();
+        if (playerCount != "1" && playerCount != "2")
         {
-            #region INCLUDE
-            string playerCount;
-            Console.Write(
-                "Enter the number of players (1 or 2):");
-            playerCount = Console.ReadLine();
-            if (playerCount != "1" && playerCount != "2")
-            {
-                #region HIGHLIGHT
-                string message =
-                    "You entered an invalid number of players.";
-                #endregion HIGHLIGHT
-            }
-            else
-            {
-                // ...
-            }
-            #endregion INCLUDE
-            #if COMPILE_ERRR
-            #region INCLUDE
             #region HIGHLIGHT
-            // ERROR: message is not in scope:
-            Console.WriteLine(message);
+            string message =
+                "You entered an invalid number of players.";
             #endregion HIGHLIGHT
-            #endregion INCLUDE
-            #endif // COMPILE_ERRR
         }
+        else
+        {
+            // ...
+        }
+        #endregion INCLUDE
+        #if COMPILE_ERRR
+        #region INCLUDE
+        #region HIGHLIGHT
+        // ERROR: message is not in scope:
+        Console.WriteLine(message);
+        #endregion HIGHLIGHT
+        #endregion INCLUDE
+        #endif // COMPILE_ERRR
     }
 }

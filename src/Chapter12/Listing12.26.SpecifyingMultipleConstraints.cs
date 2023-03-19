@@ -1,15 +1,14 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_25
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_25;
+
+using System;
+using System.Collections.Generic;
+using Listing12_23;
+#region INCLUDE
+public class EntityDictionary<TKey, TValue>
+    : Dictionary<TKey, TValue>
+    where TKey : IComparable<TKey>, IFormattable
+    where TValue : EntityBase
 {
-    using System;
-    using System.Collections.Generic;
-    using Listing12_23;
-    #region INCLUDE
-    public class EntityDictionary<TKey, TValue>
-        : Dictionary<TKey, TValue>
-        where TKey : IComparable<TKey>, IFormattable
-        where TValue : EntityBase
-    {
-        // ...
-    }
-    #endregion INCLUDE
+    // ...
 }
+#endregion INCLUDE

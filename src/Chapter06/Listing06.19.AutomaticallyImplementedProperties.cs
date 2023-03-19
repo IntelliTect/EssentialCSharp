@@ -1,71 +1,70 @@
 // Non-nullable field is uninitialized. Consider declaring as nullable.
 #pragma warning disable CS8618
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_19
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_19;
+
+#region INCLUDE
+public class Program
 {
-    #region INCLUDE
-    public class Program
+    public static void Main()
     {
-        public static void Main()
-        {
-            Employee employee1 =
-                new();
-            Employee employee2 =
-                new();
+        Employee employee1 =
+            new();
+        Employee employee2 =
+            new();
 
-            // Call the FirstName property's setter
-            employee1.FirstName = "Inigo";
+        // Call the FirstName property's setter
+        employee1.FirstName = "Inigo";
 
-            // Call the FirstName property's getter
-            System.Console.WriteLine(employee1.FirstName);
+        // Call the FirstName property's getter
+        System.Console.WriteLine(employee1.FirstName);
 
-            // Assign an auto-implemented property
-            employee2.Title = "Computer Nerd";
-            employee1.Manager = employee2;
+        // Assign an auto-implemented property
+        employee2.Title = "Computer Nerd";
+        employee1.Manager = employee2;
 
-            // Print employee1's manager's title
-            System.Console.WriteLine(employee1.Manager.Title);
-        }
+        // Print employee1's manager's title
+        System.Console.WriteLine(employee1.Manager.Title);
     }
-
-    public class Employee
-    {
-        // FirstName property
-        public string FirstName
-        {
-            get
-            {
-                return _FirstName;
-            }
-            set
-            {
-                _FirstName = value;
-            }
-        }
-        private string _FirstName;
-
-        // LastName property
-        public string LastName
-        {
-            get => _LastName;
-            set => _LastName = value;
-        }
-        private string _LastName;
-
-        #region HIGHLIGHT
-        // Title property
-        public string? Title { get; set; }
-        #endregion HIGHLIGHT
-
-        #region HIGHLIGHT
-        // Manager property
-        public Employee? Manager { get; set; }
-        #endregion HIGHLIGHT
-
-        #region HIGHLIGHT
-        public string? Salary { get; set; } = "Not Enough";
-        #endregion HIGHLIGHT
-        // ...
-    }
-    #endregion INCLUDE
 }
+
+public class Employee
+{
+    // FirstName property
+    public string FirstName
+    {
+        get
+        {
+            return _FirstName;
+        }
+        set
+        {
+            _FirstName = value;
+        }
+    }
+    private string _FirstName;
+
+    // LastName property
+    public string LastName
+    {
+        get => _LastName;
+        set => _LastName = value;
+    }
+    private string _LastName;
+
+    #region HIGHLIGHT
+    // Title property
+    public string? Title { get; set; }
+    #endregion HIGHLIGHT
+
+    #region HIGHLIGHT
+    // Manager property
+    public Employee? Manager { get; set; }
+    #endregion HIGHLIGHT
+
+    #region HIGHLIGHT
+    public string? Salary { get; set; } = "Not Enough";
+    #endregion HIGHLIGHT
+    // ...
+}
+#endregion INCLUDE

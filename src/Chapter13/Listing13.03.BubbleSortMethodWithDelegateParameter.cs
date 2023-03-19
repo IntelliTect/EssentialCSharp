@@ -1,46 +1,45 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_03
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_03;
+
+using System;
+#region INCLUDE
+public class DelegateSample
 {
-    using System;
-    #region INCLUDE
-    public class DelegateSample
+    // ...
+
+    #region HIGHLIGHT
+    public static void BubbleSort(
+    #endregion HIGHLIGHT
+        int[] items, Func<int, int, bool> compare)
     {
-        // ...
+        int i;
+        int j;
+        int temp;
 
-        #region HIGHLIGHT
-        public static void BubbleSort(
-        #endregion HIGHLIGHT
-            int[] items, Func<int, int, bool> compare)
+        if(compare == null)
         {
-            int i;
-            int j;
-            int temp;
+            throw new ArgumentNullException(nameof(compare));
+        }
 
-            if(compare == null)
-            {
-                throw new ArgumentNullException(nameof(compare));
-            }
+        if(items == null)
+        {
+            return;
+        }
 
-            if(items == null)
+        for(i = items.Length - 1; i >= 0; i--)
+        {
+            for(j = 1; j <= i; j++)
             {
-                return;
-            }
-
-            for(i = items.Length - 1; i >= 0; i--)
-            {
-                for(j = 1; j <= i; j++)
+                #region HIGHLIGHT
+                if (compare(items[j - 1], items[j]))
+                #endregion HIGHLIGHT
                 {
-                    #region HIGHLIGHT
-                    if (compare(items[j - 1], items[j]))
-                    #endregion HIGHLIGHT
-                    {
-                        temp = items[j - 1];
-                        items[j - 1] = items[j];
-                        items[j] = temp;
-                    }
+                    temp = items[j - 1];
+                    items[j - 1] = items[j];
+                    items[j] = temp;
                 }
             }
         }
-        // ...
     }
-    #endregion INCLUDE
+    // ...
 }
+#endregion INCLUDE

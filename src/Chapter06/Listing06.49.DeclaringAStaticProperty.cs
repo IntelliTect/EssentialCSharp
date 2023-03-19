@@ -1,24 +1,23 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_49
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_49;
+
+#region INCLUDE
+public class Employee
 {
-    #region INCLUDE
-    public class Employee
+    // ...
+    #region HIGHLIGHT
+    public static int NextId
     {
-        // ...
-        #region HIGHLIGHT
-        public static int NextId
+        get
         {
-            get
-            {
-                return _NextId;
-            }
-            private set
-            {
-                _NextId = value;
-            }
+            return _NextId;
         }
-        public static int _NextId = 42;
-        #endregion HIGHLIGHT
-        // ...
+        private set
+        {
+            _NextId = value;
+        }
     }
-    #endregion INCLUDE
+    public static int _NextId = 42;
+    #endregion HIGHLIGHT
+    // ...
 }
+#endregion INCLUDE

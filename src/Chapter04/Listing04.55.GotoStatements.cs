@@ -1,54 +1,53 @@
 #pragma warning disable CS0219 // Variable is assigned but its value is never used
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_55
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_55;
+
+public class Program
 {
-    public class Program
+    #region INCLUDE
+    // ...
+    public static void Main(string[] args)
     {
-        #region INCLUDE
-        // ...
-        public static void Main(string[] args)
+        bool isOutputSet = false;
+        bool isFiltered = false;
+        bool isRecursive = false;
+
+        foreach(string option in args)
         {
-            bool isOutputSet = false;
-            bool isFiltered = false;
-            bool isRecursive = false;
-
-            foreach(string option in args)
+            switch(option)
             {
-                switch(option)
-                {
-                    case "/out":
-                        isOutputSet = true;
-                        isFiltered = false;
+                case "/out":
+                    isOutputSet = true;
+                    isFiltered = false;
+                    // ...
+                #region HIGHLIGHT
+                    goto default;
+                #endregion HIGHLIGHT
+                case "/f":
+                    isFiltered = true;
+                    isRecursive = false;
+                    // ...
+                #region HIGHLIGHT
+                    goto default;
+                #endregion HIGHLIGHT
+                default:
+                    if(isRecursive)
+                    {
+                        // Recurse down the hierarchy
+                        Console.WriteLine("Recursing...");
                         // ...
-                    #region HIGHLIGHT
-                        goto default;
-                    #endregion HIGHLIGHT
-                    case "/f":
-                        isFiltered = true;
-                        isRecursive = false;
+                    }
+                    else if(isFiltered)
+                    {
+                        // Add option to list of filters
+                        Console.WriteLine("Filtering...");
                         // ...
-                    #region HIGHLIGHT
-                        goto default;
-                    #endregion HIGHLIGHT
-                    default:
-                        if(isRecursive)
-                        {
-                            // Recurse down the hierarchy
-                            Console.WriteLine("Recursing...");
-                            // ...
-                        }
-                        else if(isFiltered)
-                        {
-                            // Add option to list of filters
-                            Console.WriteLine("Filtering...");
-                            // ...
-                        }
-                        break;
-                }
+                    }
+                    break;
             }
-
-            // ...
         }
-        #endregion INCLUDE
+
+        // ...
     }
+    #endregion INCLUDE
 }

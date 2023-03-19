@@ -1,55 +1,54 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_11
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_11;
+
+#region INCLUDE
+using System.Diagnostics;
+using System.Threading;
+using System.Threading.Tasks;
+
+public class Program
 {
-    #region INCLUDE
-    using System.Diagnostics;
-    using System.Threading;
-    using System.Threading.Tasks;
-
-    public class Program
+    public static Task<Process> RunProcessAsync(
+        string fileName,
+        string arguments = "",
+        CancellationToken cancellationToken = default)
     {
-        public static Task<Process> RunProcessAsync(
-            string fileName,
-            string arguments = "",
-            CancellationToken cancellationToken = default)
+        TaskCompletionSource<Process> taskCS =
+                      new TaskCompletionSource<Process>();
+
+        Process process = new Process()
         {
-            TaskCompletionSource<Process> taskCS =
-                          new TaskCompletionSource<Process>();
-
-            Process process = new Process()
+            StartInfo = new ProcessStartInfo(fileName)
             {
-                StartInfo = new ProcessStartInfo(fileName)
-                {
-                    UseShellExecute = false,
-                    Arguments = arguments
-                },
-                EnableRaisingEvents = true
-            };
+                UseShellExecute = false,
+                Arguments = arguments
+            },
+            EnableRaisingEvents = true
+        };
 
-            process.Exited += (sender, localEventArgs) =>
-            {
-                taskCS.SetResult(process);
-            };
+        process.Exited += (sender, localEventArgs) =>
+        {
+            taskCS.SetResult(process);
+        };
 
-            #region HIGHLIGHT
-            cancellationToken
-                .ThrowIfCancellationRequested();
-            #endregion HIGHLIGHT
+        #region HIGHLIGHT
+        cancellationToken
+            .ThrowIfCancellationRequested();
+        #endregion HIGHLIGHT
 
-            process.Start();
+        process.Start();
 
-            #region HIGHLIGHT
-            cancellationToken.Register(() =>
-            {
-                Process.GetProcessById(process.Id).Kill();
-            });
-            #endregion HIGHLIGHT
+        #region HIGHLIGHT
+        cancellationToken.Register(() =>
+        {
+            Process.GetProcessById(process.Id).Kill();
+        });
+        #endregion HIGHLIGHT
 
-            return taskCS.Task;
-        }
-        // ...
+        return taskCS.Task;
     }
-    #endregion INCLUDE
+    // ...
 }
+#endregion INCLUDE
 
 
 

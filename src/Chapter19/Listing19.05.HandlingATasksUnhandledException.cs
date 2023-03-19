@@ -1,34 +1,33 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_05
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_05;
+
+#region INCLUDE
+using System;
+using System.Threading.Tasks;
+
+public static class Program
 {
-    #region INCLUDE
-    using System;
-    using System.Threading.Tasks;
-
-    public static class Program
+    public static void Main()
     {
-        public static void Main()
+        // Use Task.Factory.StartNew<string>() for
+        // TPL prior to .NET 4.5
+        Task task = Task.Run(() =>
         {
-            // Use Task.Factory.StartNew<string>() for
-            // TPL prior to .NET 4.5
-            Task task = Task.Run(() =>
-            {
-                throw new InvalidOperationException();
-            });
+            throw new InvalidOperationException();
+        });
 
-            try
+        try
+        {
+            task.Wait();
+        }
+        catch(AggregateException exception)
+        {
+            exception.Handle(eachException =>
             {
-                task.Wait();
-            }
-            catch(AggregateException exception)
-            {
-                exception.Handle(eachException =>
-                {
-                    Console.WriteLine(
-                        $"ERROR: { eachException.Message }");
-                    return true;
-                });
-            }
+                Console.WriteLine(
+                    $"ERROR: { eachException.Message }");
+                return true;
+            });
         }
     }
-    #endregion INCLUDE
 }
+#endregion INCLUDE

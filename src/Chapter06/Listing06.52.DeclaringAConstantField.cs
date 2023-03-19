@@ -1,11 +1,10 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_52
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_52;
+
+#region INCLUDE
+public class ConvertUnits
 {
-    #region INCLUDE
-    public class ConvertUnits
-    {
-        public const float CentimetersPerInch = 2.54F;
-        public const int CupsPerGallon = 16;
-        // ...
-    }
-    #endregion INCLUDE
+    public const float CentimetersPerInch = 2.54F;
+    public const int CupsPerGallon = 16;
+    // ...
 }
+#endregion INCLUDE

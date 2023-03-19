@@ -1,19 +1,18 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_48
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_48;
+
+using System;
+
+#region INCLUDE
+public class Employee
 {
-    using System;
-
-    #region INCLUDE
-    public class Employee
+    static Employee()
     {
-        static Employee()
-        {
-            Random randomGenerator = new();
-            NextId = randomGenerator.Next(101, 999);
-        }
-
-        // ...
-        public static int NextId = 42;
-        // ...
+        Random randomGenerator = new();
+        NextId = randomGenerator.Next(101, 999);
     }
-    #endregion INCLUDE
+
+    // ...
+    public static int NextId = 42;
+    // ...
 }
+#endregion INCLUDE

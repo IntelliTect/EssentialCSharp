@@ -1,76 +1,75 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_50
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_50;
+
+using System;
+using static SimpleMath;
+
+#region INCLUDE
+#region HIGHLIGHT
+public static class SimpleMath
+#endregion HIGHLIGHT
 {
-    using System;
-    using static SimpleMath;
-
-    #region INCLUDE
-    #region HIGHLIGHT
-    public static class SimpleMath
-    #endregion HIGHLIGHT
+    // params allows the number of parameters to vary
+    public static int Max(params int[] numbers)
     {
-        // params allows the number of parameters to vary
-        public static int Max(params int[] numbers)
+        // Check that there is at least one item in numbers
+        if(numbers.Length == 0)
         {
-            // Check that there is at least one item in numbers
-            if(numbers.Length == 0)
-            {
-                throw new ArgumentException(
-                    "numbers cannot be empty", nameof(numbers));
-            }
-
-            int result;
-            result = numbers[0];
-            foreach(int number in numbers)
-            {
-                if(number > result)
-                {
-                    result = number;
-                }
-            }
-            return result;
+            throw new ArgumentException(
+                "numbers cannot be empty", nameof(numbers));
         }
 
-        // params allows the number of parameters to vary
-        public static int Min(params int[] numbers)
+        int result;
+        result = numbers[0];
+        foreach(int number in numbers)
         {
-            // Check that there is at least one item in numbers
-            if(numbers.Length == 0)
+            if(number > result)
             {
-                throw new ArgumentException(
-                    "numbers cannot be empty", nameof(numbers));
+                result = number;
             }
-
-            int result;
-            result = numbers[0];
-            foreach(int number in numbers)
-            {
-                if(number < result)
-                {
-                    result = number;
-                }
-            }
-            return result;
         }
+        return result;
     }
 
-    public class Program
+    // params allows the number of parameters to vary
+    public static int Min(params int[] numbers)
     {
-        public static void Main(string[] args)
+        // Check that there is at least one item in numbers
+        if(numbers.Length == 0)
         {
-            int[] numbers = new int[args.Length];
-            for (int count = 0; count < args.Length; count++)
-            {
-                numbers[count] = args[count].Length;
-            }
-
-            Console.WriteLine(
-                $@"Longest argument length = {
-                    Max(numbers) }");
-
-            Console.WriteLine(
-                $@"Shortest argument length = {
-                    Min(numbers) }");
+            throw new ArgumentException(
+                "numbers cannot be empty", nameof(numbers));
         }
+
+        int result;
+        result = numbers[0];
+        foreach(int number in numbers)
+        {
+            if(number < result)
+            {
+                result = number;
+            }
+        }
+        return result;
     }
-    #endregion INCLUDE
 }
+
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        int[] numbers = new int[args.Length];
+        for (int count = 0; count < args.Length; count++)
+        {
+            numbers[count] = args[count].Length;
+        }
+
+        Console.WriteLine(
+            $@"Longest argument length = {
+                Max(numbers) }");
+
+        Console.WriteLine(
+            $@"Shortest argument length = {
+                Min(numbers) }");
+    }
+}
+#endregion INCLUDE

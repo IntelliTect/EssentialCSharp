@@ -1,12 +1,11 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_06
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_06;
+
+#region INCLUDE
+public class Program
 {
-    #region INCLUDE
-    public class Program
+    public static void Main()
     {
-        public static void Main()
-        {
-            System.Console.WriteLine("Hello. My name is Inigo Montoya.");
-        }
+        System.Console.WriteLine("Hello. My name is Inigo Montoya.");
     }
-    #endregion INCLUDE
 }
+#endregion INCLUDE

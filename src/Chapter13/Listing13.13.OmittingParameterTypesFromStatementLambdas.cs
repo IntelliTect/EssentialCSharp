@@ -1,38 +1,37 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_13
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_13;
+
+using System;
+using Listing13_11;
+public class Program
 {
-    using System;
-    using Listing13_11;
-    public class Program
+    public static void Main()
     {
-        public static void Main()
+        int[] items = new int[5];
+
+        for(int i = 0; i < items.Length; i++)
         {
-            int[] items = new int[5];
-
-            for(int i = 0; i < items.Length; i++)
+            Console.Write("Enter an integer: ");
+            string? text = Console.ReadLine();
+            if (!int.TryParse(text, out items[i]))
             {
-                Console.Write("Enter an integer: ");
-                string? text = Console.ReadLine();
-                if (!int.TryParse(text, out items[i]))
-                {
-                    Console.WriteLine($"'{text}' is not a valid integer.");
-                    return;
-                }
+                Console.WriteLine($"'{text}' is not a valid integer.");
+                return;
             }
-            #region INCLUDE
-            //...
-            DelegateSample.BubbleSort(items,
-                (first, second) =>
-                {
-                    return first < second;
-                }
-            );
-            //...
-            #endregion INCLUDE
-
-            for (int i = 0; i < items.Length; i++)
+        }
+        #region INCLUDE
+        //...
+        DelegateSample.BubbleSort(items,
+            (first, second) =>
             {
-                Console.WriteLine(items[i]);
+                return first < second;
             }
+        );
+        //...
+        #endregion INCLUDE
+
+        for (int i = 0; i < items.Length; i++)
+        {
+            Console.WriteLine(items[i]);
         }
     }
 }

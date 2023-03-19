@@ -1,44 +1,43 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_08
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_08;
+
+delegate void TemperatureChangedHandler(Program one, TemperatureEventArgs two);
+
+class Program
 {
-    delegate void TemperatureChangedHandler(Program one, TemperatureEventArgs two);
+    private static TemperatureChangedHandler OnTemperatureChanged = delegate { };
 
-    class Program
+    public void Main()
     {
-        private static TemperatureChangedHandler OnTemperatureChanged = delegate { };
-
-        public void Main()
-        {
 
 #if(!PreCSharp6)
-            OnTemperatureChanged?.Invoke(
-                this, new TemperatureEventArgs(value));
+        OnTemperatureChanged?.Invoke(
+            this, new TemperatureEventArgs(value));
 #else
-            #region INCLUDE
-            //...
-            TemperatureChangedHandler localOnChange =
-                OnTemperatureChanged;
-            if(localOnChange != null)
-            {
-                // Call subscribers
-                localOnChange(
-                  this, new TemperatureEventArgs(value));
-            }
-            //...
-            #endregion INCLUDE
-#endif
+        #region INCLUDE
+        //...
+        TemperatureChangedHandler localOnChange =
+            OnTemperatureChanged;
+        if(localOnChange != null)
+        {
+            // Call subscribers
+            localOnChange(
+              this, new TemperatureEventArgs(value));
         }
-
-        // Justification: Lowercase to simulate the value keyword form a stetter.
-#pragma warning disable IDE1006 // Naming Styles
-        public object? value { get; set; }
-#pragma warning restore IDE1006 // Naming Styles
+        //...
+        #endregion INCLUDE
+#endif
     }
 
-    public class TemperatureEventArgs
+    // Justification: Lowercase to simulate the value keyword form a stetter.
+#pragma warning disable IDE1006 // Naming Styles
+    public object? value { get; set; }
+#pragma warning restore IDE1006 // Naming Styles
+}
+
+public class TemperatureEventArgs
+{
+    public TemperatureEventArgs(object? _)
     {
-        public TemperatureEventArgs(object? _)
-        {
-            // ...
-        }
+        // ...
     }
 }

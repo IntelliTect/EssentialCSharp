@@ -1,13 +1,12 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_06
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_06;
+
+public class Program
 {
-    public class Program
+    public static void Main()
     {
-        public static void Main()
-        {
-            #region INCLUDE
-            int distance = 'f' - 'c';
-            Console.WriteLine(distance);
-            #endregion INCLUDE
-        }
+        #region INCLUDE
+        int distance = 'f' - 'c';
+        Console.WriteLine(distance);
+        #endregion INCLUDE
     }
 }

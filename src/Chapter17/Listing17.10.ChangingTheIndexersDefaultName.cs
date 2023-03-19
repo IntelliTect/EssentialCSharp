@@ -1,56 +1,55 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_10
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_10;
+
+using System;
+
+// ----
+
+interface IPair<T>
 {
-    using System;
+    T First { get; }
 
-    // ----
+    T Second { get; }
 
-    interface IPair<T>
+    T this[PairItem index] { get; }
+}
+
+// ----
+
+public enum PairItem
+{
+    First,
+    Second
+}
+
+// ----
+
+public struct Pair<T> : IPair<T>
+{
+    public Pair(T first, T second)
     {
-        T First { get; }
-
-        T Second { get; }
-
-        T this[PairItem index] { get; }
+        First = first;
+        Second = second;
     }
 
-    // ----
+    public T First { get; } // C# 6.0 Getter-Only Autoproperty
 
-    public enum PairItem
+    public T Second { get; } // C# 6.0 Getter-Only Autoproperty
+    #region INCLUDE
+    [System.Runtime.CompilerServices.IndexerName("Entry")]
+    public T this[PairItem index]
     {
-        First,
-        Second
-    }
-
-    // ----
-
-    public struct Pair<T> : IPair<T>
-    {
-        public Pair(T first, T second)
+        #region EXCLUDE
+        get
         {
-            First = first;
-            Second = second;
-        }
-
-        public T First { get; } // C# 6.0 Getter-Only Autoproperty
-
-        public T Second { get; } // C# 6.0 Getter-Only Autoproperty
-        #region INCLUDE
-        [System.Runtime.CompilerServices.IndexerName("Entry")]
-        public T this[PairItem index]
-        {
-            #region EXCLUDE
-            get
+            return index switch
             {
-                return index switch
-                {
-                    PairItem.First => First,
-                    PairItem.Second => Second,
-                    _ => throw new NotImplementedException(
-                         $"The enum {index} has not been implemented"),
-                };
-            }
-            #endregion EXCLUDE
+                PairItem.First => First,
+                PairItem.Second => Second,
+                _ => throw new NotImplementedException(
+                     $"The enum {index} has not been implemented"),
+            };
         }
-        #endregion INCLUDE
+        #endregion EXCLUDE
     }
+    #endregion INCLUDE
 }
