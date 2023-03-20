@@ -1,18 +1,17 @@
 #pragma warning disable CS0168 // Variable is declared but never used
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_07
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_07;
+
+public class Program
 {
-    public class Program
+    public static void Main()
     {
-        public static void Main()
-        {
-            #region INCLUDE
-            //    |   | 
-            // ---+---+--- 
-            //    |   | 
-            // ---+---+---
-            //    |   | 
-            int[,] cells;
-            #endregion INCLUDE
-        }
+        #region INCLUDE
+        //    |   | 
+        // ---+---+--- 
+        //    |   | 
+        // ---+---+---
+        //    |   | 
+        int[,] cells;
+        #endregion INCLUDE
     }
 }

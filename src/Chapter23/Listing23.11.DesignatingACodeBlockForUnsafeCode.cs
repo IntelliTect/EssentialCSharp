@@ -1,17 +1,16 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter23.Listing23_11
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter23.Listing23_11;
+
+#region INCLUDE
+public class Program
 {
-    #region INCLUDE
-    public class Program
+    static int Main(string[] args)
     {
-        static int Main(string[] args)
+        unsafe
         {
-            unsafe
-            {
-                #region EXCLUDE
-                return 0;
-                #endregion EXCLUDE
-            }
+            #region EXCLUDE
+            return 0;
+            #endregion EXCLUDE
         }
     }
-    #endregion INCLUDE
 }
+#endregion INCLUDE

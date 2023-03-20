@@ -1,31 +1,30 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_18
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_18;
+
+using AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15;
+using System;
+using System.Collections.Generic;
+#region INCLUDE
+public class Program
 {
-    using AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15;
-    using System;
-    using System.Collections.Generic;
-    #region INCLUDE
-    public class Program
+    public static void Main()
     {
-        public static void Main()
+        IEnumerable<Department> departments =
+            CorporateData.Departments;
+        Print(departments);
+
+        Console.WriteLine();
+
+        IEnumerable<Employee> employees =
+            CorporateData.Employees;
+        Print(employees);
+    }
+
+    private static void Print<T>(IEnumerable<T> items)
+    {
+        foreach(T item in items)
         {
-            IEnumerable<Department> departments =
-                CorporateData.Departments;
-            Print(departments);
-
-            Console.WriteLine();
-
-            IEnumerable<Employee> employees =
-                CorporateData.Employees;
-            Print(employees);
-        }
-
-        private static void Print<T>(IEnumerable<T> items)
-        {
-            foreach(T item in items)
-            {
-                Console.WriteLine(item);
-            }
+            Console.WriteLine(item);
         }
     }
-    #endregion INCLUDE
 }
+#endregion INCLUDE

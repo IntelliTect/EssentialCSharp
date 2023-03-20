@@ -1,38 +1,37 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_02
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter21.Listing21_02;
+
+#region INCLUDE
+using System;
+#region HIGHLIGHT
+using System.Threading.Tasks;
+#endregion HIGHLIGHT
+using AddisonWesley.Michaelis.EssentialCSharp.Shared;
+
+//...
+
+public class Program
 {
-    #region INCLUDE
-    using System;
-    #region HIGHLIGHT
-    using System.Threading.Tasks;
-    #endregion HIGHLIGHT
-    using AddisonWesley.Michaelis.EssentialCSharp.Shared;
+    const int TotalDigits = 100;
+    const int BatchSize = 10;
 
-    //...
-
-    public class Program
+    public static void Main()
     {
-        const int TotalDigits = 100;
-        const int BatchSize = 10;
-
-        public static void Main()
+        string pi = "";
+        const int iterations = TotalDigits / BatchSize;
+        string[] sections = new string[iterations];
+        #region HIGHLIGHT
+        Parallel.For(0, iterations, i =>
         {
-            string pi = "";
-            const int iterations = TotalDigits / BatchSize;
-            string[] sections = new string[iterations];
-            #region HIGHLIGHT
-            Parallel.For(0, iterations, i =>
-            {
-                sections[i] = PiCalculator.Calculate(
-                    BatchSize, i * BatchSize);
-            });
-            #endregion HIGHLIGHT
+            sections[i] = PiCalculator.Calculate(
+                BatchSize, i * BatchSize);
+        });
+        #endregion HIGHLIGHT
 
-            pi = string.Join("", sections);
-            Console.WriteLine(pi);
-        }
+        pi = string.Join("", sections);
+        Console.WriteLine(pi);
     }
-    #endregion INCLUDE
 }
+#endregion INCLUDE
 
 
 

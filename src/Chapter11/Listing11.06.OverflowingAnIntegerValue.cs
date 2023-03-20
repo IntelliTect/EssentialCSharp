@@ -1,16 +1,15 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter11.Listing11_06
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter11.Listing11_06;
+
+#region INCLUDE
+using System;
+public class Program
 {
-    #region INCLUDE
-    using System;
-    public class Program
+    public static void Main()
     {
-        public static void Main()
-        {
-            // int.MaxValue equals 2147483647
-            int n = int.MaxValue;
-            n = n + 1;
-            Console.WriteLine(n);
-        }
+        // int.MaxValue equals 2147483647
+        int n = int.MaxValue;
+        n = n + 1;
+        Console.WriteLine(n);
     }
-    #endregion INCLUDE
 }
+#endregion INCLUDE

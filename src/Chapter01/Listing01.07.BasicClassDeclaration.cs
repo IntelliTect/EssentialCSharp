@@ -1,9 +1,8 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_07
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_07;
+
+#region INCLUDE
+public class HelloWorld
 {
-    #region INCLUDE
-    public class HelloWorld
-    {
-        // ...
-    }
-    #endregion INCLUDE
+    // ...
 }
+#endregion INCLUDE

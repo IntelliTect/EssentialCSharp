@@ -1,12 +1,11 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_12
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_12;
+
+public class Program
 {
-    public class Program
+    public static void Main()
     {
-        public static void Main()
-        {
-            #region INCLUDE
-            string[] languages = new string[9];
-            #endregion INCLUDE
-        }
+        #region INCLUDE
+        string[] languages = new string[9];
+        #endregion INCLUDE
     }
 }

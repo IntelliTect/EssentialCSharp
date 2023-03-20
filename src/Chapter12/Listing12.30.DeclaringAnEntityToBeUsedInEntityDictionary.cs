@@ -1,23 +1,22 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_30
-{
-    using System;
-    using Listing12_29;
-    #region INCLUDE
-    public class Order : EntityBase<Guid>
-    {
-        public Order(Guid key) :
-            base(key)
-        {
-            // ...
-        }
-    }
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_30;
 
-    public class OrderFactory : IEntityFactory<Guid, Order>
+using System;
+using Listing12_29;
+#region INCLUDE
+public class Order : EntityBase<Guid>
+{
+    public Order(Guid key) :
+        base(key)
     {
-        public Order CreateNew(Guid key)
-        {
-            return new Order(key);
-        }
+        // ...
     }
-    #endregion INCLUDE
 }
+
+public class OrderFactory : IEntityFactory<Guid, Order>
+{
+    public Order CreateNew(Guid key)
+    {
+        return new Order(key);
+    }
+}
+#endregion INCLUDE

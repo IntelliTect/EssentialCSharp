@@ -1,16 +1,15 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_01
-{
-    public class Program
-    {
-        public static void Main()
-        {
-            System.Console.WriteLine("No output in this example");
-        }
-    }
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_01;
 
-    #region INCLUDE
-    public class Employee
+public class Program
+{
+    public static void Main()
     {
+        System.Console.WriteLine("No output in this example");
     }
-    #endregion INCLUDE
 }
+
+#region INCLUDE
+public class Employee
+{
+}
+#endregion INCLUDE

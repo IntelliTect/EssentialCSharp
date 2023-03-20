@@ -1,37 +1,36 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_07
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_07;
+
+delegate void TemperatureChangedHandler(Program one, TemperatureEventArgs two);
+
+public class Program
 {
-    delegate void TemperatureChangedHandler(Program one, TemperatureEventArgs two);
+    private static readonly TemperatureChangedHandler OnTemperatureChanged = delegate { };
 
-    public class Program
+    public void Main()
     {
-        private static readonly TemperatureChangedHandler OnTemperatureChanged = delegate { };
-
-        public void Main()
+        #region INCLUDE
+        // Not thread safe
+        #region HIGHLIGHT
+        if (OnTemperatureChanged != null)
+        #endregion HIGHLIGHT
         {
-            #region INCLUDE
-            // Not thread safe
-            #region HIGHLIGHT
-            if (OnTemperatureChanged != null)
-            #endregion HIGHLIGHT
-            {
-                // Call subscribers
-                OnTemperatureChanged(
-                    this, new TemperatureEventArgs(value));
-            }
-            #endregion INCLUDE
+            // Call subscribers
+            OnTemperatureChanged(
+                this, new TemperatureEventArgs(value));
         }
-
-        // Justification: Lowercase to simulate the value keyword from a setter.
-#pragma warning disable IDE1006 // Naming Styles
-        public object? value { get; set; }
-        #pragma warning restore IDE1006 // Naming Styles
+        #endregion INCLUDE
     }
 
-    class TemperatureEventArgs
+    // Justification: Lowercase to simulate the value keyword from a setter.
+#pragma warning disable IDE1006 // Naming Styles
+    public object? value { get; set; }
+    #pragma warning restore IDE1006 // Naming Styles
+}
+
+class TemperatureEventArgs
+{
+    public TemperatureEventArgs(object? _)
     {
-        public TemperatureEventArgs(object? _)
-        {
-            // ...
-        }
+        // ...
     }
 }

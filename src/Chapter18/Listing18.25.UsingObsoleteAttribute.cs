@@ -1,17 +1,16 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_25
-{
-    #region INCLUDE
-    public class Program
-    {
-        public static void Main()
-        {
-            ObsoleteMethod();
-        }
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_25;
 
-        [Obsolete]
-        public static void ObsoleteMethod()
-        {
-        }
+#region INCLUDE
+public class Program
+{
+    public static void Main()
+    {
+        ObsoleteMethod();
     }
-    #endregion INCLUDE
+
+    [Obsolete]
+    public static void ObsoleteMethod()
+    {
+    }
 }
+#endregion INCLUDE

@@ -3,42 +3,41 @@
 // Disabled pending introductin to object initializers
 #pragma warning disable IDE0017 
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_17
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_17;
+
+#region INCLUDE
+public class Program
 {
-    #region INCLUDE
-    public class Program
+    public static void Main()
     {
-        public static void Main()
-        {
-            Employee employee = new();
+        Employee employee = new();
 
-            // Call the FirstName property's setter
-            employee.FirstName = "Inigo";
+        // Call the FirstName property's setter
+        employee.FirstName = "Inigo";
 
-            // Call the FirstName property's getter
-            System.Console.WriteLine(employee.FirstName);
-        }
+        // Call the FirstName property's getter
+        System.Console.WriteLine(employee.FirstName);
     }
-
-    public class Employee
-    {
-        #region HIGHLIGHT
-        // FirstName property
-        public string FirstName
-        {
-            get
-            {
-                return _FirstName;
-            }
-            set
-            {
-                _FirstName = value;
-            }
-        }
-        private string _FirstName;
-        #endregion HIGHLIGHT
-
-        // ...
-    }
-    #endregion INCLUDE
 }
+
+public class Employee
+{
+    #region HIGHLIGHT
+    // FirstName property
+    public string FirstName
+    {
+        get
+        {
+            return _FirstName;
+        }
+        set
+        {
+            _FirstName = value;
+        }
+    }
+    private string _FirstName;
+    #endregion HIGHLIGHT
+
+    // ...
+}
+#endregion INCLUDE

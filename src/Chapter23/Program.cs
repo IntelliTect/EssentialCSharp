@@ -1,9 +1,8 @@
-﻿namespace Chapter21
+﻿namespace Chapter21;
+
+class Program
 {
-    class Program
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-        }
     }
 }

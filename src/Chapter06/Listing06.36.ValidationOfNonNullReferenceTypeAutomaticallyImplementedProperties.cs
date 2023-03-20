@@ -1,20 +1,19 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_36
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_36;
+
+using System;
+
+#region INCLUDE
+public class Employee
 {
-    using System;
-
-    #region INCLUDE
-    public class Employee
+    public Employee(string name)
     {
-        public Employee(string name)
-        {
-            #region HIGHLIGHT
-            Name = name ?? throw new ArgumentNullException(nameof(name));
-            #endregion HIGHLIGHT
-        }
-
         #region HIGHLIGHT
-        public string Name { get; }
+        Name = name ?? throw new ArgumentNullException(nameof(name));
         #endregion HIGHLIGHT
     }
-    #endregion INCLUDE
+
+    #region HIGHLIGHT
+    public string Name { get; }
+    #endregion HIGHLIGHT
 }
+#endregion INCLUDE

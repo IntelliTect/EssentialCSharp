@@ -1,12 +1,11 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_60
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_60;
+
+public class Program
 {
-    public class Program
+    public static void Main()
     {
-        public static void Main()
-        {
-            #region INCLUDE
-            #pragma warning disable CS1030
-            #endregion INCLUDE
-        }
+        #region INCLUDE
+        #pragma warning disable CS1030
+        #endregion INCLUDE
     }
 }

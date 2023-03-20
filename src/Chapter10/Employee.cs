@@ -1,6 +1,5 @@
-﻿namespace Chapter10
+﻿namespace Chapter10;
+
+class Employee
 {
-    class Employee
-    {
-    }
 }

@@ -1,12 +1,11 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_14
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Listing03_14;
+
+public class Program
 {
-    public class Program
+    public static void Main()
     {
-        public static void Main()
-        {
-            #region INCLUDE
-            int[,] cells = new int[3,3];
-            #endregion INCLUDE
-        }
+        #region INCLUDE
+        int[,] cells = new int[3,3];
+        #endregion INCLUDE
     }
 }

@@ -8,62 +8,61 @@
 #pragma warning disable IDE0044
 
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_15
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_15;
+
+#region INCLUDE
+public class Employee
 {
-    #region INCLUDE
-    public class Employee
+    public string FirstName;
+    public string LastName;
+    public string? Salary;
+    // Working de-crypted passwords for elucidation only
+    // this is not recommended.
+    // Uninitialized; pending explanation of constructors
+    #region HIGHLIGHT
+    private string Password;  
+    private bool IsAuthenticated;
+    #endregion HIGHLIGHT
+
+    #region HIGHLIGHT
+    public bool Logon(string password)
     {
-        public string FirstName;
-        public string LastName;
-        public string? Salary;
-        // Working de-crypted passwords for elucidation only
-        // this is not recommended.
-        // Uninitialized; pending explanation of constructors
-        #region HIGHLIGHT
-        private string Password;  
-        private bool IsAuthenticated;
-        #endregion HIGHLIGHT
-
-        #region HIGHLIGHT
-        public bool Logon(string password)
+        if(Password == password)
         {
-            if(Password == password)
-            {
-                IsAuthenticated = true;
-            }
-            return IsAuthenticated;
+            IsAuthenticated = true;
         }
-
-        public bool GetIsAuthenticated()
-        {
-            return IsAuthenticated;
-        }
-        #endregion HIGHLIGHT
-        // ...
+        return IsAuthenticated;
     }
 
-    public class Program
+    public bool GetIsAuthenticated()
     {
-        public static void Main()
-        {
-            Employee employee = new();
-
-            employee.FirstName = "Inigo";
-            employee.LastName = "Montoya";
-
-            // ...
-
-            
-            #if COMPILEERROR // EXCLUDE
-            #region HIGHLIGHT
-            // ERROR: Password is private, so it cannot be
-            // accessed from outside the class
-            Console.WriteLine(
-               "Password = {0}", employee.Password);
-            #endregion HIGHLIGHT
-            #endif // COMPILEERROR // EXCLUDE
-        }
-        // ...
+        return IsAuthenticated;
     }
-    #endregion INCLUDE
+    #endregion HIGHLIGHT
+    // ...
 }
+
+public class Program
+{
+    public static void Main()
+    {
+        Employee employee = new();
+
+        employee.FirstName = "Inigo";
+        employee.LastName = "Montoya";
+
+        // ...
+
+        
+        #if COMPILEERROR // EXCLUDE
+        #region HIGHLIGHT
+        // ERROR: Password is private, so it cannot be
+        // accessed from outside the class
+        Console.WriteLine(
+           "Password = {0}", employee.Password);
+        #endregion HIGHLIGHT
+        #endif // COMPILEERROR // EXCLUDE
+    }
+    // ...
+}
+#endregion INCLUDE

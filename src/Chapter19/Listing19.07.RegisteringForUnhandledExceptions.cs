@@ -1,58 +1,57 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_07
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_07;
+
+#region INCLUDE
+using System;
+using System.Diagnostics;
+using System.Threading;
+
+public class Program
 {
-    #region INCLUDE
-    using System;
-    using System.Diagnostics;
-    using System.Threading;
+    private static Stopwatch Clock { get; } = new Stopwatch();
 
-    public class Program
+    public static void Main()
     {
-        private static Stopwatch Clock { get; } = new Stopwatch();
-
-        public static void Main()
+        try
         {
-            try
-            {
-                Clock.Start();
-                #region HIGHLIGHT
-                // Register a callback to receive notifications
-                // of any unhandled exception
+            Clock.Start();
+            #region HIGHLIGHT
+            // Register a callback to receive notifications
+            // of any unhandled exception
 
-                AppDomain.CurrentDomain.UnhandledException +=
-                  (s, e) =>
-                  {
-                      Message("Event handler starting");
-                      Delay(4000);
-                  };
+            AppDomain.CurrentDomain.UnhandledException +=
+              (s, e) =>
+              {
+                  Message("Event handler starting");
+                  Delay(4000);
+              };
 #endregion HIGHLIGHT
-                Thread thread = new Thread(() =>
-                {
-                    Message("Throwing exception.");
-                    throw new Exception();
-                });
-                thread.Start();
-                
-                Delay(2000);
-            }
-            finally
+            Thread thread = new Thread(() =>
             {
-                Message("Finally block running.");
-            }
+                Message("Throwing exception.");
+                throw new Exception();
+            });
+            thread.Start();
+            
+            Delay(2000);
         }
-
-        static void Delay(int i)
+        finally
         {
-            Message($"Sleeping for {i} ms");
-            Thread.Sleep(i);
-            Message("Awake");
-        }
-
-        static void Message(string text)
-        {
-            Console.WriteLine("{0}:{1:0000}:{2}",
-                Thread.CurrentThread.ManagedThreadId,
-                Clock.ElapsedMilliseconds, text);
+            Message("Finally block running.");
         }
     }
-#endregion INCLUDE
+
+    static void Delay(int i)
+    {
+        Message($"Sleeping for {i} ms");
+        Thread.Sleep(i);
+        Message("Awake");
+    }
+
+    static void Message(string text)
+    {
+        Console.WriteLine("{0}:{1:0000}:{2}",
+            Thread.CurrentThread.ManagedThreadId,
+            Clock.ElapsedMilliseconds, text);
+    }
 }
+#endregion INCLUDE

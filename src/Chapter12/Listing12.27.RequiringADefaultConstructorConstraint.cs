@@ -1,39 +1,38 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_26
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_26;
+
+using System;
+using System.Collections.Generic;
+#region INCLUDE
+public class EntityBase<TKey>
+    where TKey: notnull
 {
-    using System;
-    using System.Collections.Generic;
-    #region INCLUDE
-    public class EntityBase<TKey>
-        where TKey: notnull
+    public EntityBase(TKey key)
     {
-        public EntityBase(TKey key)
-        {
-            Key = key;
-        }
-        
-        public TKey Key { get; set; }
+        Key = key;
     }
-
-    public class EntityDictionary<TKey, TValue> :
-        Dictionary<TKey, TValue>
-        where TKey : IComparable<TKey>, IFormattable
-        #region HIGHLIGHT
-        where TValue : EntityBase<TKey>, new()
-        #endregion HIGHLIGHT
-    {
-        public TValue MakeValue(TKey key)
-        {
-            #region HIGHLIGHT
-            TValue newEntity = new TValue
-            {
-            #endregion HIGHLIGHT
-                Key = key
-            };
-            Add(newEntity.Key, newEntity);
-            return newEntity;
-        }
-
-        // ...
-    }
-    #endregion INCLUDE
+    
+    public TKey Key { get; set; }
 }
+
+public class EntityDictionary<TKey, TValue> :
+    Dictionary<TKey, TValue>
+    where TKey : IComparable<TKey>, IFormattable
+    #region HIGHLIGHT
+    where TValue : EntityBase<TKey>, new()
+    #endregion HIGHLIGHT
+{
+    public TValue MakeValue(TKey key)
+    {
+        #region HIGHLIGHT
+        TValue newEntity = new TValue
+        {
+        #endregion HIGHLIGHT
+            Key = key
+        };
+        Add(newEntity.Key, newEntity);
+        return newEntity;
+    }
+
+    // ...
+}
+#endregion INCLUDE

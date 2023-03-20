@@ -1,22 +1,21 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_14
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_14;
+
+#region INCLUDE
+interface IPair<TFirst, TSecond>
 {
-    #region INCLUDE
-    interface IPair<TFirst, TSecond>
-    {
-        TFirst First { get; set; }
-        TSecond Second { get; set; }
-    }
-
-    public struct Pair<TFirst, TSecond> : IPair<TFirst, TSecond>
-    {
-        public Pair(TFirst first, TSecond second)
-        {
-            First = first;
-            Second = second;
-        }
-
-        public TFirst First { get; set; }
-        public TSecond Second { get; set; }
-    }
-    #endregion INCLUDE
+    TFirst First { get; set; }
+    TSecond Second { get; set; }
 }
+
+public struct Pair<TFirst, TSecond> : IPair<TFirst, TSecond>
+{
+    public Pair(TFirst first, TSecond second)
+    {
+        First = first;
+        Second = second;
+    }
+
+    public TFirst First { get; set; }
+    public TSecond Second { get; set; }
+}
+#endregion INCLUDE
