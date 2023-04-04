@@ -26,7 +26,13 @@
     <Compile Update="Listing03.02.DereferencingAnUnassignedVariable.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
-    <Compile Update="Table03.03.CommonArrayCodingErrors.cs">
+    <Compile Update="Table03 - Copy.03.b.CommonArrayCodingErrors.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Update="Table03.03.a.CommonArrayCodingErrors.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Update="Table03.03.b.CommonArrayCodingErrors.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
   </ItemGroup>
