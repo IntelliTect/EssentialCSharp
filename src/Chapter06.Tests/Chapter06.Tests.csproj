@@ -6,7 +6,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Scripting" Version="4.4.0" />
     <ProjectReference Include="..\Chapter06\Chapter06.csproj" />
-    <Compile Include="..\Shared\CompilerAssert.cs" Link="CompilerAssert.cs" />
+    <Compile Include="..\Shared\Tests\CompilerAssert.cs" Link="CompilerAssert.cs" />
     <PackageReference Update="coverlet.collector" Version="3.2.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>

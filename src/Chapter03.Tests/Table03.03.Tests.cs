@@ -20,8 +20,7 @@ public class ArrayHighlightsTests
     /* 9. */ [DataRow(nameof(CommonArayCodingErrors.MultiDimensionalArrayWithInconsistentSize), "CS0847")]
     public async Task ParseAndCompile(string targetMethod, params string[] errorIds)
     {
-        // TODO: await CompilerAssert.CompileAsync("Table03.03.CommonArrayCodingErrors.cs", errorIds,)
-        await CompilerAssertOld.Compile2Async("Table03.03.CommonArrayCodingErrors.cs", errorIds, targetMethod);
+        await CompilerAssert.CompileAsync("Table03.03.CommonArrayCodingErrors.cs", errorIds);
     }
 
     // 6.
