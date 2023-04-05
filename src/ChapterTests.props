@@ -17,7 +17,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
     <PackageReference Update="coverlet.msbuild" Version="3.2.0" />
-    <PackageReference Include="Microsoft.CodeAnalysis" Version="4.4.0" />
+    <PackageReference Include="Microsoft.CodeAnalysis" Version="4.5.0" />
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp.SourceGenerators.Testing.MSTest" Version="1.1.1" />
     <!--<Using Include="Microsoft.VisualStudio.TestTools.UnitTesting"/>-->
   </ItemGroup>
