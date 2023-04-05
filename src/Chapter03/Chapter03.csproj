@@ -22,18 +22,4 @@
   <ItemGroup>
     <None Include="Listing03.04.TheCSharpEquivalentOfCompilerGeneratedCILCodeForAValueTupleReturn.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Compile Update="Listing03.02.DereferencingAnUnassignedVariable.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
-    <Compile Update="Table03 - Copy.03.b.CommonArrayCodingErrors.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
-    <Compile Update="Table03.03.a.CommonArrayCodingErrors.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
-    <Compile Update="Table03.03.b.CommonArrayCodingErrors.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
-  </ItemGroup>
 </Project>
