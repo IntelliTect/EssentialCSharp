@@ -49,7 +49,6 @@ public static class CompilerAssert
         test.DisabledDiagnostics.Add("CS1587"); // XML comment is not placed on a valid language element
         test.DisabledDiagnostics.Add("CS1591"); // Missing XML comment for publicly visible type or member 'Type_or_Member'
 
-
         foreach (var errorId in expectedErrorIds)
         {
             test.ExpectedDiagnostics.Add(
