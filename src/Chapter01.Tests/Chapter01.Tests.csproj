@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
       <ChapterNumber>01</ChapterNumber>
   </PropertyGroup>
@@ -10,7 +10,7 @@
     <ProjectReference Include="..\Chapter01\Chapter01.csproj" />
   </ItemGroup>
   <ItemGroup>
-      <PackageReference Include="IntelliTect.Multitool" Version="1.3.0" />
+      <PackageReference Include="IntelliTect.Multitool" Version="1.3.1" />
       <PackageReference Update="coverlet.collector" Version="3.2.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
