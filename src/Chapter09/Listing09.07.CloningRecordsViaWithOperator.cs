@@ -1,5 +1,5 @@
 ﻿
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_06A;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_07;
 
 using AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_01;
 #region INCLUDE
