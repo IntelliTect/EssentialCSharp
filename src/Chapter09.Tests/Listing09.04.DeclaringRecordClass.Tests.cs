@@ -1,6 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_04.Tests;
 using AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_01;
-using AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_07;
+using AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_06;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 [TestClass]
@@ -23,7 +23,6 @@ public partial class CoordinateTests
             new Angle(180, 0, 0), new Angle(180, 0, 0));
         NamedCoordinate coordinate2 = new(
             coordinate1.Longitude, coordinate1.Latitude, "Test");
-        
 
         Assert.AreNotEqual<Type>(coordinate1.GetType(), coordinate2.GetType());
     }
