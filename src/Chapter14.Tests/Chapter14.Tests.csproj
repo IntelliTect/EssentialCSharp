@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <ChapterNumber>14</ChapterNumber>
   </PropertyGroup>
@@ -10,7 +10,7 @@
     <ProjectReference Include="..\Chapter14\Chapter14.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Update="coverlet.collector" Version="3.2.0">
+    <PackageReference Update="coverlet.collector" Version="6.0.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
