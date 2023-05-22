@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <ChapterNumber>06</ChapterNumber>
   </PropertyGroup>
@@ -6,7 +6,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Scripting" Version="4.4.0" />
     <ProjectReference Include="..\Chapter06\Chapter06.csproj" />
-    <PackageReference Update="coverlet.collector" Version="3.2.0">
+    <PackageReference Update="coverlet.collector" Version="6.0.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
