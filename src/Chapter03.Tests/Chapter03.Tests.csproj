@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <ChapterNumber>03</ChapterNumber>
   </PropertyGroup>
@@ -14,7 +14,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
-    <PackageReference Update="Microsoft.NET.Test.Sdk" Version="17.5.0" />
+    <PackageReference Update="Microsoft.NET.Test.Sdk" Version="17.6.0" />
     <PackageReference Update="MSTest.TestAdapter" Version="3.0.2" />
     <PackageReference Update="MSTest.TestFramework" Version="3.0.2" />
   </ItemGroup>
