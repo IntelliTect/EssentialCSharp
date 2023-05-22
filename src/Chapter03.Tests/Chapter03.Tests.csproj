@@ -4,7 +4,7 @@
   </PropertyGroup>
   <Import Project="..\ChapterTests.props" />
   <ItemGroup>
-    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Scripting" Version="4.4.0" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Scripting" Version="4.6.0" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Chapter03\Chapter03.csproj" />
@@ -14,6 +14,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
+    <PackageReference Update="Microsoft.CodeAnalysis" Version="4.6.0" />
     <PackageReference Update="Microsoft.NET.Test.Sdk" Version="17.6.0" />
     <PackageReference Update="MSTest.TestAdapter" Version="3.0.2" />
     <PackageReference Update="MSTest.TestFramework" Version="3.0.2" />
