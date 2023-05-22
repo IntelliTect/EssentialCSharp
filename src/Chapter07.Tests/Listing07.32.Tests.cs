@@ -18,7 +18,7 @@ public class ProgramTests
         {
             command = item;
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                "Command Help...", () => Program.Main(command));
+                "Command Help...", () => Program.Main(new[] { command }));
         }
     }
 
@@ -31,7 +31,7 @@ public class ProgramTests
         {
             command = $"{item}";
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                $"Catalog '{fileName}'...", () => Program.Main(command, fileName));
+                $"Catalog '{fileName}'...", () => Program.Main(new[] { command, fileName }));
         }
     }
 
@@ -44,7 +44,7 @@ public class ProgramTests
         {
             command = $"{item}";
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-                $"Copy '{sourceFile}' '{targetFile}'...", () => Program.Main(command, sourceFile, targetFile));
+                $"Copy '{sourceFile}' '{targetFile}'...", () => Program.Main(new[] { command, sourceFile, targetFile }));
         }
     }
 
