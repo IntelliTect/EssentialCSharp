@@ -5,18 +5,18 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_32;
 public class Program
 {
     #region INCLUDE
-    public static void Main(params string[] args)
+    public static void Main(string[] args)
     {
-        // For simplicitly, commands are assumed
+        // For simplicity, options are assumed
         // to all be lower case.
 
-        // The first argument is the command and is
+        // The first argument is the option and is
         // identified by a '/', '-', or '--' prefix.
 
         switch (args)
         {
             case ["--help" or ['/' or '-', 'h' or '?']]:
-                // e.g. /?, -?, /h, -h, --help
+                // e.g. --help, /h, -h, /?, -? 
                 DisplayHelp();
                 break;
             case [ ['/' or '-', char command], ..]:
