@@ -1,6 +1,7 @@
 using AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_01;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_05;
+
 #region INCLUDE
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -12,8 +13,7 @@ public class Coordinate : IEquatable<Coordinate>
     public Angle Longitude { get; init; }
     public Angle Latitude { get; init; }
 
-    public Coordinate(Angle Longitude, Angle Latitude) :
-        base()
+    public Coordinate(Angle Longitude, Angle Latitude) : base()
     {
         this.Longitude = Longitude;
         this.Latitude = Latitude;
@@ -42,11 +42,14 @@ public class Coordinate : IEquatable<Coordinate>
         return true;
     }
 
-    public static bool operator !=(Coordinate? left, Coordinate? right) => 
-        !(left == right);
+    public static bool operator !=(
+        Coordinate? left, Coordinate? right) => 
+            !(left == right);
 
-    public static bool operator ==(Coordinate? left, Coordinate? right) => 
-        ReferenceEquals(left, right) || (left?.Equals(right) ?? false);
+    public static bool operator ==(
+        Coordinate? left, Coordinate? right) => 
+            ReferenceEquals(left, right) || 
+                (left?.Equals(right) ?? false);
 
     public override int GetHashCode()
     {
@@ -70,7 +73,8 @@ public class Coordinate : IEquatable<Coordinate>
             && EqualityComparer<Angle>.Default.Equals(
                 Latitude, other!.Latitude));
 
-    public void Deconstruct(out Angle Longitude, out Angle Latitude)
+    public void Deconstruct(
+        out Angle Longitude, out Angle Latitude)
     {
         Longitude = this.Longitude;
         Latitude = this.Latitude;
