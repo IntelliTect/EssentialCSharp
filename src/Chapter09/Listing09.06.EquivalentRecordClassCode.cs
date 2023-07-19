@@ -1,6 +1,6 @@
-using AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_01;
+using AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_02;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_05;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_06;
 #region INCLUDE
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -91,5 +91,4 @@ public class Coordinate : IEquatable<Coordinate>
         Latitude = original.Latitude;
     }
 }
-
 #endregion INCLUDE

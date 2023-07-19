@@ -1,7 +1,6 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_12;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_26;
 
 using System;
-
 public class Program
 {
     public static void Main()

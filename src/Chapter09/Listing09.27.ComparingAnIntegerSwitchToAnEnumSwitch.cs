@@ -1,7 +1,6 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_13;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_27;
 
-using Listing09_15;
-
+using AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_28;
 public class Program
 {
     public static void SwitchInt()

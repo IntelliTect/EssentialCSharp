@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_08;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_22;
 
 #region INCLUDE
 public readonly record struct Angle(

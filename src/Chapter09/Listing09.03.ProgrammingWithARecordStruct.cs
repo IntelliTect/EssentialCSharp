@@ -1,7 +1,7 @@
-﻿
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_02;
+using AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_02;
 
-using AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_01;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_03;
+
 #region INCLUDE
 using System.Diagnostics;
 
@@ -29,7 +29,7 @@ public class Program
             Trace.Assert(angle.Seconds == angleData.Seconds);
         }
 
-        Angle copy = new(degrees, minutes, seconds);
+        Angle copy = new(degrees, minutes, seconds);       
         // Records provide a custom equality operator.
         Trace.Assert(angle == copy);
 
