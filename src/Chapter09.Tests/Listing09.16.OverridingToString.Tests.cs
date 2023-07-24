@@ -7,7 +7,7 @@ using AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_16;
 public class OverridingToStringTest
 {
     [TestMethod]
-    public void Override_ToString_Cases()
+    public void Override_ToString_MatchesExpectedValue()
     {
         Angle angle1 = new Angle(120, 20, 20, "AngleName");
         Angle angle2 = new Angle(320, 10, 10, null);

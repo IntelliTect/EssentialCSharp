@@ -29,11 +29,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_21
         public bool Equals(Foo? other)
         {
             if (other is null) return false;
-
             // Step 5
-            #region EXCLUDE
             // return (this.Number, this.Name) == (other.Number, other.Name);
-            #endregion EXCLUDE
             return true;
         }
         #endregion INCLUDE

@@ -7,7 +7,7 @@ using AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_04;
 public class PatternMatchingTest
 {
     [TestMethod]
-    public void Pattern_Matching()
+    public void Deconstructor_CorrespondingParameters_EnablePatternMatching()
     {
         (int degrees, int minutes, int seconds, string name) = (
             90, 0, 0, null);

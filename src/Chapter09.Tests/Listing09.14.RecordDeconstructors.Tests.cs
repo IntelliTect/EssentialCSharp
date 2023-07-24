@@ -7,7 +7,7 @@ using AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_14;
 public class DeconstructorTest
 {
     [TestMethod]
-    public void Calling_Deconstructor()
+    public void DeconstructorValues_MatchAngleValues()
     {
         (int degrees, int minutes, int seconds) = (
             90, 0, 0);

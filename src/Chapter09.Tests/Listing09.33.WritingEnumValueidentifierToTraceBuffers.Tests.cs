@@ -15,7 +15,7 @@ enum ConnectionState
 public class TraceBufferTest
 {
     [TestMethod]
-    public void TraceBufferOutput_Matches_Expected()
+    public void TraceBuffer_Output_MatchesExpected()
     {
         using StringWriter stringWriter = new StringWriter();
         TraceListener traceListener = new TextWriterTraceListener(stringWriter);

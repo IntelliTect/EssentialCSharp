@@ -7,7 +7,7 @@ using AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_12;
 public class RecordConstructorTest
 {
     [TestMethod]
-    public void Initializing_Records()
+    public void Records_AdditionalConstructors_AllowDiffParameters()
     {
         Angle angle1 = new Angle(120, 10, 10);
         Angle angle2 = new Angle("120", "10", "10");

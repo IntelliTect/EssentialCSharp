@@ -7,7 +7,7 @@ using AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_09;
 public class ReadonlyStructTests
 {
     [TestMethod]
-    public void Method_With_Readonly_Modifier()
+    public void MoveMethod_Returns_New_Angle()
     {
         Angle angle1 = new Angle(90, 10, 5);
         Angle angle2 = angle1.Move(130, 25, 10);
