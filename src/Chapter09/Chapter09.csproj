@@ -20,4 +20,7 @@
   <ItemGroup>
     <None Include="Listing09.13.RecordStructInitialization.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="NPOI" Version="2.6.1" />
+  </ItemGroup>
 </Project>

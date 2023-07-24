@@ -1,10 +1,13 @@
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_15.Tests;
+
 using AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_04;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_15;
 
-public class Program
+[TestClass]
+public class PatternMatchingTest
 {
-    public static void Main()
+    [TestMethod]
+    public void Pattern_Matching()
     {
         (int degrees, int minutes, int seconds, string name) = (
             90, 0, 0, null);
@@ -14,11 +17,10 @@ public class Program
 
         // Records have a deconstructor using the 
         // positional parameters.
-        #region INCLUDE
         if (angle is (int, int, int, string) angleData)
         {
-            // ...
+            // ..
+            Assert.AreEqual(angle, angleData);
         }
-        #endregion INCLUDE
     }
 }

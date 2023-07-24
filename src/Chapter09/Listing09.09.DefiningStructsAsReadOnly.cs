@@ -2,9 +2,9 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_09;
 
 public record struct Angle
 {
-    public int Degrees { get; }
-    public int Minutes { get; }
-    public int Seconds { get; }
+    public int Degrees { get; set;  }
+    public int Minutes { get; set;  }
+    public int Seconds { get; set;  }
 
     public Angle(int Degrees, int Minutes, int Seconds)
     {
