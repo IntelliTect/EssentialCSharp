@@ -6,7 +6,7 @@ using AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_06;
 public class CoordinateTests
 {
     [TestMethod]
-    public void With_Coordinate_IsReadOnly()
+    public void With_Coordinate_AreEqual()
     {
         Coordinate coordinate1 = new(
             new Angle(180, 0, 0), new Angle(180, 0, 0));
