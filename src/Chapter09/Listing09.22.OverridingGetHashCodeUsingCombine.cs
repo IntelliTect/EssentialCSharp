@@ -26,8 +26,7 @@ public class Angle
 
     #region INCLUDE
     public override int GetHashCode() =>
-    HashCode.Combine(Degrees,
-        Minutes, Seconds);
+        HashCode.Combine(Degrees, Minutes, Seconds);
     #endregion INCLUDE
 
     public override bool Equals(object? obj) =>
