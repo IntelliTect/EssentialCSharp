@@ -15,7 +15,7 @@ public class DeconstructorTest
         // The constructor is generated using positional parameters
         Angle angle = new(degrees, minutes, seconds);
 
-        angle.Deconstruct(out int d, out int m, out int s);
+        angle.Deconstruct(out int degrees, out int minutes, out int seconds);
 
         Assert.AreEqual(degrees, d);
         Assert.AreEqual(minutes, m);
