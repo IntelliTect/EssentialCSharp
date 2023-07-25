@@ -14,8 +14,8 @@ public class AngleTests
     [TestMethod]
     public void Equals_CopyWithSameDegreesMinutesSeconds_AreEqual()
     {
-        Angle angle1 = new(0, 0, 0);
-        Angle angle2 = new(0, 0, 0);
+        Angle angle1 = new(1, 2, 3);
+        Angle angle2 = new(1, 2, 3);
         Assert.AreEqual<Angle>(angle1, angle2);
     }
 
