@@ -36,10 +36,10 @@ public class Angle
     {
         if (other == null) return false;
         return
-        EqualityComparer<int>.Default.Equals(Degrees, other.Degrees)
-        && EqualityComparer<int>.Default.Equals(Minutes, other.Minutes)
-        && EqualityComparer<int>.Default.Equals(Seconds, other.Seconds)
-        && EqualityComparer<string>.Default.Equals(Name, other.Name);
+            EqualityComparer<int>.Default.Equals(Degrees, other.Degrees)
+            && EqualityComparer<int>.Default.Equals(Minutes, other.Minutes)
+            && EqualityComparer<int>.Default.Equals(Seconds, other.Seconds)
+            && EqualityComparer<string>.Default.Equals(Name, other.Name);
     }
     public void Deconstruct(
         out int Degrees, out int Minutes, out int Seconds, out string? Name)
