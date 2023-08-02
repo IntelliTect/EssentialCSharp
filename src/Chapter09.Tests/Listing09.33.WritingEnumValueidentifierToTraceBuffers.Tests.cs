@@ -3,13 +3,6 @@ using System.Diagnostics;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_33.Tests;
 
-enum ConnectionState
-{
-    Disconnected,
-    Connecting,
-    Connected,
-    Disconnecting
-}
 
 [TestClass]
 public class TraceBufferTest
