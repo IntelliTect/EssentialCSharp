@@ -8,7 +8,8 @@ int Degrees, int Minutes, int Seconds, string? Name = null)
     public Angle(
         string degrees, string minutes, string seconds)
         : this(int.Parse(degrees),
-              int.Parse(minutes), int.Parse(seconds))
+               int.Parse(minutes), 
+               int.Parse(seconds))
     { }
     #endregion INCLUDE
 }
