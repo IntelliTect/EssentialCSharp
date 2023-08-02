@@ -2,7 +2,6 @@ using System.Runtime.CompilerServices;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_18;
 
-[CompilerGenerated]
 public class Coordinate : IEquatable<Coordinate>
 {
 
