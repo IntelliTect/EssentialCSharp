@@ -9,16 +9,13 @@ public class DeconstructorTest
     [TestMethod]
     public void DeconstructorValues_MatchAngleValues()
     {
-        (int degrees, int minutes, int seconds) = (
-            90, 0, 0);
-
         // The constructor is generated using positional parameters
-        Angle angle = new(degrees, minutes, seconds);
+        Angle angle = new(90, 10, 10);
 
         angle.Deconstruct(out int degrees, out int minutes, out int seconds);
 
-        Assert.AreEqual(degrees, d);
-        Assert.AreEqual(minutes, m);
-        Assert.AreEqual(seconds, s);
+        Assert.AreEqual(degrees, degrees);
+        Assert.AreEqual(minutes, minutes);
+        Assert.AreEqual(seconds, seconds);
     }
 }

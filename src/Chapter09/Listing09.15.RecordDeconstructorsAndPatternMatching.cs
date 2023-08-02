@@ -6,11 +6,8 @@ public class Program
 {
     public static void Main()
     {
-        (int degrees, int minutes, int seconds, string name) = (
-            90, 0, 0, null);
-
         // The constructor is generated using positional parameters
-        Angle angle = new(degrees, minutes, seconds, name);
+        Angle angle = new(90, 0, 0, null);
 
         // Records have a deconstructor using the 
         // positional parameters.

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_20
 {
-    public class Foo : IEquality<Foo>
+    public class Foo : IEquatable<Foo>
     {
         public int Number { get; init; }
         public string Name { get; init; }
@@ -56,10 +56,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_20
             num = this.Number;
             name = this.Name;
         }
-    }
-
-    public interface IEquality<T>
-    {
-        bool Equals(T? other);
     }
 }
