@@ -2,7 +2,6 @@ using System.Runtime.CompilerServices;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_19;
 
-[CompilerGenerated]
 public readonly struct Angle : IEquatable<Angle>
 {
     public int Degrees { get; init; }
