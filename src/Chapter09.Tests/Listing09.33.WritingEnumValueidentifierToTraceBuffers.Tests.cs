@@ -3,6 +3,7 @@ using System.Diagnostics;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_33.Tests;
 
+using AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_33;
 
 [TestClass]
 public class TraceBufferTest
@@ -15,8 +16,7 @@ public class TraceBufferTest
 
         Trace.Listeners.Add(traceListener);
 
-        System.Diagnostics.Trace.WriteLine(
-            $"The connection is currently {ConnectionState.Disconnecting}");
+        Program.Main();
 
         string traceOutput = stringWriter.ToString();
         string expected = $"The connection is currently Disconnecting";
