@@ -10,14 +10,9 @@ public class PatternMatchingTest
     public void Deconstructor_CorrespondingParameters_EnablePatternMatching()
     {
         // The constructor is generated using positional parameters
-        Angle angle = new(90, 0, 0, null);
+        Angle angle = new(90, 0, 0, "angleName");
 
-        // Records have a deconstructor using the 
-        // positional parameters.
-        if (angle is (int, int, int, string) angleData)
-        {
-            // ..
-            Assert.AreEqual(angle, angleData);
-        }
+        // Angle object should match the pattern (int, int, int, string)
+        Assert.IsTrue(angle is (int, int, int, string) angleData);
     }
 }
