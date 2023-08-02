@@ -11,14 +11,12 @@
   <Import Project="..\Chapter.props" />
   <ItemGroup>
     <Compile Remove="Listing09.13.RecordStructInitialization.cs" />
+	<None Include="Listing09.13.RecordStructInitialization.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\Shared\Program.cs">
       <Link>Program.cs</Link>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Listing09.13.RecordStructInitialization.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="NPOI" Version="2.6.1" />
