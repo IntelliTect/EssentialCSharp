@@ -9,9 +9,9 @@ public class GetHashCodeCombineTest
         Angle angle1 = new Angle(120, 20, 20, "name");
         var testTuple = (120, 20, 20);
 
-        int hashcode1 = angle1.GetHashCode();
-        int hashcode2 = testTuple.GetHashCode();
+        int hashCode1 = angle1.GetHashCode();
+        int hashCode2 = testTuple.GetHashCode();
 
-        Assert.AreEqual(hashcode1, hashcode2);
+        Assert.AreEqual(hashCode1, hashCode2);
     }
 }
