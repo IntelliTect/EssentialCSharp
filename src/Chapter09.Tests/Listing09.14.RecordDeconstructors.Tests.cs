@@ -14,8 +14,8 @@ public class DeconstructorTest
 
         angle.Deconstruct(out int degrees, out int minutes, out int seconds);
 
-        Assert.AreEqual(degrees, degrees);
-        Assert.AreEqual(minutes, minutes);
-        Assert.AreEqual(seconds, seconds);
+        Assert.AreEqual(angle.Degrees, degrees);
+        Assert.AreEqual(angle.Minutes, minutes);
+        Assert.AreEqual(angle.Seconds, seconds);
     }
 }
