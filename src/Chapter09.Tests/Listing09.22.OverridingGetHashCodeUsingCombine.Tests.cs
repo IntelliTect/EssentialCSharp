@@ -21,9 +21,9 @@ public class GetHashCodeCombineTest
     {
         Angle angle1 = new Angle(120, 20, 20);
 
-        int hashcode1 = angle1.GetHashCode();
-        int hashcode2 = HashCode.Combine(300, 15, 15);
+        int hashCode1 = angle1.GetHashCode();
+        int hashCode2 = HashCode.Combine(300, 15, 15);
 
-        Assert.IsTrue(hashcode1 != hashcode2);
+        Assert.IsTrue(hashCode1 != hashCode2);
     }
 }
