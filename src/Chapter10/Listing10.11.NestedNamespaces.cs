@@ -1,13 +1,10 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_10
 {
     #region INCLUDE
-    // Define the namespace AddisonWesley
-    namespace AddisonWesley
+    // Define the namespace AddisonWesley.Michaelis
+    namespace AddisonWesley.Michaelis
     {
         #region HIGHLIGHT
-        // Define the namespace AddisonWesley.Michaelis
-        namespace Michaelis
-        {
             // Define the namespace
             // AddisonWesley.Michaelis.EssentialCSharp
             namespace EssentialCSharp
@@ -20,7 +17,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_10
                     // ...
                 }
         #region HIGHLIGHT
-            }
         }
         #endregion HIGHLIGHT
     }
