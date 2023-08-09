@@ -9,8 +9,7 @@ public class Program
 {
     public static void Main()
     {
-        (int degrees, int minutes, int seconds) = (
-            90, 0, 0);
+        (int degrees, int minutes, int seconds) = (90, 0, 0);
 
         // The constructor is generated using positional parameters
         Angle angle = new(degrees, minutes, seconds);
