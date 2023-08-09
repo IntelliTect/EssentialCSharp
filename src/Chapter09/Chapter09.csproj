@@ -1,12 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <ProductName>Chapter09</ProductName>
-    <ExpectedWarnings>$(ExpectedWarnings)</ExpectedWarnings>
-    <!-- CS0178: Invalid rank specifier: expected ',' or ']' -->
-    <!-- CS1513: } expected -->
-    <!-- CS1514: { expected -->
-    <!-- CS0826: No best type found for implicitly-typed array -->
-    <IgnoredWarnings>$(IgnoredWarnings),CS0178,CS1513,CS1514,CS0826</IgnoredWarnings>
   </PropertyGroup>
   <Import Project="..\Chapter.props" />
   <ItemGroup>
@@ -17,8 +11,5 @@
     <Compile Include="..\Shared\Program.cs">
       <Link>Program.cs</Link>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="NPOI" Version="2.6.1" />
   </ItemGroup>
 </Project>
