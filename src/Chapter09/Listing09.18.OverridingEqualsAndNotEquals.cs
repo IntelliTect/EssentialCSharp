@@ -4,7 +4,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_18;
 
 public class Coordinate : IEquatable<Coordinate>
 {
-
     public Angle Longitude { get; init; }
     public Angle Latitude { get; init; }
 
@@ -21,7 +20,7 @@ public class Coordinate : IEquatable<Coordinate>
     #region INCLUDE
     public static bool operator ==(Coordinate? left, Coordinate? right) =>
         ReferenceEquals(left, right) || (left?.Equals(right) ?? false);
-    #endregion INCLUDE
+    #region EXCLUDE
 
     public override int GetHashCode()
     {
@@ -77,7 +76,7 @@ public readonly struct Angle : IEquatable<Angle>
         this.Name = Name;
     }
 
-    #region INCLUDE
+    #endregion EXCLUDE
     public static bool operator !=(Angle left, Angle right) =>
         !(left == right);
     #endregion INCLUDE
