@@ -3,6 +3,7 @@
     <LangVersion>11.0</LangVersion>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <AccelerateBuildsInVisualStudio>true</AccelerateBuildsInVisualStudio>
     <ProductName Condition="'$(ProductName)'==''">Chapter$(ChapterNumber)</ProductName>
     <TreatWarningsAsErrors Condition="'$(TreatWarningsAsErrors)'==''">false</TreatWarningsAsErrors>
     <Authors>Mark Michaelis</Authors>
