@@ -19,7 +19,12 @@ public class NullabilityAttributesExamined
                 _ => null
             }) is not null;
 
-    [return: NotNullIfNotNull("text")]
+#if NET7_0_OR_GREATER // EXCLUDE
+    // nameof() on parameters is not supported prior to C# 11/.NET 7.0
+    [return: NotNullIfNotNull(nameof(text))]
+#else // EXCLUDE
+    [return: NotNullIfNotNull("text")] // EXCLUDE
+#endif // EXCLUDE
     static public string? TryGetDigitsAsText(string? text)
     {
         if (text == null) return null;
