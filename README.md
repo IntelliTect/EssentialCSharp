@@ -1,5 +1,5 @@
 # EssentialCSharp
-[![Build and Test v 12.0](https://github.com/IntelliTect/EssentialCSharp/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/IntelliTect/EssentialCSharp/actions/workflows/build-and-test.yml)
+[![Build and Test](https://github.com/IntelliTect/EssentialCSharp/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/IntelliTect/EssentialCSharp/actions/workflows/build-and-test.yml)
 
 This project contains the source code for the book **Essential C#** by Mark Michaelis (Addison-Wesley).
 
