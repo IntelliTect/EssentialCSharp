@@ -1,9 +1,9 @@
-﻿// This is pseudo code to represent the generated IL so guidelines not followed.
+// This is pseudo code to represent the generated IL so guidelines not followed.
 #pragma warning disable IDE0044 // Add readonly modifier
 #pragma warning disable IDE0060 // Remove unused parameter
 #pragma warning disable IDE1006 // Naming Styles
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_18;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_17;
 
 using System;
 #region INCLUDE
