@@ -1,7 +1,9 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_16;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_14;
 
+using System;
 #region INCLUDE
 public class Thermostat
+#region EXCLUDE
 {
     public class TemperatureArgs : System.EventArgs
     {
@@ -13,16 +15,12 @@ public class Thermostat
         public float NewTemperature { get; set; }
     }
 
-    #region HIGHLIGHT
-    public delegate void TemperatureChangeHandler(
-        object sender, TemperatureArgs newTemperature);
-
-    public event TemperatureChangeHandler?
-        OnTemperatureChange;
-    #endregion HIGHLIGHT
+    // Define the event publisher
+    public event EventHandler<TemperatureArgs> OnTemperatureChange =
+        delegate { };
+    #endregion EXCLUDE
 
     public float CurrentTemperature
-    #region EXCLUDE
     {
         get { return _CurrentTemperature; }
         set
@@ -30,16 +28,16 @@ public class Thermostat
             if(value != CurrentTemperature)
             {
                 _CurrentTemperature = value;
-                // If there are any subscribers
-                // then notify them of changes in 
-                // temperature
-                // Call subscribers
+                // If there are any subscribers,
+                // notify them of changes in 
+                // temperature by invoking said subcribers
+                #region HIGHLIGHT
                 OnTemperatureChange?.Invoke(
-                  this, new TemperatureArgs(value));
+                      this, new TemperatureArgs(value));
+                #endregion HIGHLIGHT
             }
         }
     }
-    #endregion EXCLUDE
     private float _CurrentTemperature;
 }
 #endregion INCLUDE

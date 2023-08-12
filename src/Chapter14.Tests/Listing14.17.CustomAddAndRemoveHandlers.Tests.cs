@@ -1,9 +1,9 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_19.Tests;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_17.Tests;
 
-using Listing14_19;
-using static AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_19.Thermostat;
+using Listing14_17;
+using static AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_17.Thermostat;
 
 [TestClass]
 public class ProgramTests

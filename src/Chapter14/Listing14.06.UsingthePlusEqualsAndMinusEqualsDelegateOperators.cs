@@ -1,8 +1,9 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_08;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_06;
 
 using System;
 using Listing14_01;
 using Listing14_05;
+
 public class Program
 {
     public static void Main()
@@ -15,22 +16,23 @@ public class Program
 
         Action<float> delegate1;
         Action<float> delegate2;
-        Action<float> delegate3;
+        Action<float>? delegate3;
 
         delegate1 = heater.OnTemperatureChanged;
         delegate2 = cooler.OnTemperatureChanged;
 
-        Console.WriteLine("Combine delegates using + operator:");
+        Console.WriteLine("Invoke both delegates:");
+        delegate3 = delegate1;
         #region HIGHLIGHT
-        delegate3 = delegate1 + delegate2;
+        delegate3 += delegate2;
         #endregion HIGHLIGHT
-        delegate3(60);
+        delegate3(90);
 
-        Console.WriteLine("Uncombine delegates using - operator:");
+        Console.WriteLine("Invoke only delegate2");
         #region HIGHLIGHT
-        delegate3 = (delegate3 - delegate2)!;
+        delegate3 -= delegate1;
         #endregion HIGHLIGHT
-        delegate3(60);
+        delegate3!(30);
         //...
         #endregion INCLUDE
     }
