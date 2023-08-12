@@ -34,8 +34,7 @@ public static class Program
         ConsoleColor originalColor = Console.ForegroundColor;
         List<string> data = Utility.GetData(100000).ToList();
 
-        using CancellationTokenSource cts =
-            new();
+        using CancellationTokenSource cts = new();
 
         Task task = Task.Run(() =>
         {
@@ -54,7 +53,6 @@ public static class Program
 
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("\nCompleted successfully");
-
         }
         catch (OperationCanceledException taskCanceledException)
         {
@@ -100,5 +98,3 @@ public static class Program
     }
 }
 #endregion INCLUDE
-
-

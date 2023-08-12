@@ -14,15 +14,13 @@ public class Program
             "*".PadRight(Console.WindowWidth - 1, '*');
         Console.WriteLine("Push ENTER to exit.");
 
-        CancellationTokenSource cancellationTokenSource =
-            new();
+        CancellationTokenSource cancellationTokenSource = new();
 
         // Use Task.Factory.StartNew<string>() for
         // TPL prior to .NET 4.5
         #endregion EXCLUDE
         Task task = Task.Factory.StartNew(
-            () =>
-                WritePi(cancellationTokenSource.Token),
+            () => WritePi(cancellationTokenSource.Token),
         #region HIGHLIGHT
                     TaskCreationOptions.LongRunning);
         #endregion HIGHLIGHT

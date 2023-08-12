@@ -10,8 +10,7 @@ public static class LineCounter
         if(args.Length > 1)
         {
             #region HIGHLIGHT
-            totalLineCount =
-                DirectoryCountLines(args[0], args[1]);
+            totalLineCount = DirectoryCountLines(args[0], args[1]);
             #endregion HIGHLIGHT
         }
         else if(args.Length > 0)
@@ -72,8 +71,7 @@ public static class LineCounter
         string? line;
         // This can be improved with a using statement
         // which is not yet described.
-        FileStream stream =
-            new(file, FileMode.Open);
+        FileStream stream = new(file, FileMode.Open);
         StreamReader reader = new(stream);
         line = reader.ReadLine();
         while(line is not null)

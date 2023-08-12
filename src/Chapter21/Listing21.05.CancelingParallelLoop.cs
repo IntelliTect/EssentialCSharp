@@ -29,10 +29,8 @@ public class Program
            SearchOption.AllDirectories);
 
         #region HIGHLIGHT
-        CancellationTokenSource cts =
-            new();
-        ParallelOptions parallelOptions =
-            new()
+        CancellationTokenSource cts = new();
+        ParallelOptions parallelOptions = new()
             { CancellationToken = cts.Token };
         cts.Token.Register(
             () => Console.WriteLine("Canceling..."));
@@ -81,5 +79,3 @@ public class Program
     #endregion EXCLUDE
 }
 #endregion INCLUDE
-
-

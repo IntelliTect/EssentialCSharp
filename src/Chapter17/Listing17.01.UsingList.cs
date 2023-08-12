@@ -8,7 +8,8 @@ public class Program
 {
     public static void Main()
     {
-        List<string> list = new() { "Sneezy", "Happy", "Dopey",  "Doc", "Sleepy", "Bashful",  "Grumpy"};
+        List<string> list = new() { "Sneezy", "Happy", "Dopey",  "Doc",
+                                    "Sleepy", "Bashful",  "Grumpy"};
 
         list.Sort();
 

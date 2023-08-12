@@ -10,8 +10,7 @@ public struct Nullable<T> :
     #endregion HIGHLIGHT
 {
     // ...
-    public static implicit operator Nullable<T>(T value) =>
-        new(value);
+    public static implicit operator Nullable<T>(T value) => new(value);
     public static explicit operator T(Nullable<T> value) => value!.Value;
     #region EXCLUDE
     public Nullable(T value)
