@@ -77,7 +77,7 @@ public class Cryptographer : IDisposable
             }
             else
             {
-                using (memoryStream = new MemoryStream())
+                using (memoryStream = new())
                 {
                     outputStream.CopyTo(memoryStream);
                 }

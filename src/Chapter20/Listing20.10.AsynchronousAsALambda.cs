@@ -39,8 +39,7 @@ public class Program
                 // webRequest.ContentLength to demonstrate
                 //  multiple await operators
                 using (StreamReader reader =
-                    new(
-                        response.GetResponseStream()))
+                    new(response.GetResponseStream()))
                 {
                     string text =
                     #region HIGHLIGHT
@@ -64,7 +63,7 @@ public class Program
     static public string FormatBytes(long bytes)
     {
         string[] magnitudes =
-            new string[] { "GB", "MB", "KB", "Bytes" };
+            new [] { "GB", "MB", "KB", "Bytes" };
         long max =
             (long)Math.Pow(1024, magnitudes.Length);
 
