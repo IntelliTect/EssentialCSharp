@@ -8,7 +8,7 @@ public class ProgramTests
     [TestMethod]
     public void Address_ToString()
     {
-        Address address = new Address();
+        Address address = new();
         address.StreetAddress = "111 W St";
         address.City = "City";
         address.State = "State";
@@ -23,7 +23,7 @@ public class ProgramTests
     [TestMethod]
     public void InternationalAddress_ToString_CallBaseImplementation()
     {
-        InternationalAddress internationalAddress = new InternationalAddress();
+        InternationalAddress internationalAddress = new();
         internationalAddress.StreetAddress = "111 W St";
         internationalAddress.City = "City";
         internationalAddress.State = "State";

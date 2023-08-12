@@ -30,9 +30,9 @@ public class Program
     {
         ICompareThings<Fruit> fc = new FruitComparer();
 
-        Apple apple1 = new Apple();
-        Apple apple2 = new Apple();
-        Orange orange = new Orange();
+        Apple apple1 = new();
+        Apple apple2 = new();
+        Orange orange = new();
 
         // A fruit comparer can compare apples and oranges:
         bool b1 = fc.FirstIsBetter(apple1, orange);

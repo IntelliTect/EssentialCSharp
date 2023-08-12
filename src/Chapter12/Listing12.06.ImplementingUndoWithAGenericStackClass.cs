@@ -16,7 +16,7 @@ public class Program
     public static void Sketch()
     {
         #region HIGHLIGHT
-        Stack<Cell> path = new Stack<Cell>();
+        Stack<Cell> path = new();
         #endregion HIGHLIGHT
         Cell currentPosition;
         ConsoleKeyInfo key;

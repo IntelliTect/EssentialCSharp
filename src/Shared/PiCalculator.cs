@@ -18,7 +18,7 @@ public static partial class PiCalculator
 
     public static string Calculate(int digits, int startingAt)
     {
-        DoWorkEventArgs eventArgs = new DoWorkEventArgs(digits);
+        DoWorkEventArgs eventArgs = new(digits);
 
         CalculatePi(typeof(PiCalculator), eventArgs, startingAt);
         return (string)eventArgs.Result!;

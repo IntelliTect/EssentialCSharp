@@ -53,7 +53,7 @@ public class Program
     {
         // ...
 
-        Angle angle = new Angle(25, 58, 23);
+        Angle angle = new(25, 58, 23);
         // Example 1: Simple box operation
         object objectAngle = angle;  // Box
         Console.Write(((Angle)objectAngle).Degrees);

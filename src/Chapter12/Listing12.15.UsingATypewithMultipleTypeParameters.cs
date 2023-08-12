@@ -9,7 +9,7 @@ public class Program
     {
         #region INCLUDE
         Pair<int, string> historicalEvent =
-            new Pair<int, string>(1914,
+            new(1914,
                 "Shackleton leaves for South Pole on ship Endurance");
 
         Console.WriteLine("{0}: {1}",

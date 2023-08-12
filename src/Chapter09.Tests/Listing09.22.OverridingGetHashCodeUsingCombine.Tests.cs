@@ -8,7 +8,7 @@ public class GetHashCodeCombineTest
     [TestMethod]
     public void GetHashCode_EqualObjects_SameHashCode()
     {
-        Angle angle1 = new Angle(120, 20, 20);
+        Angle angle1 = new(120, 20, 20);
 
         int hashCode1 = angle1.GetHashCode();
         int hashCode2 = HashCode.Combine(120, 20, 20);
@@ -19,7 +19,7 @@ public class GetHashCodeCombineTest
     [TestMethod]
     public void GetHashCode_DiffObjects_DiffHashCode()
     {
-        Angle angle1 = new Angle(120, 20, 20);
+        Angle angle1 = new(120, 20, 20);
 
         int hashCode1 = angle1.GetHashCode();
         int hashCode2 = HashCode.Combine(300, 15, 15);

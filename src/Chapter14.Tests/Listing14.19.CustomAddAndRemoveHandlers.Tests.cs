@@ -11,7 +11,7 @@ public class ProgramTests
     [TestMethod]
     public void AddRemoveHandlerWorks()
     {
-        Thermostat t = new Thermostat();
+        Thermostat t = new();
 
         float temp = 0;
 

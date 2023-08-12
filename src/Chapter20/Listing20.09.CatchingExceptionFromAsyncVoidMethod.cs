@@ -8,8 +8,7 @@ using System.Threading.Tasks;
 public class AsyncSynchronizationContext : SynchronizationContext
 {
     public Exception? Exception { get; set; }
-    public ManualResetEventSlim ResetEvent { get; } = 
-        new ManualResetEventSlim();
+    public ManualResetEventSlim ResetEvent { get; } = new();
 
     public override void Send(SendOrPostCallback callback, object? state)
     {
@@ -60,8 +59,7 @@ public static class Program
             SynchronizationContext.Current;
         try
         {
-            AsyncSynchronizationContext synchronizationContext = 
-                new AsyncSynchronizationContext();
+            AsyncSynchronizationContext synchronizationContext = new();
             SynchronizationContext.SetSynchronizationContext(
                 synchronizationContext);
 

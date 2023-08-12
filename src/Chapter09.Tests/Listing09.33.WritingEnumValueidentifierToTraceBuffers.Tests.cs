@@ -11,7 +11,7 @@ public class TraceBufferTest
     [TestMethod]
     public void TraceBuffer_Output_MatchesExpected()
     {
-        using StringWriter stringWriter = new StringWriter();
+        using StringWriter stringWriter = new();
         TraceListener traceListener = new TextWriterTraceListener(stringWriter);
 
         Trace.Listeners.Add(traceListener);

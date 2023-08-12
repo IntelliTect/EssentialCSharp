@@ -32,7 +32,7 @@ public class Program
 {
     public static void Main()
     {
-        Contact contact = new Contact();
+        Contact contact = new();
         #region HIGHLIGHT
         #if COMPILEERROR // EXCLUDE
         // ERROR:  'PdaItem._Name' is inaccessible

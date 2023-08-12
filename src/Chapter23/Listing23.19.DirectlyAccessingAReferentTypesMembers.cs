@@ -7,7 +7,7 @@ public class Program
         #region INCLUDE
         unsafe
         {
-            Angle angle = new Angle(30, 18, 0);
+            Angle angle = new(30, 18, 0);
             Angle* pAngle = &angle;
             System.Console.WriteLine("{0}° {1}' {2}\"",
             #region HIGHLIGHT

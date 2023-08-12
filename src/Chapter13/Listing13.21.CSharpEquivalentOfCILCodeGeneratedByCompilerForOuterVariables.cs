@@ -22,8 +22,7 @@ public class Program
     public static void Main()
     {
         #region HIGHLIGHT
-        __LocalsDisplayClass_00000001 locals =
-            new __LocalsDisplayClass_00000001();
+        __LocalsDisplayClass_00000001 locals = new();
         locals.comparisonCount = 0;
         #endregion HIGHLIGHT
         int[] items = new int[5];

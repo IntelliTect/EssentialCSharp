@@ -17,7 +17,7 @@ public class Program
         // firstApplicationInstance indicates
         // whether this is the first
         // application instance.
-        using Mutex mutex = new Mutex(false, mutexName,
+        using Mutex mutex = new(false, mutexName,
              out bool firstApplicationInstance);
 
         if (!firstApplicationInstance)

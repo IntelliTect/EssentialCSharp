@@ -34,8 +34,7 @@ public static class Program
         ConsoleColor originalColor = Console.ForegroundColor;
         List<string> data = Utility.GetData(100000).ToList();
 
-        using CancellationTokenSource cts =
-            new CancellationTokenSource();
+        using CancellationTokenSource cts = new();
 
         Task task = Task.Run(() =>
         {
@@ -54,7 +53,6 @@ public static class Program
 
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("\nCompleted successfully");
-
         }
         catch (OperationCanceledException taskCanceledException)
         {
@@ -95,10 +93,8 @@ public static class Program
 
     private static string Encrypt(string item)
     {
-        Cryptographer cryptographer = new Cryptographer();
+        Cryptographer cryptographer = new();
         return System.Text.Encoding.UTF8.GetString(cryptographer.Encrypt(item));
     }
 }
 #endregion INCLUDE
-
-

@@ -9,7 +9,7 @@ public class Program
     public static void Main()
     {
         bool parentTaskFaulted = false;
-        Task task = new Task(() =>
+        Task task = new(() =>
             {
                 throw new InvalidOperationException();
             });

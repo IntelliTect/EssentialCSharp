@@ -72,7 +72,7 @@ static public class Thing
     [MethodImpl(MethodImplOptions.NoInlining)]
     public static string GetStackTrace()
     {
-        StackTrace stackTrace = new StackTrace();
+        StackTrace stackTrace = new();
         string?[] frames = stackTrace.GetFrames().Skip(1).Where(
             item =>
                 item!.GetMethod()!.DeclaringType!.Assembly == Assembly.GetExecutingAssembly()
@@ -90,7 +90,7 @@ static public class Thing
         [TestMethod]
         public void InterfaceMethod1()
         {
-            Information information = new Information();
+            Information information = new();
             Assert.AreEqual($"{nameof(Information)}.{nameof(Information.InterfaceMethod1)}",
                 information.InterfaceMethod1());
         }
@@ -98,7 +98,7 @@ static public class Thing
         [TestMethod]
         public void InterfaceMethod2()
         {
-            Information information = new Information();
+            Information information = new();
             Assert.AreEqual(
                 string.Join("=>",
                     new string[]{
@@ -112,7 +112,7 @@ static public class Thing
         [TestMethod]
         public void InterfaceMethod3()
         {
-            Information information = new Information();
+            Information information = new();
             Assert.AreEqual(
                 $"{nameof(Information)}.{nameof(Information.InterfaceMethod3)}",
                 information.InterfaceMethod3());
@@ -121,7 +121,7 @@ static public class Thing
         [TestMethod]
         public void CallConcreteInterfaceMethod3()
         {
-            Information information = new Information();
+            Information information = new();
             Assert.AreEqual(
                 // Information.CallConcreteInterfaceMethod3=>ISampleInterface.PublicConcreteInterfaceMethod>. 
                 string.Join("=>",
@@ -135,7 +135,7 @@ static public class Thing
         [TestMethod]
         public void ISampleInterfacePublicConcreteInterfaceMethod()
         {
-            Information information = new Information();
+            Information information = new();
             Assert.AreEqual(
                 $"{nameof(Information)}.{nameof(ISampleInterface.PublicConcreteInterfaceMethod)}",
                 ((ISampleInterface)information).PublicConcreteInterfaceMethod());
@@ -144,7 +144,7 @@ static public class Thing
         [TestMethod]
         public void ProtectedConcreteInterfaceMethod()
         {
-            SubClass information = new SubClass();
+            SubClass information = new();
             Assert.AreEqual(
                 $"{nameof(SubClass)}.{nameof(SubClass.PublicConcreteInterfaceMethod)}",
                 SubClass.PublicConcreteInterfaceMethod());

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 public class Program
 {
-    readonly static object _Sync = new object();
+    readonly static object _Sync = new();
     static int _Total = int.MaxValue;
     static int _Count = 0;
 

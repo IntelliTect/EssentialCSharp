@@ -25,7 +25,7 @@ public class Program
                   Delay(4000);
               };
 #endregion HIGHLIGHT
-            Thread thread = new Thread(() =>
+            Thread thread = new(() =>
             {
                 Message("Throwing exception.");
                 throw new Exception();

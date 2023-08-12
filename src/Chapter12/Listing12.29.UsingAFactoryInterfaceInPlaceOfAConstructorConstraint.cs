@@ -27,7 +27,7 @@ public class EntityDictionary<TKey, TValue, TFactory> :
 
     public TValue New(TKey key)
     {
-        TFactory factory = new TFactory();
+        TFactory factory = new();
         #region HIGHLIGHT
         TValue newEntity = factory.CreateNew(key);
         #endregion HIGHLIGHT

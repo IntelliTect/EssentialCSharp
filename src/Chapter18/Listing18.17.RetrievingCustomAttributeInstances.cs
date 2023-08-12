@@ -18,8 +18,7 @@ public class CommandLineSwitchAliasAttribute : Attribute
         object commandLine)
     {
         PropertyInfo[] properties;
-        Dictionary<string, PropertyInfo> options =
-            new Dictionary<string, PropertyInfo>();
+        Dictionary<string, PropertyInfo> options = new();
 
         properties = commandLine.GetType().GetProperties(
             BindingFlags.Public | BindingFlags.Instance);

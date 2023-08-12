@@ -30,7 +30,7 @@ public static class Program
                 break;
         }
         #endregion EXCLUDE
-        using Cryptographer cryptographer = new Cryptographer();
+        using Cryptographer cryptographer = new();
 
         IEnumerable<string> files = Directory.EnumerateFiles(
             directoryPath, searchPattern);
@@ -38,7 +38,7 @@ public static class Program
         // Create a cancellation token source to cancel 
         // if the operation takes more than a minute.
         using CancellationTokenSource cancellationTokenSource =
-            new CancellationTokenSource(1000*60);
+            new(1000*60);
 
         #region HIGHLIGHT
         await foreach ((string fileName, string encryptedFileName)
@@ -75,7 +75,7 @@ public static class Program
         string encryptedFileName = $"{fileName}.encrypt";
         #region HIGHLIGHT
         await using FileStream outputFileStream =
-            new FileStream(encryptedFileName, FileMode.Create);
+            new(encryptedFileName, FileMode.Create);
         #endregion HIGHLIGHT
 
         #region HIGHLIGHT

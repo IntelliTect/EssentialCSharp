@@ -7,8 +7,7 @@ using System.Threading;
 public class Program
 {
     #region HIGHLIGHT
-    static ThreadLocal<double> _Count =
-        new ThreadLocal<double>(() => 0.01134);
+    static ThreadLocal<double> _Count = new(() => 0.01134);
     #endregion HIGHLIGHT
     public static double Count
     {
@@ -18,7 +17,7 @@ public class Program
 
     public static void Main()
     {
-        Thread thread = new Thread(Decrement);
+        Thread thread = new(Decrement);
         thread.Start();
 
         // Increment

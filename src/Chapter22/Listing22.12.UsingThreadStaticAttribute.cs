@@ -16,7 +16,7 @@ public class Program
 
     public static void Main()
     {
-        Thread thread = new Thread(Decrement);
+        Thread thread = new(Decrement);
         thread.Start();
 
         // Increment

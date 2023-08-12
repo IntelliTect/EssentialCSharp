@@ -8,7 +8,7 @@ public class ProgramTests
     [TestMethod]
     public void Main_WriteMultiplePdaItemToScreen()
     {
-        DateTime startDateTime = new DateTime(2008, 7, 18);
+        DateTime startDateTime = new(2008, 7, 18);
         DateTime endDateTime = startDateTime.AddDays(1);
 
         string expected =

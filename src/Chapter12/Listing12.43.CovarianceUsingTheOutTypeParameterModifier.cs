@@ -81,8 +81,7 @@ class Program
     static void Main()
     {
         // Allowed in C# 4.0
-        Pair<Contact> contacts =
-            new Pair<Contact>(
+        Pair<Contact> contacts = new(
                 new Contact("Princess Buttercup"),
                 new Contact("Inigo Montoya"));
         IReadOnlyPair<PdaItem> pair = contacts;

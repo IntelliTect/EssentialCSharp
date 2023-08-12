@@ -15,8 +15,7 @@ public class Program
         Console.WriteLine("Push ENTER to exit.");
 
         #region HIGHLIGHT
-        CancellationTokenSource cancellationTokenSource =
-            new CancellationTokenSource();
+        CancellationTokenSource cancellationTokenSource = new();
         // Use Task.Factory.StartNew<string>() for
         // TPL prior to .NET 4.5
         Task task = Task.Run(
@@ -59,4 +58,3 @@ public class Program
     }
 }
 #endregion INCLUDE
-

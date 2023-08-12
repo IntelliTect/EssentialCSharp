@@ -24,7 +24,7 @@ public class EntityDictionary<TKey, TValue> :
     public TValue MakeValue(TKey key)
     {
         #region HIGHLIGHT
-        TValue newEntity = new TValue
+        TValue newEntity = new()
         {
         #endregion HIGHLIGHT
             Key = key

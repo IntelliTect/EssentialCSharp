@@ -15,7 +15,7 @@ public class Program
 
     public static void Sketch()
     {
-        Stack<Cell> path = new Stack<Cell>();
+        Stack<Cell> path = new();
         Cell currentPosition;
         ConsoleKeyInfo key;
         #region EXCLUDE

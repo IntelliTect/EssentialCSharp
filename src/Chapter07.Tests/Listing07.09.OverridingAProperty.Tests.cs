@@ -8,7 +8,7 @@ public class ContactTests
     [TestMethod]
     public void NameProperty_Overridden()
     {
-        Contact contact = new Contact();
+        Contact contact = new();
 
         contact.Name = "Inigo Montoya";
         

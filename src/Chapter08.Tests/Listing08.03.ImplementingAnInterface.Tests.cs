@@ -8,7 +8,7 @@ public class ContactTests
     [TestMethod]
     public void CompareTo_ObjIsNull_Return1()
     {
-        Contact contact = new Contact("Inigo Montoya");
+        Contact contact = new("Inigo Montoya");
         
         Assert.AreEqual(1, contact.CompareTo(null));
     }
@@ -16,8 +16,8 @@ public class ContactTests
     [TestMethod]
     public void CompareTo_ThisSmallerThanObj_ReturnNegative1()
     {
-        Contact firstContact = new Contact("Inigo Montoya");
-        Contact secondContact = new Contact("Zero Zero");
+        Contact firstContact = new("Inigo Montoya");
+        Contact secondContact = new("Zero Zero");
         
         Assert.AreEqual(-1, firstContact.CompareTo(secondContact));
     }
@@ -25,8 +25,8 @@ public class ContactTests
     [TestMethod]
     public void CompareTo_ThisLargerThanObj_Return1()
     {
-        Contact firstContact = new Contact("Zero Zero");
-        Contact secondContact = new Contact("Inigo Montoya");
+        Contact firstContact = new("Zero Zero");
+        Contact secondContact = new("Inigo Montoya");
         
         Assert.AreEqual(1, firstContact.CompareTo(secondContact));
     }
@@ -34,7 +34,7 @@ public class ContactTests
     [TestMethod]
     public void CompareTo_ObjIsSameReferenceAsThis_Return0()
     {
-        Contact firstContact = new Contact("Inigo Montoya");
+        Contact firstContact = new("Inigo Montoya");
         Contact secondContact = firstContact;
         
         Assert.AreEqual(0, firstContact.CompareTo(secondContact));
@@ -43,8 +43,8 @@ public class ContactTests
     [TestMethod]
     public void CompareTo_LastNamesAreTheSame_Return1()
     {
-        Contact firstContact = new Contact("Zero Montoya");
-        Contact secondContact = new Contact("Inigo Montoya");
+        Contact firstContact = new("Zero Montoya");
+        Contact secondContact = new("Inigo Montoya");
         
         Assert.AreEqual(1, firstContact.CompareTo(secondContact));
     }
@@ -53,7 +53,7 @@ public class ContactTests
     [ExpectedException(typeof(ArgumentException))]
     public void CompareTo_ObjIsNotInstanceOfObject_ArgumentException()
     {
-        Contact firstContact = new Contact("Inigo Montoya");
+        Contact firstContact = new("Inigo Montoya");
         string someString = "test";
 
         firstContact.CompareTo(someString);

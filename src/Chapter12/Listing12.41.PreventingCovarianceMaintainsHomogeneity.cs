@@ -9,9 +9,9 @@ public class Program
     {
         #region INCLUDE
         // ...
-        Contact contact1 = new Contact("Princess Buttercup");
-        Contact contact2 = new Contact("Inigo Montoya");
-        Pair<Contact> contacts = new Pair<Contact>(contact1, contact2);
+        Contact contact1 = new("Princess Buttercup");
+        Contact contact2 = new("Inigo Montoya");
+        Pair<Contact> contacts = new(contact1, contact2);
 
         #region HIGHLIGHT
         // This gives an error: Cannot convert type ...

@@ -59,10 +59,10 @@
         {
             static public void Main()
             {
-                Person inigo = new Person("Inigo", "Montoya");
+                Person inigo = new("Inigo", "Montoya");
                 Console.WriteLine(
                     ((IPerson)inigo).Name);
-                Employee employee = new Employee("Mark", "Michaelis");
+                Employee employee = new("Mark", "Michaelis");
                 Console.WriteLine(
                     ((IPerson)employee).Name);
                 Console.WriteLine(

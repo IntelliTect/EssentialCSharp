@@ -9,8 +9,8 @@ public class OverridingToStringTest
     [TestMethod]
     public void Override_ToString_MatchesExpectedValue()
     {
-        Angle angle1 = new Angle(120, 20, 20, "AngleName");
-        Angle angle2 = new Angle(320, 10, 10, null);
+        Angle angle1 = new(120, 20, 20, "AngleName");
+        Angle angle2 = new(320, 10, 10, null);
 
         string expected1 = $"AngleName: 120� 20' 20\"";
         string expected2 = $"320� 10' 10\"";

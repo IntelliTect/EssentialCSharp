@@ -29,10 +29,8 @@ public class Program
 
     public static void Main()
     {
-        using(_MainSignaledResetEvent =
-            new ManualResetEventSlim())
-        using(_DoWorkSignaledResetEvent =
-            new ManualResetEventSlim())
+        using(_MainSignaledResetEvent = new ())
+        using(_DoWorkSignaledResetEvent = new ())
         {
             Console.WriteLine(
                 "Application started....");

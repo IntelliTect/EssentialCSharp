@@ -10,7 +10,7 @@ public class CommandLineSwitchRequiredAttribute : Attribute
     public static string[] GetMissingRequiredOptions(
         object commandLine)
     {
-        List<string> missingOptions = new List<string>();
+        List<string> missingOptions = new();
         PropertyInfo[] properties =
             commandLine.GetType().GetProperties();
 

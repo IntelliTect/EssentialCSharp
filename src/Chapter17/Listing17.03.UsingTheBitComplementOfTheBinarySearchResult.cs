@@ -8,7 +8,7 @@ public class Program
 {
     public static void Main()
     {
-        List<string> list = new List<string>();
+        List<string> list = new();
         int search;
 
         list.Add("public");

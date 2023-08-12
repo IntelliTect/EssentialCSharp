@@ -37,7 +37,7 @@ class Program
     private static string Encrypt(string item)
     {
         Console.WriteLine($">>>>>Encrypting '{ item }'.");
-        Cryptographer cryptographer = new Cryptographer();
+        Cryptographer cryptographer = new();
         string itemEncrypted = System.Text.Encoding.UTF8.GetString(cryptographer.Encrypt(item));
         Console.WriteLine($"<<<<<Finished encrypting '{ itemEncrypted }'.");
         return itemEncrypted;

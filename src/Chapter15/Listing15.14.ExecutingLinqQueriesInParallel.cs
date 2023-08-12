@@ -20,7 +20,7 @@ public class Program
         #endregion HIGHLIGHT
             file =>
             {
-                FileInfo fileInfo = new FileInfo(file);
+                FileInfo fileInfo = new(file);
                 return new
                 {
                     FileName = fileInfo.Name,

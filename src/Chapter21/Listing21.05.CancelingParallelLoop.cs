@@ -29,10 +29,9 @@ public class Program
            SearchOption.AllDirectories);
 
         #region HIGHLIGHT
-        CancellationTokenSource cts =
-            new CancellationTokenSource();
-        ParallelOptions parallelOptions =
-            new ParallelOptions { CancellationToken = cts.Token };
+        CancellationTokenSource cts = new();
+        ParallelOptions parallelOptions = new()
+            { CancellationToken = cts.Token };
         cts.Token.Register(
             () => Console.WriteLine("Canceling..."));
         #endregion HIGHLIGHT
@@ -71,7 +70,7 @@ public class Program
     {
         if (Path.GetExtension(fileName) == ".encrypt") return;
         Console.WriteLine($">>>>>Encrypting '{ fileName }'.");
-        Cryptographer cryptographer = new Cryptographer();
+        Cryptographer cryptographer = new();
         File.Delete($"{fileName}.encrypt");
         byte[] encryptedText = cryptographer.Encrypt(File.ReadAllText(fileName));
         File.WriteAllBytes($"{fileName}.encrypt", encryptedText);
@@ -80,5 +79,3 @@ public class Program
     #endregion EXCLUDE
 }
 #endregion INCLUDE
-
-

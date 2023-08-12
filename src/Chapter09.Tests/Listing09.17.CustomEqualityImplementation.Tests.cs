@@ -9,8 +9,8 @@ public class CustomEqualityTest
     [TestMethod]
     public void Ignore_Name_Customization()
     {
-        Angle angle1 = new Angle(120, 20, 20, "FirstName");
-        Angle angle2 = new Angle(120, 20, 20, "SecondName");
+        Angle angle1 = new(120, 20, 20, "FirstName");
+        Angle angle2 = new(120, 20, 20, "SecondName");
 
         // Should be equal even though names are different
         Assert.IsTrue(angle1.Equals(angle2));

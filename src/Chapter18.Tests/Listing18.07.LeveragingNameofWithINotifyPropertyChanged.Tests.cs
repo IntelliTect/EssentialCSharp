@@ -9,7 +9,7 @@ public class PersonTests
     public void PropertyName()
     {
         bool called = false;
-        Person person = new Person("Inigo Montoya");
+        Person person = new("Inigo Montoya");
         person.PropertyChanged += (sender, eventArgs) =>
         {
             Assert.AreEqual(

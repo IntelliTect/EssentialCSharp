@@ -12,7 +12,7 @@ public class Program
     {
         #region INCLUDE
         string?[] values;
-        Contact contact = new Contact("Inigo Montoya");
+        Contact contact = new("Inigo Montoya");
 
         // ...
 

@@ -46,7 +46,7 @@ abstract public class BaseProgramTests
             ProgramWrapper.Main(new string[] { findText }).Wait();
         });
         
-        Regex regex = new Regex(expected);
+        Regex regex = new(expected);
         Assert.IsTrue(regex.Match(actual).Success,
             $"Messages are unexpectedly different:\n\tExpected: {expected}\n\t  Actual: {actual}");
     }

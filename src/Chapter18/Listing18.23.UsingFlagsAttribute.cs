@@ -20,7 +20,7 @@ public class Program
     {
         // ...
         string fileName = @"enumtest.txt";
-        FileInfo file = new FileInfo(fileName);
+        FileInfo file = new(fileName);
 
         file.Attributes = FileAttributes.Hidden |
             FileAttributes.ReadOnly;
