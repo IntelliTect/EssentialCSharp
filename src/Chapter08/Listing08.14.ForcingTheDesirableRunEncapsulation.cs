@@ -70,7 +70,7 @@ public class ExecuteProcessActivity : IExecuteProcessActivity
     public static void Run()
     {
         ExecuteProcessActivity activity
-            = new ExecuteProcessActivity("dotnet");
+            = new("dotnet");
         // Protected members cannot be invoked
         // by the implementing class even when
         //  implemented in the class.
@@ -88,7 +88,7 @@ public class Program
     static public void Main()
     {
         ExecuteProcessActivity activity
-            = new ExecuteProcessActivity("dotnet");
+            = new("dotnet");
 
         Console.WriteLine(
             "Invoking ((IExecuteProcessActivity)activity).Run()...");

@@ -11,7 +11,7 @@ public struct Nullable<T> :
 {
     // ...
     public static implicit operator Nullable<T>(T value) =>
-        new Nullable<T>(value);
+        new(value);
     public static explicit operator T(Nullable<T> value) => value!.Value;
     #region EXCLUDE
     public Nullable(T value)

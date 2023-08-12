@@ -8,7 +8,7 @@ public class Program
 {
     public static void Main()
     {
-        Stack<int> s = new Stack<int>();
+        Stack<int> s = new();
 
         Type t = s.GetType();
 

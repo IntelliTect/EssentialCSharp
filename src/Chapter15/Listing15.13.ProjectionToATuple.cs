@@ -19,7 +19,7 @@ public class Program
         IEnumerable<(string FileName, long Size)> items = fileList.Select(
             file =>
             {
-                FileInfo fileInfo = new FileInfo(file);
+                FileInfo fileInfo = new(file);
                 return (
                     FileName: fileInfo.Name,
                     Size: fileInfo.Length

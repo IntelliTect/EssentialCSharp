@@ -11,7 +11,7 @@ public class Program
         #endregion EXCLUDE
 #if !PRECSHARP6
         Dictionary<string, ConsoleColor> colorMap =
-            new Dictionary<string, ConsoleColor>
+            new()
             {
                 ["Error"] = ConsoleColor.Red,
                 ["Warning"] = ConsoleColor.Yellow,

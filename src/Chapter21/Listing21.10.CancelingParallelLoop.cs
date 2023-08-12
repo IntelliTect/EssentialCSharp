@@ -35,7 +35,7 @@ public static class Program
         List<string> data = Utility.GetData(100000).ToList();
 
         using CancellationTokenSource cts =
-            new CancellationTokenSource();
+            new();
 
         Task task = Task.Run(() =>
         {
@@ -95,7 +95,7 @@ public static class Program
 
     private static string Encrypt(string item)
     {
-        Cryptographer cryptographer = new Cryptographer();
+        Cryptographer cryptographer = new();
         return System.Text.Encoding.UTF8.GetString(cryptographer.Encrypt(item));
     }
 }

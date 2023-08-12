@@ -21,7 +21,7 @@ public class Program
                 File.SetAttributes(fileName, attrs & ~FileAttributes.ReadOnly);
         }
         #endregion EXCLUDE
-        FileInfo file = new FileInfo(fileName);
+        FileInfo file = new(fileName);
         file.Open(FileMode.OpenOrCreate).Dispose();
 
         FileAttributes startingAttributes =

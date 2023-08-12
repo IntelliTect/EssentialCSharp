@@ -16,7 +16,7 @@ public class Program
 
         #region HIGHLIGHT
         CancellationTokenSource cancellationTokenSource =
-            new CancellationTokenSource();
+            new();
         // Use Task.Factory.StartNew<string>() for
         // TPL prior to .NET 4.5
         Task task = Task.Run(

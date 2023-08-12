@@ -8,7 +8,7 @@ public class ProgramTests
     [TestMethod]
     public void Contact_GetSummaryOverridden()
     {
-        Contact contact = new Contact("Inigo Montoya")
+        Contact contact = new("Inigo Montoya")
         {
             Address = "111 W St City, State 11111"
         };
@@ -23,7 +23,7 @@ public class ProgramTests
     [TestMethod]
     public void Appointment_GetSummaryOverridden()
     {
-        Appointment appointment = new Appointment(
+        Appointment appointment = new(
                "Soccer tournament", "111 W St City, State 11111",
                new DateTime(2008, 7, 19), new DateTime(2008, 7, 18));
 

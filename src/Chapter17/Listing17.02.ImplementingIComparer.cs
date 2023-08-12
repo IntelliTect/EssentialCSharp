@@ -8,7 +8,7 @@ public class Program
 {
     public static void Main()
     {
-        List<Contact> list = new List<Contact>
+        List<Contact> list = new()
         {
 
             // Lists automatically expand as elements

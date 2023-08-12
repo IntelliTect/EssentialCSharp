@@ -9,7 +9,7 @@ public class ReadonlyStructTests
     [TestMethod]
     public void MoveMethod_Returns_New_Angle()
     {
-        Angle angle1 = new Angle(90, 10, 5);
+        Angle angle1 = new(90, 10, 5);
         Angle angle2 = angle1.Move(130, 25, 10);
 
         // Assert we get the expected value returned from Move()

@@ -24,7 +24,7 @@ public class AsyncStreamsTests
         // Count files to start
         int count = files.Count();
 
-        using Cryptographer cryptographer = new Cryptographer();
+        using Cryptographer cryptographer = new();
 
         try
         {
@@ -65,7 +65,7 @@ public class AsyncStreamsTests
         });
 
 
-        using CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
+        using CancellationTokenSource cancellationTokenSource = new();
 
         IEnumerable<string> files = Directory.EnumerateFiles(
             Directory.GetCurrentDirectory(), "*.*");
@@ -73,7 +73,7 @@ public class AsyncStreamsTests
         // Count files to start
         int unencryptedFileCount = files.Count();
 
-        using Cryptographer cryptographer = new Cryptographer();
+        using Cryptographer cryptographer = new();
 
         int count = 0;
         int maxIterationCount = unencryptedFileCount / 2;

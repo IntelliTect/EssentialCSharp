@@ -14,7 +14,7 @@ public class Program
 
         #region EXCLUDE
         System.IO.FileInfo enumFile =
-            new System.IO.FileInfo(fileName);
+            new(fileName);
         if (!enumFile.Exists)
         {
             enumFile.Create().Dispose();
@@ -24,7 +24,7 @@ public class Program
         {
         #endregion EXCLUDE
             System.IO.FileInfo file =
-                new System.IO.FileInfo(fileName);
+                new(fileName);
 
             file.Attributes = FileAttributes.Hidden |
                 FileAttributes.ReadOnly;

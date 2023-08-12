@@ -67,8 +67,8 @@ public static class LineCounter
         int lineCount = 0;
         string? line;
         FileStream stream =
-            new FileStream(file, FileMode.Open);
-        StreamReader reader = new StreamReader(stream);
+            new(file, FileMode.Open);
+        StreamReader reader = new(stream);
         line = reader.ReadLine();
         while (line is not null)
         {

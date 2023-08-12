@@ -82,7 +82,7 @@ class Program
     {
         // Allowed in C# 4.0
         Pair<Contact> contacts =
-            new Pair<Contact>(
+            new(
                 new Contact("Princess Buttercup"),
                 new Contact("Inigo Montoya"));
         IReadOnlyPair<PdaItem> pair = contacts;

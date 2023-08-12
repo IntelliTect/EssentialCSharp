@@ -31,7 +31,7 @@ public class Program
                 byte[] buffer = new byte[12];
 
                 using (VirtualMemoryPtr codeBytesPtr =
-                    new VirtualMemoryPtr(codeBytes.Length))
+                    new(codeBytes.Length))
                 {
                     Marshal.Copy(
                         codeBytes, 0,

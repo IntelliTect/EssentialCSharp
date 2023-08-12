@@ -23,7 +23,7 @@ public class Thermostat
                 {
                     #region HIGHLIGHT
                     List<Exception> exceptionCollection =
-                        new List<Exception>();
+                        new();
                     foreach(
                         Delegate handler in
                         onTemperatureChange.GetInvocationList())
@@ -59,9 +59,9 @@ public class Program
     {
         try
         {
-            Thermostat thermostat = new Thermostat();
-            Heater heater = new Heater(60);
-            Cooler cooler = new Cooler(80);
+            Thermostat thermostat = new();
+            Heater heater = new(60);
+            Cooler cooler = new(80);
 
             thermostat.OnTemperatureChange +=
                 heater.OnTemperatureChanged;

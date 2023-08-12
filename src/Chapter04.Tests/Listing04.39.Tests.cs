@@ -9,7 +9,7 @@ public class ProgramTests
     public void ChangeTemperatureWithoutConditionalOperator()
     {
         bool eventFired = false;
-        Thermostat thermostat = new Thermostat();
+        Thermostat thermostat = new();
         thermostat.PropertyChanged += (object? sender, EventArgs e) =>
         {
             eventFired = true;
@@ -21,7 +21,7 @@ public class ProgramTests
     public static void ChangeHumidityWithConditionalOperator()
     {
         bool eventFired = false;
-        Thermostat thermostat = new Thermostat();
+        Thermostat thermostat = new();
         thermostat.PropertyChanged += (object? sender, EventArgs e) =>
         {
             eventFired = true;

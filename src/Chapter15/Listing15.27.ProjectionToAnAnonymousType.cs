@@ -18,7 +18,7 @@ public class Program
         var items = fileList.Select(
             file =>
             {
-                FileInfo fileInfo = new FileInfo(file);
+                FileInfo fileInfo = new(file);
                 return new
                 {
                     FileName = fileInfo.Name,

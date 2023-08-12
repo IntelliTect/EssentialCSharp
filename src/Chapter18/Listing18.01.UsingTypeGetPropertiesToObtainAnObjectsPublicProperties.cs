@@ -5,7 +5,7 @@ public class Program
     public static void Main()
     {
         #region INCLUDE
-        DateTime dateTime = new DateTime();
+        DateTime dateTime = new();
 
         Type type = dateTime.GetType();
         foreach(

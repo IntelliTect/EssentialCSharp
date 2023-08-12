@@ -8,7 +8,7 @@ public class Program
     {
         #region INCLUDE
         System.Collections.Generic.Stack<int> stack =
-            new System.Collections.Generic.Stack<int>();
+            new();
         int number;
         // ...
 

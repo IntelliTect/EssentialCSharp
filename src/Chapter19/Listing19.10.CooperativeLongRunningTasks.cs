@@ -15,7 +15,7 @@ public class Program
         Console.WriteLine("Push ENTER to exit.");
 
         CancellationTokenSource cancellationTokenSource =
-            new CancellationTokenSource();
+            new();
 
         // Use Task.Factory.StartNew<string>() for
         // TPL prior to .NET 4.5

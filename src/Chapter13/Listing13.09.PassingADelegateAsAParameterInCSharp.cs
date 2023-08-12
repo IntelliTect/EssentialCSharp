@@ -44,7 +44,7 @@ public class DelegateSample
     {
         int i;
         int[] items = new int[100];
-        Random random = new Random();
+        Random random = new();
 
         for(i = 0; i < items.Length; i++)
         {

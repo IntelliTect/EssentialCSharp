@@ -10,7 +10,7 @@ public partial class Program
 {
     public static void Main(string[] args)
     {
-        CommandLineInfo commandLine = new CommandLineInfo();
+        CommandLineInfo commandLine = new();
         if(!CommandLineHandler.TryParse(
             args, commandLine, out string? errorMessage))
         {

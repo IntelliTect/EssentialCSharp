@@ -17,7 +17,7 @@ static class Utility
 
     public static long MeasureElapsedTime(Action action)
     {
-        Stopwatch stopwatch = new Stopwatch();
+        Stopwatch stopwatch = new();
         stopwatch.Start();
         action();
         stopwatch.Stop();

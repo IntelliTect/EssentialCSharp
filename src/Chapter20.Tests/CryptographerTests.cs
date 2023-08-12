@@ -14,7 +14,7 @@ public class CryptographerTests
 
         // Create Aes that generates a new key and initialization vector (IV).
         // Same key must be used in encryption and decryption
-        using (AesManaged aes = new AesManaged())
+        using (AesManaged aes = new())
         {
             // Encrypt string
             byte[] encrypted = Cryptographer.EncryptAsync(text, aes.Key, aes.IV).Result;

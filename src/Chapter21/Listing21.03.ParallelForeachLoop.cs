@@ -45,7 +45,7 @@ public class Program
     public static void Encrypt(string inputFileName, string outputFileName)
     {
         Console.WriteLine($">>>>>Encrypting '{ inputFileName }'.");
-        using (FileStream outputFileStream = new FileStream($"{inputFileName}.encrypt", FileMode.Create))
+        using (FileStream outputFileStream = new($"{inputFileName}.encrypt", FileMode.Create))
         {
             byte[] encryptedText = Cryptographer.EncryptAsync(File.ReadAllText(inputFileName), outputFileStream).Result;
         }
@@ -56,7 +56,7 @@ public class Program
     {
         Console.WriteLine($">>>>>Decrypting '{ inputFileName }'.");
         byte[] bytes = File.ReadAllBytes(inputFileName);
-        using (FileStream outputFileStream = new FileStream(outputFileName, FileMode.Create))
+        using (FileStream outputFileStream = new(outputFileName, FileMode.Create))
         {
             Cryptographer.DecryptAsync(bytes, outputFileStream).Wait();
         }

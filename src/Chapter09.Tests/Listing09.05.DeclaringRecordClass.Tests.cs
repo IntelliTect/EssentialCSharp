@@ -82,7 +82,7 @@ public partial class CoordinateTests
     {
         Coordinate coordinate1 = 
             new(new Angle(180, 0, 0), new Angle(180, 0, 0));
-        Angle angle = new Angle(0, 0, 0);
+        Angle angle = new(0, 0, 0);
         Coordinate coordinate2 = coordinate1 with
         {
             Latitude  = angle
