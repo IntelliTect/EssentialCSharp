@@ -40,7 +40,7 @@ public class Cryptographer : IDisposable
     {
         byte[] encrypted;
         // Create a new AesManaged.    
-        using (AesManaged aes = new AesManaged())
+        using (AesManaged aes = new())
         {
             // Create encryptor    
             ICryptoTransform encryptor = aes.CreateEncryptor(key, iv);
@@ -53,7 +53,7 @@ public class Cryptographer : IDisposable
 
     private static async Task<byte[]> EncryptAsync(string plainText, ICryptoTransform encryptor)
     {
-        using MemoryStream memoryStream = new MemoryStream();
+        using MemoryStream memoryStream = new();
         return await EncryptAsync(plainText, encryptor, memoryStream);
     }
 
@@ -65,9 +65,9 @@ public class Cryptographer : IDisposable
         // Create crypto stream using the CryptoStream class. This class is the key to encryption    
         // and encrypts and decrypts data from any given stream. In this case, we will pass a memory stream    
         // to encrypt    
-        using (CryptoStream cryptoStream = new CryptoStream(outputStream, encryptor, CryptoStreamMode.Write))
+        using (CryptoStream cryptoStream = new(outputStream, encryptor, CryptoStreamMode.Write))
         // Create StreamWriter and write data to a stream    
-        using (StreamWriter streamWriter = new StreamWriter(cryptoStream))
+        using (StreamWriter streamWriter = new(cryptoStream))
         {
             await streamWriter.WriteAsync(plainText);
             if (outputStream is MemoryStream)
@@ -107,7 +107,7 @@ public class Cryptographer : IDisposable
     {
         string plaintext;
         // Create AesManaged    
-        using AesManaged aes = new AesManaged();
+        using AesManaged aes = new();
         // Create a decryptor    
         ICryptoTransform decryptor = aes.CreateDecryptor(key, iV);
         // Create the streams used for decryption.    
@@ -117,29 +117,29 @@ public class Cryptographer : IDisposable
 
     private static async Task<string> DecryptAsync(byte[] encryptedData, ICryptoTransform decryptor)
     {
-        using MemoryStream encryptedStream = new MemoryStream(encryptedData);
+        using MemoryStream encryptedStream = new(encryptedData);
         return await DecryptAsync(encryptedStream, decryptor);
     }
 
     private static async Task DecryptAsync(byte[] encryptedData, ICryptoTransform decryptor, Stream outputStream)
     {
-        using MemoryStream encryptedStream = new MemoryStream(encryptedData);
+        using MemoryStream encryptedStream = new(encryptedData);
         await DecryptAsync(encryptedStream, decryptor, outputStream);
     }
 
     private static async Task<string> DecryptAsync(Stream encryptedStream, ICryptoTransform decryptor)
     {
         // Create crypto stream
-        using CryptoStream cryptoStream = new CryptoStream(encryptedStream, decryptor, CryptoStreamMode.Read);
+        using CryptoStream cryptoStream = new(encryptedStream, decryptor, CryptoStreamMode.Read);
         // Read crypto stream    
-        using StreamReader reader = new StreamReader(cryptoStream);
+        using StreamReader reader = new(cryptoStream);
         return await reader.ReadToEndAsync();
     }
 
     private static async Task DecryptAsync(Stream encryptedStream, ICryptoTransform decryptor, Stream decryptedStream)
     {
         // Create crypto stream
-        using CryptoStream cryptoStream = new CryptoStream(encryptedStream, decryptor, CryptoStreamMode.Read);
+        using CryptoStream cryptoStream = new(encryptedStream, decryptor, CryptoStreamMode.Read);
         await cryptoStream.CopyToAsync(decryptedStream);
     }
 

@@ -39,7 +39,7 @@ public class Program
                 // webRequest.ContentLength to demonstrate
                 //  multiple await operators
                 using (StreamReader reader =
-                    new StreamReader(
+                    new(
                         response.GetResponseStream()))
                 {
                     string text =

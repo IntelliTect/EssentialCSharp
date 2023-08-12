@@ -13,9 +13,9 @@ public static class Program
         {
             return buffer;
         }
-        using MemoryStream memoryStream = new MemoryStream();
+        using MemoryStream memoryStream = new();
         using System.IO.Compression.GZipStream gZipStream =
-            new System.IO.Compression.GZipStream(
+            new(
                 memoryStream, 
                     System.IO.Compression.CompressionMode.Compress);
         await gZipStream.WriteAsync(buffer.AsMemory(0, buffer.Length));
@@ -34,8 +34,8 @@ public static class Program
             byteArray[index++] = (byte)item;
         }
 
-        using MemoryStream memoryStream = new MemoryStream(byteArray);
-        using System.IO.Compression.GZipStream gZipStream = new System.IO.Compression.GZipStream(memoryStream,
+        using MemoryStream memoryStream = new(byteArray);
+        using System.IO.Compression.GZipStream gZipStream = new(memoryStream,
                 System.IO.Compression.CompressionMode.Decompress);
 
          byteArray = new byte[byteArray.Length];
@@ -44,7 +44,7 @@ public static class Program
         int bytesRead = gZipStream.Read(byteArray, 0, byteArray.Length);
 
         //Transform byte[] unzip data to string
-        StringBuilder data = new System.Text.StringBuilder(bytesRead);
+        StringBuilder data = new(bytesRead);
         //Read the number of bytes GZipStream red and do not a for each bytes in
         //resultByteArray
         for (int i = 0; i < bytesRead; i++)

@@ -59,8 +59,7 @@ public static class Program
             SynchronizationContext.Current;
         try
         {
-            AsyncSynchronizationContext synchronizationContext = 
-                new AsyncSynchronizationContext();
+            AsyncSynchronizationContext synchronizationContext = new();
             SynchronizationContext.SetSynchronizationContext(
                 synchronizationContext);
 

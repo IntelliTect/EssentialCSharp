@@ -19,7 +19,7 @@ public class AsyncEncryptionCollection : IAsyncEnumerable<string>
     public static async Task Main()
     {
         AsyncEncryptionCollection collection =
-            new AsyncEncryptionCollection();
+            new();
         // ...
 
         await foreach (string fileName in collection)

@@ -28,7 +28,7 @@ public static class Program
         Console.WriteLine(
             $"Searching for '{findText}' at URL '{url}'.");
 
-        using WebClient webClient = new WebClient();
+        using WebClient webClient = new();
         Task<byte[]> taskDownload =
             webClient.DownloadDataTaskAsync(url);
 
@@ -62,8 +62,8 @@ public static class Program
         byte[] downloadData, string findText)
     {
         int textOccurrenceCount = 0;
-        using MemoryStream stream = new MemoryStream(downloadData);
-        using StreamReader reader = new StreamReader(stream);
+        using MemoryStream stream = new(downloadData);
+        using StreamReader reader = new(stream);
 
         int findIndex = 0;
         int length = 0;

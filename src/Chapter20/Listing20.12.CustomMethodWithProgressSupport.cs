@@ -18,10 +18,9 @@ public class Program
         CancellationToken cancellationToken =
             default(CancellationToken))
     {
-        TaskCompletionSource<Process> taskCS =
-                      new TaskCompletionSource<Process>();
+        TaskCompletionSource<Process> taskCS = new();
 
-        Process process = new Process()
+        Process process = new()
         {
             StartInfo = new ProcessStartInfo(fileName)
             {
