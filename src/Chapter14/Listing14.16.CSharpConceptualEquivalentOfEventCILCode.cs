@@ -3,7 +3,7 @@
 #pragma warning disable IDE0060 // Remove unused parameter
 #pragma warning disable IDE1006 // Naming Styles
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_17;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_16;
 
 using System;
 #region INCLUDE

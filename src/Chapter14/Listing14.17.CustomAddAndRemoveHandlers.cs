@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_18;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter14.Listing14_17;
 
 #region INCLUDE
 public class Thermostat
