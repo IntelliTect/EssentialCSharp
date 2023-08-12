@@ -33,14 +33,23 @@ jobs:
       - name: Setup dotnet SDK
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: | 
-            6.x
-            7.x
+            global-json-file: global.json
       - name: Get Build Information
         run: |
           pwd
           dotnet --info
           dotnet --version
+      - name: Set up dependency caching for faster builds
+        uses: actions/cache@v3
+        id: nuget-cache
+        with:
+            path: |
+              ~/.nuget/packages
+              ${{ github.workspace }}/**/obj/project.assets.json
+            key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
+            restore-keys: |
+              ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
+              ${{ runner.os }}-nuget-
       - name: Restore dependencies
         run: dotnet restore
       - name: Build
