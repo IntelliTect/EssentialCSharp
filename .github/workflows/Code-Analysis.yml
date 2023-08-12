@@ -2,11 +2,11 @@ name: .NET Code Analysis
 
 on:
   push:
-    branches: [ v11.0 ]
+    branches: [ 'v[1-9][0-9].0' ]
   pull_request:
-    branches: [ v11.0 ]
-  
-jobs:  
+    branches: [ 'v[1-9][0-9].0' ]
+
+jobs:
   NET-Code-Analysis:
     name: .NET Code Analysis runner
     strategy:
@@ -17,9 +17,18 @@ jobs:
       - name: Setup dotnet SDK
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: | 
-            6.x
-            7.x
+            global-json-file: global.json
+      - name: Set up dependency caching for faster builds
+        uses: actions/cache@v3
+        id: nuget-cache
+        with:
+            path: |
+              ~/.nuget/packages
+              ${{ github.workspace }}/**/obj/project.assets.json
+            key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
+            restore-keys: |
+              ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
+              ${{ runner.os }}-nuget-
       # Run NuGet restore for the solution at repo root
       - name: Run NuGet restore
         run: dotnet restore

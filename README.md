@@ -1,5 +1,5 @@
 # EssentialCSharp
-[![Build and Test v11.0](https://github.com/IntelliTect/EssentialCSharp/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/IntelliTect/EssentialCSharp/actions/workflows/build-and-test.yml)
+[![Build and Test v 12.0](https://github.com/IntelliTect/EssentialCSharp/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/IntelliTect/EssentialCSharp/actions/workflows/build-and-test.yml)
 
 This project contains the source code for the book **Essential C#** by Mark Michaelis (Addison-Wesley).
 
@@ -21,10 +21,10 @@ git clone https://github.com/IntelliTect/EssentialCSharp.git
 cd ./EssentialCSharp/
 ```
 
-The source code is the most recently published edition of the book and this is the default branch following the clone command.  However, you can switch to a different branch, v11.0 for example, with the command:
+The source code is the most recently published edition of the book and this is the default branch following the clone command. However, you can switch to a different branch, v12.0 for example, with the command:
 
 ```
-git checkout v11.0
+git checkout v12.0
 ```
 
 ### Build

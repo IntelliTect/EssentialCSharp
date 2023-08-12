@@ -2,9 +2,9 @@ name: Test Different Locales
 
 on:
   push:
-    branches: [ v11.0 ]
+    branches: [ 'v[1-9][0-9].0' ]
   pull_request:
-    branches: [ v11.0 ]
+    branches: [ 'v[1-9][0-9].0' ]
 
 jobs:
   set-build-and-test-locale-languages:
@@ -18,15 +18,18 @@ jobs:
       - name: Setup dotnet SDK
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: |
-            6.x
-            7.x
-          include-prerelease: true
-      - name: Get Build Information
-        run: |
-          pwd
-          dotnet --info
-          dotnet --version
+            global-json-file: global.json
+      - name: Set up dependency caching for faster builds
+        uses: actions/cache@v3
+        id: nuget-cache
+        with:
+            path: |
+              ~/.nuget/packages
+              ${{ github.workspace }}/**/obj/project.assets.json
+            key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
+            restore-keys: |
+              ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
+              ${{ runner.os }}-nuget-
       - name: SetLocale To ${{ matrix.locale-lang }}, and Build and Test
         run: |
           sudo locale-gen ${{ matrix.locale-lang }}

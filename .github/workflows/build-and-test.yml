@@ -1,10 +1,10 @@
-name: Build and Test v11.0
+name: Build and Test
 
 on:
   push:
-    branches: [ v11.0 ]
+    branches: [ 'v[1-9][0-9].0' ]
   pull_request:
-    branches: [ v11.0 ]
+    branches: [ 'v[1-9][0-9].0' ]
   schedule:
     - cron: 0 6 * * 1
 
@@ -17,7 +17,7 @@ jobs:
       contents: write
 
     steps:
-      - uses: fastify/github-action-merge-dependabot@v3.9.0  
+      - uses: fastify/github-action-merge-dependabot@v3.9.0
         with:
           use-github-auto-merge: true
 
