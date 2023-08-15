@@ -1,5 +1,5 @@
 #pragma warning disable IDE0059 // Unnecessary assignment of a value
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_11;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_11b;
 
 using System;
 
