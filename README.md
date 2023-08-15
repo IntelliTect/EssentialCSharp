@@ -7,7 +7,7 @@ This project contains the source code for the book **Essential C#** by Mark Mich
 
 Ensure one of the following frameworks is installed at the latest version.
 
-- [.NET](https://www.microsoft.com/net/core) (All) - This project is currently tested against .NET 7.0 and .NET 6.0.
+- [.NET](https://www.microsoft.com/net/core) (All) - This project is currently tested against .NET 8.0, 7.0, and 6.0.
 - [Visual Studio](https://www.visualstudio.com) contains .NET Core to get up and running.  Not to mention, it's a great IDE that makes it easy to get started.
 
 ### Download the Code
