@@ -9,8 +9,7 @@ public class ContactTests
     [TestMethod]
     public async Task DeclaringAMethodOnARelatedInterface_CompileError()
     {
-        await CompilerAssert.CompileAsync(
-            new string[] { "Listing08.07.DeclarationWithoutContainingInterface.cs" },
+        await CompilerAssert.CompileTestTargetFileAsync(
             new string[] { "CS0161", "CS0540" });
     }
 }

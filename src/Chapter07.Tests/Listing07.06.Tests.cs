@@ -9,8 +9,7 @@ public class ProgramTests
     [TestMethod]
     public async Task PrivateMembersAreNotInheritedTests()
     {
-        await CompilerAssert.CompileAsync(
-            new string[] { "Listing07.06.PrivateMembersAreNotInherited.cs" },
+        await CompilerAssert.CompileTestTargetFileAsync(
             new string[] { "CS0122" });
     }
 }
