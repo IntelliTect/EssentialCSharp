@@ -9,10 +9,7 @@ public class ProgramTests
     [TestMethod]
     public async Task DefiningAnAbstractClassTest()
     {
-        await CompilerAssert.CompileAsync(
-            new string[] {
-                CompilerAssert.GetSourceCodeFileName().Replace(
-                    ".Tests","*") },
+        await CompilerAssert.CompileTestTargetFileAsync(
             new string[] { "CS0144" });
     }
 }

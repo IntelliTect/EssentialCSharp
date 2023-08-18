@@ -23,10 +23,7 @@ public class ProgramTests
     [TestMethod]
     public async Task OverrideVersusNewModifierTest()
     {
-        await CompilerAssert.CompileAsync(
-            new string[] {
-                CompilerAssert.GetSourceCodeFileName().Replace(
-                    ".Tests","*") },
+        await CompilerAssert.CompileTestTargetFileAsync(
             new string[] { "CS0108" });
     }
 }

@@ -9,10 +9,7 @@ public class ProgramTests
     [TestMethod]
     public async Task UnassignedVariableThrowsError()
     {
-        await CompilerAssert.CompileAsync(
-            new string[] { 
-                CompilerAssert.GetSourceCodeFileName().Replace(
-                    ".Tests","*") },
+        await CompilerAssert.CompileTestTargetFileAsync(
             new string[] { "CS0509" });
     }
 }

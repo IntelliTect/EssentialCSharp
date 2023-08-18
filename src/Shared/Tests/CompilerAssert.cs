@@ -4,13 +4,28 @@ using Microsoft.CodeAnalysis.Diagnostics;
 using Microsoft.CodeAnalysis.Testing;
 using Microsoft.CodeAnalysis.Testing.Verifiers;
 using System.Collections.Immutable;
-using System.Diagnostics;
+using System.Runtime.CompilerServices;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Shared.Tests;
 
 public static class CompilerAssert
 {
-    public static async Task CompileAsync(string[] fileNames, string[] expectedErrorIds)
+    /// <summary>
+    /// Compile the file associated with he caller's file name.
+    /// </summary>
+    /// <param name="expectedErrorIds"></param>
+    /// <returns></returns>
+    public static async Task CompileTestTargetFileAsync(
+        string[] expectedErrorIds, [CallerFilePath] string fileName = null!)
+    {
+#if NET7_0_OR_GREATER
+        ArgumentException.ThrowIfNullOrEmpty(fileName);
+#endif
+        fileName = Path.GetFileName(fileName.Replace(
+                    ".Tests", "*"));
+        await CompileAsync(new string[]{fileName}, expectedErrorIds);
+    }
+     public static async Task CompileAsync(string[] fileNames, string[] expectedErrorIds)
     {
 
         var test = new Test()
@@ -143,12 +158,5 @@ public static class CompilerAssert
 
         protected override IEnumerable<DiagnosticAnalyzer> GetDiagnosticAnalyzers()
             => Enumerable.Empty<DiagnosticAnalyzer>();
-    }
-
-    public static string GetSourceCodeFileName()
-    {
-        StackFrame CallStack = new(1, true);
-        return Path.GetFileName(CallStack.GetFileName())??throw new InvalidOperationException(
-            "File name is null");
     }
 }
