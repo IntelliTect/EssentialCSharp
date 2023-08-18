@@ -4,6 +4,7 @@ using Microsoft.CodeAnalysis.Diagnostics;
 using Microsoft.CodeAnalysis.Testing;
 using Microsoft.CodeAnalysis.Testing.Verifiers;
 using System.Collections.Immutable;
+using System.Diagnostics;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Shared.Tests;
 
@@ -23,10 +24,10 @@ public static class CompilerAssert
                         Path.Combine("ref", "net7.0"))
         };
 
-        foreach (string each in fileNames)
+        foreach (string eachFileName in fileNames)
         {
-            string fileName = each;
-            if (!File.Exists(fileName))
+            IEnumerable<string>? fileNamesToCompile;
+            if (!File.Exists(eachFileName))
             {
                 // Search up to find the file in the target project directory.
                 string testCsprojName = Path.GetFileName(
@@ -35,12 +36,32 @@ public static class CompilerAssert
                 string currentChapterTestDirectory = Path.GetFullPath(
                     Path.Combine("..", "..", "..", testCsprojName));
                 string? currentTargetDirectory = Path.GetDirectoryName(currentChapterTestDirectory.Replace(".Tests", ""));
-                if ((Path.Join(currentTargetDirectory, fileName) is string temp) && File.Exists(temp))
+                if ((Path.Join(currentTargetDirectory, eachFileName) is string temp) && File.Exists(temp))
                 {
-                    fileName = temp;
+                    fileNamesToCompile = Enumerable.Repeat(eachFileName, 1);
+                }
+                else if (currentTargetDirectory is not null)
+                {
+                    // Perhaps we have a wildcard in the file name.
+                    fileNamesToCompile = Directory.EnumerateFiles(
+                        currentTargetDirectory,
+                        eachFileName,
+                        SearchOption.TopDirectoryOnly);
+                }
+                else
+                {
+                    throw new ArgumentException(
+                        $"Specified file, { eachFileName } does not exist.");
                 }
             }
-            test.TestState.Sources.Add((Path.GetFileName(fileName), await File.ReadAllTextAsync(fileName)));
+            else
+            {
+                fileNamesToCompile = Enumerable.Repeat(eachFileName, 1);
+            }
+            foreach (string fileName in fileNamesToCompile)
+            {
+                test.TestState.Sources.Add((Path.GetFileName(fileName), await File.ReadAllTextAsync(fileName)));
+            }
         }
 
         // Note: GeneratedSources is ignored.
@@ -122,5 +143,12 @@ public static class CompilerAssert
 
         protected override IEnumerable<DiagnosticAnalyzer> GetDiagnosticAnalyzers()
             => Enumerable.Empty<DiagnosticAnalyzer>();
+    }
+
+    public static string GetSourceCodeFileName()
+    {
+        StackFrame CallStack = new(1, true);
+        return Path.GetFileName(CallStack.GetFileName())??throw new InvalidOperationException(
+            "File name is null");
     }
 }

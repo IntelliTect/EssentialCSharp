@@ -21,13 +21,12 @@ public class ProgramTests
     }
 
     [TestMethod]
-    public async Task OverrideVersusNewModifier()
+    public async Task OverrideVersusNewModifierTest()
     {
         await CompilerAssert.CompileAsync(
-            new string[] { $"{
-                nameof(Listing07_12)
-                    .Replace('_','.')}.{
-                nameof(OverrideVersusNewModifier)}.cs" },
+            new string[] {
+                CompilerAssert.GetSourceCodeFileName().Replace(
+                    ".Tests","*") },
             new string[] { "CS0108" });
     }
 }

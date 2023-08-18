@@ -7,13 +7,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_16.Tests;
 public class ProgramTests
 {
     [TestMethod]
-    public async Task DefiningAnAbstractClass()
+    public async Task DefiningAnAbstractClassTest()
     {
         await CompilerAssert.CompileAsync(
-            new string[] { $"{
-                nameof(Listing07_16)
-                    .Replace('_','.')}.{
-                nameof(DefiningAnAbstractClass)}.cs" },
+            new string[] {
+                CompilerAssert.GetSourceCodeFileName().Replace(
+                    ".Tests","*") },
             new string[] { "CS0144" });
     }
 }
