@@ -1,8 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_27;
 
 #region INCLUDE
-using System;
-using System.Linq;
 using System.Xml.Linq;
 
 #region EXCLUDE
