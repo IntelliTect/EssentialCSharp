@@ -39,10 +39,10 @@ public static class CompilerAssert
                         Path.Combine("ref", "net7.0"))
         };
 
-        foreach (string eachFileName in fileNames)
+        foreach (string each in fileNames)
         {
-            IEnumerable<string>? fileNamesToCompile;
-            if (!File.Exists(eachFileName))
+            string fileName = each;
+            if (!File.Exists(fileName))
             {
                 // Search up to find the file in the target project directory.
                 string testCsprojName = Path.GetFileName(
@@ -51,32 +51,12 @@ public static class CompilerAssert
                 string currentChapterTestDirectory = Path.GetFullPath(
                     Path.Combine("..", "..", "..", testCsprojName));
                 string? currentTargetDirectory = Path.GetDirectoryName(currentChapterTestDirectory.Replace(".Tests", ""));
-                if ((Path.Join(currentTargetDirectory, eachFileName) is string temp) && File.Exists(temp))
+                if ((Path.Join(currentTargetDirectory, fileName) is string temp) && File.Exists(temp))
                 {
-                    fileNamesToCompile = Enumerable.Repeat(eachFileName, 1);
-                }
-                else if (currentTargetDirectory is not null)
-                {
-                    // Perhaps we have a wildcard in the file name.
-                    fileNamesToCompile = Directory.EnumerateFiles(
-                        currentTargetDirectory,
-                        eachFileName,
-                        SearchOption.TopDirectoryOnly);
-                }
-                else
-                {
-                    throw new ArgumentException(
-                        $"Specified file, { eachFileName } does not exist.");
+                    fileName = temp;
                 }
             }
-            else
-            {
-                fileNamesToCompile = Enumerable.Repeat(eachFileName, 1);
-            }
-            foreach (string fileName in fileNamesToCompile)
-            {
-                test.TestState.Sources.Add((Path.GetFileName(fileName), await File.ReadAllTextAsync(fileName)));
-            }
+            test.TestState.Sources.Add((Path.GetFileName(fileName), await File.ReadAllTextAsync(fileName)));
         }
 
         // Note: GeneratedSources is ignored.
