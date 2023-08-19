@@ -31,10 +31,6 @@ public class ThrowingExceptions
                 $"Unexpected error: { exception.Message }");
             // Jump to Post Catch
         }
-        catch
-        {
-            Console.WriteLine("Unexpected error!");
-        }
 
         // Post Catch
         Console.WriteLine(
