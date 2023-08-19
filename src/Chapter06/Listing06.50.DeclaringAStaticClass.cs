@@ -58,9 +58,9 @@ public class Program
     public static void Main(string[] args)
     {
         int[] numbers = new int[args.Length];
-        for (int count = 0; count < args.Length; count++)
+        for (int index = 0; index < args.Length; index++)
         {
-            numbers[count] = args[count].Length;
+            numbers[index] = args[index].Length;
         }
 
         Console.WriteLine(
