@@ -2,6 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_55;
 
 using System;
 
+
 #region INCLUDE
 // CommandLine is nested within program
 #region HIGHLIGHT
@@ -10,31 +11,26 @@ public class Program
     // Define a nested class for processing the command line
     private class CommandLine
     {
-#endregion HIGHLIGHT
+        #endregion HIGHLIGHT
         public CommandLine(string[] arguments)
         {
-            for(int argumentCounter = 0;
+            for (int argumentCounter = 0;
                 argumentCounter < arguments.Length;
                 argumentCounter++)
             {
-                switch(argumentCounter)
+                _ = argumentCounter switch
                 {
-                    case 0:
-                        Action = arguments[0].ToLower();
-                        break;
-                    case 1:
-                        Id = arguments[1];
-                        break;
-                    case 2:
-                        FirstName = arguments[2];
-                        break;
-                    case 3:
-                        LastName = arguments[3];
-                        break;
-                }
+                    0 => Action = arguments[0].ToLower(),
+                    1 => Id = arguments[1],
+                    2 => FirstName = arguments[2],
+                    3 => LastName = arguments[3],
+                    _ => throw new ArgumentException(
+                        $"Unexpected argument " +
+                        $"'{arguments[argumentCounter]}'")
+                };
             }
         }
-        public string? Action { get;  }
+        public string? Action { get; }
         public string? Id { get; }
         public string? FirstName { get; }
         public string? LastName { get; }
