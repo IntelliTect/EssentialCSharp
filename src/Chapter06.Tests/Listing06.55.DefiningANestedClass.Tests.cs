@@ -55,4 +55,19 @@ public class ProgramTests
         IntelliTect.TestTools.Console.ConsoleAssert.Expect(
             expected, (Action<string[]>)Program.Main, arguments);
     }
+
+    [TestMethod]
+    [ExpectedException(typeof(ArgumentException))]
+    public void Main_TooManyArguments_ThrowException()
+    {
+        string[] arguments = {
+            "update",
+            "15",
+            "Inigo",
+            "Montoya",
+            "UnexpectedArgument"
+        };
+
+        Program.Main(arguments);
+    }
 }
