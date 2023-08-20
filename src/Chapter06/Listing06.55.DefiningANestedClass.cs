@@ -2,7 +2,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_55;
 
 using System;
 
-
 #region INCLUDE
 // CommandLine is nested within program
 #region HIGHLIGHT
@@ -11,7 +10,7 @@ public class Program
     // Define a nested class for processing the command line
     private class CommandLine
     {
-        #endregion HIGHLIGHT
+#endregion HIGHLIGHT
         public CommandLine(string[] arguments)
         {
             for (int argumentCounter = 0;
