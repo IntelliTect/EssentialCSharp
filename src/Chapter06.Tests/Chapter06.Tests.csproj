@@ -11,6 +11,6 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
     <PackageReference Update="Microsoft.CodeAnalysis" Version="4.6.0" />
-    <PackageReference Update="Microsoft.NET.Test.Sdk" Version="17.7.0" />
+    <PackageReference Update="Microsoft.NET.Test.Sdk" Version="17.7.1" />
   </ItemGroup>
 </Project>
