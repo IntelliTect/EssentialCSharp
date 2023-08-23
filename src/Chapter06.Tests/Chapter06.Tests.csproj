@@ -4,13 +4,13 @@
   </PropertyGroup>
   <Import Project="..\ChapterTests.props" />
   <ItemGroup>
-    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Scripting" Version="4.6.0" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Scripting" Version="4.7.0" />
     <ProjectReference Include="..\Chapter06\Chapter06.csproj" />
     <PackageReference Update="coverlet.collector" Version="6.0.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
-    <PackageReference Update="Microsoft.CodeAnalysis" Version="4.6.0" />
+    <PackageReference Update="Microsoft.CodeAnalysis" Version="4.7.0" />
     <PackageReference Update="Microsoft.NET.Test.Sdk" Version="17.7.1" />
   </ItemGroup>
 </Project>
