@@ -1,14 +1,10 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_26;
 
-#region INCLUDE
-using System;
-
-#region EXCLUDE
 public class Program
 {
     public static void Main()
     {
-        #endregion EXCLUDE
+        #region INCLUDE
         dynamic data =
           "Hello!  My name is Inigo Montoya";
         Console.WriteLine(data);

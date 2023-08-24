@@ -1,6 +1,5 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_08;
 
-using System;
 #region INCLUDE
 public class CommandLineInfo
 {

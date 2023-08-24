@@ -1,8 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_06;
 
 #region INCLUDE
-using System;
-using System.Collections.Generic;
 
 public class Program
 {

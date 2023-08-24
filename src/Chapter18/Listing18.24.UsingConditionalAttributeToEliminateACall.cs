@@ -4,7 +4,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_24;
 
 #endregion EXCLUDE
-using System;
 using System.Diagnostics;
 
 public class Program

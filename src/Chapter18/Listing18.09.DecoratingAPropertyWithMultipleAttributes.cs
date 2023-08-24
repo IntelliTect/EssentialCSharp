@@ -1,7 +1,5 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_09;
 
-using System;
-
 public class CommandLineInfo
 {
     [CommandLineSwitchAlias("?")]
