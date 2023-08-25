@@ -1,7 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_03;
 
 #region INCLUDE
-using System;
 using System.Diagnostics;
 using System.IO;
 using System.Reflection;

@@ -1,14 +1,11 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_28;
 
 using Listing18_29;
-#region INCLUDE
-using System;
-#region EXCLUDE
 public class Program
 {
     public static void Main()
     {
-#endregion EXCLUDE
+        #region INCLUDE
         dynamic person = DynamicXml.Parse(
          @"<Person>
                 <FirstName>Inigo</FirstName>
