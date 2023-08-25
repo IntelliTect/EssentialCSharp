@@ -4,7 +4,7 @@
 global using System.Text;
 #region EXCLUDE
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_08;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_09;
 
 #endregion EXCLUDE
 public class Program
