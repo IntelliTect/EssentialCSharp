@@ -13,8 +13,8 @@ public static class CompilerAssert
     /// <summary>
     /// Compile the file associated with he caller's file name.
     /// </summary>
-    /// <param name="expectedErrorIds"></param>
-    /// <returns></returns>
+    /// <param name="expectedErrorIds">The id's of the expected errors and warnings. ex: CS0165</param>
+    /// <returns>A task that is compiling the code.</returns>
     public static async Task CompileTestTargetFileAsync(
         string[] expectedErrorIds, [CallerFilePath] string testFileName = null!)
     {
