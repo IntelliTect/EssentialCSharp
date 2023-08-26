@@ -75,7 +75,7 @@ public static class CompilerAssert
                 else
                 {
                     throw new ArgumentException(
-                        $"Specified file, {eachFileName} does not exist.");
+                        $"Specified file, {eachFileName} does not exist.", nameof(fileNames));
                 }
             }
             else
