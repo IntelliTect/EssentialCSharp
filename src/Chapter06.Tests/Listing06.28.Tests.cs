@@ -10,7 +10,9 @@ public class ProgramTests
     public async Task UnassignedVariableThrowsError()
     {
         await CompilerAssert.CompileAsync(
-            new string[] { "Listing06.28.DefaultConstructorNoLongerAvailable.cs", "Listing06.26.DefiningAConstructor.cs" },
+            new string[] {
+                CompilerAssert.GetTargetFileNameToCompileFromTestFileName(),
+                "Listing06.26.DefiningAConstructor.cs" },
             new string[] { "CS7036" });
     }
 }

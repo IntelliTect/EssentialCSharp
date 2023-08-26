@@ -4,11 +4,36 @@ using Microsoft.CodeAnalysis.Diagnostics;
 using Microsoft.CodeAnalysis.Testing;
 using Microsoft.CodeAnalysis.Testing.Verifiers;
 using System.Collections.Immutable;
+using System.Runtime.CompilerServices;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Shared.Tests;
 
 public static class CompilerAssert
 {
+    /// <summary>
+    /// Compile the file associated with he caller's file name.
+    /// </summary>
+    /// <param name="expectedErrorIds">The id's of the expected errors and warnings. ex: CS0165</param>
+    /// <returns>A task that is compiling the code.</returns>
+    public static async Task CompileTestTargetFileAsync(
+        string[] expectedErrorIds, [CallerFilePath] string testFileName = null!)
+    {
+        await CompileAsync(new string[] {
+            GetTargetFileNameToCompileFromTestFileName(testFileName) }, 
+            expectedErrorIds);
+    }
+    
+    public static string GetTargetFileNameToCompileFromTestFileName(
+        [CallerFilePath] string testFileName = null!)
+    {
+#if NET7_0_OR_GREATER
+        ArgumentException.ThrowIfNullOrEmpty(testFileName);
+#endif
+        string targetFileToCompile = Path.GetFileName(testFileName.Replace(
+                    ".Tests", "*"));
+        return targetFileToCompile;
+    }
+
     public static async Task CompileAsync(string[] fileNames, string[] expectedErrorIds)
     {
 
@@ -23,10 +48,10 @@ public static class CompilerAssert
                         Path.Combine("ref", "net7.0"))
         };
 
-        foreach (string each in fileNames)
+        List<string> fileNamesToCompile = new();
+        foreach (string eachFileName in fileNames)
         {
-            string fileName = each;
-            if (!File.Exists(fileName))
+            if (!File.Exists(eachFileName))
             {
                 // Search up to find the file in the target project directory.
                 string testCsprojName = Path.GetFileName(
@@ -35,14 +60,35 @@ public static class CompilerAssert
                 string currentChapterTestDirectory = Path.GetFullPath(
                     Path.Combine("..", "..", "..", testCsprojName));
                 string? currentTargetDirectory = Path.GetDirectoryName(currentChapterTestDirectory.Replace(".Tests", ""));
-                if ((Path.Join(currentTargetDirectory, fileName) is string temp) && File.Exists(temp))
+                if ((Path.Join(currentTargetDirectory, eachFileName) is string temp) && File.Exists(temp))
                 {
-                    fileName = temp;
+                    fileNamesToCompile.Add(temp);
+                }
+                else if (currentTargetDirectory is not null)
+                {
+                    // Perhaps we have a wildcard in the file name.
+                    fileNamesToCompile.AddRange(Directory.EnumerateFiles(
+                        currentTargetDirectory,
+                        eachFileName,
+                        SearchOption.TopDirectoryOnly));
+                }
+                else
+                {
+                    throw new ArgumentException(
+                        $"Specified file, {eachFileName} does not exist.", nameof(fileNames));
                 }
             }
-            test.TestState.Sources.Add((Path.GetFileName(fileName), await File.ReadAllTextAsync(fileName)));
+            else
+            {
+                fileNamesToCompile.Add(eachFileName);
+            }
         }
 
+        foreach (string fileName in fileNamesToCompile)
+        {
+            test.TestState.Sources.Add((Path.GetFileName(fileName), await File.ReadAllTextAsync(fileName)));
+        }
+        
         // Note: GeneratedSources is ignored.
         test.TestState.Sources.Add(("GlobalUsings.cs", await File.ReadAllTextAsync("GlobalUsings.cs")));
 

@@ -9,8 +9,7 @@ public class ProgramTests
     [TestMethod]
     public async Task UnassignedVariableThrowsError()
     {
-        await CompilerAssert.CompileAsync(
-            "Listing06.15.UsingThePrivateAccessModifier.cs",
-            "CS0122");
+        await CompilerAssert.CompileTestTargetFileAsync(
+            new string[] { "CS0122"});
     }
 }

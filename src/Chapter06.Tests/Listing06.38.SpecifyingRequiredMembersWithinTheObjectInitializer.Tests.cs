@@ -11,7 +11,9 @@ public class ProgramTests
     public async Task NotSpecifyingRequiredMembersWithinTheObjectInitializer()
     {
         await CompilerAssert.CompileAsync(
-            new string[]{"Listing06.38.SpecifyingRequiredMembersWithinTheObjectInitializer.cs", "Listing06.37.RequiredProperties.cs"},
+            new string[]{
+                CompilerAssert.GetTargetFileNameToCompileFromTestFileName(),
+                "Listing06.37.RequiredProperties.cs"},
             new string[] { "CS9035" });
     }
 }

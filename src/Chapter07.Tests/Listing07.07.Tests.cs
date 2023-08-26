@@ -9,8 +9,7 @@ public class ProgramTests
     [TestMethod]
     public async Task ProtectedMembersInaccessibleFromNonDerivedTypes()
     {
-        await CompilerAssert.CompileAsync(
-            new string[] { "Listing07.07.ProtectedMembersAreAccessibleOnlyFromDerivedClasses.cs" },
+        await CompilerAssert.CompileTestTargetFileAsync(
             new string[] { "CS1540", "CS0122" });
     }
 }
