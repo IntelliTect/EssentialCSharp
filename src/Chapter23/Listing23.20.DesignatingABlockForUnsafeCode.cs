@@ -7,8 +7,6 @@ using System.Text;
 
 public class Program
 {
-    public unsafe delegate void MethodInvoker(byte* buffer);
-
     public unsafe static int Main()
     {
         if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
@@ -26,7 +24,7 @@ public class Program
                 0x89, 0x48, 0x08,       // mov    %ecx,0x8(%rax)
                 0x4c, 0x89, 0xc3,       // mov    %r8,%rbx
                 0xc3                    // retq
-        };
+                };
 
                 byte[] buffer = new byte[12];
 
@@ -37,7 +35,7 @@ public class Program
                         codeBytes, 0,
                         codeBytesPtr, codeBytes.Length);
 
-                    MethodInvoker method = Marshal.GetDelegateForFunctionPointer<MethodInvoker>(codeBytesPtr);
+                    delegate*<byte*, void> method = (delegate*<byte*, void>)(IntPtr)codeBytesPtr;
                     fixed (byte* newBuffer = &buffer[0])
                     {
                         method(newBuffer);
@@ -67,10 +65,9 @@ public class VirtualMemoryPtr : SafeHandle
         AllocatedPointer =
             VirtualMemoryManager.AllocExecutionBlock(
             memorySize, ProcessHandle);
-        Disposed = false;
     }
 
-    public readonly IntPtr AllocatedPointer;
+    readonly IntPtr AllocatedPointer;
     readonly IntPtr ProcessHandle;
     readonly IntPtr MemorySize;
     bool Disposed;
