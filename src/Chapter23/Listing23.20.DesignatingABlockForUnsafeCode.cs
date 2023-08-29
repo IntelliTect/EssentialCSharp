@@ -26,23 +26,21 @@ public class Program
                 0xc3                    // retq
                 };
 
-                byte[] buffer = new byte[12];
-
+                Buffer buffer = new();
                 using (VirtualMemoryPtr codeBytesPtr =
                     new(codeBytes.Length))
                 {
                     Marshal.Copy(
                         codeBytes, 0,
                         codeBytesPtr, codeBytes.Length);
-
+                    
                     delegate*<byte*, void> method = (delegate*<byte*, void>)(IntPtr)codeBytesPtr;
-                    fixed (byte* newBuffer = &buffer[0])
-                    {
-                        method(newBuffer);
-                    }
+                    method(&buffer[0]);
                 }
                 Console.Write("Processor Id: ");
-                Console.WriteLine(ASCIIEncoding.ASCII.GetChars(buffer));
+                char[] chars = new char[Buffer.Length];
+                Encoding.ASCII.GetChars(buffer, chars);
+                Console.WriteLine(chars);
             } // unsafe
         }
         else
@@ -52,6 +50,15 @@ public class Program
         return 0;
     }
 }
+
+[System.Runtime.CompilerServices.InlineArrayAttribute(Length)]
+public struct Buffer
+{
+    public const int Length = 10;
+
+    private byte _element0;
+}
+
 #endregion INCLUDE
 
 public class VirtualMemoryPtr : SafeHandle
