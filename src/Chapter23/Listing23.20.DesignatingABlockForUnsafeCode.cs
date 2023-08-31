@@ -1,5 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter23.Listing23_20;
 
+#if NET8_0_OR_GREATER
 #region INCLUDE
 using System;
 using System.Runtime.InteropServices;
@@ -268,3 +269,4 @@ class VirtualMemoryManager
             size, GetCurrentProcessHandle());
     }
 }
+#endif
