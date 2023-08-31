@@ -1,9 +1,9 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_23;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_23;
 
 using System;
 using System.Collections.Generic;
 #region INCLUDE
-public class DoNotCaptureLoop
+public class CaptureLoop
 {
     public static void Main()
     {
@@ -11,11 +11,7 @@ public class DoNotCaptureLoop
         var actions = new List<Action>();
         foreach(string item in items)
         {
-            #region HIGHLIGHT
-            string _item = item;
-            #endregion HIGHLIGHT
-            actions.Add(
-                () => { Console.WriteLine(_item); });
+            actions.Add(() => { Console.WriteLine(item); });
         }
         foreach(Action action in actions)
         {
