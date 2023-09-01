@@ -41,8 +41,7 @@ public class Book
         }
         set
         {
-            ArgumentException.ThrowIfNullOrEmpty(
-                value = value?.Trim()!);
+            ArgumentException.ThrowIfNullOrEmpty(value);
             _Title = value;
         }
     }
@@ -56,8 +55,7 @@ public class Book
         }
         set
         {
-            ArgumentException.ThrowIfNullOrEmpty(
-                value = value?.Trim()!);
+            ArgumentException.ThrowIfNullOrEmpty(value);
             _Isbn = value;
         }
     }
