@@ -1,4 +1,4 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_16.Tests;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_16.Tests;
 
 using AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_16;
 
