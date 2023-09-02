@@ -17,7 +17,7 @@ public class ThrowingExceptions
         catch (FormatException exception)
         {
             Console.WriteLine(
-                "A FormateException was thrown");
+                "A FormatException was thrown");
         }
         #region INCLUDE
         // ...
