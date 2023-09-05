@@ -2,7 +2,7 @@
 // and the attribute is not available in .NET 6.0.
 #pragma warning disable SYSLIB1045 // Convert to 'GeneratedRegexAttribute'.
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_11;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_08a;
 
 #region INCLUDE
 // The using directive imports all types from the 
@@ -13,7 +13,6 @@ public class Program
 {
     public static void Main()
     {
-        #region EXCLUDE
         const string firstName = "FirstName";
         const string initial = "Initial";
         const string lastName = "LastName";
@@ -23,21 +22,21 @@ public class Program
         // See https://www.regular-expressions.info/ for
         // more information.
         const string pattern = $"""
-            (?<{firstName}>\w+)\s+((?<{initial}>\w)\.\s+)?(?<{lastName}>\w+)\s*
+            (?<{firstName}>\w+)\s+((?<{
+            initial}>\w)\.\s+)?(?<{
+            lastName}>\w+)\s*
             """;
 
         Console.WriteLine(
             "Enter your full name (e.g. Inigo T. Montoya): ");
         string name = Console.ReadLine()!;
 
-        #endregion EXCLUDE
         #region HIGHLIGHT
         // No need to qualify RegEx type with
         // System.Text.RegularExpressions because
         // of the using directive above
         Match match = Regex.Match(name, pattern);
         #endregion HIGHLIGHT
-        #region EXCLUDE
 
         if (match.Success)
         {
@@ -48,7 +47,6 @@ public class Program
             Console.WriteLine(
                 $"{lastName}: {match.Groups[lastName]}");
         }
-        #endregion EXCLUDE
     }
 }
 #endregion INCLUDE
