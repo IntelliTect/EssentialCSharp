@@ -18,9 +18,9 @@ public class Program
         employee1.Salary = "Too Little";
         IncreaseSalary(employee1);
         Console.WriteLine(
-           $"{
-            employee1.FirstName } {
-            employee1.LastName }: {
+           $"{ 
+            employee1.FirstName } { 
+            employee1.LastName }: { 
             employee1.Salary }");
         #endregion HIGHLIGHT
         // ...

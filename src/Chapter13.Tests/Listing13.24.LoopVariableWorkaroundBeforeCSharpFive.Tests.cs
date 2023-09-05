@@ -1,6 +1,6 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_22.Tests;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_24.Tests;
 
 [TestClass]
 public class ProgramTests
@@ -11,6 +11,6 @@ public class ProgramTests
         string expected = $@"Moe{Environment.NewLine}Larry{Environment.NewLine}Curly";
 
         IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-            expected, CaptureLoop.Main);
+            expected, DoNotCaptureLoop.Main);
     }
 }
