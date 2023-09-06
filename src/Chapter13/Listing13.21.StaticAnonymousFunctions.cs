@@ -31,7 +31,7 @@ public class Program
                 // Error CS8820: A static anonymous function
                 // cannot contain a reference to comparisonCount.
                 comparisonCount++;
-                #endif // COMPILEERROR EXCLUDE
+                #endif // COMPILEERROR // EXCLUDE
                 return first < second;
             }
         );
