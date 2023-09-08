@@ -5,14 +5,15 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Table13_01;
 
 public partial class LambdaExpressionNotesAndExamples
 {
-    // 1.
-    static public void AccessingMemberMethods()
+    // 4.
+    static public void TypeInferenceOfExpression()
     {
 //#if COMPILEERROR
 #if !NET6_0_OR_GREATER
-        //ERROR: Operator "." cannot be applied to
-        //operand of type "lambda expression"
-        string s = ((int x ) =>).ToString();
+        //ERROR: You cannot assign lambda
+        //expression to an implicitly
+        //typed local variable prior C#10
+        var v = (int x) => x;
 #endif
 //#endif // COMPILEERROR
     }

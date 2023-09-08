@@ -5,14 +5,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Table13_01;
 
 public partial class LambdaExpressionNotesAndExamples
 {
-    // 1.
-    static public void AccessingMemberMethods()
+    // 3.
+    static public void ConvertingToImproperDelegate()
     {
 //#if COMPILEERROR
 #if !NET6_0_OR_GREATER
-        //ERROR: Operator "." cannot be applied to
-        //operand of type "lambda expression"
-        string s = ((int x ) =>).ToString();
+        //ERROR: Lambda expression is not compatible
+        //with Func<int, bool> type
+        Func<int, bool> f = (int x) => x;
 #endif
 //#endif // COMPILEERROR
     }

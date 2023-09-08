@@ -5,14 +5,16 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Table13_01;
 
 public partial class LambdaExpressionNotesAndExamples
 {
-    // 1.
-    static public void AccessingMemberMethods()
+    // 6.
+    static public void AccessingParametersAndLocalsOutOfBody()
     {
 //#if COMPILEERROR
 #if !NET6_0_OR_GREATER
-        //ERROR: Operator "." cannot be applied to
-        //operand of type "lambda expression"
-        string s = ((int x ) =>).ToString();
+    //ERROR: The name "first" does not
+    //exist in the current context
+    Func <int, int, bool> expression =
+        (first, secont) => first > second;
+    first++;
 #endif
 //#endif // COMPILEERROR
     }

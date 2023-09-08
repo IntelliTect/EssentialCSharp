@@ -5,14 +5,19 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Table13_01;
 
 public partial class LambdaExpressionNotesAndExamples
 {
-    // 1.
-    static public void AccessingMemberMethods()
+    // 8.
+    static public void CompilerWillNotDetectInLambdaInitialization()
     {
 //#if COMPILEERROR
 #if !NET6_0_OR_GREATER
-        //ERROR: Operator "." cannot be applied to
-        //operand of type "lambda expression"
-        string s = ((int x ) =>).ToString();
+    int number;
+    Func<int, bool> isFortyTwo =
+        x => 42 == (number = x);
+    if(isFortyTwo(42))
+    {
+      //ERROR: Use of unassigned local variable
+        System.Console.Write(number);
+    }
 #endif
 //#endif // COMPILEERROR
     }
