@@ -9,7 +9,6 @@
   </PropertyGroup>
   <ItemGroup>
     <None Remove="Listing05.07.ImplicitUsingsGeneratedGlocalUsingDeclaratives.cs" />
-    <None Remove="Listing05.09.UsingElementInProjectFile.xml" />
   </ItemGroup>
   <ItemGroup>
     <Using Include="System.Net" />
