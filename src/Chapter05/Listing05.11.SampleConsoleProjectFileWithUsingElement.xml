@@ -8,6 +8,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Using Include="System.Net" />
+    <Using Static="true" Include="System.Console"/>
   </ItemGroup>
 </Project>
 <!--#endregion INCLUDE-->
