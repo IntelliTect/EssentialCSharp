@@ -1,6 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_27;
 
-using Listing06_27a;
+using Listing06_28;
 
 #region INCLUDE
 public class Program
