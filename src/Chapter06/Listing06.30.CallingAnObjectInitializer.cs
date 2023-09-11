@@ -1,7 +1,7 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_30;
 
 using System.Collections.Generic;
-using Listing06_26;
+using Listing06_27a;
 
 #region INCLUDE
 public class Program

@@ -1,7 +1,4 @@
-﻿// Disabled pending introductin to object initializers
-#pragma warning disable IDE0017 
-
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_26;
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_27a;
 
 public class Program
 {
