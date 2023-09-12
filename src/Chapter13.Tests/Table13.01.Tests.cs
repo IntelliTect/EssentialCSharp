@@ -22,7 +22,7 @@ public class LambdaHighlightTests
     }
 
     [TestMethod]
-    public void PatternMatchingOnTypeTest(){
-        LambdaExpressionNotesAndExamples.PatternMatchingOnType();
+    public void TypeInferenceOfExpressionTest(){
+        LambdaExpressionNotesAndExamples.TypeInferenceOfExpression();
     }
 }
