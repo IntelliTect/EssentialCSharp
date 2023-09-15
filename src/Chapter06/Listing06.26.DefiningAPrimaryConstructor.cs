@@ -32,7 +32,7 @@ public class Employee(string firstName, string lastName)
     public Employee? Manager { get; set; }
 
     // Name property
-    public string Name
+    public string FullName
     {
         get
         {
