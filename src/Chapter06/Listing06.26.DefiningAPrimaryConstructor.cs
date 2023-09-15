@@ -5,8 +5,7 @@ public class Program
 {
     public static void Main()
     {
-        Employee employee;
-        employee = new("Inigo", "Montoya");
+        Employee employee = new("Inigo", "Montoya");
         employee.Salary = "Too Little";
 
         System.Console.WriteLine(
