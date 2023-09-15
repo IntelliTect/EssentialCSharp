@@ -53,9 +53,8 @@ public class Employee(string firstName, string lastName)
                 // Throw an exception if the full 
                 // name was not assigned
                 throw new System.ArgumentException(
-                    string.Format(
-                    $"Assigned value '{ value }' is invalid", 
-                    nameof(value)));
+                   $"Assigned value '{ value }' is invalid", 
+                    nameof(value));
             }
         }
     }
