@@ -42,8 +42,7 @@ public class Employee(string firstName, string lastName)
         {
             // Split the assigned value into 
             // first and last names
-            string[] names;
-            names = value.Split(new char[] { ' ' });
+            string[] names = value.Split(' ');
             if(names.Length == 2)
             {
                 FirstName = names[0];
