@@ -10,10 +10,7 @@ public class Program
         employee.Salary = "Too Little";
 
         System.Console.WriteLine(
-            "{0} {1}: {2}",
-            employee.FirstName,
-            employee.LastName,
-            employee.Salary);
+            $"{employee.FirstName} {employee.LastName}: {employee.Salary}");
     }
 }
 
