@@ -6,18 +6,15 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Table13_01;
 public partial class LambdaExpressionNotesAndExamples
 {
     // 8.
-    static public void CompilerWillNotDetectInLambdaAssignment()
+    static public void AccessingParametersAndLocalsOutOfBody()
     {
 //#if COMPILEERROR
 #if !NET6_0_OR_GREATER
-    int number;
-    Func<int, bool> isFortyTwo =
-        x => 42 == (number = x);
-    if(isFortyTwo(42))
-    {
-      //ERROR: Use of unassigned local variable
-        System.Console.Write(number);
-    }
+    //ERROR: The name "first" does not
+    //exist in the current context
+    Func <int, int, bool> expression =
+        (first, second) => first > second;
+    first++;
 #endif
 //#endif // COMPILEERROR
     }
