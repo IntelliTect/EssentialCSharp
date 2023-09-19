@@ -5,15 +5,19 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Table13_01;
 
 public partial class LambdaExpressionNotesAndExamples
 {
-    // 5.
-    static public void PatternMatchingOnType()
+    // 10.
+    static public void CompilerWillNotDetectInLambdaAssignment()
     {
 //#if COMPILEERROR
 #if !NET6_0_OR_GREATER
-        //ERROR: The first operand of an "is" or "as"
-        //operator may not be a lambda expression or
-        //anonymous method
-        bool b = ((int x) => x) is Func<int,int>;
+    int number;
+    Func<int, bool> isFortyTwo =
+        x => 42 == (number = x);
+    if(isFortyTwo(42))
+    {
+      //ERROR: Use of unassigned local variable
+        System.Console.Write(number);
+    }
 #endif
 //#endif // COMPILEERROR
     }

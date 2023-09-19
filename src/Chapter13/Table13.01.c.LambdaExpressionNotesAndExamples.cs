@@ -6,14 +6,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Table13_01;
 public partial class LambdaExpressionNotesAndExamples
 {
     // 3.
-    static public void ConvertingToImproperDelegate()
+    static public void ExpressionsCanHaveReturnTypes()
     {
-//#if COMPILEERROR
 #if !NET6_0_OR_GREATER
-        //ERROR: Lambda expression is not compatible
-        //with Func<int, bool> type
-        Func<int, bool> f = (int x) => x;
+        Action action = void () => { };
+        var func = short?(long number) => number <= short.MaxValue ? (short)number : null;
+        }
 #endif
-//#endif // COMPILEERROR
     }
 }

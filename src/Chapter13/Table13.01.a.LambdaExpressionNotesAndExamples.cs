@@ -6,12 +6,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Table13_01;
 public partial class LambdaExpressionNotesAndExamples
 {
     // 1.
-    static public void AccessingMemberMethods()
+    static public void DiscardParameters()
     {
 #if !NET6_0_OR_GREATER
-        //ERROR: Operator "." cannot be applied to
-        //operand of type "lambda expression"
-        string s = ((int x) => x).ToString();
+        Action<int, int> x = (_,_)=>
+            Console.WriteLine("This is a test.");
 #endif
     }
 }
