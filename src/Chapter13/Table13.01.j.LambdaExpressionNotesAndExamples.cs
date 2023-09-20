@@ -6,13 +6,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Table13_01;
 public partial class LambdaExpressionNotesAndExamples
 {
     // 10.
-    static public void CompilerWillNotDetectInLambdaAssignment()
+    public static void CompilerWillNotDetectInLambdaAssignment()
     {
 //#if COMPILEERROR
 #if !NET6_0_OR_GREATER
-    int number;
     Func<int, bool> isFortyTwo =
-        x => 42 == (number = x);
+        x => 42 == x;
     if(isFortyTwo(42))
     {
       //ERROR: Use of unassigned local variable

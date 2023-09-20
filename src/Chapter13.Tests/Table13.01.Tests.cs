@@ -6,7 +6,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Table13_01.Tests;
 [TestClass]
 public class LambdaHighlightTests
 {
-    public TestContext TestContext { get; set; } = null!; // Set by MSTest;
 
     [TestMethod]
     /* 1. */ [DataRow(".a")]

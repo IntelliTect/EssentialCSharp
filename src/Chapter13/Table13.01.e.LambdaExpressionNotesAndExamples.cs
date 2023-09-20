@@ -6,7 +6,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Table13_01;
 public partial class LambdaExpressionNotesAndExamples
 {
     // 5.
-    static public void PatternMatchingOnType()
+    public static void PatternMatchingOnType()
     {
 //#if COMPILEERROR
 #if !NET6_0_OR_GREATER

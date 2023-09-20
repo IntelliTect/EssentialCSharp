@@ -6,7 +6,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Table13_01;
 public partial class LambdaExpressionNotesAndExamples
 {
     // 4.
-    static public void MemberMethodsOnExpressions()
+    public static void MemberMethodsOnExpressions()
     {
     //#if COMPILEERROR
     #if !NET6_0_OR_GREATER

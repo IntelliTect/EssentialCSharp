@@ -6,7 +6,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Table13_01;
 public partial class LambdaExpressionNotesAndExamples
 {
     // 6.
-    static public void ConvertingToImproperDelegate()
+    public static void ConvertingToImproperDelegate()
     {
 //#if COMPILEERROR
 #if !NET6_0_OR_GREATER

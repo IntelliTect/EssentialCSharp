@@ -6,10 +6,10 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Table13_01;
 public partial class LambdaExpressionNotesAndExamples
 {
     // 1.
-    static public void DiscardParameters()
+    public static void DiscardParameters()
     {
 #if !NET6_0_OR_GREATER
-        Action<int, int> x = (_,_)=>
+        Action<int, int> x = (_, _)=>
             Console.WriteLine("This is a test.");
 #endif
     }
