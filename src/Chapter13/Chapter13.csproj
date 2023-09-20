@@ -1,7 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <ChapterNumber>13</ChapterNumber>
-    <LangVersion>10.0</LangVersion>
   </PropertyGroup>
   <Import Project="..\Chapter.props" />
   <ItemGroup>
