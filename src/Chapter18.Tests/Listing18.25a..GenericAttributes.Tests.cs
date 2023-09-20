@@ -1,14 +1,15 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_07a.Tests;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_25a.Tests;
 
+#if NET7_0_OR_GREATER
 [TestClass]
 public class GenericExceptionTests
 {
     [TestMethod]
     public void ExpectedExceptionIsThrown()
     {
-        ExpectedException<ArgumentNullException>.AssertExceptionThrown(
+        ExpectedException<DivideByZeroException>.AssertExceptionThrown(
             SampleTests.ThrowArgumentNullExceptionTest);
     }
 
@@ -16,7 +17,8 @@ public class GenericExceptionTests
     [ExpectedException(typeof(InvalidOperationException))]
     public void ExpectedExceptionIsNotThrown()
     {
-        ExpectedException<ArgumentNullException>.AssertExceptionThrown(
+        ExpectedException<DivideByZeroException>.AssertExceptionThrown(
             () => { });
     }
 }
+#endif // NET7_0_OR_GREATER
