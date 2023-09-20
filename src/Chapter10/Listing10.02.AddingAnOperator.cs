@@ -54,7 +54,7 @@ public readonly struct Coordinate
     {
 
         // There is no need to check of null in this 
-        // case because Coordinate is a valye type.
+        // case because Coordinate is a value type.
         return (leftHandSide.Equals(rightHandSide));
     }
 

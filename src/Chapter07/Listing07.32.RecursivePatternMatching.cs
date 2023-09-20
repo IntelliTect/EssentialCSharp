@@ -29,7 +29,7 @@ public class Program
             (inigo, buttercup);
 
         if (couple is 
-            ( // Tuple: Retrived from deconstructor of Person
+            ( // Tuple: Retrieved from deconstructor of Person
                 ( // Positional: Select left side or tuple
                     { // Property of firstName
                         Length: int inigoFirstNameLength

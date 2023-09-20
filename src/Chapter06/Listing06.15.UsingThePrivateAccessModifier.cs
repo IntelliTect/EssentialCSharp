@@ -2,7 +2,7 @@
 #pragma warning disable CS8618
 // Our Main doesn't leverage everything in our Employee implementation - in production it would
 #pragma warning disable CS0649
-// Disabled pending introductin to object initializers
+// Disabled pending introduction to object initializers
 #pragma warning disable IDE0017 
 // Add readonly modifier ignored pending introduction of the concept
 #pragma warning disable IDE0044

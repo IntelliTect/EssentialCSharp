@@ -48,7 +48,7 @@ public class Thermostat
                 _CurrentTemperature = value;
                 // If there are any subscribers,
                 // notify them of changes in 
-                // temperature by invoking said subcribers
+                // temperature by invoking said subscribers
                 _OnTemperatureChange?.Invoke( // C# 6.0
                       this, new TemperatureArgs(value));
             }

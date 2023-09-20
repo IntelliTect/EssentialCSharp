@@ -10,9 +10,9 @@ public class Cryptographer : IDisposable
     #endregion PROPERTIES
 
     #region CONSTRUCTORS
-    public Cryptographer(SymmetricAlgorithm cryptoAlgoritym)
+    public Cryptographer(SymmetricAlgorithm cryptoAlgorithm)
     {
-        CryptoAlgorithm = cryptoAlgoritym;
+        CryptoAlgorithm = cryptoAlgorithm;
     }
 
     public Cryptographer()

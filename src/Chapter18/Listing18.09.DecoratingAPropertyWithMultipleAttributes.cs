@@ -23,13 +23,13 @@ public class CommandLineInfo
 #pragma warning disable CA1018 // Mark attributes with AttributeUsageAttribute
 internal class CommandLineSwitchRequiredAttribute : Attribute
 {
-    //not implimented
+    //not implemented
 }
 
 internal class CommandLineSwitchAliasAttribute : Attribute
 {
     public CommandLineSwitchAliasAttribute(string _)
     {
-        //not implimented
+        //not implemented
     }
 }

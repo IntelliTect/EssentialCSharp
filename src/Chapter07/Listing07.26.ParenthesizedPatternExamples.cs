@@ -8,7 +8,7 @@ public class PeriodsOfTheDay
     public bool IsOutsideOfStandardWorkHours(
         TimeOnly time) =>
             time.Hour is not
-                (> 8 and < 17 and not 12); // Parentbhesis Pattern - C# 10.
+                (> 8 and < 17 and not 12); // Parenthesis Pattern - C# 10.
     #endregion INCLUDE
 
     static bool TryGetPhoneButton(
@@ -19,7 +19,7 @@ public class PeriodsOfTheDay
         {
             '1' => '1',
             '2' or >= 'a' and <= 'c' => '2',
-            // not operator and parethesis example (C# 10)
+            // not operator and parenthesis example (C# 10)
             '3' or not (< 'd' or > 'f') => '3',
             '4' or >= 'g' and <= 'i' => '4',
             '5' or >= 'j' and <= 'l' => '5',

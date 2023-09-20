@@ -41,7 +41,7 @@ public class Program
         CommandLine commandLine = new(args);
         #endregion HIGHLIGHT
 
-        // Error handling intentionaly missing for elucidation.
+        // Error handling intentionally missing for elucidation.
 
         switch (commandLine.Action)
         {
