@@ -1,4 +1,4 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_16.Tests;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_16.Tests;
 
 using AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_16;
 
@@ -12,8 +12,8 @@ public class OverridingToStringTest
         Angle angle1 = new(120, 20, 20, "AngleName");
         Angle angle2 = new(320, 10, 10, null);
 
-        string expected1 = $"AngleName: 120� 20' 20\"";
-        string expected2 = $"320� 10' 10\"";
+        string expected1 = $"AngleName: 120° 20' 20\"";
+        string expected2 = $"320° 10' 10\"";
 
         string actual1 = angle1.ToString();
         string actual2 = angle2.ToString();

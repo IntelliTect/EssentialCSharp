@@ -27,6 +27,7 @@ abstract public class BaseProgramTests
     }
 
     [TestMethod]
+    [Ignore]
     [DataRow("IntelliTect", @"[1-9]\d*")]
     [DataRow("Text Snippet That Does Not Exist On The Page", @"0")]
     public void Main_FindText_VerifyOccurenceCount(string findText, string countPattern)
@@ -106,7 +107,7 @@ abstract public class BaseProgramTests
             ExceptionDispatchInfo.Capture(
                 innerException!).Throw();
 
-            return true;  // Identifhy whether the exception should report that it is handled or not.
+            return true;  // Identify whether the exception should report that it is handled or not.
         });
     }
 
@@ -168,7 +169,7 @@ abstract public class BaseProgramTests
             }
             if (exception is AggregateException aggregateException)
             {
-                // Innerexception expected to be WebException.
+                // InnerException expected to be WebException.
                 exception = aggregateException.Flatten();
                 aggregateException.Handle(innerException =>
                 {

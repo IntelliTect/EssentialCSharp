@@ -19,7 +19,7 @@ public readonly struct Angle
     {
         string prefix =
             string.IsNullOrWhiteSpace(Name) ? string.Empty : Name + ": ";
-        return $"{prefix}{Degrees}� {Minutes}' {Seconds}\"";
+        return $"{prefix}{Degrees}° {Minutes}' {Seconds}\"";
     }
     #endregion INCLUDE
 }
