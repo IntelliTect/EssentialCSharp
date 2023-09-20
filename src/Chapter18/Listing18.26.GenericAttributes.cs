@@ -19,6 +19,7 @@ public class ExpectedException<TException> :
     Attribute where TException : Exception
 #endregion HIGHLIGHT
 {
+    #region EXCLUDE
     public static TException AssertExceptionThrown(Action testMethod)
     {
         try
@@ -33,8 +34,10 @@ public class ExpectedException<TException> :
             return exception;
         }
     }
-
+    
     // Attribute detection
+    #endregion EXCLUDE
+
     // ...
 }
 #endregion INCLUDE
