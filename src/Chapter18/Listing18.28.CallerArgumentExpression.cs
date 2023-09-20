@@ -17,7 +17,7 @@ public class SampleTests
 public static void Method()
 {
     ExpectedException<DivideByZeroException>.AssertExceptionThrown(
-        () => throw new Exception());
+        () => throw new DivideByZeroException());
 }
 }
 
@@ -25,32 +25,32 @@ public static void Method()
 public class ExpectedException<TException> : 
     Attribute where TException : Exception
 {
-#region HIGHLIGHT
-public static TException AssertExceptionThrown(
-    Action testAction,
-    [CallerArgumentExpression(nameof(testAction))]
-        string testExpression = null!,
-    [CallerMemberName]string testActionMemberName = null!,
-    [CallerFilePath]string testActionFileName = null!
-    )
-#endregion HIGHLIGHT
-{
-    try
+    #region HIGHLIGHT
+    public static TException AssertExceptionThrown(
+        Action testAction,
+        [CallerArgumentExpression(nameof(testAction))]
+            string testExpression = null!,
+        [CallerMemberName]string testActionMemberName = null!,
+        [CallerFilePath]string testActionFileName = null!
+        )
+    #endregion HIGHLIGHT
     {
-        testAction();
-        throw new InvalidOperationException(
-            $"The expected exception, {
-                typeof(TException).FullName }, was not thrown" +
-                $" by the expression '{
-                    testExpression }' in the method '{
-                    testActionMemberName }' and file '{
-                    testActionFileName }'.");
+        try
+        {
+            testAction();
+            throw new InvalidOperationException(
+                $"The expected exception, {
+                    typeof(TException).FullName }, was not thrown" +
+                    $" by the expression '{
+                        testExpression }' in the method '{
+                        testActionMemberName }' and file '{
+                        testActionFileName }'.");
+        }
+        catch (TException exception) 
+        {
+            return exception;
+        }
     }
-    catch (TException exception) 
-    {
-        return exception;
-    }
-}
 
     // Attribute detection
     // ...
