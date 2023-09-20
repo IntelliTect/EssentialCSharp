@@ -10,8 +10,8 @@ public partial class LambdaExpressionNotesAndExamples
     {
 #if !NET6_0_OR_GREATER
         Action action = void () => { };
-        var func = short?(long number) => number <= short.MaxValue ? (short)number : null;
-        }
+        var func = short?(long number) => 
+            number <= short.MaxValue ? (short)number : null;
 #endif
     }
 }
