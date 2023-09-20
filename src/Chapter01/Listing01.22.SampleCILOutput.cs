@@ -58,7 +58,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_22
     } // End of method System.Void HelloWorld.Program::Main(System.String[])
 
 
-  .method public hidebysig specialname rtspecialname instance void .ctor() cil managed
+  .method public hidebysig specialName rtspecialname instance void .ctor() cil managed
     {
     // Code size 8
     .maxstack 8

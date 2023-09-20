@@ -1,4 +1,4 @@
-﻿// Justification: Only a aartial implmentation provided for elucidation purposes.
+﻿// Justification: Only a partial implmentation provided for elucidation purposes.
 #pragma warning disable IDE0059 // Unnecessary assignment of a value
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_04;
