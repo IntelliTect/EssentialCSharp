@@ -1,4 +1,6 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing017_08a;
+using System.Diagnostics;
+
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_08a;
 
 public class Program
 {
@@ -7,39 +9,29 @@ public class Program
         #region INCLUDE
         string[] languages = new [] {
             "C#", "COBOL", "Java",
-            "C++", "TypeScript", "Swift",
-            "Python", "Lisp", "JavaScript"};
+            "C++", "TypeScript", "Python",};
 
-        Span<string> languageSpan = languages.AsSpan(1);
+        // Create a Span<string> from the arrays first 3 elements.
+        Span<string> languageSpan = languages.AsSpan(0,2);
+        languages[0] = "R";
+        Trace.Assert(languages[0] == languageSpan[0]);
+        Trace.Assert("R" == languageSpan[0]);
+        languageSpan[0] = "Lisp";
+        Trace.Assert(languages[0] == languageSpan[0]);
+        Trace.Assert("Lisp" == languages[0]);
 
-        System.Diagnostics.Trace.Assert(
-            ReferenceEquals( languages[1], languageSpan[0]));
-
-        Span<int> numbers = languages.Select(item => item.Length).ToArray().AsSpan();
-
-        /*
-        Console.WriteLine($@"^3..^0: {
-            string.Join(", ", span[^3..^0]) // Python, Lisp, JavaScript
-        }");
-        Console.WriteLine($@" 3..^3: {
-            string.Join(", ", span[3..^3]) // C++, TypeScript, Swift
-        }");
-        Console.WriteLine($@"  ..^6: {
-            string.Join(", ", span[..^6])  // C#, COBOL, Java
-        }");
-        Console.WriteLine($@"   6..: {
-            string.Join(", ", span[6..])  // Python, Lisp, JavaScript
-        }");
-        Console.WriteLine($@"    ..: {
-            // C#, COBOL, Java, C++, TypeScript, Swift, Python, Lisp, JavaScript
-            string.Join(", ", span[..])  // Python, Lisp, JavaScript
-        }");
-        Console.WriteLine($@"    ..: {
-            // C#, COBOL, Java, C++, TypeScript, Swift, Python, Lisp, JavaScript
-            string.Join(", ", span[0..^0])  // Python, Lisp, JavaScript
-        }");
+        int[] numbers = languages.Select(item => item.Length).ToArray();
+        // Create a Span<string> from the arrays first 3 elements.
+        Span<int> numbersSpan = numbers.AsSpan(0,2);
+        Trace.Assert(numbers[1] == numbersSpan[1]);
+        numbersSpan[1] = 42;
+        Trace.Assert(numbers[1] == numbersSpan[1]);
+        Trace.Assert(42 == numbers[1]);
         
-        */
+        string bigWord = "supercalifragilisticexpialidocious"; ;
+        // Create a Span<char> from a suffix portion of the word.
+        ReadOnlySpan<char> expialidocious = bigWord.AsSpan(new Range(20, ^0));
+        Trace.Assert(expialidocious == "expialidocious");
         #endregion INCLUDE
     }
 }
