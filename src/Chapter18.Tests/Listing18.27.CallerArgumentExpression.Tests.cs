@@ -18,7 +18,7 @@ public class GenericExceptionTests
     {
         try
         {
-            ExpectedException<DivideByZeroException>.AssertExceptionThrown(
+            ExpectedException<InvalidOperationException>.AssertExceptionThrown(
                 () => { });
         }
         catch(InvalidOperationException exception)
