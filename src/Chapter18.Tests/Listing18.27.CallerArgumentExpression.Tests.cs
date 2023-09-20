@@ -1,6 +1,6 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_25b.Tests;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_27.Tests;
 
 #if NET7_0_OR_GREATER
 [TestClass]

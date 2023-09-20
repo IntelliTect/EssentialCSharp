@@ -1,6 +1,6 @@
 using System.Runtime.CompilerServices;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_25b;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_27;
 
 #if NET7_0_OR_GREATER
 #region INCLUDE
