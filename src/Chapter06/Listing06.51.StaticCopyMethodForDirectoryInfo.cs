@@ -66,7 +66,7 @@ public class Program
             SearchOption.TopDirectoryOnly, "*");
         #endregion HIGHLIGHT
         #region EXCLUDE
-        //Extension method. Is Defined above but appears to be a member of the DirectoryInfo object, directory, defined above
+        //Extension method. Is Defined above but appears to be a member of the DirectoryInfo object, directory, defined aboves
         #endregion EXCLUDE
     }
 }
