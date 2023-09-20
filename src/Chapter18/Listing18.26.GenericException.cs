@@ -7,7 +7,7 @@ public class SampleTests
     #region HIGHLIGHT
     [ExpectedException<DivideByZeroException>]
     #endregion HIGHLIGHT
-    public static void ThrowArgumentNullExceptionTest()
+    public static void ThrowDivideByZeroExceptionTest()
     {
         var result = 1/"".Length;
     }

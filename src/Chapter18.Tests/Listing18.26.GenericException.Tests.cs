@@ -10,7 +10,7 @@ public class GenericExceptionTests
     public void ExpectedExceptionIsThrown()
     {
         ExpectedException<DivideByZeroException>.AssertExceptionThrown(
-            SampleTests.ThrowArgumentNullExceptionTest);
+            SampleTests.ThrowDivideByZeroExceptionTest);
     }
 
     [TestMethod]
