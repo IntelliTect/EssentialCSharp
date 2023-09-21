@@ -31,9 +31,9 @@ public struct Pair<T> : IPair<T>
         Second = second;
     }
 
-    public T First { get; } // C# 6.0 Getter-Only Autoproperty
+    public T First { get; } // C# 6.0 Getter-Only AutoProperty
 
-    public T Second { get; } // C# 6.0 Getter-Only Autoproperty
+    public T Second { get; } // C# 6.0 Getter-Only AutoProperty
     #region INCLUDE
     [System.Runtime.CompilerServices.IndexerName("Entry")]
     public T this[PairItem index]
