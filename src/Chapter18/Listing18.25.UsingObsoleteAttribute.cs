@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_26;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_25;
 
 #region INCLUDE
 public class Program

@@ -1,7 +1,6 @@
-using System.Runtime.CompilerServices;
-using AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_28;
+using AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_27;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_28a;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_28;
 
 #if NET7_0_OR_GREATER
 public class Program

@@ -10,7 +10,21 @@ public class GenericExceptionTests
     public void ExpectedExceptionIsThrown()
     {
         ExpectedException<DivideByZeroException>.AssertExceptionThrown(
-            SampleTests.ThrowDivideByZeroExceptionTest);
+            SampleTests.ThrowArgumentNullExceptionTest);
+    }
+
+    [TestMethod]
+    public void VerifyExpectedExceptionMessage()
+    {
+        try
+        {
+            ExpectedException<InvalidOperationException>.AssertExceptionThrown(
+                () => { });
+        }
+        catch(InvalidOperationException exception)
+        {
+            Assert.IsTrue(exception.Message.Contains("'() => { }'"));
+        }
     }
 
     [TestMethod]

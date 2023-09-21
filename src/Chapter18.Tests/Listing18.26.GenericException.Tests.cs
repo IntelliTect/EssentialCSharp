@@ -1,6 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_28.Tests;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_26.Tests;
 
 #if NET7_0_OR_GREATER
 [TestClass]
@@ -10,21 +10,7 @@ public class GenericExceptionTests
     public void ExpectedExceptionIsThrown()
     {
         ExpectedException<DivideByZeroException>.AssertExceptionThrown(
-            SampleTests.ThrowArgumentNullExceptionTest);
-    }
-
-    [TestMethod]
-    public void VerifyExpectedExceptionMessage()
-    {
-        try
-        {
-            ExpectedException<InvalidOperationException>.AssertExceptionThrown(
-                () => { });
-        }
-        catch(InvalidOperationException exception)
-        {
-            Assert.IsTrue(exception.Message.Contains("'() => { }'"));
-        }
+            SampleTests.ThrowDivideByZeroExceptionTest);
     }
 
     [TestMethod]

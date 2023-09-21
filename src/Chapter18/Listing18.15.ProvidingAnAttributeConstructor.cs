@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_16;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_15;
 
 #region INCLUDE
 public class CommandLineSwitchAliasAttribute : Attribute
