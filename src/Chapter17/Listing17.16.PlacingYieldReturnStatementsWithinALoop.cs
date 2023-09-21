@@ -45,7 +45,7 @@ public class BinaryTree<T> :
     }
     #endregion
     #region EXCLUDE
-    public T Value { get; }  // C# 6.0 Getter-only Autoproperty
+    public T Value { get; }  // C# 6.0 Getter-only AutoProperty
 
     public Pair<BinaryTree<T>> SubItems { get; set; }
     #endregion EXCLUDE
