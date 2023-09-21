@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <ChapterNumber>18</ChapterNumber>
   </PropertyGroup>
@@ -14,8 +14,8 @@
     <EmbeddedResource Remove="4.0\**" />
     <None Remove="4.0\**" />
     <Compile Remove="Listing18.10.AssemblyAttributesWithinAssemblyInfo.cs" />
-    <Compile Remove="Listing18.12.csprojMockFileForResequencingListings.cs" />
-    <Compile Remove="Listing18.32.OverridableMembersOnSystem.Dynamic.DynamicObject.cs" />
+    <Compile Remove="Listing18.13.csprojMockFileForResequencingListings.cs" />
+    <Compile Remove="Listing18.33.OverridableMembersOnSystem.Dynamic.DynamicObject.cs" />
     <Compile Include="..\Shared\Program.cs">
       <Link>Program.cs</Link>
     </Compile>
@@ -29,6 +29,6 @@
       <Link>DoWorkEventArgs.cs</Link>
     </Compile>
     <None Include="Listing18.10.AssemblyAttributesWithinAssemblyInfo.cs" />
-    <None Include="Listing18.32.OverridableMembersOnSystem.Dynamic.DynamicObject.cs" />
+    <None Include="Listing18.33.OverridableMembersOnSystem.Dynamic.DynamicObject.cs" />
   </ItemGroup>
 </Project>

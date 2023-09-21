@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_29;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_30;
 
 #region INCLUDE
 using System.Xml.Linq;
