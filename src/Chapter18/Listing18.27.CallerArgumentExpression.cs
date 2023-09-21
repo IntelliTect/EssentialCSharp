@@ -1,6 +1,6 @@
 using System.Runtime.CompilerServices;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_28;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_27;
 
 #if NET7_0_OR_GREATER
 #region INCLUDE
@@ -13,12 +13,6 @@ public class SampleTests
     {
         var result = 1/"".Length;
     }
-
-public static void Method()
-{
-    ExpectedException<DivideByZeroException>.AssertExceptionThrown(
-        () => throw new DivideByZeroException());
-}
 }
 
 [AttributeUsage(AttributeTargets.Method)]

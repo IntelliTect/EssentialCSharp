@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_20;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_19;
 
 #region INCLUDE
 [AttributeUsage(AttributeTargets.Property)]

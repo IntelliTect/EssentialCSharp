@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_27;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_26;
 
 #if NET7_0_OR_GREATER
 #region INCLUDE
