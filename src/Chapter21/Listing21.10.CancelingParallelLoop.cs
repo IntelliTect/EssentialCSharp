@@ -14,17 +14,17 @@ public static class Program
         List<string> data,
         CancellationToken cancellationToken)
     {
-        int govener = 0;
+        int governor = 0;
         return data.AsParallel().WithCancellation(
             cancellationToken).Select(
                 (item) =>
                 {
                     if (Interlocked.CompareExchange(
-                        ref govener, 0, 100) % 100 == 0)
+                        ref governor, 0, 100) % 100 == 0)
                     {
                         Console.Write('.');
                     }
-                    Interlocked.Increment(ref govener);
+                    Interlocked.Increment(ref governor);
                     return Encrypt(item);
                 }).ToList();
     }

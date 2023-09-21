@@ -3,7 +3,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_23;
 #region INCLUDE
 using System.Diagnostics.CodeAnalysis;
 
-public static class SolisticeHelper
+public static class SolsticeHelper
 {
     public static bool IsSolstice(
         DateTime date)
@@ -30,8 +30,8 @@ public static class SolisticeHelper
         {
             if ((solstice = date.Month switch
             {
-                12 => "Winter Solistice",
-                6 => "Summer Solistice",
+                12 => "Winter Solstice",
+                6 => "Summer Solstice",
                 _ => null
             }) is not null) return true;
         }

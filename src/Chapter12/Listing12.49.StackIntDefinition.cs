@@ -1,4 +1,4 @@
-// Justification: Only showing partial implementaiton.
+// Justification: Only showing partial implementation.
 #pragma warning disable CS0168 // Variable is declared but never used
 
 

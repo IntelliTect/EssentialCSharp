@@ -19,7 +19,7 @@ public class PeriodsOfTheDay
         {
             '1' => '1',
             '2' or >= 'a' and <= 'c' => '2',
-            // not operator and parethesis example (C# 10)
+            // not operator and parenthesis example (C# 10)
             '3' or not (< 'd' or > 'f') => '3',
             '4' or >= 'g' and <= 'i' => '4',
             '5' or >= 'j' and <= 'l' => '5',

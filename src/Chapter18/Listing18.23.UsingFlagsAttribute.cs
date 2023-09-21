@@ -3,7 +3,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_23;
 #region INCLUDE
 /*
 [Flags]
-public enun FileAttributes
+public enum FileAttributes
 {
     ReadOnly = 0x0001,
     Hidden   = 0x0002,

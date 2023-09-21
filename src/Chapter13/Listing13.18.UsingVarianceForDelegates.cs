@@ -1,4 +1,4 @@
-// Justification: Left as lamda to elucidate generic types.
+// Justification: Left as lambda to elucidate generic types.
 #pragma warning disable IDE0039 // Use local function
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Listing13_18;
 

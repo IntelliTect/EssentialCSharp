@@ -8,8 +8,8 @@ public class Program
     public static void Main()
     {
         #region INCLUDE
-        var fullname = new Pair<string>("Inigo", "Montoya");
-        foreach(string name in fullname)
+        var fullName = new Pair<string>("Inigo", "Montoya");
+        foreach(string name in fullName)
         {
             Console.WriteLine(name);
         }

@@ -1,9 +1,9 @@
 ﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Table03_01;
 
-public class TupleDeclarationAndAssigment
+public class TupleDeclarationAndAssignment
 {
     // 1.
-    public void AssignTupleToIndividuallyDeclaredVaraibles()
+    public void AssignTupleToIndividuallyDeclaredVariables()
     {
         (string country, string capital, double gdpPerCapita) =
             ("Burundi", "Bujumbura", 263.67);
