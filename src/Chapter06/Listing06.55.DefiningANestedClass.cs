@@ -67,7 +67,7 @@ public class Program
                 Console.WriteLine(
                     "Employee.exe " +
                     "new|update|delete " +
-                    "<id> [firstName] [lastName]");
+                    "<id> [firstname] [lastname]");
                 break;
         }
     }
