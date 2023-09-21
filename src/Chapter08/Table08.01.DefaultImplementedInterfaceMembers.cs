@@ -92,7 +92,7 @@
     }
 
     // 5. 
-    namespace ProvateAccessModifiers
+    namespace PrivateAccessModifiers
     {
         public interface IPerson
         {
@@ -158,7 +158,7 @@
     }
     public interface IEmployee: IPerson
     {
-        int EmpoyeeId => GetName().GetHashCode();
+        int EmployeeId => GetName().GetHashCode();
     }
     public class Person : IPerson
     {

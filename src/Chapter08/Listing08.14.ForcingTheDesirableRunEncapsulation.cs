@@ -75,7 +75,7 @@ public class ExecuteProcessActivity : IExecuteProcessActivity
         //  implemented in the class.
         // ((IWorkflowActivity)this).InternalRun();
         //  activity.RedirectStandardInOut();
-        //  activity.ExecuteProcss();
+        //  activity.ExecuteProcess();
         Console.WriteLine(
             @$"Executing non-polymorphic Run() with process '{
                 activity.ExecutableName}'.");

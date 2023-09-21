@@ -1,4 +1,4 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Diagnostics.CodeAnalysis;
 using System.Net;
 using System.Runtime.ExceptionServices;
@@ -106,7 +106,7 @@ abstract public class BaseProgramTests
             ExceptionDispatchInfo.Capture(
                 innerException!).Throw();
 
-            return true;  // Identifhy whether the exception should report that it is handled or not.
+            return true;  // Identify whether the exception should report that it is handled or not.
         });
     }
 
@@ -168,7 +168,7 @@ abstract public class BaseProgramTests
             }
             if (exception is AggregateException aggregateException)
             {
-                // Innerexception expected to be WebException.
+                // InnerException expected to be WebException.
                 exception = aggregateException.Flatten();
                 aggregateException.Handle(innerException =>
                 {

@@ -3,7 +3,7 @@
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Table03_03;
 
-public partial class CommonArayCodingErrors
+public partial class CommonArrayCodingErrors
 {
     // 10.
     static public void MembersInJaggedArraysMustBeInstantiated()

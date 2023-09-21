@@ -25,7 +25,7 @@ public class ArrayHighlightsTests
     [ExpectedException(typeof(IndexOutOfRangeException))]
     public void IndexingOffTheEndOfArrayTest()
     {
-        CommonArayCodingErrors.IndexingOffTheEndOfArray();
+        CommonArrayCodingErrors.IndexingOffTheEndOfArray();
     }
 
     // 7.
@@ -33,7 +33,7 @@ public class ArrayHighlightsTests
     [ExpectedException(typeof(IndexOutOfRangeException))]
     public void Hat0IsOnePastTheEndOfTheArray1Test()
     {
-        CommonArayCodingErrors.Hat0IsOnePastTheEndOfTheArray1();
+        CommonArrayCodingErrors.Hat0IsOnePastTheEndOfTheArray1();
     }
 
     // 8.
@@ -41,6 +41,6 @@ public class ArrayHighlightsTests
     [ExpectedException(typeof(IndexOutOfRangeException))]
     public void Hat0IsOnePastTheEndOfTheArray2Test()
     {
-        CommonArayCodingErrors.LastItemIsLengthMinus1();
+        CommonArrayCodingErrors.LastItemIsLengthMinus1();
     }
 }

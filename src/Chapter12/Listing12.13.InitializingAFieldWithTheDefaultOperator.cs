@@ -1,4 +1,4 @@
-// Justification: Only showing partial implementaiton.
+// Justification: Only showing partial implementation.
 #pragma warning disable CS8618 // Non-nullable field is uninitialized. Consider declaring as nullable.
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_13;
@@ -11,7 +11,7 @@ public struct Pair<T> : IPair<T>
     {
         First = first;
         #region EXCLUDE
-        // Justifiction: Ignore warning pending struct/class constraints, later on in the chapter, 
+        // Justification: Ignore warning pending struct/class constraints, later on in the chapter, 
         //               so that Second can be declared as T?.
 #pragma warning disable CS8601 // Possible null reference assignment.
         #endregion EXCLUDE

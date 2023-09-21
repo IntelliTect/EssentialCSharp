@@ -4,7 +4,7 @@ public class Program
 {
     #region INCLUDE
     public static string? CompositeFormatDate(
-            object input, string compositFormatString) =>
+            object input, string compositeFormatString) =>
         input switch
         {
             DateTime 
@@ -24,7 +24,7 @@ public class Program
                     ((int Year, int Month, int Day)?) null,
             _ => null
         } is (int, int, int) date ? string.Format(
-            compositFormatString, date.Year, date.Month, date.Day) : null;
+            compositeFormatString, date.Year, date.Month, date.Day) : null;
     #endregion INCLUDE
 }
 file static class DateDeconstructors

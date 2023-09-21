@@ -140,7 +140,7 @@ public static class Program
 
     public static async ValueTask<string?> InvokeMethodUsingReflectionAsync(MethodInfo method, string[]? arguments)
     {
-        // Note: 'arguments' here are the array of commandline args, so 
+        // Note: 'arguments' here are the array of commandLine args, so 
         // it is the first item in the "parameters" array specified to the 
         // Invoke method.
         object? result = method.Invoke(null,

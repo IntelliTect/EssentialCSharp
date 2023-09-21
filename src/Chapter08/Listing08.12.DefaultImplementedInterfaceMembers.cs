@@ -240,8 +240,8 @@ public class ConsoleListControl
     private static void DisplayItemRow(
         int[] columnWidths, IListable item)
     {
-        string?[] columValues = item.CellValues;
-        if (columnWidths.Length != columValues.Length)
+        string?[] columnValues = item.CellValues;
+        if (columnWidths.Length != columnValues.Length)
         {
             throw new ArgumentOutOfRangeException(
                 $"{ nameof(columnWidths) },{ nameof(item) }.{nameof(item.CellColors) }",
@@ -251,9 +251,9 @@ public class ConsoleListControl
         // Exception handling excluded for elucidation
         ConsoleColor originalColor = Console.ForegroundColor;
         ConsoleColor[] itemColors = ((IListable)item).CellColors;
-        for (int index = 0; index < columValues.Length; index++)
+        for (int index = 0; index < columnValues.Length; index++)
         {
-            string itemToPrint = (columValues[index] ?? "").PadRight(columnWidths[index], ' ');
+            string itemToPrint = (columnValues[index] ?? "").PadRight(columnWidths[index], ' ');
             Console.ForegroundColor = itemColors[index];
             Console.Write(itemToPrint);
         }

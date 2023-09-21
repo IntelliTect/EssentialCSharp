@@ -17,7 +17,7 @@ public class CommentSamples
         lastName = Console.ReadLine();
 
         /* Display a greeting to the console 
-          using composite fomatting. */
+          using composite formatting. */
 
         Console.WriteLine("Your full name is {1}, {0}.", 
             firstName, lastName);
