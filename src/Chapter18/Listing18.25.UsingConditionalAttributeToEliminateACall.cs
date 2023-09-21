@@ -1,7 +1,7 @@
 #region INCLUDE
 #define CONDITION_A
 #region EXCLUDE
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_24;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_25;
 
 #endregion EXCLUDE
 using System.Diagnostics;

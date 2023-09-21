@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_26;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_27;
 
 #if NET7_0_OR_GREATER
 #region INCLUDE
@@ -7,7 +7,7 @@ public class SampleTests
     #region HIGHLIGHT
     [ExpectedException<DivideByZeroException>]
     #endregion HIGHLIGHT
-    public static void ThrowDivideByZeroExceptionTest()
+    public static void ThrowArgumentNullExceptionTest()
     {
         var result = 1/"".Length;
     }
@@ -19,7 +19,6 @@ public class ExpectedException<TException> :
     Attribute where TException : Exception
 #endregion HIGHLIGHT
 {
-    #region EXCLUDE
     public static TException AssertExceptionThrown(Action testMethod)
     {
         try
@@ -34,10 +33,8 @@ public class ExpectedException<TException> :
             return exception;
         }
     }
-    
-    // Attribute detection
-    #endregion EXCLUDE
 
+    // Attribute detection
     // ...
 }
 #endregion INCLUDE

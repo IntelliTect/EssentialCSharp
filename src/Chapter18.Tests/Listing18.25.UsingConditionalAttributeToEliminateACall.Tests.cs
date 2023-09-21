@@ -1,6 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_29.Tests;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_25.Tests;
 
 [TestClass]
 public class ProgramTests
@@ -8,7 +8,9 @@ public class ProgramTests
     [TestMethod]
     public void MainTest()
     {
-        const string expected = @"InigoMontoya";
+        const string expected = @"Begin...
+MethodA() executing...
+End...";
 
         IntelliTect.TestTools.Console.ConsoleAssert.Expect(
             expected, Program.Main);
