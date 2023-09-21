@@ -18,7 +18,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_16
                     "www.partnersintl.org",
                     "www.iassist.org",
                     "www.fh.org",
-                    "www.worldvision.org"
+                    "www.worldVision.org"
                 };
             IPStatus status;
 
