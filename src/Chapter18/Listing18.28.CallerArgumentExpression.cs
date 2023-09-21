@@ -13,12 +13,6 @@ public class SampleTests
     {
         var result = 1/"".Length;
     }
-
-public static void Method()
-{
-    ExpectedException<DivideByZeroException>.AssertExceptionThrown(
-        () => throw new DivideByZeroException());
-}
 }
 
 [AttributeUsage(AttributeTargets.Method)]
