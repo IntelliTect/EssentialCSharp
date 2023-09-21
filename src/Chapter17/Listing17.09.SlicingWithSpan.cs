@@ -30,8 +30,12 @@ public class Program
         
         string bigWord = "supercalifragilisticexpialidocious";
         // Create a Span<char> from a suffix portion of the word.
+        #if NET8_0_OR_GREATER
+        ReadOnlySpan<char> expialidocious = bigWord.AsSpan(20..);
+        #else // NET8_0_OR_GREATER
         ReadOnlySpan<char> expialidocious = bigWord.AsSpan(20, 14);
+        #endif // NET8_0_OR_GREATER
         Trace.Assert(expialidocious.ToString() == "expialidocious");
-        #endregion INCLUDE
+#endregion INCLUDE
     }
 }
