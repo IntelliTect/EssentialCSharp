@@ -1,5 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter23.Listing23_20;
 
+#if NET8_0_OR_GREATER
 #region INCLUDE
 using System;
 using System.Runtime.InteropServices;
@@ -7,8 +8,6 @@ using System.Text;
 
 public class Program
 {
-    public unsafe delegate void MethodInvoker(byte* buffer);
-
     public unsafe static int Main()
     {
         if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
@@ -26,25 +25,23 @@ public class Program
                 0x89, 0x48, 0x08,       // mov    %ecx,0x8(%rax)
                 0x4c, 0x89, 0xc3,       // mov    %r8,%rbx
                 0xc3                    // retq
-        };
+                };
 
-                byte[] buffer = new byte[12];
-
+                Buffer buffer = new();
                 using (VirtualMemoryPtr codeBytesPtr =
                     new(codeBytes.Length))
                 {
                     Marshal.Copy(
                         codeBytes, 0,
                         codeBytesPtr, codeBytes.Length);
-
-                    MethodInvoker method = Marshal.GetDelegateForFunctionPointer<MethodInvoker>(codeBytesPtr);
-                    fixed (byte* newBuffer = &buffer[0])
-                    {
-                        method(newBuffer);
-                    }
+                    
+                    delegate*<byte*, void> method = (delegate*<byte*, void>)(IntPtr)codeBytesPtr;
+                    method(&buffer[0]);
                 }
                 Console.Write("Processor Id: ");
-                Console.WriteLine(ASCIIEncoding.ASCII.GetChars(buffer));
+                char[] chars = new char[Buffer.Length];
+                Encoding.ASCII.GetChars(buffer, chars);
+                Console.WriteLine(chars);
             } // unsafe
         }
         else
@@ -54,6 +51,15 @@ public class Program
         return 0;
     }
 }
+
+[System.Runtime.CompilerServices.InlineArrayAttribute(Length)]
+public struct Buffer
+{
+    public const int Length = 10;
+
+    private byte _element0;
+}
+
 #endregion INCLUDE
 
 public class VirtualMemoryPtr : SafeHandle
@@ -67,10 +73,9 @@ public class VirtualMemoryPtr : SafeHandle
         AllocatedPointer =
             VirtualMemoryManager.AllocExecutionBlock(
             memorySize, ProcessHandle);
-        Disposed = false;
     }
 
-    public readonly IntPtr AllocatedPointer;
+    readonly IntPtr AllocatedPointer;
     readonly IntPtr ProcessHandle;
     readonly IntPtr MemorySize;
     bool Disposed;
@@ -264,3 +269,4 @@ class VirtualMemoryManager
             size, GetCurrentProcessHandle());
     }
 }
+#endif
