@@ -1,4 +1,4 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Diagnostics.CodeAnalysis;
 using System.Net;
 using System.Runtime.ExceptionServices;
@@ -27,7 +27,6 @@ abstract public class BaseProgramTests
     }
 
     [TestMethod]
-    [Ignore]
     [DataRow("IntelliTect", @"[1-9]\d*")]
     [DataRow("Text Snippet That Does Not Exist On The Page", @"0")]
     public void Main_FindText_VerifyOccurenceCount(string findText, string countPattern)
