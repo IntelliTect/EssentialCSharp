@@ -1,4 +1,4 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_23;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_24;
 
 #region INCLUDE
 /*

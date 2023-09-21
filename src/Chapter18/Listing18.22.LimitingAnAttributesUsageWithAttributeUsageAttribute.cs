@@ -1,7 +1,11 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_22;
 
 #region INCLUDE
-[AttributeUsage(AttributeTargets.Property, AllowMultiple = true)]
+// Restrict the attribute to properties and methods
+#region HIGHLIGHT
+[AttributeUsage(
+  AttributeTargets.Field | AttributeTargets.Property)]
+#endregion HIGHLIGHT
 public class CommandLineSwitchAliasAttribute : Attribute
 {
     // ...
