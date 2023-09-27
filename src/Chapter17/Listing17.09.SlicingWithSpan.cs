@@ -28,7 +28,7 @@ public class Program
         Trace.Assert(numbers[1] == numbersSpan[1]);
         Trace.Assert(42 == numbers[1]);
         
-        string bigWord = "supercalifragilisticexpialidocious";
+        const string bigWord = "supercalifragilisticexpialidocious";
         // Create a Span<char> from a suffix portion of the word.
         #if NET8_0_OR_GREATER
         ReadOnlySpan<char> expialidocious = bigWord.AsSpan(20..);
