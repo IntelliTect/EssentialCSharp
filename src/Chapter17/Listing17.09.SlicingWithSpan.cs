@@ -12,7 +12,7 @@ public class Program
             "C++", "TypeScript", "Python",};
 
         // Create a Span<string> from the arrays first 3 elements.
-        Span<string> languageSpan = languages.AsSpan(0,2);
+        Span<string> languageSpan = languages.AsSpan(0, 2);
         languages[0] = "R";
         Trace.Assert(languages[0] == languageSpan[0]);
         Trace.Assert("R" == languageSpan[0]);
@@ -22,7 +22,7 @@ public class Program
 
         int[] numbers = languages.Select(item => item.Length).ToArray();
         // Create a Span<string> from the arrays first 3 elements.
-        Span<int> numbersSpan = numbers.AsSpan(0,2);
+        Span<int> numbersSpan = numbers.AsSpan(0, 2);
         Trace.Assert(numbers[1] == numbersSpan[1]);
         numbersSpan[1] = 42;
         Trace.Assert(numbers[1] == numbersSpan[1]);

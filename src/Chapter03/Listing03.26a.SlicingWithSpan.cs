@@ -13,7 +13,7 @@ public class Program
         Span<string> span = languages.AsSpan(1);
 
         System.Diagnostics.Trace.Assert(
-            ReferenceEquals( languages[1], span[0]));
+            ReferenceEquals(languages[1], span[0]));
         
         /*
         Console.WriteLine($@"^3..^0: {
