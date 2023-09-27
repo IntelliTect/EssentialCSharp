@@ -1,22 +1,24 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_20;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_15;
 
 using System;
 using Listing17_10;
-using System.Collections.Generic;
 
+using System.Collections.Generic;
 #region INCLUDE
-public struct Pair<T> : IPair<T>, IEnumerable<T>
+public struct Pair<T> : IPair<T>,
+#region HIGHLIGHT
+IEnumerable<T>
+#endregion HIGHLIGHT
 {
-    #region EXCLUDE
-    #region Members
-    public Pair(T first, T second)
+    public Pair(T first, T second) : this()
     {
         First = first;
         Second = second;
     }
     public T First { get; }
     public T Second { get; }
-
+    #region EXCLUDE
+    #region Indexer
     public T this[PairItem index]
     {
         get
@@ -34,19 +36,10 @@ public struct Pair<T> : IPair<T>, IEnumerable<T>
                         index.ToString()));
             }
         }
+    #endregion Indexer
     }
-    #endregion Members
-
-    //Listing 16.20 Using yield return in a Method That Returns IEnumerable<T>
     #endregion EXCLUDE
     #region HIGHLIGHT
-    public IEnumerable<T> GetReverseEnumerator()
-    #endregion HIGHLIGHT
-    {
-        yield return Second;
-        yield return First;
-    }
-    #region EXCLUDE
     #region IEnumerable<T>
     public IEnumerator<T> GetEnumerator()
     {
@@ -61,20 +54,7 @@ public struct Pair<T> : IPair<T>, IEnumerable<T>
     {
         return GetEnumerator();
     }
-    #endregion
+    #endregion IEnumerable Members
+    #endregion HIGHLIGHT
 }
-public class Program
-{
-    #endregion EXCLUDE
-    public static void Main()
-    {
-        var game = new Pair<string>("Redskins", "Eagles");
-        #region HIGHLIGHT
-        foreach (string name in game.GetReverseEnumerator())
-        #endregion HIGHLIGHT
-        {
-            Console.WriteLine(name);
-        }
-    }
-    #endregion INCLUDE
-}
+#endregion INCLUDE

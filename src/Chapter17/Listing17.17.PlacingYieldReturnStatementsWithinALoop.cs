@@ -1,7 +1,7 @@
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_16;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter17.Listing17_17;
 
 using System.Collections.Generic;
-using Listing17_14;
+using Listing17_15;
 #region INCLUDE
 public class BinaryTree<T> :
   IEnumerable<T>
