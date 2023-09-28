@@ -3,21 +3,21 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_05;
 
 #region INCLUDE
-class GPSCoordinates
+class GpsCoordinates
 {
     // ...
 
-    public static implicit operator UTMCoordinates(
-        GPSCoordinates coordinates)
+    public static implicit operator UtmCoordinates(
+        GpsCoordinates coordinates)
     {
         #region EXCLUDE
-        return null!; //return the new UTMCoordinates object
+        return null!; //return the new UtmCoordinates object
         #endregion EXCLUDE
     }
 }
 #endregion INCLUDE
 
-class UTMCoordinates
+class UtmCoordinates
 {
 
 }
