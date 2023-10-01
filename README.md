@@ -3,12 +3,14 @@
 
 This project contains the source code for the book **Essential C#** by Mark Michaelis (Addison-Wesley).
 
+## Checkout the online resource that walks through all code samples in this repository at [EssentialCSharp.com](https://essentialcsharp.com)
+
 ## Sample Code Guide
 
 Ensure one of the following frameworks is installed at the latest version.
 
 - [.NET](https://www.microsoft.com/net/core) (All) - This project is currently tested against .NET 8.0, 7.0, and 6.0.
-- [Visual Studio](https://www.visualstudio.com) contains .NET Core to get up and running.  Not to mention, it's a great IDE that makes it easy to get started.
+- [Visual Studio](https://visualstudio.microsoft.com/downloads/) contains .NET Core to get up and running. Not to mention, it's a great IDE that makes it easy to get started.
 
 ### Download the Code
 
