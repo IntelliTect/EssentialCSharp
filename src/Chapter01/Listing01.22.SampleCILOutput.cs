@@ -55,7 +55,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_22
 ↪ System.Console]System.Console::WriteLine(string)
     IL_000b: nop
     IL_000c: ret
-    } // End of method System.Void HelloWorld.Program::Main(System.String[])
+    } // End of method System.Void
+      // HelloWorld.Program::Main(System.String[])
 
 
   .method public hidebysig specialname rtspecialname instance void .ctor() cil managed
