@@ -7,6 +7,7 @@ using System.Net;
 
 public static class Program
 {
+    public static HttpClient HttpClient { get; set; } = new();
     public const string DefaultUrl = "https://IntelliTect.com";
 
     public static void Main(string[] args)
@@ -28,9 +29,8 @@ public static class Program
             $"Searching for '{findText}' at URL '{url}'.");
 
         Console.WriteLine("Downloading...");
-        using WebClient webClient = new();
         byte[] downloadData =
-            webClient.DownloadData(url);
+            HttpClient.GetByteArrayAsync(url).Result;
 
         Console.WriteLine("Searching...");
         int textOccurrenceCount = CountOccurrences(

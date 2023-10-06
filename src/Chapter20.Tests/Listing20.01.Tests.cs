@@ -9,6 +9,7 @@ public class ProgramTests : BaseProgramTests
     [ClassInitialize]
     static public void ClassInitialize(TestContext _)
     {
+        Program.HttpClient = GetMockedHttpClient();
         ProgramWrapper = new ProgramWrapper(
             (args) =>
                 Task.Run(() => Program.Main(args)));

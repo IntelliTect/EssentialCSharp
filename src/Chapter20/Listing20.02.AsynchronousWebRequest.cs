@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 public static class Program
 {
+    public static HttpClient HttpClient { get; set; } = new();
     public const string DefaultUrl = "https://IntelliTect.com";
 
     public static void Main(string[] args)
@@ -29,9 +30,8 @@ public static class Program
         Console.WriteLine(
             $"Searching for '{findText}' at URL '{url}'.");
 
-        using WebClient webClient = new();
         Console.Write("Downloading...");
-        Task task = webClient.DownloadDataTaskAsync(url)
+        Task task = HttpClient.GetByteArrayAsync(url)
             .ContinueWith(antecedent =>
             {
                 byte[] downloadData = antecedent.Result;

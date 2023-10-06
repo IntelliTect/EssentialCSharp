@@ -9,10 +9,12 @@ public class ProgramTests : BaseProgramTests
     [ClassInitialize]
     public static void ClassInitialize(TestContext _)
     {
+        Program.HttpClient = GetMockedHttpClient();
         ProgramWrapper = new ProgramWrapper(
             (args) =>
                 Task.Run(() => Program.Main(args)));
     }
+
 
     protected override void AssertMainException(string messagePrefix,Exception exception)
     {

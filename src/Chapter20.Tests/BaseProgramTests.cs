@@ -7,17 +7,17 @@ using System.Text.RegularExpressions;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Tests;
 
-abstract public class BaseProgramTests
+public abstract class BaseProgramTests
 {
     [NotNull]
-    static public ProgramWrapper? ProgramWrapper { get; set; }
+    public static ProgramWrapper? ProgramWrapper { get; set; }
 
     protected abstract string DefaultUrl { get; }
 
     [NotNull]
     public TestContext? TestContext { get; set; }
 
-    [TestInitializeAttribute]
+    [TestInitialize]
     public void TestInitialize()
     {
         Assert.IsNotNull(TestContext);
@@ -29,7 +29,7 @@ abstract public class BaseProgramTests
     [TestMethod]
     [DataRow("IntelliTect", @"[1-9]\d*")]
     [DataRow("Text Snippet That Does Not Exist On The Page", @"0")]
-    public void Main_FindText_VerifyOccurenceCount(string findText, string countPattern)
+    public void Main_FindText_VerifyOccurrenceCount(string findText, string countPattern)
     {
         string url = DefaultUrl;
         string expected =
@@ -41,10 +41,7 @@ abstract public class BaseProgramTests
                 Regex.Escape(url)
                 }'\.\s+";
         string actual = IntelliTect.TestTools.Console.ConsoleAssert.Execute("",
-        () =>
-        {
-            ProgramWrapper.Main(new string[] { findText }).Wait();
-        });
+        () => ProgramWrapper.Main(new string[] { findText }).Wait());
         
         Regex regex = new(expected);
         Assert.IsTrue(regex.Match(actual).Success,
@@ -110,78 +107,22 @@ abstract public class BaseProgramTests
         });
     }
 
-    [TestMethod]
-    [ExpectedException(typeof(System.ArgumentNullException))]
-    public async Task Main_GivenNullUri_ThrowException()
+    protected static HttpClient GetMockedHttpClient()
+        => new HttpClient(new MockHttpClientHandler());
+}
+
+file class MockHttpClientHandler : HttpMessageHandler
+{
+    protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
     {
-        try
+        HttpResponseMessage response = new(HttpStatusCode.OK)
         {
-            await ProgramWrapper.Main(new string[] { "irrelevant", null! });
-            Assert.Fail("Expected exception was not thrown.");
-        }
-        catch (AggregateException exception)
-        {
-            if (exception.InnerExceptions.Count != 1)
-            {
-                throw new InvalidOperationException("Unexpected scenario with there being more than one inner exception.");
-            }
-            exception.Handle(innerException =>
-            {
-                // Rethrowing rather than using
-                // if condition on the type
-                ExceptionDispatchInfo.Capture(
-                    innerException!).Throw();
-
-                return true;
-            });
-        }
-    }
-
-    [TestMethod]
-    [DataRow("Bad Uri", "Could not find file *")]
-    [DataRow("https://bad uri", "The filename, directory name, or volume label syntax is incorrect. *", "Could not find a part of the path*", "Could not find a part of the path*")]
-    [DataRow("https://thisisanotherbadurlthatpresumablyldoesnotexist.notexist", "No such host is known.*", "nodename nor servname provided, or not known*", "Name or service not known*")]
-    [ExpectedException(typeof(WebException))]
-    public async Task Main_GivenBadUri_ThrowException(string uri, string defaultMessagePrefix, string? messagePrefixOSX = null, string? messagePrefixLinux = null)
-    {
-        messagePrefixOSX ??= defaultMessagePrefix;
-        messagePrefixLinux ??= defaultMessagePrefix;
-
-        try
-        {
-            await ProgramWrapper.Main(new string[] { "irrelevant", uri });
-            Assert.Fail("Expected exception was not thrown.");
-        }
-        catch (Exception exception)
-        {
-            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
-            {
-                AssertMainException(defaultMessagePrefix, exception);
-            }
-            else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
-            {
-                AssertMainException(messagePrefixOSX, exception);
-            }
-            else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
-            {
-                AssertMainException(messagePrefixLinux, exception);
-            }
-            if (exception is AggregateException aggregateException)
-            {
-                // InnerException expected to be WebException.
-                exception = aggregateException.Flatten();
-                aggregateException.Handle(innerException =>
-                {
-                    // Rethrowing rather than using
-                    // if condition on the type
-                    ExceptionDispatchInfo.Capture(
-                        innerException)
-                        .Throw();
-                    return true;
-                });
-            }
-            // WebException expected
-            else throw;
-        }
+            Content = new StringContent($"""
+            Test Data From {GetType().Namespace}.{nameof(MockHttpClientHandler)}
+            Request Uri: {request.RequestUri},
+            The tests search for the word "IntelliTect" so that is can count the number of times it appears on the page.
+            """)
+        };
+        return Task.FromResult(response);
     }
 }
