@@ -75,14 +75,6 @@ public class Program
                         nameof(Employee)} object.");
             }
         }
-        #region HIGHLIGHT
-        else if (entity is Employee)
-        #endregion HIGHLIGHT
-        {
-            throw new InvalidOperationException(
-                $"Entity ({entity.GetType().FullName
-                    }) is unexpectedly an {nameof(Employee)} object.");
-        }
         else if(entity is null)
         {
             Console.WriteLine(
