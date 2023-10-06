@@ -19,16 +19,16 @@ public class Program
                 // e.g. --help, /h, -h, /?, -? 
                 DisplayHelp();
                 break;
-            case [ ['/' or '-', char command], ..]:
-                // Command begins with '/', '-' and has 0 or more arguments.
-                if(!ExecuteCommand($"{command}", args[1..]))
+            case [ ['/' or '-', char option], ..]:
+                // Option begins with '/', '-' and has 0 or more arguments.
+                if(!EvaluateOption($"{option}", args[1..]))
                 {
                     DisplayHelp();
                 }
                 break;
-            case [ ['-', '-', ..] command, ..]:
-                // Command begins with "--" and has 0 or more arguments.
-                if(!ExecuteCommand(command[2..], args[1..]))
+            case [ ['-', '-', ..] option, ..]:
+                // Option begins with "--" and has 0 or more arguments.
+                if(!EvaluateOption(option[2..], args[1..]))
                 {
                     DisplayHelp();
                 }
@@ -45,8 +45,8 @@ public class Program
         }
     }
 
-    private static bool ExecuteCommand(string command, string[] args) =>
-        (command, args) switch
+    private static bool EvaluateOption(string option, string[] args) =>
+        (option, args) switch
         {
             ("cat" or "c", [string fileName]) =>
                 CatalogFile(fileName),
