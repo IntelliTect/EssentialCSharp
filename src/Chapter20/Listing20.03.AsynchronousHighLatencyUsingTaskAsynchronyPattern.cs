@@ -3,11 +3,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_03;
 #region INCLUDE
 using System;
 using System.IO;
-using System.Net;
 using System.Threading.Tasks;
 
 public static class Program
 {
+    public static HttpClient HttpClient { get; set; } = new();
     public const string DefaultUrl = "https://IntelliTect.com";
 
     public static async Task Main(string[] args)
@@ -28,9 +28,8 @@ public static class Program
         Console.WriteLine(
             $"Searching for '{findText}' at URL '{url}'.");
 
-        using WebClient webClient = new();
         Task<byte[]> taskDownload =
-            webClient.DownloadDataTaskAsync(url);
+            HttpClient.GetByteArrayAsync(url);
 
         Console.Write("Downloading...");
         while (!taskDownload.Wait(100))
