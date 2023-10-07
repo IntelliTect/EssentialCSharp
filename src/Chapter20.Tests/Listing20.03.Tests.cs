@@ -15,7 +15,6 @@ public class ProgramTests : BaseProgramTests
                 Task.Run(() => Program.Main(args)));
     }
 
-
     protected override void AssertMainException(string messagePrefix,Exception exception)
     {
         AssertMainException(messagePrefix, (AggregateException)exception);
