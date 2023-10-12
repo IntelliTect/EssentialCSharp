@@ -71,19 +71,13 @@ public static class Program
                     return true;
                 });
             }
-            catch (WebException)
+            catch (HttpRequestException)
             {
                 #region EXCLUDE
                 throw;
                 #endregion EXCLUDE
             }
             catch (IOException)
-            {
-                #region EXCLUDE
-                throw;
-                #endregion EXCLUDE
-            }
-            catch (NotSupportedException)
             {
                 #region EXCLUDE
                 throw;
