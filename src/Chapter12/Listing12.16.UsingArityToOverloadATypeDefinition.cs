@@ -26,7 +26,8 @@ public class Tuple<T1, T2, T3, T4> // : IStructuralEquatable,
     // ...
 }
 public class Tuple<T1, T2, T3, T4, T5> // : IStructuralEquatable,
-                                       // IStructuralComparable, IComparable
+                                       // IStructuralComparable,
+                                       // IComparable
 {
     // ...
 }
