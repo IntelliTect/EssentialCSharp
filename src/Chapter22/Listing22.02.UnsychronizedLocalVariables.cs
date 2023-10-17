@@ -10,7 +10,8 @@ public class Program
     {
         int total = int.MaxValue;
         if (args?.Length > 0) { _ = int.TryParse(args[0], out total); }
-        Console.WriteLine($"Increment and decrementing {total} times...");
+        Console.WriteLine("Increment and decrementing " +
+            $"{total} times...");
         int x = 0;
         Parallel.For(0, total, i =>
         {
