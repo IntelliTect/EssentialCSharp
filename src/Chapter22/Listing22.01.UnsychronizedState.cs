@@ -13,7 +13,7 @@ public class Program
     {
         if (args?.Length > 0) { _ = int.TryParse(args[0], out _Total); }
 
-        Console.WriteLine($"Increment and decrementing " +
+        Console.WriteLine("Increment and decrementing " +
             $"{_Total} times...");
 
         // Use Task.Factory.StartNew for .NET 4.0
