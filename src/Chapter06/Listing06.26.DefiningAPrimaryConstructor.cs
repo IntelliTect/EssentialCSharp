@@ -15,7 +15,7 @@ public class Program
 
 #region INCLUDE
 #region HIGHLIGHT
-    // Employee constructor
+// Employee constructor
 public class Employee(string firstName, string lastName)
 {
     public string FirstName { get; set; } = firstName;
