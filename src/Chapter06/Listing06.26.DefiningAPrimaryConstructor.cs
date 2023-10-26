@@ -14,13 +14,13 @@ public class Program
 }
 
 #region INCLUDE
-    #region HIGHLIGHT
-    // Employee constructor
+#region HIGHLIGHT
+// Employee constructor
 public class Employee(string firstName, string lastName)
 {
     public string FirstName { get; set; } = firstName;
     public string LastName { get; set; } = lastName;
-    #endregion HIGHLIGHT
+#endregion HIGHLIGHT
     public string? Salary { get; set; } = "Not Enough";
 
     #region EXCLUDE
