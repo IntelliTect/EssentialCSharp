@@ -8,9 +8,17 @@
     <ProjectReference Include="..\submodules\TestTools\IntelliTect.TestTools.Console\IntelliTect.TestTools.Console.csproj" Condition="Exists('..\submodules\TestTools\IntelliTect.TestTools.Console\IntelliTect.TestTools.Console.csproj')" />
     -->
     <Compile Include="..\Shared\Tests\CompilerAssert.cs" Link="CompilerAssert.cs" />
-    <PackageReference Include="IntelliTect.TestTools.Console" />
-    <PackageReference Include="coverlet.msbuild" />
-    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.SourceGenerators.Testing.MSTest" />
+      <PackageReference Include="Microsoft.NET.Test.Sdk" />
+      <PackageReference Include="MSTest.TestAdapter" />
+      <PackageReference Include="MSTest.TestFramework" />
+      <PackageReference Include="coverlet.collector" >
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+      </PackageReference>
+      <PackageReference Include="Microsoft.CodeAnalysis" />
+      <PackageReference Include="IntelliTect.TestTools.Console" />
+      <PackageReference Include="coverlet.msbuild" />
+      <PackageReference Include="Microsoft.CodeAnalysis.CSharp.SourceGenerators.Testing.MSTest" />
     <!--<Using Include="Microsoft.VisualStudio.TestTools.UnitTesting"/>-->
   </ItemGroup>
   

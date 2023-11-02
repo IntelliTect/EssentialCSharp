@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <ChapterNumber>05</ChapterNumber>
   </PropertyGroup>
@@ -16,14 +16,5 @@
     <Compile Update="Listing05.20.MethodsWithOptionalParameters.Tests.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="coverlet.collector">
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
-    </PackageReference>
-      <PackageReference Include="Microsoft.CodeAnalysis" />
-      <PackageReference Include="Microsoft.NET.Test.Sdk" />
-      <PackageReference Include="MSTest.TestAdapter" />
-      <PackageReference Include="MSTest.TestFramework" />
   </ItemGroup>
 </Project>
