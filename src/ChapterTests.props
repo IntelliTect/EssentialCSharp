@@ -7,7 +7,6 @@
     <!-- 
     <ProjectReference Include="..\submodules\TestTools\IntelliTect.TestTools.Console\IntelliTect.TestTools.Console.csproj" Condition="Exists('..\submodules\TestTools\IntelliTect.TestTools.Console\IntelliTect.TestTools.Console.csproj')" />
     -->
-    <Compile Include="..\Shared\Tests\CompilerAssert.cs" Link="CompilerAssert.cs" />
       <PackageReference Include="Microsoft.NET.Test.Sdk" />
       <PackageReference Include="MSTest.TestAdapter" />
       <PackageReference Include="MSTest.TestFramework" />
@@ -19,9 +18,12 @@
       <PackageReference Include="IntelliTect.TestTools.Console" />
       <PackageReference Include="coverlet.msbuild" />
       <PackageReference Include="Microsoft.CodeAnalysis.CSharp.SourceGenerators.Testing.MSTest" />
-    <!--<Using Include="Microsoft.VisualStudio.TestTools.UnitTesting"/>-->
   </ItemGroup>
-  
+  <ItemGroup>
+      <Using Include="Microsoft.VisualStudio.TestTools.UnitTesting"/>
+      <Compile Include="..\Shared\Tests\CompilerAssert.cs" Link="CompilerAssert.cs" />
+  </ItemGroup>
+
   <!-- TODO: Ideally this would be placed in a ChapterTests.targets file. -->
   <Target Name="OutputGeneratedGlobalUsings" BeforeTargets="BeforeCompile;CoreCompile" AfterTargets="GenerateGlobalUsings" Condition="@(Using-&gt;Count()) != 0">
     <WriteLinesToFile File="$(OutputPath)GlobalUsings.cs" Lines="@(_GlobalUsingLines)" Overwrite="true" WriteOnlyWhenDifferent="true" />
