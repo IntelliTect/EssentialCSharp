@@ -1,5 +1,5 @@
 <Project>
-  <Import Project="../Common.props"/>
+  <Import Project="../Common.props" />
   <PropertyGroup>
     <ProductName>$(ProductName).Tests</ProductName>
   </PropertyGroup>
@@ -8,29 +8,22 @@
     <ProjectReference Include="..\submodules\TestTools\IntelliTect.TestTools.Console\IntelliTect.TestTools.Console.csproj" Condition="Exists('..\submodules\TestTools\IntelliTect.TestTools.Console\IntelliTect.TestTools.Console.csproj')" />
     -->
     <Compile Include="..\Shared\Tests\CompilerAssert.cs" Link="CompilerAssert.cs" />
-    <PackageReference Include="IntelliTect.TestTools.Console" Version="0.7.1-*" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.7.2" />
-    <PackageReference Include="MSTest.TestAdapter" Version="3.1.1" />
-    <PackageReference Include="MSTest.TestFramework" Version="3.1.1" />
-    <PackageReference Include="coverlet.collector" Version="6.0.0">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
-    </PackageReference>
-    <PackageReference Update="coverlet.msbuild" Version="6.0.0" />
-    <PackageReference Include="Microsoft.CodeAnalysis" Version="4.7.0" />
-    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.SourceGenerators.Testing.MSTest" Version="1.1.1" />
+      <PackageReference Include="Microsoft.NET.Test.Sdk" />
+      <PackageReference Include="MSTest.TestAdapter" />
+      <PackageReference Include="MSTest.TestFramework" />
+      <PackageReference Include="coverlet.collector" >
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+      </PackageReference>
+      <PackageReference Include="Microsoft.CodeAnalysis" />
+      <PackageReference Include="IntelliTect.TestTools.Console" />
+      <PackageReference Include="coverlet.msbuild" />
+      <PackageReference Include="Microsoft.CodeAnalysis.CSharp.SourceGenerators.Testing.MSTest" />
     <!--<Using Include="Microsoft.VisualStudio.TestTools.UnitTesting"/>-->
   </ItemGroup>
   
   <!-- TODO: Ideally this would be placed in a ChapterTests.targets file. -->
-  <Target Name="OutputGeneratedGlobalUsings"
-      BeforeTargets="BeforeCompile;CoreCompile"
-      AfterTargets="GenerateGlobalUsings"
-      Condition="@(Using->Count()) != 0">
-    <WriteLinesToFile
-      File="$(OutputPath)GlobalUsings.cs"
-      Lines="@(_GlobalUsingLines)"
-      Overwrite="true"
-      WriteOnlyWhenDifferent="true" />
+  <Target Name="OutputGeneratedGlobalUsings" BeforeTargets="BeforeCompile;CoreCompile" AfterTargets="GenerateGlobalUsings" Condition="@(Using-&gt;Count()) != 0">
+    <WriteLinesToFile File="$(OutputPath)GlobalUsings.cs" Lines="@(_GlobalUsingLines)" Overwrite="true" WriteOnlyWhenDifferent="true" />
   </Target>
 </Project>

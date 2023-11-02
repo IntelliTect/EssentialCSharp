@@ -1,19 +1,9 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <ProductName>Chapter11.Tests</ProductName>
   </PropertyGroup>
   <Import Project="..\ChapterTests.props" />
   <ItemGroup>
     <ProjectReference Include="..\Chapter11\Chapter11.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Update="coverlet.collector" Version="6.0.0">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
-    </PackageReference>
-    <PackageReference Update="Microsoft.CodeAnalysis" Version="4.7.0" />
-    <PackageReference Update="Microsoft.NET.Test.Sdk" Version="17.7.2" />
-    <PackageReference Update="MSTest.TestAdapter" Version="3.1.1" />
-    <PackageReference Update="MSTest.TestFramework" Version="3.1.1" />
   </ItemGroup>
 </Project>
