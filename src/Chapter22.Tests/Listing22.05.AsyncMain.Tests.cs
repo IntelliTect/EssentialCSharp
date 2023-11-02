@@ -1,4 +1,3 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using static AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_01.Tests.ProgramTests;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_05.Tests;

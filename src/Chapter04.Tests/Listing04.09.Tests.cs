@@ -1,5 +1,4 @@
 using System.Globalization;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_09.Tests;
 

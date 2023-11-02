@@ -1,7 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_05.Tests;
 using AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_02;
 using AddisonWesley.Michaelis.EssentialCSharp.Chapter09.Listing09_07;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 [TestClass]
 public partial class CoordinateTests

@@ -1,5 +1,4 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16;
+﻿using AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter16.Listing16_13.Tests;
 

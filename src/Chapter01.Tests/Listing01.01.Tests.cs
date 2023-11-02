@@ -1,4 +1,3 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using AddisonWesley.Michaelis.EssentialCSharp.Shared.Tests;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_01.Tests;
