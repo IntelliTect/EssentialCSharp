@@ -1,5 +1,4 @@
 using IntelliTect.TestTools.Console;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Reflection;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter15.Listing15_12.Tests;

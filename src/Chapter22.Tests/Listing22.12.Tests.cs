@@ -1,5 +1,4 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-
+﻿
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter22.Listing22_12.Tests;
 
 [TestClass]

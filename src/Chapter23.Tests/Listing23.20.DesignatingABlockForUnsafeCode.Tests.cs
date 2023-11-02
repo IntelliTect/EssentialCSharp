@@ -1,4 +1,3 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Runtime.InteropServices;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter23.Listing23_20.Tests;

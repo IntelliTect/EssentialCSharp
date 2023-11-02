@@ -1,5 +1,4 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Reflection;
+﻿using System.Reflection;
 
 namespace Chapter10.Tests.CustomTestAttributes;
 

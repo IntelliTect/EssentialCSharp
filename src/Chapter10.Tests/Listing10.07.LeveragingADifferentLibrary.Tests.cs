@@ -1,4 +1,3 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Text.RegularExpressions;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter10.Listing10_07.Tests;

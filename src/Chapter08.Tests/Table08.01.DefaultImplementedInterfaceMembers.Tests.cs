@@ -1,5 +1,4 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Table08_01.Tests
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Table08_01.Tests
 {
     // 1.
     namespace StaticMembers { }

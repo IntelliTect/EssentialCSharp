@@ -1,4 +1,3 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Drawing;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_29.Tests;

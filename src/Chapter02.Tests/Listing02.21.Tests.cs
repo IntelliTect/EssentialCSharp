@@ -1,4 +1,3 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Text.Json;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_21.Tests;
