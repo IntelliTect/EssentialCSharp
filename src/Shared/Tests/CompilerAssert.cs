@@ -88,9 +88,16 @@ public static class CompilerAssert
         {
             test.TestState.Sources.Add((Path.GetFileName(fileName), await File.ReadAllTextAsync(fileName)));
         }
-        
+
+        List<string> usingsToIgnore = new()
+        {
+            "Microsoft.VisualStudio.TestTools.UnitTesting"
+        };
+
         // Note: GeneratedSources is ignored.
-        test.TestState.Sources.Add(("GlobalUsings.cs", await File.ReadAllTextAsync("GlobalUsings.cs")));
+        string globalUsings = string.Join(Environment.NewLine,
+        (await File.ReadAllLinesAsync("GlobalUsings.cs")).Where(usingLine => !usingsToIgnore.Any(t => usingLine.Contains(t))));
+        test.TestState.Sources.Add(("GlobalUsings.cs", globalUsings));
 
         test.DisabledDiagnostics.Add("CS1587"); // XML comment is not placed on a valid language element
         test.DisabledDiagnostics.Add("CS1591"); // Missing XML comment for publicly visible type or member 'Type_or_Member'
