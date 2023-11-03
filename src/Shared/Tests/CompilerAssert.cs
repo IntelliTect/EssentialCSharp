@@ -41,11 +41,11 @@ public static class CompilerAssert
         {
             CompilerDiagnostics = CompilerDiagnostics.Warnings,
             ReferenceAssemblies = new ReferenceAssemblies(
-                        "net7.0",
+                        "net8.0",
                         new PackageIdentity(
                             "Microsoft.NETCore.App.Ref",
-                            "7.0.0"),
-                        Path.Combine("ref", "net7.0"))
+                            "8.0.0"),
+                        Path.Combine("ref", "net8.0"))
         };
 
         List<string> fileNamesToCompile = new();
@@ -91,7 +91,7 @@ public static class CompilerAssert
 
         List<string> usingsToIgnore = new()
         {
-            "Microsoft.VisualStudio.TestTools.UnitTesting"
+            nameof(Microsoft.VisualStudio.TestTools.UnitTesting),
         };
 
         // Note: GeneratedSources is ignored.
