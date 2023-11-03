@@ -84,4 +84,6 @@ In addition, any line that ends with a `// EXCLUDE` is a line that is omitted fr
 
 If you have any questions or find any bugs, please feel free to open a [Discussion](https://github.com/IntelliTect/EssentialCSharp/discussions), [Pull Request](https://github.com/IntelliTect/EssentialCSharp/pulls), or [Issue](https://github.com/IntelliTect/EssentialCSharp/discussions).
 
-## Happy Coding!
+If there is an issue with [EssentialCSharp.com](EssentialCSharp.com), please checkout the [EssentialCSharp.Web Repository](https://github.com/IntelliTect/EssentialCSharp.Web)
+
+## Happy Coding
