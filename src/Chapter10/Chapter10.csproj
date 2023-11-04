@@ -22,5 +22,6 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Logging.Console" />
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" />
+    <LiveUnitTestingTestDependency Include="$(RepoRoot)/.git" />
   </ItemGroup>
 </Project>

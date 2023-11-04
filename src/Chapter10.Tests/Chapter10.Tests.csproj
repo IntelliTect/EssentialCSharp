@@ -11,5 +11,12 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="IntelliTect.Multitool" />
+    <LiveUnitTestingTestDependency Include="$(RepoRoot)\.git" />
   </ItemGroup>
+    <PropertyGroup Condition="'$(BuildingForLiveUnitTesting)' == 'true'">
+        <LUTTestProp>ThisWorked</LUTTestProp>
+    </PropertyGroup>
+    <Target Name="TestingThing" >
+        <Message text="Before Prop $(LUTTestProp) After Prop"/>
+    </Target>
 </Project>
