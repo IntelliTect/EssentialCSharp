@@ -12,7 +12,7 @@ public class Contact : PdaItem
     // ...
     public Contact(string name) => Name = name;
 
-    static public Contact Load(PdaItem pdaItem)
+    public static Contact Load(PdaItem pdaItem)
     {
         #pragma warning disable IDE0019 // Use pattern matching
         Contact? contact = pdaItem as Contact;

@@ -6,7 +6,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Table13_01;
 public partial class LambdaExpressionNotesAndExamples
 {
     // 3.
-    static public void ExpressionsCanHaveReturnTypes()
+    public static void ExpressionsCanHaveReturnTypes()
     {
 #if NET6_0_OR_GREATER
         Action action = void () => { };

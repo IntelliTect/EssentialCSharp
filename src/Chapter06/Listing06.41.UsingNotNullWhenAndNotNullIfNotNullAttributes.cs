@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 public class NullabilityAttributesExamined
 {
 #endregion EXCLUDE
-    static public bool TryGetDigitAsText(
+    public static bool TryGetDigitAsText(
         char number, [NotNullWhen(true)]out string? text) =>
             (text = number switch
             {
@@ -25,7 +25,7 @@ public class NullabilityAttributesExamined
 #else // EXCLUDE
     [return: NotNullIfNotNull("text")] // EXCLUDE
 #endif // EXCLUDE
-    static public string? TryGetDigitsAsText(string? text)
+    public static string? TryGetDigitsAsText(string? text)
     {
         if (text == null) return null;
 

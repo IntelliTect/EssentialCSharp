@@ -84,7 +84,7 @@ public class ExecuteProcessActivity : IExecuteProcessActivity
 
 public class Program
 {
-    static public void Main()
+    public static void Main()
     {
         ExecuteProcessActivity activity = new("dotnet");
 

@@ -6,7 +6,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Table03_03;
 public partial class CommonArrayCodingErrors
 {
     // 2.
-    static public void NewKeywordWithDataTypeRequired()
+    public static void NewKeywordWithDataTypeRequired()
     {
 #if COMPILEERROR
         int[] numbers;

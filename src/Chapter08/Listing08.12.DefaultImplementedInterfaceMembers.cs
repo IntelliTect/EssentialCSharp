@@ -78,7 +78,7 @@ public interface IListable
         }
     }
     #region HIGHLIGHT
-    static public ConsoleColor DefaultColumnColor { get; set; }
+    public static ConsoleColor DefaultColumnColor { get; set; }
     #endregion HIGHLIGHT
 }
 
@@ -144,7 +144,7 @@ public class Contact : PdaItem, IListable
         }
     }
 
-    static public string GetName(string firstName, string lastName)
+    public static string GetName(string firstName, string lastName)
         => $"{ firstName } { lastName }";
     #endregion EXCLUDE
 }

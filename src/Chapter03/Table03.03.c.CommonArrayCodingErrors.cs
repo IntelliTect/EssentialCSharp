@@ -6,7 +6,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Table03_03;
 public partial class CommonArrayCodingErrors
 {
     // 3.
-    static public void ArraySizeCannotBeSpecifiedInDataType()
+    public static void ArraySizeCannotBeSpecifiedInDataType()
     {
 #if COMPILEERROR
         int[3] numbers = 

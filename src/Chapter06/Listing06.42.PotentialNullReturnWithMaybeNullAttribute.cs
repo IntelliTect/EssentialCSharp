@@ -8,12 +8,12 @@ using System.Collections.Generic;
 
 public class NullabilityAttributesExamined
 {
-    static public string? Method() =>
+    public static string? Method() =>
        GetObject(Array.Empty<string>(), (item) => true);
     #region INCLUDE
     // ...
     [return: MaybeNull]
-    static public T GetObject<T>(
+    public static T GetObject<T>(
       IEnumerable<T> sequence, Func<T, bool> match)
     =>
     // ...

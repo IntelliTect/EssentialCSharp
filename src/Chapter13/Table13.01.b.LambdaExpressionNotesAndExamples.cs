@@ -6,7 +6,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter13.Table13_01;
 public partial class LambdaExpressionNotesAndExamples
 {
     // 2.
-    static public void TypeInferenceOfExpression()
+    public static void TypeInferenceOfExpression()
     {
 #if NET6_0_OR_GREATER
         //You can assign lambda

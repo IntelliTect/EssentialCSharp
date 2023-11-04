@@ -6,7 +6,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Table03_03;
 public partial class CommonArrayCodingErrors
 {
     // 5.
-    static public void ArraySizeWithEmptyInitializer()
+    public static void ArraySizeWithEmptyInitializer()
     {
 #if COMPILEERROR
         int[] numbers =

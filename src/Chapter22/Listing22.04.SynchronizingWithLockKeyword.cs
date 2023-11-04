@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 public class Program
 {
     #region HIGHLIGHT
-    readonly static object _Sync = new();
+    static readonly object _Sync = new();
     #endregion HIGHLIGHT
     static int _Total = int.MaxValue;
     static int _Count = 0;

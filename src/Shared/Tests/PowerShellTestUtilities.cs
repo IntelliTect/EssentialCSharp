@@ -5,14 +5,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Shared.Tests;
 
 public class PowerShellTestUtilities
 {
-    private readonly static Mutex Mutext = new (false, typeof(PowerShellTestUtilities).FullName);
+    private static readonly Mutex Mutext = new (false, typeof(PowerShellTestUtilities).FullName);
     
     public static bool WindowsEnvironment()
     {
         return RuntimeInformation.IsOSPlatform(OSPlatform.Windows);
     }
     
-    private readonly static Lazy<string?> _PowerShellCommand = new(() =>
+    private static readonly Lazy<string?> _PowerShellCommand = new(() =>
     {
         string? powershellCommand = null;
         // Verify that the PowerShell command executes successfully.

@@ -4,6 +4,7 @@ VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F97BC459-B5B9-4326-9E0D-D085FD4DEF96}"
 	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
 		.gitignore = .gitignore
 		.runsettings = .runsettings
 		after.EssentialCSharp.sln.targets = after.EssentialCSharp.sln.targets

@@ -35,7 +35,7 @@ public class ProgramTests
         return unsynchronized;
     }
 
-    static public void VerifyOutputIncrementAndDecrement(Func<string[], int> main)
+    public static void VerifyOutputIncrementAndDecrement(Func<string[], int> main)
     {
         int? result = null;
         string expected = $"Increment and decrementing \\d+ times...{Environment.NewLine}Count = (?<Count>\\d*)";

@@ -141,8 +141,8 @@ public class Program
 #endregion INCLUDE
 public struct Cell
 {
-    readonly public int X;
-    readonly public int Y;
+    public readonly int X;
+    public readonly int Y;
 
     public Cell(int x, int y)
     {

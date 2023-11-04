@@ -20,7 +20,7 @@ public partial class DisposeTests
 
     private const string ProjectName = "ProcessExitTestProgram.testing";
 
-    private readonly static object RunPowerShellScriptSyncLock = new();
+    private static readonly object RunPowerShellScriptSyncLock = new();
     [ClassInitialize]
     public static void ClassInitialize(TestContext testContext)
     {

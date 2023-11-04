@@ -72,7 +72,7 @@ public sealed class Program
         return task;
     }
 
-    static public string FormatBytes(long bytes)
+    public static string FormatBytes(long bytes)
     {
         string[] magnitudes =
             new string[] { "GB", "MB", "KB", "Bytes" };

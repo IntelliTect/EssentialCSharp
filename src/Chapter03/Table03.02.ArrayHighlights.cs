@@ -6,14 +6,14 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Table03_02;
 public class ArrayHighlights
 {
     // 1.
-    static public void Declaration()
+    public static void Declaration()
     {
         string[] languages; // one-dimensional
         int[,] cells;       // two-dimensional
     }
 
     // 2.
-    static public void Assignment()
+    public static void Assignment()
     {
         string[] languages = {
             "C#", "COBOL", "Java",
@@ -34,7 +34,7 @@ public class ArrayHighlights
     }
 
     // 3.
-    static public void ForwardAndReverseAccessingAnArray()
+    public static void ForwardAndReverseAccessingAnArray()
     {
         string[] languages = new []{
             "C#", "COBOL", "Java",
@@ -51,7 +51,7 @@ public class ArrayHighlights
     }
 
     // 4.
-    static public void Ranges()
+    public static void Ranges()
     {
         string[] languages = new []{
             "C#", "COBOL", "Java",
