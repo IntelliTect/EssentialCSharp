@@ -8,7 +8,7 @@ public class TupleDeclarationAndAssignmentTests
     [TestMethod]
     public void AssignTupleToIndividuallyDeclaredVariables()
     {
-        const string expected = "The poorest country in the world in 2017 was Burundi, Bujumbura: 263.67";
+        string expected = $"The poorest country in the world in 2017 was Burundi, Bujumbura: {263.67}";
         IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected,
             _sut.AssignTupleToIndividuallyDeclaredVariables);
     }
@@ -16,7 +16,7 @@ public class TupleDeclarationAndAssignmentTests
     [TestMethod]
     public void AssignTupleToIndividuallyDeclaredVariablesThatArPreDeclared()
     {
-        const string expected = "The poorest country in the world in 2017 was Burundi, Bujumbura: 263.67";
+        string expected = $"The poorest country in the world in 2017 was Burundi, Bujumbura: {263.67}";
         IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected,
             _sut.AssignTupleToIndividuallyDeclaredVariablesThatArPreDeclared);
     }
@@ -24,7 +24,7 @@ public class TupleDeclarationAndAssignmentTests
     [TestMethod]
     public void AssignTupleToIndividuallyDeclaredAndImplicitlyTypedVariables()
     {
-        const string expected = "The poorest country in the world in 2017 was Burundi, Bujumbura: 263.67";
+        string expected = $"The poorest country in the world in 2017 was Burundi, Bujumbura: {263.67}";
         IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected,
             _sut.AssignTupleToIndividuallyDeclaredAndImplicitlyTypedVariables);
     }
@@ -32,7 +32,7 @@ public class TupleDeclarationAndAssignmentTests
     [TestMethod]
     public void AssignTupleToIndividuallyDeclaredVariablesThatImplicitlyTypedWithADistributiveSyntax()
     {
-        const string expected = "The poorest country in the world in 2017 was Burundi, Bujumbura: 263.67";
+        string expected = $"The poorest country in the world in 2017 was Burundi, Bujumbura: {263.67}";
         IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected,
             _sut.AssignTupleToIndividuallyDeclaredVariablesThatImplicitlyTypedWithADistributiveSyntax);
     }
@@ -40,7 +40,7 @@ public class TupleDeclarationAndAssignmentTests
     [TestMethod]
     public void DeclareANamedItemTupleAndAssignItTupleValuesAndThenAccessTheTupleItemsByName()
     {
-        const string expected = "The poorest country in the world in 2017 was Burundi, Bujumbura: 263.67";
+        string expected = $"The poorest country in the world in 2017 was Burundi, Bujumbura: {263.67}";
         IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected,
             _sut.DeclareANamedItemTupleAndAssignItTupleValuesAndThenAccessTheTupleItemsByName);
     }
@@ -48,7 +48,7 @@ public class TupleDeclarationAndAssignmentTests
     [TestMethod]
     public void AssignANamedItemTupleToASingleImplicitlyTypedVariableThatIsImplicitlyTypedAndThenAccessTheTupleItemsByName()
     {
-        const string expected = "The poorest country in the world in 2017 was Burundi, Bujumbura: 263.67";
+        string expected = $"The poorest country in the world in 2017 was Burundi, Bujumbura: {263.67}";
         IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected,
             _sut.AssignANamedItemTupleToASingleImplicitlyTypedVariableThatIsImplicitlyTypedAndThenAccessTheTupleItemsByName);
     }
@@ -56,7 +56,7 @@ public class TupleDeclarationAndAssignmentTests
     [TestMethod]
     public void AssignAnUnnamedTupleToASingleImplicitlyTypedVariableAndThenAccessTheTupleElementsByTheirItemNumberProperty()
     {
-        const string expected = "The poorest country in the world in 2017 was Burundi, Bujumbura: 263.67";
+        string expected = $"The poorest country in the world in 2017 was Burundi, Bujumbura: {263.67}";
         IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected,
             _sut.AssignAnUnnamedTupleToASingleImplicitlyTypedVariableAndThenAccessTheTupleElementsByTheirItemNumberProperty);
     }
@@ -64,7 +64,7 @@ public class TupleDeclarationAndAssignmentTests
     [TestMethod]
     public void AssignANamedItemTupleToASingleImplicitlyTypedVariableAndThenAccessTheTupleItemsByTheirItemNumberProperty()
     {
-        const string expected = "The poorest country in the world in 2017 was Burundi, Bujumbura: 263.67";
+        string expected = $"The poorest country in the world in 2017 was Burundi, Bujumbura: {263.67}";
         IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected,
             _sut.AssignANamedItemTupleToASingleImplicitlyTypedVariableAndThenAccessTheTupleItemsByTheirItemNumberProperty);
     }
@@ -72,7 +72,7 @@ public class TupleDeclarationAndAssignmentTests
     [TestMethod]
     public void TupleElementNamesCanBeInferredFromVariableAndPropertyNames()
     {
-        const string expected = "The poorest country in the world in 2017 was Burundi, Bujumbura: 263.67";
+        string expected = $"The poorest country in the world in 2017 was Burundi, Bujumbura: {263.67}";
         IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected,
             _sut.TupleElementNamesCanBeInferredFromVariableAndPropertyNames);
     }
