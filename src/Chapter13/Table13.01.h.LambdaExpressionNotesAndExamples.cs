@@ -8,14 +8,12 @@ public partial class LambdaExpressionNotesAndExamples
     // 8.
     public static void AccessingParametersAndLocalsOutOfBody()
     {
-//#if COMPILEERROR
-#if !NET6_0_OR_GREATER
+    #if COMPILEERROR
     //ERROR: The name "first" does not
     //exist in the current context
     Func <int, int, bool> expression =
         (first, second) => first > second;
     first++;
-#endif
-//#endif // COMPILEERROR
+    #endif // COMPILEERROR
     }
 }

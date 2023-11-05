@@ -8,8 +8,7 @@ public partial class LambdaExpressionNotesAndExamples
     // 9.
     public static void UsingOutParameters()
     {
-//#if COMPILEERROR
-#if !NET6_0_OR_GREATER
+    #if COMPILEERROR
     int number;
     Func <string, bool> f =
         text => int.TryParse(text, out number);
@@ -18,7 +17,6 @@ public partial class LambdaExpressionNotesAndExamples
       //ERROR: Use of unassigned local variable
         System.Console.Write(number);
     }
-#endif
-//#endif // COMPILEERROR
+    #endif // COMPILEERROR
     }
 }

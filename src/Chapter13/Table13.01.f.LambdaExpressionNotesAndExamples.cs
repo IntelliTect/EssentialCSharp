@@ -8,12 +8,10 @@ public partial class LambdaExpressionNotesAndExamples
     // 6.
     public static void ConvertingToImproperDelegate()
     {
-//#if COMPILEERROR
-#if !NET6_0_OR_GREATER
+        #if COMPILEERROR
         //ERROR: Lambda expression is not compatible
         //with Func<int, bool> type
         Func<int, bool> f = (int x) => x;
-#endif
-//#endif // COMPILEERROR
+        #endif // COMPILEERROR
     }
 }

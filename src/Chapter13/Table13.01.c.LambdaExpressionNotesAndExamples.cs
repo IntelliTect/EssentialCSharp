@@ -8,7 +8,7 @@ public partial class LambdaExpressionNotesAndExamples
     // 3.
     static public void ExpressionsCanHaveReturnTypes()
     {
-#if !NET6_0_OR_GREATER
+#if NET6_0_OR_GREATER
         Action action = void () => { };
         var func = short?(long number) => 
             number <= short.MaxValue ? (short)number : null;

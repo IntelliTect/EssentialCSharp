@@ -8,7 +8,7 @@ public partial class LambdaExpressionNotesAndExamples
     // 1.
     public static void DiscardParameters()
     {
-#if !NET6_0_OR_GREATER
+#if NET5_0_OR_GREATER
         Action<int, int> x = (_, _)=>
             Console.WriteLine("This is a test.");
 #endif

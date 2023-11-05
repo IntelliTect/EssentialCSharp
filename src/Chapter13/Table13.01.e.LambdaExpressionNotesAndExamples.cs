@@ -8,13 +8,11 @@ public partial class LambdaExpressionNotesAndExamples
     // 5.
     public static void PatternMatchingOnType()
     {
-//#if COMPILEERROR
-#if !NET6_0_OR_GREATER
+        #if COMPILEERROR
         //ERROR: The first operand of an "is" or "as"
         //operator may not be a lambda expression or
         //anonymous method
         bool b = ((int x) => x) is Func<int,int>;
-#endif
-//#endif // COMPILEERROR
+        #endif // COMPILEERROR
     }
 }

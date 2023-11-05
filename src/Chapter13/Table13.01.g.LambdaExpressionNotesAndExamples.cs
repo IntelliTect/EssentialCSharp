@@ -8,8 +8,7 @@ public partial class LambdaExpressionNotesAndExamples
     // 7.
     public static void JumpStatementsToOutOfScopeDestinations()
     {
-        //#if COMPILEERROR
-#if !NET6_0_OR_GREATER
+        #if COMPILEERROR
         //ERROR: Control cannot leave the body of an
         //anonymous method or lambda expression
         string[] args = { "/File", "fileThatMostCertainlyDoesNotExist" };
@@ -24,7 +23,6 @@ public partial class LambdaExpressionNotesAndExamples
                     return args[1];
                 };
         }
-#endif
-        //#endif // COMPILEERROR
+        #endif // COMPILEERROR
     }
 }
