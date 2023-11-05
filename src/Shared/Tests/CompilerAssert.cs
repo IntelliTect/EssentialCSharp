@@ -166,12 +166,7 @@ public static class CompilerAssert
 
         protected override ParseOptions CreateParseOptions()
             => new CSharpParseOptions(LanguageVersion, DocumentationMode.Diagnose)
-#if NET7_0_OR_GREATER
-                .WithPreprocessorSymbols("COMPILEERROR", "NET7_0_OR_GREATER")
-#else
-                .WithPreprocessorSymbols("COMPILEERROR")
-#endif // NET7_0_OR_GREATER
-            ;
+                .WithPreprocessorSymbols("COMPILEERROR", NetCore.GetLatestPreprocessorSymbol());
 
         protected override IEnumerable<DiagnosticAnalyzer> GetDiagnosticAnalyzers()
             => Enumerable.Empty<DiagnosticAnalyzer>();

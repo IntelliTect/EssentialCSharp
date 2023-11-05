@@ -22,6 +22,7 @@
   <ItemGroup>
       <Using Include="Microsoft.VisualStudio.TestTools.UnitTesting"/>
       <Compile Include="..\Shared\Tests\CompilerAssert.cs" Link="CompilerAssert.cs" />
+      <Compile Include="..\Shared\NetCore.cs" Link="NetCore.cs" />
   </ItemGroup>
 
   <!-- TODO: Ideally this would be placed in a ChapterTests.targets file. -->
