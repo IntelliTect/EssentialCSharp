@@ -1,10 +1,15 @@
-#if NET7_0_OR_GREATER
-
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_38;
 
+#if NET7_0_OR_GREATER
 #region INCLUDE
 public class Book
 {
+    public Book()
+  {
+      // Look up employee name...
+      // ...
+  }
+
     string? _Title;
     #region HIGHLIGHT
     public required string Title
@@ -45,7 +50,7 @@ public class Program
     public static void Main()
     {
         #region EXCLUDE
-        #pragma warning disable IDE0059 // Unnecessary assignment of a value
+#pragma warning disable IDE0059 // Unnecessary assignment of a value
         #endregion EXCLUDE
         Book book = new()
         {
@@ -53,7 +58,7 @@ public class Program
             Title = "Harold and the Purple Crayon"
         };
         #region EXCLUDE
-        #pragma warning restore IDE0059 // Unnecessary assignment of a value
+#pragma warning restore IDE0059 // Unnecessary assignment of a value
         #endregion EXCLUDE
     }
 }

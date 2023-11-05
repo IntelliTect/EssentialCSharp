@@ -166,7 +166,7 @@ public static class CompilerAssert
 
         protected override ParseOptions CreateParseOptions()
             => new CSharpParseOptions(LanguageVersion, DocumentationMode.Diagnose)
-                .WithPreprocessorSymbols("COMPILEERROR", NetCore.GetCurrentNETPreprocessorSymbol());
+                .WithPreprocessorSymbols(NetCore.GetAllValidNETPreprocessorSymbols().Append("COMPILEERROR"));
 
         protected override IEnumerable<DiagnosticAnalyzer> GetDiagnosticAnalyzers()
             => Enumerable.Empty<DiagnosticAnalyzer>();
