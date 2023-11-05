@@ -66,7 +66,6 @@ public class TupleDeclarationAndAssignment
           $@"The poorest country in the world in 2017 was {
           countryInfo.Name}, {countryInfo.Capital}: {
           countryInfo.GdpPerCapita}");
-
     }
 
     // 7.
