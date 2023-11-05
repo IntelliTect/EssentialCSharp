@@ -37,15 +37,15 @@ public static class CompilerAssert
     public static async Task CompileAsync(string[] fileNames, string[] expectedErrorIds)
     {
 
-        var test = new Test()
+        Test test = new()
         {
             CompilerDiagnostics = CompilerDiagnostics.Warnings,
             ReferenceAssemblies = new ReferenceAssemblies(
-                        "net7.0",
+                        $"net{Environment.Version.Major}.{Environment.Version.Minor}",
                         new PackageIdentity(
                             "Microsoft.NETCore.App.Ref",
-                            "7.0.0"),
-                        Path.Combine("ref", "net7.0"))
+                            NetCore.GetNetCoreVersion()),
+                        Path.Combine("ref", $"net{Environment.Version.Major}.{Environment.Version.Minor}"))
         };
 
         List<string> fileNamesToCompile = new();
@@ -166,7 +166,7 @@ public static class CompilerAssert
 
         protected override ParseOptions CreateParseOptions()
             => new CSharpParseOptions(LanguageVersion, DocumentationMode.Diagnose)
-                .WithPreprocessorSymbols("COMPILEERROR", NetCore.GetLatestPreprocessorSymbol());
+                .WithPreprocessorSymbols("COMPILEERROR", NetCore.GetCurrentNETPreprocessorSymbol());
 
         protected override IEnumerable<DiagnosticAnalyzer> GetDiagnosticAnalyzers()
             => Enumerable.Empty<DiagnosticAnalyzer>();

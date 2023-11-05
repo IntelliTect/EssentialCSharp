@@ -16,12 +16,8 @@ public static class NetCore
             : throw new Exception("Unable to determine .NET Core version.");
     }
 
-    public static string GetLatestPreprocessorSymbol()
+    public static string GetCurrentNETPreprocessorSymbol()
     {
-        string netCoreVersion = GetNetCoreVersion();
-        string[] versionParts = netCoreVersion.Split('.');
-        string majorVersion = versionParts[0];
-        string minorVersion = versionParts[1];
-        return $"NET{majorVersion}_{minorVersion}_OR_GREATER";
+        return $"NET{Environment.Version.Major}_{Environment.Version.Minor}_OR_GREATER";
     }
 }
