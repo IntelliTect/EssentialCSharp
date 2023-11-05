@@ -50,7 +50,7 @@ public class Program
     static void Message(string text)
     {
         Console.WriteLine("{0}:{1:0000}:{2}",
-            Thread.CurrentThread.ManagedThreadId,
+            Environment.CurrentManagedThreadId,
             Clock.ElapsedMilliseconds, text);
     }
 }
