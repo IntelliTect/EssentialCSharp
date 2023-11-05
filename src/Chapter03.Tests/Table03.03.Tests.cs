@@ -5,8 +5,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Table03_03.Tests;
 [TestClass]
 public class ArrayHighlightsTests
 {
-    public TestContext TestContext { get; set; } = null!; // Set by MSTest;
-
     [TestMethod]
     /* 1. */ [DataRow(".a", "CS0650")]
     /* 2. */ [DataRow(".b", "CS1525", "CS1002", "CS1002", "CS1513", "CS1002", "CS1513", "CS1002")]
