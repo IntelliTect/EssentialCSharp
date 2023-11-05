@@ -27,12 +27,12 @@ public class Program
         {
             // ...
         }
-        #if COMPILE_ERRR  //EXCLUDE
+        #if COMPILEERROR  //EXCLUDE
         #region HIGHLIGHT
         // ERROR: message is not in scope:
         Console.WriteLine(message);
         #endregion HIGHLIGHT
-        #endif // COMPILE_ERRR  //EXCLUDE
+        #endif // COMPILEERROR  //EXCLUDE
         #endregion INCLUDE
     }
 }

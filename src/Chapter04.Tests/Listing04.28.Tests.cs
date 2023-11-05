@@ -1,15 +1,15 @@
+using AddisonWesley.Michaelis.EssentialCSharp.Shared.Tests;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_28.Tests;
 
 [TestClass]
 public class ProgramTests
 {
-    [TestMethod]
-    public void MainTest()
-    {
-        const string expected = @"Enter the number of players (1 or 2):";
+    private static readonly string[] ExpectedErrorIds = new string[] { "CS0103" };
 
-        IntelliTect.TestTools.Console.ConsoleAssert.Expect(
-            expected, Program.Main);
+    [TestMethod]
+    public async Task CompileError_OutOfScope()
+    {
+        await CompilerAssert.CompileAsync($"Listing04.28.OutOfScope.cs", ExpectedErrorIds);
     }
 }
