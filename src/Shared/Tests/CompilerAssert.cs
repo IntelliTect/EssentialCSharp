@@ -91,7 +91,7 @@ public static class CompilerAssert
 
         List<string> usingsToIgnore = new()
         {
-            nameof(Microsoft.VisualStudio.TestTools.UnitTesting),
+            "Microsoft.VisualStudio.TestTools.UnitTesting",
         };
 
         // Note: GeneratedSources is ignored.
