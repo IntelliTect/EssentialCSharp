@@ -27,7 +27,7 @@ public class Program
             compositeFormatString, date.Year, date.Month, date.Day) : null;
     #endregion INCLUDE
 }
-static file class DateDeconstructors
+file static class DateDeconstructors
 {
     public static void Deconstruct(this DateTime date, out int year, out int month, out int day) => (year, month, day) = (date.Year, date.Month, date.Day);
 }
