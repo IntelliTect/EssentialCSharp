@@ -1,10 +1,15 @@
-#if NET7_0_OR_GREATER
-
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_38;
 
+#if NET7_0_OR_GREATER
 #region INCLUDE
 public class Book
 {
+    public Book()
+  {
+      // Look up employee name...
+      // ...
+  }
+
     string? _Title;
     #region HIGHLIGHT
     public required string Title

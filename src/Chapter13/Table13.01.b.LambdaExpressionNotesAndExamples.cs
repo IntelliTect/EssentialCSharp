@@ -8,7 +8,7 @@ public partial class LambdaExpressionNotesAndExamples
     // 2.
     static public void TypeInferenceOfExpression()
     {
-#if !NET6_0_OR_GREATER
+#if NET6_0_OR_GREATER
         //You can assign lambda
         //expression to an implicitly
         //typed local variable starting C#10

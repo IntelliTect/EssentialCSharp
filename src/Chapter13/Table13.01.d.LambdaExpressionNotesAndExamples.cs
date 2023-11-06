@@ -8,12 +8,10 @@ public partial class LambdaExpressionNotesAndExamples
     // 4.
     public static void MemberMethodsOnExpressions()
     {
-    //#if COMPILEERROR
-    #if !NET6_0_OR_GREATER
+        #if COMPILEERROR
         //ERROR: Operator "." cannot be applied to
         //operand of type "lambda expression"
         string s = ((int x) => x).ToString();
-    #endif
-    //#endif // COMPILEERROR
+        #endif // COMPILEERROR
     }
 }

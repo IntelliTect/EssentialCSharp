@@ -8,9 +8,7 @@ public partial class LambdaExpressionNotesAndExamples
     // 10.
     public static void CompilerWillNotDetectInLambdaAssignment()
     {
-        //#if COMPILEERROR
-#if !NET6_0_OR_GREATER
-
+        #if COMPILEERROR
         int number;
         Func<int, bool> isFortyTwo =
           x => 42 == (number = x);
@@ -19,7 +17,6 @@ public partial class LambdaExpressionNotesAndExamples
             // ERROR: Use of unassigned local variable
             System.Console.Write(number);
         }
-#endif
-        //#endif // COMPILEERROR
+        #endif // COMPILEERROR
     }
 }

@@ -4,9 +4,6 @@
   </PropertyGroup>
   <Import Project="..\ChapterTests.props" />
   <ItemGroup>
-    <Compile Include="..\Shared\NetCore.cs" Link="NetCore.cs" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Chapter04\Chapter04.csproj" />
   </ItemGroup>
 </Project>
