@@ -12,9 +12,9 @@ public class Program
         // Error CS9035:
         // Required member 'Book.Isbn' must be set in the object
         // initializer or attribute constructor
-#if COMPILEERROR // EXCLUDE
+        #if COMPILEERROR // EXCLUDE
         Book book = new() { Title= "Essential C#" };
-#endif // COMPILEERROR // EXCLUDE
+        #endif // COMPILEERROR // EXCLUDE
 
         // ...
         #endregion INCLUDE

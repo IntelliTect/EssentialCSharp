@@ -50,7 +50,7 @@ public class Program
     public static void Main()
     {
         #region EXCLUDE
-#pragma warning disable IDE0059 // Unnecessary assignment of a value
+        #pragma warning disable IDE0059 // Unnecessary assignment of a value
         #endregion EXCLUDE
         Book book = new()
         {
@@ -58,7 +58,7 @@ public class Program
             Title = "Harold and the Purple Crayon"
         };
         #region EXCLUDE
-#pragma warning restore IDE0059 // Unnecessary assignment of a value
+        #pragma warning restore IDE0059 // Unnecessary assignment of a value
         #endregion EXCLUDE
     }
 }
