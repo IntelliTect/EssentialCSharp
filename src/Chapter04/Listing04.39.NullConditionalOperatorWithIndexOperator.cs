@@ -1,10 +1,12 @@
 // Justification: Intentionally demonstrating legacy syntax.
 #pragma warning disable IDE1005 // Delegate invocation can be simplified.
+using System.ComponentModel;
+
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_39;
 
 public class Thermostat
 {
-    public event System.EventHandler PropertyChanged = delegate { };
+    public event EventHandler PropertyChanged = delegate { };
 
     private int _Temperature;
     public int Temperature
@@ -13,12 +15,12 @@ public class Thermostat
         set 
         {
             #region INCLUDE
-            System.EventHandler propertyChanged =
+            EventHandler propertyChanged =
                 PropertyChanged;
             if (propertyChanged != null)
             {
                 propertyChanged(this,
-                    new System.EventArgs());
+                    new EventArgs());
             }
             #endregion INCLUDE
 
@@ -33,7 +35,7 @@ public class Thermostat
         set
         {
             PropertyChanged?.Invoke(this,
-                new System.EventArgs());
+                new PropertyChangedEventArgs(nameof(Humidity)));
 
             _Humidity = value;
         }
