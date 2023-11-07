@@ -10,7 +10,7 @@ public class Program
     {
         // ...
 
-        string fileName = @"enumtest.txt";
+        string fileName = @".enumtest.txt";
 
         #region EXCLUDE
         System.IO.FileInfo enumFile = new(fileName);
@@ -21,23 +21,18 @@ public class Program
 
         try
         {
-        #endregion EXCLUDE
-            System.IO.FileInfo file = new(fileName);
-
-            file.Attributes = FileAttributes.Hidden |
-                FileAttributes.ReadOnly;
+            #endregion EXCLUDE
+            System.IO.FileInfo file = new(fileName)
+            {
+                Attributes = FileAttributes.Hidden |
+                FileAttributes.ReadOnly
+            };
 
             Console.WriteLine($"{file.Attributes} = {(int)file.Attributes}");
 
-            // Only the ReadOnly attribute works on Linux
-            // (The Hidden attribute does not work on Linux)
-            if (!System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform(System.Runtime.InteropServices.OSPlatform.Linux))
+            if (!file.Attributes.HasFlag(FileAttributes.Hidden))
             {
-                // Added in C# 4.0/Microsoft .NET Framework  4.0
-                if (!file.Attributes.HasFlag(FileAttributes.Hidden))
-                {
-                    throw new Exception("File is not hidden.");
-                }
+                throw new Exception("File is not hidden.");
             }
 
             if ((file.Attributes & FileAttributes.ReadOnly) !=
