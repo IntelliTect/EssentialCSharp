@@ -4,14 +4,14 @@ using System.ComponentModel;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_39;
 
-public class Thermostat
+public class Person
 {
     public event EventHandler PropertyChanged = delegate { };
 
-    private int _Temperature;
-    public int Temperature
+    private int _BirthYear;
+    public int BirthYear
     {
-        get { return _Temperature; }
+        get { return _BirthYear; }
         set 
         {
             #region INCLUDE
@@ -20,24 +20,24 @@ public class Thermostat
             if (propertyChanged != null)
             {
                 propertyChanged(this,
-                    new EventArgs());
+                    new PropertyChangedEventArgs(nameof(BirthYear)));
             }
             #endregion INCLUDE
 
-            _Temperature = value; 
+            _BirthYear = value; 
         }
     }
 
-    int _Humidity;
-    public int Humidity
+    int _Age;
+    public int Age
     {
-        get { return _Humidity; }
+        get { return _Age; }
         set
         {
             PropertyChanged?.Invoke(this,
-                new PropertyChangedEventArgs(nameof(Humidity)));
+                new PropertyChangedEventArgs(nameof(Age)));
 
-            _Humidity = value;
+            _Age = value;
         }
     }
 }
