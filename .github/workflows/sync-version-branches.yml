@@ -1,0 +1,23 @@
+name: Sync branches
+on:
+  push:
+    branches: [ 'v12.0', 'v13.0' ]
+
+jobs:
+  sync_branches:
+    name: Sync Branches
+    runs-on: ubuntu-latest
+    steps:
+      - name: Keep branches in sync
+        uses: jojomatik/sync-branch@v2.0.2
+        with:
+          source: "v12.0"
+          target: "v13.0"
+          strategy: "merge"
+          resolve_conflicts: "false"
+          git_committer_name: 'BenjaminMichaelisBot'
+          git_committer_email: 'github@relay.benjamin.michaelis.net'
+          # The access token to push to the repository
+          #   Optional
+          #   Default: github.token
+          github_token: ${{ secrets.GIT_PUSHTOKEN }}
