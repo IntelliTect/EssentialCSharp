@@ -6,7 +6,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_01.Tests;
 public class ProgramTests : BaseProgramTests
 {
     [ClassInitialize]
-    static public void ClassInitialize(TestContext _)
+    public static void ClassInitialize(TestContext _)
     {
         Program.HttpClient = GetMockedHttpClient();
         ProgramWrapper = new ProgramWrapper(

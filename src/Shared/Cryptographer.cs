@@ -36,7 +36,7 @@ public class Cryptographer : IDisposable
         return await EncryptAsync(text, CryptoAlgorithm.CreateEncryptor(), outputFileStream);
     }
 
-    static public async Task<byte[]> EncryptAsync(string plainText, byte[] key, byte[] iv)
+    public static async Task<byte[]> EncryptAsync(string plainText, byte[] key, byte[] iv)
     {
         byte[] encrypted;
         // Create a new AesManaged.    
@@ -103,7 +103,7 @@ public class Cryptographer : IDisposable
         await DecryptAsync(encryptedData, CryptoAlgorithm.CreateDecryptor(), outputStream);
     }
 
-    static public async Task<string> DecryptAsync(byte[] encryptedData, byte[] key, byte[] iV)
+    public static async Task<string> DecryptAsync(byte[] encryptedData, byte[] key, byte[] iV)
     {
         string plaintext;
         // Create AesManaged    

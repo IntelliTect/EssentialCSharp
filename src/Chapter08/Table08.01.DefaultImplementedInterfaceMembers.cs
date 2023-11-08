@@ -57,7 +57,7 @@
         }
         public class Program
         {
-            static public void Main()
+            public static void Main()
             {
                 Person inigo = new("Inigo", "Montoya");
                 Console.WriteLine(

@@ -58,15 +58,15 @@ public class Information : IMoreInformation
         // Same as casting to ISampleInterface
         ((ISampleInterface)this).PublicConcreteInterfaceMethod();
 
-    virtual public string PublicConcreteInterfaceMethod() => Thing.GetStackTrace();
+    public virtual string PublicConcreteInterfaceMethod() => Thing.GetStackTrace();
 }
 public class SubClass : Information
 {
-    public new static string PublicConcreteInterfaceMethod() => Thing.GetStackTrace();
+    public static new string PublicConcreteInterfaceMethod() => Thing.GetStackTrace();
 }
 #pragma warning restore IDE0051 // Remove unused private members
 
-static public class Thing
+public static class Thing
 {
     [MethodImpl(MethodImplOptions.NoInlining)]
     public static string GetStackTrace()

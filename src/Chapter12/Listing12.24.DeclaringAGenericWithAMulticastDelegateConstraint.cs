@@ -3,7 +3,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter12.Listing12_31;
 public class Publisher
 {
     #region INCLUDE
-    static public object? InvokeAll<TDelegate>(
+    public static object? InvokeAll<TDelegate>(
         object?[]? args, params TDelegate[] delegates)
         // Constraint of type Action/Func not allowed
         where TDelegate : System.MulticastDelegate
@@ -21,7 +21,7 @@ public class Publisher
     }
     #endregion INCLUDE
 
-    static public void InvokeAll(params Action?[] actions)
+    public static void InvokeAll(params Action?[] actions)
     {
         Action? result = (Action?)Delegate.Combine(actions);
         result?.Invoke();

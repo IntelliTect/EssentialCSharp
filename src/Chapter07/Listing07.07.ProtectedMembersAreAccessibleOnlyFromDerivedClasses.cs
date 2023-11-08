@@ -28,7 +28,7 @@ public class Contact : PdaItem
         // ...
         stream.Dispose();
     }
-    static public Contact Copy(Contact contact)
+    public static Contact Copy(Contact contact)
     #region HIGHLIGHT
         => new(contact.ObjectKey);
     #endregion HIGHLIGHT

@@ -11,7 +11,7 @@ using System;
 // play tic-tac-toe.
 public class TicTacToeGame      // Declares the TicTacToeGame class.
 {
-    static public void Main()  // Declares the entry point to the program.
+    public static void Main()  // Declares the entry point to the program.
     {
         // Stores locations each player has moved.
         int[] playerPositions = { 0, 0 };

@@ -33,7 +33,7 @@ public class Program
 
     public class SuperSubDerivedClass : SubDerivedClass
     {
-        public new static void DisplayName()
+        public static new void DisplayName()
         {
             Console.WriteLine("SuperSubDerivedClass");
         }

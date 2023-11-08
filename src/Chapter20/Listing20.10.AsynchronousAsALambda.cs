@@ -60,7 +60,7 @@ public class Program
         }
     }
     #region EXCLUDE
-    static public string FormatBytes(long bytes)
+    public static string FormatBytes(long bytes)
     {
         string[] magnitudes =
             new [] { "GB", "MB", "KB", "Bytes" };

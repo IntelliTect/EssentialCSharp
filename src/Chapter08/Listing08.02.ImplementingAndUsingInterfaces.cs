@@ -39,7 +39,7 @@ public class Contact : PdaItem, IListable
     public string LastName { get; }
     public string Address { get; }
     public string Phone { get; }
-    static public string GetName(string firstName, string lastName)
+    public static string GetName(string firstName, string lastName)
         => $"{ firstName } { lastName }";
 
     #region HIGHLIGHT

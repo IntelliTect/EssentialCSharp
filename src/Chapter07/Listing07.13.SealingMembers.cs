@@ -10,7 +10,7 @@ class A
 
 class B : A
 {
-    public override sealed void Method()
+    public sealed override void Method()
     {
     }
 }

@@ -6,7 +6,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Table03_03;
 public partial class CommonArrayCodingErrors
 {
     // 6.
-    static public void IndexingOffTheEndOfArray()
+    public static void IndexingOffTheEndOfArray()
     {
         int[] numbers =
             new int[3];

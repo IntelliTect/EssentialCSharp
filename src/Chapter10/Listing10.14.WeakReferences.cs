@@ -36,7 +36,7 @@ public class LazyWeakReference<T>
 #region INCLUDE
 public static class ByteArrayDataSource
 {
-    static private byte[] LoadData()
+    private static byte[] LoadData()
     {
         // Imagine a much lager number
         byte[] data = new byte[1000];
@@ -45,9 +45,9 @@ public static class ByteArrayDataSource
         return data;
     }
 
-    static private WeakReference<byte[]>? Data { get; set; }
+    private static WeakReference<byte[]>? Data { get; set; }
 
-    static public byte[] GetData()
+    public static byte[] GetData()
     {
         byte[]? target;
         if (Data is null)

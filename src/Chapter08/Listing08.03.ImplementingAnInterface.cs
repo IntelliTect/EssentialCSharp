@@ -104,7 +104,7 @@ public class Contact : PdaItem, IListable, IComparable
     }
     protected string? Phone { get; set; }
     protected string? Address { get; set; }
-    static public string GetName(string firstName, string lastName)
+    public static string GetName(string firstName, string lastName)
         => $"{ firstName } { lastName }";
     #endregion EXCLUDE
 }

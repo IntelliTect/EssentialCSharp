@@ -71,6 +71,6 @@ public class Contact : PdaItem, IListable
     }
     protected string? Phone { get; set; }
     protected string? Address { get; set; }
-    static public string GetName(string firstName, string lastName)
+    public static string GetName(string firstName, string lastName)
         => $"{ firstName } { lastName }";
 }

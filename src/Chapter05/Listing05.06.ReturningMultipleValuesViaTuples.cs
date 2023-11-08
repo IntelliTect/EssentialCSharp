@@ -17,7 +17,7 @@ public class Program
         lastName = GetUserInput("Enter your last name: ");
         return (firstName, lastName);
     }
-    static public void Main()
+    public static void Main()
     {
         #region HIGHLIGHT
         (string First, string Last) name = GetName();

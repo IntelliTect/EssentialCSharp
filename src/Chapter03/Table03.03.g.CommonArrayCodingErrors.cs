@@ -6,7 +6,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter03.Table03_03;
 public partial class CommonArrayCodingErrors
 {
     // 7.
-    static public void Hat0IsOnePastTheEndOfTheArray1()
+    public static void Hat0IsOnePastTheEndOfTheArray1()
     {
         int[] numbers =
           new int[3];
