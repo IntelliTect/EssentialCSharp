@@ -17,7 +17,7 @@ public class SimpleSort2
         int j;
         int temp;
 
-        if(items == null)
+        if(items is null)
         {
             return;
         }

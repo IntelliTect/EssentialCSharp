@@ -12,11 +12,11 @@ public class DelegateSample
         int j;
         int temp;
 
-        if(items == null)
+        if(items is null)
         {
             return;
         }
-        if(compare == null)
+        if(compare is null)
         {
             throw new ArgumentNullException(nameof(compare));
         }

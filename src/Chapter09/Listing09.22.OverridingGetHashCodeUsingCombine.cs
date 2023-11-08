@@ -34,7 +34,7 @@ public class Angle
 
     public bool Equals(Angle? other)
     {
-        if (other == null) return false;
+        if (other is null) return false;
         return
             EqualityComparer<int>.Default.Equals(Degrees, other.Degrees)
             && EqualityComparer<int>.Default.Equals(Minutes, other.Minutes)

@@ -22,7 +22,7 @@ public class BinaryTree<T> :
         #region HIGHLIGHT
         foreach (BinaryTree<T>? tree in SubItems)
         {
-            if(tree != null)
+            if(tree is not null)
             {
                 // Since each element in the pair is a tree,
                 // traverse the tree and yield each

@@ -212,7 +212,7 @@ public static class Program
         Console.WriteLine();
         Console.WriteLine();
 
-        if (userArguments != null)
+        if (userArguments is not null)
         {
             userArguments = userArguments.Trim();
         }

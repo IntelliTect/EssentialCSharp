@@ -42,7 +42,7 @@ public class TestMethodWithIgnoreIfSupportAttribute : TestMethodAttribute
 
         // Walk the class hierarchy looking for an [IgnoreIf] attribute
         var type = testMethod.MethodInfo.DeclaringType;
-        while (type != null)
+        while (type is not null)
         {
             ignoreAttributes.AddRange(type.GetCustomAttributes<IgnoreIfAttribute>(inherit: true));
             type = type.DeclaringType;

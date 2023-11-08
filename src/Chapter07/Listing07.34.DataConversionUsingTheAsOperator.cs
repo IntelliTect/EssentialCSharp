@@ -17,7 +17,7 @@ public class Contact : PdaItem
         #pragma warning disable IDE0019 // Use pattern matching
         Contact? contact = pdaItem as Contact;
         #pragma warning restore IDE0019 // Use pattern matching
-        if (contact != null)
+        if (contact is not null)
         {
             System.Diagnostics.Trace.WriteLine(
                 $"ObjectKey: {contact.ObjectKey}");

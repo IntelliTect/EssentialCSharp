@@ -19,7 +19,7 @@ public class Thermostat
                 _CurrentTemperature = value;
                 Action<float>? onTemperatureChange 
                     = OnTemperatureChange;
-                if (onTemperatureChange != null)
+                if (onTemperatureChange is not null)
                 {
                     #region HIGHLIGHT
                     List<Exception> exceptionCollection =
