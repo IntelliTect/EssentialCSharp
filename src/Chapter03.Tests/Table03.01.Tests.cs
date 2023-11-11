@@ -14,11 +14,11 @@ public class TupleDeclarationAndAssignmentTests
     }
 
     [TestMethod]
-    public void AssignTupleToIndividuallyDeclaredVariablesThatArPreDeclared()
+    public void AssignTupleToIndividuallyDeclaredVariablesThatArePreDeclared()
     {
         string expected = $"The poorest country in the world in 2017 was Burundi, Bujumbura: {263.67}";
         IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected,
-            _sut.AssignTupleToIndividuallyDeclaredVariablesThatArPreDeclared);
+            _sut.AssignTupleToIndividuallyDeclaredVariablesThatArePreDeclared);
     }
 
     [TestMethod]
