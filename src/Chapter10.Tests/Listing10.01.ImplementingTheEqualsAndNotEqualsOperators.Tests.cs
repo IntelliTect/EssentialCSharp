@@ -27,33 +27,29 @@ public class ProductSerialNumberTests
     }
 
     [TestMethod]
-    [Ignore("Switch to use records")]
     public void Equals_GivenNull_NotEqual()
     {
         ProductSerialNumber productSerialNumber1 = new("12", 11, 11001);
         ProductSerialNumber? productSerialNumber2 = null;
-        
-        
+
         Assert.IsFalse(productSerialNumber1.Equals(productSerialNumber2!));
     }
 
     [TestMethod]
-    [Ignore("Switch to use records")]
     public void Equals_GivenSameReference_Equal()
     {
         ProductSerialNumber productSerialNumber1 = new("12", 11, 11001);
         ProductSerialNumber productSerialNumber2 = productSerialNumber1;
-        
+
         Assert.IsTrue(productSerialNumber1 == productSerialNumber2);
     }
 
     [TestMethod]
-    [Ignore("Switch to use records")]
     public void Equals_GivenDifferentTypes_NotEqual()
     {
         ProductSerialNumber productSerialNumber1 = new("12", 11, 11001);
         int otherObj = 12;
-        
+
         Assert.IsFalse(productSerialNumber1.Equals(otherObj));
     }
 }
