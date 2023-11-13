@@ -1,12 +1,11 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_07.Tests
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_07.Tests;
+
+[TestClass]
+public class AsyncEncryptionCollectionTests
 {
-    [TestClass]
-    public class ProgramTests
+    [TestMethod]
+    public async Task MainDoesNotThrow()
     {
-        [TestMethod]
-        public async Task MainTest()
-        {
-            await IntelliTect.TestTools.Console.ConsoleAssert.ExecuteAsync("", async () => await AsyncEncryptionCollection.Main());
-        }
+        await IntelliTect.TestTools.Console.ConsoleAssert.ExecuteAsync("", async () => await AsyncEncryptionCollection.Main());
     }
 }
