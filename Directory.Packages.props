@@ -6,7 +6,7 @@
   <ItemGroup>
     <PackageVersion Include="coverlet.collector" Version="6.0.0" />
     <PackageVersion Include="coverlet.msbuild" Version="6.0.0" />
-    <PackageVersion Include="IntelliTect.Multitool" Version="1.3.1" />
+    <PackageVersion Include="IntelliTect.Multitool" Version="1.4.0" />
     <PackageVersion Include="IntelliTect.TestTools.Console" Version="1.0.0" />
     <PackageVersion Include="Microsoft.CodeAnalysis" Version="4.7.0" />
     <PackageVersion Include="Microsoft.CodeAnalysis.CSharp.Scripting" Version="4.7.0" />
