@@ -6,8 +6,8 @@ public class ControlFlowStatementsTests
     [TestMethod]
     public void IfStatement_InputIsQuit_GameEnd()
     {
-        string input = "quit";
-        string expected = "Game end";
+        const string input = "quit";
+        const string expected = "Game end";
 
         IntelliTect.TestTools.Console.ConsoleAssert.Expect(
             expected, () => ControlFlowStatements.IfStatement(input));
@@ -16,8 +16,8 @@ public class ControlFlowStatementsTests
     [TestMethod]
     public void IfStatement_InputIsNotQuit_NoOutput()
     {
-        string input = "not quit";
-        string expected = "";
+        const string input = "not quit";
+        const string expected = "";
 
         IntelliTect.TestTools.Console.ConsoleAssert.Expect(
             expected, () => ControlFlowStatements.IfStatement(input));
@@ -26,8 +26,8 @@ public class ControlFlowStatementsTests
     [TestMethod]
     public void IfElseStatement_InputIsQuit_GameEnd()
     {
-        string input = "quit";
-        string expected = "Game end";
+        const string input = "quit";
+        const string expected = "Game end";
 
         IntelliTect.TestTools.Console.ConsoleAssert.Expect(
             expected, () => ControlFlowStatements.IfElseStatement(input));
@@ -36,8 +36,8 @@ public class ControlFlowStatementsTests
     [TestMethod]
     public void IfElseStatement_InputIsNotQuit_GetNextMove()
     {
-        string input = "don't quit game";
-        string expected = "Next move obtained.";
+        const string input = "don't quit game";
+        const string expected = "Next move obtained.";
 
         IntelliTect.TestTools.Console.ConsoleAssert.Expect(
             expected, () => ControlFlowStatements.IfElseStatement(input));
@@ -46,8 +46,8 @@ public class ControlFlowStatementsTests
     [TestMethod]
     public void WhileStatement_CountIsLessThanTotal_CountIsLessThanTotal()
     {
-        int count = 0;
-        int total = 10;
+        const int count = 0;
+        const int total = 10;
         string expected = "";
         for (int i = 0; i < total; i++)
         {
@@ -61,7 +61,7 @@ public class ControlFlowStatementsTests
     [TestMethod]
     public void DoWhileStatement_InputIsExit_ExitApp()
     {
-        string expected = "<<exit>>Enter name:";
+        const string expected = "<<exit>>Enter name:";
 
         IntelliTect.TestTools.Console.ConsoleAssert.Expect(
             expected, () => ControlFlowStatements.DoWhileStatement());
@@ -80,8 +80,8 @@ public class ControlFlowStatementsTests
     [TestMethod]
     public void ForStatement_CountIsLessThanTotal_CountIsLessThanTotal()
     {
-        int count = 0;
-        int total = 10;
+        const int count = 0;
+        const int total = 10;
         string expected = "";
         for (int i = 0; i <= total; i++)
         {
@@ -95,8 +95,8 @@ public class ControlFlowStatementsTests
     [TestMethod]
     public void SwitchStatement_InputIsExit_ExitApp()
     {
-        string input = "exit";
-        string expected = "Exiting app....";
+        const string input = "exit";
+        const string expected = "Exiting app....";
 
         IntelliTect.TestTools.Console.ConsoleAssert.Expect(
             expected, () => ControlFlowStatements.SwitchStatement(input));
@@ -105,8 +105,8 @@ public class ControlFlowStatementsTests
     [TestMethod]
     public void SwitchStatement_InputIsQuit_ExitApp()
     {
-        string input = "quit";
-        string expected = "Exiting app....";
+        const string input = "quit";
+        const string expected = "Exiting app....";
 
         IntelliTect.TestTools.Console.ConsoleAssert.Expect(
             expected, () => ControlFlowStatements.SwitchStatement(input));
@@ -115,8 +115,8 @@ public class ControlFlowStatementsTests
     [TestMethod]
     public void SwitchStatement_InputIsRestart_RestartApp()
     {
-        string input = "restart";
-        string expected = @"Resetting app....
+        const string input = "restart";
+        const string expected = @"Resetting app....
 Next move obtained.";
 
         IntelliTect.TestTools.Console.ConsoleAssert.Expect(
@@ -126,8 +126,8 @@ Next move obtained.";
     [TestMethod]
     public void SwitchStatement_InputIsStart_GetNextMove()
     {
-        string input = "start";
-        string expected = "Next move obtained.";
+        const string input = "start";
+        const string expected = "Next move obtained.";
 
         IntelliTect.TestTools.Console.ConsoleAssert.Expect(
             expected, () => ControlFlowStatements.SwitchStatement(input));
@@ -136,8 +136,8 @@ Next move obtained.";
     [TestMethod]
     public void SwitchStatement_InputIsNotExitOrQuitOrRestart_NoOutput()
     {
-        string input = "default";
-        string expected = "default";
+        const string input = "default";
+        const string expected = "default";
 
         IntelliTect.TestTools.Console.ConsoleAssert.Expect(
             expected, () => ControlFlowStatements.SwitchStatement(input));
