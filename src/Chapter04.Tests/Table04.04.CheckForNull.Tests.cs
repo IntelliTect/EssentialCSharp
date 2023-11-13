@@ -1,5 +1,4 @@
-﻿
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Table04_04.Tests;
+﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Table04_04.Tests;
 
 [TestClass]
 public class ProgramTests
