@@ -9,7 +9,7 @@ public class ContactEquality : IEqualityComparer<Contact>
     {
         if(object.ReferenceEquals(x, y))
             return true;
-        if(x == null || y == null)
+        if(x is null || y is null)
             return false;
         return x.LastName == y.LastName &&
             x.FirstName == y.FirstName;
@@ -20,8 +20,8 @@ public class ContactEquality : IEqualityComparer<Contact>
         if(x is null)
             return 0;
 
-        int h1 = x.FirstName == null ? 0 : x.FirstName.GetHashCode();
-        int h2 = x.LastName == null ? 0 : x.LastName.GetHashCode();
+        int h1 = x.FirstName is null ? 0 : x.FirstName.GetHashCode();
+        int h2 = x.LastName is null ? 0 : x.LastName.GetHashCode();
         return h1 * 23 + h2;
     }
 }

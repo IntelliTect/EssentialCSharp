@@ -15,9 +15,9 @@ public class ConsoleTreeControl
         Console.WriteLine("\n{0}{1}",
             "+ --".PadLeft(5 * indent, ' '),
             tree.Item.ToString());
-        if(tree.SubItems.First != null)
+        if(tree.SubItems.First is not null)
             Show(tree.SubItems.First, indent + 1);
-        if(tree.SubItems.Second != null)
+        if(tree.SubItems.Second is not null)
             Show(tree.SubItems.Second, indent + 1);
     }
 }

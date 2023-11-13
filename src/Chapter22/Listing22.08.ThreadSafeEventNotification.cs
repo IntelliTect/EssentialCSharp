@@ -17,7 +17,7 @@ class Program
         //...
         TemperatureChangedHandler localOnChange =
             OnTemperatureChanged;
-        if(localOnChange != null)
+        if(localOnChange is not null)
         {
             // Call subscribers
             localOnChange(

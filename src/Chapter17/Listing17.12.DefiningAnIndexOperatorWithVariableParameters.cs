@@ -35,12 +35,12 @@ public class BinaryTree<T>
 
             while (currentLevel < totalLevels)
             {
-                System.Diagnostics.Debug.Assert(branches != null,
-                    $"{ nameof(branches) } != null");
+                System.Diagnostics.Debug.Assert(branches is not null,
+                    $"{ nameof(branches) } is not null");
 
                 currentNode = currentNode.SubItems[
                     branches[currentLevel]];
-                if (currentNode == null)
+                if (currentNode is null)
                 {
                     // The binary tree at this location is null
                     throw new IndexOutOfRangeException();

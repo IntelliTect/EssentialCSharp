@@ -30,7 +30,7 @@ public class Program
             // IEnumerator will use the as operator unless IDisposable
             // support is known at compile time
             // disposable = (enumerator as IDisposable);
-            // if (disposable != null)
+            // if (disposable is not null)
             // {
             //     disposable.Dispose();
             // }

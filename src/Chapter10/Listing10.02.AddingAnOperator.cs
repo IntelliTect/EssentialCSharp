@@ -84,7 +84,7 @@ public readonly struct Coordinate
     {
         // STEP 1: Check for null if a reference type
         // (e.g., a reference type)
-        // if (obj == null)
+        // if (obj is null)
         // {
         //     return false;
         // }

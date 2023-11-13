@@ -28,7 +28,7 @@ public class Program
                 Arguments = arguments,
                 #region HIGHLIGHT
                 RedirectStandardOutput =
-                   progress != null
+                   progress is not null
                 #endregion HIGHLIGHT
             },
             EnableRaisingEvents = true
@@ -40,7 +40,7 @@ public class Program
         };
 
         #region HIGHLIGHT
-        if (progress != null)
+        if (progress is not null)
         {
             process.OutputDataReceived +=
                 (sender, localEventArgs) =>

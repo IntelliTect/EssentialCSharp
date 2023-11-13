@@ -9,7 +9,7 @@ public static class SimpleSort1
         int j;
         int temp;
 
-        if(items == null)
+        if(items is null)
         {
             return;
         }

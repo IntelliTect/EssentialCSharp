@@ -32,11 +32,11 @@ public interface IMoreInformation : ISampleInterface
 
     /* public */
     //string ISampleInterface.PublicConcreteInterfaceMethod() => 
-    //    Self-invokes causing infinate loop
+    //    Self-invokes causing infinite loop
     //    ((ISampleInterface)this).PublicConcreteInterfaceMethod();
 
     //string ISampleInterface.PublicConcreteInterfaceMethod() =>
-    //    Self-invokes causing infinate loop
+    //    Self-invokes causing infinite loop
     //    PublicConcreteInterfaceMethod();
 }
 public class Information : IMoreInformation

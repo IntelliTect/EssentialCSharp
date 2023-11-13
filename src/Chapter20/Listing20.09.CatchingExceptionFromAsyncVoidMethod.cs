@@ -67,7 +67,7 @@ public static class Program
 
             synchronizationContext.ResetEvent.Wait();
 
-            if (synchronizationContext.Exception != null)
+            if (synchronizationContext.Exception is not null)
             {
                 Console.WriteLine($@"Throwing expected exception....(Thread ID: {
                 Thread.CurrentThread.ManagedThreadId})");

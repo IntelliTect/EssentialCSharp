@@ -50,7 +50,7 @@ public static class Listable
 
         for(int itemCount = 0; itemCount < items.Length; itemCount++)
         {
-            if (items[itemCount] != null)
+            if (items[itemCount] is not null)
             {
                 string?[] values = items[itemCount].CellValues;
 
