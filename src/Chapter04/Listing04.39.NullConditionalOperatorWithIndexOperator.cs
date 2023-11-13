@@ -1,41 +1,43 @@
 // Justification: Intentionally demonstrating legacy syntax.
 #pragma warning disable IDE1005 // Delegate invocation can be simplified.
+using System.ComponentModel;
+
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_39;
 
-public class Thermostat
+public class Person
 {
-    public event System.EventHandler PropertyChanged = delegate { };
+    public event EventHandler PropertyChanged = delegate { };
 
-    private int _Temperature;
-    public int Temperature
+    private int _BirthYear;
+    public int BirthYear
     {
-        get { return _Temperature; }
+        get { return _BirthYear; }
         set 
         {
             #region INCLUDE
-            System.EventHandler propertyChanged =
+            EventHandler propertyChanged =
                 PropertyChanged;
             if (propertyChanged != null)
             {
                 propertyChanged(this,
-                    new System.EventArgs());
+                    new PropertyChangedEventArgs(nameof(BirthYear)));
             }
             #endregion INCLUDE
 
-            _Temperature = value; 
+            _BirthYear = value; 
         }
     }
 
-    int _Humidity;
-    public int Humidity
+    private int _Age;
+    public int Age
     {
-        get { return _Humidity; }
+        get { return _Age; }
         set
         {
             PropertyChanged?.Invoke(this,
-                new System.EventArgs());
+                new PropertyChangedEventArgs(nameof(Age)));
 
-            _Humidity = value;
+            _Age = value;
         }
     }
 }
