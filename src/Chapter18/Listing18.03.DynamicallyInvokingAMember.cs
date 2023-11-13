@@ -94,7 +94,7 @@ public class CommandLineHandler
                         BindingFlags.IgnoreCase |
                         BindingFlags.Instance |
                         BindingFlags.Public);
-                if(property != null)
+                if(property is not null)
                 {
                     if(property.PropertyType == typeof(bool))
                     {

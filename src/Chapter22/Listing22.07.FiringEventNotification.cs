@@ -11,7 +11,7 @@ public class Program
         #region INCLUDE
         // Not thread safe
         #region HIGHLIGHT
-        if (OnTemperatureChanged != null)
+        if (OnTemperatureChanged is not null)
         #endregion HIGHLIGHT
         {
             // Call subscribers

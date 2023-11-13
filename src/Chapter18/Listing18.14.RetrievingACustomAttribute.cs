@@ -20,7 +20,7 @@ public class CommandLineSwitchRequiredAttribute : Attribute
                     typeof(CommandLineSwitchRequiredAttribute),
                     false);
             if (attributes.Length > 0 &&
-                property.GetValue(commandLine, null) == null)
+                property.GetValue(commandLine, null) is null)
             {
                 missingOptions.Add(property.Name);
             }

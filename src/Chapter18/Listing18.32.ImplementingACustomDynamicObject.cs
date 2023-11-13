@@ -26,7 +26,7 @@ public class DynamicXml : DynamicObject
         result = null;
         XElement? firstDescendant =
             Element.Descendants(binder.Name).FirstOrDefault();
-        if(firstDescendant != null)
+        if(firstDescendant is not null)
         {
             if(firstDescendant.Descendants().Any())
             {
@@ -47,7 +47,7 @@ public class DynamicXml : DynamicObject
         bool success = false;
         XElement? firstDescendant =
             Element.Descendants(binder.Name).FirstOrDefault();
-        if(firstDescendant != null)
+        if(firstDescendant is not null)
         {
             if(value?.GetType() == typeof(XElement))
             {

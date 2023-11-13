@@ -40,7 +40,7 @@ public struct Pair<T> : IPair<T>, IEnumerable<T>
     public System.Collections.Generic.IEnumerable<T> GetNotNullEnumerator()
     {
         #region HIGHLIGHT
-        if ((First == null) || (Second == null))
+        if ((First is null) || (Second is null))
         {
             yield break;
         }

@@ -52,9 +52,9 @@ public class NameComparison : IComparer<Contact>
     {
         if(Object.ReferenceEquals(x, y))
             return 0;
-        if(x == null)
+        if(x is null)
             return 1;
-        if(y == null)
+        if(y is null)
             return -1;
         int result = StringCompare(x.LastName, y.LastName);
         if(result == 0)
@@ -66,9 +66,9 @@ public class NameComparison : IComparer<Contact>
     {
         if(Object.ReferenceEquals(x, y))
             return 0;
-        if(x == null)
+        if(x is null)
             return 1;
-        if(y == null)
+        if(y is null)
             return -1;
         return x.CompareTo(y);
     }

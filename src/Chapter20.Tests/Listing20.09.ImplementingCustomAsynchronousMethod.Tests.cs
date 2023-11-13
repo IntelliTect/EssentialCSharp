@@ -50,7 +50,7 @@ System.Exception: Expected Exception
                     expectedThreadId = null;
                     break;
             }
-            if (expectedThreadId != null)
+            if (expectedThreadId is not null)
             {
                 Assert.AreEqual<int?>(expectedThreadId, int.Parse(matches[i].Groups[1].Value),
                     $"Match {i} was '{matches[i].Groups[0].Value}' when '{expectedThreadId}' was expected");

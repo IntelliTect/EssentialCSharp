@@ -62,7 +62,7 @@ public sealed class Program
         .Unwrap()
         .ContinueWith(antecedent =>
         {
-            if (reader != null)
+            if (reader is not null)
                 reader.Dispose();
             string text = antecedent.Result;
             Console.WriteLine(
