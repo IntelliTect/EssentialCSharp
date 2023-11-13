@@ -28,7 +28,7 @@ public class Person
         }
     }
 
-    int _Age;
+    private int _Age;
     public int Age
     {
         get { return _Age; }

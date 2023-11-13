@@ -8,10 +8,7 @@ public class ProgramTests
     {
         bool eventFired = false;
         Person person = new();
-        person.PropertyChanged += (object? sender, EventArgs e) =>
-        {
-            eventFired = true;
-        };
+        person.PropertyChanged += (object? sender, EventArgs e) => eventFired = true;
         person.BirthYear = 1978;
         Assert.IsTrue(eventFired);
     }
@@ -20,12 +17,9 @@ public class ProgramTests
     public void ChangeHumidityWithConditionalOperator()
     {
         bool eventFired = false;
-        Person thermostat = new();
-        thermostat.PropertyChanged += (object? sender, EventArgs e) =>
-        {
-            eventFired = true;
-        };
-        thermostat.Age = 42;
+        Person person = new();
+        person.PropertyChanged += (object? sender, EventArgs e) => eventFired = true;
+        person.Age = 42;
         Assert.IsTrue(eventFired);
     }
 }
