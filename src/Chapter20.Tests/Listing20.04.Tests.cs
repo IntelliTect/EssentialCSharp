@@ -32,9 +32,7 @@ public class ValueTaskAsyncReturnTest
     [TestMethod]
     public async Task CompressAsync_WithNonEmptyBuffer_ReturnsCompressedBufferThatCanBeDecompressed()
     {
-        byte[] buffer = Encoding.UTF8.GetBytes(inputString);
-
-        byte[] compressedBuffer = await Program.CompressAsync(buffer);
+        byte[] compressedBuffer = await Program.CompressAsync(Encoding.UTF8.GetBytes(inputString));
 
         byte[] decompressedBuffer = await Program.Decompress(compressedBuffer);
 
