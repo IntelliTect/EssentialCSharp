@@ -1,8 +1,10 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_04;
 
+using System;
+
 #region INCLUDE
 using System.IO;
-using System.Text;
+using System.IO.Compression;
 using System.Threading.Tasks;
 
 public static class Program
@@ -13,45 +15,30 @@ public static class Program
         {
             return buffer;
         }
-        using MemoryStream memoryStream = new();
-        using System.IO.Compression.GZipStream gZipStream =
-            new(
-                memoryStream, 
-                    System.IO.Compression.CompressionMode.Compress);
-        await gZipStream.WriteAsync(buffer.AsMemory(0, buffer.Length));
+        using MemoryStream outputMemoryStream = new();
+        using (GZipStream gZipStream = new(outputMemoryStream, CompressionMode.Compress))
+        {
+            await gZipStream.WriteAsync(buffer.AsMemory(0, buffer.Length));
+        }
 
-        return memoryStream.ToArray();
+        return outputMemoryStream.ToArray();
     }
     #region EXCLUDE
-
-    public static string UnZip(string value)
+    public static async ValueTask<byte[]> Decompress(byte[] buffer)
     {
-        //Transform string into byte[]
-        byte[] byteArray = new byte[value.Length];
-        int index = 0;
-        foreach (char item in value.ToCharArray())
+        if (buffer.Length == 0)
         {
-            byteArray[index++] = (byte)item;
+            return buffer;
         }
 
-        using MemoryStream memoryStream = new(byteArray);
-        using System.IO.Compression.GZipStream gZipStream = new(memoryStream,
-                System.IO.Compression.CompressionMode.Decompress);
-
-         byteArray = new byte[byteArray.Length];
-
-        //Decompress
-        int bytesRead = gZipStream.Read(byteArray, 0, byteArray.Length);
-
-        //Transform byte[] unzip data to string
-        StringBuilder data = new(bytesRead);
-        //Read the number of bytes GZipStream red and do not a for each bytes in
-        //resultByteArray
-        for (int i = 0; i < bytesRead; i++)
+        using MemoryStream inputStream = new(buffer);
+        using MemoryStream uncompressedStream = new();
+        using (GZipStream gZipStream = new(inputStream, CompressionMode.Decompress))
         {
-            data.Append((char)byteArray[i]);
+            await gZipStream.CopyToAsync(uncompressedStream);
         }
-        return data.ToString();
+
+        return uncompressedStream.ToArray();
     }
     #endregion EXCLUDE
 }
