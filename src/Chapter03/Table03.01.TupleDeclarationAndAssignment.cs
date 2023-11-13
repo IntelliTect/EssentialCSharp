@@ -13,7 +13,7 @@ public class TupleDeclarationAndAssignment
     }
 
     // 2.
-    public void AssignTupleToIndividuallyDeclaredVariablesThatArPreDeclared()
+    public void AssignTupleToIndividuallyDeclaredVariablesThatArePreDeclared()
     {
         string country;
         string capital;
