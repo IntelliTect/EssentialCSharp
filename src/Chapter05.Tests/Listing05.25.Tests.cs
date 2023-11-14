@@ -9,7 +9,7 @@ public class SpecifyingParametersByNameTests
     [TestMethod]
     public void SpecifyingParametersByName_WithNamedParameters_WritesToConsole()
     {
-        const string expected = "First Name: Inigo Middle Name: Last Name: Montoya";
+        const string expected = "First Name: Inigo Middle Name:  Last Name: Montoya";
 
         ConsoleAssert.Expect(expected, () => SpecifyingParametersByName.Main());
     }
