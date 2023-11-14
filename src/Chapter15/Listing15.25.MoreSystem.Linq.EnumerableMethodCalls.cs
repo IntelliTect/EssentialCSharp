@@ -10,7 +10,7 @@ public class Program
     public static void Main()
     {
         IEnumerable<object> stuff =
-            new object[] { new object(), 1, 3, 5, 7, 9,
+            new object[] { new(), 1, 3, 5, 7, 9,
                 "\"thing\"", Guid.NewGuid() };
         Print("Stuff: {0}", stuff);
 

@@ -107,7 +107,7 @@ public abstract class BaseProgramTests
     }
 
     protected static HttpClient GetMockedHttpClient()
-        => new HttpClient(new MockHttpClientHandler());
+        => new(new MockHttpClientHandler());
 }
 
 file class MockHttpClientHandler : HttpMessageHandler
