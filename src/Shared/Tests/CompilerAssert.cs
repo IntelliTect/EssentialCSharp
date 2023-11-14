@@ -115,6 +115,9 @@ public static class CompilerAssert
     public static async Task CompileAsync(string fileName, params string[] expectedErrorIds) =>
         await CompileAsync(new string[] { fileName }, expectedErrorIds);
 
+    public static async Task CompileAsync(string fileName, string expectedErrorId) =>
+    await CompileAsync(new string[] { fileName }, [expectedErrorId]);
+
     //public static async Task CompileAsync(string[] expectedErrorIds, [CallerFilePath] string fileName = null!) =>
     //    await CompileAsync(new string[] { fileName }, expectedErrorIds);
 

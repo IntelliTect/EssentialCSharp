@@ -26,7 +26,7 @@ public class ProgramTests
     public void Employee_SetInvalidFullName_ThrowsArgumentNullException()
     {
         Employee employee = new("Inigo", "Montoya");
-        Assert.ThrowsException<ArgumentNullException>(() => employee.FullName = "FirstName");
+        Assert.ThrowsException<ArgumentException>(() => employee.FullName = "FirstName");
     }
 
     [TestMethod]
