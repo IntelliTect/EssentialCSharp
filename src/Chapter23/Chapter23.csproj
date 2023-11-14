@@ -6,8 +6,6 @@
   <Import Project="..\Chapter.props" />
   <ItemGroup>
     <Compile Remove="Listing23.02.TheVirtualAllocExAPI.cs" />
-    <Compile Remove="Listing23.14.FixedStatement.cs" />
-    <Compile Remove="Listing23.16.AllocatingDataOnTheCallStack.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\Shared\Program.cs">
@@ -16,7 +14,5 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Listing23.02.TheVirtualAllocExAPI.cs" />
-    <None Include="Listing23.14.FixedStatement.cs" />
-    <None Include="Listing23.16.AllocatingDataOnTheCallStack.cs" />
   </ItemGroup>
 </Project>
