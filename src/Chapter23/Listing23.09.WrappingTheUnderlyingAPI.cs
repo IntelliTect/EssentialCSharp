@@ -1,3 +1,6 @@
+using System.Runtime.InteropServices;
+using static AddisonWesley.Michaelis.EssentialCSharp.Chapter23.Listing23_06.VirtualMemoryManager;
+
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter23.Listing23_09
 {
     #region INCLUDE

@@ -1,5 +1,4 @@
 using AddisonWesley.Michaelis.EssentialCSharp.Chapter23.Listing23_06;
-using System;
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter23.Listing23_07
 {
@@ -15,7 +14,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter23.Listing23_07
             _MemorySize = (IntPtr)memorySize;
             _AllocatedPointer =
                 VirtualMemoryManager.AllocExecutionBlock(
-                memorySize, ProcessHandle);
+                memorySize, _ProcessHandle);
             _Disposed = false;
         }
 
@@ -27,7 +26,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter23.Listing23_07
         public static implicit operator IntPtr(
             VirtualMemoryPtr virtualMemoryPointer)
         {
-            return virtualMemoryPointer.AllocatedPointer;
+            return virtualMemoryPointer._AllocatedPointer;
         }
 
         // SafeHandle abstract member
