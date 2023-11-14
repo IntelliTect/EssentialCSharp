@@ -3,9 +3,7 @@
 // the specified namespace into the project
 global using System.Text;
 #region EXCLUDE
-
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_10;
-
 #endregion EXCLUDE
 public class Program
 {

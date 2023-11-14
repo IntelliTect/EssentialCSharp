@@ -5,10 +5,12 @@ public class Program
     public static void Main()
     {
         Employee employee;
-        employee = new("Inigo", "Montoya");
-        employee.Salary = "Too Little";
+        employee = new("Inigo", "Montoya")
+        {
+            Salary = "Too Little"
+        };
 
-        System.Console.WriteLine(
+        Console.WriteLine(
             "{0} {1}: {2}",
             employee.FirstName,
             employee.LastName,
@@ -36,8 +38,8 @@ public class Employee
     public string? Title { get; set; }
     public Employee? Manager { get; set; }
 
-    // Name property
-    public string Name
+    // FullName property
+    public string FullName
     {
         get
         {
@@ -58,7 +60,7 @@ public class Employee
             {
                 // Throw an exception if the full 
                 // name was not assigned
-                throw new System.ArgumentException(
+                throw new ArgumentException(
                     string.Format(
                     $"Assigned value '{ value }' is invalid", 
                     nameof(value)));

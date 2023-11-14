@@ -13,7 +13,7 @@ public class Program
         #endregion HIGHLIGHT
         employee.Salary = "Too Little";
 
-        System.Console.WriteLine(
+        Console.WriteLine(
             "{0} {1}: {2}",
             employee.FirstName,
             employee.LastName,

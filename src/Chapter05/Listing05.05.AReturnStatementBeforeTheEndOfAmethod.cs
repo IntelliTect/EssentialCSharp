@@ -26,7 +26,7 @@ public class Program
     #region EXCLUDE
     private static string ObtainCommand()
     {
-        throw new NotImplementedException();
+        return Console.ReadLine() ?? string.Empty;
     }
     #endregion EXCLUDE
 }

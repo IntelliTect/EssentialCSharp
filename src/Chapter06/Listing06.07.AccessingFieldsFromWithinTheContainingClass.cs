@@ -13,7 +13,7 @@ public class Employee
     #region HIGHLIGHT
     public string GetName()
     {
-        return $"{ FirstName }  { LastName }";
+        return $"{ FirstName } { LastName }";
     }
     #endregion HIGHLIGHT
 }
