@@ -1,4 +1,3 @@
-
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter23.Listing23_04;
 
 using System;
