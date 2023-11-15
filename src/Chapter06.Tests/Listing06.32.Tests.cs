@@ -8,6 +8,6 @@ public class ProgramTests
     [TestMethod]
     public async Task Main_CompileErrorCS8852()
     {
-        await CompilerAssert.CompileAsync("Listing06.32.InitOnlySetters.cs", ["CS8852"]);
+        await CompilerAssert.CompileTestTargetFileAsync(["CS8852"]);
     }
 }

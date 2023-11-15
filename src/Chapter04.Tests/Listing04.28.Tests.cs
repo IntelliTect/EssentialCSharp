@@ -12,6 +12,6 @@ public class ProgramTests
     [TestMethod]
     public async Task CompileError_OutOfScope()
     {
-        await CompilerAssert.CompileAsync($"Listing04.28.OutOfScope.cs", ExpectedErrorIds);
+        await CompilerAssert.CompileTestTargetFileAsync(ExpectedErrorIds);
     }
 }
