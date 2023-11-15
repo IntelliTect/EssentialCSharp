@@ -17,6 +17,4 @@ public class TimeOnlyHelper
                 $"Invalid type - {input.GetType().FullName}"),
         };
     #endregion INCLUDE
-
 }
-
