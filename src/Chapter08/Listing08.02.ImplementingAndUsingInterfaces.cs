@@ -121,27 +121,27 @@ public class Program
     {
         Contact[] contacts = new Contact[]
         {
-          new Contact(
+          new(
               "Dick", "Traci",
               "123 Main St., Spokane, WA  99037",
               "123-123-1234"),
-          new Contact(
+          new(
               "Andrew", "Littman",
               "1417 Palmary St., Dallas, TX 55555",
               "555-123-4567"),
-          new Contact(
+          new(
               "Mary", "Hartfelt",
               "1520 Thunder Way, Elizabethton, PA 44444",
               "444-123-4567"),
-          new Contact(
+          new(
               "John", "Lindherst",
               "1 Aerial Way Dr., Monteray, NH 88888",
               "222-987-6543"),
-          new Contact(
+          new(
               "Pat", "Wilson",
               "565 Irving Dr., Parksdale, FL 22222",
               "123-456-7890"),
-          new Contact(
+          new(
               "Jane", "Doe",
               "123 Main St., Aurora, IL 66666",
               "333-345-6789")
@@ -154,12 +154,12 @@ public class Program
         Console.WriteLine();
 
         Publication[] publications = new Publication[3] {
-            new Publication(
+            new(
                 "The End of Poverty: Economic Possibilities for Our Time",
                 "Jeffrey Sachs", 2006),
-            new Publication("Orthodoxy",
+            new("Orthodoxy",
                 "G.K. Chesterton", 1908),
-            new Publication(
+            new(
                 "The Hitchhiker's Guide to the Galaxy",
                 "Douglas Adams", 1979)
             };
