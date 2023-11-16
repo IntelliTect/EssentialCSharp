@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <ChapterNumber>23</ChapterNumber>
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
@@ -6,14 +6,6 @@
   <Import Project="..\Chapter.props" />
   <ItemGroup>
     <Compile Remove="Listing23.02.TheVirtualAllocExAPI.cs" />
-    <Compile Remove="Listing23.03.DeclaringTheVirtualAllocExAPI.cs" />
-    <Compile Remove="Listing23.05.DeclaringTypesFromUnmanagedStructs.cs" />
-    <Compile Remove="Listing23.07.ManagedResourcesUsingSafeHandle.cs" />
-    <Compile Remove="Listing23.08.EncapsulatingTheAPIsTogether.cs" />
-    <Compile Remove="Listing23.09.WrappingTheUnderlyingAPI.cs" />
-    <Compile Remove="Listing23.10.DesignatingAMethodForUnsafeCode.cs" />
-    <Compile Remove="Listing23.14.FixedStatement.cs" />
-    <Compile Remove="Listing23.16.AllocatingDataOnTheCallStack.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\Shared\Program.cs">
@@ -22,13 +14,5 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Listing23.02.TheVirtualAllocExAPI.cs" />
-    <None Include="Listing23.03.DeclaringTheVirtualAllocExAPI.cs" />
-    <None Include="Listing23.05.DeclaringTypesFromUnmanagedStructs.cs" />
-    <None Include="Listing23.07.ManagedResourcesUsingSafeHandle.cs" />
-    <None Include="Listing23.08.EncapsulatingTheAPIsTogether.cs" />
-    <None Include="Listing23.09.WrappingTheUnderlyingAPI.cs" />
-    <None Include="Listing23.10.DesignatingAMethodForUnsafeCode.cs" />
-    <None Include="Listing23.14.FixedStatement.cs" />
-    <None Include="Listing23.16.AllocatingDataOnTheCallStack.cs" />
   </ItemGroup>
 </Project>

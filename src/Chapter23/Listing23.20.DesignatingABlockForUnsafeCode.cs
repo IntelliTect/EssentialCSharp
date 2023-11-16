@@ -8,7 +8,7 @@ using System.Text;
 
 public class Program
 {
-    public unsafe static int Main()
+    public static unsafe int Main()
     {
         if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
         {

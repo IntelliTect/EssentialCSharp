@@ -1,3 +1,5 @@
+using System.Runtime.InteropServices;
+
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter23.Listing23_05
 {
     #region INCLUDE

@@ -23,7 +23,7 @@ public class VirtualMemoryManager
     #endregion HIGHLIGHT
 
     [Flags]
-    private enum AllocationType : uint
+    internal enum AllocationType : uint
     {
         #region EXCLUDE
         Reserve,
@@ -40,9 +40,11 @@ public class VirtualMemoryManager
     }
 
     [Flags]
-    private enum MemoryFreeType
+    internal enum MemoryFreeType
     {
-        // ...
+        #region EXCLUDE
+        Decommit
+        #endregion EXCLUDE
     }
 
     public static IntPtr AllocExecutionBlock(
@@ -84,6 +86,11 @@ public class VirtualMemoryManager
     
     #region EXCLUDE
     public static IntPtr GetCurrentProcessHandle()
+    {
+        throw new NotImplementedException();
+    }
+
+    internal static void VirtualFreeEx(nint processHandle, nint allocatedPointer, nint memorySize)
     {
         throw new NotImplementedException();
     }
