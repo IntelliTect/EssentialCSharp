@@ -1,4 +1,3 @@
-
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter18.Listing18_28.Tests;
 
 #if NET7_0_OR_GREATER
