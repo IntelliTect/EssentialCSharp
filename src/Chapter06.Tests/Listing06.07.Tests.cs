@@ -7,7 +7,7 @@ public class EmployeeTests
     public void Employee_SettingFields_GetFieldValues()
     {
         const string expected =
-            @"Inigo Montoya";
+            "Inigo Montoya";
 
         Employee employee = new()
         {

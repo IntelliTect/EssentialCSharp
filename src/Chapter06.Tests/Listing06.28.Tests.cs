@@ -7,7 +7,7 @@ public class ProgramTests
     public void Main_UsingAConstructor_WriteFirstNameLastNameSalary()
     {
         const string expected =
-            @"Inigo Montoya: Too Little";
+            "Inigo Montoya: Too Little";
 
         IntelliTect.TestTools.Console.ConsoleAssert.Expect(
             expected, Program.Main);
