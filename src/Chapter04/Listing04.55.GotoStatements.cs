@@ -2,7 +2,7 @@
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_55;
 
-public class Program
+public class GoToStatements
 {
     #region INCLUDE
     // ...

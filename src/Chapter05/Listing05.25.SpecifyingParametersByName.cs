@@ -1,6 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_25;
 
-public class Program
+public class SpecifyingParametersByName
 {
     #region INCLUDE
     public static void Main()
@@ -17,7 +17,10 @@ public class Program
         string? lastName = null
         )
     {
-        // ...
+        #region EXCLUDE
+        string fullName = $"First Name: {firstName} Middle Name: {middleName} Last Name: {lastName}";
+        Console.Write(fullName);
+        #endregion EXCLUDE
     }
     #endregion INCLUDE
 }

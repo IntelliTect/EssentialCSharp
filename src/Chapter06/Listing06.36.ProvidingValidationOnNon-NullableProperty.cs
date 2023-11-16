@@ -8,7 +8,7 @@ public class Program
     {
         Employee employee = new("Inigo Montoya");
 
-        System.Console.WriteLine(employee.Name);
+        Console.WriteLine(employee.Name);
 
         // ...
     }

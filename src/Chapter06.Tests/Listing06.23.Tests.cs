@@ -8,8 +8,6 @@ public class ProgramTests
     [TestMethod]
     public async Task UnassignedVariableThrowsError()
     {
-        await CompilerAssert.CompileAsync(
-            "Listing06.23.PlacingAccessModifiersOnSetters.cs",
-            "CS0272");
+        await CompilerAssert.CompileTestTargetFileAsync(["CS0272"]);
     }
 }

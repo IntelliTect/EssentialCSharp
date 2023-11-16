@@ -12,6 +12,6 @@ public class ProgramTests
             new string[] {
                 CompilerAssert.GetTargetFileNameToCompileFromTestFileName(),
                 "Listing06.28.DefiningAConstructor.cs" },
-            new string[] { "CS7036" });
+            ["CS7036"]);
     }
 }

@@ -25,7 +25,7 @@ public class DataStorage
     public static void Store(Employee employee)
     {
         #region EXCLUDE
-        System.Diagnostics.Trace.WriteLine(
+        Console.WriteLine(
             $@"Writing employee ({
                 employee.FirstName} {employee.LastName
                 }) information to file.");

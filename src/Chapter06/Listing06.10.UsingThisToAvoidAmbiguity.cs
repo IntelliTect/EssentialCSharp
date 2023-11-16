@@ -12,10 +12,10 @@ public class Employee
 
     public string GetName()
     {
-        return $"{ FirstName }  { LastName }";
+        return $"{ FirstName } { LastName }";
     }
 
-    // Caution:  Parameter names use PascalCase
+    // Caution: Parameter names use PascalCase
     public void SetName(string FirstName, string LastName)
     {
         this.FirstName = FirstName;

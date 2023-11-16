@@ -13,6 +13,6 @@ public class UppercaseTests
     public async Task UnassignedVariableThrowsError()
     {
         await CompilerAssert.CompileTestTargetFileAsync(
-            new string[] { "CS0165", "CS8602" });
+            ["CS0165", "CS8602"]);
     }
 }

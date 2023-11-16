@@ -8,8 +8,6 @@ public class ProgramTests
     [TestMethod]
     public async Task UnassignedVariableThrowsError()
     {
-        await CompilerAssert.CompileAsync(
-            "Listing06.21.DefiningReadOnlyProperties.cs",
-            "CS0200");
+        await CompilerAssert.CompileTestTargetFileAsync(["CS0200"]);
     }
 }

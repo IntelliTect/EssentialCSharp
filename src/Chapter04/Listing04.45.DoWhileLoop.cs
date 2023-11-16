@@ -1,6 +1,6 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_45;
 
-public class Program
+public class DoWhileLoop
 {
     public static void Main()
     {
