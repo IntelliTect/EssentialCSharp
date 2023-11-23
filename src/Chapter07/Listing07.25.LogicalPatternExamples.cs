@@ -5,13 +5,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_25;
 public class PeriodsOfTheDay
 {
     #region INCLUDE
-    public bool IsStandardWorkHours(
+    public static bool IsStandardWorkHours(
         TimeOnly time) =>
             time.Hour is > 8
                 and < 17
                 and not 12; // lunch
 
-    static bool TryGetPhoneButton(
+    public static bool TryGetPhoneButton(
         char character,
         [NotNullWhen(true)] out char? button)
     {
