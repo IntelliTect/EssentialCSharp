@@ -11,7 +11,7 @@ public class PeriodsOfTheDay
                 (> 8 and < 17 and not 12); // Parenthesis Pattern - C# 10.
     #endregion INCLUDE
 
-    static bool TryGetPhoneButton(
+    public static bool TryGetPhoneButton(
         char character,
         [NotNullWhen(true)] out char? button)
     {

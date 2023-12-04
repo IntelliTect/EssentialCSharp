@@ -14,12 +14,10 @@ public class Contact : PdaItem
 
     public static Contact Load(PdaItem pdaItem)
     {
-        #pragma warning disable IDE0019 // Use pattern matching
         Contact? contact = pdaItem as Contact;
-        #pragma warning restore IDE0019 // Use pattern matching
         if (contact is not null)
         {
-            System.Diagnostics.Trace.WriteLine(
+            Console.WriteLine(
                 $"ObjectKey: {contact.ObjectKey}");
             return (Contact)pdaItem;
         }
