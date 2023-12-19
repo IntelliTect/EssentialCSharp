@@ -29,7 +29,7 @@ class HelloWorld
 {
     static void Main()
     {
-        Console.WriteLine("Hello. My name is Inigo Montoya.");
+        Console.WriteLine(""ÄãºÃ£¬ÎÒ½ÐInigo Montoya¡£"");
     }
 }
 "@

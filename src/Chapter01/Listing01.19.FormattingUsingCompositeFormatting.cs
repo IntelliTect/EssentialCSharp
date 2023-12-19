@@ -8,18 +8,17 @@ public class HeyYou
         string firstName;
         string lastName;
 
-        Console.WriteLine("Hey you!");
+        Console.WriteLine("嘿，你！");
 
-        Console.Write("Enter your first name: ");
+        Console.Write("请输入你的名字: ");
         firstName = Console.ReadLine();
 
-        #region HIGHLIGHT
-        Console.Write("Enter your last name: ");
+        Console.Write("请输入你的姓氏: ");
         lastName = Console.ReadLine();
-        #endregion HIGHLIGHT
 
         Console.WriteLine(
-            "Your full name is {0} {1}.", firstName, lastName);
+           "你的全名是{0} {1}。", firstName, lastName);
     }
 }
+
 #endregion INCLUDE

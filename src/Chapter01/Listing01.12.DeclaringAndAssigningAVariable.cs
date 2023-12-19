@@ -5,9 +5,9 @@ public class MiracleMax
 {
     public static void Main()
     {
-        string max;     // "string" identifies the data type
-                        // "max" is the variable
-        max = "Have fun storming the castle!";
+        string max;     // “string”标识数据类型，
+                        // “max”是变量名称。
+        max = "愉快地袭击古堡吧！";
         Console.WriteLine(max);
     }
 }

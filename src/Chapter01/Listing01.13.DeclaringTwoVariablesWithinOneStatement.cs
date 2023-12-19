@@ -8,8 +8,8 @@ public class HelloWorld
         string message1, message2;
         #endregion INCLUDE
 
-        message1 = "My name is Inigo Montoya.";;
-        message2 = "You killed my father....";
+        message1 = "你好，我叫Inigo Montoya。" ;
+        message2 = "你杀死了我的父亲....";
 
         Console.WriteLine(message1);
         Console.WriteLine(message2);

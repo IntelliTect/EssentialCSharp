@@ -5,23 +5,20 @@ public class CommentSamples
 {
     public static void Main()
     {
-        string firstName; // Variable for storing the first name
-        string lastName;  // Variable for storing the last name
+        string firstName;  // 用于存储名字的变量
+        string lastName;   // 用于存储姓氏的变量
 
-        Console.WriteLine("Hey you!");
+        Console.WriteLine("嘿，你！");
 
-        Console.Write /* No new line */ ("Enter your first name: ");
+        Console.Write /* 不换行 */ ("请输入你的名字: ");
         firstName = Console.ReadLine();
 
-        Console.Write /* No new line */ ("Enter your last name: ");
+        Console.Write /* 不换行 */ ("请输入你的姓氏: ");
         lastName = Console.ReadLine();
 
-        /* Display a greeting to the console 
-          using string interpolation formatting. */
-
-        Console.WriteLine($"Your full name is {firstName} {lastName}.");
-        // This is the end
-        // of the program listing
+        /* 使用字符串插值在控制台上显示问候语*/
+        Console.WriteLine($"你的全名是{firstName} {lastName}。");
+        // 程序清单结尾
     }
 }
 #endregion INCLUDE

@@ -1,3 +1,5 @@
+using System;
+
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter01.Listing01_04;
 
 public class HelloWorld
@@ -5,9 +7,9 @@ public class HelloWorld
     public static void Main()
     {
         #region INCLUDE
-        Console.WriteLine("Down");
-        Console.WriteLine("Side");
-        Console.WriteLine("Up");
+        Console.WriteLine("ио");
+        Console.WriteLine("жп");
+        Console.WriteLine("об");
         #endregion INCLUDE
     }
 }

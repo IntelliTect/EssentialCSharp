@@ -7,7 +7,7 @@ public class StormingTheCastle
     {
         // ...
         string requirements, miracleMax;
-        requirements = miracleMax = "It would take a miracle.";
+        requirements = miracleMax = "’‚–Ë“™∆Êº£°£";
         #region EXCLUDE
         Console.WriteLine(miracleMax);
         #endregion EXCLUDE

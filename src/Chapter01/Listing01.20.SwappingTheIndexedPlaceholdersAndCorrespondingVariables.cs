@@ -7,15 +7,16 @@ public class Program
         string firstName;
         string lastName;
 
-        Console.WriteLine("Hey you!");
+        Console.WriteLine("嘿，你！");
 
-        Console.Write("Enter your first name: ");
+        Console.Write("请输入你的名字: ");
         firstName = Console.ReadLine();
 
-        Console.Write("Enter your last name: ");
+        Console.Write("请输入你的姓氏: ");
         lastName = Console.ReadLine();
+
         #region INCLUDE
-        Console.WriteLine("Your full name is {1}, {0}.", firstName, lastName);
+        Console.WriteLine("你的全名是{1}, {0}。", firstName, lastName);
         #endregion INCLUDE
     }
 }

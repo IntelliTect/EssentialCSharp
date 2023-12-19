@@ -5,7 +5,7 @@ public class Program
 {
     public static void Main()
     {
-        System.Console.WriteLine("Hello. My name is Inigo Montoya.");
+        System.Console.WriteLine("ÄãºÃ£¬ÎÒ½ÐInigo Montoya¡£");
     }
 }
 #endregion INCLUDE

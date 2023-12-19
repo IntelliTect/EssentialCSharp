@@ -6,7 +6,7 @@ public class HelloWorld
     {
         #region INCLUDE
         Console.WriteLine(
-            "Hello. My name is Inigo Montoya.");
+            "ÄãºÃ£¬ÎÒ½ÐInigo Montoya¡£");
         #endregion INCLUDE
     }
 }

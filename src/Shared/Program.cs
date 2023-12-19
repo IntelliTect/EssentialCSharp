@@ -23,7 +23,7 @@ public static class Program
         if (args.Length == 0)
         {
             Console.Write(
-                $"Enter the listing number to execute (e.g. For Listing {chapterNumber}.1 enter \"{chapterNumber}.1\"): ");
+                $"请输入要执行的代码清单的编号(例如，执行代码清单{chapterNumber}.1，就输入\"{chapterNumber}.1\"): ");
             input = Console.ReadLine() ?? string.Empty;
         }
         else
@@ -52,7 +52,7 @@ public static class Program
 
             if (target is null)
             {
-                throw new InvalidOperationException($"There is no listing '{input}'.");
+                throw new InvalidOperationException($"不存在代码清单'{input}'。");
             }
 
             MethodInfo method = target.GetMethod("Main") ??
@@ -91,7 +91,7 @@ public static class Program
         {
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("----Exception----");
-            Console.WriteLine($"There is no chapter corresponding to listing {input}.");
+            Console.WriteLine($"不存在和代码清单{input}对应的章。");
         }
 #pragma warning restore CA1031 // Do not catch general exception types
         catch (TargetParameterCountException exception)
@@ -132,8 +132,8 @@ public static class Program
 
             Console.WriteLine();
             Console.WriteLine("____________________________");
-            Console.WriteLine("End of Listing " + input);
-            Console.Write("Press any key to exit.");
+            Console.WriteLine("结束代码清单" + input);
+            Console.Write("按任意键退出。");
             Console.ReadKey();
         }
     }

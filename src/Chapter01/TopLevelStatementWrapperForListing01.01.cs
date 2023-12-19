@@ -10,6 +10,6 @@ public class HelloWorld
         // the #line directive reroutes the debugger's line mapper from this file to "Listing01.01.HelloWorldInC#.cs"
         // see https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/preprocessor-directives#error-and-warning-information
 #line (3,1) - (3,55) 13 "Listing01.01.HelloWorldInC#.cs"
-        Console.WriteLine("Hello. My name is Inigo Montoya.");
+        Console.WriteLine("ÄãºÃ£¬ÎÒ½ÐInigo Montoya¡£");
     }
 }
