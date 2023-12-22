@@ -34,7 +34,7 @@
     ```
 
 3. 要运行代码，请首先导航到您希望执行的章节的项目目录。例如，要执行第1章的示例，您将导航到Chapter01目录（例如：`cd src/Chapter01`）。
-4. 然后使用`dotnet run`命令启动程序，并按照提示输入要执行的列表。
+4. 然后使用`dotnet run`命令启动程序，并按照提示输入要执行的代码清单编号。
    - 注意：您只能输入在当前运行的项目（本例是Chapter01）中的代码清单编号。
 5. 还可以使用`dotnet run -p <projectfile>`命令，其中project file是要执行的项目文件的路径（例如，`dotnet run -p .\src\Chapter01\Chapter01.csproj`）。执行时，程序将提示要执行哪个代码清单。
 
@@ -44,11 +44,11 @@
 
 ## 测试
 
-许多列表都有相应的单元测试。
+许多代码清单都有相应的单元测试。
 
 在Visual Studio中，要执行测试，请打开测试项目
 
-并导航到与您要执行的列表对应的测试。然后，在测试方法上右键单击，选择运行测试（Ctrl+R，T）或调试测试（Ctrl+R，Ctrl+T）。或者，打开Test Explorer窗口，并从那里运行一些或所有测试（[更多信息](https://learn.microsoft.com/visualstudio/test/run-unit-tests-with-test-explorer)）。
+并导航到与您要执行的代码清单对应的测试。然后，在测试方法上右键单击，选择运行测试（Ctrl+R，T）或调试测试（Ctrl+R，Ctrl+T）。或者，打开Test Explorer窗口，并从那里运行一些或所有测试（[更多信息](https://learn.microsoft.com/visualstudio/test/run-unit-tests-with-test-explorer)）。
 
 在dotnet test中，要在所有项目中运行所有测试，请在根EssentialCSharp目录中的命令提示符上运行`dotnet test`。要运行单个项目的测试，请在要执行的测试的测试项目的测试目录中使用dotnet test命令。
 
@@ -58,9 +58,9 @@
 
 一些有用的事项：
 
-当您在列表中看到匹配的`#region INCLUDE`和`#endregion INCLUDE`标签时，在这两个标签之间的是在本书中能够看到的源代码。
+当您在代码中看到匹配的`#region INCLUDE`和`#endregion INCLUDE`标签时，在这两个标签之间的是在本书中能够看到的源代码。
 
-当列表中有匹配的`#region EXCLUDE`和`#endregion EXCLUDE`标签时，即使这些标签在两个`INCLUDE`标签之间，此部分也会在书中省略，并用`// ...`替换，目的是让你把重点放在讲解的主题上。
+当代码中有匹配的`#region EXCLUDE`和`#endregion EXCLUDE`标签时，即使这些标签在两个`INCLUDE`标签之间，此部分也会在书中省略，并用`// ...`替换，目的是让你把重点放在讲解的主题上。
 
 此外，任何以`// EXCLUDE`结尾的行都在书中省略了。
 
