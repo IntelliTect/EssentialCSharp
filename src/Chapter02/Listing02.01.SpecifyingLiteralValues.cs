@@ -6,7 +6,6 @@ public class Program
     {
         #region INCLUDE
         Console.WriteLine(42);
-
         Console.WriteLine(1.618034);
         #endregion INCLUDE
     }

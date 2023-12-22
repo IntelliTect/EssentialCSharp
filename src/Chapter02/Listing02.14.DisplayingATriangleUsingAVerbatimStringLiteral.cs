@@ -5,13 +5,13 @@ public class Triangle
     public static void Main()
     {
         #region INCLUDE
-        Console.Write(@"Begin
+        Console.Write(@"¿ªÊ¼
                    /\
                   /  \
                  /    \
                 /      \
                /________\
-End");
+½áÊø");
         #endregion INCLUDE
     }
 }

@@ -4,10 +4,10 @@ public class Triangle
     public static void Main()
     {
         #region INCLUDE
-        string name = "mobius";
+        string name = "莫比乌斯";
         Console.Write(
             $$"""
-                Begin
+               开始
                            ____
                           /   /\
                          /   /  \
@@ -18,12 +18,12 @@ public class Triangle
                     /   /   /\   \   \
                    /   /   /  \   \   \
                   /___/___/____\   \   \
-                 /     {{{name}}} \   \   \
+                 /   {{{name}}} \   \   \
                 /________________\   \   \
                 \                 \   \  /
                  \_________________\___\/
-                End
-                """);
+               结束
+               """);
         #endregion INCLUDE
     }
 }

@@ -7,22 +7,22 @@ public class Program
     public static void Main()
     {
         #region INCLUDE
-        double number;
+        double number; // 老版本C#要求变量先声明才能作为out参数使用
         string input;
 
-        Console.Write("Enter a number: ");
+        Console.Write("输入一个数字: ");
         input = Console.ReadLine();
         #region HIGHLIGHT
         if (double.TryParse(input, out number))
         {
-            // Converted correctly, now use number
+            // 转换正确，现在开始使用数字
             // ...
         }
         else
         #endregion HIGHLIGHT
         {
             Console.WriteLine(
-                "The text entered was not a valid number.");
+                "输入的文本不是一个有效的数字。");
         }
         #endregion INCLUDE
     }

@@ -6,10 +6,10 @@ public class Uppercase
     {
         string text, uppercase;
 
-        Console.Write("Enter text: ");
+        Console.Write("输入文本: ");
         text = Console.ReadLine();
 
-        // Return a new string in uppercase
+        // 返回全大写的一个新字符串
         #region HIGHLIGHT
         uppercase = text.ToUpper();
         #endregion HIGHLIGHT

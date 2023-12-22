@@ -97,24 +97,24 @@ public static class Program
         catch (TargetParameterCountException exception)
         {
             throw new InvalidOperationException(
-                $"Fatal Error invoking Listing '{input}'.\n",
+                $"调用代码清单'{input}'时出现严重错误。\n",
                 exception);
         }
         catch (InvalidOperationException exception)
         {
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("----Exception----");
+            Console.WriteLine("----异常----");
             Console.WriteLine(exception.Message);
         }
 #pragma warning disable CA1031 // Do not catch general exception types
         catch (Exception exception)
         {
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("----Exception----");
+            Console.WriteLine("----异常----");
             if (exception.InnerException is null)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine(string.Format("Listing {0} threw an exception of type {1}.", input,
+                Console.WriteLine(string.Format("代码清单{0}抛出类型为{1}的一个异常。", input,
                     exception.GetType()));
             }
             else

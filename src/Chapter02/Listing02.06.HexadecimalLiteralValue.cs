@@ -5,8 +5,8 @@ public class Program
     public static void Main()
     {
         #region INCLUDE
-        //Display the value 42 using a hexadecimal literal
-        Console.WriteLine(0x002A);
+        // 使用十六进制字面值显示值42
+        System.Console.WriteLine(0x002A);        
         #endregion INCLUDE
     }
 }

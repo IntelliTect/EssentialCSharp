@@ -9,7 +9,7 @@ public class Program
         checked
         {
             #endregion HIGHLIGHT
-            // int.MaxValue equals 2147483647
+            // int.MaxValueµÈÓÚ2147483647
             int n = int.MaxValue;
             n = n + 1;
             Console.WriteLine(n);

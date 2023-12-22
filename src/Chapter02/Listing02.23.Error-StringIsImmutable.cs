@@ -5,11 +5,11 @@ public class Uppercase
     public static void Main()
     {
         #region INCLUDE
-        Console.Write("Enter text: ");
+        Console.Write("输入文本: ");
         string text = Console.ReadLine();
 
         #region HIGHLIGHT
-        // UNEXPECTED: Does not convert text to uppercase
+        // UNEXPECTED: text并没有转换为全大写
         text.ToUpper();
         #endregion HIGHLIGHT
 

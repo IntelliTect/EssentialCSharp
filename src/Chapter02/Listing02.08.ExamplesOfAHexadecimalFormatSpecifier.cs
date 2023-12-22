@@ -5,7 +5,7 @@ public class Program
     public static void Main()
     {
         #region INCLUDE
-        //Displays "0x2A"
+        //œ‘ æ"0x2A"
         Console.WriteLine($"0x{42:X}");
         #endregion INCLUDE
     }

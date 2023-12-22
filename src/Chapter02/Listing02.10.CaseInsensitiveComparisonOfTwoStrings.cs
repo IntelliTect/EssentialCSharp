@@ -10,8 +10,8 @@ public class Program
         // ...
         int comparison = string.Compare(option, "/Help", ignoreCase);
         bool isHelpRequested = (comparison == 0);
-        // Displays: Help Requested: True
-        Console.WriteLine($"Help Requested: {isHelpRequested}");
+        // 显示: 是否请求帮助: True
+        Console.WriteLine($"是否请求帮助: {isHelpRequested}");
         #endregion INCLUDE
 
     }

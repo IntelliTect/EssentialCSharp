@@ -7,7 +7,7 @@ public class Program
         #region INCLUDE
         bool boolean = true;
         string text = boolean.ToString();
-        // Display "True"
+        // œ‘ æ"True"
         Console.WriteLine(text);
         #endregion INCLUDE
     }

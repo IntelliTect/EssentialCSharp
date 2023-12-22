@@ -7,24 +7,24 @@ public class Program
         #region INCLUDE
         string firstName = "Forest";
 
-        // Single-line raw string literal.
+        // 单行原始字符串字面值
         string lastName = """Gump""";
 
-        // Single-line raw string literal with interpolation.
+        // 带插值的单行原始字符串字面值
         string greeting =
-        $"""Hello, I'm {firstName}. {firstName} {lastName}""";
+        $"""你好，我是{firstName}。{firstName} {lastName}。""";
 
-        string proposal = "Do you want a chocolate?"
-            + "I could eat about a million and a half of these.";
+        string proposal = "你想要一块巧克力吗？"
+            + "我能吃掉上百万块巧克力。";
 
-        string mamaSaid = // Multi-line raw string literal.
+        string mamaSaid = // 多行原始字符串字面值
             """
-                Mama said, "Life was just a box of chocolates..."
+                妈妈说："生活就像一盒巧克力..."
                 """;
 
         string jsonDialogue =
 
-            // Multi-line raw string literal with interpolation.
+            // 带插值的多行原始字符串字面值
 
             $$"""
                 {
@@ -32,19 +32,18 @@ public class Program
                         "character": "The MAN",
                         "dialogue": "{{greeting}}"
                      },
-                    "description" : "She nods, not much interested. He...",
+                    "description" : "她点点头，兴趣不大。他...",
                     "quote": {
                         "character": "The MAN",
                         "dialogue": "{{proposal}}"
                      },
-                     "description" : "She shakes \"no\" He unwraps it...",
+                     "description" : "她摇摇头\"不\" 他打开盒子...",
                      "quote": {
                         "character": "The MAN",
                          "dialogue": "{{mamaSaid.Replace("\"", "\\\"")}}"
                       }
                 }
                 """;
-
         Console.WriteLine(jsonDialogue);
         #endregion INCLUDE
     }

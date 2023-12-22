@@ -8,11 +8,11 @@ public class Program
         int? age;
         //...
 
-        // Clear the value of age
+        // 清除age的值
         age = null;
 
         #region EXCLUDE
-        Console.WriteLine($"The age is: {age}");
+        Console.WriteLine($"年龄是: {age}");
         #endregion EXCLUDE
     }
     #endregion INCLUDE

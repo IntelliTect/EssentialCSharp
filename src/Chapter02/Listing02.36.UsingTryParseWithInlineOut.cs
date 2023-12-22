@@ -5,27 +5,24 @@ public class Program
     public static void Main()
     {
         #region INCLUDE
-        // double number;
+        // 现在，作为out参数使用的变量不需要事先声明
+        // double number;  
         string input;
-
-        Console.Write("Enter a number: ");
+        Console.Write("输入一个数字: ");
         input = Console.ReadLine();
         if (double.TryParse(input, out double number))
         {
             Console.WriteLine(
-            #region HIGHLIGHT
-                $"input was parsed successfully to {number}.");
-            #endregion HIGHLIGHT
+            $"输入被成功解析成数字: {number}.");
         }
         else
         {
-            // Note: number scope is here too (although not assigned)
+            // 注意：number的作用域也延伸到这里(虽然未赋值)
             Console.WriteLine(
-                "The text entered was not a valid number.");
+                "输入的文本不是一个有效的数字。");
         }
-
         Console.WriteLine(
-            $"'number' currently has the value: {number}");
+            $"'number'目前的值是: {number}");
         #endregion INCLUDE
     }
 }

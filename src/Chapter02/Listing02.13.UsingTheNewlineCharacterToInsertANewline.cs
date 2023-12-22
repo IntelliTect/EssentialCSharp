@@ -5,9 +5,9 @@ public class DuelOfWits
     public static void Main()
     {
         #region INCLUDE
-        Console.Write(
-            "\"Truly, you have a dizzying intellect.\"");
-        Console.Write("\n\"Wait 'til I get going!\"\n");
+        Console.Write("\"真的，你有令人混乱的智慧。\"");
+        Console.Write("\n\"等我做选择吧！\"\n");
+        
         #endregion INCLUDE
     }
 }

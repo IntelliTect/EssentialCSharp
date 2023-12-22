@@ -7,16 +7,15 @@ public class Program
         string lastName;
 
 
-        Console.WriteLine("Enter your first name: ");
+        Console.Write /* 不换行 */ ("请输入你的名字: ");
         firstName = Console.ReadLine();
 
-        Console.WriteLine("Enter your last name: ");
-
-        lastName = Console.ReadLine();
+        Console.Write /* 不换行 */ ("请输入你的姓氏: ");
+        lastName = Console.ReadLine();         
 
         #region INCLUDE
         Console.WriteLine(
-            $"""Hello, I'm {firstName}. {firstName} {lastName}""");
+            $"""你好，我叫{firstName}。{firstName} {lastName}。""");
         #endregion INCLUDE
     }
 }

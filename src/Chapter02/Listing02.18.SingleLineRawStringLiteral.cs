@@ -6,7 +6,7 @@ public class Program
     {
         #region INCLUDE
         Console.WriteLine(
-            """Mama said, "Life was just a box of chocolates..." """);
+            """妈妈说过，"生活就像一盒巧克力..." """);
         #endregion INCLUDE
     }
 }
