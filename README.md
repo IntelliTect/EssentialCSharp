@@ -24,6 +24,9 @@
 4. 运行后，程序将提示输入要执行的代码清单编号（例如，18.33）。
    - 注意：如前所述，您只能输入本书的合法代码清单编号。
 
+![image](https://github.com/transbot/EssentialCSharp/assets/12107254/4aba44ad-be78-4cc5-80f3-bd0642c76f46)
+
+
 ### Dotnet CLI
 
 1. 从本地终端导航到EssentialCSharp的根目录（根目录是包含`EssentialCSharp.sln`文件的目录）。
