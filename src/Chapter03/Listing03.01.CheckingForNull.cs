@@ -14,13 +14,12 @@ public class Program
         #endregion EXCLUDE
         if (number is null)
         {
-            Console.WriteLine(
-                "'number' requires a value and cannot be null");
+            Console.WriteLine("需要为'number'提供一个值，不允许为null。");
         }
         else
         {
-            Console.WriteLine(
-                $"'number' doubled is { number * 2 }.");
+            Console.WriteLine($"你在命令行提供的第一个参数包括{number}个字符/字。");
+            Console.WriteLine($"'number'的两倍是{number * 2}。");
         }
     }
     #endregion INCLUDE

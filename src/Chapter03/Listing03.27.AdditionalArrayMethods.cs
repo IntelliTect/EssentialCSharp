@@ -5,7 +5,7 @@ public class ProgrammingLanguages
     public static void Main()
     {
         #region INCLUDE
-        string[] languages = new string[]{
+        string[] languages = {
             "C#", "COBOL", "Java",
             "C++", "TypeScript", "Swift",
             "Python", "Lisp", "JavaScript"};
@@ -19,31 +19,23 @@ public class ProgrammingLanguages
         int index = Array.BinarySearch(
             languages, searchString);
         #endregion HIGHLIGHT
-        Console.WriteLine(
-            "The wave of the future, "
-            + $"{ searchString }, is at index { index }.");
-
+        Console.WriteLine("未来的浪潮，" + $"{searchString}，位于索引{index}。");
         Console.WriteLine();
-        Console.WriteLine(
-            $"{ "First Element",-20 }\t{ "Last Element",-20 }");
-        Console.WriteLine(
-            $"{ "-------------",-20 }\t{ "------------",-20 }");
-        Console.WriteLine(
-                $"{ languages[0],-20 }\t{ languages[^1],-20 }");
+        Console.WriteLine($"{"第一个元素",-26}\t{"最后一个元素",-26}");
+        Console.WriteLine($"{"--------------",-26}\t{"--------------",-26}");
+        Console.WriteLine($"{languages[0],-26}\t{languages[^1],-26}");
         #region HIGHLIGHT
         Array.Reverse(languages);
         #endregion HIGHLIGHT
-        Console.WriteLine(
-                $"{ languages[0],-20 }\t{ languages[^1],-20 }");
-        // Note this does not remove all items from the array
-        // Rather it sets each item to the type's default value
+        Console.WriteLine($"{languages[0],-26}\t{languages[^1],-26}");
+        // 注意：Clear方法不是从数组中删除所有项，
+        // 相反，它是将每一项设为当前类型的默认值
         #region HIGHLIGHT
         Array.Clear(languages, 0, languages.Length);
         #endregion HIGHLIGHT
+        Console.WriteLine($"{languages[0],-26}\t{languages[^1],-26}");
         Console.WriteLine(
-                $"{ languages[0],-20 }\t{ languages[^1],-20 }");
-        Console.WriteLine(
-            $"After clearing, the array size is: { languages.Length }");
+        $"Clear后，数组大小是: {languages.Length}");
         #endregion INCLUDE
     }
 }

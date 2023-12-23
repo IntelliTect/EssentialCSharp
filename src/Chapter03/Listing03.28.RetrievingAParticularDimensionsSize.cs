@@ -7,8 +7,8 @@ public class Program
         #region INCLUDE
         bool[, ,] cells;
         cells = new bool[2, 3, 3];
-        Console.WriteLine(cells.GetLength(0)); // Displays 2
-        Console.WriteLine(cells.Rank); // Displays 3
+        Console.WriteLine(cells.GetLength(0)); // œ‘ æ2
+        Console.WriteLine(cells.Rank); // œ‘ æ3
         #endregion INCLUDE
     }
 }

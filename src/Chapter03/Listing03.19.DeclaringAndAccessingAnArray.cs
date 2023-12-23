@@ -9,13 +9,13 @@ public class Program
             "C#", "COBOL", "Java",
             "C++", "TypeScript", "Visual Basic",
             "Python", "Lisp", "JavaScript"};
-            // Retrieve fifth item in languages array (TypeScript)
+            // 获取languages数组的第五项(TypeScript)
             string language = languages[4];
-        // Write "TypeScript"
+        // 输出"TypeScript"
         Console.WriteLine(language);
-            // Retrieve second item from the end (Python)
+            // 获取倒数第三项(Python)
             language = languages[^3];
-        // Write "Python"
+        // 输出"Python"
         Console.WriteLine(language);
         #endregion INCLUDE
     }

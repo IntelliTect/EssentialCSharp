@@ -6,7 +6,7 @@ public class Program
     {
         #region INCLUDE
         string[] groceryList;
-        Console.Write("How many items on the list? ");
+        Console.Write("购物清单中有多少种商品? ");
         int size = int.Parse(Console.ReadLine());
         groceryList = new string[size];
         // ...

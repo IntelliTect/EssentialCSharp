@@ -9,11 +9,11 @@ public class Program
             "C#", "COBOL", "Java",
             "C++", "TypeScript", "Visual Basic",
             "Python", "Lisp", "JavaScript" };
-        // Save "C++" to variable called language
+        // 将"C++"存储到language变量中
         string language = languages[3];
-        // Assign "Java" to the C++ position
+        // 将"Java"赋给原本是"C++"的位置
         languages[3] = languages[2];
-        // Assign language to location of "Java"
+        // 将language的值赋给"Java"的位置
         languages[2] = language;
         #endregion INCLUDE
     }

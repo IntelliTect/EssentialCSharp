@@ -207,7 +207,7 @@ public static class Program
 
         Console.WriteLine();
         Console.WriteLine(
-            "Listing uses arguments for main method provided by user. Please see the listing and enter arguments or hit enter to pass in null: ");
+            "请提供要向程序的main方法提供的参数，不同参数以空格分隔。具体要求请参见相应的代码清单。或者直接按Enter键传递null值：");
         string? userArguments = Console.ReadLine();
         Console.WriteLine();
         Console.WriteLine();

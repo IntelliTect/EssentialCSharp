@@ -6,10 +6,10 @@ public class Program
     {
         #region INCLUDE
         var patent1 =
-            new { Title = "Bifocals",
+            new { Title = "Ë«½¹µãÍ¸¾µ",
                 YearOfPublication = "1784" };
         var patent2 =
-            new { Title = "Phonograph",
+            new { Title = "ÁôÉù»ú",
                 YearOfPublication = "1877" };
 
         Console.WriteLine(

@@ -4,11 +4,14 @@ public class Program
 {
     public static void Main()
     {
-        string[] languages = new string[9];
+        string[] languages = new[] {
+            "C#", "COBOL", "Java",
+            "C++", "TypeScript", "Visual Basic",
+            "Python", "Lisp", "JavaScript" };
         // ...
         #region INCLUDE
         Console.WriteLine(
-            $"There are {languages.Length} languages in the array.");
+            $"数组中有{languages.Length}种语言。");
         #endregion INCLUDE
     }
 }

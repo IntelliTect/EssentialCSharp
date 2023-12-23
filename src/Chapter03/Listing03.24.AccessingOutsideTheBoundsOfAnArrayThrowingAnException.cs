@@ -7,8 +7,7 @@ public class Program
         #region INCLUDE
         string[] languages = new string[9];
         // ...
-        // RUNTIME ERROR: index out of bounds - should
-        // be 8 for the last element
+        // 运行时错误：索引越界 - 最后一个元素的索引应为8
         languages[4] = languages[9];
         #endregion INCLUDE
     }

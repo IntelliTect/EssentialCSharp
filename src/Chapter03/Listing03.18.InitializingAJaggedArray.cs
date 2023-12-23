@@ -6,10 +6,10 @@ public class Program
     {
         #region INCLUDE
         int[][] cells = {
-            new [] {1, 0, 2, 0},
-            new [] {1, 2, 0},
-            new [] {1, 2},
-            new [] {1}
+            [1, 0, 2, 0],
+            [1, 2, 0],
+            [1, 2],
+            [1]
         };
         #endregion INCLUDE
     }

@@ -8,34 +8,34 @@ public class Palindrome
         string reverse, palindrome;
         char[] temp;
 
-        Console.Write("Enter a palindrome: ");
+        Console.Write("输入一句回文: ");
         palindrome = Console.ReadLine();
 
-        // Remove spaces and convert to lowercase
+        // 删除空格，并转换成小写
         reverse = palindrome.Replace(" ", "");
         reverse = reverse.ToLower();
 
         #region HIGHLIGHT
-        // Convert to an array
+        // 转换成字符数组
         temp = reverse.ToCharArray();
         #endregion HIGHLIGHT
 
         #region HIGHLIGHT
-        // Reverse the array
+        // 反转数组
         Array.Reverse(temp);
         #endregion HIGHLIGHT
 
-        // Convert the array back to a string and
-        // check if reverse string is the same
+        // 将数组转换回字符串，并检查
+        // 反转后的字符串是否相等
         if (reverse == new string(temp))
         {
             Console.WriteLine(
-                $"\"{palindrome}\" is a palindrome.");
+                $"\"{palindrome}\"是回文。");
         }
         else
         {
             Console.WriteLine(
-                $"\"{palindrome}\" is NOT a palindrome.");
+                $"\"{palindrome}\"不是回文。");
         }
         #endregion INCLUDE
     }
