@@ -8,12 +8,12 @@ public class EmailDomain
         string email;
         bool insideDomain = false;
 
-        Console.Write("Enter an email address: ");
+        Console.Write("输入一个电子邮件地址: ");
         email = Console.ReadLine() ?? string.Empty;
 
-        Console.Write("The email domain is: ");
+        Console.Write("该地址的域是: ");
 
-        // Iterate through each letter in the email address
+        // 遍历电邮地址中的每个字母
         foreach(char letter in email)
         {
             if(!insideDomain)

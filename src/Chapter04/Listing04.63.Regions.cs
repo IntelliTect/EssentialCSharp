@@ -17,34 +17,34 @@ public class Program
 
         #region INCLUDE
         // ...
-        #region Display Tic-tac-toe Board
+        #region 显示井字棋棋盘
 
         #if CSHARP2PLUS
-            System.Console.Clear();
+        System.Console.Clear();
         #endif
 
-        // Display the current board
-        border = 0;   //  set the first border (border[0] = "|")
+        // 显示当前棋盘
+        border = 0;   //  设置第一个界线(border[0] = "|")
 
-        // Display the top line of dashes
+        // 显示顶行连线
         // ("\n---+---+---\n")
         Console.Write(borders[2]);
         foreach(char cell in cells)
         {
-            // Write out a cell value and the border that comes after it
+            // 输出一个单元格值以及紧接在它后面的界线
             Console.Write($" { cell } { borders[border] }");
 
-            // Increment to the next border
+            // 递增到下一个界线
             border++;
 
-            // Reset border to 0 if it is 3
+            // 如果界线为3，就重置为0
             if(border == 3)
             {
                 border = 0;
             }
         }
 
-        #endregion Display Tic-tac-toe Board
+        #endregion 显示井字棋棋盘
 
         // ...
         #endregion INCLUDE

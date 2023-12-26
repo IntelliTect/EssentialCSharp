@@ -9,7 +9,7 @@ public class Program
         #region INCLUDE
         if (input.Length == 0 || input == "quit")
         {
-            Console.WriteLine($"Player {currentPlayer} quit!!");
+            Console.WriteLine($"Íæ¼Ò{currentPlayer}ÍË³ö!!");
         }
         #endregion INCLUDE
     }

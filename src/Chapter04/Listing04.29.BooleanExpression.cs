@@ -11,10 +11,8 @@ public class Program
         if (input < 9)
         #endregion HIGHLIGHT
         {
-            // Input is less than 9
-            Console.WriteLine(
-                $"Tic-tac-toe has more than {input}" +
-                 " maximum turns.");
+            // 输入小于9
+            Console.WriteLine("井字棋最大步数" + $"大于{input}");
         }
         // ...
         #endregion INCLUDE

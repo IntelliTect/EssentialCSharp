@@ -10,28 +10,28 @@ public class FibonacciCalculator
         decimal temp;
         decimal input;
 
-        Console.Write("Enter a positive integer:");
+        Console.Write("输入一个正整数:");
 
-        // decimal.Parse convert the ReadLine to a decimal
-        // If ReadLine returns null, use "42" as default input
+        // decimal.Parse将ReadLine的返回结果转换为一个十进制数，
+        // 如果ReadLine返回null，就用"42"作为默认值。
         input = decimal.Parse(Console.ReadLine() ?? "42");
 
-        // Initialize current and previous to 1, the first
-        // two numbers in the Fibonacci series
+        // 将current和previous初始化为1，这是
+        // 斐波那契数列前两个固定的数。
         current = previous = 1;
 
-        // While the current Fibonacci number in the series is
-        // less than the value input by the user
+        // 判断数列中当前的斐波那契数是否
+        // 小于用户输入的数        
         while (current <= input)
         {
             temp = current;
             current = previous + current;
-            previous = temp; // Executes even if previous
-            // statement caused current to exceed input
+            previous = temp; // 即使上一个语句造成current大于input，
+                             // 也会执行这个语句。
         }
 
         Console.WriteLine(
-                  $"The Fibonacci number following this is { current }");
+                  $"下一个斐波那契数是{ current }");
         #endregion INCLUDE
     }
 }

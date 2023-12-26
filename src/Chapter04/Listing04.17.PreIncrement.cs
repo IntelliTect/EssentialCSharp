@@ -10,8 +10,7 @@ public class Program
         #region HIGHLIGHT
         result = ++count;
         #endregion HIGHLIGHT
-        Console.WriteLine(
-            $"result = {result} and count = {count}");
+        Console.WriteLine($"result = {result}£¬count = {count}");
         #endregion INCLUDE
     }
 }

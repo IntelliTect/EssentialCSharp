@@ -10,24 +10,23 @@ public class Program
         string input = "";
 
         #region INCLUDE
-        int shifter;  // The number of places to shift 
-                      // over to set a bit
-        int position; // The bit that is to be set
+        int shifter;  // 要移多少位来设置一个bit
+        int position; // 要设置的bit
 
-        // int.Parse() converts "input" to an integer.
-        // "int.Parse(input) - 1" because arrays 
-        // are zero based.
+        // int.Parse() 将"input"转换为整数。
+        // 之所以要用"int.Parse(input) - 1"，是因为
+        // 数组基于零。
         shifter = int.Parse(input) - 1;
 
-        // Shift mask of 00000000000000000000000000000001
-        // over by cellLocations.
+        // 使掩码00000000000000000000000000000001
+        // 移位单元格的位置。
         position = 1 << shifter;
 
-        // Take the current player cells and OR them to set the
-        // new position as well.
-        // Since currentPlayer is either 1 or 2,
-        // subtract 1 to use currentPlayer as an
-        // index in a zero based array.
+        // 取当前玩家的单元格，并对它们进行
+        // 按位或（OR）运算，以设置新的位置。
+        // 由于currentPlayer要么是1，要么是2，
+        // 因此要减去1，才能将currentPlayer
+        // 用作零基数组的索引。
         playerPositions[currentPlayer - 1] |= position;
         #endregion INCLUDE
     }

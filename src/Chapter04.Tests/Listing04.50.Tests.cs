@@ -24,7 +24,7 @@ public class ProgramTests
     public void ValidateAndMove_Input0_InvalidInput()
     {
         const string expected =
-            @"ERROR:  Enter a value from 1-9. Push ENTER to quit";
+            @"错误:  输入1-9的值。 按Enter键退出。";
 
         int[] playerPositions = new int[1];
         int currentPlayer = 0;

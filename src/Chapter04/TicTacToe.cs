@@ -5,28 +5,25 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.TicTacToe;
 
 using System;
 
-#pragma warning disable 1030 // Disable user-defined warnings
+#pragma warning disable 1030 // 禁止用户自定义警告
 
-// The TicTacToe class enables two players to 
-// play tic-tac-toe.
-public class TicTacToeGame      // Declares the TicTacToeGame class.
+// TicTacToe类允许两个玩家玩井字棋游戏
+public class TicTacToeGame      // 声明TicTacToeGame类
 {
-    public static void Main()  // Declares the entry point to the program.
+    public static void Main()  // 声明程序入口点
     {
-        // Stores locations each player has moved.
+        // 存储每个玩家的落子位置
         int[] playerPositions = { 0, 0 };
 
-        // Initially set the currentPlayer to Player 1.
+        // 最新将currentPlayer设为玩家1
         int currentPlayer = 1;
 
-        // Winning player
+        // 获胜玩家
         int winner = 0;
 
-        string input = "Let the game begin!";
+        string input = "游戏开始!";
 
-        // Display the board and 
-        // prompt the current player
-        // for his next move.
+        // 显示棋盘，并提示当前玩家落子
         for(int turn = 1; turn <= 10; ++turn)
         {
             DisplayBoard(playerPositions);
@@ -42,7 +39,7 @@ public class TicTacToeGame      // Declares the TicTacToeGame class.
 
             winner = DetermineWinner(playerPositions);
 
-            // Switch players.
+            // 交换玩家
             currentPlayer = (currentPlayer == 2) ? 1 : 2;
         }
     }
@@ -52,13 +49,12 @@ public class TicTacToeGame      // Declares the TicTacToeGame class.
     {
         string? input;
 
-        // Repeatedly prompt the player for a move
-        // until a valid move is entered.
+        // 反复提示玩家落子，直到输入一个有效的落子
         bool validMove;
         do
         {
-            // Request a move from the current player.
-            System.Console.Write($"\nPlayer {currentPlayer} - Enter move:");
+            // 请求当前玩家落子
+            System.Console.Write($"\n玩家{currentPlayer} - 输入落子位置:");
             // TODO: Update listing in Manuscript
             input = System.Console.ReadLine();
             validMove = ValidateAndMove(playerPositions,
@@ -78,17 +74,16 @@ public class TicTacToeGame      // Declares the TicTacToeGame class.
         }
         else if(turn == 10)
         {
-            // After completing the 10th display of the
-            // board, exit rather than prompting the
-            // user again.
-            System.Console.WriteLine("\nThe game was a tie!");
+            // 完成棋盘的第10次显示后，直接退出。
+            // 而不是再次提示玩家落子。
+            System.Console.WriteLine("\n平局!");
             endGame = true;
         }
         else if(input.Length == 0 || input == "quit")
         {
-            // Check if user quit by hitting Enter without 
-            // any characters or by typing "quit".
-            System.Console.WriteLine("The last player quit");
+            // 检查是否没有输入任何字符就按Enter键，
+            // 或者输入"quit"，这两者都表示退出
+            System.Console.WriteLine("上一个玩家已退出。");
             endGame = true;
         }
         return endGame;
@@ -98,7 +93,7 @@ public class TicTacToeGame      // Declares the TicTacToeGame class.
     {
         int winner = 0;
 
-        // Determine if there is a winner.
+        // 判断是否出现了一个赢家.
         int[] winningMasks = {
       7, 56, 448, 73, 146, 292, 84, 273};
 
@@ -123,7 +118,7 @@ public class TicTacToeGame      // Declares the TicTacToeGame class.
     {
         bool valid = false;
 
-        // Check the current player’s input.
+        // 检查当前玩家的输入
         switch(input)
         {
             case "1":
@@ -135,25 +130,25 @@ public class TicTacToeGame      // Declares the TicTacToeGame class.
             case "7":
             case "8":
             case "9":
-#warning  "Same move allowed multiple times."
-                int shifter;  // The number of places to shift 
-                // over to set a bit.
-                int position;  // The bit which is to be set.
+#warning  "允许在同一个位置多次落子。"
+                int shifter;   // 要移多少位来设置一个bit
+                int position;  // 要设置的bit
 
-                // int.Parse() converts "input" to an integer.
-                // "int.Parse(input) – 1" because arrays 
-                // are zero-based.
+                // int.Parse() 将"input"转换为整数。
+                // 之所以要用"int.Parse(input) - 1"，是因为
+                // 数组基于零。
                 shifter = int.Parse(input) - 1;
 
-                // Shift mask of 00000000000000000000000000000001
-                // over by cellLocations.
+                // 使掩码00000000000000000000000000000001
+                // 移位单元格的位置。
                 position = 1 << shifter;
 
-                // Take the current player cells and OR them 
-                // to set the new position as well.
-                // Since currentPlayer is either 1 or 2 you 
-                // subtract 1 to use currentPlayer as an
-                // index in a zero-based array.
+
+                // 取当前玩家的单元格，并对它们进行
+                // 按位或（OR）运算，以设置新的位置。
+                // 由于currentPlayer要么是1，要么是2，
+                // 因此要减去1，才能将currentPlayer
+                // 用作零基数组的索引。
                 playerPositions[currentPlayer - 1] |= position;
 
                 valid = true;
@@ -166,11 +161,10 @@ public class TicTacToeGame      // Declares the TicTacToeGame class.
 
             case "":
             default:
-                // If none of the other case statements
-                // is encountered, then the text is invalid.
+                // 如果和其他case都不匹配，表明输入无效
                 System.Console.WriteLine(
-                    "\nERROR:  Enter a value from 1-9. "
-                    + "Push ENTER to quit");
+                    "\n错误:  输入1-9的值。 "
+                    + "按Enter键退出。");
                 break;
         }
 
@@ -179,15 +173,14 @@ public class TicTacToeGame      // Declares the TicTacToeGame class.
 
     static void DisplayBoard(int[] playerPositions)
     {
-        // This represents the borders between each cell
-        // for one row.
+        // 代表一行中每个单元格之间的界线
         string[] borders = {
 "|", "|", "\n---+---+---\n", "|", "|",
 "\n---+---+---\n", "|", "|", ""
 };
 
-        // Display the current board;
-        int border = 0;  // set the first border (border[0] = "|").
+        // 显示当前棋盘
+        int border = 0;  // 设置第一个界线，即border，(border[0] = "|").
 
 #if CSHARP2PLUS
         System.Console.Clear();
@@ -200,8 +193,7 @@ public class TicTacToeGame      // Declares the TicTacToeGame class.
             char token = CalculateToken(
                 playerPositions, position);
 
-            // Write out a cell value and the border that 
-            // comes after it.
+            // 输出一个单元格值以及它之后的界线
             System.Console.Write($" {token} {borders[border]}");
         }
     }
@@ -209,7 +201,7 @@ public class TicTacToeGame      // Declares the TicTacToeGame class.
     static char CalculateToken(
         int[] playerPositions, int position)
     {
-        // Initialize the players to 'X' and 'O'
+        // 将玩家初始化为'X'和'O'
         char[] players = { 'X', 'O' };
 
         char token;
@@ -227,13 +219,13 @@ public class TicTacToeGame      // Declares the TicTacToeGame class.
         }
         else
         {
-            // The position is empty.
+            // 位置为空
             token = ' ';
         }
         return token;
     }
 
 #line 113 "TicTacToe.cs"
-    // Generated code goes here.
+    // 生成的代码放在这里
 #line default
 }

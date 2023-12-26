@@ -8,16 +8,16 @@ public class Program
         char current;
         int unicodeValue;
 
-        // Set the initial value of current
+        // 设置current的初始值
         current = 'z';
 
         do
         {
-            // Retrieve the Unicode value of current
+            // 获取current的Unicode值
             unicodeValue = current;
             Console.Write($"{current}={unicodeValue}\t");
 
-            // Proceed to the previous letter in the alphabet
+            // 继承处理英语字母表的前一个字母
             current--;
         }
         while(current >= 'a');

@@ -5,7 +5,7 @@ public class Program
 #pragma warning disable CS1030
     public static void Main()
     {
-#warning "Sample warning suppressed by #pragma warning disable."
+#warning "由#pragma warning disable屏蔽的示例警告。"
     }
     #region INCLUDE
     #pragma warning restore CS1030

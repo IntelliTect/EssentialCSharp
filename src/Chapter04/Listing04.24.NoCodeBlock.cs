@@ -7,9 +7,9 @@ public class Program
         int input = int.Parse(args[0]);
 
         #region INCLUDE
-        if (input < 9)
+        if (input <=0)
             #region HIGHLIGHT
-            Console.WriteLine("Exiting");
+            Console.WriteLine("ÍË³ö");
         #endregion HIGHLIGHT
         #endregion INCLUDE
     }

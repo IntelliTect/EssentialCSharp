@@ -7,41 +7,41 @@ public class TicTacToeTrivia
     public static void Main()
     {
         #region INCLUDE
-        int input;    // Declare a variable to store the input
+        int input;    // 声明一个变量来存储用户输入
 
         Console.Write(
-            "What is the maximum number " +
-            "of turns in tic-tac-toe?" +
-            " (Enter 0 to exit.): ");
+            "井字棋最多能走" +
+            "多少步?" +
+            " (输入0退出): ");
 
-        // int.Parse() converts the ReadLine()
-        // return to an int data type
+        // int.Parse()将ReadLine()的
+        // 返回值转换为int
         input = int.Parse(Console.ReadLine());
 
-        // Condition 1.
-        if (input <= 0) // line 16
-            // Input is less than or equal to 0
-            Console.WriteLine("Exiting...");
+        // 条件1
+        if (input <= 0)
+            // 输入小于等于0
+            Console.WriteLine("退出...");
         else
-            // Condition 2.
-            if (input < 9) // line 20
-                // Input is less than 9
-                Console.WriteLine(
-                    $"Tic-tac-toe has more than {input}" +
-                    " maximum turns.");
-            else
-                // Condition 3.
-                if (input > 9) // line 26
-                    // Input is greater than 9
-                    Console.WriteLine(
-                        $"Tic-tac-toe has fewer than {input}" +
-                        " maximum turns.");
-                // Condition 4.
-                else
-                    // Input equals 9
-                    Console.WriteLine(  // line 33
-                        "Correct, tic-tac-toe " +
-                        "has a maximum of 9 turns.");
+            // 条件2
+            if (input < 9)
+            // 输入小于9
+            Console.WriteLine(
+                "井字棋最大步数" +
+                $"大于{input}");
+        else
+                // 条件3
+                if (input > 9)
+            // 输入大于9
+            Console.WriteLine(
+                "井字棋最大步数" +
+                $"小于{input}");
+        // 条件4
+        else
+            // 输入等于9
+            Console.WriteLine(
+                "正确，井字棋最多" +
+                "只能走9步。");
         #endregion INCLUDE
-   } 
+    } 
 }

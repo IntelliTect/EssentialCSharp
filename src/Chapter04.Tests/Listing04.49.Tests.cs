@@ -18,8 +18,8 @@ public class ProgramTests
     public void Main_Input0_InvalidInput()
     {
         const string expected = """
-                ERROR:  Enter a value from 1-9.
-                Push ENTER to quit
+                错误:  输入1-9的值。
+                按Enter键退出。
                 """;
 
         IntelliTect.TestTools.Console.ConsoleAssert.Expect(

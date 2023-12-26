@@ -11,7 +11,7 @@ public class Program
         if (radius >= 0)
             area = Math.PI * radius * radius;
             Console.WriteLine(
-                $"The area of the circle is: {area:0.00}");
+                $"圆的面积是: {area:0.00}");
         #endregion INCLUDE
     }
 }

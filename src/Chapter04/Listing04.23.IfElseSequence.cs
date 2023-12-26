@@ -6,20 +6,20 @@ public class Program
     {
         int input = int.Parse(args[0]);
         #region INCLUDE
-        if (input < 0)
-            Console.WriteLine("Exiting...");
-        else if(input < 9)
+        if (input <= 0)
+            Console.WriteLine("退出...");
+        else if (input < 9)
             Console.WriteLine(
-                $"Tic-tac-toe has more than {input}" +
-                " maximum turns.");
+                "井字棋最大轮数" +
+                $"大于{input}");
         else if (input > 9)
             Console.WriteLine(
-                $"Tic-tac-toe has less than {input}" +
-                " maximum turns.");
+                "井字棋最大轮数" +
+                $"小于{input}");
         else
             Console.WriteLine(
-                "Correct, tic-tac-toe has a maximum" +
-                " of 9 turns.");
+                "正确，井字棋最多" +
+                "只能走9轮。");
         #endregion INCLUDE
     }
 }

@@ -9,28 +9,28 @@ public class CircleAreaCalculator
     public static void Main()
     {
         #region INCLUDE
-        double radius;  // Declare a variable to store the radius
-        double area;    // Declare a variable to store the area
+        double radius;  // 声明一个变量来存储半径
+        double area;    // 声明一个变量来存储面积
 
-        Console.Write("Enter the radius of the circle: ");
+        Console.Write("输入圆的半径: ");
 
-        // double.Parse converts the ReadLine() 
-        // return to a double
+        // double.Parse将ReadLine()返回的结果
+        // 转换成一个double
         string temp = Console.ReadLine();
         radius = double.Parse(temp);
         if(radius >= 0)
         #region HIGHLIGHT
         {
-            // Calculate the area of the circle
+            // 计算圆的面积
             area = Math.PI * radius * radius;
             Console.WriteLine(
-                $"The area of the circle is: {area:0.00}");
+                $"这个圆的面积是: {area:0.00}");
         }
         #endregion HIGHLIGHT
         else
         {
             Console.WriteLine(
-                $"{radius} is not a valid radius.");
+                $"{radius}不是有效半径值。");
         }
         #endregion INCLUDE
     }

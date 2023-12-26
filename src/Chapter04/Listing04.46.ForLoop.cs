@@ -5,23 +5,23 @@ public class BinaryConverter
     public static void Main()
     {
         #region INCLUDE
-        const int size = 64; // Also available from sizeof(ulong)
+        const int size = 64; // 也可以从sizeof(ulong)取得
         ulong value;
         char bit;
 
-        Console.Write("Enter an integer: ");
-        // Use long.Parse() to support negative numbers
-        // Assumes unchecked assignment to ulong
-        // If ReadLine returns null, use "42" as default input
+        Console.Write("输入一个整数: ");
+        // 使用long.Parse()来支持负数
+        // 假设对ulong进行unchecked赋值，
+        // 如果ReadLine返回null，那么使用"42"作为默认输入        
         value = (ulong)long.Parse(Console.ReadLine() ?? "42");
 
-        // Set initial mask to 100....
+        // 将初始掩码(mask)设为100000...0
         ulong mask = 1UL << size - 1;
         for(int count = 0; count < size; count++)
         {
             bit = ((mask & value) > 0) ? '1' : '0';
             Console.Write(bit);
-            // Shift mask one location over to the right
+            // 掩码右移1位
             mask >>= 1;
         }
         #endregion INCLUDE

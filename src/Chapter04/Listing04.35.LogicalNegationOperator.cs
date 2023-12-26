@@ -9,7 +9,7 @@ public class Program
         #region HIGHLIGHT
         bool result = !valid;
         #endregion HIGHLIGHT
-        // Displays "result = True"
+        // œ‘ æ"result = True"
         Console.WriteLine($"result = { result }");
         #endregion INCLUDE
     }

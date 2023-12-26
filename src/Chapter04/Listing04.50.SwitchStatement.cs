@@ -13,8 +13,8 @@ public class Program
     {
         bool valid = false;
 
-        // Check the current player's input
-        switch(input)
+        // 检查当前玩家的输入
+        switch (input)
         {
             case "1":
             case "2":
@@ -25,7 +25,7 @@ public class Program
             case "7":
             case "8":
             case "9":
-                // Save/move as the player directed
+                // 根据玩家的输入保存/落子
                 // ...
                 valid = true;
                 break;
@@ -34,11 +34,10 @@ public class Program
                 valid = true;
                 break;
             default:
-                // If none of the other case statements
-                // is encountered then the text is invalid
+                // 如果和其他case都不匹配，表明输入无效
                 Console.WriteLine(
-                "ERROR:  Enter a value from 1-9. "
-                + "Push ENTER to quit");
+                "错误:  输入1-9的值。 "
+                + "按Enter键退出。");
                 break;
         }
 

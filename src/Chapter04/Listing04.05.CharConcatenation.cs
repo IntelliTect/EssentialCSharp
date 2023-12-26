@@ -7,7 +7,7 @@ public class Program
         #region INCLUDE
         int n = '3' + '4';
         char c = (char)n;
-        Console.WriteLine(c);  // Writes out g
+        Console.WriteLine(c);  // Êä³ö'g'
         #endregion INCLUDE
     }
 }

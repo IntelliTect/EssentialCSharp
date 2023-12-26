@@ -5,9 +5,9 @@ public class Program
     public static void Main()
     {
         #region INCLUDE
-        // World Debt on 2022-11-06
-        // see https://worlddebtclocks.com/
-        decimal debt = -72748555131730M;
+        // 美国国债金额 - 2023.12.24
+        // 最新数据请查询https://www.usdebtclock.org/ 
+        decimal debt = -33940505930933M;        
         #endregion INCLUDE
 
         Console.WriteLine(debt);

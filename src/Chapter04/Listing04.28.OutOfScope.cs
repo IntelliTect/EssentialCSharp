@@ -14,13 +14,13 @@ public class Program
         #region INCLUDE
         string playerCount;
         Console.Write(
-            "Enter the number of players (1 or 2):");
+            "输入玩家数量(1或2):");
         playerCount = Console.ReadLine();
         if (playerCount != "1" && playerCount != "2")
         {
             #region HIGHLIGHT
             string message =
-                "You entered an invalid number of players.";
+                "你输入了无效的玩家数量。";
             #endregion HIGHLIGHT
         }
         else

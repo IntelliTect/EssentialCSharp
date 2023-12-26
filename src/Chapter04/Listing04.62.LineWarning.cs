@@ -6,7 +6,7 @@ public class Program
     {
         #region INCLUDE
         #line 113 "TicTacToe.cs"
-        #warning "Same move allowed multiple times."
+        #warning "允许在同一个位置多次落子。"
         #line default
         #endregion INCLUDE
     }

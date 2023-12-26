@@ -8,8 +8,7 @@ public class Program
         int count = 123;
         int result;
         result = count++;
-        Console.WriteLine(
-              $"result = {result} and count = {count}");
+        Console.WriteLine($"result = {result}£¬count = {count}");
         #endregion INCLUDE
     }
 }

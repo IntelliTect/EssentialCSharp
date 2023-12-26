@@ -6,7 +6,7 @@ public class Program
     {
         #region INCLUDE
         float n = 0f;
-        // Displays: NaN 
+        // œ‘ æ£∫NaN
         Console.WriteLine(n / 0);
         #endregion INCLUDE
     }

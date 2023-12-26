@@ -9,8 +9,8 @@ public class Program
     public static void Main()
     {
         #region INCLUDE
-        const int secondsPerDay = 60 * 60 * 24;
-        const int secondsPerWeek = secondsPerDay * 7;
+        const int secondsPerDay = 60 * 60 * 24;         // 每天秒数
+        const int secondsPerWeek = secondsPerDay * 7;   // 每周秒数
         #endregion INCLUDE
     }
 }

@@ -6,12 +6,12 @@ public class IncrementExample
     public static void Main()
     {
         int x = 123;
-        // Displays 123, 124, 125
+        // 显示：123, 124, 125
         Console.WriteLine($"{x++}, {x++}, {x}");
-        // x now contains the value 125
-        // Displays 126, 127, 127
+        // x现在的值是125
+        // 显示：126, 127, 127
         Console.WriteLine($"{++x}, {++x}, {x}");
-        // x now contains the value 127
+        // x现在的值是127
     }
 }
 #endregion INCLUDE

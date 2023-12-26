@@ -8,7 +8,7 @@ public class Program
         #region INCLUDE
         // ...
 
-        // Check the current player's input
+        // 检查当前玩家的输入
         if ((input == "1") ||
             (input == "2") ||
             (input == "3") ||
@@ -19,21 +19,21 @@ public class Program
             (input == "8") ||
             (input == "9"))
         {
-            // Save/move as the player directed
+            // 根据玩家的输入保存/落子
             // ...
 
         }
         else if((input.Length == 0) || (input == "quit"))
         {
-            // Retry or quite
+            // 重试或退出
             // ...
 
         }
         else
         {
             Console.WriteLine( $"""
-                    ERROR:  Enter a value from 1-9.
-                    Push ENTER to quit
+                    错误:  输入1-9的值。
+                    按Enter键退出。
                     """);
         }
 

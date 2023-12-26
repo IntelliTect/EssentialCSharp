@@ -6,9 +6,8 @@ public class Program
     {
         /*
         #region INCLUDE
-        if (input = 9) // Allowed in C++, not in C#
-          System.Console.WriteLine(
-            "Correct, tic-tac-toe has a maximum of 9 turns.");
+        if (input = 9) // C++允许，但C#不允许
+        System.Console.WriteLine("正确，井字棋最多只能走9步。");
         #endregion INCLUDE
         */
     }

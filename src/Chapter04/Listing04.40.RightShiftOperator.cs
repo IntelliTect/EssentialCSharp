@@ -6,10 +6,10 @@ public class Program
     {
         #region INCLUDE
         int x;
-        x = (-7 >> 2); // 11111111111111111111111111111001 becomes 
+        x = (-7 >> 2); // 11111111111111111111111111111001±ä³É
                        // 11111111111111111111111111111110
-        // Write out "x is -2."
-        Console.WriteLine($"x = {x}.");
+                       // Êä³ö"x = -2¡£"
+        Console.WriteLine($"x = {x}¡£");
         #endregion INCLUDE
     }
 }

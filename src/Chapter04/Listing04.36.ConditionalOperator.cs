@@ -5,7 +5,7 @@ public class TicTacToe
 {
     public static void Main()
     {
-        // Initially set the currentPlayer to Player 1
+        // 最开始将currentPlayer设为玩家1
         int currentPlayer = 1;
 
         // ...
@@ -14,7 +14,7 @@ public class TicTacToe
         {
             // ...
 
-            // Switch players
+            // 交换玩家
             currentPlayer = (currentPlayer == 2) ? 1 : 2;
         }
     }

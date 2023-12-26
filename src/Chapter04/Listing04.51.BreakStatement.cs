@@ -1,15 +1,15 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_51;
 
-public class TicTacToe // Declares the TicTacToe class
+public class TicTacToe // 声明TicTacToe类
 {
-    public static void Main() // Declares the entry point of the program
+    public static void Main() // 声明程序的入口点
     {
         #region INCLUDE
         int winner = 0;
-        // Stores locations each player has moved
+        // 存储每个玩家的落子位置
         int[] playerPositions = { 0, 0 };
 
-        // Hardcoded board position
+        // 硬编码的棋盘位置
         //  X | 2 | O 
         // ---+---+---
         //  O | O | 6 
@@ -18,12 +18,12 @@ public class TicTacToe // Declares the TicTacToe class
         playerPositions[0] = 449;
         playerPositions[1] = 28;
 
-        // Determine if there is a winner
+        // 判断是否出现了一个赢家
         int[] winningMasks = {
             7, 56, 448, 73, 146, 292, 84, 273 };
 
-        // Iterate through each winning mask to determine
-        // if there is a winner
+        // 遍历每个致胜掩码(winning mask)，
+        // 判断是否有一位赢家
         #region HIGHLIGHT
         foreach (int mask in winningMasks)
         {
@@ -46,8 +46,7 @@ public class TicTacToe // Declares the TicTacToe class
         }
         #endregion HIGHLIGHT
 
-        Console.WriteLine(
-            $"Player { winner } was the winner");
+        Console.WriteLine($"玩家{ winner }是赢家。");
         #endregion INCLUDE
     }
 }

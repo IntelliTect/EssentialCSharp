@@ -5,20 +5,20 @@ public class DoWhileLoop
     public static void Main()
     {
         int currentPlayer = 1;
-        #region INCLUDE
-        // Repeatedly request player to move until he
-        // enters a valid position on the board
+        #region INCLUDE        
+        // 反复提示玩家落子，直到
+        // 输入棋盘上的一个有效位置。
         bool valid;
         do
         {
             valid = false;
 
-            // Request a move from the current player
+            // 请求当前玩家落子
             Console.Write(
-                $"Player {currentPlayer}: Enter move:");
+                $"玩家{currentPlayer}: 输入落子:");
             string? input = Console.ReadLine();
 
-            // Check the current player's input
+            // 检查当前玩家的输入
             // ...
 
         } while(!valid);

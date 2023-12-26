@@ -8,7 +8,7 @@ public class Program
 
         #region INCLUDE
         if ((hourOfTheDay > 23) || (hourOfTheDay < 0))
-            Console.WriteLine("The time you entered is invalid.");
+            Console.WriteLine("你输入了无效的时间。");
         #endregion INCLUDE
     }
 }

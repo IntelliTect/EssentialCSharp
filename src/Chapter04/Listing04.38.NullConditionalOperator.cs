@@ -9,16 +9,14 @@ public class Program
         string? uri = null;
 
         #region EXCLUDE
-        // Not shown in manuscript since args won't be null in a normal Main method.
-        segments = args;
-
+        // 书中未显示，因为args在一个正常的Main方法是不可能为null的。
+        segments = args;        
         #endregion EXCLUDE
-
         int? length = segments?.Length;
         #region EXCLUDE
-        // Pattern matching also allows:
-        // the following but this is not used
-        // until covering the topic fully in Chapter 7.
+
+        // 也允许模式匹配。
+        // 但因为到第7章才讲到这个主题，所以书中用的不是这个。
         if (length is not null and not 0) { /*...*/ }
         #endregion EXCLUDE
         if (length is not null && length != 0)
@@ -29,7 +27,7 @@ public class Program
         if (uri is null || length is 0)
         {
             Console.WriteLine(
-                "There were no segments to combine.");
+                "没有更多区段可以合并了。");
         }
         else
         {

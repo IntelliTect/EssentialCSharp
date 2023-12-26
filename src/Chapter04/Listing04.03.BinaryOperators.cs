@@ -12,20 +12,19 @@ public class Division
         int quotient;
         int remainder;
 
-        Console.Write("Enter the numerator: ");
+        Console.Write("输入分子: ");
         numerator = int.Parse(Console.ReadLine());
 
-        Console.Write("Enter the denominator: ");
+        Console.Write("输入分母: ");
         denominator = int.Parse(Console.ReadLine());
 
         #region HIGHLIGHT
-        quotient = numerator / denominator;
-        remainder = numerator % denominator;
+        quotient = numerator / denominator;  // 除法
+        remainder = numerator % denominator; // 取余
         #endregion HIGHLIGHT
 
         Console.WriteLine(
-            $"{numerator} / {denominator} = {
-                quotient} with remainder {remainder}");
+            $"{numerator} / {denominator} = 商{quotient}余{remainder}。");
         #endregion INCLUDE
     }
 }

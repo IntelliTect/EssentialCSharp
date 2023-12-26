@@ -33,14 +33,14 @@ public class GoToStatements
                 default:
                     if(isRecursive)
                     {
-                        // Recurse down the hierarchy
-                        Console.WriteLine("Recursing...");
+                        // 向下递归遍历层次结构
+                        Console.WriteLine("正在递归遍历...");
                         // ...
                     }
                     else if(isFiltered)
                     {
-                        // Add option to list of filters
-                        Console.WriteLine("Filtering...");
+                        // 为筛选器清单添加选项
+                        Console.WriteLine("正在筛选...");
                         // ...
                     }
                     break;

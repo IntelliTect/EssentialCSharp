@@ -2,31 +2,29 @@
 #pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter04.Listing04_21;
 
-public class TicTacToe // Declares the TicTacToe class
+public class TicTacToe // 声明TicTacToe类
 {
-    public static void Main() // Declares the entry point of the program
+    public static void Main() // 声明程序的入口点
     {
         #region INCLUDE
         string input;
 
-        // Prompt the user to select a 1- or 2- player game
+        // 提示用户选择单人还是双人游戏
         Console.Write($"""
-                1 - Play against the computer
-                2 - Play against another player.
-                Choose:
+                1 - 人机对战
+                2 - 双人对战
+                请选择：
                 """
         );
         input = Console.ReadLine();
 
         #region HIGHLIGHT
         if (input == "1")
-            // The user selected to play the computer
-            Console.WriteLine(
-                "Play against computer selected.");
+            // 用户选择人机对战
+            Console.WriteLine("人机对战。");
         else
-            // Default to 2 players (even if user didn't enter 2)
-            Console.WriteLine(
-                "Play against another player.");
+            // 其他情况都默认双人对战(即使用户输入的不是2)
+            Console.WriteLine("双人对战。");
         #endregion HIGHLIGHT
         #endregion INCLUDE
     }
