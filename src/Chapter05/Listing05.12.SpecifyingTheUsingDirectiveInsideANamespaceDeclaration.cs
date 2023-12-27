@@ -2,6 +2,21 @@
 // and the attribute is not available in .NET 6.0.
 #pragma warning disable SYSLIB1045 // Convert to 'GeneratedRegexAttribute'.
 
+// 该代码清单存在bug，以中文版书中的为准。
+// 或者参考下面这个：
+//namespace EssentialCSharp
+//{
+//    using System;
+//    class HelloWorld
+//    {
+//        static void Main()
+//        {
+//            // 因为上方的using指令，所以
+//            // 不需要用System限定Console类。            
+//            Console.WriteLine("你好，我的名字是Inigo Montoya。");
+//        }
+//    }
+//}
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_12;
 
 #region INCLUDE

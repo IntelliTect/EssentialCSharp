@@ -173,14 +173,14 @@ public class TicTacToeGame      // 声明TicTacToeGame类
 
     static void DisplayBoard(int[] playerPositions)
     {
-        // 代表一行中每个单元格之间的界线
+        // 代表一行中每个单元格之间的边框
         string[] borders = {
 "|", "|", "\n---+---+---\n", "|", "|",
 "\n---+---+---\n", "|", "|", ""
 };
 
         // 显示当前棋盘
-        int border = 0;  // 设置第一个界线，即border，(border[0] = "|").
+        int border = 0;  // 设置第一个边框，(border[0] = "|").
 
 #if CSHARP2PLUS
         System.Console.Clear();
@@ -193,7 +193,7 @@ public class TicTacToeGame      // 声明TicTacToeGame类
             char token = CalculateToken(
                 playerPositions, position);
 
-            // 输出一个单元格值以及它之后的界线
+            // 输出一个单元格值以及它之后的边框
             System.Console.Write($" {token} {borders[border]}");
         }
     }
@@ -201,20 +201,20 @@ public class TicTacToeGame      // 声明TicTacToeGame类
     static char CalculateToken(
         int[] playerPositions, int position)
     {
-        // 将玩家初始化为'X'和'O'
+        // 将和玩家对应的符号初始化为'X'和'O'
         char[] players = { 'X', 'O' };
 
         char token;
-        // If player has the position set, 
-        // then set the token to that player.
+        // 如果玩家设置了那个位置，
+        // 就将符号设为那个玩家的。
         if((position & playerPositions[0]) == position)
         {
-            // Player 1 has that position marked.
+            // 为玩家1标记那个位置
             token = players[0];
         }
         else if((position & playerPositions[1]) == position)
         {
-            // Player 2 has that position marked.
+            // 为玩家2标记那个位置
             token = players[1];
         }
         else

@@ -5,9 +5,9 @@ public class Program
     #region INCLUDE
     public static void Main()
     {
-        Console.Write("Enter your first name: ");
+        Console.Write("请输入你的名字: ");
         #region HIGHLIGHT
-        Console.WriteLine($"Hello { Console.ReadLine() }!");
+        Console.WriteLine($"你好，{ Console.ReadLine() }！");
         #endregion HIGHLIGHT
     }
     #endregion INCLUDE

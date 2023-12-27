@@ -19,9 +19,9 @@ public class Program
         };
         #endregion HIGHLIGHT
         
-        string firstName = GetUserInput("First Name");
-        string lastName = GetUserInput("Last Name");
-        string email = GetUserInput("Email Address");
+        string firstName = GetUserInput("名字");
+        string lastName = GetUserInput("姓氏");
+        string email = GetUserInput("电子邮件地址");
 
         Console.WriteLine($"{firstName} {lastName} <{email}>");
         //...

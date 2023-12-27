@@ -12,12 +12,12 @@ public class Program
         if(args?.Length != 2 )
         #endregion HIGHLIGHT
         {
-            // Exactly two arguments must be specified; give an error
+            // 必须提供两个（而且只能是两个）参数，所以报错
             Console.WriteLine(
-                "ERROR:  You must specify the "
-                + "URL and the file name");
+                "错误: 必须指定"
+                + "URL和文件名");
             Console.WriteLine(
-                "Usage: Downloader.exe <URL> <TargetFileName>");
+                "用法: Downloader.exe <URL> <文件名>");
             result = 1;
         }
         else
@@ -31,7 +31,7 @@ public class Program
                 client.GetByteArrayAsync(urlString).Result;
             client.Dispose();
             File.WriteAllBytes(fileName, response);
-            Console.WriteLine($"Downloaded '{ fileName }' from '{ urlString }'.");
+            Console.WriteLine($"已从'{urlString}'下载'{fileName}'。");
             result = 0;
         }
         #region HIGHLIGHT

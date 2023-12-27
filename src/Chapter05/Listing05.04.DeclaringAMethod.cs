@@ -10,10 +10,10 @@ public class IntroducingMethods
         string fullName;
         string initials;
 
-        Console.WriteLine("Hey you!");
+        Console.WriteLine("嘿，你！");
 
-        firstName = GetUserInput("Enter your first name: ");
-        lastName = GetUserInput("Enter your last name: ");
+        firstName = GetUserInput("请输入你的名字: ");
+        lastName = GetUserInput("请输入你的姓氏: ");
 
         fullName = GetFullName(firstName, lastName);
         initials = GetInitials(firstName, lastName);
@@ -34,13 +34,13 @@ public class IntroducingMethods
     static void DisplayGreeting(string fullName, string initials)
     {
         Console.WriteLine(
-            $"Hello { fullName }! Your initials are { initials }");
+            $"你好，{ fullName }！你的姓名缩写是{ initials }");
         return;
     }
 
     static string GetInitials(string firstName, string lastName)
     {
-        return $"{ firstName[0] }. { lastName[0] }.";
+        return $"{ firstName[0] }. { lastName[0] }";
     }
 }
 #endregion INCLUDE

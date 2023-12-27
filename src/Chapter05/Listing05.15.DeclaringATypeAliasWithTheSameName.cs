@@ -4,8 +4,8 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_15;
 #region INCLUDE
 
 #region HIGHLIGHT
-// Declare alias Timer to refer to System.Timers.Timer to
-// avoid code ambiguity with System.Threading.Timer
+// 声明别名Timer来引用System.Timers.Timer，
+// 以避免代码与System.Threading.Timer产生歧义。
 using Timer = System.Timers.Timer;
 #endregion HIGHLIGHT
 

@@ -5,8 +5,8 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_08;
 
 #region INCLUDE
-// The using directive imports all types from the 
-// specified namespace into the entire file
+// using指令将所有类型从指定命名空间
+// 导入当前代码文件。
 using System.Text.RegularExpressions;
 
 public class Program
@@ -17,10 +17,8 @@ public class Program
         const string initial = "Initial";
         const string lastName = "LastName";
 
-        // Explaining regular expressions is beyond the
-        // scope of this book.
-        // See https://www.regular-expressions.info/ for
-        // more information.
+        // 对正则表达式的详细解释超出了本书范围
+        // 访问https://www.regular-expressions.info了解详情
         const string pattern = $"""
             (?<{firstName}>\w+)\s+((?<{
             initial}>\w)\.\s+)?(?<{
@@ -28,13 +26,13 @@ public class Program
             """;
 
         Console.WriteLine(
-            "Enter your full name (e.g. Inigo T. Montoya): ");
+            "输入你的全名 (例：Inigo T. Montoya): ");
         string name = Console.ReadLine()!;
 
         #region HIGHLIGHT
-        // No need to qualify RegEx type with
-        // System.Text.RegularExpressions because
-        // of the using directive above
+        // 因为之前的using指令，所以
+        // 不需要用System.Text.RegularExpressions
+        // 前缀来限定RegEx类型。        
         Match match = Regex.Match(name, pattern);
         #endregion HIGHLIGHT
 

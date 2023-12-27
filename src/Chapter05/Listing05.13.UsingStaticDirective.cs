@@ -7,19 +7,19 @@ public class HeyYou
 {
     public static void Main()
     {
-        string firstName;
-        string lastName;
+        string? firstName;  // 用于存储名字的变量
+        string? lastName;   // 用于存储姓氏的变量
 
-        WriteLine("Hey you!");
+        WriteLine("嘿，你！");
 
-        Write("Enter your first name: ");
+        Write("请输入你的名字: ");
         firstName = ReadLine() ?? string.Empty;
 
-        Write("Enter your last name: ");
+        Write("请输入你的姓氏: ");
         lastName = ReadLine() ?? string.Empty;
 
         WriteLine(
-            $"Your full name is { firstName } { lastName }.");
+            $"你的全名是{firstName} {lastName}。");
     }
 }
 #endregion INCLUDE
