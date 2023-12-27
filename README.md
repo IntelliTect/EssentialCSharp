@@ -2,7 +2,7 @@
 
 [![Build and Test](https://github.com/IntelliTect/EssentialCSharp/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/IntelliTect/EssentialCSharp/actions/workflows/build-and-test.yml)
 
-本项目包含《C# 12.0本质论》的源代码，清华大学出版社，2024年。
+本项目包含《C# 12.0本质论》的源代码，2024年。
 
 ## 中文版主页请访问[周靖的博客](https://bookzhou.com)
 ## 英文版在线手稿请访问[EssentialCSharp.com](https://essentialcsharp.com)
