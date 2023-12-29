@@ -69,8 +69,7 @@ public static class LineCounter
     {
         int lineCount = 0;
         string? line;
-        // This can be improved with a using statement
-        // which is not yet described.
+        // 可以使用一个using语句改进，但目前还没有讲到
         FileStream stream = new(file, FileMode.Open);
         StreamReader reader = new(stream);
         line = reader.ReadLine();
@@ -83,7 +82,7 @@ public static class LineCounter
             line = reader.ReadLine();
         }
 
-        reader.Dispose();  // Automatically closes the stream
+        reader.Dispose();  // 自动关闭流
         return lineCount;
     }
 }

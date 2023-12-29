@@ -5,8 +5,8 @@ using System.IO;
 
 public static class LineCounter
 {
-    // Use the first argument as the directory
-    // to search, or default to the current directory
+    // 使用第一个实参作为要搜索的目录，
+    // 或者默认为当前目录。
     public static void Main(string[] args)
     {
         int totalLineCount = 0;
@@ -49,8 +49,7 @@ public static class LineCounter
     {
         string? line;
         int lineCount = 0;
-        // This can be improved with a using statement
-        // which is not yet described.
+        // 可以使用一个using语句改进，但目前还没有讲到
         FileStream stream = new(file, FileMode.Open);
         StreamReader reader = new(stream);
         line = reader.ReadLine();
@@ -64,7 +63,7 @@ public static class LineCounter
             line = reader.ReadLine();
         }
 
-        reader.Dispose();  // Automatically closes the stream
+        reader.Dispose();  // 自动关闭流
         return lineCount;
     }
 }

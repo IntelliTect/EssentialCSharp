@@ -78,7 +78,7 @@ public static class LineCounter
             line = reader.ReadLine();
         }
 
-        reader.Dispose();  // Automatically closes the stream
+        reader.Dispose();  // 自动关闭流
         return lineCount;
         #endregion EXCLUDE
     }

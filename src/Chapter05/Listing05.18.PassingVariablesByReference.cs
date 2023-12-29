@@ -6,8 +6,8 @@ public class Program
     public static void Main()
     {
         // ...
-        string first = "hello";
-        string second = "goodbye";
+        string first = "ÄãºÃ";
+        string second = "ÔÙ¼û";
         #region HIGHLIGHT
         Swap(ref first, ref second);
         #endregion HIGHLIGHT

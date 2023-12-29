@@ -5,36 +5,36 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_30;
 
 public class ThrowingExceptions
 {
-    // A previous catch clause already catches all exceptions
+    // 上一个catch子句已捕获所有异常
     #region INCLUDE
     public static void Main()
     {
         try
         {
-            Console.WriteLine("Begin executing");
-            Console.WriteLine("Throw exception");
+            Console.WriteLine("开始执行");
+            Console.WriteLine("抛出异常");
             #region HIGHLIGHT
-            throw new Exception("Arbitrary exception");
+            throw new Exception("任意异常");
             // Catch 1
             #endregion HIGHLIGHT
-            Console.WriteLine("End executing");
+            Console.WriteLine("结束执行");
         }
         catch(FormatException exception)
         {
             Console.WriteLine(
-                "A FormatException was thrown");
+                "已抛出一个FormatException异常");
         }
         // Catch 1
         catch(Exception exception)
         {
             Console.WriteLine(
-                $"Unexpected error: { exception.Message }");
-            // Jump to Post Catch
+                $"非预期的错误: { exception.Message }");
+            // 跳转到Post Catch
         }
 
         // Post Catch
         Console.WriteLine(
-            "Shutting down...");
+            "正在关闭...");
     }
     #endregion INCLUDE
 }

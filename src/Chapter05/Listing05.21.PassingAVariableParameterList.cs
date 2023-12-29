@@ -13,7 +13,7 @@ public class Program
         // ...
 
         #region HIGHLIGHT
-        // Call Combine() with four parameters
+        // 向Combine()传递4个参数
         fullName = Combine(
             Directory.GetCurrentDirectory(),
             "bin", "config", "index.html");
@@ -23,7 +23,7 @@ public class Program
         // ...
 
         #region HIGHLIGHT
-        // Call Combine() with only three parameters
+        // 只向Combine()传递3个参数
         fullName = Combine(
             Environment.SystemDirectory,
             "Temp", "index.html");
@@ -33,7 +33,7 @@ public class Program
         // ...
 
         #region HIGHLIGHT
-        // Call Combine() with an array
+        // 向Combine()传递一个数组
         fullName = Combine(
             new string[] {
                 $"{Environment.GetFolderPath(Environment.SpecialFolder.UserProfile)}", "Documents",

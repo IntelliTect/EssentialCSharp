@@ -2,7 +2,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_29;
 #pragma warning disable CS0168 // Variable is declared but never used
 
 #region INCLUDE
-// A previous catch clause already catches all exceptions
+// 上一个catch子句已捕获所有异常
 #pragma warning disable CS1058
 #region EXCLUDE
 using System;
@@ -16,11 +16,11 @@ public class ExceptionHandling
         int age;
         int result = 0;
 
-        Console.Write("Enter your first name: ");
+        Console.Write("请输入你的名字: ");
         firstName = Console.ReadLine();
 
-        Console.Write("Enter your age: ");
-        // Assume not null for clarity
+        Console.Write("请输入你的年龄: ");
+        // 假设不为空
         ageText = Console.ReadLine()!;
 
         #endregion EXCLUDE
@@ -28,28 +28,28 @@ public class ExceptionHandling
         {
             age = int.Parse(ageText);
             Console.WriteLine(
-                $"Hi { firstName }! You are { age * 12 } months old.");
+                $"你好，{firstName}！你有{age * 12}个月大了。");
         }
         catch(FormatException exception)
         {
             Console.WriteLine(
-                $"The age entered ,{ageText}, is not valid.");
+                $"你输入的年龄'{ageText}'不是一个有效的整数。"); 
             result = 1;
         }
         catch(Exception exception)
         {
             Console.WriteLine(
-                $"Unexpected error: { exception.Message }");
+                $"非预期的错误: {exception.Message}");
             result = 1;
         }
         catch
         {
-            Console.WriteLine("Unexpected error!");
+            Console.WriteLine("非预期的错误!");
             result = 1;
         }
         finally
         {
-            Console.WriteLine($"Goodbye { firstName }");
+            Console.WriteLine($"再见，{firstName}。");
         }
         #endregion INCLUDE
         return result;

@@ -9,19 +9,19 @@ public class ExceptionHandling
         string ageText;
         int age;
 
-        Console.WriteLine("Hey you!");
+        Console.WriteLine("嘿，你！");
 
-        Console.Write("Enter your first name: ");
+        Console.Write("请输入你的名字: ");
         firstName = Console.ReadLine();
 
         #region HIGHLIGHT
-        Console.Write("Enter your age: ");
-        // Assume not null for clarity
+        Console.Write("请输入你的年龄: ");
+        // 假设不为空
         ageText = Console.ReadLine()!;
         age = int.Parse(ageText);
 
         Console.WriteLine(
-            $"Hi { firstName }!  You are { age * 12 } months old.");
+            $"你好，{ firstName }！你有{ age * 12 }个月大了。");
         #endregion HIGHLIGHT
     }
     #endregion INCLUDE

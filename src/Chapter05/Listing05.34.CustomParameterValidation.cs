@@ -12,12 +12,12 @@ public class Program
         #endregion HIGHLIGHT
         if(args.Length != 2 ) 
         { 
-            // Exactly two arguments must be specified; give an error
+            // 必须指定两个（而且只能是两个）参数；报错
             Console.WriteLine(
-                "ERROR:  You must specify the "
-                + "URL and the file name");
+                "错误: 必须指定"
+                + "URL和文件名");
             Console.WriteLine(
-                "Usage: Downloader.exe <URL> <TargetFileName>");
+                "用法: Downloader.exe <URL> <文件名>");
             result = 1;
         }
         else
@@ -37,7 +37,7 @@ private static void DownloadSSL(string httpsUrl, string fileName)
     if (fileName.Trim().Length == 0)
     {
         throw new ArgumentException(
-            $"{nameof(fileName)} cannot be empty or only whitespace");
+            $"{nameof(fileName)}不能为空或者空串");
     }
 #else
     ArgumentException.ThrowIfNullOrEmpty(httpsUrl = httpsUrl?.Trim()!);
@@ -46,7 +46,7 @@ private static void DownloadSSL(string httpsUrl, string fileName)
 
     if (!httpsUrl.ToUpper().StartsWith("HTTPS"))
     {
-        throw new ArgumentException("URL must start with 'HTTPS'.");
+        throw new ArgumentException("URL必须以'HTTPS'开头。");
     }
 
     HttpClient client = new();
@@ -54,7 +54,7 @@ private static void DownloadSSL(string httpsUrl, string fileName)
         client.GetByteArrayAsync(httpsUrl).Result;
     client.Dispose();
     File.WriteAllBytes(fileName!, response);
-    Console.WriteLine($"Downloaded '{fileName}' from '{httpsUrl}'.");
+    Console.WriteLine($"已从'{httpsUrl}'下载'{fileName}'。");
 }
 }
 #endregion INCLUDE

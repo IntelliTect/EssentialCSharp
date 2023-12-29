@@ -42,14 +42,14 @@ public class Program
             """;
 
         Console.WriteLine(
-            "Enter your full name (e.g. Inigo T. Montoya): ");
+            "输入你的全名：(例如Inigo T. Montoya): ");
         string name = Console.ReadLine()!;
 
         #endregion EXCLUDE
         #region HIGHLIGHT
-        // No need to qualify RegEx type with
-        // System.Text.RegularExpressions because
-        // of the using directive above
+        // 因为using指令的存在，不需要用
+        // System.Text.RegularExpressions限定
+        // RegEx类型
         Match match = Regex.Match(name, pattern);
         #endregion HIGHLIGHT
         #region EXCLUDE

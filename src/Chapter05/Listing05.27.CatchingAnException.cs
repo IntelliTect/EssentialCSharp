@@ -10,34 +10,35 @@ public class ExceptionHandling
         int age;
         int result = 0;
 
-        Console.Write("Enter your first name: ");
-        firstName = Console.ReadLine();
+        Console.WriteLine("嘿，你！");
 
-        Console.Write("Enter your age: ");
-        // Assume not null for clarity
+        Console.Write("请输入你的名字: ");
+        firstName = Console.ReadLine();        
+        Console.Write("请输入你的年龄: ");
+        // 假设不为空
         ageText = Console.ReadLine()!;
 
         try
         {
             age = int.Parse(ageText);
             Console.WriteLine(
-                $"Hi { firstName }! You are { age * 12 } months old.");
+                $"你好，{firstName}！你有{age * 12}个月大了。");
         }
         catch(FormatException)
         {
             Console.WriteLine(
-                $"The age entered, { ageText }, is not valid."); 
+                $"你输入的年龄'{ ageText }'不是一个有效的整数。"); 
             result = 1;
         }
         catch(Exception exception)
         {
             Console.WriteLine(
-                $"Unexpected error: { exception.Message }");
+                $"非预期的错误: { exception.Message }");
             result = 1;
         }
         finally
         {
-            Console.WriteLine($"Goodbye { firstName }");
+            Console.WriteLine($"再见，{ firstName }。");
         }
 
         return result;

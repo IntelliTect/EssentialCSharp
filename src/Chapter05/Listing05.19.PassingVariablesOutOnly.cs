@@ -8,9 +8,9 @@ public class ConvertToPhoneNumber
         if(args.Length == 0)
         {
             Console.WriteLine(
-                "ConvertToPhoneNumber.exe <phrase>");
+                "用法: ConvertToPhoneNumber.exe <一个英文短语>");
             Console.WriteLine(
-                "'_' indicates no standard phone button");
+                "'_'表示无标准电话按键");
             return 1;
         }
         foreach(string word in args)
@@ -123,7 +123,7 @@ public class ConvertToPhoneNumber
                 button = '-';
                 break;
             default:
-                // Set the button to indicate an invalid value
+                // 设置button来指示一个无效的值
                 button = '_';
                 success = false;
                 break;

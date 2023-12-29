@@ -9,22 +9,22 @@ public class ThrowingExceptions
     {
         try
         {
-            Console.WriteLine("Begin executing");
-            Console.WriteLine("Throw exception");
-            throw new Exception("Arbitrary exception");
-            Console.WriteLine("End executing");
+            Console.WriteLine("开始执行");
+            Console.WriteLine("抛出异常");
+            throw new Exception("任意异常");
+            Console.WriteLine("结束执行");
         }
         catch (FormatException exception)
         {
             Console.WriteLine(
-                "A FormatException was thrown");
+                "抛出了一个FormatException异常");
         }
         #region INCLUDE
         // ...
         catch (Exception exception)
         {
             Console.WriteLine(
-                "Rethrowing unexpected error:  "
+                "重新抛出非预期的异常:  "
                 + $"{ exception.Message }");
 
             throw;
@@ -33,10 +33,10 @@ public class ThrowingExceptions
         #endregion INCLUDE
         catch
         {
-            Console.WriteLine("Unexpected error!");
+            Console.WriteLine("非预期的错误!");
         }
 
         Console.WriteLine(
-            "Shutting down...");
+            "正在关闭...");
     }
 }

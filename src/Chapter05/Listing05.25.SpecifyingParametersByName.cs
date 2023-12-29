@@ -18,7 +18,7 @@ public class SpecifyingParametersByName
         )
     {
         #region EXCLUDE
-        string fullName = $"First Name: {firstName} Middle Name: {middleName} Last Name: {lastName}";
+        string fullName = $"名字: {firstName} 中间名: {middleName} 姓氏: {lastName}";
         Console.Write(fullName);
         #endregion EXCLUDE
     }
