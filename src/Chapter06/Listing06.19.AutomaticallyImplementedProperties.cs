@@ -1,4 +1,4 @@
-// Non-nullable field is uninitialized. Consider declaring as nullable.
+// 不可为空的字段未初始化。考虑声明为可空。
 #pragma warning disable CS8618
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_19;
@@ -13,24 +13,24 @@ public class Program
         Employee employee2 =
             new();
 
-        // Call the FirstName property's setter
+        // 调用FirstName属性的取值方法(setter)
         employee1.FirstName = "Inigo";
 
-        // Call the FirstName property's getter
+        // 调用FirstName属性的赋值方法(getter)
         System.Console.WriteLine(employee1.FirstName);
 
-        // Assign an auto-implemented property
-        employee2.Title = "Computer Nerd";
+        // 向自动实现的属性赋值
+        employee2.Title = "电脑发烧友";
         employee1.Manager = employee2;
 
-        // Print employee1's manager's title
+        // 打印employee1的经理的Title
         System.Console.WriteLine(employee1.Manager.Title);
     }
 }
 
 public class Employee
 {
-    // FirstName property
+    // FirstName属性
     public string FirstName
     {
         get
@@ -44,7 +44,7 @@ public class Employee
     }
     private string _FirstName;
 
-    // LastName property
+    // LastName属性
     public string LastName
     {
         get => _LastName;
@@ -53,17 +53,17 @@ public class Employee
     private string _LastName;
 
     #region HIGHLIGHT
-    // Title property
+    // Title属性
     public string? Title { get; set; }
     #endregion HIGHLIGHT
 
     #region HIGHLIGHT
-    // Manager property
+    // Manager属性
     public Employee? Manager { get; set; }
     #endregion HIGHLIGHT
 
     #region HIGHLIGHT
-    public string? Salary { get; set; } = "Not Enough";
+    public string? Salary { get; set; } = "不够";
     #endregion HIGHLIGHT
     // ...
 }

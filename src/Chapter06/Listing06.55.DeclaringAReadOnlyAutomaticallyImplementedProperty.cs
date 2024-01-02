@@ -19,7 +19,7 @@ public class Program
 {
     public static void Main()
     {
-        // Note: board.Cells does not require initialization
+        // 注意：board.Cells不需要初始化
         TicTacToeBoard board = new();
         Console.WriteLine(board.Cells);
     }
@@ -28,18 +28,17 @@ public class Program
 #region INCLUDE
 class TicTacToeBoard
 {
-    // Set both player's initial board to all false (blank)
+    // 将两个玩家的初始棋盘设为全false (空白)
     //    |   |          |   |
     // ---+---+---    ---+---+---
     //    |   |          |   |   
     // ---+---+---    ---+---+---
     //    |   |          |   |   
-    // Player 1 - X   Player 2 - O
+    // 玩家1 - X      玩家 2 - O
     #region HIGHLIGHT
     public bool[,,] Cells { get; } = new bool[2, 3, 3];
     #endregion HIGHLIGHT
-    // Error: The property Cells cannot 
-    // be assigned to because it is read-only
+    // 错误：不能向Cells属性赋值，因为它是只读的
     // public void SetCells(bool[,,] value) =>
     //         _Cells = new bool[2, 3, 3];
 
@@ -51,7 +50,7 @@ class TicTacToeBoardPreCSharp5
 {
     public TicTacToeBoardPreCSharp5()
     {
-        // Set both player's initial board to all false (blank)
+        // 将两个玩家的初始棋盘设为全false (空白)
         //    |   |
         // ---+---+---
         //    |   |   
@@ -66,9 +65,8 @@ class TicTacToeBoardPreCSharp5
     {
         get { return _Cells; }
     }
-
-    // Error: A readonly field cannot be assigned to(except 
-    // in a constructor or a variable initializer)
+    
+    // 错误：无法向只读字段赋值(除非通过构造函数或者变量初始化器)
     // public void SetCells(bool[,,] value) =>
     // Cells = new bool[2, 3, 3];
 

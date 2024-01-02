@@ -10,8 +10,8 @@ public class Program
         Employee employee;
         employee = new ("Inigo", "Montoya")
         {
-            // Leveraging object initializer syntax
-            Salary = "Too Little"
+            // 利用对象初始化器语法
+            Salary = "太少了"
         };
 
         #region EXCLUDE

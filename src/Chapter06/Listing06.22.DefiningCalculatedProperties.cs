@@ -1,4 +1,4 @@
-﻿// Non-nullable field is uninitialized. Consider declaring as nullable.
+﻿// 不可为空的字段未初始化。考虑声明为可空。
 #pragma warning disable CS8618 // Pending a constructors
 // Disabled pending introduction to object initializers
 #pragma warning disable IDE0017 
@@ -25,7 +25,7 @@ public class Employee
 {
     // ...
 
-    // FirstName property
+    // FirstName属性
     public string FirstName
     {
         get
@@ -39,7 +39,7 @@ public class Employee
     }
     private string _FirstName;
 
-    // LastName property
+    // LastName属性
     public string LastName
     {
         get => _LastName;
@@ -49,7 +49,7 @@ public class Employee
     // ...
 
     #region HIGHLIGHT
-    // Name property
+    // Name属性
     public string Name
     {
         get
@@ -68,8 +68,7 @@ public class Employee
             // #region EXCLUDE
 #endif // NET7_0_OR_GREATER
             // #endregion EXCLUDE
-            // Split the assigned value into 
-            // first and last names
+            // 将所赋的值拆分为名字和姓氏
             string[] names;
             names = value.Split(new char[] { ' ' });
             if(names.Length == 2)
@@ -79,10 +78,9 @@ public class Employee
             }
             else
             {
-                // Throw an exception if the full 
-                // name was not assigned
+                // 如果没有赋全名，就抛出异常
                 throw new System.ArgumentException(
-                    $"Assigned value '{ value }' is invalid",
+                    $"所赋的值'{ value }'无效。",
                     nameof(value));
             }
         }

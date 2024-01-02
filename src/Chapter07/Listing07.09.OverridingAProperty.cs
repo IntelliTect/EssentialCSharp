@@ -1,4 +1,4 @@
-// Non-nullable field is uninitialized. Consider declaring as nullable.
+// 不可为空的字段未初始化。考虑声明为可空。
 #pragma warning disable CS8618 // Disabled pending constructor
         
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_09;

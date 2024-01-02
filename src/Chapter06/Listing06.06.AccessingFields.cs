@@ -15,7 +15,7 @@ public class Program
         #region HIGHLIGHT
         employee1.FirstName = "Inigo";
         employee1.LastName = "Montoya";
-        employee1.Salary = "Too Little";
+        employee1.Salary = "太少了";
         IncreaseSalary(employee1);
         Console.WriteLine(
            $"{ 
@@ -29,7 +29,7 @@ public class Program
     public static void IncreaseSalary(Employee employee)
     {
         #region HIGHLIGHT
-        employee.Salary = "Enough to survive on";
+        employee.Salary = "勉强过活";
         #endregion HIGHLIGHT
     }
 }

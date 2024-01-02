@@ -12,7 +12,7 @@ public void Main_AccessingFields_WriteFieldValues()
 {
     Assert.IsNotNull(TestContext);
         const string expected =
-            @"Inigo Montoya: Enough to survive on";
+            @"Inigo Montoya: ÃãÇ¿¹ý»î";
 
         IntelliTect.TestTools.Console.ConsoleAssert.Expect(
             expected, Program.Main);

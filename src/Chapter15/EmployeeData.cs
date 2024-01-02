@@ -49,7 +49,7 @@ public static class CorporateData
 
     public static readonly Employee[] Employees = new Employee[]
     {
-        new("Mark Michaelis", "Chief Computer Nerd", 0),
+        new("Mark Michaelis", "Chief µÁƒ‘∑¢…’”—", 0),
         new("Michael Stokesbary", "Senior Computer Wizard", 2),
         new("Brian Jones", "Enterprise Integration Guru", 2),
         new("Anne Beard", "HR Director", 1),

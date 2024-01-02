@@ -8,14 +8,14 @@ using static SimpleMath;
 public static class SimpleMath
 #endregion HIGHLIGHT
 {
-    // params allows the number of parameters to vary
+    // params支持可变数量的参数
     public static int Max(params int[] numbers)
     {
-        // Check that there is at least one item in numbers
+        // 检查numbers数组中是否至少有一项
         if(numbers.Length == 0)
         {
             throw new ArgumentException(
-                "numbers cannot be empty", nameof(numbers));
+                "numbers不能空白", nameof(numbers));
         }
 
         int result;
@@ -30,14 +30,14 @@ public static class SimpleMath
         return result;
     }
 
-    // params allows the number of parameters to vary
+    // params支持可变数量的参数
     public static int Min(params int[] numbers)
     {
-        // Check that there is at least one item in numbers
-        if(numbers.Length == 0)
+        // 检查numbers数组中是否至少有一项
+        if (numbers.Length == 0)
         {
             throw new ArgumentException(
-                "numbers cannot be empty", nameof(numbers));
+                "numbers不能空白", nameof(numbers));
         }
 
         int result;
@@ -64,11 +64,11 @@ public class Program
         }
 
         Console.WriteLine(
-            $@"Longest argument length = {
+            $@"最长的实参长度 = {
                 Max(numbers) }");
 
         Console.WriteLine(
-            $@"Shortest argument length = {
+            $@"最短的实参长度 = {
                 Min(numbers) }");
     }
 }

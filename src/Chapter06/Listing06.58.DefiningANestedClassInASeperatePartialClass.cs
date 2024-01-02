@@ -6,7 +6,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_58;
 using System;
 
 #region INCLUDE
-// File: Program.cs
+// 文件: Program.cs
 partial class Program
 {
     static void Main(string[] args)
@@ -23,16 +23,16 @@ partial class Program
     }
 }
 
-// File: Program+CommandLine.cs
+// 文件: Program+CommandLine.cs
 partial class Program
 {
-    // Define a nested class for processing the command line
+    // 定义一个嵌套类来处理命令行
     private class CommandLine
     {
         #region EXCLUDE
         public CommandLine(string[] args)
         {
-            //not implemented
+            //未实现
         }
 
         // ...

@@ -1,4 +1,4 @@
-// Non-nullable field is uninitialized. Consider declaring as nullable.
+// 不可为空的字段未初始化。考虑声明为可空。
 #pragma warning disable CS8618
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_10;
@@ -15,7 +15,8 @@ public class Employee
         return $"{ FirstName } { LastName }";
     }
 
-    // Caution: Parameter names use PascalCase
+    // 警告：参数名使用了PascalCase大小写风格，
+    // 应改为camelCase大小写风格。
     public void SetName(string FirstName, string LastName)
     {
         this.FirstName = FirstName;

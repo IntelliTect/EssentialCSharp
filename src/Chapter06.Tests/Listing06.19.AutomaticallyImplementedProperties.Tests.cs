@@ -9,7 +9,7 @@ public class ProgramTests
     {
         const string expected =
 @"Inigo
-Computer Nerd";
+µÁƒ‘∑¢…’”—";
 
         IntelliTect.TestTools.Console.ConsoleAssert.Expect(
             expected, Program.Main);

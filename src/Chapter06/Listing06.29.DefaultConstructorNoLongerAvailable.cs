@@ -12,13 +12,12 @@ public class Program
     {
         Employee employee;
 
-        #if COMPILEERROR // EXCLUDE
+#if COMPILEERROR // EXCLUDE
         #region HIGHLIGHT
-        // ERROR: No overload because method 'Employee' 
-        // takes '0' arguments
+        // 错误：没有获取0个参数的Employee方法重载        
         employee = new Employee();
         #endregion HIGHLIGHT
-        #endif // COMPILEERROR // EXCLUDE
+#endif // COMPILEERROR // EXCLUDE
 
         // ...
     }

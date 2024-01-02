@@ -4,33 +4,27 @@ using Listing06_12;
 #region INCLUDE
 public class DataStorage
 {
-    // Save an employee object to a file 
-    // named with the Employee name
-    // Error handling not shown
+    // 将Employee对象写入一个以员工姓名命名的文件；
+    // 这里未显示错误处理的情况。
     public static void Store(Employee employee)
     {
-        // Instantiate a FileStream using FirstNameLastName.dat
-        // for the filename. FileMode.Create will force
-        // a new file to be created or override an
-        // existing file
-        // Note: This code could be improved with a using  
-        // statement — a construct that we have avoided because 
-        // it has not yet been introduced.
+        // 使用<名字><姓氏>.dat作为文件名来实例化一个FileStream。
+        // FileMode.Create将强制创建一个新文件，或者覆盖一个已存在的文件。
+        // 注意：这段代码可以通过使用using语句来改进——我们目前尚未讲到的一种构造。
         FileStream stream = new(
             employee.FirstName + employee.LastName + ".dat",
             FileMode.Create);
 
-        // Create a StreamWriter object for writing text
-        // into the FileStream
+        // 创建一个StreamWriter对象writer，以便将文本写入FileStream对象stream
         StreamWriter writer = new(stream);
 
-        // Write all the data associated with the employee
+        // 开始写入与员工实例关联的所有数据
         writer.WriteLine(employee.FirstName);
         writer.WriteLine(employee.LastName);
         writer.WriteLine(employee.Salary);
 
-        // Dispose the StreamWriter and its stream
-        writer.Dispose();  // Automatically closes the stream
+        // 对StreamWriter及其流进行资源清理(dispose)
+        writer.Dispose();  // 会自动关闭流
     }
     // ...
 }

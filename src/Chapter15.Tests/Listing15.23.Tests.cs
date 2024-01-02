@@ -8,7 +8,7 @@ public class ProgramTests
     public void MainTest()
     {
         const string expected = @"Corporate
-	Mark Michaelis (Chief Computer Nerd)
+	Mark Michaelis (Chief 电脑发烧友)
 Human Resources
 	Anne Beard (HR Director)
 Engineering

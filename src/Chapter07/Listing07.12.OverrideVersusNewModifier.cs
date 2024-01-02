@@ -15,8 +15,8 @@ public class Program
 
     public class DerivedClass : BaseClass
     {
-        // Compiler WARNING: DisplayName() hides inherited 
-        // member. Use the new keyword if hiding was intended
+        // 编译器警告：DisplayName()隐藏继承的成员。
+        // 如果是有意隐藏，请使用关键字new。
         public virtual void DisplayName()
         {
             Console.WriteLine("DerivedClass");

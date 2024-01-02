@@ -1,4 +1,4 @@
-// Non-nullable field is uninitialized. Consider declaring as nullable.
+// 不可为空的字段未初始化。考虑声明为可空。
 #pragma warning disable CS8618 // Pending a constructors
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_23;
@@ -10,14 +10,12 @@ public class Program
     {
         Employee employee1 = new();
         employee1.Initialize(42);
-        #if COMPILEERROR // EXCLUDE
+#if COMPILEERROR // EXCLUDE
         #region HIGHLIGHT
-        // ERROR: The property or indexer 'Employee.Id' 
-        // cannot be used in this context because the set 
-        // accessor is inaccessible
+        // 错误：无法为属性或索引器'Employee.Id'赋值；它是只读的        
         employee1.Id = "490";
         #endregion HIGHLIGHT
-        #endif // COMPILEERROR // EXCLUDE
+#endif // COMPILEERROR // EXCLUDE
     }
 }
 
@@ -26,13 +24,13 @@ public class Employee
     public void Initialize(int id)
     {
         #region HIGHLIGHT
-        // Set Id property
+        // 设置Id属性
         Id = id.ToString();
         #endregion HIGHLIGHT
     }
 
     // ...
-    // Id property declaration
+    // Id属性声明
     public string Id
     {
         get => _Id;

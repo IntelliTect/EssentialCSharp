@@ -4,13 +4,13 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_43;
 public class Employee
 {
     #region EXCLUDE
-    // FirstName&LastName set inside Initialize() method.
+    // FirstName和LastName在Initialize()方法内部设置。
     #pragma warning disable CS8618
     public Employee(string firstName, string lastName)
     {
         int id;
-        // Generate an employee ID...
-        id = 0; // id needs to be initialized for this example
+        // 生成员工ID...
+        id = 0; // 这个例子需要初始化id
         // ...
         Initialize(id, firstName, lastName);
     }
@@ -26,7 +26,7 @@ public class Employee
         string lastName;
         Id = id;
 
-        // Look up employee data
+        // 查找员工数据
         firstName = string.Empty;
         lastName = string.Empty;
         // ...
@@ -54,11 +54,11 @@ public class Employee
     public int Id { get; private set; }
     public string FirstName { get; set; }
     public string LastName { get; set; }
-    public string? Salary { get; set; } = "Not Enough";
+    public string? Salary { get; set; } = "不够";
     public string? Title { get; set; }
     public Employee? Manager { get; set; }
 
-    // Name property
+    // Name属性
     public string Name
     {
         get
@@ -67,8 +67,7 @@ public class Employee
         }
         set
         {
-            // Split the assigned value into 
-            // first and last names.
+            // 将所赋的值拆分为名字和姓氏
             string[] names;
             names = value.Split(new char[] { ' ' });
             if(names.Length == 2)
@@ -78,10 +77,9 @@ public class Employee
             }
             else
             {
-                // Throw an exception if the full 
-                // name was not assigned.
+                // 如果赋的不是全名，就抛出异常
                 throw new System.ArgumentException(
-                    $"Assigned value '{value}' is invalid");
+                    $"所赋的值'{value}'无效。");
             }
         }
     }
@@ -95,8 +93,8 @@ public class Program
         Employee employee;
         employee = new ("Inigo", "Montoya")
         {
-            // Leveraging object initializer syntax
-            Salary = "Too Little"
+            // 利用对象初始化器语法
+            Salary = "太少了"
         };
         #region EXCLUDE
         System.Console.WriteLine(

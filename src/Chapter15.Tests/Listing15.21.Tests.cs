@@ -8,7 +8,7 @@ public class ProgramTests
     public void MainTest()
     {
         const string expected = @"
-Mark Michaelis (Chief Computer Nerd)
+Mark Michaelis (Chief 电脑发烧友)
 	Count: 1
 
 Michael Stokesbary (Senior Computer Wizard)

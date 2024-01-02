@@ -21,7 +21,7 @@ public class Employee
     public int Id { get; private set; }
     public string FirstName { get; set; }
     public string LastName { get; set; }
-    public string? Salary { get; set; } = "Not Enough";
+    public string? Salary { get; set; } = "²»¹»";
 
     // ...
 }

@@ -1,11 +1,11 @@
-﻿// Non-nullable field is uninitialized. Consider declaring as nullable.
+﻿// 不可为空的字段未初始化。考虑声明为可空。
 #pragma warning disable CS8618
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_14;
 
 #region INCLUDE
 using System;
-// IO namespace
+// IO命名空间
 using System.IO;
 
 public class Employee
@@ -25,7 +25,7 @@ public class Employee
         this.FirstName = newFirstName;
         this.LastName = newLastName;
         Console.WriteLine(
-            $"Name changed to '{ this.GetName() }'");
+            $"姓名更改为'{ this.GetName() }'");
     }
 
     public void Save()
@@ -38,33 +38,27 @@ public class Employee
 public class DataStorage
 {
     #region EXCLUDE
-    // Save an employee object to a file 
-    // named with the Employee name
-    // Error handling not shown
+    // 将Employee对象写入一个以员工姓名命名的文件；
+    // 这里未显示错误处理的情况。
     public static void Store(Employee employee)
     {
-        // Instantiate a FileStream using FirstNameLastName.dat
-        // for the filename. FileMode.Create will force
-        // a new file to be created or override an
-        // existing file.
-        // Note: This code could be improved with a using
-        // statement — a construct that we have avoided because
-        // it has not yet been introduced.
+        // 使用<名字><姓氏>.dat作为文件名来实例化一个FileStream。
+        // FileMode.Create将强制创建一个新文件，或者覆盖一个已存在的文件。
+        // 注意：这段代码可以通过使用using语句来改进——我们目前尚未讲到的一种构造。
         FileStream stream = new(
             employee.FirstName + employee.LastName + ".dat",
             FileMode.Create);
 
-        // Create a StreamWriter object for writing text
-        // into the FileStream
+        // 创建一个StreamWriter对象writer，以便将文本写入FileStream对象stream
         StreamWriter writer = new(stream);
 
-        // Write all the data associated with the employee
+        // 开始写入与员工实例关联的所有数据
         writer.WriteLine(employee.FirstName);
         writer.WriteLine(employee.LastName);
         writer.WriteLine(employee.Salary);
 
-        // Dispose the StreamWriter and its stream
-        writer.Dispose();  // Automatically closes the stream
+        // 对StreamWriter及其流进行资源清理(dispose)
+        writer.Dispose();  // 会自动关闭流
     }
     #endregion EXCLUDE
 
@@ -72,27 +66,25 @@ public class DataStorage
     {
         Employee employee = new();
 
-        // Instantiate a FileStream using FirstNameLastName.dat
-        // for the filename. FileMode.Open will open
-        // an existing file or else report an error
+        // 使用<名字><姓氏>.dat作为文件名来实例化一个FileStream。
+        // FileMode.Open将打开一个已存在的文件；不存在会报错。
         FileStream stream = new(
             firstName + lastName + ".dat", FileMode.Open);
 
-        // Create a StreamReader for reading text from the file
+        // 创建一个StreamReader，以便从文件中读取文本
         StreamReader reader = new(stream);
 
-        // Read each line from the file and place it into
-        // the associated property.
+        // 读取文件的每一行，并将其赋给关联的属性        
         employee.FirstName = reader.ReadLine()??
             throw new InvalidOperationException(
-                "FirstName cannot be null");
+                "FirstName不能为null");
         employee.LastName = reader.ReadLine()??
             throw new InvalidOperationException(
-                "LastName cannot be null");
+                "LastName不能为null");
         employee.Salary = reader.ReadLine();
 
-        // Dispose the StreamReader and its Stream
-        reader.Dispose();  // Automatically closes the stream
+        // 对StreamReader及其流进行资源清理(dispose)
+        reader.Dispose();  // 会自动关闭流
 
         return employee;
     }
@@ -108,10 +100,10 @@ public class Program
         employee2.SetName("Inigo", "Montoya");
         employee2.Save();
 
-        // Modify employee2 after saving
+        // 保存后修改employee2
         IncreaseSalary(employee2);
 
-        // Load employee1 from the saved version of employee2
+        // 从保存的employee2版本中，将数据加载到employee1
         employee1 = DataStorage.Load("Inigo", "Montoya");
 
         Console.WriteLine(
@@ -120,7 +112,7 @@ public class Program
     #region EXCLUDE
     public static void IncreaseSalary(Employee employee)
     {
-        employee.Salary = "Enough to survive on";
+        employee.Salary = "勉强过活";
     }
     #endregion EXCLUDE
 }

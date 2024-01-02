@@ -1,4 +1,4 @@
-// Non-nullable field is uninitialized. Consider declaring as nullable.
+// 不可为空的字段未初始化。考虑声明为可空。
 #pragma warning disable CS8618 // Pending a constructors
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_32;
@@ -35,17 +35,16 @@ public class Program
         #region HIGHLIGHT
         Employee employee = new(42, "Inigo Montoya") 
         { 
-            Salary = "Sufficient" 
+            Salary = "非常充足" 
         };
         #endregion HIGHLIGHT
 
-        #if COMPILEERROR // EXCLUDE
+#if COMPILEERROR // EXCLUDE
         #region HIGHLIGHT
-        // ERROR:  Property or indexer 'Employee.Salary' 
-        // cannot be assigned after initialization completes.
-        employee.Salary = "Enough";
+        // 错误：属性或索引器'Employee.Salary'不能在初始化结束后赋值
+        employee.Salary = "够了";
         #endregion HIGHLIGHT
-        #endif // COMPILEERROR // EXCLUDE
+#endif // COMPILEERROR // EXCLUDE
     }
 }
 #endregion INCLUDE

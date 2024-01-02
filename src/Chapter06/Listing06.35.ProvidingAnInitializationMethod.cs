@@ -4,21 +4,21 @@ public class Program
 {
     public static void Main()
     {
-        System.Console.WriteLine("No output in this example");
+        System.Console.WriteLine("本例无实际输出");
     }
 }
 
 #region INCLUDE
 public class Employee
 {
-    // FirstName&LastName set inside Initialize() method.
+    // FirstName和LastName在Initialize()方法内部设置
     #pragma warning disable CS8618
     public Employee(string firstName, string lastName)
     {
         int id;
-        // Generate an employee ID...
+        // 生成employee ID...
         #region EXCLUDE
-        id = 0; // id needs to be initialized for this example
+        id = 0; // 本例需要初始化id
         #endregion EXCLUDE
         #region HIGHLIGHT
         Initialize(id, firstName, lastName);
@@ -38,7 +38,7 @@ public class Employee
         string lastName;
         Id = id;
 
-        // Look up employee data
+        // 查找员工数据
         #region EXCLUDE
         firstName = string.Empty;
         lastName = string.Empty;
@@ -64,11 +64,11 @@ public class Employee
     public int Id { get; private set; }
     public string FirstName { get; set; }
     public string LastName { get; set; }
-    public string? Salary { get; set; } = "Not Enough";
+    public string? Salary { get; set; } = "不够";
     public string? Title { get; set; }
     public Employee? Manager { get; set; }
 
-    // Name property
+    // Name属性
     public string Name
     {
         get
@@ -77,8 +77,7 @@ public class Employee
         }
         set
         {
-            // Split the assigned value into 
-            // first and last names
+            // 将所赋的值拆分为名字和姓氏            
             string[] names;
             names = value.Split(new char[] { ' ' });
             if(names.Length == 2)
@@ -88,10 +87,9 @@ public class Employee
             }
             else
             {
-                // Throw an exception if the full 
-                // name was not assigned
+                // 如果没有赋全名，就抛出异常
                 throw new System.ArgumentException(
-                    $"Assigned value '{value}' is invalid");
+                    $"所赋的值'{value}'无效。");
             }
         }
     }

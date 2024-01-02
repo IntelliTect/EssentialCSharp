@@ -45,13 +45,13 @@ public class Employee
         NextId++;
     }
 
-    // Field wrapped into property later in chapter
-    #pragma warning disable CA2211 //Non-constant fields should not be visible
+    // 本章稍后会把字段包装成属性
+    #pragma warning disable CA2211 // 非常量字段就当不可见
     public static int NextId = 42;
     #pragma warning disable CA2211
 
     public int Id { get; private set; }
     public string FirstName { get; set; }
     public string LastName { get; set; }
-    public string? Salary { get; set; } = "Not Enough";
+    public string? Salary { get; set; } = "不够";
 }

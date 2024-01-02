@@ -10,17 +10,17 @@ public class NullabilityAttributesExamined
         char number, [NotNullWhen(true)]out string? text) =>
             (text = number switch
             {
-                '1' => "one",
-                '2' => "two",
-                '3' => "three",
-                '4' => "four",
+                '1' => "一",
+                '2' => "二",
+                '3' => "三",
+                '4' => "四",
                 // ...
-                '9' => "nine",
+                '9' => "九",
                 _ => null
             }) is not null;
 
 #if NET7_0_OR_GREATER // EXCLUDE
-    // nameof() on parameters is not supported prior to C# 11/.NET 7.0
+    // 在C# 11/.NET 7.0之前，不支持为参数使用nameof()
     [return: NotNullIfNotNull(nameof(text))]
 #else // EXCLUDE
     [return: NotNullIfNotNull("text")] // EXCLUDE

@@ -9,7 +9,7 @@ public class PdaItem
 {
     #region EXCLUDE
     // Justification: Disabled pending constructor
-    #pragma warning disable CS8618 // Non-nullable field is uninitialized. Consider declaring as nullable.
+    #pragma warning disable CS8618 // 不可为空的字段未初始化。考虑声明为可空。
     #endregion EXCLUDE
     private string _Name;
 
@@ -19,7 +19,7 @@ public class PdaItem
         set { _Name = value; }
     }
     #region EXCLUDE
-    #pragma warning restore CS8618 // Non-nullable field is uninitialized. Consider declaring as nullable.
+    #pragma warning restore CS8618 // 不可为空的字段未初始化。考虑声明为可空。
     #endregion EXCLUDE
 }
 

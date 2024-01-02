@@ -1,4 +1,4 @@
-// Non-nullable field is uninitialized. Consider declaring as nullable.
+// 不可为空的字段未初始化。考虑声明为可空。
 #pragma warning disable CS8618
 
 
@@ -11,13 +11,12 @@ public class Employee
     public void Initialize(
         string newFirstName, string newLastName)
     {
-        // Use property inside the Employee
-        // class as well
+        // 使用Employee类的属性
         FirstName = newFirstName;
         LastName = newLastName;
     }
 
-    // LastName property
+    // LastName属性
     public string LastName
     {
         get => _LastName;
@@ -25,18 +24,18 @@ public class Employee
         {
             // #region EXCLUDE
 #if !NET7_0_OR_GREATER
-            // Validate LastName assignment
+            // 验证对LastName的赋值
             value = value?.Trim() ?? throw new ArgumentNullException(nameof(value));
             if(value.Length == 0)
             {
-                // Report error
+                // 报告错误
                 throw new ArgumentException(
-                    "LastName cannot be blank or whitespace.", nameof(value));
+                    "LastName不能为空串，也不能由空白字符构成。", nameof(value));
             }
 #else
             // #endregion EXCLUDE
             #region HIGHLIGHT
-            // Validate LastName assignment
+            // 验证对LastName的赋值
             
             ArgumentException.ThrowIfNullOrEmpty(value = value?.Trim()!);
             #endregion HIGHLIGHT
@@ -48,7 +47,7 @@ public class Employee
     }
     private string _LastName;
 #region EXCLUDE
-    // FirstName property
+    // FirstName属性
     public string FirstName
     {
         get
@@ -58,16 +57,16 @@ public class Employee
         set
         {
             #if !NET7_0_OR_GREATER
-            // Validate FirstName assignment
+            // 验证对FirstName的赋值
             value = value?.Trim() ?? throw new ArgumentNullException(nameof(value));
             if (value.Length == 0)
             {
-                // Report error
+                // 报告错误
                 throw new ArgumentException(
-                    "LastName cannot be blank or whitespace.", nameof(value));
+                    "LastName不能为空串或者只由空白字符构成。", nameof(value));
             }
             #else // NET7_0_OR_GREATER
-            // Validate LastName assignment
+            // 验证对LastName的赋值
             ArgumentException.ThrowIfNullOrEmpty(value = value?.Trim()!);
             #endif // NET7_0_OR_GREATER
             _FirstName = value;

@@ -8,8 +8,7 @@ public class Program
     public static void Main()
     {
         Book book = new(42) { 
-            Subtitle = "The Comprehensive, Expert Guide " +
-                "to C# for Programmers at all levels" };
+            Subtitle = "基于业务场景的工程应用"};
     }
 }
 
@@ -21,7 +20,7 @@ public class Book
     {
         Id = id;
 
-        // Look up book data
+        // 查找书籍数据
         #region EXCLUDE
         Title = string.Empty;
         Isbn = string.Empty;

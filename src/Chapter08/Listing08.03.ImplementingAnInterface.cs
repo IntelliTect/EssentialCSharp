@@ -84,7 +84,7 @@ public class Contact : PdaItem, IListable, IComparable
                 // Throw an exception if the full 
                 // name was not assigned
                 throw new System.ArgumentException(
-                    $"Assigned value '{value}' is invalid");
+                    $"所赋的值'{value}'无效。");
             }
         }
     }

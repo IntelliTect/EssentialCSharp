@@ -18,12 +18,11 @@ public class Employee
       get { return _Id; }
     }
 
-    #if COMPILEERROR // EXCLUDE
-    // Error: A readonly field cannot be assigned to (except
-    // in a constructor or a variable initializer)
+#if COMPILEERROR // EXCLUDE
+    // 错误：不能向只读字段赋值(除非通过构造函数或者变量初始化器)
     public void SetId(int id) =>
         _Id = id;
-    #endif // COMPILEERROR // EXCLUDE
+#endif // COMPILEERROR // EXCLUDE
 
     // ...
 }

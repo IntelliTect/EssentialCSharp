@@ -1,4 +1,4 @@
-﻿// Non-nullable field is uninitialized. Consider declaring as nullable.
+﻿// 不可为空的字段未初始化。考虑声明为可空。
 #pragma warning disable CS8618
 // Unnecessary assignment of a value
 #pragma warning disable IDE0059
@@ -18,7 +18,7 @@ public class Program
 
         employee1.FirstName = "Inigo";
         employee1.LastName = "Montoya";
-        employee1.Salary = "Too Little";
+        employee1.Salary = "太少了";
         IncreaseSalary(employee1);
         #region HIGHLIGHT
         Console.WriteLine(
@@ -29,7 +29,7 @@ public class Program
     #region EXCLUDE
     public static void IncreaseSalary(Employee employee)
     {
-        employee.Salary = "Enough to survive on";
+        employee.Salary = "勉强过活";
     }
 }
 
@@ -37,7 +37,7 @@ public class Employee
 {
     public string FirstName;
     public string LastName;
-    public string? Salary = "Not enough";
+    public string? Salary = "不够";
 
     public string GetName()
     {

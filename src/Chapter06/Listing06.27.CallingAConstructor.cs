@@ -11,7 +11,7 @@ public class Program
         #region HIGHLIGHT
         employee = new("Inigo", "Montoya");
         #endregion HIGHLIGHT
-        employee.Salary = "Too Little";
+        employee.Salary = "Ã´…Ÿ¡À";
 
         Console.WriteLine(
             "{0} {1}: {2}",

@@ -14,7 +14,7 @@ Information Technology
 Philanthropy
 Marketing
 
-Mark Michaelis (Chief Computer Nerd)
+Mark Michaelis (Chief 电脑发烧友)
 Michael Stokesbary (Senior Computer Wizard)
 Brian Jones (Enterprise Integration Guru)
 Anne Beard (HR Director)

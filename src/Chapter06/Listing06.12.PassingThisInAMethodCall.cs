@@ -1,4 +1,4 @@
-// Non-nullable field is uninitialized. Consider declaring as nullable.
+// 不可为空的字段未初始化。考虑声明为可空。
 #pragma warning disable CS8618
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_12;
@@ -20,15 +20,14 @@ public class Employee
 
 public class DataStorage
 {
-    // Save an employee object to a file 
-    // named with the Employee name
+    // 将Employee对象写入一个以员工姓名命名的文件
     public static void Store(Employee employee)
     {
         #region EXCLUDE
         Console.WriteLine(
-            $@"Writing employee ({
+            $@"将员工({
                 employee.FirstName} {employee.LastName
-                }) information to file.");
+                })的信息写入文件。");
         #endregion EXCLUDE
     }
 }

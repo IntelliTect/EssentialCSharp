@@ -1,4 +1,4 @@
-// Non-nullable field is uninitialized. Consider declaring as nullable.
+// 不可为空的字段未初始化。考虑声明为可空。
 #pragma warning disable CS8618
 // Our Main doesn't leverage everything in our Employee implementation - in production it would
 #pragma warning disable CS0649
@@ -16,9 +16,8 @@ public class Employee
     public string FirstName;
     public string LastName;
     public string? Salary;
-    // Working de-crypted passwords for elucidation only
-    // this is not recommended.
-    // Uninitialized; pending explanation of constructors
+    // 像这样直接使用解密的密码仅供演示，平时不推荐。 
+    // 未初始化；稍后会解释“构造函数”
     #region HIGHLIGHT
     private string Password;  
     private bool IsAuthenticated;
@@ -53,15 +52,14 @@ public class Program
 
         // ...
 
-        
-        #if COMPILEERROR // EXCLUDE
+
+#if COMPILEERROR // EXCLUDE
         #region HIGHLIGHT
-        // ERROR: Password is private, so it cannot be
-        // accessed from outside the class
+        // 错误: Password是私有的，所以不能从类的外部访问
         Console.WriteLine(
            "Password = {0}", employee.Password);
         #endregion HIGHLIGHT
-        #endif // COMPILEERROR // EXCLUDE
+#endif // COMPILEERROR // EXCLUDE
     }
     // ...
 }

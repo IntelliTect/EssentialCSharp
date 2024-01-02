@@ -31,7 +31,7 @@ public static class DirectoryInfoExtension
             }
         }
 
-        // Copy subdirectories (recursively)
+        // 复制子目录(以递归方式)
         if (option == SearchOption.AllDirectories)
         {
             foreach (string element in

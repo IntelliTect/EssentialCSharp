@@ -4,7 +4,7 @@ public class Program
 {
     public static void Main()
     {
-        System.Console.WriteLine("No output in this example");
+        System.Console.WriteLine("本例无实际输出");
     }
 }
 

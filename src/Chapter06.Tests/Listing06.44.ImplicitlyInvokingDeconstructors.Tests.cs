@@ -8,8 +8,8 @@ public class ProgramTests
     public void MainTest()
     {
         const string expected = """
-            Inigo Montoya: Too Little
-            Inigo Montoya: Too Little
+            Inigo Montoya: 太少了
+            Inigo Montoya: 太少了
             """;
         IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected, () =>
         {

@@ -49,7 +49,7 @@ public static class DirectoryInfoExtension
 
     private static void Copy(string element, string fileName, string searchPattern)
     {
-        Console.WriteLine("Copying " + fileName);
+        Console.WriteLine("正在复制 " + fileName);
         #endregion EXCLUDE
     }
 }
@@ -66,7 +66,7 @@ public class Program
             SearchOption.TopDirectoryOnly, "*");
         #endregion HIGHLIGHT
         #region EXCLUDE
-        //Extension method. Is Defined above but appears to be a member of the DirectoryInfo object, directory, defined aboves
+        //本例定义的扩展方法表现得像是DirectoryInfo的实例成员
         #endregion EXCLUDE
     }
 }

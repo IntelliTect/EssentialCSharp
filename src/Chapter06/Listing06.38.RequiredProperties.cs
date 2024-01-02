@@ -4,11 +4,11 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_38;
 #region INCLUDE
 public class Book
 {
-    public Book()
-  {
-      // Look up employee name...
-      // ...
-  }
+  //  public Book()
+  //{
+
+  //    // ...
+  //}
 
     string? _Title;
     #region HIGHLIGHT
@@ -55,7 +55,7 @@ public class Program
         Book book = new()
         {
             Isbn = "978-0135972267",
-            Title = "Harold and the Purple Crayon"
+            Title = "°¢ÂÞÓÐÖ§²ÊÉ«±Ê"
         };
         #region EXCLUDE
         #pragma warning restore IDE0059 // Unnecessary assignment of a value

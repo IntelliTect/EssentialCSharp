@@ -1,4 +1,4 @@
-﻿// Non-nullable field is uninitialized. Consider declaring as nullable.
+﻿// 不可为空的字段未初始化。考虑声明为可空。
 #pragma warning disable CS8618
 // Disabled pending introduction to object initializers
 #pragma warning disable IDE0017 
@@ -12,10 +12,10 @@ public class Program
     {
         Employee employee = new();
 
-        // Call the FirstName property's setter
+        // 调用FirstName属性的setter(赋值方法)
         employee.FirstName = "Inigo";
 
-        // Call the FirstName property's getter
+        // 调用FirstName属性的getter(取值方法)
         System.Console.WriteLine(employee.FirstName);
     }
 }
@@ -23,7 +23,7 @@ public class Program
 public class Employee
 {
     #region HIGHLIGHT
-    // FirstName property
+    // FirstName属性
     public string FirstName
     {
         get

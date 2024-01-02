@@ -8,7 +8,7 @@ public class ProgramTests
     public void EnumerableJoinTest()
     {
         string expected =
-@"Mark Michaelis (Chief Computer Nerd)
+@"Mark Michaelis (Chief µÁƒ‘∑¢…’”—)
 	Corporate
 Michael Stokesbary (Senior Computer Wizard)
 	Engineering

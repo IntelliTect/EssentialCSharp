@@ -9,12 +9,12 @@ public class Program
 {
     #region EXCLUDE
     // Justification: Initialized at the start of Main.
-#pragma warning disable CS8618 // Non-nullable field is uninitialized. Consider declaring as nullable.
+#pragma warning disable CS8618 // 不可为空的字段未初始化。考虑声明为可空。
     #endregion EXCLUDE
     static ManualResetEventSlim _MainSignaledResetEvent;
     static ManualResetEventSlim _DoWorkSignaledResetEvent;
     #region EXCLUDE
-#pragma warning restore CS8618 // Non-nullable field is uninitialized. Consider declaring as nullable.
+#pragma warning restore CS8618 // 不可为空的字段未初始化。考虑声明为可空。
     #endregion EXCLUDE
 
     public static void DoWork()

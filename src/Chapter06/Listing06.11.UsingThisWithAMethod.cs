@@ -1,4 +1,4 @@
-﻿// Non-nullable field is uninitialized. Consider declaring as nullable.
+﻿// 不可为空的字段未初始化。考虑声明为可空。
 #pragma warning disable CS8618
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_11;
@@ -11,7 +11,7 @@ public class Employee
     #region EXCLUDE
     public string FirstName;
     public string LastName;
-    public string? Salary = "Not enough";
+    public string? Salary = "不够";
     #endregion EXCLUDE
 
     public string GetName()
@@ -25,7 +25,7 @@ public class Employee
         this.LastName = newLastName;
         #region HIGHLIGHT
         Console.WriteLine(
-            $"Name changed to '{ this.GetName() }'");
+            $"姓名更改为'{ this.GetName() }'");
         #endregion HIGHLIGHT
     }
 }

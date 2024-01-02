@@ -9,7 +9,7 @@ public class ProgramTests
     {
         string expected =
 @"Corporate
-	Mark Michaelis (Chief Computer Nerd)
+	Mark Michaelis (Chief µçÄÔ·¢ÉÕÓÑ)
 Human Resources
 	Anne Beard (HR Director)
 Engineering

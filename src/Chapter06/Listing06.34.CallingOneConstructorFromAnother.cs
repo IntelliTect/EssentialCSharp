@@ -18,18 +18,17 @@ public class Employee
         Id = id;
     }
 
-    // FirstName&LastName set inside Id property setter.
+    // FirstName和LastName在Id属性的setter中设置
     #pragma warning disable CS8618
     public Employee(int id)
     {
         Id = id;
 
-        // Look up employee name...
+        // 查找员工姓名...
         // ...
 
         #region HIGHLIGHT
-        // NOTE: Member constructors cannot be 
-        // called explicitly inline
+        // 注意: 成员构造函数不能以内联方式显式调用
         // this(id, firstName, lastName);
         #endregion HIGHLIGHT
     }
@@ -38,7 +37,7 @@ public class Employee
     public int Id { get; private set; }
     public string FirstName { get; set; }
     public string LastName { get; set; }
-    public string? Salary { get; set; } = "Not Enough";
+    public string? Salary { get; set; } = "不够";
 
     // ...
 }

@@ -1,6 +1,6 @@
 // Add readonly modifier ignored pending introduction of the concept
 #pragma warning disable IDE0044
-#pragma warning disable 649 // _Id is never assigned
+#pragma warning disable 649 // _Id从未赋值
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_33;
 
@@ -22,7 +22,7 @@ public class Employee
         LastName = lastName;
     }
 
-    // FirstName & LastName set inside Id property setter.
+    // FirstName和LastName在Id属性的setter中设置
     #pragma warning disable CS8618
     public Employee(int id) => Id = id;
     #pragma warning restore CS8618
@@ -33,7 +33,7 @@ public class Employee
         get => _Id;
         private set
         {
-            // Look up employee name...
+            // 查找员工姓名...
             // ...
         }
     }
@@ -48,7 +48,7 @@ public class Employee
     [System.Diagnostics.CodeAnalysis.NotNull]
     #endregion EXCLUDE
     public string LastName { get; set; }
-    public string? Salary { get; set; } = "Not Enough";
+    public string? Salary { get; set; } = "不够";
 
 
     // ...

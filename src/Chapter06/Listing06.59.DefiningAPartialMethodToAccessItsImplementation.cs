@@ -1,4 +1,4 @@
-// Non-nullable field is uninitialized. Consider declaring as nullable.
+// 不可为空的字段未初始化。考虑声明为可空。
 #pragma warning disable CS8618 // Pending a constructors
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_59;
@@ -6,7 +6,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_59;
 using System;
 
 #region INCLUDE
-// File: Person.Designer.cs
+// 文件: Person.Designer.cs
 public partial class Person
 {
     #region Extensibility Method Definitions
@@ -59,7 +59,7 @@ public partial class Person
     public partial string GetName();
 }
 
-// File: Person.cs
+// 文件: Person.cs
 partial class Person
 {
     static partial void OnLastNameChanging(string value)
@@ -70,7 +70,7 @@ partial class Person
         if (value.Trim().Length == 0)
         {
             throw new ArgumentException(
-                $"{nameof(LastName)} cannot be empty.",
+                $"{nameof(LastName)}不能空白。",
                 nameof(value));
         }
     }
@@ -84,7 +84,7 @@ partial class Person
         if (value.Trim().Length == 0)
         {
             throw new ArgumentException(
-                $"{nameof(FirstName)} cannot be empty.",
+                $"{nameof(FirstName)}不能空白。",
                 nameof(value));
         }
     }

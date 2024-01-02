@@ -8,7 +8,7 @@ public class ProgramTests
     public void Main_AccessingFieldsFromOutsideClass_WriteFieldValues()
     {
         const string expected =
-            @"Inigo Montoya: Enough to survive on";
+            @"Inigo Montoya: ÃãÇ¿¹ý»î";
 
         IntelliTect.TestTools.Console.ConsoleAssert.Expect(
             expected, Program.Main);

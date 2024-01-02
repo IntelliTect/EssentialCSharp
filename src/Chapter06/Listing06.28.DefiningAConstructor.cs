@@ -7,7 +7,7 @@ public class Program
         Employee employee;
         employee = new("Inigo", "Montoya")
         {
-            Salary = "Too Little"
+            Salary = "太少了"
         };
 
         Console.WriteLine(
@@ -22,7 +22,7 @@ public class Program
 public class Employee
 {
     #region HIGHLIGHT
-    // Employee constructor
+    // Employee构造函数
     public Employee(string firstName, string lastName)
     {
         FirstName = firstName;
@@ -32,13 +32,13 @@ public class Employee
 
     public string FirstName { get; set; }
     public string LastName { get; set; }
-    public string? Salary { get; set; } = "Not Enough";
+    public string? Salary { get; set; } = "不够";
 
     #region EXCLUDE
     public string? Title { get; set; }
     public Employee? Manager { get; set; }
 
-    // FullName property
+    // FullName属性
     public string FullName
     {
         get
@@ -47,8 +47,7 @@ public class Employee
         }
         set
         {
-            // Split the assigned value into 
-            // first and last names
+            // 将所赋值的值拆分为名字和姓氏
             string[] names;
             names = value.Split(new char[] { ' ' });
             if(names.Length == 2)
@@ -58,11 +57,10 @@ public class Employee
             }
             else
             {
-                // Throw an exception if the full 
-                // name was not assigned
+                // 未赋全名就抛出异常
                 throw new ArgumentException(
                     string.Format(
-                    $"Assigned value '{ value }' is invalid", 
+                    $"所赋的值'{ value }'无效。", 
                     nameof(value)));
             }
         }
