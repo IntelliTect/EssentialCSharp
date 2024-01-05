@@ -14,7 +14,7 @@ public class TimeOnlyHelper
                 dateText),
             null => throw new ArgumentNullException(nameof(input)),
             _ => throw new ArgumentException(
-                $"Invalid type - {input.GetType().FullName}"),
+                $"无效类型 - {input.GetType().FullName}"),
         };
     #endregion INCLUDE
 }

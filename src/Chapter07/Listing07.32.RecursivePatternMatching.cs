@@ -29,15 +29,18 @@ public class Program
             (inigo, buttercup);
 
         if (couple is 
-            ( // Tuple: Retrieved from deconstructor of Person
-                ( // Positional: Select left side or tuple
-                    { // Property of firstName
+              ( // 元组: 从Person的解构函数获取
+                ( // 位置: 选择左侧或元组
+                    { // firstName的属性
                         Length: int inigoFirstNameLength
                     }, 
-                 _ // Discard last name portion of tuple
+                 _ // 丢弃元组的姓氏部分
                 ),
-            { // Property of Princess Buttercup tuple
-                FirstName: string buttercupFirstName }))
+                { // Princess Buttercup元组的属性
+                    FirstName: string buttercupFirstName
+                }
+              )
+            )
         {
             Console.WriteLine(
                 $"({ inigoFirstNameLength }, { buttercupFirstName })");

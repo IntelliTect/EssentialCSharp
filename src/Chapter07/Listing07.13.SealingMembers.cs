@@ -17,7 +17,7 @@ class B : A
 
 class C : B
 {
-    // ERROR:  Cannot override sealed members
+    // 错误: 无法重写密封成员
     //public override void Method()
     //{
     //}

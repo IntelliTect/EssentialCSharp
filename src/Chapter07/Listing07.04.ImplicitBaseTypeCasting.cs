@@ -7,15 +7,14 @@ public class Program
 {
     public static void Main()
     {
-        // Derived types can be implicitly converted to
-        // base types
+        // 派生类型可以隐式转换为基类型
         Contact contact = new();
         #region HIGHLIGHT
         PdaItem item = contact;
         #endregion HIGHLIGHT
         // ...
 
-        // Base types must be cast explicitly to derived types
+        // 基类型则必须显式转型为派生类型
         #region HIGHLIGHT
         contact = (Contact)item;
         #endregion HIGHLIGHT

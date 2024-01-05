@@ -7,7 +7,7 @@ public sealed class CommandLineParser
 }
 
 #if COMPILEERROR // EXCLUDE
-// ERROR:  Sealed classes cannot be derived from
+// 错误: 无法从密封类型派生
 public sealed class DerivedCommandLineParser
     : CommandLineParser
 {

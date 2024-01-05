@@ -8,7 +8,7 @@ public class PeriodsOfTheDay
     public bool IsOutsideOfStandardWorkHours(
         TimeOnly time) =>
             time.Hour is not
-                (> 8 and < 17 and not 12); // Parenthesis Pattern - C# 10.
+                (> 8 and < 17 and not 12); // 圆括号模式 - C# 10.
     #endregion INCLUDE
 
     public static bool TryGetPhoneButton(
@@ -19,7 +19,7 @@ public class PeriodsOfTheDay
         {
             '1' => '1',
             '2' or >= 'a' and <= 'c' => '2',
-            // not operator and parenthesis example (C# 10)
+            // not操作符和圆括号示例(C# 10)
             '3' or not (< 'd' or > 'f') => '3',
             '4' or >= 'g' and <= 'i' => '4',
             '5' or >= 'j' and <= 'l' => '5',
@@ -28,7 +28,7 @@ public class PeriodsOfTheDay
             '8' or >= 't' and <= 'v' => '8',
             '9' or >= 'w' and <= 'z' => '9',
             '0' or '+' => '0',
-            _ => null,// Set the button to indicate an invalid value
+            _ => null,// 设置button来表示值是无效的
         }) is not null;
     }
 }

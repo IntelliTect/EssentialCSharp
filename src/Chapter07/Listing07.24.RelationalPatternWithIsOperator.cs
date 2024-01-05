@@ -12,12 +12,12 @@ public class PeriodsOfTheDay
     public static string GetPeriodOfDay(int hourOfTheDay) =>
         hourOfTheDay switch
         {
-            < 6 => "Dawn",
-            < 12 => "Morning",
-            < 18 => "Afternoon",
-            < 24 => "Evening",
-            int hour => throw new ArgumentOutOfRangeException(nameof(hourOfTheDay), 
-                $"The hour of the day specified is invalid.")
+            < 6 => "黎明",
+            < 12 => "上午",
+            < 18 => "下午",
+            < 24 => "晚上",
+            int hour => throw new ArgumentOutOfRangeException(nameof(hourOfTheDay),
+                $"指定了一天中无效的小时数。")
         };
     #endregion INCLUDE
 }

@@ -14,9 +14,9 @@ public class PdaItem
 }
 public class Contact : PdaItem
 {
-    // Disable warning since FirstName&LastName set via Name property
-    // Non-nullable field is uninitialized.
-    #pragma warning disable CS8618
+    // 禁止警告，因为FirstName和LastName 是通过Name属性来设置的
+    // 不可为null的字段未初始化
+#pragma warning disable CS8618
     #region HIGHLIGHT
     public Contact(string name) :
         base(name)
@@ -35,7 +35,7 @@ public class Contact : PdaItem
         set
         {
             string[] names = value.Split(' ');
-            // Error handling not shown
+            // 未显示错误处理
             FirstName = names[0];
             LastName = names[1];
         }

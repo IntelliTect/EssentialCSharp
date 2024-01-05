@@ -45,7 +45,7 @@ public class Program
         {
             return new Person("Inigo", "Montoya");
         }
-        return null;
+        return id;
         #endregion EXCLUDE
     }
 
@@ -60,10 +60,10 @@ public class Program
             Person person = (Person) entity;
         #endregion HIGHLIGHT
             Console.WriteLine(
-                $"Id corresponds to a { 
-                    nameof(Person) } object: {
+                $"Id对应于一个{
+                    nameof(Person) }对象: {
                     person.FirstName} {
-                    person.LastName}."
+                    person.LastName}。"
                 );
 
             #region HIGHLIGHT
@@ -71,20 +71,20 @@ public class Program
             #endregion HIGHLIGHT
             {
                 Console.WriteLine(
-                    $"Id ({ employee.Id }) is also an {
-                        nameof(Employee)} object.");
+                    $"Id({ employee.Id })也是一个{
+                        nameof(Employee)}对象。");
             }
         }
         else if(entity is null)
         {
             Console.WriteLine(
-                $"Id was unknown so null was returned.");
+                $"Id未知，所以返回null。");
         }
         else
         {
             Console.WriteLine(
-                $"Id '{id}' not an {
-                    nameof(Employee)} or a {nameof(Person)} object.");
+                $"Id'{id}'不是一个{
+                    nameof(Employee)}或{nameof(Person)}对象。");
         }
     }
 }

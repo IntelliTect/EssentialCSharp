@@ -34,11 +34,11 @@ public class Program
     {
         Contact contact = new();
         #region HIGHLIGHT
-        #if COMPILEERROR // EXCLUDE
-        // ERROR:  'PdaItem._Name' is inaccessible
-        // due to its protection level
+#if COMPILEERROR // EXCLUDE
+        // 错误:  'PdaItem._Name'不可访问，因为它
+        // 具有一定的保护级别
         contact._Name = "Inigo Montoya";
-        #endif // COMPILEERROR // EXCLUDE
+#endif // COMPILEERROR // EXCLUDE
         #endregion HIGHLIGHT
     }
 }

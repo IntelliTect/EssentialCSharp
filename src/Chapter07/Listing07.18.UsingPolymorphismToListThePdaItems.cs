@@ -32,10 +32,8 @@ public class Program
 
     public static void List(PdaItem[] items)
     {
-        // Implemented using polymorphism. The derived
-        // type knows the specifics of implementing 
-        // GetSummary().
-        foreach(PdaItem item in items)
+        // 利用多态性来实现。派生类知道GetSummary()的实现细节。
+        foreach (PdaItem item in items)
         {
             Console.WriteLine("________");
             Console.WriteLine(item.GetSummary());

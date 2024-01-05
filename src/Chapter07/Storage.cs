@@ -3,9 +3,7 @@
 using System;
 
 /*  *****************************************************
- *  For the purposes of pattern matching, assume that the 
- *  source code is not available and so polymorphism is
- *  not possible.
+ *  考虑到模式匹配的目的，假定源代码不可用，所以不能利用多态性。
  *  *****************************************************/
 public abstract class Storage
 {
@@ -25,14 +23,14 @@ public class Dvd : Storage
             case DvdCapacity.DualLayeredCapacity:
                     break;
             default:
-                throw new ArgumentException("Only values of 4.7 GB and 8.5 GB are supported.");
+                throw new ArgumentException("只支持4.7 GB和8.5 GB。");
         };
     }
     public bool IsInserted { get; set; }
 
     internal static void Eject()
     {
-        Console.WriteLine("Ejecting the DVD...");
+        Console.WriteLine("正在弹出DVD光盘...");
     }
     public enum DvdCapacity : long
     {
@@ -55,6 +53,6 @@ public class UsbKey : Storage
 
     internal static void Unload()
     {
-        Console.WriteLine("Unloading the UsbKey...");
+        Console.WriteLine("卸载UsbKey...");
     }
 }

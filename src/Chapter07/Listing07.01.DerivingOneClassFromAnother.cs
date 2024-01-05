@@ -10,7 +10,7 @@ public class PdaItem
     public string? Name { get; set; }
     public DateTime LastUpdated { get; set; }
 }
-// Define the Contact class as inheriting the PdaItem class
+// Contact类从PdaItem类继承
 #region HIGHLIGHT
 public class Contact : PdaItem
 #endregion HIGHLIGHT

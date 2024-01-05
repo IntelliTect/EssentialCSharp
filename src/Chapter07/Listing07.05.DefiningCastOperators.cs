@@ -11,7 +11,7 @@ class GpsCoordinates
         GpsCoordinates coordinates)
     {
         #region EXCLUDE
-        return null!; //return the new UtmCoordinates object
+        return null!; // 此处应返回新的UtmCoordinates对象
         #endregion EXCLUDE
     }
 }

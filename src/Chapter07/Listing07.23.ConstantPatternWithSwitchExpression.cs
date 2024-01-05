@@ -30,8 +30,8 @@ public static class SolsticeHelper
         {
             if ((solstice = date.Month switch
             {
-                12 => "Winter Solstice",
-                6 => "Summer Solstice",
+                12 => "¶¬ÖÁ",
+                6 => "ÏÄÖÁ",
                 _ => null
             }) is not null) return true;
         }

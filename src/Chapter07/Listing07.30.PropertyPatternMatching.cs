@@ -30,19 +30,19 @@ public class ExpenseItem
     public static bool ValidateExpenseItem(ExpenseItem expenseItem) =>
         expenseItem switch
         {
-            // Note: A property pattern checks that the input value is not null
-            // Expanded Property Pattern
+            // 注意: 属性模式核实输入值不为null。
+            // 以下是扩展属性模式：
             { ItemName.Length: > 0, Employee.Role: "Admin" } => true,
-            #pragma warning disable IDE0170 // Property pattern can be simplified
-            // Property Pattern
+            #pragma warning disable IDE0170 // 属性模式可以简化
+            // 以下是普通属性模式：
             { ItemName: { Length: > 0 }, Employee: {Role: "Manager" }, 
                 ExpenseDate: DateTime date } 
-            #pragma warning restore IDE0170 // Property pattern can be simplified
+            #pragma warning restore IDE0170 // 属性模式可以简化
                 when date >= DateTime.Now.AddDays(-30) => true,
             { ItemName.Length: > 0,  Employee.Name.Length: > 0, 
                 CostAmount: <= 1000, ExpenseDate: DateTime date }
                 when date >= DateTime.Now.AddDays(-30) => true,
-            { } => false, // This not null check can be eliminated.
+            { } => false, // 可以删除这个not null检查
             _ => false
         };
 }

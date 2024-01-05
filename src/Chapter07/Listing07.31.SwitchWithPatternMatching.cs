@@ -19,8 +19,8 @@ public class Program
             string dateText => DateTime.TryParse(
                 dateText, out DateTime dateTime) ?
                     (dateTime.Year, dateTime.Month, dateTime.Day) :
-                    // default ((int Year, int Month, int Day)?)
-                    // preferable but not covered until Chapter 12.
+                    // default ((int Year, int Month, int Day)?)更佳，
+                    // 但要到第12章才会讲到。
                     ((int Year, int Month, int Day)?) null,
             _ => null
         } is (int, int, int) date ? string.Format(

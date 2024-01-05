@@ -19,8 +19,7 @@ public class Contact : PdaItem
 
     public void Save()
     {
-        // Instantiate a FileStream using <ObjectKey>.dat
-        // for the filename
+        // 使用<ObjectKey>.dat作为文件名来实例化一个FileStream
         #region HIGHLIGHT
         using FileStream stream = File.OpenWrite(
             ObjectKey + ".dat");
@@ -36,8 +35,8 @@ public class Contact : PdaItem
     #if COMPILEERROR // EXCLUDE
     static public Contact Copy(PdaItem pdaItem) =>
     #region HIGHLIGHT
-    // ERROR: Cannot access protected member PdaItem.ObjectKey.
-    // Use ((Contact)pdaItem).ObjectKey instead.
+    // 错误：不能访问受保护成员PdaItem.ObjectKey。
+    // 改为使用((Contact)pdaItem).ObjectKey
         new(pdaItem.ObjectKey);
     #endregion HIGHLIGHT
     #endif // COMPILEERROR // EXCLUDE
@@ -50,10 +49,10 @@ public class Program
         Contact contact = new(Guid.NewGuid());
 
         #region HIGHLIGHT
-        #if COMPILEERROR // EXCLUDE
-        // ERROR:  'PdaItem.ObjectKey' is inaccessible
+#if COMPILEERROR // EXCLUDE
+        // 错误:  'PdaItem.ObjectKey'不可访问
         Console.WriteLine(contact.ObjectKey);
-        #endif // COMPILEERROR // EXCLUDE
+#endif // COMPILEERROR // EXCLUDE
         #endregion HIGHLIGHT
     }
 }

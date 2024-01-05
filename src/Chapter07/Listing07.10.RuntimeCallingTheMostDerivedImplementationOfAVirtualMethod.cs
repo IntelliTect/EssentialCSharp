@@ -14,11 +14,10 @@ public class Program
         contact = new Contact();
         item = contact;
 
-        // Set the name via PdaItem variable
+        // 通过PdaItem变量来设置姓名
         item.Name = "Inigo Montoya";
 
-        // Display that FirstName & LastName
-        // properties were set
+        // 证明已设置FirstName和LastName
         Console.WriteLine(
             $"{ contact.FirstName } { contact.LastName}");
     }

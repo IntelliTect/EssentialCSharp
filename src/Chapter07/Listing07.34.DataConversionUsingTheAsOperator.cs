@@ -24,7 +24,7 @@ public class Contact : PdaItem
         else
         {
             throw new ArgumentException(
-                $"{nameof(pdaItem)} was not of type {nameof(Contact)}");
+                $"{nameof(pdaItem)}不属于{nameof(Contact)}类型");
         }
     }
     #region EXCLUDE

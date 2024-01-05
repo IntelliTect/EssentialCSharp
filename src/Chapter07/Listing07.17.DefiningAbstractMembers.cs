@@ -5,7 +5,7 @@ using System;
 #region INCLUDE
 using static System.Environment;
 
-// Define an abstract class
+// 定义抽象类
 public abstract class PdaItem
 {
     public PdaItem(string name)
@@ -36,7 +36,7 @@ public class Contact : PdaItem
         set
         {
             string[] names = value.Split(' ');
-            // Error handling not shown
+            // 未显示错误处理
             FirstName = names[0];
             LastName = names[1];
         }
@@ -77,9 +77,9 @@ public class Contact : PdaItem
     #region HIGHLIGHT
     public override string GetSummary()
     {
-        return $"FirstName: { FirstName + NewLine }"
-        + $"LastName: { LastName + NewLine }"
-        + $"Address: { Address + NewLine }";
+        return $"名字: { FirstName + NewLine }"
+        + $"姓氏: { LastName + NewLine }"
+        + $"地址: { Address + NewLine }";
     }
     #endregion HIGHLIGHT
 
@@ -104,10 +104,10 @@ public class Appointment : PdaItem
     // ...
     public override string GetSummary()
     {
-        return $"Subject: { Name + NewLine }"
-            + $"Start: { StartDateTime + NewLine }"
-            + $"End: { EndDateTime + NewLine }"
-            + $"Location: { Location }";
+        return $"主题: { Name + NewLine }"
+            + $"开始时间: { StartDateTime + NewLine }"
+            + $"结束时间: { EndDateTime + NewLine }"
+            + $"地点: { Location }";
     }
 }
 #endregion INCLUDE

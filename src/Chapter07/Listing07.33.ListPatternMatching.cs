@@ -7,37 +7,35 @@ public class Program
     #region INCLUDE
     public static void Main(string[] args)
     {
-        // For simplicity, options are assumed
-        // to all be lower case.
+        // 为了简化，所有选项假定全小写
 
-        // The first argument is the option and is
-        // identified by a '/', '-', or '--' prefix.
+        // 第一个参数是用'/', '-'或'--'等前缀标注的选项
 
         switch (args)
         {
             case ["--help" or ['/' or '-', 'h' or '?']]:
-                // e.g. --help, /h, -h, /?, -? 
+                // 例: --help, /h, -h, /?, -? 
                 DisplayHelp();
                 break;
             case [ ['/' or '-', char option], ..]:
-                // Option begins with '/', '-' and has 0 or more arguments.
+                // 选项以'/', '-'开头，有0个或更多实参
                 if(!EvaluateOption($"{option}", args[1..]))
                 {
                     DisplayHelp();
                 }
                 break;
             case [ ['-', '-', ..] option, ..]:
-                // Option begins with "--" and has 0 or more arguments.
+                // 选项以"--"开头，有0个或更多实参
                 if(!EvaluateOption(option[2..], args[1..]))
                 {
                     DisplayHelp();
                 }
                 break;
 
-            // The following cases are redundant with default
-            // but provided for demonstration purposes.
+            // 用以下case来提供默认行动是多余的，因为它和default重复了，
+            // 只是出于演示目的而提供。
             case []:
-                // No command line arguments
+                // 未提供命令行参数
 
             default:
                 DisplayHelp();
@@ -57,19 +55,19 @@ public class Program
 
     private static bool CopyFile(object sourceFile, string targetFile)
     {
-        Console.WriteLine($"Copy '{sourceFile}' '{targetFile}'...");
+        Console.WriteLine($"复制 '{sourceFile}' '{targetFile}'...");
         return true;
     }
     #endregion INCLUDE
     
     private static bool CatalogFile(string fileName)
     {
-        Console.WriteLine($"Catalog '{fileName}'...");
+        Console.WriteLine($"编录 '{fileName}'...");
         return true;
     }
 
     private static void DisplayHelp()
     {
-        Console.WriteLine("Command Help...");
+        Console.WriteLine("命令帮助...");
     }
 }

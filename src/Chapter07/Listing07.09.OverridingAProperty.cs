@@ -26,7 +26,7 @@ public class Contact : PdaItem
         set
         {
             string[] names = value.Split(' ');
-            // Error handling not shown
+            // Œ¥œ‘ æ¥ÌŒÛ¥¶¿Ì
             FirstName = names[0];
             LastName = names[1];
         }

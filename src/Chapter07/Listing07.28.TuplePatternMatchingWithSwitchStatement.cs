@@ -25,7 +25,7 @@ public class Program
                 }
                 break;
             default:
-                Console.WriteLine("Arguments are invalid.");
+                Console.WriteLine("参数无效。");
                 break;
         }
     }
@@ -33,7 +33,7 @@ public class Program
 
     public static string Encrypt(string data)
     {
-        // See Chapter 19 for actual encryption implementation
+        // 参见第19章，了解加密具体是如何实现的
         return $"ENCRYPTED <{data}> ENCRYPTED";
     }
 }

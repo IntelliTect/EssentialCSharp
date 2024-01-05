@@ -15,10 +15,10 @@ public static class PointHelper
 
     public static string GetQuadrant(Point point) => point switch
     {
-        (>=0, >=0) => "Quadrant I",   //  II | I
-        (<=0, >=0) => "Quadrant II",  // ____|____
-        (<=0, <=0) => "Quadrant III", //     |
-        (>=0, <=0) => "Quadrant IV"   // III | IV
+        ( >= 0, >= 0) => "象限I",    //  II | I
+        ( <= 0, >= 0) => "象限 II",  // ____|____
+        ( <= 0, <= 0) => "象限 III", //     |
+        ( >= 0, <= 0) => "象限 IV"   // III | IV
     };
 }
 #endregion INCLUDE
