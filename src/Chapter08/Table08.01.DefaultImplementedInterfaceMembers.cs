@@ -11,7 +11,7 @@
                 get => _Field;
                 private set => _Field = value;
             }
-            static ISampleInterface() => 
+            static ISampleInterface() =>
                 Field = "Nelson Mandela";
             public static string? GetField() => Field;
         }
@@ -22,11 +22,11 @@
     {
         public interface IPerson
         {
-            // Standard abstract property definitions
+            // 标准的抽象属性定义
             string FirstName { get; set; }
             string LastName { get; set; }
 
-            // Implemented instance properties and methods
+            // 实现的实例属性和方法
             public string Name { get => GetName(); }
             public string GetName() => $"{FirstName} {LastName}";
         }
@@ -76,7 +76,7 @@
     {
         public interface IPerson
         {
-            // All members are public by default
+            // 所有成员默认public
             string FirstName { get; set; }
             public string LastName { get; set; }
             string Initials => $"{FirstName[0]}{LastName[0]}";
@@ -134,50 +134,50 @@
     namespace PrivateProtectedAccessModifiers
     {
         class Program
-    {
-        static void Main()
         {
-            IPerson? person = null;
-            #if COMPILEERROR // EXCLUDE
-            // Error CS0122 'IPerson.GetName()' is 
-            // inaccessible due to its protection level
-            // Non-deriving classes cannot call
-            // private protected member.
-            person?.GetName();
-            #endif // COMPILEERROR // EXCLUDE
-            Console.WriteLine(person);
+            static void Main()
+            {
+                IPerson? person = null;
+#if COMPILEERROR // EXCLUDE
+            // 错误CS0122 'IPerson.GetName()'因为它的保护级别而不可访问
+            // 没有派生类可以调用private protected成员
+            _ = person?.GetName();
+#endif // COMPILEERROR // EXCLUDE
+                Console.WriteLine(person);
+            }
         }
-    }
-    public interface IPerson
-    {
-        string FirstName { get; }
-        string LastName { get; }
-        string Name => GetName();
-        private protected string GetName() =>
-            $"{FirstName} {LastName}";
-    }
-    public interface IEmployee: IPerson
-    {
-        int EmployeeId => GetName().GetHashCode();
-    }
-    public class Person : IPerson
-    {
-        public Person(string firstName, string lastName)
+        public interface IPerson
         {
-            FirstName = firstName ??
-                throw new ArgumentNullException(nameof(firstName));
-            LastName = lastName ?? 
-                throw new ArgumentNullException(nameof(lastName));
+            string FirstName { get; }
+            string LastName { get; }
+            string Name => GetName();
+            private protected string GetName() =>
+                $"{FirstName} {LastName}";
         }
-        public string FirstName { get; }
-        public string LastName { get; }
 
-        #if COMPILEERROR // EXCLUDE
-        // private protected interface members
-        // are not accessible in derived classes.
-        public int PersonTitle => 
+        public interface IEmployee : IPerson
+        {
+            int EmployeeId => GetName().GetHashCode();
+        }
+
+        public class Person : IPerson
+        {
+            public Person(string firstName, string lastName)
+            {
+                FirstName = firstName ??
+                    throw new ArgumentNullException(nameof(firstName));
+                LastName = lastName ??
+                    throw new ArgumentNullException(nameof(lastName));
+            }
+            public string FirstName { get; }
+            public string LastName { get; }
+
+#if COMPILEERROR // EXCLUDE
+        // private protected接口成员不能在实现
+        // 该接口的类中访问。
+        public string PersonTitle => 
             GetName().ToUpper();
-        #endif // COMPILEERROR // EXCLUDE
+#endif // COMPILEERROR // EXCLUDE
         }
     }
 
@@ -186,9 +186,8 @@
     {
         public interface IPerson
         {
-            // virtual is not allowed on members
-            // without implementation
-            /* virtual */ string FirstName { get; set; }
+            // 未提供实现的接口成员不允许virtual
+            string FirstName { get; set; }
             string LastName { get; set; }
             virtual string Name => GetName();
             private string GetName() =>
@@ -201,28 +200,27 @@
     {
         public interface IWorkflowActivity
         {
-            // Private and, therefore, not virtual
+            // 私有，所以非虚
             private static void Start() =>
                 Console.WriteLine(
                     "IWorkflowActivity.Start()...");
 
-            // Sealed to prevent overriding.
+            // 密封以防止重写
             sealed void Run()
             {
                 try
                 {
-                    IWorkflowActivity.Start();
+                    Start();
                     InternalRun();
                 }
                 finally
                 {
-                    IWorkflowActivity.Stop();
+                    Stop();
                 }
             }
 
             protected void InternalRun();
-
-            // Private and, therefore, not virtual
+            // 私有，所以非虚
             private static void Stop() =>
                 Console.WriteLine(
                     "IWorkflowActivity.Stop()..");
@@ -234,13 +232,13 @@
     {
         public interface IPerson
         {
-            // abstract is not allowed on members
-            // with implementation
-            /* virtual */ abstract string FirstName { get; set; }
+            // 没有实现的成员可以abstract
+            /* virtual */
+            abstract string FirstName { get; set; }
             string LastName { get; set; }
-            // abstract is not allowed on members
-            // with implementation
-            /* abstract */ string Name => GetName();
+            // 有实现的成员不允许abstract
+            /* abstract */
+            string Name => GetName();
             private string GetName() =>
                 $"{FirstName} {LastName}";
         }
@@ -265,7 +263,7 @@
         {
             static partial void AssertValueIsValid(string value)
             {
-                // Throw if value is invalid.
+                // 值无效就抛出异常
                 switch (value)
                 {
                     case null:
@@ -273,10 +271,10 @@
                             nameof(value));
                     case "":
                         throw new ArgumentException(
-                            "Empty string is invalid", nameof(value));
+                            "空串无效", nameof(value));
                     case string _ when string.IsNullOrWhiteSpace(value):
                         throw new ArgumentException(
-                            "Can't be whitespace", nameof(value));
+                            "不能为空白字符", nameof(value));
                 };
             }
         }

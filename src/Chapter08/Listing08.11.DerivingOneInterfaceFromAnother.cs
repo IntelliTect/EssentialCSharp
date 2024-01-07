@@ -6,25 +6,25 @@ using Listing08_09;
 interface IDistributedSettingsProvider : ISettingsProvider
 {
     /// <summary>
-    /// Get the settings for a particular URI
+    /// 获取特定URI的设置
     /// </summary>
     /// <param name="uri">
-    /// The URI name the setting is related to</param>
-    /// <param name="name">The name of the setting</param>
+    /// 和设置关联的URI名称</param>
+    /// <param name="name">设置名称</param>
     /// <param name="defaultValue">
-    /// The value returned if the setting is not found</param>
-    /// <returns>The specified setting</returns>
+    /// 在设置未找到的前提下返回的值</param>
+    /// <returns>指定的设置</returns>
     string GetSetting(
         string uri, string name, string defaultValue);
 
     /// <summary>
-    /// Set the settings for a particular URI
+    /// 为特定URI进行设置
     /// </summary>
     /// <param name="uri">
-    /// The URI name the setting is related to</param>
-    /// <param name="name">The name of the setting</param>
-    /// <param name="value">The value to be persisted</param>
-    /// <returns>The specified setting</returns>
+    /// 和设置关联的URI名称</param>
+    /// <param name="name">设置名称</param>
+    /// <param name="value">要持久化存储的值</param>
+    /// <returns>指定的设置</returns>
     void SetSetting(
         string uri, string name, string value);
 }

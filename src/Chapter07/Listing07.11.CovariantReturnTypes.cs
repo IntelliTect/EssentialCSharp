@@ -1,4 +1,4 @@
-#pragma warning disable IDE0059 // Unnecessary assignment of a value
+#pragma warning disable IDE0059 // 不需要赋值
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter07.Listing07_11;
 
 #region INCLUDE

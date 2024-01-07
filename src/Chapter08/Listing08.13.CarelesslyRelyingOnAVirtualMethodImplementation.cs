@@ -6,17 +6,17 @@ public class WorkflowActivity
 {
     private static void Start()
     {
-        // Critical code
+        // 关键代码
     }
     public virtual void Run()
     {
         Start();
-        // Do something...
+        // 做某事...
         Stop();
     }
     private static void Stop()
     {
-        // Critical code
+        // 关键代码
     }
 }
 #endregion INCLUDE

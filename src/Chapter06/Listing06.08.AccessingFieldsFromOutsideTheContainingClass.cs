@@ -1,6 +1,6 @@
 ﻿// 不可为空的字段未初始化。考虑声明为可空。
 #pragma warning disable CS8618
-// Unnecessary assignment of a value
+// 不需要赋值
 #pragma warning disable IDE0059
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter06.Listing06_08;

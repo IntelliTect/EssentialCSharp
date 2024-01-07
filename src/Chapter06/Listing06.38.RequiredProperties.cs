@@ -50,7 +50,7 @@ public class Program
     public static void Main()
     {
         #region EXCLUDE
-        #pragma warning disable IDE0059 // Unnecessary assignment of a value
+        #pragma warning disable IDE0059 // 不需要赋值
         #endregion EXCLUDE
         Book book = new()
         {
@@ -58,7 +58,7 @@ public class Program
             Title = "阿罗有支彩色笔"
         };
         #region EXCLUDE
-        #pragma warning restore IDE0059 // Unnecessary assignment of a value
+        #pragma warning restore IDE0059 // 不需要赋值
         #endregion EXCLUDE
     }
 }

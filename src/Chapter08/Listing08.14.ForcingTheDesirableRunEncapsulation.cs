@@ -4,12 +4,12 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_14;
 #region INCLUDE
 public interface IWorkflowActivity
 {
-    // Private and, therefore, not virtual
+    // 私有，因此非虚
     private static void Start() =>
         Console.WriteLine(
             "IWorkflowActivity.Start()...");
 
-    // Sealed to prevent overriding.
+    // 密封以防止重写
     sealed void Run()
     {
         try
@@ -25,7 +25,7 @@ public interface IWorkflowActivity
 
     protected void InternalRun();
 
-    // Private and, therefore, not virtual
+    // 私有，因此非虚
     private static void Stop() =>
         Console.WriteLine(
             "IWorkflowActivity.Stop()...");
@@ -37,8 +37,7 @@ public interface IExecuteProcessActivity : IWorkflowActivity
         Console.WriteLine(
             "IExecuteProcessActivity.RedirectStandardInOut()...");
 
-    // Sealed not allowed when overriding.
-    /* sealed */
+    // 密封的不允许重写
     void IWorkflowActivity.InternalRun()
     {
         RedirectStandardInOut();
@@ -70,15 +69,13 @@ public class ExecuteProcessActivity : IExecuteProcessActivity
     public static void Run()
     {
         ExecuteProcessActivity activity = new("dotnet");
-        // Protected members cannot be invoked
-        // by the implementing class even when
-        //  implemented in the class.
+        // 受保护成员不可由实现类调用，
+        // 即使该成员是在类中实现的。
         // ((IWorkflowActivity)this).InternalRun();
         //  activity.RedirectStandardInOut();
         //  activity.ExecuteProcess();
         Console.WriteLine(
-            @$"Executing non-polymorphic Run() with process '{
-                activity.ExecutableName}'.");
+            @$"正在用进程'{activity.ExecutableName}'执行非多态性的Run()。");
     }
 }
 
@@ -89,9 +86,9 @@ public class Program
         ExecuteProcessActivity activity = new("dotnet");
 
         Console.WriteLine(
-            "Invoking ((IExecuteProcessActivity)activity).Run()...");
-        // Output:
-        // Invoking ((IExecuteProcessActivity)activity).Run()...
+            "正在调用((IExecuteProcessActivity)activity).Run()...");
+        // 输出:
+        // 正在调用((IExecuteProcessActivity)activity).Run()...
         // IWorkflowActivity.Start()...
         // ExecuteProcessActivity.RedirectStandardInOut()...
         // ExecuteProcessActivity.IExecuteProcessActivity.
@@ -100,12 +97,12 @@ public class Program
         // IWorkflowActivity.Stop()..
         ((IExecuteProcessActivity)activity).Run();
 
-        // Output:
-        // Invoking activity.Run()...
-        // Executing non-polymorphic Run() with process 'dotnet'.
+        // 输出:
+        // 正在调用activity.Run()...
+        // 正在用进程'dotnet'执行非多态性的Run()。
         Console.WriteLine();
         Console.WriteLine(
-            "Invoking activity.Run()...");
+            "正在调用activity.Run()...");
         ExecuteProcessActivity.Run();
     }
 }

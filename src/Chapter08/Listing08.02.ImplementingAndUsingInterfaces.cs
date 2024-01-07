@@ -5,7 +5,7 @@ using System;
 #region INCLUDE
 public interface IListable
 {
-    // Return the value of each cell in the row
+    // 返回一行中每个单元格的值
     #region HIGHLIGHT
     string?[] CellValues { get; }
     #endregion HIGHLIGHT
@@ -147,8 +147,7 @@ public class Program
               "333-345-6789")
         };
 
-        // Classes are cast implicitly convertible to
-        // their supported interfaces
+        // 类可以隐式转型为其支持的接口
         ConsoleListControl.List(Contact.Headers, contacts);
 
         Console.WriteLine();
@@ -185,8 +184,8 @@ public class ConsoleListControl
         }
     }
 
-    /// <summary>Displays the column headers</summary>
-    /// <returns>Returns an array of column widths</returns>
+    /// <summary>显示列标题</summary>
+    /// <returns>返回由列宽构成的一个数组</returns>
     private static int[] DisplayHeaders(string[] headers)
     {
         #region EXCLUDE
@@ -209,7 +208,7 @@ public class ConsoleListControl
         {
             throw new ArgumentOutOfRangeException(
                 $"{ nameof(columnWidths) },{ nameof(values) }",
-                "The number of column widths must match the number of values to print");
+                "列宽值的数量必须与要打印的值的数量匹配");
         }
 
         for(int index = 0; index < values.Length; index++)

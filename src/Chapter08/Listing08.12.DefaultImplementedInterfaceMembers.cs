@@ -34,8 +34,7 @@ public class Program
               "333-345-6789")
         };
 
-        // Classes are cast implicitly to
-        // their supported interfaces
+        // 类隐式转型为它们支持的接口
         ConsoleListControl.List(Contact.Headers, contacts);
 
         Console.WriteLine();
@@ -58,7 +57,7 @@ public class Program
 #region INCLUDE
 public interface IListable
 {
-    // Return the value of each cell in the row
+    // 返回一行中每个单元格的值
     string?[] CellValues
     {
         get;
@@ -71,8 +70,8 @@ public interface IListable
     #endregion HIGHLIGHT
         {
             var result = new ConsoleColor[CellValues.Length];
-            // Using generic Array method to populate array
-            // (see Chapter 12)
+            // 使用泛型Array方法来填充数组
+            // (参见第12章)
             Array.Fill(result, DefaultColumnColor);
             return result;
         }
@@ -128,7 +127,7 @@ public class Contact : PdaItem, IListable
         }
     }
     #region HIGHLIGHT
-    // *** No CellColors implementation *** //
+    // *** 未提供CellColors的实现 *** //
     #endregion HIGHLIGHT
     #endregion IListable
 
@@ -223,8 +222,8 @@ public class ConsoleListControl
         }
     }
 
-    /// <summary>Displays the column headers</summary>
-    /// <returns>Returns an array of column widths</returns>
+    /// <summary>显示列标题</summary>
+    /// <returns>返回由列宽构成的一个数组</returns>
     private static int[] DisplayHeaders(string[] headers)
     {
         var columnWidths = new int[headers.Length];
@@ -245,7 +244,7 @@ public class ConsoleListControl
         {
             throw new ArgumentOutOfRangeException(
                 $"{ nameof(columnWidths) },{ nameof(item) }.{nameof(item.CellColors) }",
-                "The number of column widths must match the number of values to print");
+                "列宽值的数量必须与要打印的值的数量匹配");
         }
 
         // Exception handling excluded for elucidation

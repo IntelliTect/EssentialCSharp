@@ -1,5 +1,5 @@
-﻿// Justification: Only a partial implementation provided for elucidation purposes.
-#pragma warning disable IDE0059 // Unnecessary assignment of a value
+﻿// // 说明：出于对当前主题进行解释的目的，只提供部分实现
+#pragma warning disable IDE0059 // 不需要赋值
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_04;
 
@@ -16,13 +16,12 @@ public class Program
 
         // ...
 
-        #if COMPILEERROR // EXCLUDE
-        // ERROR:  Unable to call .CellValues directly
-        //         on a contact
+#if COMPILEERROR // EXCLUDE
+        // 错误: 不能在contact上直接调用CellValues
         values = contact.CellValues;
-        #endif // COMPILEERROR // EXCLUDE
+#endif // COMPILEERROR // EXCLUDE
 
-        // First cast to IListable
+        // 应首先转型为IListable
         #region HIGHLIGHT
         values = ((IListable)contact).CellValues;
         #endregion HIGHLIGHT

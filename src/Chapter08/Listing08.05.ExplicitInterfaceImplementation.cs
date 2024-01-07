@@ -1,5 +1,5 @@
-// Justification: Only a partial implementation provided for elucidation purposes.
-#pragma warning disable IDE0059 // Unnecessary assignment of a value
+// // 说明：出于对当前主题进行解释的目的，只提供部分实现
+#pragma warning disable IDE0059 // 不需要赋值
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter08.Listing08_05;
 
@@ -15,11 +15,10 @@ public class Program
 
         // ...
 
-        // ERROR:  Unable to call .CellValues directly
-        //         on a contact
+        // 错误: 不能在contact上直接调用CellValues
         // values = contact.CellValues;
 
-        // First cast to IListable
+        // 应首先转型为IListable
         values = ((IListable)contact).CellValues;
         // ...
 
@@ -37,15 +36,15 @@ public class Contact : PdaItem, IListable, IComparable
     {
     }
 
-    #region IComparable Members
+    #region IComparable成员
     /// <summary>
     /// 
     /// </summary>
     /// <param name="obj"></param>
     /// <returns>
-    /// Less than zero:      This instance is less than obj
-    /// Zero                 This instance is equal to obj
-    /// Greater than zero    This instance is greater than obj
+    /// 小于零    该实例小于obj
+    /// 零        该实例等于obj 
+    /// 大于零    该实例大于obj 
     /// </returns>
     public int CompareTo(object? obj) => obj switch
     {
@@ -59,7 +58,7 @@ public class Contact : PdaItem, IListable, IComparable
                 FirstName.CompareTo(firstName),
         Contact _ => 0,
         _ => throw new ArgumentException(
-            $"The parameter is not a value of type { nameof(Contact) }",
+            $"参数不是{nameof(Contact)}类型的一个值",
             nameof(obj))
     };
     #endregion

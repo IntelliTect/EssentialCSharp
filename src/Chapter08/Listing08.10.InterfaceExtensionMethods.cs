@@ -17,8 +17,7 @@ public class Program
         };
 
         #region HIGHLIGHT
-        // Classes are implicitly converted to
-        // their supported interfaces
+        // 类隐式转换为它们支持的接口
         contacts.List(Contact.Headers);
         #endregion HIGHLIGHT
 
@@ -59,8 +58,8 @@ public static class Listable
         }
     }
     #region EXCLUDE
-    /// <summary>Displays the column headers</summary>
-    /// <returns>Returns an array of column widths</returns>
+    /// <summary>显示列标题</summary>
+    /// <returns>返回由列宽构成的一个数组</returns>
     private static int[] DisplayHeaders(string[] headers)
     {
         var columnWidths = new int[headers.Length];
@@ -80,7 +79,7 @@ public static class Listable
         {
             throw new ArgumentOutOfRangeException(
                 $"{ nameof(columnWidths) },{ nameof(values) }",
-                "The number of column widths must match the number of values to print");
+                "列宽值的数量必须与要打印的值的数量匹配");
         }
 
         for(int index = 0; index < values.Length; index++)

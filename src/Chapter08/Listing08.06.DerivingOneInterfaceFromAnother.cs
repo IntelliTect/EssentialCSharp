@@ -13,18 +13,18 @@ interface ISettingsProvider : IReadableSettingsProvider
 
 public class FileSettingsProvider : ISettingsProvider
 {
-    #region ISettingsProvider Members
+    #region ISettingsProvider成员
     public void SetSetting(string name, string value)
     {
         // ...
     }
     #endregion
 
-    #region IReadableSettingsProvider Members
+    #region IReadableSettingsProvider成员
     public string GetSetting(string name, string defaultValue)
     {
         #region EXCLUDE
-        return name + defaultValue; // just returning this for the example
+        return name + defaultValue; // 随便返回的，仅供演示
         #endregion EXCLUDE
     }
     #endregion

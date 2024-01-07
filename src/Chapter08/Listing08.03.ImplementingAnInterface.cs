@@ -22,9 +22,9 @@ public class Contact : PdaItem, IListable, IComparable
     /// </summary>
     /// <param name="obj"></param>
     /// <returns>
-    /// Less than zero:      This instance is less than obj
-    /// Zero                 This instance is equal to obj 
-    /// Greater than zero    This instance is greater than obj 
+    /// 小于零    该实例小于obj
+    /// 零        该实例等于obj 
+    /// 大于零    该实例大于obj 
     /// </returns>
     public int CompareTo(object? obj) => obj switch
     {
@@ -38,7 +38,7 @@ public class Contact : PdaItem, IListable, IComparable
                 FirstName.CompareTo(firstName),
         Contact _ => 0,
         _ => throw new ArgumentException(
-            $"The parameter is not a value of type { nameof(Contact) }",
+            $"参数不是{ nameof(Contact) }类型的一个值",
             nameof(obj))
     };
     #endregion
@@ -81,8 +81,7 @@ public class Contact : PdaItem, IListable, IComparable
             }
             else
             {
-                // Throw an exception if the full 
-                // name was not assigned
+                // 如果未赋全名，就抛出一个异常
                 throw new System.ArgumentException(
                     $"所赋的值'{value}'无效。");
             }
