@@ -6,6 +6,9 @@
 
 ## 中文版主页请访问[周靖的博客](https://bookzhou.com)
 ## 英文版在线手稿请访问[EssentialCSharp.com](https://essentialcsharp.com)
+## 在英文版（print edition）中发现了大量疏漏😮‍💨，详情会在完成本书的中文版翻译后放出。
+## 显然， 中文版会予以全部纠正。
+
 
 ## 要求
 
