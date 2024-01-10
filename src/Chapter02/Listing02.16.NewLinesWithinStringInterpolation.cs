@@ -14,7 +14,7 @@ public class Program
         lastName = Console.ReadLine();
 
         #region INCLUDE
-        Console.WriteLine($@"Your full name is: {firstName} {lastName}");
+        Console.WriteLine($"Your full name is: {firstName} {lastName}");
         #endregion INCLUDE
     }
 }
