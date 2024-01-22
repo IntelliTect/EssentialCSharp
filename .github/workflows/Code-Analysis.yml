@@ -19,7 +19,7 @@ jobs:
         with:
             global-json-file: global.json
       - name: Set up dependency caching for faster builds
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         id: nuget-cache
         with:
             path: |
