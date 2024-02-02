@@ -42,6 +42,10 @@ public class PeriodsOfTheDayTests
     [TestMethod]
     public void GetPeriodOfDay_InvalidHour_ReturnsInvalid()
     {
-        Assert.ThrowsException<ArgumentOutOfRangeException>(() => PeriodsOfTheDay.GetPeriodOfDay(25));
+        int invalidHour = 25;
+
+        var exceptionThrown = Assert.ThrowsException<ArgumentOutOfRangeException>(() =>
+        PeriodsOfTheDay.GetPeriodOfDay(invalidHour));
+        Assert.IsTrue(exceptionThrown.Message.StartsWith($"The hour of the day specified ({invalidHour}) is invalid."));
     }
 }
