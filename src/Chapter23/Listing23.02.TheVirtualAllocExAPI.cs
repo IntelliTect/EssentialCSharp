@@ -17,6 +17,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter23.Listing23_02
                                 // is NULL, the function rounds dwSize
                                 // up to the next page boundary.
         DWORD flAllocationType, // The type of memory allocation
-        DWORD flProtect);       // The type of memory allocation
+        DWORD flProtect);       // The type of memory protection
     #endregion INCLUDE
 }
