@@ -18,3 +18,4 @@ Zhou Jing | 3  | 102 | Change Listing 2.18 to " the Working with Strings listing
 Zhou Jing | 3 | 102 | Changed 'restrictive' to 'less restrictive' in "In each of these cases, the variable declaration is restrictive because the variable may be assigned."
 Zhou Jing | 23 | 1077 | Change "Point Declaration" to "Pointer Declaration" in mindmap
 Zhou Jing | 22 | 1074 | Change "Chapter 19" to "Chapter 20" in "we pointed out in Chapter 19"
+Zhou Jing | 3  | 114 | Replace `second` with `third` in "// Retrieve third item from the end (Python)"

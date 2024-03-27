@@ -44,7 +44,7 @@ public class ArrayHighlights
         string language = languages[4];
         // Write “TypeScript”
         Console.WriteLine(language);
-        // Retrieve second item from the end (Python)
+        // Retrieve third item from the end (Python)
         language = languages[^3];
         // Write “Python”
         Console.WriteLine(language);
