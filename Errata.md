@@ -3,8 +3,8 @@
 ## Essential C# 12.0
 
 by Mark Michaelis
-ISBN-13: 
-IISBN-10: 
+ISBN-13: 978-0138219512
+IISBN-10: 0138219516
 Copyright © 2023 Pearson Education, Inc.
 First printing, November 2023
 
@@ -18,3 +18,4 @@ Zhou Jing | 3  | 102 | Change Listing 2.18 to " the Working with Strings listing
 Zhou Jing | 3 | 102 | Changed 'restrictive' to 'less restrictive' in "In each of these cases, the variable declaration is restrictive because the variable may be assigned."
 Zhou Jing | 23 | 1077 | Change "Point Declaration" to "Pointer Declaration" in mindmap
 Zhou Jing | 22 | 1074 | Change "Chapter 19" to "Chapter 20" in "we pointed out in Chapter 19"
+Zhou Jing | 9 | 541 | Change output 9.4 to "ReadOnly, Hidden = 3"
