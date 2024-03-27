@@ -6,18 +6,14 @@ public class Program
     {
         #region INCLUDE
         // ERROR: Each dimension must be consistently sized
-        #region EXCLUDE
-        /*
-        #endregion EXLUDE
+        #if COMPILEERROR // EXCLUDE
         int[,] cells = {
             {1, 0, 2, 0},
             {1, 2, 0},
             {1, 2},
             {1}
         };
-        #region EXCLUDE
-        */
-        #endregion EXCLUDE
+        #endif // COMPILEERROR // EXCLUDE
         #endregion INCLUDE
     }
 }
