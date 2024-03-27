@@ -4,18 +4,18 @@
     <CentralPackageTransitivePinningEnabled>false</CentralPackageTransitivePinningEnabled>
   </PropertyGroup>
   <ItemGroup>
-    <PackageVersion Include="coverlet.collector" Version="6.0.0" />
-    <PackageVersion Include="coverlet.msbuild" Version="6.0.0" />
+    <PackageVersion Include="coverlet.collector" Version="6.0.2" />
+    <PackageVersion Include="coverlet.msbuild" Version="6.0.2" />
     <PackageVersion Include="IntelliTect.Multitool" Version="1.5.0" />
     <PackageVersion Include="IntelliTect.TestTools.Console" Version="1.0.0" />
-    <PackageVersion Include="Microsoft.CodeAnalysis" Version="4.7.0" />
-    <PackageVersion Include="Microsoft.CodeAnalysis.CSharp.Scripting" Version="4.7.0" />
+    <PackageVersion Include="Microsoft.CodeAnalysis" Version="4.9.2" />
+    <PackageVersion Include="Microsoft.CodeAnalysis.CSharp.Scripting" Version="4.9.2" />
     <PackageVersion Include="Microsoft.CodeAnalysis.CSharp.SourceGenerators.Testing.MSTest" Version="1.1.1" />
     <PackageVersion Include="Microsoft.Extensions.Logging.Console" Version="8.0.0" />
     <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
-    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
-    <PackageVersion Include="MSTest.TestAdapter" Version="3.2.0" />
-    <PackageVersion Include="MSTest.TestFramework" Version="3.2.0" />
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.9.0" />
+    <PackageVersion Include="MSTest.TestAdapter" Version="3.2.2" />
+    <PackageVersion Include="MSTest.TestFramework" Version="3.2.2" />
     <PackageVersion Include="System.Linq.Async" Version="6.0.1" />
     <PackageVersion Include="System.Reflection" Version="4.3.0" />
   </ItemGroup>
