@@ -17,3 +17,4 @@ Zhou Jing | 3  | 110 | Replace `System.Value<T1>` with `System.ValueTuple<T1>` i
 Zhou Jing | 3  | 102 | Change Listing 2.18 to " the Working with Strings listing in Chapter 2 (Listing 2.24)" in "This listing differs from Listing 2.18 in two ways"
 Zhou Jing | 3 | 102 | Changed 'restrictive' to 'less restrictive' in "In each of these cases, the variable declaration is restrictive because the variable may be assigned."
 Zhou Jing | 23 | 1077 | Change "Point Declaration" to "Pointer Declaration" in mindmap
+Zhou Jing | 22 | 1074 | Change "Chapter 19" to "Chapter 20" in "we pointed out in Chapter 19"
