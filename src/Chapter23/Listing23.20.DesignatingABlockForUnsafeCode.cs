@@ -52,7 +52,7 @@ public class Program
     }
 }
 
-[System.Runtime.CompilerServices.InlineArrayAttribute(Length)]
+[System.Runtime.CompilerServices.InlineArray(Length)]
 public struct Buffer
 {
     public const int Length = 10;
