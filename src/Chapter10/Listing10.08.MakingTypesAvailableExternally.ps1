@@ -13,8 +13,10 @@ if('traceLevel' -notin $PSBoundParameters.Keys) {
 "@ 
 }
 
-[string]$LibraryProjectName = 'GeoCoordinates.testing'
-[string]$ConsoleProgramProjectName = 'GeoCoordinateProgram.testing'
+[string]$LibraryProjectName = 'GeoCoordinates'
+[string]$ConsoleProgramProjectName = 'GeoCoordinate.testing'
+# Path to your Common.props file
+[string]$TargetFrameworkPropsFile = "$PSScriptRoot/../../Common.props"
 
 [xml]$directoryBuildPropsXml = ([xml](Get-Content "$PSScriptRoot/../../Directory.Build.props"))
 [string]$langVersion = $directoryBuildPropsXml.Project.PropertyGroup.LangVersion
@@ -38,19 +40,33 @@ try {
     }
 
     # Specifying langVersion as dotnet new appears to ignore the Directory.Build.props file.
-    dotnet new Console --langVersion $langVersion --output "$ConsoleProgramProjectName"
+    dotnet new console --langVersion $langVersion --output "$ConsoleProgramProjectName"
     $projectFilePath = "$PSScriptRoot/$ConsoleProgramProjectName/$($ConsoleProgramProjectName).csproj"
     $updatedContent =(Get-Content $projectFilePath) | ? { $_ -notlike '*TargetFramework*'} 
     Set-Content -Value $updatedContent -Path $projectFilePath
 
-    dotnet new ClassLib  --langVersion $langVersion --output "$LibraryProjectName"
+    # Add reference to Common.props
+    [xml]$projectFileContent = Get-Content -Path $projectFilePath
+    $importElement = $projectFileContent.CreateElement("Import", $projectFileContent.DocumentElement.NamespaceURI)
+    $importElement.SetAttribute("Project", $TargetFrameworkPropsFile)
+    $projectFileContent.Project.InsertAfter($importElement, $projectFileContent.Project.FirstChild)
+    $projectFileContent.Save($projectFilePath)
+
+    dotnet new classlib  --langVersion $langVersion --output "$LibraryProjectName"
     $projectFilePath = "$PSScriptRoot/$LibraryProjectName/$($LibraryProjectName).csproj"
     $updatedContent =(Get-Content $projectFilePath) | ? { $_ -notlike '*TargetFramework*'} 
     Set-Content -Value $updatedContent -Path $projectFilePath
     Remove-Item "$PSScriptRoot/$LibraryProjectName/class1.cs"
-
+    
+    # Add reference to Common.props
+    [xml]$projectFileContent = Get-Content -Path $projectFilePath
+    $importElement = $projectFileContent.CreateElement("Import", $projectFileContent.DocumentElement.NamespaceURI)
+    $importElement.SetAttribute("Project", $TargetFrameworkPropsFile)
+    $projectFileContent.Project.InsertAfter($importElement, $projectFileContent.Project.FirstChild)
+    $projectFileContent.Save($projectFilePath)
+    
     #New-Item -ItemType Directory "$PSScriptRoot/$LibraryProjectName"
-    $codeListing = @('namespace GeoCoordinates') + (
+    $codeListing = @('namespace GeoCoordinates;') + (
         Get-Content $SutCSFile | 
             Select-Object -Skip 1)
     $codeListing > "$PSScriptRoot/$LibraryProjectName/GeoTypes.cs"
@@ -58,8 +74,7 @@ try {
     dotnet add "$PSScriptRoot/$ConsoleProgramProjectName/$ConsoleProgramProjectName.csproj" `
         reference "$PSScriptRoot/$LibraryProjectName/$LibraryProjectName.csproj"
     $codeListing = @"
-namespace $ConsoleProgramProjectName
-{
+namespace $ConsoleProgramProjectName;
     using $LibraryProjectName;
     class HelloWorld
     {
@@ -72,13 +87,21 @@ namespace $ConsoleProgramProjectName
                 );
         }
     }
-}
 "@ 
     $codeListing > "$PSScriptRoot/$ConsoleProgramProjectName/Program.cs"
     Get-Content "$PSScriptRoot/$ConsoleProgramProjectName/Program.cs" # Display the listing
-    
-    dotnet build "$PSScriptRoot/$ConsoleProgramProjectName/$ConsoleProgramProjectName.csproj"
-    dotnet run --project "$PSScriptRoot/$ConsoleProgramProjectName/$ConsoleProgramProjectName.csproj" --no-build
+
+# Load the Common.props file as an XML document
+[xml]$propsFile = Get-Content -Path $TargetFrameworkPropsFile
+
+# Extract the TargetFrameworks element value
+$targetFrameworks = $propsFile.Project.PropertyGroup.TargetFrameworks -split ';'
+
+# Now you can iterate over the target frameworks
+foreach ($framework in $targetFrameworks) {
+    dotnet build "$PSScriptRoot/$ConsoleProgramProjectName/$ConsoleProgramProjectName.csproj" --framework $framework
+    dotnet run --project "$PSScriptRoot/$ConsoleProgramProjectName/$ConsoleProgramProjectName.csproj" --no-build --framework $framework
+}
 
 }
 finally {
