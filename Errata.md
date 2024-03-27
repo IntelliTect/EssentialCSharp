@@ -19,3 +19,4 @@ Zhou Jing | 3 | 102 | Changed 'restrictive' to 'less restrictive' in "In each of
 Zhou Jing | 23 | 1077 | Change "Point Declaration" to "Pointer Declaration" in mindmap
 Zhou Jing | 22 | 1074 | Change "Chapter 19" to "Chapter 20" in "we pointed out in Chapter 19"
 Zhou Jing | 9 | 541 | Change output 9.4 to "ReadOnly, Hidden = 3"
+Zhou Jing | 18 | 908 | Change comment in Listing 18.21 to "Restrict the attribute to properties and fields" from "Restrict the attribute to properties and methods"
