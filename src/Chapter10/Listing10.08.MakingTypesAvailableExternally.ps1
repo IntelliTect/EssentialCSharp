@@ -15,12 +15,12 @@ if('traceLevel' -notin $PSBoundParameters.Keys) {
 
 [string]$LibraryProjectName = 'GeoCoordinates'
 [string]$ConsoleProgramProjectName = 'GeoCoordinate.testing'
-# Path to your Common.props file
-[string]$TargetFrameworkPropsFile = "$PSScriptRoot/../../Common.props"
+
+# Path to the file containing the TargetFrameworks element
+[string]$TargetFrameworksPropsFile = "$PSScriptRoot/../../Common.props"
 
 [xml]$directoryBuildPropsXml = ([xml](Get-Content "$PSScriptRoot/../../Directory.Build.props"))
 [string]$langVersion = $directoryBuildPropsXml.Project.PropertyGroup.LangVersion
-# [string[]]$frameworks = $directoryBuildPropsXml.Project.PropertyGroup.TargetFrameworks -split ';'
 [string]$SutCSFile = split-path -leaf $MyInvocation.MyCommand.Definition
 [string]$SutCSFile = "$PSScriptRoot/$([IO.Path]::GetFileNameWithoutExtension($SutCSFile)).cs"
 if(-not (Test-Path $SutCSFile)) { throw "Unable to find the file with the type to export ('$SutCSFile')"}
@@ -48,7 +48,7 @@ try {
     # Add reference to Common.props
     [xml]$projectFileContent = Get-Content -Path $projectFilePath
     $importElement = $projectFileContent.CreateElement("Import", $projectFileContent.DocumentElement.NamespaceURI)
-    $importElement.SetAttribute("Project", $TargetFrameworkPropsFile)
+    $importElement.SetAttribute("Project", $TargetFrameworksPropsFile)
     $projectFileContent.Project.InsertAfter($importElement, $projectFileContent.Project.FirstChild)
     $projectFileContent.Save($projectFilePath)
 
@@ -61,7 +61,7 @@ try {
     # Add reference to Common.props
     [xml]$projectFileContent = Get-Content -Path $projectFilePath
     $importElement = $projectFileContent.CreateElement("Import", $projectFileContent.DocumentElement.NamespaceURI)
-    $importElement.SetAttribute("Project", $TargetFrameworkPropsFile)
+    $importElement.SetAttribute("Project", $TargetFrameworksPropsFile)
     $projectFileContent.Project.InsertAfter($importElement, $projectFileContent.Project.FirstChild)
     $projectFileContent.Save($projectFilePath)
     
@@ -91,13 +91,13 @@ namespace $ConsoleProgramProjectName;
     $codeListing > "$PSScriptRoot/$ConsoleProgramProjectName/Program.cs"
     Get-Content "$PSScriptRoot/$ConsoleProgramProjectName/Program.cs" # Display the listing
 
-# Load the Common.props file as an XML document
-[xml]$propsFile = Get-Content -Path $TargetFrameworkPropsFile
+# Load the file containing the TargetFrameworks element as an XML document
+[xml]$propsFile = Get-Content -Path $TargetFrameworksPropsFile
 
 # Extract the TargetFrameworks element value
 $targetFrameworks = $propsFile.Project.PropertyGroup.TargetFrameworks -split ';'
 
-# Now you can iterate over the target frameworks
+# Iterate over the target frameworks and execute commands for each
 foreach ($framework in $targetFrameworks) {
     dotnet build "$PSScriptRoot/$ConsoleProgramProjectName/$ConsoleProgramProjectName.csproj" --framework $framework
     dotnet run --project "$PSScriptRoot/$ConsoleProgramProjectName/$ConsoleProgramProjectName.csproj" --no-build --framework $framework
