@@ -9,7 +9,7 @@
     <PackageVersion Include="IntelliTect.Multitool" Version="1.5.0" />
     <PackageVersion Include="IntelliTect.TestTools.Console" Version="1.0.0" />
     <PackageVersion Include="Microsoft.CodeAnalysis" Version="4.7.0" />
-    <PackageVersion Include="Microsoft.CodeAnalysis.CSharp.Scripting" Version="4.7.0" />
+    <PackageVersion Include="Microsoft.CodeAnalysis.CSharp.Scripting" Version="4.9.2" />
     <PackageVersion Include="Microsoft.CodeAnalysis.CSharp.SourceGenerators.Testing.MSTest" Version="1.1.1" />
     <PackageVersion Include="Microsoft.Extensions.Logging.Console" Version="8.0.0" />
     <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
