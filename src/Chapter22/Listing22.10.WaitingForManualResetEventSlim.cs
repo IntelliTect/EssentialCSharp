@@ -42,10 +42,10 @@ public class Program
             // Block until DoWork() has started
             _DoWorkSignaledResetEvent.Wait();
             Console.WriteLine(
-                " Waiting while thread executes...");
+                "Waiting while task executes...");
             _MainSignaledResetEvent.Set();
             task.Wait();
-            Console.WriteLine("Thread completed");
+            Console.WriteLine("Task completed");
             Console.WriteLine(
                 "Application shutting down....");
         }
