@@ -26,3 +26,4 @@ Zhou Jing | 21 | 1028 | Change "Press any key to exit." to "Press ENTER to exit.
 Zhou Jing | 20 | 1018 | Change "EncryptFilesAsunc" to "EncryptFilesAsync"
 Zhou Jing | 20 | 1019 | Change "IAsycnEnumerable" to "IAsyncEnumerable"
 Zhou Jing | 18 | 918 | Change "For example, in LISTING 18.28 the expression () => throw new DivideByZeroException() is for the testAction parameter." from "For example, in LISTING 18.27 the expression () => throw new Exception() is for the value of testAction."
+Zhou Jing | 19 | 946 | Change "The worker thread writes plus signs to the console, while the main thread writes hyphens." to "The worker thread writes hyphens to the console, while the main thread writes plus signs."
