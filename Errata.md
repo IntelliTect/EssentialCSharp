@@ -20,3 +20,4 @@ Zhou Jing | 23 | 1077 | Change "Point Declaration" to "Pointer Declaration" in m
 Zhou Jing | 22 | 1074 | Change "Chapter 19" to "Chapter 20" in "we pointed out in Chapter 19"
 Zhou Jing | 9 | 541 | Change output 9.4 to "ReadOnly, Hidden = 3"
 Zhou Jing | 22 | 1063 | Change sentence about the WaitOne() overloads to be "The WaitOne() methods include several overloads: void WaitOne() for an indefinite wait, bool WaitOne(int milliseconds) for a wait timed in milliseconds, and bool WaitOne(TimeSpan timeout) for a TimeSpan duration wait."
+Zhou Jing | 22 | 1058 | Changed code snippet from `OnTemperature?.Invoke` to `OnTemperatureChanged?.Invoke`
