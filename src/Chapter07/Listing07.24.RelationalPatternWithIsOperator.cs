@@ -17,7 +17,7 @@ public class PeriodsOfTheDay
             < 18 => "Afternoon",
             < 24 => "Evening",
             int hour => throw new ArgumentOutOfRangeException(nameof(hourOfTheDay), 
-                $"The hour of the day specified is invalid.")
+                $"The hour of the day specified ({hour}) is invalid.")
         };
     #endregion INCLUDE
 }
