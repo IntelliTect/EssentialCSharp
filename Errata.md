@@ -23,3 +23,6 @@ Zhou Jing | 22 | 1063 | Change sentence about the WaitOne() overloads to be "The
 Zhou Jing | 22 | 1058 | Changed code snippet from `OnTemperature?.Invoke` to `OnTemperatureChanged?.Invoke`
 Zhou Jing | 22 | 1056 | Changed sentence in last paragraph before Listing 22.6 to "method provides a built-in method for a synchronous operation that updates the first parameter if the value(_Data) is equal to the third parameter with the second parameter."
 Zhou Jing | 21 | 1028 | Change "Press any key to exit." to "Press ENTER to exit."
+Zhou Jing | 20 | 1018 | Change "EncryptFilesAsunc" to "EncryptFilesAsync"
+Zhou Jing | 20 | 1019 | Change "IAsycnEnumerable" to "IAsyncEnumerable"
+Zhou Jing | 18 | 918 | Change "For example, in LISTING 18.28 the expression () => throw new DivideByZeroException() is for the testAction parameter." from "For example, in LISTING 18.27 the expression () => throw new Exception() is for the value of testAction."
