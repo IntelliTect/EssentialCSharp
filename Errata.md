@@ -19,3 +19,4 @@ Zhou Jing | 3 | 102 | Changed 'restrictive' to 'less restrictive' in "In each of
 Zhou Jing | 23 | 1077 | Change "Point Declaration" to "Pointer Declaration" in mindmap
 Zhou Jing | 22 | 1074 | Change "Chapter 19" to "Chapter 20" in "we pointed out in Chapter 19"
 Zhou Jing | 9 | 541 | Change output 9.4 to "ReadOnly, Hidden = 3"
+Jinhang He | 5 | 255 | Edit listing 5.20 to used `image[index]` for the second print statement

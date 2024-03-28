@@ -8,12 +8,9 @@ public class ProgramTests
     public void Main_InputInigoMontoya_WriteFullName()
     {
         string expected = @"image\[*\]=Red
-image\[*\]=Black";
+image\[*\]=Yellow";
 
-        IntelliTect.TestTools.Console.ConsoleAssert.ExpectLike(expected,
-        () =>
-        {
-            Program.Main();
-        });
+        IntelliTect.TestTools.Console.ConsoleAssert.ExpectLike(expected, 
+            () => Program.Main());
     }
 }

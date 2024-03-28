@@ -32,11 +32,11 @@ public class Program
         #region HIGHLIGHT
         // Obtain a reference to the first red pixel
         ref byte redPixel = ref FindFirstRedEyePixel(image);
-        // Update it to be Black
-        redPixel = (byte)ConsoleColor.Black;
+        // Update it to be Yellow
+        redPixel = (byte)ConsoleColor.Yellow;
         #endregion HIGHLIGHT
         Console.WriteLine(
-            $"image[{index}]={(ConsoleColor)image[redPixel]}");
+            $"image[{index}]={(ConsoleColor)image[index]}");
     }
     #endregion INCLUDE
 }
