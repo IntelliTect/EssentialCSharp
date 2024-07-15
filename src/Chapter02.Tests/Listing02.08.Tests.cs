@@ -5,7 +5,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_08.Tests;
 public class ProgramTests
 {
     [TestMethod]
-    public void Main_WriteDecimalAsHexidecimalUsingFormatSpecifier()
+    public void Main_WriteDecimalAsHexadecimalUsingFormatSpecifier()
     {
         const string expected = "0x2A";
 
