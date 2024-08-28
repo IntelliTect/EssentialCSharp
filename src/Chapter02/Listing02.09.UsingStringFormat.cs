@@ -21,6 +21,7 @@ public class Program
         string toStringCurrencyText = number.ToString("C");
         Console.WriteLine($"{currencyText == toStringCurrencyText}: {currencyText} == {toStringCurrencyText}");
 
+        // el-GR represents the Greek locale code
         toStringCurrencyText = number.ToString("C", CultureInfo.GetCultureInfo("el-GR"));
         Console.WriteLine(toStringCurrencyText);
 
