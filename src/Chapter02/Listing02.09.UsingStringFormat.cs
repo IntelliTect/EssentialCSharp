@@ -21,7 +21,7 @@ public class Program
         string toStringCurrencyText = number.ToString("C");
         Console.WriteLine($"{currencyText == toStringCurrencyText}: {currencyText} == {toStringCurrencyText}");
 
-        toStringCurrencyText = number.ToString("C", CultureInfo.GetCultureInfo("fr-FR"));
+        toStringCurrencyText = number.ToString("C", CultureInfo.GetCultureInfo("el-GR"));
         Console.WriteLine(toStringCurrencyText);
 
         // ...
