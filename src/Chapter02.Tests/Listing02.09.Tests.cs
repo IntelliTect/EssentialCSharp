@@ -1,3 +1,5 @@
+using System.Globalization;
+
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_09.Tests;
 
 [TestClass]
@@ -6,12 +8,14 @@ public class ProgramTests
     [TestMethod]
     public void Main_WriteBooleanStatements()
     {
-        string currentCultureString = 86540910.21.ToString("C");
+        var number = 86540910.21;
+        string currentCultureString = number.ToString("C");
+        string greekCultureString = number.ToString("C", CultureInfo.GetCultureInfo("el-GR"));
         string expected =
-$@"86540910.21
+$@"{number}
 {currentCultureString}
 True: {currentCultureString} == {currentCultureString}
-86.540.910,21 €";
+{greekCultureString}";
 
         IntelliTect.TestTools.Console.ConsoleAssert.Expect(
                 expected, Program.Main);
