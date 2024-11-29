@@ -1,9 +1,9 @@
-﻿namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_02;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter19.Listing19_02;
 
 #region INCLUDE
 using System;
 using System.Threading.Tasks;
-using AddisonWesley.Michaelis.EssentialCSharp.Shared;
+using AddisonWesley.Michaelis.EssentialCSharp.Shared; // EXCLUDE
 
 public class Program
 {
@@ -17,10 +17,10 @@ public class Program
         #endregion HIGHLIGHT
                 () => PiCalculator.Calculate(100));
 
-        foreach(
+        foreach (
             char busySymbol in Utility.BusySymbols())
         {
-            if(task.IsCompleted)
+            if (task.IsCompleted)
             {
                 Console.Write('\b');
                 break;
@@ -55,15 +55,15 @@ public class Utility
     {
         string busySymbols = @"-\|/-\|/";
         int next = 0;
-        while(true)
+        while (true)
         {
             yield return busySymbols[next];
-            next = next + 1) % busySymbols.Length;
+            next = (next + 1) % busySymbols.Length;
             yield return '\b';
         }
     }
 }
- #region EXCLUDE
+#region EXCLUDE
 */
 #endregion EXCLUDE
 #endregion INCLUDE
