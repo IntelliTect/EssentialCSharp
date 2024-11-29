@@ -3,7 +3,6 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_02;
 #region INCLUDE
 using System;
 using System.IO;
-using System.Net;
 using System.Runtime.ExceptionServices;
 using System.Threading.Tasks;
 
@@ -48,7 +47,6 @@ public static class Program
                         textOccurrenceCount} times at URL '{url}'.");
 
             });
-
         try
         {
             while (!task.Wait(100))

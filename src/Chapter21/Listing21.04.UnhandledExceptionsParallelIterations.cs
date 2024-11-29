@@ -36,7 +36,7 @@ public static class Program
             Console.WriteLine(
                 "ERROR: {0}:",
                 exception.GetType().Name);
-            foreach(Exception item in
+            foreach (Exception item in
             #region HIGHLIGHT
                 exception.InnerExceptions)
             #endregion HIGHLIGHT
@@ -56,8 +56,3 @@ public static class Program
     #endregion EXCLUDE
 }
 #endregion INCLUDE
-
-
-
-
-

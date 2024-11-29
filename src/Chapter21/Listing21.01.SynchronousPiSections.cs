@@ -13,7 +13,7 @@ public class Program
     {
         string pi = "";
         const int iterations = TotalDigits / BatchSize;
-        for(int i = 0; i < iterations; i++)
+        for (int i = 0; i < iterations; i++)
         {
             pi += PiCalculator.Calculate(
                 BatchSize, i * BatchSize);
@@ -41,8 +41,3 @@ public static class PiCalculator
 */
 #endregion EXCLUDE
 #endregion INCLUDE
-
-
-
-
-

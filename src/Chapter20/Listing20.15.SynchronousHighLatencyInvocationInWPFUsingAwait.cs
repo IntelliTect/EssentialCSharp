@@ -18,11 +18,5 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter20.Listing20_15
             StatusLabel.Text = pingReply.Status.ToString();
         }
         #endregion INCLUDE
-
     }
 }
-
-
-
-
-
