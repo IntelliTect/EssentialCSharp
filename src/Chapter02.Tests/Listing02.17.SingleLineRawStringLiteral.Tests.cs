@@ -1,5 +1,5 @@
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_18.Tests;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_17.Tests;
 
 [TestClass]
 public class SingleRawLiteralTests

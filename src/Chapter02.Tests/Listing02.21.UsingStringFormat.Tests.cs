@@ -1,6 +1,6 @@
 using System.Globalization;
 
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_09.Tests;
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_21.Tests;
 
 [TestClass]
 public class ProgramTests
