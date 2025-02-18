@@ -7,7 +7,7 @@ This project contains the source code for the book **Essential C#** by Mark Mich
 ## Checkout the online resource that walks through all code samples in this repository at [EssentialCSharp.com](https://essentialcsharp.com)
 
 ## Requirements
-
+q
 - [.NET](https://www.microsoft.com/net/core) - This project is currently tested against .NET 8.0, 7.0, and 6.0.
 - [Visual Studio](https://visualstudio.microsoft.com/downloads/) - Already contains .NET Core to get up and running. Not to mention, it's a great IDE that makes it easy to get started.
 - [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) - While not required, a good tool to get used to, and easy way to download this code repository quickly. [GitKraken](https://www.gitkraken.com/invite/bX2Nqsqr) is a great GUI for using Git if you prefer not using the command line.
