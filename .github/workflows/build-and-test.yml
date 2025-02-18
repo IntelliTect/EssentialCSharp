@@ -49,7 +49,9 @@ jobs:
               ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
               ${{ runner.os }}-nuget-
       - name: List dotnet versions installed
-        run: dotnet --list-sdks
+        run: |
+          dotnet --list-sdks
+          dotnet --info
       - name: Restore dependencies
         run: dotnet restore
       - name: Build
