@@ -48,6 +48,8 @@ jobs:
             restore-keys: |
               ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
               ${{ runner.os }}-nuget-
+      - name: List dotnet versions installed
+        run: dotnet --list-sdks
       - name: Restore dependencies
         run: dotnet restore
       - name: Build
