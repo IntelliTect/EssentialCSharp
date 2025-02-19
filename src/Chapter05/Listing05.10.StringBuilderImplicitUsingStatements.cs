@@ -16,7 +16,11 @@ public class Program
         name.Append(Console.ReadLine()!.Trim());
 
         Console.WriteLine("Enter your middle initial: ");
-        name.Append( $" { Console.ReadLine()!.Trim('.').Trim() }." );
+        string middleInitial = Console.ReadLine()!.Trim('.').Trim();
+        if (middleInitial != "")
+        {
+            name.Append($" {middleInitial}.");
+        }
 
         Console.WriteLine("Enter your last name: ");
         name.Append($" { Console.ReadLine()!.Trim() }");
