@@ -1,4 +1,4 @@
-﻿using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.Diagnostics;
 using Microsoft.CodeAnalysis.Testing;
@@ -41,11 +41,11 @@ public static class CompilerAssert
         {
             CompilerDiagnostics = CompilerDiagnostics.Warnings,
             ReferenceAssemblies = new ReferenceAssemblies(
-                        $"net{Environment.Version.Major}.{Environment.Version.Minor}",
+                        Environment.Version.Major == 6 ? "net6.0" : $"net{Environment.Version.Major}.{Environment.Version.Minor}",
                         new PackageIdentity(
                             "Microsoft.NETCore.App.Ref",
-                            NetCore.GetNetCoreVersion()),
-                        Path.Combine("ref", $"net{Environment.Version.Major}.{Environment.Version.Minor}"))
+                            Environment.Version.Major == 6 ? "6.0.36" : NetCore.GetNetCoreVersion()),
+                        Path.Combine("ref", Environment.Version.Major == 6 ? "net6.0" : $"net{Environment.Version.Major}.{Environment.Version.Minor}"))
         };
 
         List<string> fileNamesToCompile = new();
