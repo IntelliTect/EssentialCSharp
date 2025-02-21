@@ -3,8 +3,10 @@
 #pragma warning disable SYSLIB1045 // Convert to 'GeneratedRegexAttribute'.
 
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_12;
-
 #region INCLUDE
+/* // EXCLUDE
+namespace EssentialCSharp
+ */ // EXCLUDE
 // The using directive imports all types from the 
 // specified namespace into the entire file
 using System.Text.RegularExpressions;
