@@ -17,7 +17,7 @@ jobs:
       contents: write
 
     steps:
-      - uses: fastify/github-action-merge-dependabot@v3.10.1
+      - uses: fastify/github-action-merge-dependabot@v3.11.0
         with:
           use-github-auto-merge: true
 
