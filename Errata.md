@@ -43,3 +43,5 @@ Zhou Jing    | 4 | 119 | Show inconsistent size multi-dimensional array in listi
 Zhou Jing | 3  | 114 | Replace `second` with `third` in "// Retrieve third item from the end (Python)"
 Tyler Woody | 13 | 702 | Remove the `!` negation in `string.IsNullOrWhiteSpace(input)` in the while loop to properly allow looping
 Benjamin Michaelis | 19 | 948-949 | Add a `(` before the `next + 1` to complete the parenthesis.
+Zhou Jing          | 9       | 507     | Remove duplicate URL's https://intellitect.com/WhyTupleBreaksTheImmutableRules                                                   |
+Zhou Jing          | 8       | 455     | Replace "8.5" to "8.3" in listing reference in the sentence "Notice that CompareTo() in Listing 8.5"                            |
