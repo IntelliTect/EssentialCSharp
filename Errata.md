@@ -39,9 +39,10 @@ Zhou Jing | 18 | 908 | Change comment in Listing 18.21 to "Restrict the attribut
 Zhou Jing | 23 | 1080 | Change "DWORD flProtect); // The type of memory allocation" to "// The type of memory protection"
 Zhou Jing | 22 | 1065 - 1066 | Changed 'Thread' to 'Task' and "Application exiting" to "Application shutting down"
 Zhou Jing | 4 | 161 | Fix `input < 9` to `input < 0` in Listing 4.24
-Zhou Jing    | 4 | 119 | Show inconsistent size multi-dimensional array in listing 3.16
-Zhou Jing | 3  | 114 | Replace `second` with `third` in "// Retrieve third item from the end (Python)"
+Zhou Jing | 4 | 119 | Show inconsistent size multi-dimensional array in listing 3.16
+Zhou Jing | 3 | 114 | Replace `second` with `third` in "// Retrieve third item from the end (Python)"
 Tyler Woody | 13 | 702 | Remove the `!` negation in `string.IsNullOrWhiteSpace(input)` in the while loop to properly allow looping
 Benjamin Michaelis | 19 | 948-949 | Add a `(` before the `next + 1` to complete the parenthesis.
-Zhou Jing          | 9       | 507     | Remove duplicate URL's https://intellitect.com/WhyTupleBreaksTheImmutableRules                                                   |
-Zhou Jing          | 8       | 455     | Replace "8.5" to "8.3" in listing reference in the sentence "Notice that CompareTo() in Listing 8.5"                            |
+Zhou Jing | 2 | 70 | Add breaks inside the brackets in the string interpolation in listing 2.16
+Zhou Jing | 9       | 507     | Remove duplicate URL's https://intellitect.com/WhyTupleBreaksTheImmutableRules                                                   |
+Zhou Jing | 8       | 455     | Replace "8.5" to "8.3" in listing reference in the sentence "Notice that CompareTo() in Listing 8.5"                            |
