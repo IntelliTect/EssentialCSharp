@@ -4,7 +4,7 @@ namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter05.Listing05_21;
 using System;
 using System.IO;
 
-public class Program
+public class PathEx
 {
     public static void Main()
     {
@@ -48,7 +48,7 @@ public class Program
     #endregion HIGHLIGHT
     {
         string result = string.Empty;
-        foreach(string path in paths)
+        foreach (string path in paths)
         {
             result = Path.Combine(result, path);
         }
