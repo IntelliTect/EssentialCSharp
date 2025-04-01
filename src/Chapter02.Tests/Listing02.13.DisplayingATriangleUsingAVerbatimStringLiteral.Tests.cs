@@ -1,5 +1,5 @@
-﻿
-namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_14.Tests;
+
+namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_13.Tests;
 
 [TestClass]
 public class TriangleTests

@@ -3,7 +3,7 @@ using Microsoft.CodeAnalysis;
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_16.Tests;
 
 [TestClass]
-public class NewLineInterpolationTests
+public class CombiningLiteralsWithInterpolationTests
 {
     [TestMethod]
     public void Main_CorrectOutput()
@@ -15,12 +15,10 @@ public class NewLineInterpolationTests
 <<{firstName}
 >>Enter your last name: 
 <<{lastName}
->>Your full name is: {firstName} {lastName}";
-
+>>Your full name is:
+{firstName} {lastName}";
 
         IntelliTect.TestTools.Console.ConsoleAssert.Expect(expected,
               Program.Main);
-
-
     }
 }
