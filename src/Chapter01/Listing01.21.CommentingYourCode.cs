@@ -19,7 +19,7 @@ public class CommentSamples
         /* Display a greeting to the console 
           using composite formatting. */
 
-        Console.WriteLine("Your full name is {1}, {0}.", 
+        Console.WriteLine("Your full name is {0} {1}.",
             firstName, lastName);
         // This is the end
         // of the program listing
