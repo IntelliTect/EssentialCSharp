@@ -18,12 +18,16 @@ public class Program
         currencyText = $"{number:C}";
         Console.WriteLine(currencyText);
 
-        // Prove that string interpolation and the ToString method produce equivalent results with format specifiers
+        // Prove that string interpolation and the ToString method
+        // produce equivalent results with format specifiers
         string toStringCurrencyText = number.ToString("C");
-        Console.WriteLine($"{currencyText == toStringCurrencyText}: {currencyText} == {toStringCurrencyText}");
+        Console.WriteLine(
+            $"{currencyText == toStringCurrencyText}: " +
+            $"{currencyText} == {toStringCurrencyText}");
 
         // el-GR represents the Greek locale code
-        toStringCurrencyText = number.ToString("C", CultureInfo.GetCultureInfo("el-GR"));
+        toStringCurrencyText = number.ToString("C", 
+            CultureInfo.GetCultureInfo("el-GR"));
         Console.WriteLine(toStringCurrencyText);
 
         // ...
