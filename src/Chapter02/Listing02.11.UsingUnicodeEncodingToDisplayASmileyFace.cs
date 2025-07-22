@@ -1,12 +1,13 @@
 namespace AddisonWesley.Michaelis.EssentialCSharp.Chapter02.Listing02_11;
 
-#region INCLUDE
 public class SingleQuote
 {
     public static void Main()
     {
-        Console.WriteLine('\'');
+        #region INCLUDE
+        Console.Write('\u003A');
+
+        Console.WriteLine('\u0029');
+        #endregion INCLUDE
     }
 }
-#endregion INCLUDE
-
