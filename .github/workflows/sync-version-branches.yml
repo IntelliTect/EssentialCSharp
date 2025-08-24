@@ -1,5 +1,5 @@
 name: Sync v12.0 -> v13.0
-'on':
+on:
   push:
     branches:
       - 'v12.0'
