@@ -1,14 +1,20 @@
-name: Sync branches
+name: Sync v12.0 -> v13.0
 on:
   push:
-    branches: [ 'v12.0', 'v13.0' ]
+    branches:
+      - 'v12.0'
+  workflow_dispatch:
+
+concurrency:
+  group: sync-v12-to-v13
+  cancel-in-progress: true
 
 jobs:
   sync_branches:
     name: Sync Branches
     runs-on: ubuntu-latest
     steps:
-      - name: Keep branches in sync
+      - name: Keep v13.0 in sync with v12.0
         uses: jojomatik/sync-branch@v2.0.2
         with:
           source: "v12.0"
@@ -17,7 +23,4 @@ jobs:
           resolve_conflicts: "false"
           git_committer_name: 'BenjaminMichaelisBot'
           git_committer_email: 'github@relay.benjamin.michaelis.net'
-          # The access token to push to the repository
-          #   Optional
-          #   Default: github.token
           github_token: ${{ secrets.GIT_PUSHTOKEN }}
