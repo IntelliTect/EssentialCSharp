@@ -14,24 +14,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
-      - name: Setup dotnet SDK
-        uses: actions/setup-dotnet@v5
-        with:
-            global-json-file: global.json
-      - name: Set up dependency caching for faster builds
-        uses: actions/cache@v4
-        id: nuget-cache
-        with:
-            path: |
-              ~/.nuget/packages
-              ${{ github.workspace }}/**/obj/project.assets.json
-            key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
-            restore-keys: |
-              ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
-              ${{ runner.os }}-nuget-
-      # Run NuGet restore for the solution at repo root
-      - name: Run NuGet restore
-        run: dotnet restore
+      - name: Setup .NET environment
+        uses: ./.github/actions/setup-dotnet
 
       # Run code analysis for the solution at repo root
       - name: Run .NET Code Analysis

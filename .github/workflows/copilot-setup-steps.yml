@@ -23,6 +23,3 @@ jobs:
 
       - name: Setup .NET environment
         uses: ./.github/actions/setup-dotnet
-
-      - name: Restore dependencies
-        run: dotnet restore
