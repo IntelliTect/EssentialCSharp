@@ -11,7 +11,10 @@ runs:
     - name: Setup dotnet SDK
       uses: actions/setup-dotnet@v5
       with:
-        global-json-file: global.json
+        dotnet-version: |
+          6.0.x
+          7.0.x
+          8.0.x
     
     - name: Set up dependency caching for faster builds
       uses: actions/cache@v4
