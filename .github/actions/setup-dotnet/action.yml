@@ -1,0 +1,31 @@
+name: 'Setup .NET Environment'
+description: 'Set up .NET SDK and configure dependency caching for faster builds'
+inputs:
+  dotnet-version:
+    description: 'Specific .NET version(s) to install'
+    required: false
+    default: ''
+  use-global-json:
+    description: 'Use global.json file for .NET version'
+    required: false
+    default: 'true'
+runs:
+  using: 'composite'
+  steps:
+    - name: Setup dotnet SDK
+      uses: actions/setup-dotnet@v5
+      with:
+        dotnet-version: ${{ inputs.dotnet-version || '' }}
+        global-json-file: ${{ inputs.use-global-json == 'true' && 'global.json' || '' }}
+    
+    - name: Set up dependency caching for faster builds
+      uses: actions/cache@v4
+      id: nuget-cache
+      with:
+        path: |
+          ~/.nuget/packages
+          ${{ github.workspace }}/**/obj/project.assets.json
+        key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
+          ${{ runner.os }}-nuget-

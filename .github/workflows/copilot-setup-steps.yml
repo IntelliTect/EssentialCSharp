@@ -21,28 +21,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v5
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
+      - name: Setup .NET environment
+        uses: ./.github/actions/setup-dotnet
 
-      - name: Install JavaScript dependencies
-        run: npm ci
-
-      - name: Setup dotnet SDK
-        uses: actions/setup-dotnet@v5
-        with:
-          global-json-file: global.json
-
-      - name: Set up dependency caching for faster builds
-        uses: actions/cache@v4
-        id: nuget-cache
-        with:
-          path: |
-            ~/.nuget/packages
-            ${{ github.workspace }}/**/obj/project.assets.json
-          key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
-            ${{ runner.os }}-nuget-
+      - name: Restore dependencies
+        run: dotnet restore
