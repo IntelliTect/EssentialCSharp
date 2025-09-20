@@ -33,7 +33,6 @@ jobs:
       - name: Setup .NET environment
         uses: ./.github/actions/setup-dotnet
         with:
-          build: 'true'
       - name: Test
         run: dotnet test --no-build --no-restore --verbosity normal --logger trx --results-directory ${{ runner.temp }}
 
