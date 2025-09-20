@@ -1,0 +1,11 @@
+{
+  "name": "essential-csharp",
+  "version": "1.0.0",
+  "description": "Essential C# - A comprehensive guide to C# programming",
+  "private": true,
+  "scripts": {},
+  "devDependencies": {},
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

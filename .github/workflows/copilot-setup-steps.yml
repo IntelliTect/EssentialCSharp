@@ -1,0 +1,48 @@
+name: Copilot Setup Steps
+
+on:
+  push:
+    paths:
+      - '.github/workflows/copilot-setup-steps.yml'
+  pull_request:
+    paths:
+      - '.github/workflows/copilot-setup-steps.yml'
+  workflow_dispatch:
+
+jobs:
+  copilot-setup-steps:
+    name: copilot-setup-steps
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install JavaScript dependencies
+        run: npm ci
+
+      - name: Setup dotnet SDK
+        uses: actions/setup-dotnet@v5
+        with:
+          global-json-file: global.json
+
+      - name: Set up dependency caching for faster builds
+        uses: actions/cache@v4
+        id: nuget-cache
+        with:
+          path: |
+            ~/.nuget/packages
+            ${{ github.workspace }}/**/obj/project.assets.json
+          key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
+            ${{ runner.os }}-nuget-
