@@ -16,6 +16,7 @@ jobs:
       - uses: actions/checkout@v5
       - name: Setup .NET environment
         uses: ./.github/actions/setup-dotnet
+         build: 'false'
 
       # Run code analysis for the solution at repo root
       - name: Run .NET Code Analysis
