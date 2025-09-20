@@ -4,7 +4,7 @@ inputs:
   build:
     description: 'Whether to run dotnet build after restore'
     required: false
-    default: 'false'
+    default: 'true'
 runs:
   using: 'composite'
   steps:
