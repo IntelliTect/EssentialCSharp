@@ -175,7 +175,23 @@ public class ProgramTests
             IntelliTect.TestTools.Console.ConsoleAssert.Expect(
                 expected, () => result = Program.Main(args));
         }
-        catch (AggregateException exception) when (exception.InnerException is System.Net.Http.HttpRequestException)
+        catch (AggregateException exception) when (
+            exception.InnerException is System.Net.Http.HttpRequestException ||
+            exception.InnerException is System.Net.Sockets.SocketException ||
+            exception.InnerException is TaskCanceledException ||
+            exception.InnerException is System.Net.NetworkInformation.NetworkInformationException)
+        {
+            Assert.Inconclusive("Unable to download the file.  Check your internet connection.");
+        }
+        catch (System.Net.Http.HttpRequestException)
+        {
+            Assert.Inconclusive("Unable to download the file.  Check your internet connection.");
+        }
+        catch (System.Net.Sockets.SocketException)
+        {
+            Assert.Inconclusive("Unable to download the file.  Check your internet connection.");
+        }
+        catch (TaskCanceledException)
         {
             Assert.Inconclusive("Unable to download the file.  Check your internet connection.");
         }
