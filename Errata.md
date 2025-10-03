@@ -1,4 +1,4 @@
-# Essential C# 13.0 Errata Document
+# Essential C# 12.0 Errata Document
 
 ## Essential C# 12.0
 
