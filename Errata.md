@@ -1,6 +1,6 @@
 # Essential C# 13.0 Errata Document
 
-## Essential C# 13.0
+## Essential C# 12.0
 
 by Mark Michaelis
 ISBN-13: 978-0138219512
