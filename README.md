@@ -77,6 +77,8 @@ When you see matching `#region INCLUDE` and `#endregion INCLUDE` tags in a listi
 
 When there are matching `#region EXCLUDE` and `#endregion EXCLUDE` tags in a listing, even if these are within two `INCLUDE` tags, this section is omitted from being visible in the book and replaced with a `// ...` just to try and bring more clarity to the point that is actually being taught in that listing.
 
+When you see matching `#region HIGHLIGHT` and `#endregion HIGHLIGHT` tags within an `INCLUDE` region, this indicates that the particular code section is emphasized in the book, typically with special formatting or shading to draw attention to the key concept being demonstrated.
+
 In addition, any line that ends with a `// EXCLUDE` is a line that is omitted from being seen in the book.
 
 ## Questions/Bugs
