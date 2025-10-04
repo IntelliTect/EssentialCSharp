@@ -1,0 +1,80 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Folder Name="/Shared/">
+    <File Path="src/Shared/DoWorkEventArgs.cs" />
+    <File Path="src/Shared/NetCore.cs" />
+    <File Path="src/Shared/PiCalculator+InternalPiDigitCalculator.cs" />
+    <File Path="src/Shared/PiCalculator.cs" />
+    <File Path="src/Shared/Program.cs" />
+  </Folder>
+  <Folder Name="/Shared/Tests/">
+    <File Path="src/Shared/Tests/CompilerAssert.cs" />
+    <File Path="src/Shared/Tests/Parallel.runsettings" />
+    <File Path="src/Shared/Tests/PowerShellTestUtilities.cs" />
+  </Folder>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+    <File Path=".gitignore" />
+    <File Path=".runsettings" />
+    <File Path="after.EssentialCSharp.sln.targets" />
+    <File Path="Common.props" />
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Build.targets" />
+    <File Path="Directory.Packages.props" />
+    <File Path="global.json" />
+    <File Path="README.md" />
+    <File Path="src/Chapter.props" />
+    <File Path="src/ChapterTests.props" />
+    <File Path="testEnvironments.json" />
+  </Folder>
+  <Project Path="src/Chapter01.Tests/Chapter01.Tests.csproj" />
+  <Project Path="src/Chapter01/Chapter01.csproj" />
+  <Project Path="src/Chapter02.Tests/Chapter02.Tests.csproj" />
+  <Project Path="src/Chapter02/Chapter02.csproj" />
+  <Project Path="src/Chapter03.Tests/Chapter03.Tests.csproj" />
+  <Project Path="src/Chapter03/Chapter03.csproj" />
+  <Project Path="src/Chapter04.Tests/Chapter04.Tests.csproj" />
+  <Project Path="src/Chapter04/Chapter04.csproj" />
+  <Project Path="src/Chapter05.Tests/Chapter05.Tests.csproj" />
+  <Project Path="src/Chapter05/Chapter05.csproj" />
+  <Project Path="src/Chapter06.Tests/Chapter06.Tests.csproj" />
+  <Project Path="src/Chapter06/Chapter06.csproj" />
+  <Project Path="src/Chapter07.Tests/Chapter07.Tests.csproj" />
+  <Project Path="src/Chapter07/Chapter07.csproj" />
+  <Project Path="src/Chapter08.Tests/Chapter08.Tests.csproj" />
+  <Project Path="src/Chapter08/Chapter08.csproj" />
+  <Project Path="src/Chapter09.Tests/Chapter09.Tests.csproj" />
+  <Project Path="src/Chapter09/Chapter09.csproj" />
+  <Project Path="src/Chapter10.Tests/Chapter10.Tests.csproj" />
+  <Project Path="src/Chapter10/Chapter10.csproj" />
+  <Project Path="src/Chapter11.Tests/Chapter11.Tests.csproj" />
+  <Project Path="src/Chapter11/Chapter11.csproj" />
+  <Project Path="src/Chapter12.Tests/Chapter12.Tests.csproj" />
+  <Project Path="src/Chapter12/Chapter12.csproj" />
+  <Project Path="src/Chapter13.Tests/Chapter13.Tests.csproj" />
+  <Project Path="src/Chapter13/Chapter13.csproj" />
+  <Project Path="src/Chapter14.Tests/Chapter14.Tests.csproj" />
+  <Project Path="src/Chapter14/Chapter14.csproj" />
+  <Project Path="src/Chapter15.Tests/Chapter15.Tests.csproj" />
+  <Project Path="src/Chapter15/Chapter15.csproj" />
+  <Project Path="src/Chapter16.Tests/Chapter16.Tests.csproj" />
+  <Project Path="src/Chapter16/Chapter16.csproj" />
+  <Project Path="src/Chapter17.Tests/Chapter17.Tests.csproj" />
+  <Project Path="src/Chapter17/Chapter17.csproj" />
+  <Project Path="src/Chapter18.Tests/Chapter18.Tests.csproj" />
+  <Project Path="src/Chapter18/Chapter18.csproj" />
+  <Project Path="src/Chapter19.Tests/Chapter19.Tests.csproj" />
+  <Project Path="src/Chapter19/Chapter19.csproj" />
+  <Project Path="src/Chapter20.Tests/Chapter20.Tests.csproj" />
+  <Project Path="src/Chapter20/Chapter20.csproj" />
+  <Project Path="src/Chapter21.Tests/Chapter21.Tests.csproj" />
+  <Project Path="src/Chapter21/Chapter21.csproj" />
+  <Project Path="src/Chapter22.Tests/Chapter22.Tests.csproj" />
+  <Project Path="src/Chapter22/Chapter22.csproj" />
+  <Project Path="src/Chapter23.Tests/Chapter23.Tests.csproj" />
+  <Project Path="src/Chapter23/Chapter23.csproj" />
+</Solution>
