@@ -13,7 +13,7 @@ public class ProgramTests
         string expected = dotnetCoreVersion switch
         {
             // Version <= 5
-            string value when string.Compare(value, "6")<0 => """
+            string value when string.Compare(value, "6") < 0 => """
                         Aggregate, All, Any, Append, AsEnumerable, Average, Cast, Concat, Contains, 
                         Count, DefaultIfEmpty, Distinct, ElementAt, ElementAtOrDefault, Empty, 
                         Except, First, FirstOrDefault, GroupBy, GroupJoin, Intersect, Join, Last, 
@@ -35,12 +35,25 @@ public class ProgramTests
                     ThenByDescending, ToArray, ToDictionary, ToHashSet, ToList, 
                     ToLookup, TryGetNonEnumeratedCount, Union, UnionBy, Where, Zip, 
                     """,
-            // Version 7
-            _ => """
+            // Version 7-8
+            string value when Version.TryParse(value, out var v) && (v.Major is 7 or 8) => """
                     Aggregate, All, Any, Append, AsEnumerable, Average, Cast, 
                     Chunk, Concat, Contains, Count, DefaultIfEmpty, Distinct, DistinctBy, 
                     ElementAt, ElementAtOrDefault, Empty, Except, ExceptBy, First, 
                     FirstOrDefault, GroupBy, GroupJoin, Intersect, IntersectBy, Join, 
+                    Last, LastOrDefault, LongCount, Max, MaxBy, Min, MinBy, OfType, 
+                    Order, OrderBy, OrderByDescending, OrderDescending, Prepend, Range, 
+                    Repeat, Reverse, Select, SelectMany, SequenceEqual, Single, 
+                    SingleOrDefault, Skip, SkipLast, SkipWhile, Sum, Take, TakeLast, 
+                    TakeWhile, ThenBy, ThenByDescending, ToArray, ToDictionary, ToHashSet, 
+                    ToList, ToLookup, TryGetNonEnumeratedCount, Union, UnionBy, Where, Zip, 
+                    """,
+            // Version 9
+            _ => """
+                    Aggregate, AggregateBy, All, Any, Append, AsEnumerable, Average, Cast, 
+                    Chunk, Concat, Contains, Count, CountBy, DefaultIfEmpty, Distinct, DistinctBy, 
+                    ElementAt, ElementAtOrDefault, Empty, Except, ExceptBy, First, 
+                    FirstOrDefault, GroupBy, GroupJoin, Index, Intersect, IntersectBy, Join, 
                     Last, LastOrDefault, LongCount, Max, MaxBy, Min, MinBy, OfType, 
                     Order, OrderBy, OrderByDescending, OrderDescending, Prepend, Range, 
                     Repeat, Reverse, Select, SelectMany, SequenceEqual, Single, 
