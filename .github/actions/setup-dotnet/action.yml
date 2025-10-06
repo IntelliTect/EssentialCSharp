@@ -34,4 +34,4 @@ runs:
     - name: Build
       if: ${{ inputs.build == 'true' }}
       shell: bash
-      run: dotnet build EssentialCSharp.sln --no-restore
+      run: dotnet build EssentialCSharp.slnx --no-restore
