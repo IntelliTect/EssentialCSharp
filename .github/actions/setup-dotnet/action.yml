@@ -29,9 +29,9 @@ runs:
     
     - name: Restore dependencies
       shell: bash
-      run: dotnet restore
+      run: dotnet restore EssentialCSharp.sln
     
     - name: Build
       if: ${{ inputs.build == 'true' }}
       shell: bash
-      run: dotnet build --no-restore
+      run: dotnet build EssentialCSharp.sln --no-restore
