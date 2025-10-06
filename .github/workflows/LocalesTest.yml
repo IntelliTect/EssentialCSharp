@@ -51,8 +51,8 @@ jobs:
           echo "Printing date"
           date
           echo Restore dependencies
-          dotnet restore
+          dotnet restore EssentialCSharp.sln
           echo Build
-          dotnet build --no-restore
+          dotnet build EssentialCSharp.sln --no-restore
           echo Test
           dotnet test --no-build --no-restore --verbosity normal
