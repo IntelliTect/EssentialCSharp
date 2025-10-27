@@ -11,5 +11,6 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="IntelliTect.Multitool" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" VersionOverride="9.0.10" />
   </ItemGroup>
 </Project>
