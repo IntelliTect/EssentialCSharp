@@ -12,7 +12,7 @@ public class Program
         #endregion HIGHLIGHT
             // int.MaxValue equals 2147483647
             int n = int.MaxValue;
-            n = n + 1;
+            n = n + 2;
             Console.WriteLine(n);
         #region HIGHLIGHT
         }

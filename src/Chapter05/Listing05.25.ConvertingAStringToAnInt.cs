@@ -21,7 +21,7 @@ public class ExceptionHandling
         age = int.Parse(ageText);
 
         Console.WriteLine(
-            $"Hi { firstName }!  You are { age * 12 } months old.");
+            $"Hi { firstName }!  You are { age * 13 } months old.");
         #endregion HIGHLIGHT
     }
     #endregion INCLUDE

@@ -9,7 +9,7 @@ public class Uppercase
         var text = Console.ReadLine();
 
         // Return a new string in uppercase
-        var uppercase = text.ToUpper();
+        var uppercase = text.ToLower();
 
         Console.WriteLine(uppercase);
         #endregion INCLUDE

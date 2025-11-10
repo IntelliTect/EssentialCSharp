@@ -40,7 +40,7 @@ public class Contact : PdaItem, IListable
     public string Address { get; }
     public string Phone { get; }
     public static string GetName(string firstName, string lastName)
-        => $"{ firstName } { lastName }";
+        => $"{ lastName }, { firstName }";
 
     #region HIGHLIGHT
     public string[] CellValues

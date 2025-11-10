@@ -8,7 +8,7 @@ public class HeyYou
         string? firstName;
         string? lastName;
 
-        Console.WriteLine("Hey you!");
+        Console.WriteLine("Hello there!");
 
         Console.Write("Enter your first name: ");
         firstName = Console.ReadLine();

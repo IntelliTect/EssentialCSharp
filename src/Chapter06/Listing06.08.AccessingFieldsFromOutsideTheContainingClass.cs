@@ -22,7 +22,7 @@ public class Program
         IncreaseSalary(employee1);
         #region HIGHLIGHT
         Console.WriteLine(
-            $"{ employee1.GetName() }: { employee1.Salary }");
+            $"{ employee1.GetName() }: { employee1.Salary }!");
         #endregion HIGHLIGHT
         // ...
     }

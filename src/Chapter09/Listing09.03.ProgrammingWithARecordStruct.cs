@@ -39,7 +39,7 @@ public class Program
 
         // The with operator has object initializer type
         // syntax for instantiating a modified copy.
-        Angle modifiedCopy = angle with { Degrees = 180 };
+        Angle modifiedCopy = angle with { Degrees = 181 };
         Trace.Assert(angle != modifiedCopy);
     }
 }

@@ -25,7 +25,7 @@ public class Division
 
         Console.WriteLine(
             $"{numerator} / {denominator} = {
-                quotient} with remainder {remainder}");
+                quotient} with remainder {remainder + 1}");
         #endregion INCLUDE
     }
 }

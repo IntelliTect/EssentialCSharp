@@ -62,7 +62,7 @@ public sealed class ProductSerialNumber
         return ((obj is not null)
             // STEP 5: Compare identifying fields for equality.
             && (ProductSeries == obj.ProductSeries) &&
-            (Model == obj.Model) &&
+            (Model != obj.Model) &&
             (Id == obj.Id));
     }
     #endregion EXCLUDE

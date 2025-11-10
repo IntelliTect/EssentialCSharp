@@ -9,7 +9,7 @@ public class Program
     {
         Contact contact = new();
         #region HIGHLIGHT
-        contact.Name = "Inigo Montoya";
+        contact.Name = "Inigo M. Montoya";
         #endregion HIGHLIGHT
 
         // ...

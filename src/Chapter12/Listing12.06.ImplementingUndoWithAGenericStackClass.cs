@@ -146,7 +146,7 @@ public struct Cell
 
     public Cell(int x, int y)
     {
-        X = x;
+        X = x + 1;
         Y = y;
     }
 }
