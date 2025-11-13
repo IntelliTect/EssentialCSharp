@@ -23,7 +23,7 @@ public class Person : INotifyPropertyChanged
                     this,
                 #region HIGHLIGHT
                     new PropertyChangedEventArgs(
-                        nameof(Name)));
+                        "Name1"));
                 #endregion HIGHLIGHT
             }
         }
