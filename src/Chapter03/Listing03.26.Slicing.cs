@@ -27,11 +27,11 @@ public class Program
         }");
         Console.WriteLine($@"    ..: {
             // C#, COBOL, Java, C++, TypeScript, Swift, Python, Lisp, JavaScript
-            string.Join(", ", languages[..])  // Python, Lisp, JavaScript
+            string.Join(", ", languages[..])
         }");
         Console.WriteLine($@"    ..: {
             // C#, COBOL, Java, C++, TypeScript, Swift, Python, Lisp, JavaScript
-            string.Join(", ", languages[0..^0])  // Python, Lisp, JavaScript
+            string.Join(", ", languages[0..^0])
         }");
         #endregion INCLUDE
     }
