@@ -5,7 +5,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageVersion Include="coverlet.collector" Version="8.0.0" />
-    <PackageVersion Include="coverlet.msbuild" Version="8.0.0" />
+    <PackageVersion Include="coverlet.msbuild" Version="8.0.1" />
     <PackageVersion Include="IntelliTect.Multitool" Version="2.0.0" />
     <PackageVersion Include="IntelliTect.TestTools.Console" Version="1.0.0" />
     <PackageVersion Include="Microsoft.CodeAnalysis" Version="4.14.0" />
