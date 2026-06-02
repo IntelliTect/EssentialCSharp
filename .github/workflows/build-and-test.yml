@@ -37,7 +37,7 @@ jobs:
 
       - name: Convert TRX to VS Playlist
         if: failure()
-        uses: BenjaminMichaelis/trx-to-vsplaylist@v3
+        uses: BenjaminMichaelis/trx-to-vsplaylist@v4
         with:
           trx-file-path: '${{ runner.temp }}/*.trx'
           output-directory: '${{ runner.temp }}/vsplaylists'
