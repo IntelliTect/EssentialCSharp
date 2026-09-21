@@ -7,7 +7,11 @@ using System.Threading.Tasks;
 public class Program
 {
     #region HIGHLIGHT
+#if NET9_0_OR_GREATER
+    static readonly Lock _Sync = new();
+#else
     static readonly object _Sync = new();
+#endif
     #endregion HIGHLIGHT
     static int _Total = int.MaxValue;
     static int _Count = 0;
