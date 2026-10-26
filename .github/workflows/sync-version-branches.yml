@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Keep v13.0 in sync with v12.0
-        uses: jojomatik/sync-branch@v2.0.2
+        uses: jojomatik/sync-branch@v2.0.4
         with:
           source: "v12.0"
           target: "v13.0"
